@@ -1,0 +1,33 @@
+{
+  "doctype": "DocType",
+  "name": "Item PVM Classificator",
+  "module": "Lithuanian Compliance",
+  "custom": 0,
+  "istable": 1,
+  "editable_grid": 1,
+  "track_changes": 0,
+  "engine": "InnoDB",
+  "field_order": [
+    "item",
+    "pvm_classificator"
+  ],
+  "fields": [
+    {
+      "fieldname": "item",
+      "fieldtype": "Link",
+      "options": "Item",
+      "label": "Item",
+      "reqd": 1,
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "pvm_classificator",
+      "fieldtype": "Link",
+      "options": "PVM Classificator",
+      "label": "PVM Classificator",
+      "reqd": 1,
+      "in_list_view": 1
+    }
+  ],
+  "permissions": []
+}

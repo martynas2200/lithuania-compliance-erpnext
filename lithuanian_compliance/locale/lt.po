@@ -1,0 +1,200 @@
+msgid ""
+msgstr ""
+"Content-Type: text/plain; charset=UTF-8\n"
+"Language: lt\n"
+
+#: accounting
+msgid "Invoice"
+msgstr "Sąskaita-faktūra"
+
+msgid "Customer"
+msgstr "Klientas"
+
+msgid "Supplier"
+msgstr "Tiekėjas"
+
+msgid "Amount"
+msgstr "Suma"
+
+msgid "Date"
+msgstr "Data"
+
+msgid "Tax"
+msgstr "Mokestis"
+
+#: settings page
+
+msgid "Lithuanian STI Compliance Settings"
+msgstr "Lietuvos VMI atitikties nustatymai"
+
+msgid "Rounding Accounts"
+msgstr "Suapvalinimo sąskaitos"
+
+msgid "Purchase Round Off Account"
+msgstr "Pirkimo suapvalinimo sąskaita"
+
+msgid "Sales Round Off Account"
+msgstr "Pardavimo suapvalinimo sąskaita"
+
+msgid "PVM Classificators"
+msgstr "PVM klasifikatoriai"
+
+msgid "Default PVM Classificator"
+msgstr "Numatytasis PVM klasifikatorius"
+
+msgid "Per-Item PVM Classificator Overrides"
+msgstr "PVM klasifikatorius per prekę pakeitimai"
+
+
+#: pvm classificator doctype
+
+msgid "PVM Classificator"
+msgstr "PVM klasifikatorius"
+
+msgid "Code"
+msgstr "Kodas"
+
+msgid "Rate (%)"
+msgstr "Norma (%)"
+
+msgid "Description"
+msgstr "Aprašymas"
+
+
+#: i.SAF XML Generation
+
+msgid "i.SAF XML Generation"
+msgstr "i.SAF XML generavimas"
+
+msgid "Generate i.SAF XML"
+msgstr "Generuoti i.SAF XML"
+
+msgid "Step 1: Select Export Type"
+msgstr "1 žingsnis: Pasirinkite eksporto tipą"
+
+msgid "Choose the type of i.SAF invoice register you want to generate:"
+msgstr "Pasirinkite i.SAF sąskaitų registrą, kurį norite generuoti:"
+
+msgid "Received Invoices"
+msgstr "Gaunamos sąskaitos"
+
+msgid "Export purchase invoices, supplier credit notes, and expense claims"
+msgstr "Eksportuoti pirkimo sąskaitas, tiekėjų kreditines notas ir išlaidų ataskaitas"
+
+msgid "Issued Invoices"
+msgstr "Išrašytos sąskaitos"
+
+msgid "Export sales invoices, credit notes, and debit notes issued to customers"
+msgstr "Eksportuoti pardavimo sąskaitas, kreditines notas ir debetines notas, išrašytas klientams"
+
+msgid "Step 2: Select Period"
+msgstr "2 žingsnis: Pasirinkite laikotarpį"
+
+msgid "Select the reporting period for the i.SAF export:"
+msgstr "Pasirinkite ataskaitinį laikotarpį i.SAF eksportui:"
+
+
+msgid "Year"
+msgstr "Metai"
+
+msgid "Select Year"
+msgstr "Pasirinkite metus"
+
+msgid "Select Month"
+msgstr "Pasirinkite mėnesį"
+
+msgid "based on the selected month and year."
+msgstr "remiantis pasirinktu mėnesiu ir metais."
+
+msgid "Selected Period:"
+msgstr "Pasirinktas laikotarpis:"
+
+msgid "Step 3: Review and Exclude Invoices"
+msgstr "3 žingsnis: Peržiūrėti ir atmesti sąskaitas"
+
+
+msgid "Review invoices that will be included in the i.SAF export."
+msgstr "Peržiūrėkite sąskaitas, kurios bus įtrauktos į i.SAF eksportą."
+
+
+msgid "You can exclude specific invoices if needed."
+msgstr "Pagal poreikį galite atmesti konkrečias sąskaitas."
+
+msgid "This may take a moment."
+msgstr "Tai gali užtrukti akimirką."
+
+
+msgid "invoices found"
+msgstr "sąskaitų rastos"
+
+msgid "Select All"
+msgstr "Pasirinkti viską"
+
+
+msgid "Deselect All"
+msgstr "Atžymėti viską"
+
+
+msgid "Include"
+msgstr "Įtraukti"
+
+msgid "Exclude"
+msgstr "Atmesti"
+
+msgid "Invoice No"
+msgstr "Sąskaitos Nr."
+
+msgid "Date"
+msgstr "Data"
+
+
+msgid "Amount"
+msgstr "Suma"
+
+msgid "Customer/Supplier"
+msgstr "Klientas/Tiekėjas"
+
+msgid "Grand Total"
+msgstr "Bendra suma"
+
+msgid "VAT"
+msgstr "PVM"
+
+msgid "invoice(s)"
+msgstr "sąskaitų rastos"
+
+
+msgid "Step 4: Generate i.SAF XML File"
+msgstr "4 žingsnis: Generuoti i.SAF XML failą"
+
+msgid "Review your selections and generate the i.SAF XML file:"
+msgstr "Peržiūrėkite savo pasirinkimus ir sugeneruokite i.SAF XML failą:"
+
+
+msgid "Export Summary"
+msgstr "Eksporto santrauka"
+
+msgid "Generate i.SAF XML File"
+msgstr "Generuoti i.SAF XML failą"
+
+
+msgid "Previous"
+msgstr "Ankstesnis"
+
+msgid "Next"
+msgstr "Kitas"
+
+msgid "Export Type"
+msgstr "Eksporto tipas"
+
+msgid "Period"
+msgstr "Laikotarpis"
+
+msgid "Review Invoices"
+msgstr "Peržiūrėti sąskaitas"
+
+msgid "Generate"
+msgstr "Generuoti"
+
+
+

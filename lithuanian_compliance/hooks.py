@@ -10,6 +10,8 @@ app_license = "mit"
 
 # required_apps = []
 
+override_doctype_class = {"Purchase Invoice": "lithuanian_compliance.overrides.CustomPurchaseInvoice"}
+
 # Each item in the list will be shown as an app in the apps page
 # add_to_apps_screen = [
 # 	{
@@ -86,7 +88,7 @@ app_license = "mit"
 # ------------
 
 # before_install = "lithuanian_compliance.install.before_install"
-# after_install = "lithuanian_compliance.install.after_install"
+after_install = "lithuanian_compliance.install.after_install"
 
 # Uninstallation
 # ------------
@@ -164,7 +166,7 @@ app_license = "mit"
 # Testing
 # -------
 
-# before_tests = "lithuanian_compliance.install.before_tests"
+after_migrate = ["lithuanian_compliance.install.after_migrate"]
 
 # Extend DocType Class
 # ------------------------------
@@ -244,4 +246,3 @@ app_license = "mit"
 # default_log_clearing_doctypes = {
 # 	"Logging DocType Name": 30  # days to retain logs
 # }
-

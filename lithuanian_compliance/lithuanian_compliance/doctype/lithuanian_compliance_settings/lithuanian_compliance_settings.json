@@ -1,0 +1,79 @@
+{
+  "doctype": "DocType",
+  "name": "Lithuanian Compliance Settings",
+  "module": "Lithuanian Compliance",
+  "custom": 0,
+  "istable": 0,
+  "editable_grid": 0,
+  "quick_entry": 0,
+  "track_changes": 0,
+  "track_seen": 0,
+  "allow_rename": 0,
+  "is_submittable": 0,
+  "show_name_in_global_search": 0,
+  "issingle": 1,
+  "engine": "InnoDB",
+  "field_order": [
+    "section_rounding",
+    "purchase_round_off_account",
+    "sales_round_off_account",
+    "section_pvm",
+    "default_pvm_classificator",
+    "pvm_item_map"
+  ],
+  "fields": [
+    {
+      "fieldname": "section_rounding",
+      "fieldtype": "Section Break",
+      "label": "Rounding Accounts"
+    },
+    {
+      "fieldname": "purchase_round_off_account",
+      "fieldtype": "Link",
+      "options": "Account",
+      "label": "Purchase Round Off Account"
+    },
+    {
+      "fieldname": "sales_round_off_account",
+      "fieldtype": "Link",
+      "options": "Account",
+      "label": "Sales Round Off Account"
+    },
+    {
+      "fieldname": "section_pvm",
+      "fieldtype": "Section Break",
+      "label": "PVM Classificators"
+    },
+    {
+      "fieldname": "default_pvm_classificator",
+      "fieldtype": "Link",
+      "options": "PVM Classificator",
+      "label": "Default PVM Classificator"
+    },
+    {
+      "fieldname": "pvm_item_map",
+      "fieldtype": "Table",
+      "options": "Item PVM Classificator",
+      "label": "Per-Item PVM Classificator Overrides"
+    }
+  ],
+  "links": [],
+  "actions": [],
+  "permissions": [
+    {
+      "role": "System Manager",
+      "read": 1,
+      "write": 1,
+      "create": 1,
+      "delete": 1,
+      "submit": 0,
+      "cancel": 0,
+      "amend": 0,
+      "share": 1,
+      "print": 1,
+      "email": 1,
+      "report": 1,
+      "export": 1
+    }
+  ]
+}
