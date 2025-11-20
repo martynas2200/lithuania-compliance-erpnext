@@ -6,8 +6,6 @@ frappe.pages["isaf-generation"].on_page_load = function (wrapper) {
 		title: "i.SAF XML Generation",
 		single_column: true,
 	});
-
-	console.log("Rendering i.SAF Generation Page");
 	$(frappe.render_template("isaf_generation")).appendTo(page.main);
 
 	if (!frappe.ISAFGenerationWizard) {
@@ -34,12 +32,10 @@ frappe.ISAFGenerationWizard = {
 		// Create a container for dynamic content (separate from templates)
 		this.content_wrapper = $('<div class="wizard-content"></div>').appendTo(this.wrapper);
 
-		console.log("Setting up i.SAF Generation Wizard");
 		this.render_wizard();
 	},
 
 	render_wizard() {
-		// Clear only the dynamic content, not the templates
 		this.content_wrapper.empty();
 
 		// Progress indicator
@@ -333,8 +329,6 @@ frappe.ISAFGenerationWizard = {
 
 	render_generation_step() {
 		const included_count = (this.invoices?.length || 0) - this.data.excluded_invoices.length;
-		const export_type_label =
-			this.data.export_type === "receivable" ? "Receivable (Sales)" : "Payable (Purchases)";
 
 		const $template = $(".generation-step-template").clone().removeClass("hidden");
 
@@ -342,7 +336,7 @@ frappe.ISAFGenerationWizard = {
 		const summary_rows = `
 			<tr>
 				<td><strong>${__("Export Type:")}</strong></td>
-				<td>${export_type_label}</td>
+				<td>${this.data.export_type === "receivable" ? "Received Invoices" : "Issued Invoices"}</td>
 			</tr>
 			<tr>
 				<td><strong>${__("Period:")}</strong></td>
@@ -374,9 +368,8 @@ frappe.ISAFGenerationWizard = {
 		this.content_wrapper.find("#generate-btn").hide();
 		this.content_wrapper.find("#generation-progress").removeClass("hidden");
 
-		// Call server-side method to generate XML
 		frappe.call({
-			method: "lithuanian_compliance.api.generate_isaf_xml",
+			method: "lithuanian_compliance.api.isaf.generate_isaf_xml",
 			args: {
 				export_type: this.data.export_type,
 				from_date: frappe.datetime.obj_to_str(this.data.from_date),

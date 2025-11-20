@@ -2,7 +2,7 @@
   {
     "code": "PVM1",
     "value": 21,
-    "description": "Šalies teritorijoje patiektos prekės ir / ar suteiktos paslaugos (Lietuvos Respublikos pridėtinės vertės mokesčio įstatymo (toliau - PVMĮ) 19 str. 1 dalis)"
+    "description": "Šalies teritorijoje patiektos prekės ir / ar suteiktos paslaugos (PVMĮ 19 str. 1 dalis)"
   },
   {
     "code": "PVM2",
@@ -12,32 +12,32 @@
   {
     "code": "PVM5",
     "value": null,
-    "description": "Atvejai, kai prekių tiekimas ir paslaugų teikimas neapmokestinamas PVM (PVMĮ 20-33 ir 112 straipsniai)"
+    "description": "Atvejai, kai prekių tiekimas ir paslaugų teikimas neapmokestinamas PVM (PVMĮ 20-33 ir 112 str.)"
   },
   {
     "code": "PVM6",
     "value": 21,
-    "description": "Atvejai, kai prekės (paslaugos) yra suvartotos PVM mokėtojo privatiems poreikiams tenkinti (PVMĮ 5 ir 8 straipsniai)"
+    "description": "Atvejai, kai prekės (paslaugos) yra suvartotos PVM mokėtojo privatiems poreikiams tenkinti (PVMĮ 5 ir 8 str.)"
   },
   {
     "code": "PVM7",
     "value": 9,
-    "description": "Atvejai, kai prekės (paslaugos) yra suvartotos PVM mokėtojo privatiems poreikiams tenkinti (PVMĮ 5 ir 8 straipsniai)"
+    "description": "Atvejai, kai prekės (paslaugos) yra suvartotos PVM mokėtojo privatiems poreikiams tenkinti (PVMĮ 5 ir 8 str.)"
   },
   {
     "code": "PVM8",
     "value": 5,
-    "description": "Atvejai, kai prekės (paslaugos) yra suvartotos PVM mokėtojo privatiems poreikiams tenkinti (PVMĮ 5 ir 8 straipsniai)"
+    "description": "Atvejai, kai prekės (paslaugos) yra suvartotos PVM mokėtojo privatiems poreikiams tenkinti (PVMĮ 5 ir 8 str.)"
   },
   {
     "code": "PVM9",
     "value": 21,
-    "description": "PVM mokėtojo ilgalaikio materialiojo turto pasigaminimas ir nuosavybės teise priklausančio ar nepriklausančio pastato (statinio) esminis pagerinimas (PVMĮ 6 straipsnis)"
+    "description": "PVM mokėtojo ilgalaikio materialiojo turto pasigaminimas ir nuosavybės teise priklausančio ar nepriklausančio pastato (statinio) esminis pagerinimas (PVMĮ 6 str.)"
   },
   {
     "code": "PVM12",
     "value": 0,
-    "description": "Prekių eksportas (PVMĮ 41 straipsnis)"
+    "description": "Prekių eksportas (PVMĮ 41 str.)"
   },
   {
     "code": "PVM13",
@@ -52,32 +52,32 @@
   {
     "code": "PVM15",
     "value": null,
-    "description": "Už Lietuvos ribų patiektos prekės ir/ar suteiktos paslaugos (atvejai, kai PVM neskaičiuojamas, nes prekių tiekimas ir / ar paslaugų teikimas laikomas įvykusiu už Lietuvos ribų ir yra ne PVM objektas Lietuvoje, bet PVM atskaita galima pagal PVMĮ 58 str. 1 dalies 2 punkto nuostatas)"
+    "description": "Už Lietuvos ribų patiektos prekės ir / ar suteiktos paslaugos (atvejai, kai PVM neskaičiuojamas, nes prekių tiekimas ir / ar paslaugų teikimas laikomas įvykusiu už Lietuvos ribų ir yra ne PVM objektas Lietuvoje, bet PVM atskaita galima pagal PVMĮ 58 str. 1 dalies 2 punkto nuostatas)"
   },
   {
     "code": "PVM16",
     "value": 21,
-    "description": "Atvejai, kai iš kitų valstybių narių prekių įsigijimas laikomas įvykusiu šalies teritorijoje (PVMĮ 41 ir 122 straipsniai)"
+    "description": "Atvejai, kai iš kitų valstybių narių prekių įsigijimas laikomas įvykusiu šalies teritorijoje (PVMĮ 4(1) ir 12(2) str.)"
   },
   {
     "code": "PVM17",
     "value": 9,
-    "description": "Atvejai, kai iš kitų valstybių narių prekių įsigijimas laikomas įvykusiu šalies teritorijoje (PVMĮ 41 ir 122 straipsniai)"
+    "description": "Atvejai, kai iš kitų valstybių narių prekių įsigijimas laikomas įvykusiu šalies teritorijoje (PVMĮ 4(1) ir 12(2) str.)"
   },
   {
     "code": "PVM18",
     "value": 5,
-    "description": "Atvejai, kai iš kitų valstybių narių prekių įsigijimas laikomas įvykusiu šalies teritorijoje (PVMĮ 4.1 ir 12.2 straipsniai)"
+    "description": "Atvejai, kai iš kitų valstybių narių prekių įsigijimas laikomas įvykusiu šalies teritorijoje (PVMĮ 4(1) ir 12(2) str.)"
   },
   {
     "code": "PVM19",
     "value": null,
-    "description": "Atvejai, kai Lietuvos Respublikos PVM mokėtojo, trikampėje prekyboje esančio tarpininkaujančia šalimi (antrasis asmuo), iš vienos valstybės narės PVM mokėtojo įsigytos prekės iš karto buvo nugabentos į kitą valstybę narę, kurioje patiektos tos kitos valstybės narės PVM mokėtojui (PVMĮ 12.2 straipsnio 3 dalis)"
+    "description": "Atvejai, kai Lietuvos Respublikos PVM mokėtojo, trikampėje prekyboje esančio tarpininkaujančia šalimi (antrasis asmuo), iš vienos valstybės narės PVM mokėtojo įsigytos prekės iš karto buvo nugabentos į kitą valstybę narę, kurioje patiektos tos kitos valstybės narės PVM mokėtojui (PVMĮ 12(2) straipsnio 3 dalis)"
   },
   {
     "code": "PVM20",
     "value": 21,
-    "description": "Iš užsienio valstybių (išskyrus iš ES PVM mokėtojų) įsigytos paslaugos, kurių pardavimo PVM apskaičiuoja pirkėjas (PVMĮ 95 str. 2 dalis)"
+    "description": "Iš užsienio valstybių (išskyrus iš ES PVM mokėtojus) įsigytos paslaugos, kurių pardavimo PVM apskaičiuoja pirkėjas (PVMĮ 95 str. 2 dalis)"
   },
   {
     "code": "PVM21",
@@ -97,27 +97,27 @@
   {
     "code": "PVM25",
     "value": 21,
-    "description": "Atvejai, kai pirkėjas išskaito ir sumoka PVM už jam tiekiamas prekes ar teikiamas paslaugas (PVMĮ 96 straipsnis)"
+    "description": "Atvejai, kai pirkėjas išskaito ir sumoka PVM už jam tiekiamas prekes ar teikiamas paslaugas (PVMĮ 96 str.)"
   },
   {
     "code": "PVM26",
     "value": 9,
-    "description": "Atvejai, kai pirkėjas išskaito ir sumoka PVM už jam tiekiamas prekes ar teikiamas paslaugas (PVMĮ 96 straipsnis)"
+    "description": "Atvejai, kai pirkėjas išskaito ir sumoka PVM už jam tiekiamas prekes ar teikiamas paslaugas (PVMĮ 96 str.)"
   },
   {
     "code": "PVM27",
     "value": 5,
-    "description": "Atvejai, kai pirkėjas išskaito ir sumoka PVM už jam tiekiamas prekes ar teikiamas paslaugas (PVMĮ 96 straipsnis)"
+    "description": "Atvejai, kai pirkėjas išskaito ir sumoka PVM už jam tiekiamas prekes ar teikiamas paslaugas (PVMĮ 96 str.)"
   },
   {
     "code": "PVM28",
     "value": 0,
-    "description": "Atvejai, kai prekės (paslaugos) yra suvartotos PVM mokėtojo privatiems poreikiams tenkinti (PVMĮ 5 ir 8 straipsniai)"
+    "description": "Atvejai, kai prekės (paslaugos) yra suvartotos PVM mokėtojo privatiems poreikiams tenkinti (PVMĮ 5 ir 8 str.)"
   },
   {
     "code": "PVM29",
     "value": null,
-    "description": "Atvejai, kai prekės (paslaugos) yra suvartotos PVM mokėtojo privatiems poreikiams tenkinti (PVMĮ 5 ir 8 straipsniai)"
+    "description": "Atvejai, kai prekės (paslaugos) yra suvartotos PVM mokėtojo privatiems poreikiams tenkinti (PVMĮ 5 ir 8 str.)"
   },
   {
     "code": "PVM3",
@@ -127,12 +127,12 @@
   {
     "code": "PVM30",
     "value": 9,
-    "description": "PVM mokėtojo ilgalaikio materialiojo turto pasigaminimas ir nuosavybės teise priklausančio ar nepriklausančio pastato (statinio) esminis pagerinimas (PVMĮ 6 straipsnis)"
+    "description": "PVM mokėtojo ilgalaikio materialiojo turto pasigaminimas ir nuosavybės teise priklausančio ar nepriklausančio pastato (statinio) esminis pagerinimas (PVMĮ 6 str.)"
   },
   {
     "code": "PVM31",
     "value": 5,
-    "description": "PVM mokėtojo ilgalaikio materialiojo turto pasigaminimas ir nuosavybės teise priklausančio ar nepriklausančio pastato (statinio) esminis pagerinimas (PVMĮ 6 straipsnis)"
+    "description": "PVM mokėtojo ilgalaikio materialiojo turto pasigaminimas ir nuosavybės teise priklausančio ar nepriklausančio pastato (statinio) esminis pagerinimas (PVMĮ 6 str.)"
   },
   {
     "code": "PVM32",
@@ -147,32 +147,32 @@
   {
     "code": "PVM34",
     "value": null,
-    "description": "Už Lietuvos ribų patiektos prekės ir/ar suteiktos paslaugos (atvejai, kai PVM neskaičiuojamas, nes prekių tiekimas ir / ar paslaugų teikimas laikomas įvykusiu už Lietuvos ribų ir yra ne PVM objektas Lietuvoje, o PVM atskaita atsižvelgiant į PVMĮ 58 str. nuostatas negalima)"
+    "description": "Už Lietuvos ribų patiektos prekės ir / ar suteiktos paslaugos (atvejai, kai PVM neskaičiuojamas, nes prekių tiekimas ir / ar paslaugų teikimas laikomas įvykusiu už Lietuvos ribų ir yra ne PVM objektas Lietuvoje, o PVM atskaita atsižvelgiant į PVMĮ 58 str. nuostatas negalima)"
   },
   {
     "code": "PVM35",
     "value": 0,
-    "description": "Atvejai, kai iš kitų valstybių narių prekių įsigijimas laikomas įvykusiu šalies teritorijoje (PVMĮ 4.1 ir 12.2 straipsniai)"
+    "description": "Atvejai, kai iš kitų valstybių narių prekių įsigijimas laikomas įvykusiu šalies teritorijoje (PVMĮ 4(1) ir 12(2) str.)"
   },
   {
     "code": "PVM36",
     "value": null,
-    "description": "Atvejai, kai iš kitų valstybių narių prekių įsigijimas laikomas įvykusiu šalies teritorijoje (PVMĮ 4.1 ir 12.2 straipsniai)"
+    "description": "Atvejai, kai iš kitų valstybių narių prekių įsigijimas laikomas įvykusiu šalies teritorijoje (PVMĮ 4(1) ir 12(2) str.)"
   },
   {
     "code": "PVM37",
     "value": 5,
-    "description": "Iš užsienio valstybių (išskyrus iš ES PVM mokėtojų) įsigytos paslaugos, kurių pardavimo PVM apskaičiuoja pirkėjas (PVMĮ 95 str. 2 dalis)"
+    "description": "Iš užsienio valstybių (išskyrus iš ES PVM mokėtojus) įsigytos paslaugos, kurių pardavimo PVM apskaičiuoja pirkėjas (PVMĮ 95 str. 2 dalis)"
   },
   {
     "code": "PVM38",
     "value": 0,
-    "description": "Iš užsienio valstybių (išskyrus iš ES PVM mokėtojų) įsigytos paslaugos, kurių pardavimo PVM apskaičiuoja pirkėjas (PVMĮ 95 str. 2 dalis)"
+    "description": "Iš užsienio valstybių (išskyrus iš ES PVM mokėtojus) įsigytos paslaugos, kurių pardavimo PVM apskaičiuoja pirkėjas (PVMĮ 95 str. 2 dalis)"
   },
   {
     "code": "PVM39",
     "value": null,
-    "description": "Iš užsienio valstybių (išskyrus iš ES PVM mokėtojų) įsigytos paslaugos, kurių pardavimo PVM apskaičiuoja pirkėjas (PVMĮ 95 str. 2 dalis)"
+    "description": "Iš užsienio valstybių (išskyrus iš ES PVM mokėtojus) įsigytos paslaugos, kurių pardavimo PVM apskaičiuoja pirkėjas (PVMĮ 95 str. 2 dalis)"
   },
   {
     "code": "PVM40",
@@ -187,7 +187,7 @@
   {
     "code": "PVM42",
     "value": null,
-    "description": "Iš ES PVM mokėtojų įsigytos paslaugos, kurių pardavimo PVM pirkėjas neapskaičiuoja (PVMĮ 95 str. 1 dalies 2 punktas)  "
+    "description": "Iš ES PVM mokėtojų įsigytos paslaugos, kurių pardavimo PVM pirkėjas neapskaičiuoja (PVMĮ 95 str. 1 dalies 2 punktas)"
   },
   {
     "code": "PVM43",
@@ -217,12 +217,52 @@
   {
     "code": "PVM48",
     "value": null,
-    "description": "Už Lietuvos ribų įsigytos prekės ir/ar paslaugos (įskaitant atvejus, kai apskaičiuotas užsienio šalies PVM ir atvejus, kai prekės importuojamos vidaus vartojimui)) (atvejai, kai prekių ir/ar paslaugų įsigijimas laikomas įvykusiu už Lietuvos ribų ir pardavimo PVM Lietuvoje neskaičiuojamas, nes įsigijimas - ne PVM objektas Lietuvoje),"
+    "description": "Už Lietuvos ribų įsigytos prekės ir / ar paslaugos (įskaitant atvejus, kai apskaičiuotas užsienio šalies PVM ir atvejus, kai prekės importuojamos vidaus vartojimui)) (atvejai, kai prekių ir / ar paslaugų įsigijimas laikomas įvykusiu už Lietuvos ribų ir pardavimo PVM Lietuvoje neskaičiuojamas, nes įsigijimas - ne PVM objektas Lietuvoje),"
   },
   {
     "code": "PVM49",
     "value": 6,
     "description": "Atvejai, kai žemės ūkio produkcija ir paslaugos įsigytos iš ūkininkų, kuriems taikoma kompensacinio PVM tarifo schema"
+  },
+  {
+    "code": "PVM50",
+    "value": 0,
+    "description": "ES PVM mokėtojams patiektos prekės, kurios buvo pristatytos tiekti pagal pareikalavimą, PVM įstatymo 4(2) str. nurodytomis sąlygomis (PVMĮ 49 str. 1, 4 dalys)"
+  },
+  {
+    "code": "PVM51",
+    "value": 0,
+    "description": "Sandoriai, apmokestinami taikant PVMĮ 19 str. 5 dalies 2 ir 3 punktus (visi atvejai, įskaitant, pvz., PVMĮ 5 str.)"
+  },
+  {
+    "code": "PVM52",
+    "value": 9,
+    "description": "Atvejai, kai sandoriams taikoma speciali apmokestinimo schema (marža) (PVMĮ II, III skirsniai)"
+  },
+  {
+    "code": "PVM53",
+    "value": 5,
+    "description": "Atvejai, kai sandoriams taikoma speciali apmokestinimo schema (marža) (PVMĮ II, III skirsniai)"
+  },
+  {
+    "code": "PVM54",
+    "value": 9,
+    "description": "Iš užsienio valstybių (išskyrus iš ES PVM mokėtojų) įsigytos paslaugos, kurių pardavimo PVM apskaičiuoja pirkėjas (PVMĮ 95 str. 2 dalis)"
+  },
+  {
+    "code": "PVM55",
+    "value": 0,
+    "description": "PVMĮ 50(1) str. 1 ir 4 dalyse nurodyti sandoriai "
+  },
+  {
+    "code": "PVM56",
+    "value": null,
+    "description": "PVMĮ 50(1) str. 2 dalyje nurodyti sandoriai"
+  },
+  {
+    "code": "PVM57",
+    "value": 9,
+    "description": "Iš ES PVM mokėtojų įsigytos paslaugos, kurių pardavimo PVM apskaičiuoja pirkėjas (PVMĮ 95 str. 2 dalis)"
   },
   {
     "code": "PVM100",

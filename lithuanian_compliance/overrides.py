@@ -5,6 +5,12 @@ from . import settings as lt_settings
 
 
 class CustomPurchaseInvoice(PurchaseInvoice):
+	def before_insert(self):
+		"""Set document name to bill_no if the feature is enabled."""
+		if lt_settings.should_use_bill_no_as_title():
+			if getattr(self, "bill_no", None):
+				self.title = self.bill_no
+
 	def get_gl_entries(self, warehouse_account=None):
 		gl_entries = super().get_gl_entries(warehouse_account)
 

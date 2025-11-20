@@ -1,7 +1,6 @@
 {
- "app": "lithuanian_compliance",
  "charts": [],
- "content": "[{\"id\":\"spacer1\",\"type\":\"spacer\",\"data\":{\"col\":12}},{\"id\":\"0leurAl3z3\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Generate i.SAF\",\"col\":6}},{\"id\":\"a03oguQJtQ\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Lithuanian Compliance Settings\",\"col\":6}}]",
+ "content": "[{\"id\":\"0leurAl3z3\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Generate i.SAF\",\"col\":7}},{\"id\":\"a03oguQJtQ\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Lithuanian Compliance Settings\",\"col\":7}}]",
  "creation": "2025-11-12 10:00:00",
  "custom_blocks": [],
  "docstatus": 0,
@@ -13,7 +12,7 @@
  "is_hidden": 0,
  "label": "Lithuania",
  "links": [],
- "modified": "2025-11-12 10:00:00",
+ "modified": "2025-11-18 11:22:45.582521",
  "modified_by": "Administrator",
  "module": "Lithuanian Compliance",
  "name": "Lithuania",
@@ -41,6 +40,5 @@
    "type": "DocType"
   }
  ],
- "title": "Lithuania",
- "type": "Workspace"
+ "title": "Lithuania"
 }

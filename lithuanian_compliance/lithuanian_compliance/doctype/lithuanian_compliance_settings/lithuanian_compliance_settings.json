@@ -17,6 +17,8 @@
     "section_rounding",
     "purchase_round_off_account",
     "sales_round_off_account",
+    "section_purchase_naming",
+    "use_bill_no_as_title",
     "section_pvm",
     "default_pvm_classificator",
     "pvm_item_map"
@@ -38,6 +40,17 @@
       "fieldtype": "Link",
       "options": "Account",
       "label": "Sales Round Off Account"
+    },
+    {
+      "fieldname": "section_purchase_naming",
+      "fieldtype": "Section Break",
+      "label": "Purchase Invoices"
+    },
+    {
+      "fieldname": "use_bill_no_as_title",
+      "fieldtype": "Check",
+      "label": "Use Bill No. as Document Title",
+      "description": "If checked, the Purchase Invoice document name will be set to the Bill No."
     },
     {
       "fieldname": "section_pvm",

@@ -36,6 +36,12 @@ msgstr "Pirkimo suapvalinimo sąskaita"
 msgid "Sales Round Off Account"
 msgstr "Pardavimo suapvalinimo sąskaita"
 
+msgid "Use Bill No. as Document Title"
+msgstr "Dokumento pavadinimui naudoti sąskaitos numerį."
+
+msgid "If checked, the Purchase Invoice document name will be set to the Bill No."
+msgstr "Jei pažymėta, pirkimo sąskaitos faktūros dokumento pavadinimas bus nustatytas į Sąskaitos Nr."
+
 msgid "PVM Classificators"
 msgstr "PVM klasifikatoriai"
 
@@ -44,7 +50,6 @@ msgstr "Numatytasis PVM klasifikatorius"
 
 msgid "Per-Item PVM Classificator Overrides"
 msgstr "PVM klasifikatorius per prekę pakeitimai"
-
 
 #: pvm classificator doctype
 
@@ -59,7 +64,6 @@ msgstr "Norma (%)"
 
 msgid "Description"
 msgstr "Aprašymas"
-
 
 #: i.SAF XML Generation
 
@@ -93,7 +97,6 @@ msgstr "2 žingsnis: Pasirinkite laikotarpį"
 msgid "Select the reporting period for the i.SAF export:"
 msgstr "Pasirinkite ataskaitinį laikotarpį i.SAF eksportui:"
 
-
 msgid "Year"
 msgstr "Metai"
 
@@ -112,10 +115,8 @@ msgstr "Pasirinktas laikotarpis:"
 msgid "Step 3: Review and Exclude Invoices"
 msgstr "3 žingsnis: Peržiūrėti ir atmesti sąskaitas"
 
-
 msgid "Review invoices that will be included in the i.SAF export."
 msgstr "Peržiūrėkite sąskaitas, kurios bus įtrauktos į i.SAF eksportą."
-
 
 msgid "You can exclude specific invoices if needed."
 msgstr "Pagal poreikį galite atmesti konkrečias sąskaitas."
@@ -123,17 +124,14 @@ msgstr "Pagal poreikį galite atmesti konkrečias sąskaitas."
 msgid "This may take a moment."
 msgstr "Tai gali užtrukti akimirką."
 
-
 msgid "invoices found"
 msgstr "sąskaitų rastos"
 
 msgid "Select All"
 msgstr "Pasirinkti viską"
 
-
 msgid "Deselect All"
 msgstr "Atžymėti viską"
-
 
 msgid "Include"
 msgstr "Įtraukti"
@@ -146,7 +144,6 @@ msgstr "Sąskaitos Nr."
 
 msgid "Date"
 msgstr "Data"
-
 
 msgid "Amount"
 msgstr "Suma"
@@ -163,20 +160,17 @@ msgstr "PVM"
 msgid "invoice(s)"
 msgstr "sąskaitų rastos"
 
-
 msgid "Step 4: Generate i.SAF XML File"
 msgstr "4 žingsnis: Generuoti i.SAF XML failą"
 
 msgid "Review your selections and generate the i.SAF XML file:"
 msgstr "Peržiūrėkite savo pasirinkimus ir sugeneruokite i.SAF XML failą:"
 
-
 msgid "Export Summary"
 msgstr "Eksporto santrauka"
 
 msgid "Generate i.SAF XML File"
 msgstr "Generuoti i.SAF XML failą"
-
 
 msgid "Previous"
 msgstr "Ankstesnis"

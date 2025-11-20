@@ -57,3 +57,12 @@ def get_item_pvm_classificator(item_code: str) -> str | None:
 		return get_default_pvm_classificator()
 	except Exception:
 		return None
+
+
+def should_use_bill_no_as_title() -> bool:
+	"""Check if Purchase Invoice should use bill_no as document title."""
+	try:
+		settings = get_settings()
+		return bool(getattr(settings, "use_bill_no_as_title", False))
+	except Exception:
+		return False
