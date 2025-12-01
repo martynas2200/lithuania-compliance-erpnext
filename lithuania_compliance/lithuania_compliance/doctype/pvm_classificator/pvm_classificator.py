@@ -3,6 +3,6 @@ from frappe.model.document import Document
 
 
 class PVMClassificator(Document):
-	"""Represents a Lithuanian PVM classificator entry."""
+	"""Represents a PVM classificator entry."""
 
 	pass

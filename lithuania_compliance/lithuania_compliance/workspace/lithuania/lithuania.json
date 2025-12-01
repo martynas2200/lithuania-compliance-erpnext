@@ -1,6 +1,6 @@
 {
  "charts": [],
- "content": "[{\"id\":\"0leurAl3z3\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Generate i.SAF\",\"col\":7}},{\"id\":\"a03oguQJtQ\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Lithuanian Compliance Settings\",\"col\":7}}]",
+ "content": "[{\"id\":\"0leurAl3z3\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Generate i.SAF\",\"col\":7}},{\"id\":\"a03oguQJtQ\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Lithuania Compliance Settings\",\"col\":7}}]",
  "creation": "2025-11-12 10:00:00",
  "custom_blocks": [],
  "docstatus": 0,
@@ -14,7 +14,7 @@
  "links": [],
  "modified": "2025-11-18 11:22:45.582521",
  "modified_by": "Administrator",
- "module": "Lithuanian Compliance",
+ "module": "Lithuania Compliance",
  "name": "Lithuania",
  "number_cards": [],
  "owner": "Administrator",
@@ -34,8 +34,8 @@
   {
    "color": "Grey",
    "doc_view": "List",
-   "label": "Lithuanian Compliance Settings",
-   "link_to": "Lithuanian Compliance Settings",
+   "label": "Lithuania Compliance Settings",
+   "link_to": "Lithuania Compliance Settings",
    "stats_filter": "[]",
    "type": "DocType"
   }

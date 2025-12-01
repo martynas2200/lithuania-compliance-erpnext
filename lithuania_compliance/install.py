@@ -6,27 +6,27 @@ import frappe
 
 def _load_json(joins: list[str]) -> dict | list | None:
 	"""Load a JSON list from a file within this app if it exists."""
-	path = frappe.get_app_path("lithuanian_compliance", *joins)
+	path = frappe.get_app_path("lithuania_compliance", *joins)
 	if not os.path.exists(path):
 		return None
 	try:
 		with open(path) as f:
 			return json.load(f)
 	except Exception as e:
-		frappe.log_error(f"Failed reading JSON: {path}: {e}", "lithuanian_compliance install")
+		frappe.log_error(f"Failed reading JSON: {path}: {e}", "lithuania_compliance install")
 		return None
 
 
 def seed_pvm_classificators() -> None:
 	"""Create/Update PVM Classificators from defaults.json if present.
 
-	File location: lithuanian_compliance/doctype/pvm_classificator/defaults.json
+	File location: lithuania_compliance/doctype/pvm_classificator/defaults.json
 	Expected format: a JSON array of objects with keys: code (str), description (str, optional)
 	Any additional keys will be ignored.
 	"""
 	rows = _load_json(
 		[
-			"lithuanian_compliance",
+			"lithuania_compliance",
 			"doctype",
 			"pvm_classificator",
 			"defaults.json",
@@ -63,7 +63,7 @@ def seed_pvm_classificators() -> None:
 def ensure_default_settings() -> None:
 	"""If settings exist and default classificator is empty, set a sensible default."""
 	try:
-		settings = frappe.get_single("Lithuanian Compliance Settings")
+		settings = frappe.get_single("lithuania Compliance Settings")
 		if not settings.default_pvm_classificator and frappe.db.exists("PVM Classificator", "PVM1"):
 			settings.default_pvm_classificator = "PVM1"
 			settings.save(ignore_permissions=True)

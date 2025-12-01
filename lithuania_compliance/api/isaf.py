@@ -1,5 +1,5 @@
 """
-API methods for Lithuanian Compliance app
+API methods for Lithuania Compliance app
 """
 
 import json
@@ -15,7 +15,7 @@ from frappe import _
 @frappe.whitelist()
 def generate_isaf_xml(export_type, from_date, to_date, excluded_invoices=None):
 	"""
-	Generate i.SAF XML file for Lithuanian tax compliance
+	Generate i.SAF XML file for Lithuania tax compliance
 
 	Args:
 		export_type: 'receivable' or 'payable'
@@ -97,7 +97,7 @@ def generate_isaf_xml_content(invoices, export_type, from_date, to_date):
 	Generate the actual XML content for i.SAF format
 
 	This is a placeholder implementation. You should customize this
-	according to the official Lithuanian i.SAF specification.
+	according to the official Lithuania i.SAF specification.
 	"""
 
 	# Create root element

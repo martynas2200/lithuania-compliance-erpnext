@@ -2,9 +2,9 @@ import frappe
 
 
 def get_settings():
-	"""Return cached single settings doc for Lithuanian compliance."""
+	"""Return cached single settings doc for Lithuania compliance."""
 	# Using get_cached_doc ensures low DB load and auto-refresh on save
-	return frappe.get_cached_doc("Lithuanian Compliance Settings")
+	return frappe.get_cached_doc("Lithuania Compliance Settings")
 
 
 def get_purchase_round_off_account(company: str | None = None) -> str | None:

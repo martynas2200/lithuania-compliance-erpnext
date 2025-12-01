@@ -29,7 +29,7 @@ function getItemPricesAndOpenDialog(frm) {
 	}
 
 	frappe.call({
-		method: "lithuanian_compliance.api.purchase_invoice.get_item_prices",
+		method: "lithuania_compliance.api.purchase_invoice.get_item_prices",
 		args: {
 			invoice_name: frm.doc.name,
 		},

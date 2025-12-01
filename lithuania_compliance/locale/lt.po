@@ -24,7 +24,7 @@ msgstr "Mokestis"
 
 #: settings page
 
-msgid "Lithuanian STI Compliance Settings"
+msgid "Lithuania STI Compliance Settings"
 msgstr "Lietuvos VMI atitikties nustatymai"
 
 msgid "Rounding Accounts"

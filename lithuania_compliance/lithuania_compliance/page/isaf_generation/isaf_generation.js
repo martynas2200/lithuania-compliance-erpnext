@@ -369,7 +369,7 @@ frappe.ISAFGenerationWizard = {
 		this.content_wrapper.find("#generation-progress").removeClass("hidden");
 
 		frappe.call({
-			method: "lithuanian_compliance.api.isaf.generate_isaf_xml",
+			method: "lithuania_compliance.api.isaf.generate_isaf_xml",
 			args: {
 				export_type: this.data.export_type,
 				from_date: frappe.datetime.obj_to_str(this.data.from_date),

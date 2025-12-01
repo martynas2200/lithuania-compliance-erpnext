@@ -1,5 +1,5 @@
 [project]
-name = "lithuanian_compliance"
+name = "lithuania_compliance"
 authors = [
     { name = "Martynas Miliauskas", email = "pagalba@ekranas.info"}
 ]

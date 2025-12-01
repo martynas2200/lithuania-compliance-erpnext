@@ -1,5 +1,5 @@
-app_name = "lithuanian_compliance"
-app_title = "Lithuanian Compliance"
+app_name = "lithuania_compliance"
+app_title = "lithuania Compliance"
 app_publisher = "Martynas Miliauskas"
 app_description = "Adjust ERPNext to adhere to VMI requirements"
 app_email = "pagalba@ekranas.info"
@@ -10,16 +10,16 @@ app_license = "mit"
 
 # required_apps = []
 
-override_doctype_class = {"Purchase Invoice": "lithuanian_compliance.overrides.CustomPurchaseInvoice"}
+override_doctype_class = {"Purchase Invoice": "lithuania_compliance.overrides.CustomPurchaseInvoice"}
 
 # Each item in the list will be shown as an app in the apps page
 # add_to_apps_screen = [
 # 	{
-# 		"name": "lithuanian_compliance",
-# 		"logo": "/assets/lithuanian_compliance/logo.png",
-# 		"title": "Lithuanian Compliance",
-# 		"route": "/lithuanian_compliance",
-# 		"has_permission": "lithuanian_compliance.api.permission.has_app_permission"
+# 		"name": "lithuania_compliance",
+# 		"logo": "/assets/lithuania_compliance/logo.png",
+# 		"title": "lithuania Compliance",
+# 		"route": "/lithuania_compliance",
+# 		"has_permission": "lithuania_compliance.api.permission.has_app_permission"
 # 	}
 # ]
 
@@ -27,15 +27,15 @@ override_doctype_class = {"Purchase Invoice": "lithuanian_compliance.overrides.C
 # ------------------
 
 # include js, css files in header of desk.html
-# app_include_css = "/assets/lithuanian_compliance/css/lithuanian_compliance.css"
-# app_include_js = "/assets/lithuanian_compliance/js/lithuanian_compliance.js"
+# app_include_css = "/assets/lithuania_compliance/css/lithuania_compliance.css"
+# app_include_js = "/assets/lithuania_compliance/js/lithuania_compliance.js"
 
 # include js, css files in header of web template
-# web_include_css = "/assets/lithuanian_compliance/css/lithuanian_compliance.css"
-# web_include_js = "/assets/lithuanian_compliance/js/lithuanian_compliance.js"
+# web_include_css = "/assets/lithuania_compliance/css/lithuania_compliance.css"
+# web_include_js = "/assets/lithuania_compliance/js/lithuania_compliance.js"
 
 # include custom scss in every website theme (without file extension ".scss")
-# website_theme_scss = "lithuanian_compliance/public/scss/website"
+# website_theme_scss = "lithuania_compliance/public/scss/website"
 
 # include js, css files in header of web form
 # webform_include_js = {"doctype": "public/js/doctype.js"}
@@ -53,7 +53,7 @@ doctype_js = {"Purchase Invoice": "public/js/purchase_invoice.js"}
 # Svg Icons
 # ------------------
 # include app icons in desk
-# app_include_icons = "lithuanian_compliance/public/icons.svg"
+# app_include_icons = "lithuania_compliance/public/icons.svg"
 
 # Home Pages
 # ----------
@@ -80,43 +80,43 @@ doctype_js = {"Purchase Invoice": "public/js/purchase_invoice.js"}
 
 # add methods and filters to jinja environment
 # jinja = {
-# 	"methods": "lithuanian_compliance.utils.jinja_methods",
-# 	"filters": "lithuanian_compliance.utils.jinja_filters"
+# 	"methods": "lithuania_compliance.utils.jinja_methods",
+# 	"filters": "lithuania_compliance.utils.jinja_filters"
 # }
 
 # Installation
 # ------------
 
-# before_install = "lithuanian_compliance.install.before_install"
-after_install = "lithuanian_compliance.install.after_install"
+# before_install = "lithuania_compliance.install.before_install"
+after_install = "lithuania_compliance.install.after_install"
 
 # Uninstallation
 # ------------
 
-# before_uninstall = "lithuanian_compliance.uninstall.before_uninstall"
-# after_uninstall = "lithuanian_compliance.uninstall.after_uninstall"
+# before_uninstall = "lithuania_compliance.uninstall.before_uninstall"
+# after_uninstall = "lithuania_compliance.uninstall.after_uninstall"
 
 # Integration Setup
 # ------------------
 # To set up dependencies/integrations with other apps
 # Name of the app being installed is passed as an argument
 
-# before_app_install = "lithuanian_compliance.utils.before_app_install"
-# after_app_install = "lithuanian_compliance.utils.after_app_install"
+# before_app_install = "lithuania_compliance.utils.before_app_install"
+# after_app_install = "lithuania_compliance.utils.after_app_install"
 
 # Integration Cleanup
 # -------------------
 # To clean up dependencies/integrations with other apps
 # Name of the app being uninstalled is passed as an argument
 
-# before_app_uninstall = "lithuanian_compliance.utils.before_app_uninstall"
-# after_app_uninstall = "lithuanian_compliance.utils.after_app_uninstall"
+# before_app_uninstall = "lithuania_compliance.utils.before_app_uninstall"
+# after_app_uninstall = "lithuania_compliance.utils.after_app_uninstall"
 
 # Desk Notifications
 # ------------------
 # See frappe.core.notifications.get_notification_config
 
-# notification_config = "lithuanian_compliance.notifications.get_notification_config"
+# notification_config = "lithuania_compliance.notifications.get_notification_config"
 
 # Permissions
 # -----------
@@ -147,47 +147,47 @@ after_install = "lithuanian_compliance.install.after_install"
 
 # scheduler_events = {
 # 	"all": [
-# 		"lithuanian_compliance.tasks.all"
+# 		"lithuania_compliance.tasks.all"
 # 	],
 # 	"daily": [
-# 		"lithuanian_compliance.tasks.daily"
+# 		"lithuania_compliance.tasks.daily"
 # 	],
 # 	"hourly": [
-# 		"lithuanian_compliance.tasks.hourly"
+# 		"lithuania_compliance.tasks.hourly"
 # 	],
 # 	"weekly": [
-# 		"lithuanian_compliance.tasks.weekly"
+# 		"lithuania_compliance.tasks.weekly"
 # 	],
 # 	"monthly": [
-# 		"lithuanian_compliance.tasks.monthly"
+# 		"lithuania_compliance.tasks.monthly"
 # 	],
 # }
 
 # Testing
 # -------
 
-after_migrate = ["lithuanian_compliance.install.after_migrate"]
+after_migrate = ["lithuania_compliance.install.after_migrate"]
 
 # Extend DocType Class
 # ------------------------------
 #
 # Specify custom mixins to extend the standard doctype controller.
 # extend_doctype_class = {
-# 	"Task": "lithuanian_compliance.custom.task.CustomTaskMixin"
+# 	"Task": "lithuania_compliance.custom.task.CustomTaskMixin"
 # }
 
 # Overriding Methods
 # ------------------------------
 #
 # override_whitelisted_methods = {
-# 	"frappe.desk.doctype.event.event.get_events": "lithuanian_compliance.event.get_events"
+# 	"frappe.desk.doctype.event.event.get_events": "lithuania_compliance.event.get_events"
 # }
 #
 # each overriding function accepts a `data` argument;
 # generated from the base implementation of the doctype dashboard,
 # along with any modifications made in other Frappe apps
 # override_doctype_dashboards = {
-# 	"Task": "lithuanian_compliance.task.get_dashboard_data"
+# 	"Task": "lithuania_compliance.task.get_dashboard_data"
 # }
 
 # exempt linked doctypes from being automatically cancelled
@@ -201,13 +201,13 @@ after_migrate = ["lithuanian_compliance.install.after_migrate"]
 
 # Request Events
 # ----------------
-# before_request = ["lithuanian_compliance.utils.before_request"]
-# after_request = ["lithuanian_compliance.utils.after_request"]
+# before_request = ["lithuania_compliance.utils.before_request"]
+# after_request = ["lithuania_compliance.utils.after_request"]
 
 # Job Events
 # ----------
-# before_job = ["lithuanian_compliance.utils.before_job"]
-# after_job = ["lithuanian_compliance.utils.after_job"]
+# before_job = ["lithuania_compliance.utils.before_job"]
+# after_job = ["lithuania_compliance.utils.after_job"]
 
 # User Data Protection
 # --------------------
@@ -237,7 +237,7 @@ after_migrate = ["lithuanian_compliance.install.after_migrate"]
 # --------------------------------
 
 # auth_hooks = [
-# 	"lithuanian_compliance.auth.validate"
+# 	"lithuania_compliance.auth.validate"
 # ]
 
 # Automatically update python controller files with type annotations for this app.
