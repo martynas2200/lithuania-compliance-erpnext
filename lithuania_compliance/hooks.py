@@ -22,6 +22,7 @@ override_doctype_class = {"Purchase Invoice": "lithuania_compliance.overrides.Cu
 # 		"has_permission": "lithuania_compliance.api.permission.has_app_permission"
 # 	}
 # ]
+fixtures = [{"dt": "Custom Field", "filters": [["name", "in", ["Supplier-business_code"]]]}]
 
 # Includes in <head>
 # ------------------

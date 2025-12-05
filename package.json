@@ -1,0 +1,8 @@
+{
+  "name": "lithuania_compliance",
+  "version": "0.0.2",
+  "description": "Adjust ERPNext to adhere to Lithunia STI requirements",
+  "scripts": {
+    "build": "python3 lithuania_compliance/locale/merge_po_files.py || python lithuania_compliance/locale/merge_po_files.py"
+  }
+}
