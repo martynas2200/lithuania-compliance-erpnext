@@ -9361,28 +9361,24 @@ msgid "Download Your Data"
 msgstr "Atsisiųskite savo duomenis"
 
 #: frappe/core/doctype/prepared_report/prepared_report.js:49
-#, fuzzy
 msgid "Download as CSV"
 msgstr "Atsisiųsti kaip CSV"
 
 #: frappe/contacts/doctype/contact/contact.js:98
-#, fuzzy
 msgid "Download vCard"
-msgstr "\"Atsisiųsti \"\"vCard\""
+msgstr "Atsisiųsti vCard"
 
 #: frappe/contacts/doctype/contact/contact_list.js:4
 #, fuzzy
 msgid "Download vCards"
-msgstr "\"Atsisiųsti \"\"vCards\""
+msgstr "Atsisiųsti vCards"
 
 #: frappe/desk/page/setup_wizard/install_fixtures.py:46
-#, fuzzy
 msgid "Dr"
 msgstr "Dr."
 
 #: frappe/public/js/frappe/model/indicator.js:73
 #: frappe/public/js/frappe/ui/filters/filter.js:538
-#, fuzzy
 msgid "Draft"
 msgstr "Juodraštis"
 
@@ -9390,7 +9386,6 @@ msgstr "Juodraštis"
 #: frappe/public/js/frappe/views/workspace/blocks/paragraph.js:136
 #: frappe/public/js/frappe/views/workspace/blocks/spacer.js:44
 #: frappe/public/js/frappe/widgets/base_widget.js:33
-#, fuzzy
 msgid "Drag"
 msgstr "Vilkite"
 
@@ -9413,14 +9408,12 @@ msgid "Drag elements from the sidebar to add. Drag them back to trash."
 msgstr "Vilkite elementus iš šoninės juostos ir pridėkite. Vilkite juos atgal į šiukšliadėžę."
 
 #: frappe/public/js/workflow_builder/WorkflowBuilder.vue:296
-#, fuzzy
 msgid "Drag to add state"
 msgstr "Vilkite, kad pridėtumėte būseną"
 
 #: frappe/public/js/frappe/file_uploader/FileUploader.vue:189
-#, fuzzy
 msgid "Drop files here"
-msgstr "Įmeskite failus čia"
+msgstr "Meskite failus čia"
 
 #. Label of the section_break_2 (Section Break) field in DocType 'Navbar
 #. Settings'
@@ -9431,7 +9424,6 @@ msgstr "Išskleidžiamieji langeliai"
 
 #. Label of the date (Date) field in DocType 'ToDo'
 #: frappe/desk/doctype/todo/todo.json
-#, fuzzy
 msgid "Due Date"
 msgstr "Apmokėjimo/atlikimo data"
 
@@ -31410,12 +31402,10 @@ msgstr "Puslapio pavadinimas"
 #: frappe/core/doctype/communication/communication.json
 #: frappe/core/doctype/permission_log/permission_log.js:12
 #: frappe/public/js/frappe/views/inbox/inbox_view.js:70
-#, fuzzy
 msgid "To"
 msgstr "Kam"
 
 #: frappe/public/js/frappe/views/communication.js:53
-#, fuzzy
 msgctxt "Email Recipients"
 msgid "To"
 msgstr "Kam"
@@ -31423,9 +31413,8 @@ msgstr "Kam"
 #. Label of the to_date (Date) field in DocType 'Dashboard Chart'
 #: frappe/desk/doctype/dashboard_chart/dashboard_chart.json
 #: frappe/website/report/website_analytics/website_analytics.js:14
-#, fuzzy
 msgid "To Date"
-msgstr "Iki šiol"
+msgstr "Data iki"
 
 #. Label of the to_date_field (Select) field in DocType 'Auto Email Report'
 #: frappe/email/doctype/auto_email_report/auto_email_report.json
@@ -34899,10 +34888,9 @@ msgid "You are selecting Sync Option as ALL, It will resync all read as well as 
 msgstr "Pasirinkę sinchronizavimo parinktį VISI, iš naujo sinchronizuosite visus perskaitytus ir neperskaitytus pranešimus iš serverio. Tai taip pat gali sukelti pranešimo (el. laiškų) dubliavimąsi."
 
 #: frappe/public/js/frappe/form/footer/form_timeline.js:414
-#, fuzzy
 msgctxt "Form timeline"
 msgid "You attached {0}"
-msgstr "Jūs pritvirtinote {0}"
+msgstr "Jūs pridėjote {0}"
 
 #: frappe/printing/page/print_format_builder/print_format_builder.js:749
 msgid "You can add dynamic properties from the document by using Jinja templating."
@@ -35356,42 +35344,35 @@ msgid "You've logged in as another user from another tab. Refresh this page to c
 msgstr "Prisijungėte kaip kitas naudotojas iš kito skirtuko. Norėdami toliau naudotis sistema, atnaujinkite šį puslapį."
 
 #: frappe/public/js/frappe/ui/toolbar/about.js:11
-#, fuzzy
 msgid "YouTube"
-msgstr "\"\"\"YouTube\"\"\""
+msgstr "YouTube"
 
 #: frappe/core/doctype/prepared_report/prepared_report.js:57
 msgid "Your CSV file is being generated and will appear in the Attachments section once ready. Additionally, you will get notified when the file is available for download."
 msgstr "\"Jūsų CSV failas yra generuojamas ir bus rodomas skiltyje \"\"Priedai\"\", kai bus paruoštas. Be to, gausite pranešimą, kai failą bus galima atsisiųsti.\""
 
 #: frappe/desk/page/setup_wizard/setup_wizard.js:397
-#, fuzzy
 msgid "Your Country"
 msgstr "Jūsų šalis"
 
 #: frappe/desk/page/setup_wizard/setup_wizard.js:389
-#, fuzzy
 msgid "Your Language"
 msgstr "Jūsų kalba"
 
 #: frappe/templates/includes/comments/comments.html:21
-#, fuzzy
 msgid "Your Name"
 msgstr "Jūsų vardas ir pavardė"
 
 #: frappe/public/js/frappe/list/bulk_operations.js:132
-#, fuzzy
 msgid "Your PDF is ready for download"
 msgstr "Jūsų PDF paruoštas atsisiųsti"
 
 #: frappe/patches/v14_0/update_workspace2.py:34
-#, fuzzy
 msgid "Your Shortcuts"
 msgstr "Jūsų nuorodos"
 
 #: frappe/website/doctype/personal_data_deletion_request/personal_data_deletion_request.py:145
 #: frappe/website/doctype/personal_data_deletion_request/personal_data_deletion_request.py:151
-#, fuzzy
 msgid "Your account has been deleted"
 msgstr "Jūsų paskyra ištrinta"
 
@@ -35400,36 +35381,30 @@ msgid "Your account has been locked and will resume after {0} seconds"
 msgstr "Jūsų paskyra buvo užblokuota ir bus atnaujinta po {0} sekundžių"
 
 #: frappe/desk/form/assign_to.py:279
-#, fuzzy
 msgid "Your assignment on {0} {1} has been removed by {2}"
 msgstr "Jūsų užduotį {0} {1} pašalino {2}"
 
 #: frappe/core/doctype/file/file.js:74
-#, fuzzy
 msgid "Your browser does not support the audio element."
 msgstr "Jūsų naršyklė nepalaiko garso elemento."
 
 #: frappe/core/doctype/file/file.js:56
-#, fuzzy
 msgid "Your browser does not support the video element."
 msgstr "Jūsų naršyklė nepalaiko vaizdo elemento."
 
 #: frappe/templates/pages/integrations/gcalendar-success.html:11
 msgid "Your connection request to Google Calendar was successfully accepted"
-msgstr "\"Jūsų prisijungimo prie \"\"Google\"\" kalendoriaus užklausa sėkmingai priimta\""
+msgstr "Jūsų prisijungimo prie Google kalendoriaus užklausa sėkmingai priimta"
 
 #: frappe/www/contact.html:35
-#, fuzzy
 msgid "Your email address"
 msgstr "Jūsų el. pašto adresas"
 
 #: frappe/desk/utils.py:105
-#, fuzzy
 msgid "Your exported report: {0}"
 msgstr "Jūsų eksportuota ataskaita: {0}"
 
 #: frappe/public/js/frappe/web_form/web_form.js:452
-#, fuzzy
 msgid "Your form has been successfully updated"
 msgstr "Jūsų forma sėkmingai atnaujinta"
 
@@ -35438,22 +35413,18 @@ msgid "Your invitation to join {0} has been cancelled by the site administrator.
 msgstr "Svetainės administratorius atšaukė jūsų kvietimą prisijungti prie {0}."
 
 #: frappe/templates/emails/user_invitation_expired.html:5
-#, fuzzy
 msgid "Your invitation to join {0} has expired."
 msgstr "Jūsų kvietimas prisijungti prie {0} baigėsi."
 
 #: frappe/templates/emails/new_user.html:6
-#, fuzzy
 msgid "Your login id is"
 msgstr "Jūsų prisijungimo ID yra"
 
 #: frappe/www/update-password.html:192
-#, fuzzy
 msgid "Your new password has been set successfully."
 msgstr "Naujas slaptažodis nustatytas sėkmingai."
 
 #: frappe/www/update-password.html:172
-#, fuzzy
 msgid "Your old password is incorrect."
 msgstr "Jūsų senasis slaptažodis yra neteisingas."
 
@@ -35472,7 +35443,6 @@ msgid "Your report is being generated in the background. You will receive an ema
 msgstr "Jūsų ataskaita generuojama fone. Kai ataskaita bus parengta, {0} gausite el. laišką su atsisiuntimo nuoroda."
 
 #: frappe/app.py:377
-#, fuzzy
 msgid "Your session has expired, please login again to continue."
 msgstr "Jūsų sesija baigėsi, norėdami tęsti, prisijunkite dar kartą."
 
@@ -35481,12 +35451,10 @@ msgid "Your site is undergoing maintenance or being updated."
 msgstr "Jūsų svetainėje atliekama techninė priežiūra arba ji atnaujinama."
 
 #: frappe/templates/emails/verification_code.html:1
-#, fuzzy
 msgid "Your verification code is {0}"
 msgstr "Jūsų patvirtinimo kodas yra {0}"
 
 #: frappe/utils/data.py:1557
-#, fuzzy
 msgid "Zero"
 msgstr "Nulis"
 
@@ -35494,10 +35462,9 @@ msgstr "Nulis"
 #. in DocType 'Auto Email Report'
 #: frappe/email/doctype/auto_email_report/auto_email_report.json
 msgid "Zero means send records updated at anytime"
-msgstr "Nulis reiškia, kad įrašai siunčiami atnaujinami bet kuriuo metu."
+msgstr "Nulis reiškia, kad siuntimo įrašai atnaujinami bet kuriuo metu."
 
 #: frappe/public/js/frappe/form/footer/version_timeline_content_builder.js:358
-#, fuzzy
 msgid "[Action taken by {0}]"
 msgstr "[Veiksmų ėmėsi {0}]"
 
@@ -35506,13 +35473,11 @@ msgid "`as_iterator` only works with `as_list=True` or `as_dict=True`"
 msgstr "`as_iterator` veikia tik su `as_list=True` arba `as_dict=True`"
 
 #: frappe/utils/background_jobs.py:121
-#, fuzzy
 msgid "`job_id` paramater is required for deduplication."
 msgstr "`job_id` parametras reikalingas deduplikacijai."
 
 #. Option for the 'Doc Event' (Select) field in DocType 'Webhook'
 #: frappe/integrations/doctype/webhook/webhook.json
-#, fuzzy
 msgid "after_insert"
 msgstr "after_insert"
 
@@ -35547,25 +35512,21 @@ msgstr "pagal vaidmenį"
 
 #. Label of the profile (Code) field in DocType 'Recorder'
 #: frappe/core/doctype/recorder/recorder.json
-#, fuzzy
 msgid "cProfile Output"
 msgstr "cProfile išvestis"
 
 #: frappe/public/js/frappe/ui/toolbar/search_utils.js:321
-#, fuzzy
 msgid "calendar"
 msgstr "kalendorius"
 
 #. Option for the 'Permission Type' (Select) field in DocType 'Permission
 #. Inspector'
 #: frappe/core/doctype/permission_inspector/permission_inspector.json
-#, fuzzy
 msgid "cancel"
 msgstr "atšaukti"
 
 #. Option for the 'Status' (Select) field in DocType 'RQ Job'
 #: frappe/core/doctype/rq_job/rq_job.json
-#, fuzzy
 msgid "canceled"
 msgstr "atšauktas"
 
@@ -35607,12 +35568,10 @@ msgstr "d"
 
 #. Option for the 'Indicator Color' (Select) field in DocType 'Workspace'
 #: frappe/desk/doctype/workspace/workspace.json
-#, fuzzy
 msgid "darkgrey"
 msgstr "tamsiai pilka"
 
 #: frappe/core/page/dashboard_view/dashboard_view.js:65
-#, fuzzy
 msgid "dashboard"
 msgstr "prietaisų skydelis"
 
@@ -35620,15 +35579,13 @@ msgstr "prietaisų skydelis"
 #. Option for the 'Date Format' (Select) field in DocType 'System Settings'
 #: frappe/core/doctype/language/language.json
 #: frappe/core/doctype/system_settings/system_settings.json
-#, fuzzy
 msgid "dd-mm-yyyy"
-msgstr "dd-mm-rrrr m."
+msgstr "dd-mm-yyyy"
 
 #. Option for the 'Date Format' (Select) field in DocType 'Language'
 #. Option for the 'Date Format' (Select) field in DocType 'System Settings'
 #: frappe/core/doctype/language/language.json
 #: frappe/core/doctype/system_settings/system_settings.json
-#, fuzzy
 msgid "dd.mm.yyyy"
 msgstr "dd.mm.yyyy"
 
@@ -35636,7 +35593,6 @@ msgstr "dd.mm.yyyy"
 #. Option for the 'Date Format' (Select) field in DocType 'System Settings'
 #: frappe/core/doctype/language/language.json
 #: frappe/core/doctype/system_settings/system_settings.json
-#, fuzzy
 msgid "dd/mm/yyyy"
 msgstr "dd/mm/rrrr"
 
@@ -35644,31 +35600,26 @@ msgstr "dd/mm/rrrr"
 #. Option for the 'Queue Type(s)' (Select) field in DocType 'RQ Worker'
 #: frappe/core/doctype/rq_job/rq_job.json
 #: frappe/core/doctype/rq_worker/rq_worker.json
-#, fuzzy
 msgid "default"
 msgstr "numatytasis"
 
 #. Option for the 'Status' (Select) field in DocType 'RQ Job'
 #: frappe/core/doctype/rq_job/rq_job.json
-#, fuzzy
 msgid "deferred"
 msgstr "atidėtas"
 
 #. Option for the 'Permission Type' (Select) field in DocType 'Permission
 #. Inspector'
 #: frappe/core/doctype/permission_inspector/permission_inspector.json
-#, fuzzy
 msgid "delete"
 msgstr "ištrinti"
 
 #: frappe/public/js/frappe/ui/sort_selector.html:5
 #: frappe/public/js/frappe/ui/sort_selector.js:48
-#, fuzzy
 msgid "descending"
 msgstr "mažėjantis"
 
 #: frappe/public/js/frappe/ui/toolbar/awesome_bar.js:223
-#, fuzzy
 msgid "document type..., e.g. customer"
 msgstr "dokumento tipas..., pvz., klientas"
 
@@ -35688,7 +35639,6 @@ msgstr "pvz., (55 + 434) / 4 arba =Math.sin(Math.PI/2)..."
 #. Description of the 'Incoming Server' (Data) field in DocType 'Email Domain'
 #: frappe/email/doctype/email_account/email_account.json
 #: frappe/email/doctype/email_domain/email_domain.json
-#, fuzzy
 msgid "e.g. pop.gmail.com / imap.gmail.com"
 msgstr "pvz., pop.gmail.com / imap.gmail.com"
 
@@ -35702,18 +35652,15 @@ msgstr "pvz., replies@yourcomany.com. Visi atsakymai bus siunčiami į šią pa�
 #. Description of the 'Outgoing Server' (Data) field in DocType 'Email Domain'
 #: frappe/email/doctype/email_account/email_account.json
 #: frappe/email/doctype/email_domain/email_domain.json
-#, fuzzy
 msgid "e.g. smtp.gmail.com"
 msgstr "pvz., smtp.gmail.com"
 
 #: frappe/custom/doctype/custom_field/custom_field.js:98
-#, fuzzy
 msgid "e.g.:"
 msgstr "pvz.:"
 
 #. Option for the 'Code Editor Type' (Select) field in DocType 'User'
 #: frappe/core/doctype/user/user.json
-#, fuzzy
 msgid "emacs"
 msgstr "emacs"
 
@@ -35723,84 +35670,71 @@ msgstr "emacs"
 #. Settings'
 #: frappe/core/doctype/permission_inspector/permission_inspector.json
 #: frappe/website/doctype/social_link_settings/social_link_settings.json
-#, fuzzy
 msgid "email"
 msgstr "el. paštas"
 
 #: frappe/public/js/frappe/ui/toolbar/search_utils.js:342
-#, fuzzy
 msgid "email inbox"
 msgstr "el. pašto dėžutė"
 
 #: frappe/permissions.py:431 frappe/permissions.py:442
 #: frappe/public/js/frappe/form/controls/link.js:516
-#, fuzzy
 msgid "empty"
 msgstr "tuščias"
 
 #: frappe/public/js/frappe/ui/toolbar/awesome_bar.js:39
-#, fuzzy
 msgid "esc"
 msgstr "esc"
 
 #. Option for the 'Permission Type' (Select) field in DocType 'Permission
 #. Inspector'
 #: frappe/core/doctype/permission_inspector/permission_inspector.json
-#, fuzzy
 msgid "export"
 msgstr "eksportas"
 
 #. Option for the 'Social Link Type' (Select) field in DocType 'Social Link
 #. Settings'
 #: frappe/website/doctype/social_link_settings/social_link_settings.json
-#, fuzzy
 msgid "facebook"
 msgstr "facebook"
 
 #. Option for the 'Status' (Select) field in DocType 'RQ Job'
 #: frappe/core/doctype/rq_job/rq_job.json
-#, fuzzy
 msgid "failed"
 msgstr "nepavyko"
 
 #. Option for the 'Social Login Provider' (Select) field in DocType 'Social
 #. Login Key'
 #: frappe/integrations/doctype/social_login_key/social_login_key.json
-#, fuzzy
 msgid "fairlogin"
 msgstr "Fairlogin"
 
 #. Option for the 'Status' (Select) field in DocType 'RQ Job'
 #: frappe/core/doctype/rq_job/rq_job.json
-#, fuzzy
 msgid "finished"
 msgstr "baigtas"
 
 #. Option for the 'Indicator Color' (Select) field in DocType 'Workspace'
 #: frappe/desk/doctype/workspace/workspace.json
-#, fuzzy
 msgid "gray"
 msgstr "pilka"
 
 #. Option for the 'Indicator Color' (Select) field in DocType 'Workspace'
 #: frappe/desk/doctype/workspace/workspace.json
-#, fuzzy
 msgid "green"
 msgstr "žalias"
 
 #. Option for the 'Indicator Color' (Select) field in DocType 'Workspace'
 #: frappe/desk/doctype/workspace/workspace.json
-#, fuzzy
 msgid "grey"
 msgstr "pilka"
 
 #: frappe/utils/backups.py:399
 msgid "gzip not found in PATH! This is required to take a backup."
-msgstr "gzip nerastas PATH! To reikia norint sukurti atsarginę kopiją."
+msgstr "gzip nerastas PATH! Jis reikalingas norint sukurti atsarginę kopiją."
 
 #: frappe/public/js/frappe/form/controls/duration.js:220
 #: frappe/public/js/frappe/utils/utils.js:1146
-#, fuzzy
 msgctxt "Hours (Field: Duration)"
 msgid "h"
 msgstr "h"
@@ -35808,56 +35742,47 @@ msgstr "h"
 #: frappe/public/js/frappe/ui/toolbar/search_utils.js:332
 #, fuzzy
 msgid "hub"
-msgstr "stebulė"
+msgstr "hub"
 
 #. Label of the icon (Data) field in DocType 'Page'
 #: frappe/core/doctype/page/page.json
-#, fuzzy
 msgid "icon"
 msgstr "piktograma"
 
 #. Option for the 'Permission Type' (Select) field in DocType 'Permission
 #. Inspector'
 #: frappe/core/doctype/permission_inspector/permission_inspector.json
-#, fuzzy
 msgid "import"
 msgstr "importuoti"
 
 #: frappe/templates/signup.html:11 frappe/www/login.html:11
-#, fuzzy
 msgid "jane@example.com"
-msgstr "jane@example.com"
+msgstr "jonas@pavyzdys.lt"
 
 #: frappe/public/js/frappe/utils/pretty_date.js:46
-#, fuzzy
 msgid "just now"
-msgstr "tik dabar"
+msgstr "ką tik"
 
 #: frappe/desk/desktop.py:255 frappe/desk/query_report.py:291
-#, fuzzy
 msgid "label"
 msgstr "etiketė"
 
 #. Option for the 'Indicator Color' (Select) field in DocType 'Workspace'
 #: frappe/desk/doctype/workspace/workspace.json
-#, fuzzy
 msgid "light-blue"
 msgstr "šviesiai mėlyna"
 
 #. Option for the 'Social Link Type' (Select) field in DocType 'Social Link
 #. Settings'
 #: frappe/website/doctype/social_link_settings/social_link_settings.json
-#, fuzzy
 msgid "linkedin"
 msgstr "linkedin"
 
 #: frappe/www/third_party_apps.html:43
-#, fuzzy
 msgid "logged in"
 msgstr "prisijungęs"
 
 #: frappe/website/doctype/web_form/web_form.js:382
-#, fuzzy
 msgid "login_required"
 msgstr "login_required"
 
@@ -35888,17 +35813,16 @@ msgstr "sujungė {0} į {1}"
 #: frappe/core/doctype/language/language.json
 #: frappe/core/doctype/system_settings/system_settings.json
 msgid "mm-dd-yyyy"
-msgstr "mm-dd-ryyyy"
+msgstr "mm-dd-yyyy"
 
 #. Option for the 'Date Format' (Select) field in DocType 'Language'
 #. Option for the 'Date Format' (Select) field in DocType 'System Settings'
 #: frappe/core/doctype/language/language.json
 #: frappe/core/doctype/system_settings/system_settings.json
 msgid "mm/dd/yyyy"
-msgstr "mm/dd/rrrr"
+msgstr "mm/dd/yyyy"
 
 #: frappe/public/js/frappe/ui/toolbar/awesome_bar.js:238
-#, fuzzy
 msgid "module name..."
 msgstr "modulio pavadinimas..."
 
@@ -35917,184 +35841,154 @@ msgstr "nėra nesėkmingų bandymų"
 
 #. Label of the nonce (Data) field in DocType 'OAuth Authorization Code'
 #: frappe/integrations/doctype/oauth_authorization_code/oauth_authorization_code.json
-#, fuzzy
 msgid "nonce"
 msgstr "nonce"
 
 #. Label of the notified (Check) field in DocType 'Reminder'
 #: frappe/automation/doctype/reminder/reminder.json
-#, fuzzy
 msgid "notified"
 msgstr "pranešta"
 
 #: frappe/public/js/frappe/utils/pretty_date.js:25
-#, fuzzy
 msgid "now"
 msgstr "dabar"
 
 #: frappe/public/js/frappe/form/grid_pagination.js:116
-#, fuzzy
 msgid "of"
 msgstr "iš"
 
 #. Label of the old_parent (Data) field in DocType 'File'
 #: frappe/core/doctype/file/file.json
-#, fuzzy
 msgid "old_parent"
 msgstr "old_parent"
 
 #. Option for the 'Doc Event' (Select) field in DocType 'Webhook'
 #: frappe/integrations/doctype/webhook/webhook.json
-#, fuzzy
 msgid "on_cancel"
 msgstr "on_cancel"
 
 #. Option for the 'Doc Event' (Select) field in DocType 'Webhook'
 #: frappe/integrations/doctype/webhook/webhook.json
-#, fuzzy
 msgid "on_change"
 msgstr "on_change"
 
 #. Option for the 'Doc Event' (Select) field in DocType 'Webhook'
 #: frappe/integrations/doctype/webhook/webhook.json
-#, fuzzy
 msgid "on_submit"
 msgstr "on_submit"
 
 #. Option for the 'Doc Event' (Select) field in DocType 'Webhook'
 #: frappe/integrations/doctype/webhook/webhook.json
-#, fuzzy
 msgid "on_trash"
 msgstr "on_trash"
 
 #. Option for the 'Doc Event' (Select) field in DocType 'Webhook'
 #: frappe/integrations/doctype/webhook/webhook.json
-#, fuzzy
 msgid "on_update"
 msgstr "on_update"
 
 #. Option for the 'Doc Event' (Select) field in DocType 'Webhook'
 #: frappe/integrations/doctype/webhook/webhook.json
-#, fuzzy
 msgid "on_update_after_submit"
 msgstr "on_update_after_submit"
 
 #: frappe/public/js/frappe/utils/utils.js:391 frappe/www/login.html:90
 #: frappe/www/login.py:112
-#, fuzzy
 msgid "or"
 msgstr "arba"
 
 #. Option for the 'Indicator Color' (Select) field in DocType 'Workspace'
 #: frappe/desk/doctype/workspace/workspace.json
-#, fuzzy
 msgid "orange"
 msgstr "oranžinė"
 
 #. Option for the 'Indicator Color' (Select) field in DocType 'Workspace'
 #: frappe/desk/doctype/workspace/workspace.json
-#, fuzzy
 msgid "pink"
 msgstr "rožinė"
 
 #. Option for the 'Code challenge method' (Select) field in DocType 'OAuth
 #. Authorization Code'
 #: frappe/integrations/doctype/oauth_authorization_code/oauth_authorization_code.json
-#, fuzzy
 msgid "plain"
 msgstr "paprastas"
 
 #. Option for the 'Permission Type' (Select) field in DocType 'Permission
 #. Inspector'
 #: frappe/core/doctype/permission_inspector/permission_inspector.json
-#, fuzzy
 msgid "print"
 msgstr "spausdinti"
 
 #. Label of the processlist (HTML) field in DocType 'System Console'
 #: frappe/desk/doctype/system_console/system_console.json
-#, fuzzy
 msgid "processlist"
 msgstr "procesų sąrašas"
 
 #. Option for the 'Indicator Color' (Select) field in DocType 'Workspace'
 #: frappe/desk/doctype/workspace/workspace.json
-#, fuzzy
 msgid "purple"
 msgstr "violetinė"
 
 #. Option for the 'Status' (Select) field in DocType 'RQ Job'
 #: frappe/core/doctype/rq_job/rq_job.json
-#, fuzzy
 msgid "queued"
-msgstr "uodega"
+msgstr "įtraukta į eilę"
 
 #. Option for the 'Permission Type' (Select) field in DocType 'Permission
 #. Inspector'
 #: frappe/core/doctype/permission_inspector/permission_inspector.json
-#, fuzzy
 msgid "read"
 msgstr "skaityti"
 
 #. Option for the 'Indicator Color' (Select) field in DocType 'Workspace'
 #: frappe/desk/doctype/workspace/workspace.json
-#, fuzzy
 msgid "red"
 msgstr "raudona"
 
 #: frappe/model/rename_doc.py:217
-#, fuzzy
 msgid "renamed from {0} to {1}"
 msgstr "pervadintas iš {0} į {1}"
 
 #. Option for the 'Permission Type' (Select) field in DocType 'Permission
 #. Inspector'
 #: frappe/core/doctype/permission_inspector/permission_inspector.json
-#, fuzzy
 msgid "report"
 msgstr "ataskaita"
 
 #. Label of the response (HTML) field in DocType 'Custom Role'
 #: frappe/core/doctype/custom_role/custom_role.json
-#, fuzzy
 msgid "response"
 msgstr "atsakymas"
 
 #: frappe/core/doctype/deleted_document/deleted_document.py:61
-#, fuzzy
 msgid "restored {0} as {1}"
 msgstr "atkurtas {0} kaip {1}"
 
 #: frappe/public/js/frappe/form/controls/duration.js:222
 #: frappe/public/js/frappe/utils/utils.js:1154
-#, fuzzy
 msgid "s"
 msgstr "s"
 
 #. Option for the 'Code challenge method' (Select) field in DocType 'OAuth
 #. Authorization Code'
 #: frappe/integrations/doctype/oauth_authorization_code/oauth_authorization_code.json
-#, fuzzy
 msgid "s256"
 msgstr "s256"
 
 #. Option for the 'Status' (Select) field in DocType 'RQ Job'
 #: frappe/core/doctype/rq_job/rq_job.json
-#, fuzzy
 msgid "scheduled"
 msgstr "suplanuota"
 
 #. Option for the 'Permission Type' (Select) field in DocType 'Permission
 #. Inspector'
 #: frappe/core/doctype/permission_inspector/permission_inspector.json
-#, fuzzy
 msgid "select"
-msgstr "pasirinkite"
+msgstr "pasirinkti"
 
 #. Option for the 'Permission Type' (Select) field in DocType 'Permission
 #. Inspector'
 #: frappe/core/doctype/permission_inspector/permission_inspector.json
-#, fuzzy
 msgid "share"
 msgstr "dalintis"
 
@@ -36102,27 +35996,22 @@ msgstr "dalintis"
 #. Option for the 'Queue Type(s)' (Select) field in DocType 'RQ Worker'
 #: frappe/core/doctype/rq_job/rq_job.json
 #: frappe/core/doctype/rq_worker/rq_worker.json
-#, fuzzy
 msgid "short"
 msgstr "trumpas"
 
 #: frappe/public/js/frappe/widgets/number_card_widget.js:310
-#, fuzzy
 msgid "since last month"
 msgstr "nuo praėjusio mėnesio"
 
 #: frappe/public/js/frappe/widgets/number_card_widget.js:309
-#, fuzzy
 msgid "since last week"
 msgstr "nuo praėjusios savaitės"
 
 #: frappe/public/js/frappe/widgets/number_card_widget.js:311
-#, fuzzy
 msgid "since last year"
 msgstr "nuo praėjusių metų"
 
 #: frappe/public/js/frappe/widgets/number_card_widget.js:308
-#, fuzzy
 msgid "since yesterday"
 msgstr "nuo vakar"
 

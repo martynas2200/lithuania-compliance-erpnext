@@ -2349,78 +2349,65 @@ msgstr "Veiklos tipas"
 #. Option for the 'Type' (Select) field in DocType 'Purchase Taxes and Charges'
 #. Option for the 'Type' (Select) field in DocType 'Sales Taxes and Charges'
 #: erpnext/accounts/doctype/advance_taxes_and_charges/advance_taxes_and_charges.json erpnext/accounts/doctype/purchase_taxes_and_charges/purchase_taxes_and_charges.json erpnext/accounts/doctype/sales_taxes_and_charges/sales_taxes_and_charges.json erpnext/accounts/report/budget_variance_report/budget_variance_report.py:100 erpnext/accounts/report/budget_variance_report/budget_variance_report.py:110
-#, fuzzy
 msgid "Actual"
-msgstr "Dabartinis"
+msgstr "Faktinis"
 
 #: erpnext/stock/report/incorrect_balance_qty_after_transaction/incorrect_balance_qty_after_transaction.py:125
-#, fuzzy
 msgid "Actual Balance Qty"
-msgstr "Dabartinis likutis Kiekis"
+msgstr "Faktinis likučio kiekis"
 
 #. Label of the actual_batch_qty (Float) field in DocType 'Packed Item'
 #: erpnext/stock/doctype/packed_item/packed_item.json
-#, fuzzy
 msgid "Actual Batch Quantity"
 msgstr "Faktinis partijos kiekis"
 
 #: erpnext/buying/report/procurement_tracker/procurement_tracker.py:101
-#, fuzzy
 msgid "Actual Cost"
-msgstr "Dabartinės išlaidos"
+msgstr "Faktinės išlaidos"
 
 #. Label of the actual_date (Date) field in DocType 'Maintenance Schedule
 #. Detail'
 #: erpnext/maintenance/doctype/maintenance_schedule_detail/maintenance_schedule_detail.json
-#, fuzzy
 msgid "Actual Date"
 msgstr "Faktinė data"
 
 #: erpnext/buying/report/procurement_tracker/procurement_tracker.py:121 erpnext/stock/report/delayed_item_report/delayed_item_report.py:141 erpnext/stock/report/delayed_order_report/delayed_order_report.py:66
-#, fuzzy
 msgid "Actual Delivery Date"
 msgstr "Faktinė pristatymo data"
 
 #. Label of the section_break_cmgo (Section Break) field in DocType 'Master
 #. Production Schedule'
 #: erpnext/manufacturing/doctype/master_production_schedule/master_production_schedule.json
-#, fuzzy
 msgid "Actual Demand"
-msgstr "Dabartinė paklausa"
+msgstr "Faktinė paklausa"
 
 #. Label of the actual_end_date (Datetime) field in DocType 'Job Card'
 #. Label of the actual_end_date (Datetime) field in DocType 'Work Order'
 #: erpnext/manufacturing/doctype/job_card/job_card.json erpnext/manufacturing/doctype/work_order/work_order.json erpnext/manufacturing/report/work_order_summary/work_order_summary.py:254 erpnext/projects/report/delayed_tasks_summary/delayed_tasks_summary.py:115
-#, fuzzy
 msgid "Actual End Date"
 msgstr "Faktinė pabaigos data"
 
 #. Label of the actual_end_date (Date) field in DocType 'Project'
 #. Label of the act_end_date (Date) field in DocType 'Task'
 #: erpnext/projects/doctype/project/project.json erpnext/projects/doctype/task/task.json
-#, fuzzy
 msgid "Actual End Date (via Timesheet)"
 msgstr "Faktinė pabaigos data (per darbo laiko apskaitos žiniaraštį)"
 
 #: erpnext/manufacturing/doctype/work_order/work_order.py:222
-#, fuzzy
 msgid "Actual End Date cannot be before Actual Start Date"
 msgstr "Faktinė pabaigos data negali būti ankstesnė už faktinę pradžios datą"
 
 #. Label of the actual_end_time (Datetime) field in DocType 'Work Order
 #. Operation'
 #: erpnext/manufacturing/doctype/work_order_operation/work_order_operation.json
-#, fuzzy
 msgid "Actual End Time"
 msgstr "Faktinis pabaigos laikas"
 
 #: erpnext/accounts/report/budget_variance_report/budget_variance_report.py:381
-#, fuzzy
 msgid "Actual Expense"
-msgstr "Einamosios išlaidos"
+msgstr "Faktinės išlaidos"
 
 #: erpnext/accounts/doctype/budget/budget.py:569
-#, fuzzy
 msgid "Actual Expenses"
 msgstr "Faktinės išlaidos"
 
@@ -2428,21 +2415,18 @@ msgstr "Faktinės išlaidos"
 #. Label of the actual_operating_cost (Currency) field in DocType 'Work Order
 #. Operation'
 #: erpnext/manufacturing/doctype/work_order/work_order.json erpnext/manufacturing/doctype/work_order_operation/work_order_operation.json
-#, fuzzy
 msgid "Actual Operating Cost"
 msgstr "Faktinės veiklos sąnaudos"
 
 #. Label of the actual_operation_time (Float) field in DocType 'Work Order
 #. Operation'
 #: erpnext/manufacturing/doctype/work_order_operation/work_order_operation.json
-#, fuzzy
 msgid "Actual Operation Time"
 msgstr "Faktinis veikimo laikas"
 
 #: erpnext/accounts/report/deferred_revenue_and_expense/deferred_revenue_and_expense.py:430
-#, fuzzy
 msgid "Actual Posting"
-msgstr "Dabartinis skelbimas"
+msgstr "Faktinis skelbimas"
 
 #. Label of the actual_qty (Float) field in DocType 'Production Plan Sub
 #. Assembly Item'
@@ -2450,110 +2434,92 @@ msgstr "Dabartinis skelbimas"
 #. Label of the actual_qty (Float) field in DocType 'Material Request Item'
 #. Label of the actual_qty (Float) field in DocType 'Packed Item'
 #: erpnext/manufacturing/doctype/plant_floor/stock_summary_template.html:21 erpnext/manufacturing/doctype/production_plan_sub_assembly_item/production_plan_sub_assembly_item.json erpnext/stock/doctype/bin/bin.json erpnext/stock/doctype/material_request_item/material_request_item.json erpnext/stock/doctype/packed_item/packed_item.json erpnext/stock/report/product_bundle_balance/product_bundle_balance.py:96 erpnext/stock/report/stock_projected_qty/stock_projected_qty.py:141
-#, fuzzy
 msgid "Actual Qty"
-msgstr "Dabartinis kiekis"
+msgstr "Faktinis kiekis"
 
 #. Label of the actual_qty (Float) field in DocType 'Stock Entry Detail'
 #: erpnext/stock/doctype/stock_entry_detail/stock_entry_detail.json
-#, fuzzy
 msgid "Actual Qty (at source/target)"
 msgstr "Faktinis kiekis (šaltinio / tikslo vietoje)"
 
 #. Label of the actual_qty (Float) field in DocType 'Asset Capitalization Stock
 #. Item'
 #: erpnext/assets/doctype/asset_capitalization_stock_item/asset_capitalization_stock_item.json
-#, fuzzy
 msgid "Actual Qty in Warehouse"
 msgstr "Faktinis kiekis sandėlyje"
 
 #: erpnext/stock/doctype/stock_ledger_entry/stock_ledger_entry.py:198
-#, fuzzy
 msgid "Actual Qty is mandatory"
 msgstr "Faktinis kiekis yra privalomas"
 
 #: erpnext/manufacturing/doctype/plant_floor/stock_summary_template.html:37 erpnext/stock/dashboard/item_dashboard_list.html:28
-#, fuzzy
 msgid "Actual Qty {0} / Waiting Qty {1}"
 msgstr "Faktinis kiekis {0} / laukiamas kiekis {1}"
 
 #: erpnext/manufacturing/doctype/production_plan/production_plan.js:179
-#, fuzzy
 msgid "Actual Qty: Quantity available in the warehouse."
 msgstr "Faktinis kiekis: Sandėlyje esantis kiekis."
 
 #: erpnext/stock/report/item_shortage_report/item_shortage_report.py:95
-#, fuzzy
 msgid "Actual Quantity"
 msgstr "Faktinis kiekis"
 
 #. Label of the actual_start_date (Datetime) field in DocType 'Job Card'
 #. Label of the actual_start_date (Datetime) field in DocType 'Work Order'
 #: erpnext/manufacturing/doctype/job_card/job_card.json erpnext/manufacturing/doctype/work_order/work_order.json erpnext/manufacturing/report/work_order_summary/work_order_summary.py:248
-#, fuzzy
 msgid "Actual Start Date"
 msgstr "Faktinė pradžios data"
 
 #. Label of the actual_start_date (Date) field in DocType 'Project'
 #. Label of the act_start_date (Date) field in DocType 'Task'
 #: erpnext/projects/doctype/project/project.json erpnext/projects/doctype/task/task.json
-#, fuzzy
 msgid "Actual Start Date (via Timesheet)"
-msgstr "Faktinė darbo pradžios data (per darbo laiko apskaitos žiniaraštį)"
+msgstr "Faktinė darbo pradžios data (pagal darbo laiko apskaitos žiniaraštį)"
 
 #. Label of the actual_start_time (Datetime) field in DocType 'Work Order
 #. Operation'
 #: erpnext/manufacturing/doctype/work_order_operation/work_order_operation.json
-#, fuzzy
 msgid "Actual Start Time"
 msgstr "Faktinis pradžios laikas"
 
 #. Label of the timing_detail (Tab Break) field in DocType 'Job Card'
 #: erpnext/manufacturing/doctype/job_card/job_card.json
-#, fuzzy
 msgid "Actual Time"
 msgstr "Faktinis laikas"
 
 #. Label of the section_break_9 (Section Break) field in DocType 'Work Order
 #. Operation'
 #: erpnext/manufacturing/doctype/work_order_operation/work_order_operation.json
-#, fuzzy
 msgid "Actual Time and Cost"
 msgstr "Faktinis laikas ir išlaidos"
 
 #. Label of the actual_time (Float) field in DocType 'Project'
 #. Label of the actual_time (Float) field in DocType 'Task'
 #: erpnext/projects/doctype/project/project.json erpnext/projects/doctype/task/task.json
-#, fuzzy
 msgid "Actual Time in Hours (via Timesheet)"
-msgstr "Faktinis laikas valandomis (per darbo laiko apskaitos žiniaraštį)"
+msgstr "Faktinis laikas valandomis (pagal darbo laiko apskaitos žiniaraštį)"
 
 #: erpnext/stock/page/stock_balance/stock_balance.js:55
-#, fuzzy
 msgid "Actual qty in stock"
 msgstr "Faktinis kiekis sandėlyje"
 
 #: erpnext/accounts/doctype/payment_entry/payment_entry.js:1526 erpnext/public/js/controllers/accounts.js:197
-#, fuzzy
 msgid "Actual type tax cannot be included in Item rate in row {0}"
 msgstr "Faktinio tipo mokestis negali būti įtrauktas į eilutės {0} pozicijos tarifą"
 
 #: erpnext/manufacturing/report/material_requirements_planning_report/material_requirements_planning_report.py:1005
-#, fuzzy
 msgid "Ad-hoc Qty"
-msgstr "Ad-hoc Qty"
+msgstr "Ad-hoc kiekis"
 
 #: erpnext/stock/doctype/item/item.js:557 erpnext/stock/doctype/price_list/price_list.js:8
 msgid "Add / Edit Prices"
 msgstr "Pridėti / redaguoti kainas"
 
 #: erpnext/accounts/report/general_ledger/general_ledger.js:207
-#, fuzzy
 msgid "Add Columns in Transaction Currency"
 msgstr "Pridėti stulpelius sandorio valiuta"
 
 #: erpnext/templates/pages/task_info.html:94 erpnext/templates/pages/task_info.html:96
-#, fuzzy
 msgid "Add Comment"
 msgstr "Pridėti komentarą"
 
@@ -9664,9 +9630,8 @@ msgstr "Žiedinės nuorodos klaida"
 #. Label of the claimed_landed_cost_amount (Currency) field in DocType
 #. 'Purchase Invoice'
 #: erpnext/accounts/doctype/purchase_invoice/purchase_invoice.json
-#, fuzzy
 msgid "Claimed Landed Cost Amount (Company Currency)"
-msgstr "Deklaruota žemės savikainos suma (įmonės valiuta)"
+msgstr "Priskirta papildomų išlaidų suma (įmonės valiuta)"
 
 #. Label of the class_per (Data) field in DocType 'Employee Education'
 #: erpnext/setup/doctype/employee_education/employee_education.json
@@ -13840,21 +13805,18 @@ msgstr "Neįvykdyta gautinų sumų sąskaita"
 
 #. Label of the default_sales_contact (Link) field in DocType 'Company'
 #: erpnext/setup/doctype/company/company.json
-#, fuzzy
 msgid "Default Sales Contact"
 msgstr "Numatytasis pardavimo kontaktas"
 
 #. Label of the sales_uom (Link) field in DocType 'Item'
 #: erpnext/stock/doctype/item/item.json
-#, fuzzy
 msgid "Default Sales Unit of Measure"
 msgstr "Numatytasis pardavimo matavimo vienetas"
 
 #. Label of the default_scrap_warehouse (Link) field in DocType 'Company'
 #: erpnext/setup/doctype/company/company.json
-#, fuzzy
 msgid "Default Scrap Warehouse"
-msgstr "Numatytasis metalo laužo sandėlis"
+msgstr "Numatytasis atliekų/laužo sandėlis"
 
 #. Label of the selling_cost_center (Link) field in DocType 'Item Default'
 #: erpnext/stock/doctype/item_default/item_default.json
@@ -15410,9 +15372,8 @@ msgstr "Paskirstykite vienodai"
 #. Option for the 'Distribute Charges Based On' (Select) field in DocType
 #. 'Landed Cost Voucher'
 #: erpnext/stock/doctype/landed_cost_voucher/landed_cost_voucher.json
-#, fuzzy
 msgid "Distribute Manually"
-msgstr "Platinti rankiniu būdu"
+msgstr "Paskirstyti rankiniu būdu"
 
 #. Label of the distributed_discount_amount (Currency) field in DocType 'POS
 #. Invoice Item'
@@ -20085,7 +20046,6 @@ msgstr "Ar elementas nuskaitytas"
 #. Label of the has_operating_cost (Check) field in DocType 'Landed Cost Taxes
 #. and Charges'
 #: erpnext/stock/doctype/landed_cost_taxes_and_charges/landed_cost_taxes_and_charges.json
-#, fuzzy
 msgid "Has Operating Cost"
 msgstr "Turi veiklos sąnaudų"
 
@@ -22922,9 +22882,8 @@ msgstr "Ar baigtas elementas"
 #. Label of the is_fixed_asset (Check) field in DocType 'Landed Cost Item'
 #. Label of the is_fixed_asset (Check) field in DocType 'Purchase Receipt Item'
 #: erpnext/accounts/doctype/pos_invoice_item/pos_invoice_item.json erpnext/accounts/doctype/purchase_invoice_item/purchase_invoice_item.json erpnext/accounts/doctype/sales_invoice_item/sales_invoice_item.json erpnext/buying/doctype/purchase_order_item/purchase_order_item.json erpnext/stock/doctype/item/item.json erpnext/stock/doctype/landed_cost_item/landed_cost_item.json erpnext/stock/doctype/purchase_receipt_item/purchase_receipt_item.json
-#, fuzzy
 msgid "Is Fixed Asset"
-msgstr "Ar ilgalaikis turtas"
+msgstr "tai ilgalaikis turtas"
 
 #. Label of the is_free_item (Check) field in DocType 'POS Invoice Item'
 #. Label of the is_free_item (Check) field in DocType 'Purchase Invoice Item'
@@ -23553,7 +23512,6 @@ msgstr "Prekės krepšelis"
 #: erpnext/stock/report/fifo_queue_vs_qty_after_transaction_comparison/fifo_queue_vs_qty_after_transaction_comparison.py:119 erpnext/stock/report/incorrect_balance_qty_after_transaction/incorrect_balance_qty_after_transaction.js:15 erpnext/stock/report/incorrect_balance_qty_after_transaction/incorrect_balance_qty_after_transaction.py:105 erpnext/stock/report/incorrect_serial_and_batch_bundle/incorrect_serial_and_batch_bundle.js:8 erpnext/stock/report/incorrect_serial_no_valuation/incorrect_serial_no_valuation.js:7 erpnext/stock/report/incorrect_serial_no_valuation/incorrect_serial_no_valuation.py:175 erpnext/stock/report/incorrect_stock_value_report/incorrect_stock_value_report.py:115 erpnext/stock/report/item_price_stock/item_price_stock.py:18 erpnext/stock/report/serial_and_batch_summary/serial_and_batch_summary.py:125
 #: erpnext/stock/report/serial_no_and_batch_traceability/serial_no_and_batch_traceability.js:8 erpnext/stock/report/serial_no_and_batch_traceability/serial_no_and_batch_traceability.py:429 erpnext/stock/report/serial_no_ledger/serial_no_ledger.js:7 erpnext/stock/report/stock_ageing/stock_ageing.py:132 erpnext/stock/report/stock_projected_qty/stock_projected_qty.py:104 erpnext/stock/report/stock_qty_vs_serial_no_count/stock_qty_vs_serial_no_count.py:26 erpnext/subcontracting/doctype/subcontracting_inward_order_item/subcontracting_inward_order_item.json erpnext/subcontracting/doctype/subcontracting_inward_order_received_item/subcontracting_inward_order_received_item.json erpnext/subcontracting/doctype/subcontracting_inward_order_scrap_item/subcontracting_inward_order_scrap_item.json
 #: erpnext/subcontracting/doctype/subcontracting_inward_order_service_item/subcontracting_inward_order_service_item.json erpnext/subcontracting/doctype/subcontracting_order/subcontracting_order.js:253 erpnext/subcontracting/doctype/subcontracting_order/subcontracting_order.js:352 erpnext/subcontracting/doctype/subcontracting_order_item/subcontracting_order_item.json erpnext/subcontracting/doctype/subcontracting_order_service_item/subcontracting_order_service_item.json erpnext/subcontracting/doctype/subcontracting_order_supplied_item/subcontracting_order_supplied_item.json erpnext/subcontracting/doctype/subcontracting_receipt_item/subcontracting_receipt_item.json erpnext/subcontracting/doctype/subcontracting_receipt_supplied_item/subcontracting_receipt_supplied_item.json erpnext/support/doctype/warranty_claim/warranty_claim.json erpnext/templates/includes/products_as_list.html:14
-#, fuzzy
 msgid "Item Code"
 msgstr "Prekės kodas"
 
@@ -24796,57 +24754,48 @@ msgstr "LIFO"
 
 #. Label of the taxes (Table) field in DocType 'Landed Cost Voucher'
 #: erpnext/stock/doctype/landed_cost_voucher/landed_cost_voucher.json
-#, fuzzy
 msgid "Landed Cost"
-msgstr "Iškrautos išlaidos"
+msgstr "Papildomos išlaidos"
 
 #. Label of the landed_cost_help (HTML) field in DocType 'Landed Cost Voucher'
 #: erpnext/stock/doctype/landed_cost_voucher/landed_cost_voucher.json
-#, fuzzy
 msgid "Landed Cost Help"
-msgstr "Pagalba dėl sausumos sąnaudų"
+msgstr "Papildomų išlaidų pagalba"
 
 #: erpnext/stock/report/landed_cost_report/landed_cost_report.py:18
-#, fuzzy
 msgid "Landed Cost Id"
-msgstr "Išlaidų, susijusių su žeme, identifikacinis kodas"
+msgstr "Papildomų išlaidų ID"
 
 #. Name of a DocType
 #: erpnext/stock/doctype/landed_cost_item/landed_cost_item.json
-#, fuzzy
 msgid "Landed Cost Item"
-msgstr "Išlaidų, susijusių su sausuma, punktas"
+msgstr "Papildomų išlaidų prekė"
 
 #. Name of a DocType
 #: erpnext/stock/doctype/landed_cost_purchase_receipt/landed_cost_purchase_receipt.json
-#, fuzzy
 msgid "Landed Cost Purchase Receipt"
-msgstr "Išlaidų, susijusių su žemės sklypu, pirkimo kvitas"
+msgstr "Papildomų išlaidų pirkimo kvitas"
 
 #. Name of a report
 #: erpnext/stock/report/landed_cost_report/landed_cost_report.json
-#, fuzzy
 msgid "Landed Cost Report"
-msgstr "Iškrautų išlaidų ataskaita"
+msgstr "Papildomų išlaidų ataskaita"
 
 #. Name of a DocType
 #: erpnext/stock/doctype/landed_cost_taxes_and_charges/landed_cost_taxes_and_charges.json
-#, fuzzy
 msgid "Landed Cost Taxes and Charges"
-msgstr "Išperkamosios kainos mokesčiai ir rinkliavos"
+msgstr "Papildomų išlaidų mokesčiai ir rinkliavos"
 
 #. Name of a DocType
 #: erpnext/stock/doctype/landed_cost_vendor_invoice/landed_cost_vendor_invoice.json
-#, fuzzy
 msgid "Landed Cost Vendor Invoice"
-msgstr "Pardavėjo išrašyta sąskaita faktūra"
+msgstr "Papildomų išlaidų pardavėjo išrašyta sąskaita-faktūra"
 
 #. Name of a DocType
 #. Label of a Link in the Stock Workspace
 #: erpnext/accounts/doctype/purchase_invoice/purchase_invoice.js:678 erpnext/stock/doctype/landed_cost_voucher/landed_cost_voucher.json erpnext/stock/doctype/purchase_receipt/purchase_receipt.js:95 erpnext/stock/workspace/stock/stock.json
-#, fuzzy
 msgid "Landed Cost Voucher"
-msgstr "Iškrautų išlaidų kvitas"
+msgstr "Papildomų išlaidų kvitas"
 
 #. Label of the landed_cost_voucher_amount (Currency) field in DocType
 #. 'Purchase Invoice Item'
@@ -24857,29 +24806,25 @@ msgstr "Iškrautų išlaidų kvitas"
 #. Label of the landed_cost_voucher_amount (Currency) field in DocType
 #. 'Subcontracting Receipt Item'
 #: erpnext/accounts/doctype/purchase_invoice_item/purchase_invoice_item.json erpnext/stock/doctype/purchase_receipt_item/purchase_receipt_item.json erpnext/stock/doctype/stock_entry_detail/stock_entry_detail.json erpnext/subcontracting/doctype/subcontracting_receipt_item/subcontracting_receipt_item.json
-#, fuzzy
 msgid "Landed Cost Voucher Amount"
-msgstr "Išlaidų, patirtų iškraunant žemę, kvito suma"
+msgstr "Papildomų išlaidų kvito suma"
 
 #. Option for the 'Fulfilment Status' (Select) field in DocType 'Contract'
 #: erpnext/crm/doctype/contract/contract.json
 #, fuzzy
 msgid "Lapsed"
-msgstr "Vaikai"
+msgstr "Lapsed"
 
 #: erpnext/setup/setup_wizard/operations/install_fixtures.py:274
-#, fuzzy
 msgid "Large"
 msgstr "Didelis"
 
 #. Label of the carbon_check_date (Date) field in DocType 'Vehicle'
 #: erpnext/setup/doctype/vehicle/vehicle.json
-#, fuzzy
 msgid "Last Carbon Check"
 msgstr "Paskutinis anglies dioksido patikrinimas"
 
 #: erpnext/crm/report/prospects_engaged_but_not_converted/prospects_engaged_but_not_converted.py:46
-#, fuzzy
 msgid "Last Communication"
 msgstr "Paskutinis bendravimas"
 
@@ -29024,27 +28969,24 @@ msgstr "Seniausia sąskaita faktūra arba avansas"
 #: erpnext/manufacturing/report/material_requirements_planning_report/material_requirements_planning_report.py:1020
 #, fuzzy
 msgid "On Hand"
-msgstr "Iš rankų"
+msgstr "Rankose"
 
 #. Label of the on_hold_since (Datetime) field in DocType 'Issue'
 #: erpnext/support/doctype/issue/issue.json
-#, fuzzy
 msgid "On Hold Since"
 msgstr "Sulaikytas nuo"
 
 #. Option for the 'Type' (Select) field in DocType 'Purchase Taxes and Charges'
 #. Option for the 'Type' (Select) field in DocType 'Sales Taxes and Charges'
 #: erpnext/accounts/doctype/purchase_taxes_and_charges/purchase_taxes_and_charges.json erpnext/accounts/doctype/sales_taxes_and_charges/sales_taxes_and_charges.json
-#, fuzzy
 msgid "On Item Quantity"
-msgstr "Dėl prekės kiekio"
+msgstr "Nuo prekės kiekio"
 
 #. Option for the 'Type' (Select) field in DocType 'Purchase Taxes and Charges'
 #. Option for the 'Type' (Select) field in DocType 'Sales Taxes and Charges'
 #: erpnext/accounts/doctype/purchase_taxes_and_charges/purchase_taxes_and_charges.json erpnext/accounts/doctype/sales_taxes_and_charges/sales_taxes_and_charges.json
-#, fuzzy
 msgid "On Net Total"
-msgstr "Iš viso grynąja verte"
+msgstr "Nuo grynosios sumos"
 
 #. Option for the 'Type' (Select) field in DocType 'Advance Taxes and Charges'
 #: erpnext/accounts/doctype/advance_taxes_and_charges/advance_taxes_and_charges.json
@@ -29056,17 +28998,15 @@ msgstr "Dėl sumokėtos sumos"
 #. Option for the 'Type' (Select) field in DocType 'Purchase Taxes and Charges'
 #. Option for the 'Type' (Select) field in DocType 'Sales Taxes and Charges'
 #: erpnext/accounts/doctype/advance_taxes_and_charges/advance_taxes_and_charges.json erpnext/accounts/doctype/purchase_taxes_and_charges/purchase_taxes_and_charges.json erpnext/accounts/doctype/sales_taxes_and_charges/sales_taxes_and_charges.json
-#, fuzzy
 msgid "On Previous Row Amount"
-msgstr "Ankstesnėje eilutėje suma"
+msgstr "Nuo ankstesnės eilutės sumos"
 
 #. Option for the 'Type' (Select) field in DocType 'Advance Taxes and Charges'
 #. Option for the 'Type' (Select) field in DocType 'Purchase Taxes and Charges'
 #. Option for the 'Type' (Select) field in DocType 'Sales Taxes and Charges'
 #: erpnext/accounts/doctype/advance_taxes_and_charges/advance_taxes_and_charges.json erpnext/accounts/doctype/purchase_taxes_and_charges/purchase_taxes_and_charges.json erpnext/accounts/doctype/sales_taxes_and_charges/sales_taxes_and_charges.json
-#, fuzzy
 msgid "On Previous Row Total"
-msgstr "Ankstesnėje eilutėje Iš viso"
+msgstr "Nuo ankstesnės eilutės bendros sumos"
 
 #: erpnext/stock/report/available_batch_report/available_batch_report.js:16
 #, fuzzy
@@ -36877,7 +36817,7 @@ msgstr "Išaugino (el. paštas)"
 #: erpnext/subcontracting/doctype/subcontracting_receipt_item/subcontracting_receipt_item.json erpnext/subcontracting/doctype/subcontracting_receipt_supplied_item/subcontracting_receipt_supplied_item.json erpnext/templates/form_grid/item_grid.html:8 erpnext/templates/pages/order.html:100 erpnext/templates/pages/rfq.html:43
 #, fuzzy
 msgid "Rate"
-msgstr "Tarifas"
+msgstr "Kaina"
 
 #. Label of the rate_amount_section (Section Break) field in DocType 'BOM Item'
 #: erpnext/manufacturing/doctype/bom_item/bom_item.json
@@ -37395,7 +37335,6 @@ msgstr "Kvitas"
 #. Label of the receipt_document (Dynamic Link) field in DocType 'Landed Cost
 #. Purchase Receipt'
 #: erpnext/stock/doctype/landed_cost_item/landed_cost_item.json erpnext/stock/doctype/landed_cost_purchase_receipt/landed_cost_purchase_receipt.json
-#, fuzzy
 msgid "Receipt Document"
 msgstr "Gavimo dokumentas"
 
@@ -37404,15 +37343,13 @@ msgstr "Gavimo dokumentas"
 #. Label of the receipt_document_type (Select) field in DocType 'Landed Cost
 #. Purchase Receipt'
 #: erpnext/stock/doctype/landed_cost_item/landed_cost_item.json erpnext/stock/doctype/landed_cost_purchase_receipt/landed_cost_purchase_receipt.json
-#, fuzzy
 msgid "Receipt Document Type"
-msgstr "Kvito dokumento tipas"
+msgstr "Gavimo dokumento tipas"
 
 #. Label of the items (Table) field in DocType 'Landed Cost Voucher'
 #: erpnext/stock/doctype/landed_cost_voucher/landed_cost_voucher.json
-#, fuzzy
 msgid "Receipt Items"
-msgstr "Kvitų elementai"
+msgstr "Kvito prekės"
 
 #. Option for the 'Account Type' (Select) field in DocType 'Account'
 #. Option for the 'Account Type' (Select) field in DocType 'Payment Ledger
@@ -37468,14 +37405,12 @@ msgstr "Gauti iš kliento"
 
 #. Label of the received_amount (Currency) field in DocType 'Payment Entry'
 #: erpnext/accounts/doctype/payment_entry/payment_entry.json
-#, fuzzy
 msgid "Received Amount"
 msgstr "Gauta suma"
 
 #. Label of the base_received_amount (Currency) field in DocType 'Payment
 #. Entry'
 #: erpnext/accounts/doctype/payment_entry/payment_entry.json
-#, fuzzy
 msgid "Received Amount (Company Currency)"
 msgstr "Gauta suma (įmonės valiuta)"
 
@@ -44798,17 +44733,14 @@ msgid "Spending for Account {0} ({1}) between {2} and {3} has already exceeded t
 msgstr "Sąskaitos {0} ({1}) išlaidos tarp {2} ir {3} jau viršijo naujai skirtą biudžetą. Išleista: {4}, biudžetas: {5}"
 
 #: erpnext/assets/doctype/asset/asset.js:557 erpnext/stock/doctype/batch/batch.js:91 erpnext/stock/doctype/batch/batch.js:183 erpnext/support/doctype/issue/issue.js:114
-#, fuzzy
 msgid "Split"
-msgstr "Splitas"
+msgstr "Padalyti (-a)"
 
 #: erpnext/assets/doctype/asset/asset.js:122 erpnext/assets/doctype/asset/asset.js:541
-#, fuzzy
 msgid "Split Asset"
-msgstr "Padalytas turtas"
+msgstr "Padalyti turtą"
 
 #: erpnext/stock/doctype/batch/batch.js:182
-#, fuzzy
 msgid "Split Batch"
 msgstr "Padalyti partiją"
 
@@ -44820,86 +44752,71 @@ msgstr "Ankstyvojo mokėjimo nuolaidos nuostolio padalijimas į pajamas ir mokes
 
 #. Label of the split_from (Link) field in DocType 'Asset'
 #: erpnext/assets/doctype/asset/asset.json
-#, fuzzy
 msgid "Split From"
-msgstr "Padalyti iš"
+msgstr "Padalyta iš"
 
 #: erpnext/support/doctype/issue/issue.js:102
-#, fuzzy
 msgid "Split Issue"
-msgstr "Padalijimo klausimas"
+msgstr "Padalinti problemą"
 
 #: erpnext/assets/doctype/asset/asset.js:547
-#, fuzzy
 msgid "Split Qty"
-msgstr "Suskirstymas Kiekis"
+msgstr "Padalijimo kiekis"
 
 #: erpnext/assets/doctype/asset/asset.py:1243
-#, fuzzy
 msgid "Split Quantity must be less than Asset Quantity"
 msgstr "Padalintas kiekis turi būti mažesnis už turto kiekį"
 
 #: erpnext/accounts/doctype/payment_entry/payment_entry.py:2519
-#, fuzzy
 msgid "Splitting {0} {1} into {2} rows as per Payment Terms"
 msgstr "{0} {1} padalijimas į {2} eilutes pagal mokėjimo sąlygas"
 
 #: erpnext/setup/setup_wizard/data/industry_type.txt:46
-#, fuzzy
 msgid "Sports"
 msgstr "Sportas"
 
 #. Name of a UOM
 #: erpnext/setup/setup_wizard/data/uom_data.json
-#, fuzzy
 msgid "Square Centimeter"
 msgstr "Kvadratinis centimetras"
 
 #. Name of a UOM
 #: erpnext/setup/setup_wizard/data/uom_data.json
-#, fuzzy
 msgid "Square Foot"
 msgstr "Kvadratinė pėda"
 
 #. Name of a UOM
 #: erpnext/setup/setup_wizard/data/uom_data.json
-#, fuzzy
 msgid "Square Inch"
 msgstr "Kvadratinis colis"
 
 #. Name of a UOM
 #: erpnext/setup/setup_wizard/data/uom_data.json
-#, fuzzy
 msgid "Square Kilometer"
 msgstr "Kvadratiniai kilometrai"
 
 #. Name of a UOM
 #: erpnext/setup/setup_wizard/data/uom_data.json
-#, fuzzy
 msgid "Square Meter"
 msgstr "Kvadratinis metras"
 
 #. Name of a UOM
 #: erpnext/setup/setup_wizard/data/uom_data.json
-#, fuzzy
 msgid "Square Mile"
 msgstr "Kvadratinė mylia"
 
 #. Name of a UOM
 #: erpnext/setup/setup_wizard/data/uom_data.json
-#, fuzzy
 msgid "Square Yard"
 msgstr "Kvadratinis jardas"
 
 #. Label of the stage (Data) field in DocType 'Prospect Opportunity'
 #: erpnext/crm/doctype/prospect_opportunity/prospect_opportunity.json
-#, fuzzy
 msgid "Stage"
 msgstr "Etapas"
 
 #. Label of the stage_name (Data) field in DocType 'Sales Stage'
 #: erpnext/crm/doctype/sales_stage/sales_stage.json
-#, fuzzy
 msgid "Stage Name"
 msgstr "Etapo pavadinimas"
 
@@ -44915,28 +44832,23 @@ msgid "Stale Days should start from 1."
 msgstr "Vėluojančios dienos turėtų prasidėti nuo 1."
 
 #: erpnext/setup/setup_wizard/operations/defaults_setup.py:70 erpnext/setup/setup_wizard/operations/install_fixtures.py:476
-#, fuzzy
 msgid "Standard Buying"
 msgstr "Standartinis pirkimas"
 
 #: erpnext/manufacturing/report/bom_explorer/bom_explorer.py:73
-#, fuzzy
 msgid "Standard Description"
 msgstr "Standartinis aprašymas"
 
 #: erpnext/regional/report/uae_vat_201/uae_vat_201.py:115
-#, fuzzy
 msgid "Standard Rated Expenses"
 msgstr "Standartinės įvertintos išlaidos"
 
 #: erpnext/setup/setup_wizard/operations/defaults_setup.py:70 erpnext/setup/setup_wizard/operations/install_fixtures.py:484 erpnext/stock/doctype/item/item.py:246
-#, fuzzy
 msgid "Standard Selling"
 msgstr "Standartinis pardavimas"
 
 #. Label of the standard_rate (Currency) field in DocType 'Item'
 #: erpnext/stock/doctype/item/item.json
-#, fuzzy
 msgid "Standard Selling Rate"
 msgstr "Standartinis pardavimo tarifas"
 
@@ -44948,14 +44860,12 @@ msgstr "Standartinis šablonas"
 
 #. Description of a DocType
 #: erpnext/setup/doctype/terms_and_conditions/terms_and_conditions.json
-#, fuzzy
 msgid "Standard Terms and Conditions that can be added to Sales and Purchases. Examples: Validity of the offer, Payment Terms, Safety and Usage, etc."
-msgstr "Standartinės sąlygos, kurios gali būti pridedamos prie pardavimo ir pirkimo. Pavyzdžiai: Pasiūlymo galiojimas, mokėjimo sąlygos, saugumas ir naudojimas ir kt."
+msgstr "Standartinės sąlygos, kurios gali būti pridedamos prie pardavimo ir pirkimo. Pavyzdžiai: Pasiūlymo galiojimas, mokėjimo sąlygos, saugumas, naudojimas ir kt."
 
 #: erpnext/regional/report/uae_vat_201/uae_vat_201.py:96 erpnext/regional/report/uae_vat_201/uae_vat_201.py:102
-#, fuzzy
 msgid "Standard rated supplies in {0}"
-msgstr "Standartiniai vardiniai tiekimo šaltiniai {0}"
+msgstr "Standard rated supplies in {0}"
 
 #. Description of a DocType
 #: erpnext/accounts/doctype/purchase_taxes_and_charges_template/purchase_taxes_and_charges_template.json
@@ -44979,62 +44889,51 @@ msgid "Standing Name"
 msgstr "Nuolatinis pavadinimas"
 
 #: erpnext/accounts/doctype/process_payment_reconciliation/process_payment_reconciliation.js:54
-#, fuzzy
 msgid "Start / Resume"
 msgstr "Pradėti / tęsti"
 
 #: erpnext/crm/doctype/email_campaign/email_campaign.py:40
-#, fuzzy
 msgid "Start Date cannot be before the current date"
 msgstr "Pradžios data negali būti ankstesnė nei dabartinė data"
 
 #: erpnext/accounts/report/invalid_ledger_entries/invalid_ledger_entries.py:80
-#, fuzzy
 msgid "Start Date should be lower than End Date"
 msgstr "Pradžios data turėtų būti mažesnė už pabaigos datą"
 
 #: erpnext/setup/doctype/transaction_deletion_record/transaction_deletion_record.js:21
-#, fuzzy
 msgid "Start Deletion"
 msgstr "Pradėti šalinimą"
 
 #: erpnext/manufacturing/doctype/job_card/job_card.js:215 erpnext/manufacturing/doctype/workstation/workstation.js:124
-#, fuzzy
 msgid "Start Job"
-msgstr "Darbo pradžia"
+msgstr "Pradėti darbą"
 
 #: erpnext/accounts/doctype/ledger_merge/ledger_merge.js:72
-#, fuzzy
 msgid "Start Merge"
 msgstr "Pradėti sujungimą"
 
 #: erpnext/stock/doctype/repost_item_valuation/repost_item_valuation.js:99
-#, fuzzy
 msgid "Start Reposting"
-msgstr "Pradėkite pakartotinai skelbti"
+msgstr "Pradėti pakartotinai skelbti/perskaičiuoti"
 
 #: erpnext/support/doctype/service_level_agreement/service_level_agreement.py:129
 msgid "Start Time can't be greater than or equal to End Time for {0}."
 msgstr "Pradžios laikas negali būti didesnis arba lygus {0} pabaigos laikui."
 
 #: erpnext/projects/doctype/timesheet/timesheet.js:62
-#, fuzzy
 msgid "Start Timer"
-msgstr "Laikmačio paleidimas"
+msgstr "Pradėti laikmatį"
 
 #: erpnext/accounts/report/consolidated_financial_statement/consolidated_financial_statement.js:56 erpnext/accounts/report/deferred_revenue_and_expense/deferred_revenue_and_expense.js:56 erpnext/accounts/report/financial_ratios/financial_ratios.js:17 erpnext/assets/report/fixed_asset_register/fixed_asset_register.js:81 erpnext/public/js/financial_statements.js:343
-#, fuzzy
 msgid "Start Year"
 msgstr "Pradžios metai"
 
 #: erpnext/accounts/report/financial_statements.py:130
-#, fuzzy
 msgid "Start Year and End Year are mandatory"
 msgstr "Privaloma nurodyti pradžios ir pabaigos metus."
 
 #. Label of the section_break_18 (Section Break) field in DocType 'Project'
 #: erpnext/projects/doctype/project/project.json
-#, fuzzy
 msgid "Start and End Dates"
 msgstr "Pradžios ir pabaigos datos"
 
