@@ -63,7 +63,7 @@ def seed_pvm_classificators() -> None:
 def ensure_default_settings() -> None:
 	"""If settings exist and default classificator is empty, set a sensible default."""
 	try:
-		settings = frappe.get_single("lithuania Compliance Settings")
+		settings = frappe.get_single("Lithuania Compliance Settings")
 		if not settings.default_pvm_classificator and frappe.db.exists("PVM Classificator", "PVM1"):
 			settings.default_pvm_classificator = "PVM1"
 			settings.save(ignore_permissions=True)

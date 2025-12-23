@@ -66,11 +66,15 @@ function show_manage_prices_dialog(frm, items_data) {
 	html += `<table style="width: 100%; border-collapse: collapse; margin-bottom: 20px;">
 		<thead>
 			<tr style="background: #f5f5f5; border-bottom: 2px solid #ddd;">
-				<th style="padding: 10px; text-align: left; border: 1px solid #ddd;">Item Code / Name</th>
-				<th style="padding: 10px; text-align: left; border: 1px solid #ddd;">Selling Price / Valid</th>
-				<th style="padding: 10px; text-align: left; border: 1px solid #ddd;">Markup</th>
-				<th style="padding: 10px; text-align: left; border: 1px solid #ddd;">Buying Price</th>
-				<th style="padding: 10px; text-align: center; border: 1px solid #ddd;">Actions</th>
+				<th style="padding: 10px; text-align: left; border: 1px solid #ddd;">${__("Item Code")} / ${__(
+		"Name"
+	)}</th>
+				<th style="padding: 10px; text-align: left; border: 1px solid #ddd;">${__("Selling Price")} / ${__(
+		"Valid"
+	)}</th>
+				<th style="padding: 10px; text-align: left; border: 1px solid #ddd;">${__("Markup")}</th>
+				<th style="padding: 10px; text-align: left; border: 1px solid #ddd;">${__("Buying Price")}</th>
+				<th style="padding: 10px; text-align: center; border: 1px solid #ddd;">${__("Actions")}</th>
 			</tr>
 		</thead>
 		<tbody>`;
@@ -125,14 +129,20 @@ function show_manage_prices_dialog(frm, items_data) {
 		} else {
 			html += `<tr style="border-bottom: 1px solid #ddd;">
 				<td style="padding: 10px; border: 1px solid #ddd;">
-					<a href="#" class="item-code-link" data-item-code="${item.item_code}" style="color: #0066cc; text-decoration: none; font-weight: bold;">
+					<a href="#" class="item-code-link" data-item-code="${
+						item.item_code
+					}" style="color: #0066cc; text-decoration: none; font-weight: bold;">
 						${item.item_code}${asterisk}
 					</a>
 					<div style="font-size: 0.9em; color: #666; margin-top: 2px;">${item.item_name}</div>
 				</td>
-				<td colspan="3" style="padding: 10px; border: 1px solid #ddd; color: #666; font-style: italic;">No applicable price found</td>
+				<td colspan="3" style="padding: 10px; border: 1px solid #ddd; color: #666; font-style: italic;">${__(
+					"No applicable price found"
+				)}</td>
 				<td style="padding: 10px; border: 1px solid #ddd; text-align: center;">
-					<a href="#" class="btn btn-sm btn-default add-price-btn" data-item-code="${item.item_code}" style="color: #27ae60; text-decoration: none; padding: 5px 8px;" title="Add Price">
+					<a href="#" class="btn btn-sm btn-default add-price-btn" data-item-code="${
+						item.item_code
+					}" style="color: #27ae60; text-decoration: none; padding: 5px 8px;" title="Add Price">
 						<i class="fa fa-plus"></i>
 					</a>
 				</td>
@@ -142,7 +152,9 @@ function show_manage_prices_dialog(frm, items_data) {
 
 	html += `	</tbody>
 	</table>`;
-	html += `<div style="margin-top: 20px;"><strong style="color: #e74c3c;">*</strong> Indicates item has multiple prices</div>`;
+	html += `<div style="margin-top: 20px;"><strong style="color: #e74c3c;">*</strong> ${__(
+		"Indicates item has multiple prices"
+	)}</div>`;
 	html += "</div>";
 	dialog.fields_dict.prices_html.$wrapper.html(html);
 

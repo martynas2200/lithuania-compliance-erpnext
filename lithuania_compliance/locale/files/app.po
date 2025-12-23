@@ -24,8 +24,8 @@ msgstr "Mokestis"
 
 #: settings page
 
-msgid "Lithuania STI Compliance Settings"
-msgstr "Lietuvos VMI atitikties nustatymai"
+msgid "Lithuania Compliance Settings"
+msgstr "Atitikties nustatymai Lietuvoje"
 
 msgid "Rounding Accounts"
 msgstr "Suapvalinimo sąskaitos"
@@ -41,6 +41,15 @@ msgstr "Dokumento pavadinimui naudoti sąskaitos numerį."
 
 msgid "If checked, the Purchase Invoice document name will be set to the Bill No."
 msgstr "Jei pažymėta, pirkimo sąskaitos faktūros dokumento pavadinimas bus nustatytas į Sąskaitos Nr."
+
+msgid "Manage Item Prices"
+msgstr "Tvarkyti prekių kainas"
+
+msgid "Indicates item has multiple prices"
+msgstr "Nurodo, kad prekė turi kelias kainas"
+
+msgid "No applicable price found"
+msgstr "Nerasta taikoma kaina"
 
 msgid "PVM Classificators"
 msgstr "PVM klasifikatoriai"
@@ -69,6 +78,9 @@ msgstr "Aprašymas"
 
 msgid "i.SAF XML Generation"
 msgstr "i.SAF XML generavimas"
+
+msgid "Generate i.SAF"
+msgstr "Generuoti i.SAF"
 
 msgid "Generate i.SAF XML"
 msgstr "Generuoti i.SAF XML"
