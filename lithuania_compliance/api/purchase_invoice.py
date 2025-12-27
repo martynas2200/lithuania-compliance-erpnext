@@ -1,10 +1,61 @@
-"""
-API for Purchase Invoice
-"""
+"""Helpers and API for Purchase Invoice."""
 
 from datetime import datetime
 
 import frappe
+
+
+def _add_supplier_for_items(doc):
+	"""
+	Ensure invoice supplier is in each Item's supplier list.
+
+	For every item row in the Purchase Invoice, this job loads the
+	corresponding Item and, if the invoice supplier is not already
+	listed in the Item's ``supplier_items`` child table, appends a new
+	row and saves the Item.
+	"""
+	supplier = getattr(doc, "supplier", None)
+	if not supplier:
+		return
+
+	processed_items = set()
+
+	for item in getattr(doc, "items", []) or []:
+		item_code = getattr(item, "item_code", None)
+		if not item_code or item_code in processed_items:
+			continue
+
+		processed_items.add(item_code)
+
+		try:
+			item_doc = frappe.get_doc("Item", item_code)
+		except frappe.DoesNotExistError:
+			# If the item no longer exists, just skip it
+			continue
+
+		existing_suppliers = {
+			row.supplier
+			for row in (getattr(item_doc, "supplier_items", []) or [])
+			if getattr(row, "supplier", None)
+		}
+
+		if supplier not in existing_suppliers:
+			item_doc.append("supplier_items", {"supplier": supplier})
+			item_doc.save(ignore_permissions=True)
+			frappe.db.commit()
+
+
+def enqueue_supplier_items_sync(doc, method=None):
+	"""Enqueue background job to validate suppliers on submit.
+
+	Hook signature: ``doc, method``.
+	"""
+	frappe.enqueue(
+		"lithuania_compliance.api.purchase_invoice._add_supplier_for_items",
+		doc=doc,
+		queue="short",
+		now=False,
+	)
 
 
 @frappe.whitelist()

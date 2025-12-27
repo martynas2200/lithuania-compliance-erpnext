@@ -135,13 +135,11 @@ after_install = "lithuania_compliance.install.after_install"
 # ---------------
 # Hook on document methods and events
 
-# doc_events = {
-# 	"*": {
-# 		"on_update": "method",
-# 		"on_cancel": "method",
-# 		"on_trash": "method"
-# 	}
-# }
+doc_events = {
+	"Purchase Invoice": {
+		"on_submit": "lithuania_compliance.api.purchase_invoice.enqueue_supplier_items_sync",
+	}
+}
 
 # Scheduled Tasks
 # ---------------
