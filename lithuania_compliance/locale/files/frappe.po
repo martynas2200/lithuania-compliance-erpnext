@@ -25687,54 +25687,45 @@ msgstr "Išsaugojus šį dokumentą ir čia nurodytus veiksmus eksportuosite kai
 #: frappe/public/js/form_builder/store.js:233
 #: frappe/public/js/print_format_builder/store.js:36
 #: frappe/public/js/workflow_builder/store.js:73
-#, fuzzy
 msgid "Saving..."
-msgstr "Taupymas..."
+msgstr "Saugoma..."
 
 #: frappe/public/js/frappe/scanner/index.js:72
-#, fuzzy
 msgid "Scan QRCode"
 msgstr "Nuskaityti QRCode"
 
 #: frappe/www/qrcode.html:14
-#, fuzzy
 msgid "Scan the QR Code and enter the resulting code displayed."
 msgstr "Nuskaitykite QR kodą ir įveskite rodomą kodą."
 
 #. Label of the section_break_10 (Tab Break) field in DocType 'Auto Repeat'
 #: frappe/automation/doctype/auto_repeat/auto_repeat.json
-#, fuzzy
 msgid "Schedule"
 msgstr "Tvarkaraštis"
 
 #: frappe/public/js/frappe/views/communication.js:88
-#, fuzzy
 msgid "Schedule Send At"
-msgstr "Tvarkaraštis Siųsti ne"
+msgstr "Suplanuoti išsiuntimą"
 
 #. Option for the 'Delivery Status' (Select) field in DocType 'Communication'
 #. Option for the 'Status' (Select) field in DocType 'Scheduled Job Log'
 #: frappe/core/doctype/communication/communication.json
 #: frappe/core/doctype/scheduled_job_log/scheduled_job_log.json
-#, fuzzy
 msgid "Scheduled"
 msgstr "Suplanuota"
 
 #. Label of the scheduled_against (Link) field in DocType 'Scheduler Event'
 #: frappe/core/doctype/scheduler_event/scheduler_event.json
-#, fuzzy
 msgid "Scheduled Against"
-msgstr "Planuojama prieš"
+msgstr "Suplanuota pagal"
 
 #. Label of the scheduled_job_type (Link) field in DocType 'Scheduled Job Log'
 #: frappe/core/doctype/scheduled_job_log/scheduled_job_log.json
-#, fuzzy
 msgid "Scheduled Job"
 msgstr "Suplanuotas darbas"
 
 #. Name of a DocType
 #: frappe/core/doctype/scheduled_job_log/scheduled_job_log.json
-#, fuzzy
 msgid "Scheduled Job Log"
 msgstr "Suplanuotų užduočių žurnalas"
 
@@ -25745,13 +25736,11 @@ msgstr "Suplanuotų užduočių žurnalas"
 #: frappe/core/doctype/scheduled_job_type/scheduled_job_type.json
 #: frappe/core/workspace/build/build.json
 #: frappe/desk/doctype/system_health_report_failing_jobs/system_health_report_failing_jobs.json
-#, fuzzy
 msgid "Scheduled Job Type"
 msgstr "Suplanuotas darbo tipas"
 
 #. Label of a Link in the Build Workspace
 #: frappe/core/workspace/build/build.json
-#, fuzzy
 msgid "Scheduled Jobs Logs"
 msgstr "Suplanuotų užduočių žurnalai"
 
