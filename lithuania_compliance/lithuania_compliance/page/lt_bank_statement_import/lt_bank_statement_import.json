@@ -1,0 +1,23 @@
+{
+ "creation": "2025-12-28 00:00:00",
+ "docstatus": 0,
+ "doctype": "Page",
+ "idx": 0,
+ "icon": "fa fa-bank",
+ "modified": "2025-12-28 00:00:00",
+ "modified_by": "Administrator",
+ "module": "Lithuania Compliance",
+ "name": "lt-bank-statement-import",
+ "owner": "Administrator",
+ "page_name": "lt-bank-statement-import",
+ "roles": [
+  {"role": "Accounts User"},
+  {"role": "Accounts Manager"},
+  {"role": "System Manager"}
+ ],
+ "script": null,
+ "standard": "Yes",
+ "style": null,
+ "title": "LT Bank Statement Import",
+ "system_page": 0
+}

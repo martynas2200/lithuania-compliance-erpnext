@@ -8,6 +8,7 @@ requires-python = ">=3.10"
 readme = "README.md"
 dynamic = ["version"]
 dependencies = [
+    "lxml>=4.9.0",
     # "frappe~=15.0.0" # Installed and managed by bench.
 ]
 
@@ -34,6 +35,7 @@ select = [
     "RUF",
 ]
 ignore = [
+    "E722", # do not use bare except
     "B017", # assertRaises(Exception) - should be more specific
     "B018", # useless expression, not assigned to anything
     "B023", # function doesn't bind loop variable - will have last iteration's value

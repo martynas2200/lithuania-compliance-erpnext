@@ -36219,7 +36219,7 @@ msgstr "{0} iš {1} ({2} eilutės su vaikais)"
 #, fuzzy
 msgctxt "Money in words"
 msgid "{0} only."
-msgstr "{0} tik."
+msgstr "{0}"
 
 #: frappe/utils/data.py:1746
 #, fuzzy

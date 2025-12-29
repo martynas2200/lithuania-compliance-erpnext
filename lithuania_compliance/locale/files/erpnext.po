@@ -16452,22 +16452,19 @@ msgstr "Priklausoma užduotis {0} nėra šablono užduotis"
 
 #. Label of the depends_on (Table) field in DocType 'Task'
 #: erpnext/projects/doctype/task/task.json
-#, fuzzy
 msgid "Dependent Tasks"
 msgstr "Priklausomos užduotys"
 
 #. Label of the depends_on_tasks (Code) field in DocType 'Task'
 #: erpnext/projects/doctype/task/task.json
-#, fuzzy
 msgid "Depends on Tasks"
 msgstr "Priklauso nuo užduočių"
 
 #. Label of the deposit (Currency) field in DocType 'Bank Transaction'
 #: erpnext/accounts/doctype/bank_transaction/bank_transaction.json
 #: erpnext/public/js/bank_reconciliation_tool/data_table_manager.js:60
-#, fuzzy
 msgid "Deposit"
-msgstr "Depozitas"
+msgstr "Įnešimas"
 
 #. Label of the daily_prorata_based (Check) field in DocType 'Asset
 #. Depreciation Schedule'
@@ -49774,20 +49771,17 @@ msgid "Setting the account as a Company Account is necessary for Bank Reconcilia
 msgstr "Nustatyti sąskaitą kaip įmonės sąskaitą būtina, kad būtų galima atlikti banko sutikrinimą."
 
 #: erpnext/setup/setup_wizard/setup_wizard.py:29
-#, fuzzy
 msgid "Setting up company"
-msgstr "Įmonės steigimas"
+msgstr "Įmonės nustatymas"
 
 #: erpnext/manufacturing/doctype/bom/bom.py:1115
 #: erpnext/manufacturing/doctype/work_order/work_order.py:1447
-#, fuzzy
 msgid "Setting {0} is required"
 msgstr "Reikia nustatyti {0}"
 
 #. Description of a DocType
 #: erpnext/crm/doctype/crm_settings/crm_settings.json
 #: erpnext/selling/doctype/selling_settings/selling_settings.json
-#, fuzzy
 msgid "Settings for Selling Module"
 msgstr "Pardavimo modulio nustatymai"
 
@@ -49796,9 +49790,8 @@ msgstr "Pardavimo modulio nustatymai"
 #: erpnext/accounts/doctype/bank_transaction/bank_transaction.json
 #: erpnext/accounts/doctype/invoice_discounting/invoice_discounting.json
 #: erpnext/accounts/doctype/invoice_discounting/invoice_discounting_list.js:11
-#, fuzzy
 msgid "Settled"
-msgstr "Įsikūręs"
+msgstr "Atskaityta"
 
 #: erpnext/public/js/setup_wizard.js:25
 #, fuzzy
@@ -60559,9 +60552,8 @@ msgstr "Su laikotarpio pabaigos įrašu pradiniams likučiams"
 #. Label of the withdrawal (Currency) field in DocType 'Bank Transaction'
 #: erpnext/accounts/doctype/bank_transaction/bank_transaction.json
 #: erpnext/public/js/bank_reconciliation_tool/data_table_manager.js:67
-#, fuzzy
 msgid "Withdrawal"
-msgstr "Pasitraukimas"
+msgstr "Išėmimas"
 
 #. Label of the work_done (Small Text) field in DocType 'Maintenance Visit
 #. Purpose'

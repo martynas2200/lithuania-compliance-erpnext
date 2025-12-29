@@ -21,7 +21,13 @@
     "use_bill_no_as_title",
     "section_pvm",
     "default_pvm_classificator",
-    "pvm_item_map"
+    "pvm_item_map",
+    "section_bank_import",
+    "deposit_account",
+    "cash_deposit_account",
+    "bank_fee_expense_account",
+    "auto_create_parties_from_iban",
+    "debug_mode"
   ],
   "fields": [
     {
@@ -68,6 +74,65 @@
       "fieldtype": "Table",
       "options": "Item PVM Classificator",
       "label": "Per-Item PVM Classificator Overrides"
+    },
+    {
+      "fieldname": "section_bank_import",
+      "fieldtype": "Section Break",
+      "label": "Bank Import"
+    },
+    {
+      "fieldname": "cash_deposit_account",
+      "fieldtype": "Link",
+      "options": "Account",
+      "label": "Cash Deposit Account",
+      "description": "Source account for cash deposits (CAMT SubFmlyCd CDPT) that are transferred into the bank account."
+    },
+    {
+      "fieldname": "emv_account",
+      "fieldtype": "Link",
+      "options": "Account",
+      "label": "EMV Account",
+      "description": "Source account for EMV transactions that are transferred into the bank account."
+    },
+    {
+      "fieldname": "default_customer",
+      "fieldtype": "Link",
+      "options": "Customer",
+      "label": "Default Customer",
+      "description": "Default customer used for receivables in bank import."
+    },
+    {
+      "fieldname": "default_employee_payable_account",
+      "fieldtype": "Link",
+      "options": "Account",
+      "label": "Default Employee Payable Account",
+      "description": "Default account used for employee payables in bank import."
+    },
+    {
+      "fieldname": "default_receivable_account",
+      "fieldtype": "Link",
+      "options": "Account",
+      "label": "Default Receivable Account",
+      "description": "Default account used for receivables in bank import."
+    },
+    {
+      "fieldname": "bank_fee_expense_account",
+      "fieldtype": "Link",
+      "options": "Account",
+      "label": "Bank Fee Expense Account",
+      "description": "Used for small bank fees (e.g. < 1 EUR) detected in CAMT bank statement imports."
+    },
+    {
+      "fieldname": "auto_create_parties_from_iban",
+      "fieldtype": "Check",
+      "label": "Auto-create Parties from IBAN",
+      "description": "If enabled, new Customers/Suppliers and Bank Accounts will be created automatically when importing CAMT statements based on IBAN and party name."
+    },
+    {
+      "fieldname": "debug_mode",
+      "fieldtype": "Check",
+      "label": "Enable Debug Logging",
+      "description": "If enabled, CAMT bank import will write detailed debug information to the Error Log."
     }
   ],
   "links": [],

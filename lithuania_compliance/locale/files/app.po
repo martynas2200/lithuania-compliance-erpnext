@@ -205,5 +205,138 @@ msgstr "Generuoti"
 msgid "Prefill"
 msgstr "Užpildyti"
 
+msgid "Bank Import IBAN validation"
+msgstr "Banko importo IBAN patikrinimas"
 
+msgid "Created {0} payment entries"
+msgstr "Sukurta {0} mokėjimo įrašų"
 
+msgid "{0} (Description: {1})"
+msgstr "{0} (Aprašymas: {1})"
+
+msgid "No account found for IBAN {0}. Make sure there is an account in the chart of accounts with this IBAN, account type Bank and not disabled."
+
+msgstr "Nerasta sąskaita IBAN {0}. Įsitikinkite, kad sąskaitų plane yra sąskaita su šiuo IBAN, sąskaitos tipu Bankas ir ji nėra išjungta."
+
+msgid "Add New Item Price"
+msgstr "Pridėti naują prekės kainą"
+
+msgid  "Receipt from {0}"
+msgstr  "Gavimas iš {0}"
+
+msgid "Bank receipt"
+msgstr "Banko kvitas"
+
+msgid "Payment to supplier {0}"
+msgstr "Mokėjimas tiekėjui {0}"
+
+msgid "Payment to employee {0}"
+msgstr "Mokėjimas darbuotojui {0}"
+
+msgid "Bank fee (charges)"
+msgstr "Banko mokestis (mokesčiai)"
+
+msgid "Cash deposit transfer"
+msgstr "Grynųjų pinigų įnešimo pervedimas"
+
+msgid "Internal transfer between own accounts"
+msgstr "Vidinis pervedimas tarp nuosavų sąskaitų"
+
+msgid "Internal bank transfer"
+msgstr "Vidinis banko pervedimas"
+
+msgid "Deposit Account"
+msgstr "įnešimo sąskaita"
+
+msgid "Used for unmatched incoming deposits from CAMT bank statement imports."
+msgstr "Naudojama neatitikusiems gaunamiesiems įnašams iš CAMT banko išrašų importų."
+
+msgid "Cash Deposit Account"
+msgstr "Grynųjų pinigų įnešimo sąskaita"
+
+msgid "Source account for cash deposits (CAMT SubFmlyCd CDPT) that are transferred into the bank account."
+msgstr "Sąskaita grynųjų pinigų įnašams (CAMT SubFmlyCd CDPT), kurie pervedami į banko sąskaitą."
+
+msgid "Bank Fee Expense Account"
+msgstr "Išlaidų sąskaita už banko mokesčius"
+
+msgid "Used for bank fees in CAMT bank statement imports."
+msgstr "Naudojama banko mokesčiams, aptiktiems CAMT banko išrašų importuose."
+
+msgid "Auto-create Parties from IBAN"
+msgstr "Automatiškai sukurti šalis pagal IBAN"
+
+msgid "If enabled, new Customers/Suppliers and Bank Accounts will be created automatically when importing CAMT statements based on IBAN and party name."
+msgstr "Jei įjungta, nauji klientai/tiekėjai ir banko sąskaitos bus automatiškai sukurti importuojant CAMT išrašus pagal IBAN ir šalies pavadinimą."
+
+msgid "Enable Debug Logging"
+msgstr "Įgalinti Debug žurnalą"
+
+msgid "If enabled, CAMT bank import will write detailed debug information to the Error Log."
+msgstr "Jei įjungta, CAMT banko importas rašys išsamią derinimo informaciją į klaidų žurnalą."
+
+msgid "Bank Import IBAN validation"
+msgstr "Banko importo IBAN patikrinimas"
+
+msgid "Cash deposit into bank account"
+msgstr "Grynųjų pinigų įnešimas į banko sąskaitą"
+
+msgid "{0} (saved as Drafts)"
+msgstr "{0} (išsaugota kaip juodraščiai)"
+
+msgid "{0} (Description: {1})"
+msgstr "{0} (Aprašymas: {1})"
+
+msgid "Bank Import CAMT.053 Error"
+msgstr "Banko importo CAMT.053 klaida"
+
+msgid "Bank Import IBAN validation"
+msgstr "Banko importo IBAN patikrinimas"
+
+msgid "Please choose a file before importing."
+msgstr "Prašome pasirinkti failą prieš importuojant."
+
+msgid "No file selected."
+msgstr "Nėra pasirinkto failo."
+
+msgid "Reading file..."
+msgstr "Failas skaitomas..."
+
+msgid "Uploading and processing statement..."
+msgstr "Įkeliama ir apdorojama išrašas..."
+
+msgid "Importing and submitting bank statement..."
+msgstr "Importuojamas ir pateikiamas banko išrašas..."
+
+msgid "Importing bank statement..."
+msgstr "Importuojamas banko išrašas..."
+
+msgid "No response from server."
+msgstr "Nėra atsakymo iš serverio."
+
+msgid "Created Payment Entries"
+msgstr "Sukurti mokėjimo įrašai"
+
+msgid "Import Errors"
+msgstr "Importo klaidos"
+
+msgid "Nothing was imported."
+msgstr "Nieko nebuvo importuota."
+
+msgid "Could not read file."
+msgstr "Nepavyko perskaityti failo."
+
+msgid "Upload an ISO_XML_052 (ISO 20022 CAMT052) bank statement file to create Bank Transactions and possibly Payment Entries."
+msgstr "Įkelkite ISO_XML_052 (ISO 20022 CAMT052) banko išrašo failą, kad sukurtumėte banko operacijas ir galbūt mokėjimo įrašus."
+
+msgid "Optional note about this import"
+msgstr "Pasirinktinė pastaba apie šį importą"
+
+msgid "Submit created Payment Entries"
+msgstr "Pateikti sukurtus mokėjimo įrašus"
+
+msgid "If not checked, created Payment Entries will remain in Draft state."
+msgstr "Jei nepažymėta, sukurti mokėjimo įrašai liks juodraščio būsenoje."
+
+msgid "Import Bank Statement"
+msgstr "Importuoti banko išrašą"
