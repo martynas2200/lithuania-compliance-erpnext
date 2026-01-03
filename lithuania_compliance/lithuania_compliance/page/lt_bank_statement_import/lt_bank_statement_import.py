@@ -390,7 +390,6 @@ def read_camt_transactions(
 					except:
 						# party is not defined (e.g. DBIT from Bank)
 						try:
-							# this is a fallback for ZKB which does not provide nm tag, but address line
 							address_lines = party_soup.find_all("adrline")
 							party_name = address_lines[0].get_text()
 						except:
@@ -412,10 +411,26 @@ def read_camt_transactions(
 					party_name = ""
 					party_address = ""
 					party_iban = ""
-				# try:
-				# 	charges = float(transaction_soup.chrgs.ttlchrgsandtaxamt.get_text())
-				# except:
-				# 	charges = 0.0
+				# Bank charges and taxes that are reported on transaction level.
+				# Swedbank may use either
+				#   <Chrgs><TtlChrgsAndTaxAmt><Amt>...</Amt></TtlChrgsAndTaxAmt></Chrgs>
+				# or a simpler <Chrgs><Amt>...</Amt></Chrgs> structure.
+				charges = 0.0
+				charges_tag = None
+				try:
+					charges_tag = transaction_soup.chrgs.ttlchrgsandtaxamt
+				except Exception:
+					charges_tag = None
+				if not charges_tag:
+					try:
+						charges_tag = transaction_soup.chrgs.amt
+					except Exception:
+						charges_tag = None
+				if charges_tag:
+					try:
+						charges = float(charges_tag.get_text())
+					except Exception:
+						charges = 0.0
 
 				try:
 					# try to find ESR reference
@@ -510,19 +525,27 @@ def read_camt_transactions(
 									# add total matched amount
 									matched_amount += float(pinv["outstanding_amount"])
 						# employees
-						match_employees = frappe.get_all(
-							"Employee",
-							filters={"employee_name": party_name, "status": "active"},
-							fields=["name"],
-						)
+						try:
+							match_employees = frappe.get_all(
+								"Employee",
+								filters={"employee_name": party_name, "status": "active"},
+								fields=["name"],
+							)
+						except Exception:
+							# "Employee" DocType might not be installed (HRMS not present)
+							match_employees = []
 						if match_employees:
 							employee_match = match_employees[0]["name"]
 						# expense claims
-						possible_expenses = frappe.get_all(
-							"Expense Claim",
-							filters=[["docstatus", "=", 1], ["status", "=", "Unpaid"]],
-							fields=["name", "employee", "total_claimed_amount"],
-						)
+						try:
+							possible_expenses = frappe.get_all(
+								"Expense Claim",
+								filters=[["docstatus", "=", 1], ["status", "=", "Unpaid"]],
+								fields=["name", "employee", "total_claimed_amount"],
+							)
+						except Exception:
+							# "Expense Claim" DocType might not be installed
+							possible_expenses = []
 						if possible_expenses:
 							expense_matches = []
 							for exp in possible_expenses:
@@ -581,6 +604,7 @@ def read_camt_transactions(
 						"date": date,
 						"currency": currency,
 						"amount": amount,
+						"charges": charges,
 						"party_name": party_name,
 						"party_address": party_address,
 						"credit_debit": credit_debit,
@@ -686,6 +710,8 @@ def read_camt054(content, account=None, auto_submit=False):
 			amount = float(txn.get("amount") or 0)
 			if not amount:
 				continue
+
+			charges = flt(txn.get("charges") or 0)
 
 			date = txn.get("date")
 			reference_no = txn.get("unique_reference")
@@ -854,8 +880,20 @@ def read_camt054(content, account=None, auto_submit=False):
 					if existing_bt_name:
 						bank_transaction = frappe.get_doc("Bank Transaction", existing_bt_name)
 					else:
-						deposit = amount if is_credit else 0.0
-						withdrawal = amount if not is_credit else 0.0
+						# If we are going to split out bank charges into a
+						# separate Payment Entry, the Bank Transaction should
+						# reflect the total movement (base amount + charges) so
+						# both Payment Entries can fully reconcile it.
+						use_fee_split = (
+							charges > 0
+							and bool(settings.bank_fee_expense_account)
+							and bool(account)
+							and subfamily_code != "CHRG"
+						)
+						gross_amount = amount + charges if use_fee_split else amount
+
+						deposit = gross_amount if is_credit else 0.0
+						withdrawal = gross_amount if not is_credit else 0.0
 
 						description = remarks or txn.get("transaction_reference") or ""
 						reference_number = txn.get("transaction_reference") or reference_no
@@ -874,6 +912,7 @@ def read_camt054(content, account=None, auto_submit=False):
 								"bank_party_iban": party_iban or None,
 								"deposit": deposit,
 								"withdrawal": withdrawal,
+								"included_fee": charges or 0.0,
 							}
 						)
 
@@ -986,6 +1025,68 @@ def read_camt054(content, account=None, auto_submit=False):
 						frappe.log_error(
 							"Bank Import CAMT.052 Error",
 							f"Failed to link Payment Entry {pe_name} to Bank Transaction {bank_transaction.name}: {link_err}",
+						)
+
+				# If there are transaction-level bank charges and a default
+				# bank fee expense account is configured, create a separate
+				# Payment Entry for the fee.
+				if (
+					charges
+					and charges > 0
+					and settings.bank_fee_expense_account
+					and account
+					and subfamily_code != "CHRG"
+				):
+					try:
+						fee_reference_no = f"{reference_no}-FEE" if reference_no else None
+						fee_remarks = _("Bank charges for {0}").format(reference_no or date)
+
+						fee_result = make_payment_entry(
+							amount=charges,
+							date=date,
+							reference_no=fee_reference_no,
+							paid_from=account,
+							paid_to=settings.bank_fee_expense_account,
+							type="Internal Transfer",
+							party=None,
+							party_type=None,
+							references=None,
+							remarks=fee_remarks,
+							auto_submit=1 if auto_submit_flag else 0,
+							party_iban=party_iban,
+							company=company,
+							pattern=None,
+						)
+
+						if fee_result and fee_result.get("payment_entry"):
+							fee_pe_name = fee_result["payment_entry"]
+							created_entries.append(fee_pe_name)
+
+							# Link the fee Payment Entry back to the same
+							# Bank Transaction so that the sum of allocated
+							# amounts (main + fee) matches the Bank
+							# Transaction amount for reconciliation.
+							if bank_transaction:
+								try:
+									bank_transaction.reload()
+									bank_transaction.append(
+										"payment_entries",
+										{
+											"payment_document": "Payment Entry",
+											"payment_entry": fee_pe_name,
+											"allocated_amount": charges,
+										},
+									)
+									bank_transaction.save()
+								except Exception as fee_link_err:
+									frappe.log_error(
+										"Bank Import CAMT.052 Error",
+										f"Failed to link Bank Fee Payment Entry {fee_pe_name} to Bank Transaction {bank_transaction.name}: {fee_link_err}",
+									)
+					except Exception as fee_err:
+						frappe.log_error(
+							"Bank Import CAMT.052 Error",
+							f"Failed to create Bank Fee Payment Entry for {reference_no}: {fee_err}",
 						)
 
 		except Exception as err:
@@ -1124,13 +1225,20 @@ def make_payment_entry(
 
 	# add references after insert (otherwise they are overwritten)
 	if type == "Pay" and party_type == "Employee":
-		reference_type = "Expense Claim"
+		# Use Expense Claim only if the DocType exists (HRMS installed)
+		try:
+			if frappe.db.exists("DocType", "Expense Claim"):
+				reference_type = "Expense Claim"
+			else:
+				reference_type = None
+		except Exception:
+			reference_type = None
 	elif type == "Pay":
 		reference_type = "Purchase Invoice"
 	else:
 		reference_type = "Sales Invoice"
 
-	if references:
+	if references and reference_type:
 		for reference in ast.literal_eval(references):
 			create_reference(new_entry.name, reference, reference_type)
 
