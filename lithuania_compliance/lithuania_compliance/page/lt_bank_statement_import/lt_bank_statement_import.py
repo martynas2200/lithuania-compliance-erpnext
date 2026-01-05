@@ -1045,7 +1045,9 @@ def read_camt054(content, account=None, auto_submit=False):
 							amount=charges,
 							date=date,
 							reference_no=fee_reference_no,
-							paid_from=account,
+							paid_from=settings.emv_account
+							if subfamily_code == "POSP" and settings.emv_account
+							else account,
 							paid_to=settings.bank_fee_expense_account,
 							type="Internal Transfer",
 							party=None,

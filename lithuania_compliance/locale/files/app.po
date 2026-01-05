@@ -239,6 +239,21 @@ msgstr "Banko mokestis (mokesčiai)"
 msgid "Cash deposit transfer"
 msgstr "Grynųjų pinigų įnešimo pervedimas"
 
+msgid "Cannot find IBAN in CAMT.052/054 file."
+msgstr "Nepavyksta rasti IBAN CAMT.052/054 faile."
+
+msgid "IBAN not found in CAMT file"
+msgstr "IBAN nerastas CAMT faile"
+
+msgid "Bank account not found for IBAN"
+msgstr "Nerasta banko sąskaita pagal IBAN"
+
+msgid "Bank charges for {0}"
+msgstr "Banko mokesčiai už {0}"
+
+msgid "Checked {1} bank transactions. Created {0} payment entries"
+msgstr "Patikrinta {1} banko operacijų. Sukurta {0} mokėjimo įrašų"
+
 msgid "Internal transfer between own accounts"
 msgstr "Vidinis pervedimas tarp nuosavų sąskaitų"
 

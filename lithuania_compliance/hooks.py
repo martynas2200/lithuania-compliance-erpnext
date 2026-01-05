@@ -10,7 +10,10 @@ app_license = "mit"
 
 # required_apps = []
 
-override_doctype_class = {"Purchase Invoice": "lithuania_compliance.overrides.CustomPurchaseInvoice"}
+override_doctype_class = {
+	"Purchase Invoice": "lithuania_compliance.overrides.CustomPurchaseInvoice",
+	"Sales Invoice": "lithuania_compliance.overrides.CustomSalesInvoice",
+}
 
 # Each item in the list will be shown as an app in the apps page
 # add_to_apps_screen = [
@@ -22,8 +25,10 @@ override_doctype_class = {"Purchase Invoice": "lithuania_compliance.overrides.Cu
 # 		"has_permission": "lithuania_compliance.api.permission.has_app_permission"
 # 	}
 # ]
-fixtures = [{"dt": "Custom Field", "filters": [["name", "in", ["Supplier-business_code"]]]}]
-
+fixtures = [
+	{"dt": "Custom Field", "filters": [["name", "in", ["Supplier-business_code"]]]},
+	{"dt": "Print Format", "filters": [["name", "in", ["Debetinė PVM sąskaita"]]]},
+]
 # Includes in <head>
 # ------------------
 

@@ -8,19 +8,11 @@ def get_settings():
 
 
 def get_purchase_round_off_account(company: str | None = None) -> str | None:
-	"""Get the configured purchase rounding account.
-
-	Args:
-	    company: Reserved for future company-specific handling. Not used yet.
-
-	Returns:
-	    The Account name or None if not set.
-	"""
+	"""Get the configured purchase rounding account."""
 	try:
 		settings = get_settings()
 		return settings.purchase_round_off_account or None
 	except Exception:
-		# Settings might not exist during install/migrate
 		return None
 
 
