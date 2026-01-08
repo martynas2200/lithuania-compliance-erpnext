@@ -1,8 +1,10 @@
 # `read_camt_transactions` and some other snippets are adapted from https://github.com/libracore/erpnextswiss
+#! The file requires further refactoring to improve structure. It is awfully nested!
 
 import ast
 import datetime
 import hashlib
+import re
 
 import frappe
 from bs4 import BeautifulSoup
@@ -14,43 +16,44 @@ from frappe.utils.data import get_url_to_form
 # Swedbank uses ISO_XML_052 (ISO 20022 CAMT052)
 
 
-def get_full_remarks(payment_type, party_type, party_name, party, subfamily_code, amount, currency, remarks):
-	title = None
-	if payment_type == "Receive":
-		if party_type == "Customer" and (party_name or party):
-			title = _("Receipt from {0}").format(party_name or party)
-		elif subfamily_code == "CDPT":
-			title = _("Cash deposit into bank account")
-		else:
-			title = _("Bank receipt")
-	elif payment_type == "Pay":
-		if party_type == "Supplier" and (party_name or party):
-			title = _("Payment to supplier {0}").format(party_name or party)
-		elif party_type == "Employee" and (party_name or party):
-			title = _("Payment to employee {0}").format(party_name or party)
-		else:
-			title = _("Bank payment")
-	else:  # Internal Transfer
-		if subfamily_code == "CHRG":
-			title = _("Bank fee (charges)")
-		elif subfamily_code == "CDPT":
-			title = _("Cash deposit transfer")
-		elif subfamily_code == "BOOK":
-			title = _("Internal transfer between own accounts")
-		else:
-			title = _("Internal bank transfer")
+def remove_special_characters(s):
+	return re.sub(r'[\s\-"\'/\\]', "", s or "")
 
-	if not title:
+
+def get_default_receivable_payable_account(party_type, party):
+	"""Get default receivable/payable account from party."""
+	try:
+		if party_type == "Supplier":
+			return frappe.get_value("Supplier", party, "payable_account")
+		elif party_type == "Customer":
+			return frappe.get_value("Customer", party, "receivable_account")
+	except Exception:
+		pass
+	return None
+
+
+def get_full_remarks(payment_type, party_type, party_name, party, subfamily_code, remarks):
+	title = None
+	if payment_type == "Receive" and party_type == "Customer" and (party_name or party):
+		title = _("Receipt from {0}").format(party_name or party)
+	elif payment_type == "Receive" and subfamily_code == "CDPT":
+		title = _("Cash deposit into bank account")
+	elif payment_type == "Receive":
+		title = _("Bank receipt")
+	elif payment_type == "Pay" and party_type == "Supplier" and (party_name or party):
+		title = _("Payment to supplier {0}").format(party_name or party)
+	elif payment_type == "Pay" and party_type == "Employee" and (party_name or party):
+		title = _("Payment to employee {0}").format(party_name or party)
+	elif payment_type == "Pay":
+		title = _("Bank payment")
+	elif subfamily_code == "CHRG":
+		title = _("Bank fee (charges)")
+	elif subfamily_code == "CDPT":
+		title = _("Cash deposit transfer")
+	else:
 		return remarks
 
-	if currency:
-		title = f"{title} - {amount:.2f} {currency}"
-
-	# Prepend title to remarks for better context
-	if not remarks:
-		return title
-
-	return f"{title}: {remarks}"
+	return f"{title}: {remarks}" if remarks else title
 
 
 def match_by_amount(amount):
@@ -81,6 +84,38 @@ def match_by_comment(comment):  # Can be used for matching reference numbers in 
 	for reference in open_sales_invoices.name:
 		if reference in comment:
 			return reference
+
+
+def get_supplier_erpnext_name(name):
+	# Remove quotes from name for matching
+	cleaned_name = remove_special_characters(name).strip()
+	sql_query = """
+        SELECT `name`
+        FROM `tabSupplier`
+        WHERE REPLACE(REPLACE(`supplier_name`, '"', ''), "'", '') = '{0}'
+        AND `disabled` = 0; """.format(cleaned_name)
+	suppliers = frappe.db.sql(sql_query, as_dict=True)
+	if suppliers and len(suppliers) == 1:
+		return suppliers[0].name
+	else:
+		return None
+
+
+def get_employee(name):
+	employees = []
+	try:
+		employees = frappe.get_all(
+			"Employee",
+			filters={"employee_name": name, "status": "active"},
+			fields=["name"],
+		)
+	except Exception:
+		# "Employee" DocType might not be available
+		return None
+	if employees and len(employees) == 1:
+		return employees[0]["name"]
+	else:
+		return None
 
 
 def get_company_account_by_iban(iban):
@@ -146,7 +181,6 @@ def get_or_create_party_from_iban(party_name, party_iban, is_credit, company=Non
 		or 0
 	)
 
-	# First check bank_account_no
 	party_result = frappe.db.get_all(
 		"Bank Account",
 		filters={"disabled": 0, "bank_account_no": iban},
@@ -162,16 +196,12 @@ def get_or_create_party_from_iban(party_name, party_iban, is_credit, company=Non
 		)
 	if party_result:
 		row = party_result[0]
-		if row.get("party_type") and row.get("party"):
-			# For incoming money, always use Customer type. If the
-			# existing Bank Account is linked to a Supplier/Employee,
-			# ignore it and fall back to Customer resolution.
-			if is_credit and row["party_type"] != "Customer":
-				pass
-			else:
-				return (row["party_type"], row["party"])
+		# For incoming money, always use Customer type. If the
+		# existing Bank Account is linked to a Supplier/Employee,
+		# ignore it and fall back to Customer resolution.
+		if row.get("party_type") and row.get("party") and (not is_credit or row["party_type"] == "Customer"):
+			return (row["party_type"], row["party"])
 
-	# 2) Infer party type from direction
 	if is_credit:
 		primary_doctype = "Customer"
 		name_field = "customer_name"
@@ -193,11 +223,12 @@ def get_or_create_party_from_iban(party_name, party_iban, is_credit, company=Non
 			party = existing[0]["name"]
 		elif auto_create:
 			# Create a new Customer/Supplier with this name
+			# TODO: settings whether to auto-create Customers or Suppliers
 			try:
 				doc = frappe.get_doc(
 					{
 						"doctype": primary_doctype,
-						name_field: party_name,
+						name_field: remove_special_characters(party_name).strip(),
 					}
 				)
 				doc.insert(ignore_permissions=True)
@@ -208,7 +239,7 @@ def get_or_create_party_from_iban(party_name, party_iban, is_credit, company=Non
 	if not party:
 		return (None, None)
 
-	# 3) Optionally create a Bank and Bank Account for this IBAN
+	# TODO: add extra field for default Bank name
 	if auto_create and iban:
 		try:
 			bank_name = "CAMT Imported Bank"
@@ -237,6 +268,7 @@ def get_or_create_party_from_iban(party_name, party_iban, is_credit, company=Non
 	return (primary_doctype, party)
 
 
+# NOTE: this is a hell of a function and needs a lot of refactoring when it comes to try/except blocks
 def read_camt_transactions(
 	transaction_entries,
 	account,
@@ -258,372 +290,292 @@ def read_camt_transactions(
 		entry_amount = float(entry_soup.amt.get_text())
 		entry_currency = entry_soup.amt["ccy"]
 		# fetch global account service reference
-		try:
-			global_account_service_reference = entry_soup.acctsvcrref.get_text()
-		except:
-			global_account_service_reference = ""
+		global_account_service_reference = entry_soup.acctsvcrref.get_text() if entry_soup.acctsvcrref else ""
 		transaction_count = 0
-		if transactions and len(transactions) > 0:
-			for transaction in transactions:
-				transaction_count += 1
-				transaction_soup = BeautifulSoup(str(transaction), "lxml")
-				always_use_entry = getattr(settings, "always_use_entry_transaction_type", 0)
-				if always_use_entry:
-					credit_debit = entry_soup.cdtdbtind.get_text()
-				else:
-					try:
-						credit_debit = transaction_soup.cdtdbtind.get_text()
-					except:
-						# fallback to entry indicator
-						credit_debit = entry_soup.cdtdbtind.get_text()
 
-				# collect payment instruction id
-				try:
-					payment_instruction_id = transaction_soup.pmtinfid.get_text()
-				except:
-					payment_instruction_id = None
+		if not transactions and len(transactions) <= 0:
+			return
 
-				# --- find unique reference
-				try:
-					# try to use the unique end-to-end transaction reference
-					unique_reference = transaction_soup.txdtls.refs.uetr.get_text()
-				except:
-					try:
-						# try to use the account service reference
-						unique_reference = transaction_soup.txdtls.refs.acctsvcrref.get_text()
-					except:
-						# fallback: use tx id
-						try:
-							unique_reference = transaction_soup.txid.get_text()
-						except:
-							# fallback to pmtinfid
-							try:
-								unique_reference = transaction_soup.pmtinfid.get_text()
-							except:
-								try:
-									if entry_soup.ntryref:
-										unique_reference = entry_soup.ntryref.get_text()
-									elif global_account_service_reference != "":
-										# fallback to group account service reference plus transaction_count
-										unique_reference = "{0}-{1}".format(
-											global_account_service_reference, transaction_count
-										)
-									else:
-										# fallback ntry reference or booking code (wise) (for banks this is often not unique)
-										unique_reference = entry_soup.bktxcd.prtry.cd.get_text()
-								except:
-									# fallback to ustrd (do not use)
-									# unique_reference = transaction_soup.ustrd.get_text()
-									# fallback to hash
-									amount = transaction_soup.txdtls.amt.get_text()
-									party = transaction_soup.nm.get_text()
-									code = "{0}:{1}:{2}".format(date, amount, party)
-									unique_reference = hashlib.md5(code.encode("utf-8")).hexdigest()
-				# --- find amount and currency
-				try:
-					# try to find as <TxAmt>
-					amount = float(transaction_soup.txdtls.txamt.amt.get_text())
-					currency = transaction_soup.txdtls.txamt.amt["ccy"]
-				except:
-					try:
-						# fallback to pure <AMT>
-						amount = float(transaction_soup.txdtls.amt.get_text())
-						currency = transaction_soup.txdtls.amt["ccy"]
-					except:
-						# fallback to amount from entry level
-						amount = entry_amount
-						currency = entry_currency
-				# --- transaction sub-family code (e.g. CHRG for bank charges)
-				try:
-					subfamily_code = entry_soup.bktxcd.domn.fmly.subfmlycd.get_text()
-				except:
-					subfamily_code = ""
-				try:
-					# --- find party IBAN
-					if credit_debit == "DBIT":
-						# use RltdPties:Cdtr
-						party_soup = BeautifulSoup(str(transaction_soup.txdtls.rltdpties.cdtr), "lxml")
-						try:
-							party_iban = transaction_soup.cdtracct.id.iban.get_text()
-						except:
-							party_iban = ""
-					else:
-						# CRDT: use RltdPties:Dbtr
-						party_soup = BeautifulSoup(str(transaction_soup.txdtls.rltdpties.dbtr), "lxml")
-						try:
-							party_iban = transaction_soup.dbtracct.id.iban.get_text()
-						except:
-							party_iban = ""
-					try:
-						party_name = party_soup.nm.get_text()
-						if party_soup.strtnm:
-							# parse by street name, ...
-							try:
-								street = party_soup.strtnm.get_text()
-								try:
-									street_number = party_soup.bldgnb.get_text()
-									address_line1 = "{0} {1}".format(street, street_number)
-								except:
-									address_line1 = street
-
-							except:
-								address_line1 = ""
-							try:
-								plz = party_soup.pstcd.get_text()
-							except:
-								plz = ""
-							try:
-								town = party_soup.twnnm.get_text()
-							except:
-								town = ""
-							address_line2 = "{0} {1}".format(plz, town)
-						else:
-							# parse by address lines
-							try:
-								address_lines = party_soup.find_all("adrline")
-								address_line1 = address_lines[0].get_text()
-								address_line2 = address_lines[1].get_text()
-							except:
-								# in case no address is provided
-								address_line1 = ""
-								address_line2 = ""
-					except:
-						# party is not defined (e.g. DBIT from Bank)
-						try:
-							address_lines = party_soup.find_all("adrline")
-							party_name = address_lines[0].get_text()
-						except:
-							party_name = ""
-						address_line1 = ""
-						address_line2 = ""
-					try:
-						country = party_soup.ctry.get_text()
-					except:
-						country = ""
-					if (address_line1 != "") and (address_line2 != ""):
-						party_address = "{0}, {1}, {2}".format(address_line1, address_line2, country)
-					elif address_line1 != "":
-						party_address = "{0}, {1}".format(address_line1, country)
-					else:
-						party_address = "{0}".format(country)
-				except:
-					# key related parties not found / no customer info
-					party_name = ""
-					party_address = ""
-					party_iban = ""
-				# Bank charges and taxes that are reported on transaction level.
-				# Swedbank may use either
-				#   <Chrgs><TtlChrgsAndTaxAmt><Amt>...</Amt></TtlChrgsAndTaxAmt></Chrgs>
-				# or a simpler <Chrgs><Amt>...</Amt></Chrgs> structure.
-				charges = 0.0
-				charges_tag = None
-				try:
-					charges_tag = transaction_soup.chrgs.ttlchrgsandtaxamt
-				except Exception:
-					charges_tag = None
-				if not charges_tag:
-					try:
-						charges_tag = transaction_soup.chrgs.amt
-					except Exception:
-						charges_tag = None
-				if charges_tag:
-					try:
-						charges = float(charges_tag.get_text())
-					except Exception:
-						charges = 0.0
-
-				try:
-					# try to find ESR reference
-					transaction_reference = transaction_soup.rmtinf.strd.cdtrrefinf.ref.get_text()
-				except:
-					try:
-						# try to find a user-defined reference (e.g. SINV.)
-						transaction_reference = transaction_soup.rmtinf.ustrd.get_text()
-					except:
-						try:
-							# try to find an end-to-end ID
-							transaction_reference = transaction_soup.endtoendid.get_text()
-						except:
-							try:
-								# try to find an AddtlTxInf
-								transaction_reference = transaction_soup.addtltxinf.get_text()
-							except:
-								# in case of numeric only matching, do not fall back to transaction id
-								if cint(settings.numeric_only_debtor_matching) == 1:
-									transaction_reference = "???"
-								else:
-									transaction_reference = unique_reference
-
-				# Check if this transaction already has a Payment Entry recorded.
-				# We want a Bank Transaction per statement line anyways
-				_filters = {"reference_no": unique_reference, "company": company}
-				match_payment_entry = frappe.get_all(
-					"Payment Entry",
-					filters=_filters,
-					fields=["name"],
+		for transaction in transactions:
+			transaction_count += 1
+			transaction_soup = BeautifulSoup(str(transaction), "lxml")
+			always_use_entry = getattr(settings, "always_use_entry_transaction_type", 0)
+			if always_use_entry:
+				credit_debit = entry_soup.cdtdbtind.get_text()
+			else:
+				credit_debit = (
+					transaction_soup.cdtdbtind.get_text()
+					if transaction_soup.cdtdbtind
+					else entry_soup.cdtdbtind.get_text()
 				)
-				if (not skip_existing_payment_entries) or (not match_payment_entry):
-					# try to find matching parties & invoices
-					party_match = None
-					employee_match = None
-					invoice_matches = []
-					expense_matches = None
-					matched_amount = 0.0
-					if credit_debit == "DBIT":
-						# outgoing: start without legacy payment proposal linkage
-						possible_pinvs = []
-						# suppliers
-						if not possible_pinvs:
-							# no payment proposal, try to estimate from other data
-							if not party_match:
-								# find supplier from name; ignore quotes in
-								# both the stored supplier_name and the
-								# robustness (e.g. '"Swedbank", AB').
-								clean_party_name = (party_name or "").replace('"', "").replace("'", "")
-								if clean_party_name:
-									match_suppliers = frappe.db.sql(
-										"""
-                                            SELECT name
-                                            FROM `tabSupplier`
-                                            WHERE disabled = 0
-                                              AND REPLACE(REPLACE(supplier_name, '"', ''), "'", '') = %(clean_name)s
-                                        """,
-										{"clean_name": clean_party_name},
-										as_dict=True,
+
+			# payment_instruction_id = (
+			# 	transaction_soup.pmtinfid.get_text() if transaction_soup.pmtinfid else None
+			# )
+
+			# --- find unique reference
+			unique_reference = ""
+			try:
+				# try to use the unique end-to-end transaction reference
+				unique_reference = transaction_soup.txdtls.refs.uetr.get_text()
+			except:
+				try:
+					# try to use the account service reference
+					unique_reference = transaction_soup.txdtls.refs.acctsvcrref.get_text()
+				except:
+					# fallback: use tx id
+					try:
+						unique_reference = transaction_soup.txid.get_text()
+					except:
+						# fallback to pmtinfid
+						try:
+							unique_reference = transaction_soup.pmtinfid.get_text()
+						except:
+							try:
+								if entry_soup.ntryref:
+									unique_reference = entry_soup.ntryref.get_text()
+								elif global_account_service_reference != "":
+									# fallback to group account service reference plus transaction_count
+									unique_reference = "{0}-{1}".format(
+										global_account_service_reference, transaction_count
 									)
 								else:
-									match_suppliers = []
-								if match_suppliers:
-									party_match = match_suppliers[0]["name"]
-							if party_match:
-								# restrict pinvs to supplier
-								possible_pinvs = frappe.get_all(
-									"Purchase Invoice",
-									filters=[
-										["docstatus", "=", 1],
-										["outstanding_amount", ">", 0],
-										["supplier", "=", party_match],
-									],
-									fields=["name", "supplier", "outstanding_amount", "bill_no"],
-								)
-							else:
-								# purchase invoices
-								possible_pinvs = frappe.get_all(
-									"Purchase Invoice",
-									filters=[["docstatus", "=", 1], ["outstanding_amount", ">", 0]],
-									fields=["name", "supplier", "outstanding_amount", "bill_no"],
-								)
-						if possible_pinvs:
-							for pinv in possible_pinvs:
-								if (
-									(pinv["name"] in transaction_reference)
-									or ((pinv["bill_no"] or pinv["name"]) in transaction_reference)
-									or (payment_instruction_id == transaction_reference)
-								):  # this is an override for Postfinance combined transactions that will not relay transaction ids
-									invoice_matches.append(pinv["name"])
-									party_match = pinv["supplier"]
-									# add total matched amount
-									matched_amount += float(pinv["outstanding_amount"])
-						# employees
-						try:
-							match_employees = frappe.get_all(
-								"Employee",
-								filters={"employee_name": party_name, "status": "active"},
-								fields=["name"],
-							)
-						except Exception:
-							# "Employee" DocType might not be installed (HRMS not present)
-							match_employees = []
-						if match_employees:
-							employee_match = match_employees[0]["name"]
-						# expense claims
-						try:
-							possible_expenses = frappe.get_all(
-								"Expense Claim",
-								filters=[["docstatus", "=", 1], ["status", "=", "Unpaid"]],
-								fields=["name", "employee", "total_claimed_amount"],
-							)
-						except Exception:
-							# "Expense Claim" DocType might not be installed
-							possible_expenses = []
-						if possible_expenses:
-							expense_matches = []
-							for exp in possible_expenses:
-								if exp["name"] in transaction_reference:
-									expense_matches.append(exp["name"])
-									employee_match = exp["employee"]
-									# add total matched amount
-									matched_amount += float(exp["total_claimed_amount"])
-					else:
-						# customers & sales invoices
-						match_customers = frappe.get_all(
-							"Customer", filters={"customer_name": party_name, "disabled": 0}, fields=["name"]
-						)
-						if match_customers:
-							party_match = match_customers[0]["name"]
-						# sales invoices (no ESR-specific field)
-						possible_sinvs = frappe.get_all(
-							"Sales Invoice",
-							filters=[["outstanding_amount", ">", 0], ["docstatus", "=", 1]],
-							fields=["name", "customer", "customer_name", "outstanding_amount"],
-						)
-						if possible_sinvs:
-							invoice_matches = []
-							for sinv in possible_sinvs:
-								is_match = False
-								if sinv["name"] in transaction_reference:
-									is_match = True
-								elif cint(settings.numeric_only_debtor_matching) == 1:
-									# allow the numeric part matching
-									if get_numeric_only_reference(sinv["name"]) in transaction_reference:
-										# matched numeric part and customer name
-										is_match = True
-								elif cint(settings.ignore_special_characters) == 1:
-									if remove_special_characters(sinv["name"]) in remove_special_characters(
-										transaction_reference
-									):
-										# matched without special characters
-										is_match = True
-
-								if is_match:
-									invoice_matches.append(sinv["name"])
-									party_match = sinv["customer"]
-									# add total matched amount
-									matched_amount += float(sinv["outstanding_amount"])
-
-					# reset invoice matches in case there are no matches
+									# fallback ntry reference or booking code (wise) (for banks this is often not unique)
+									unique_reference = entry_soup.bktxcd.prtry.cd.get_text()
+							except:
+								# fallback to ustrd (do not use)
+								# unique_reference = transaction_soup.ustrd.get_text()
+								# fallback to hash
+								amount = transaction_soup.txdtls.amt.get_text()
+								party = transaction_soup.nm.get_text()
+								code = "{0}:{1}:{2}".format(date, amount, party)
+								unique_reference = hashlib.md5(code.encode("utf-8")).hexdigest()
+			# --- find amount and currency
+			try:
+				# try to find as <TxAmt>
+				amount = float(transaction_soup.txdtls.txamt.amt.get_text())
+				currency = transaction_soup.txdtls.txamt.amt["ccy"]
+			except:
+				try:
+					# fallback to pure <AMT>
+					amount = float(transaction_soup.txdtls.amt.get_text())
+					currency = transaction_soup.txdtls.amt["ccy"]
+				except:
+					# fallback to amount from entry level
+					amount = entry_amount
+					currency = entry_currency
+			# --- transaction sub-family code (e.g. CHRG for bank charges)
+			try:
+				subfamily_code = entry_soup.bktxcd.domn.fmly.subfmlycd.get_text()
+			except:
+				subfamily_code = ""
+			try:
+				# --- find party IBAN
+				if credit_debit == "DBIT":
+					# use RltdPties:Cdtr
+					party_soup = BeautifulSoup(str(transaction_soup.txdtls.rltdpties.cdtr), "lxml")
 					try:
-						if len(invoice_matches) == 0:
-							invoice_matches = None
-						if len(expense_matches) == 0:
-							expense_matches = None
+						party_iban = transaction_soup.cdtracct.id.iban.get_text()
 					except:
-						pass
-					new_txn = {
-						"txid": len(txns),
-						"date": date,
-						"currency": currency,
-						"amount": amount,
-						"charges": charges,
-						"party_name": party_name,
-						"party_address": party_address,
-						"credit_debit": credit_debit,
-						"party_iban": party_iban,
-						"unique_reference": unique_reference,
-						"transaction_reference": transaction_reference,
-						"subfamily_code": subfamily_code,
-						"party_match": party_match,
-						"invoice_matches": invoice_matches,
-						"matched_amount": round(matched_amount, 2),
-						"employee_match": employee_match,
-						"expense_matches": expense_matches,
-					}
-					txns.append(new_txn)
+						party_iban = ""
+				else:
+					# CRDT: use RltdPties:Dbtr
+					party_soup = BeautifulSoup(str(transaction_soup.txdtls.rltdpties.dbtr), "lxml")
+					try:
+						party_iban = transaction_soup.dbtracct.id.iban.get_text()
+					except:
+						party_iban = ""
+				try:
+					party_name = party_soup.nm.get_text()
+					if party_soup.strtnm:
+						# parse by street name, ...
+						try:
+							street = party_soup.strtnm.get_text()
+							try:
+								street_number = party_soup.bldgnb.get_text()
+								address_line1 = "{0} {1}".format(street, street_number)
+							except:
+								address_line1 = street
+
+						except:
+							address_line1 = ""
+						try:
+							plz = party_soup.pstcd.get_text()
+						except:
+							plz = ""
+						try:
+							town = party_soup.twnnm.get_text()
+						except:
+							town = ""
+						address_line2 = "{0} {1}".format(plz, town)
+					else:
+						# parse by address lines
+						try:
+							address_lines = party_soup.find_all("adrline")
+							address_line1 = address_lines[0].get_text()
+							address_line2 = address_lines[1].get_text()
+						except:
+							# in case no address is provided
+							address_line1 = ""
+							address_line2 = ""
+				except:
+					# party is not defined (e.g. DBIT from Bank)
+					try:
+						address_lines = party_soup.find_all("adrline")
+						party_name = address_lines[0].get_text()
+					except:
+						party_name = ""
+					address_line1 = ""
+					address_line2 = ""
+				try:
+					country = party_soup.ctry.get_text()
+				except:
+					country = ""
+				if (address_line1 != "") and (address_line2 != ""):
+					party_address = "{0}, {1}, {2}".format(address_line1, address_line2, country)
+				elif address_line1 != "":
+					party_address = "{0}, {1}".format(address_line1, country)
+				else:
+					party_address = "{0}".format(country)
+			except:
+				# key related parties not found / no customer info
+				party_name = ""
+				party_address = ""
+				party_iban = ""
+			# Bank charges and taxes that are reported on transaction level.
+			# Swedbank may use either
+			#   <Chrgs><TtlChrgsAndTaxAmt><Amt>...</Amt></TtlChrgsAndTaxAmt></Chrgs>
+			# or a simpler <Chrgs><Amt>...</Amt></Chrgs> structure.
+			charges = 0.0
+			charges_tag = None
+			try:
+				charges_tag = transaction_soup.chrgs.ttlchrgsandtaxamt
+			except Exception:
+				charges_tag = None
+			if not charges_tag:
+				try:
+					charges_tag = transaction_soup.chrgs.amt
+				except Exception:
+					charges_tag = None
+			if charges_tag:
+				try:
+					charges = float(charges_tag.get_text())
+				except Exception:
+					charges = 0.0
+
+			try:
+				# try to find ESR reference
+				transaction_reference = transaction_soup.rmtinf.strd.cdtrrefinf.ref.get_text()
+			except:
+				try:
+					# try to find a user-defined reference (e.g. SINV.)
+					transaction_reference = transaction_soup.rmtinf.ustrd.get_text()
+				except:
+					try:
+						# try to find an end-to-end ID
+						transaction_reference = transaction_soup.endtoendid.get_text()
+					except:
+						try:
+							# try to find an AddtlTxInf
+							transaction_reference = transaction_soup.addtltxinf.get_text()
+						except:
+							# in case of numeric only matching, do not fall back to transaction id
+							if cint(settings.numeric_only_debtor_matching) == 1:
+								transaction_reference = "???"
+							else:
+								transaction_reference = unique_reference
+
+			# Check if this transaction already has a Payment Entry recorded.
+			# We want a Bank Transaction per statement line anyways
+			_filters = {"reference_no": unique_reference, "company": company}
+			match_payment_entry = frappe.get_all(
+				"Payment Entry",
+				filters=_filters,
+				fields=["name"],
+			)
+			if skip_existing_payment_entries and match_payment_entry:
+				continue
+
+			# try to find matching parties & invoices
+			party_match = None
+			employee_match = None
+			invoice_matches = []
+			expense_matches = None
+			matched_amount = 0.0
+			if credit_debit == "DBIT":
+				# find supplier from name (e.g. '"Swedbank", AB').
+				party_match = get_supplier_erpnext_name(party_name)
+				employee_match = get_employee(party_name)
+			else:
+				# customers & sales invoices
+				match_customers = frappe.get_all(
+					"Customer", filters={"customer_name": party_name, "disabled": 0}, fields=["name"]
+				)
+				if match_customers:
+					party_match = match_customers[0]["name"]
+				# sales invoices (no ESR-specific field)
+				possible_sinvs = frappe.get_all(
+					"Sales Invoice",
+					filters=[["outstanding_amount", ">", 0], ["docstatus", "=", 1]],
+					fields=["name", "customer", "customer_name", "outstanding_amount"],
+				)
+				if possible_sinvs:
+					invoice_matches = []
+					for sinv in possible_sinvs:
+						is_match = False
+						if sinv["name"] in transaction_reference:
+							is_match = True
+						elif cint(settings.numeric_only_debtor_matching) == 1:
+							# allow the numeric part matching
+							if get_numeric_only_reference(sinv["name"]) in transaction_reference:
+								# matched numeric part and customer name
+								is_match = True
+						elif cint(settings.ignore_special_characters) == 1:
+							if remove_special_characters(sinv["name"]) in remove_special_characters(
+								transaction_reference
+							):
+								# matched without special characters
+								is_match = True
+
+						if is_match:
+							invoice_matches.append(sinv["name"])
+							party_match = sinv["customer"]
+							# add total matched amount
+							matched_amount += float(sinv["outstanding_amount"])
+
+			# reset invoice matches in case there are no matches
+			try:
+				if len(invoice_matches) == 0:
+					invoice_matches = None
+				if len(expense_matches) == 0:
+					expense_matches = None
+			except:
+				pass
+			new_txn = {
+				"txid": len(txns),
+				"date": date,
+				"currency": currency,
+				"amount": amount,
+				"charges": charges,
+				"party_name": party_name,
+				"party_address": party_address,
+				"credit_debit": credit_debit,
+				"party_iban": party_iban,
+				"unique_reference": unique_reference,
+				"transaction_reference": transaction_reference,
+				"subfamily_code": subfamily_code,
+				"party_match": party_match,
+				"invoice_matches": invoice_matches,
+				"matched_amount": round(matched_amount, 2),
+				"employee_match": employee_match,
+				"expense_matches": expense_matches,
+			}
+			txns.append(new_txn)
 
 	return txns
 
 
-#! This is an ugly function; requires a lot of refactoring;
+#! This is another ugly function; requires a lot of refactoring;
 @frappe.whitelist()
 def read_camt054(content, account=None, auto_submit=False):
 	"""Import a CAMT.052/054 XML file and create draft Payment Entries.
@@ -703,6 +655,7 @@ def read_camt054(content, account=None, auto_submit=False):
 		auto_submit_flag = True
 
 	created_entries = []
+	collected_parties = {}  # {(party_type, party): {'count': n, 'account': account}}
 
 	for txn in transactions:
 		try:
@@ -760,15 +713,25 @@ def read_camt054(content, account=None, auto_submit=False):
 					paid_from = settings.emv_account
 					party_type = None
 					party = None
-				# Internal transfer between own bank accounts, SubFmlyCd=BOOK / RCDT family). Use the
 				elif subfamily_code == "BOOK" and account and party_iban:
-					payment_type = "Internal Transfer"
 					source_account = get_company_account_by_iban(party_iban)
-
+					# Only treat as internal transfer if both accounts belong to the same company and are company accounts
 					if source_account and source_account != account:
-						paid_from = source_account
-						party_type = None
-						party = None
+						source_company = frappe.get_value("Account", source_account, "company")
+						if source_company == company:
+							# Verify both are company accounts
+							is_source_company_account = frappe.db.exists(
+								"Bank Account",
+								{"account": source_account, "is_company_account": 1, "disabled": 0},
+							)
+							is_target_company_account = frappe.db.exists(
+								"Bank Account", {"account": account, "is_company_account": 1, "disabled": 0}
+							)
+							if is_source_company_account and is_target_company_account:
+								payment_type = "Internal Transfer"
+								paid_from = source_account
+								party_type = None
+								party = None
 				else:  # Regular incoming money
 					payment_type = "Receive"
 
@@ -814,15 +777,26 @@ def read_camt054(content, account=None, auto_submit=False):
 					paid_to = settings.bank_fee_expense_account
 					party_type = None
 					party = None
-				# Outgoing internal transfers between own bank accounts SubFmlyCd = BOOK / DBIT
 				elif subfamily_code == "BOOK" and account and party_iban:
-					payment_type = "Internal Transfer"
 					target_account = get_company_account_by_iban(party_iban)
-					if target_account != account:
-						paid_from = account
-						paid_to = target_account
-						party_type = None
-						party = None
+					# Only treat as internal transfer if both accounts belong to the same company and are company accounts
+					if target_account and target_account != account:
+						target_company = frappe.get_value("Account", target_account, "company")
+						if target_company == company:
+							# Verify both are company accounts
+							is_target_company_account = frappe.db.exists(
+								"Bank Account",
+								{"account": target_account, "is_company_account": 1, "disabled": 0},
+							)
+							is_source_company_account = frappe.db.exists(
+								"Bank Account", {"account": account, "is_company_account": 1, "disabled": 0}
+							)
+							if is_target_company_account and is_source_company_account:
+								payment_type = "Internal Transfer"
+								paid_from = account
+								paid_to = target_account
+								party_type = None
+								party = None
 
 				# Regular matching
 				if payment_type is None and expense_matches and employee_match:
@@ -860,8 +834,6 @@ def read_camt054(content, account=None, auto_submit=False):
 				party_name,
 				party,
 				subfamily_code,
-				amount,
-				currency,
 				remarks,
 			)
 			# Create or reuse a Bank Transaction representing this statement line
@@ -943,18 +915,28 @@ def read_camt054(content, account=None, auto_submit=False):
 			# duplicate.
 			existing_payment_entry_name = None
 			try:
-				if reference_no and company:
+				# For internal transfers with matching accounts and amount, we can match without reference_no
+				if payment_type == "Internal Transfer" and paid_from and paid_to and amount > 100:
 					existing_payment_entry_name = frappe.db.get_value(
 						"Payment Entry",
-						{"reference_no": reference_no, "company": company},
+						{
+							"payment_type": "Internal Transfer",
+							"paid_from": paid_from,
+							"paid_to": paid_to,
+							"paid_amount": amount,
+							"posting_date": date,
+						},
 						"name",
+					)
+				elif reference_no and company:
+					existing_payment_entry_name = frappe.db.get_value(
+						"Payment Entry", {"reference_no": reference_no, "company": company}, "name"
 					)
 				elif reference_no:
 					existing_payment_entry_name = frappe.db.get_value(
-						"Payment Entry",
-						{"reference_no": reference_no},
-						"name",
+						"Payment Entry", {"reference_no": reference_no}, "name"
 					)
+
 			except Exception as pe_lookup_err:
 				frappe.log_error(
 					"Bank Import CAMT.052 Error",
@@ -1007,6 +989,15 @@ def read_camt054(content, account=None, auto_submit=False):
 			if result and result.get("payment_entry"):
 				pe_name = result["payment_entry"]
 				created_entries.append(pe_name)
+
+				# Collect party information for Process Payment Reconciliation
+				if party_type and party and payment_type in ("Pay", "Receive"):
+					party_key = (party_type, party)
+					if party_key not in collected_parties:
+						account = get_default_receivable_payable_account(party_type, party)
+						collected_parties[party_key] = {"count": 1, "account": account}
+					else:
+						collected_parties[party_key]["count"] += 1
 
 				# Link the created Payment Entry back to the Bank Transaction
 				if bank_transaction:
@@ -1097,11 +1088,38 @@ def read_camt054(content, account=None, auto_submit=False):
 				f"Failed to create Payment Entry for {txn.get('unique_reference')}: {err}",
 			)
 
+	# Create Process Payment Reconciliation documents for each collected party
+	reconciliation_docs = []
+	for (party_type, party), info in collected_parties.items():
+		try:
+			account = info["account"]
+			if not account:
+				frappe.log_error("Bank Import CAMT.052", f"No default {party_type} account found for {party}")
+				continue
+
+			ppr_doc = frappe.get_doc(
+				{
+					"doctype": "Process Payment Reconciliation",
+					"company": company,
+					"party_type": party_type,
+					"party": party,
+					"receivable_payable_account": account,
+				}
+			)
+			ppr_doc.insert(ignore_permissions=True)
+			reconciliation_docs.append(ppr_doc.name)
+		except Exception as err:
+			frappe.log_error(
+				"Bank Import CAMT.052 Process Payment Reconciliation",
+				f"Failed to create PPR for {party_type} {party}: {err}",
+			)
+
 	return {
 		"message": _("Checked {1} bank transactions. Created {0} payment entries").format(
 			len(created_entries), len(transactions)
 		),
 		"records": created_entries,
+		"reconciliation_docs": reconciliation_docs,
 	}
 
 
@@ -1131,9 +1149,6 @@ def import_camt_statement(content, description=None, auto_submit=False):
 		summary = _("{0} (submitted)").format(summary)
 	else:
 		summary = _("{0} (saved as Drafts)").format(summary)
-
-	if description:
-		summary = _("{0} (Description: {1})").format(summary, description)
 
 	return {
 		"summary": summary,
@@ -1304,13 +1319,9 @@ def create_reference(payment_entry, invoice_reference, invoice_type="Sales Invoi
 	return
 
 
-def get_numeric_only_reference(s):
-	n = ""
-	for c in s:
-		if c.isdigit():
-			n += c
-	return n
-
-
-def remove_special_characters(s):
-	return (s or "").replace(" ", "").replace("-", "")
+def get_numeric_only_reference(reference):
+	filtered = ""
+	for char in str(reference):
+		if char.isdigit():
+			filtered += char
+	return filtered
