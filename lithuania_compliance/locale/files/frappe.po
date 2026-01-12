@@ -2356,34 +2356,29 @@ msgid "Also adding the dependent currency field {0}"
 msgstr "Taip pat pridedant priklausomą valiutos lauką {0}"
 
 #: frappe/public/js/frappe/views/reports/report_view.js:920
-#, fuzzy
 msgid "Also adding the status dependency field {0}"
 msgstr "Taip pat pridedamas būsenos priklausomybės laukas {0}"
 
 #. Label of the login_id (Data) field in DocType 'Email Account'
 #: frappe/email/doctype/email_account/email_account.json
-#, fuzzy
 msgid "Alternative Email ID"
 msgstr "Alternatyvus el. pašto ID"
 
 #. Option for the 'Show External Link Warning' (Select) field in DocType
 #. 'System Settings'
 #: frappe/core/doctype/system_settings/system_settings.json
-#, fuzzy
 msgid "Always"
 msgstr "Visada"
 
 #. Label of the always_bcc (Data) field in DocType 'Email Account'
 #: frappe/email/doctype/email_account/email_account.json
-#, fuzzy
 msgid "Always BCC Address"
 msgstr "Visada BCC adresas"
 
 #. Label of the add_draft_heading (Check) field in DocType 'Print Settings'
 #: frappe/printing/doctype/print_settings/print_settings.json
-#, fuzzy
 msgid "Always add \"Draft\" Heading for printing draft documents"
-msgstr "Visada pridėkite „Juodraštis“ antraštę, jei norite spausdinti dokumentų juodraščius"
+msgstr "Visada pridėti „Juodraštis“ antraštę jei spausdinami dokumentų juodraščiai"
 
 #. Label of the always_use_account_email_id_as_sender (Check) field in DocType
 #. 'Email Account'
@@ -5670,26 +5665,22 @@ msgstr "Sėkmingai parengta"
 #. Option for the 'Status' (Select) field in DocType 'Scheduled Job Log'
 #: frappe/core/doctype/scheduled_job_log/scheduled_job_log.json
 #: frappe/www/complete_signup.html:21
-#, fuzzy
 msgid "Complete"
-msgstr "Pilnas"
+msgstr "Atlikta"
 
 #: frappe/public/js/frappe/form/sidebar/assign_to.js:203
-#, fuzzy
 msgid "Complete By"
 msgstr "Užbaigti iki"
 
 #: frappe/core/doctype/user/user.py:517
 #: frappe/templates/emails/new_user.html:10
-#, fuzzy
 msgid "Complete Registration"
 msgstr "Užbaigti registraciją"
 
 #: frappe/public/js/frappe/ui/slides.js:355
-#, fuzzy
 msgctxt "Finish the setup wizard"
 msgid "Complete Setup"
-msgstr "Pilnas nustatymas"
+msgstr "Pabaigti nustatymą"
 
 #. Option for the 'Status' (Select) field in DocType 'Auto Repeat'
 #. Option for the 'Status' (Select) field in DocType 'Prepared Report'
@@ -5703,19 +5694,16 @@ msgstr "Pilnas nustatymas"
 #: frappe/integrations/doctype/integration_request/integration_request.json
 #: frappe/utils/goal.py:117
 #: frappe/workflow/doctype/workflow_action/workflow_action.json
-#, fuzzy
 msgid "Completed"
 msgstr "Užbaigta"
 
 #. Label of the completed_by_role (Link) field in DocType 'Workflow Action'
 #: frappe/workflow/doctype/workflow_action/workflow_action.json
-#, fuzzy
 msgid "Completed By Role"
 msgstr "Užbaigta pagal vaidmenį"
 
 #. Label of the completed_by (Link) field in DocType 'Workflow Action'
 #: frappe/workflow/doctype/workflow_action/workflow_action.json
-#, fuzzy
 msgid "Completed By User"
 msgstr "Užbaigė naudotojas"
 
@@ -7481,7 +7469,6 @@ msgstr "Atidėtas"
 #: frappe/public/js/frappe/web_form/web_form_list.js:283
 #: frappe/templates/discussions/reply_card.html:35
 #: frappe/templates/discussions/reply_section.html:29
-#, fuzzy
 msgid "Delete"
 msgstr "Ištrinti"
 
@@ -7515,51 +7502,42 @@ msgid "Delete Background Exported Reports After (Hours)"
 msgstr "Ištrinti fono eksportuotas ataskaitas po (valandų)"
 
 #: frappe/public/js/form_builder/components/Section.vue:196
-#, fuzzy
 msgctxt "Title of confirmation dialog"
 msgid "Delete Column"
 msgstr "Ištrinti stulpelį"
 
 #: frappe/website/doctype/personal_data_deletion_request/personal_data_deletion_request.js:10
-#, fuzzy
 msgid "Delete Data"
 msgstr "Ištrinti duomenis"
 
 #: frappe/public/js/frappe/views/kanban/kanban_view.js:116
-#, fuzzy
 msgid "Delete Kanban Board"
 msgstr "Ištrinti Kanban lentą"
 
 #: frappe/public/js/form_builder/components/Section.vue:125
-#, fuzzy
 msgctxt "Title of confirmation dialog"
 msgid "Delete Section"
 msgstr "Ištrinti skyrių"
 
 #: frappe/public/js/form_builder/components/Tabs.vue:64
-#, fuzzy
 msgctxt "Title of confirmation dialog"
 msgid "Delete Tab"
 msgstr "Ištrinti skirtuką"
 
 #: frappe/public/js/frappe/views/reports/query_report.js:942
-#, fuzzy
 msgid "Delete and Generate New"
 msgstr "Ištrinti ir sukurti naują"
 
 #: frappe/public/js/form_builder/components/Section.vue:203
-#, fuzzy
 msgctxt "Button text"
 msgid "Delete column"
 msgstr "Ištrinti stulpelį"
 
 #: frappe/public/js/frappe/form/footer/form_timeline.js:742
-#, fuzzy
 msgid "Delete comment?"
-msgstr "Kaip ištrinti?"
+msgstr "Ištrinti komentarą?"
 
 #: frappe/public/js/form_builder/components/Section.vue:205
-#, fuzzy
 msgctxt "Button text"
 msgid "Delete entire column with fields"
 msgstr "Ištrinti visą stulpelį su laukais"
@@ -7612,64 +7590,53 @@ msgstr "Visam laikui ištrinti {0} elementus?"
 #: frappe/core/doctype/comment/comment.json
 #: frappe/website/doctype/personal_data_deletion_request/personal_data_deletion_request.json
 #: frappe/website/doctype/personal_data_deletion_step/personal_data_deletion_step.json
-#, fuzzy
 msgid "Deleted"
 msgstr "Ištrintas"
 
 #. Label of the deleted_doctype (Data) field in DocType 'Deleted Document'
 #: frappe/core/doctype/deleted_document/deleted_document.json
-#, fuzzy
 msgid "Deleted DocType"
-msgstr "Panaikintas DocType"
+msgstr "Ištrintas DocType"
 
 #. Name of a DocType
 #: frappe/core/doctype/deleted_document/deleted_document.json
-#, fuzzy
 msgid "Deleted Document"
 msgstr "Ištrintas dokumentas"
 
 #. Label of the deleted_name (Data) field in DocType 'Deleted Document'
 #: frappe/core/doctype/deleted_document/deleted_document.json
-#, fuzzy
 msgid "Deleted Name"
 msgstr "Ištrintas pavadinimas"
 
 #: frappe/desk/reportview.py:647
-#, fuzzy
 msgid "Deleted all documents successfully"
 msgstr "Sėkmingai ištrinti visi dokumentai"
 
 #: frappe/public/js/frappe/web_form/web_form.js:211
-#, fuzzy
 msgid "Deleted!"
 msgstr "Ištrinta!"
 
 #: frappe/desk/reportview.py:624
-#, fuzzy
 msgid "Deleting {0}"
-msgstr "Pašalinti {0}"
+msgstr "Šalinama {0}"
 
 #: frappe/public/js/frappe/list/bulk_operations.js:202
-#, fuzzy
 msgid "Deleting {0} records..."
-msgstr "Ištrinti {0} įrašų..."
+msgstr "Trinama {0} įrašų..."
 
 #: frappe/public/js/frappe/model/model.js:692
-#, fuzzy
 msgid "Deleting {0}..."
-msgstr "Trinti {0}..."
+msgstr "Trinama {0}..."
 
 #. Label of the deletion_steps (Table) field in DocType 'Personal Data Deletion
 #. Request'
 #: frappe/website/doctype/personal_data_deletion_request/personal_data_deletion_request.json
-#, fuzzy
 msgid "Deletion Steps"
 msgstr "Ištrynimo etapai"
 
 #: frappe/core/doctype/page/page.py:110
 #: frappe/core/doctype/permission_type/permission_type.py:104
 #: frappe/desk/doctype/dashboard_chart_source/dashboard_chart_source.py:47
-#, fuzzy
 msgid "Deletion of this document is only permitted in developer mode."
 msgstr "Šį dokumentą leidžiama ištrinti tik kūrėjo režimu."
 
@@ -7690,7 +7657,6 @@ msgstr "Skirtukas turi būti vienas simbolis"
 
 #. Label of the delivery_status (Select) field in DocType 'Communication'
 #: frappe/core/doctype/communication/communication.json
-#, fuzzy
 msgid "Delivery Status"
 msgstr "Pristatymo būsena"
 
@@ -7776,7 +7742,6 @@ msgstr "Pavaldiniai (imtinai)"
 #: frappe/website/doctype/web_page/web_page.json
 #: frappe/website/doctype/website_slideshow_item/website_slideshow_item.json
 #: frappe/www/attribution.html:24
-#, fuzzy
 msgid "Description"
 msgstr "Aprašymas"
 
@@ -8547,9 +8512,8 @@ msgstr "Dokumentų dalijimosi ataskaita"
 #: frappe/core/doctype/doctype/doctype.json
 #: frappe/custom/doctype/customize_form/customize_form.json
 #: frappe/workflow/doctype/workflow/workflow.json
-#, fuzzy
 msgid "Document States"
-msgstr "Dokumentų valstybės"
+msgstr "Dokumentų būsenos"
 
 #: frappe/model/meta.py:54 frappe/public/js/frappe/model/meta.js:210
 #: frappe/public/js/frappe/model/model.js:137
@@ -13055,7 +13019,6 @@ msgstr "Patarimas: į slaptažodį įtraukite simbolius, skaičius ir didžiąsi
 #: frappe/website/web_template/primary_navbar/primary_navbar.html:9
 #: frappe/www/contact.py:25 frappe/www/login.html:170 frappe/www/me.html:76
 #: frappe/www/message.html:29
-#, fuzzy
 msgid "Home"
 msgstr "Pagrindinis"
 
@@ -17888,68 +17851,56 @@ msgid "New"
 msgstr "Nauja(s)"
 
 #: frappe/public/js/frappe/views/interaction.js:15
-#, fuzzy
 msgid "New Activity"
 msgstr "Nauja veikla"
 
 #: frappe/public/js/frappe/form/templates/address_list.html:3
 #: frappe/public/js/frappe/ui/address_autocomplete/autocomplete_dialog.js:5
 #: frappe/public/js/frappe/utils/address_and_contact.js:71
-#, fuzzy
 msgid "New Address"
 msgstr "Naujas adresas"
 
 #: frappe/public/js/frappe/widgets/widget_dialog.js:58
-#, fuzzy
 msgid "New Chart"
 msgstr "Nauja diagrama"
 
 #: frappe/public/js/frappe/form/templates/contact_list.html:3
-#, fuzzy
 msgid "New Contact"
 msgstr "Naujas kontaktas"
 
 #: frappe/public/js/frappe/widgets/widget_dialog.js:70
-#, fuzzy
 msgid "New Custom Block"
 msgstr "Naujas pasirinktinis blokas"
 
 #: frappe/printing/page/print/print.js:326
 #: frappe/printing/page/print/print.js:373
-#, fuzzy
 msgid "New Custom Print Format"
 msgstr "Naujas pasirinktinis spausdinimo formatas"
 
 #. Label of the new_document_form (Check) field in DocType 'Form Tour'
 #: frappe/desk/doctype/form_tour/form_tour.json
-#, fuzzy
 msgid "New Document Form"
 msgstr "Naujo dokumento forma"
 
 #: frappe/desk/doctype/notification_log/notification_log.py:154
-#, fuzzy
 msgid "New Document Shared {0}"
-msgstr "Naujas bendras dokumentas {0}"
+msgstr "Naujas bendrinamas dokumentas {0}"
 
 #: frappe/public/js/frappe/form/footer/form_timeline.js:27
 #: frappe/public/js/frappe/views/communication.js:23
-#, fuzzy
 msgid "New Email"
-msgstr "Naujas el. paštas"
+msgstr "Naujas el. laiškas"
 
 #: frappe/public/js/frappe/list/list_view_select.js:98
 #: frappe/public/js/frappe/views/inbox/inbox_view.js:177
-#, fuzzy
 msgid "New Email Account"
 msgstr "Nauja el. pašto paskyra"
 
 #: frappe/public/js/frappe/form/footer/form_timeline.js:47
-#, fuzzy
 msgid "New Event"
-msgstr "Naujas renginys"
+msgstr "Naujas įvykis"
 
 #: frappe/public/js/frappe/views/file/file_view.js:94
-#, fuzzy
 msgid "New Folder"
 msgstr "Naujas aplankas"
 
@@ -18057,12 +18008,10 @@ msgid "New lines separated list of strings representing ways to contact people r
 msgstr "Naujomis eilutėmis atskirtas sąrašas eilučių, nurodančių būdus susisiekti su už šį klientą atsakingais asmenimis, paprastai el. pašto adresus."
 
 #: frappe/www/update-password.html:92
-#, fuzzy
 msgid "New password cannot be same as old password"
 msgstr "Naujas slaptažodis negali būti toks pat kaip senasis"
 
 #: frappe/utils/change_log.py:389
-#, fuzzy
 msgid "New updates are available"
 msgstr "Galimi nauji atnaujinimai"
 
@@ -18092,37 +18041,30 @@ msgstr "Nustatoma nauja vertė"
 #: frappe/public/js/frappe/views/treeview.js:366
 #: frappe/public/js/frappe/widgets/widget_dialog.js:72
 #: frappe/website/doctype/web_form/web_form.py:438
-#, fuzzy
 msgid "New {0}"
-msgstr "Naujas {0}"
+msgstr "Nauja(-s) {0}"
 
 #: frappe/public/js/frappe/views/reports/query_report.js:393
-#, fuzzy
 msgid "New {0} Created"
-msgstr "Sukurta nauja {0}"
+msgstr "Sukurta nauja(-s) {0}"
 
 #: frappe/public/js/frappe/views/reports/query_report.js:385
-#, fuzzy
 msgid "New {0} {1} added to Dashboard {2}"
-msgstr "Į apžvalgą pridėta naujų {0} {1} {2}"
+msgstr "Pridėta naujų {0} {1} į apžvalgą {2}"
 
 #: frappe/public/js/frappe/views/reports/query_report.js:390
-#, fuzzy
 msgid "New {0} {1} created"
-msgstr "Sukurtas naujas {0} {1}"
+msgstr "Sukurtas nauja(-s) {0} {1}"
 
 #: frappe/automation/doctype/auto_repeat/auto_repeat.py:416
-#, fuzzy
 msgid "New {0}: {1}"
-msgstr "Naujas {0}: {1}"
+msgstr "Nauja(-s) {0}: {1}"
 
 #: frappe/utils/change_log.py:375
-#, fuzzy
 msgid "New {} releases for the following apps are available"
-msgstr "Galima įsigyti naujų {} šių programų versijų"
+msgstr "Galimi nauji {} atnaujinimai toliau nurodytoms programoms"
 
 #: frappe/core/doctype/user/user.py:853
-#, fuzzy
 msgid "Newly created user {0} has no roles enabled."
 msgstr "Naujai sukurtas naudotojas {0} neturi įjungtų vaidmenų."
 
@@ -18130,7 +18072,6 @@ msgstr "Naujai sukurtas naudotojas {0} neturi įjungtų vaidmenų."
 #: frappe/email/doctype/email_group/email_group.json
 #: frappe/email/doctype/email_group_member/email_group_member.json
 #: frappe/website/doctype/utm_campaign/utm_campaign.json
-#, fuzzy
 msgid "Newsletter Manager"
 msgstr "Naujienlaiškių tvarkytojas"
 
@@ -18168,30 +18109,25 @@ msgstr "Kitos 7 dienos"
 #. Label of the next_action_email_template (Link) field in DocType 'Workflow
 #. Document State'
 #: frappe/workflow/doctype/workflow_document_state/workflow_document_state.json
-#, fuzzy
 msgid "Next Action Email Template"
-msgstr "Kitas veiksmo el. pašto šablonas"
+msgstr "Kito veiksmo el. pašto šablonas"
 
 #. Label of the next_actions_html (HTML) field in DocType 'Success Action'
 #: frappe/core/doctype/success_action/success_action.json
-#, fuzzy
 msgid "Next Actions HTML"
 msgstr "Kiti veiksmai HTML"
 
 #: frappe/public/js/frappe/form/toolbar.js:336
-#, fuzzy
 msgid "Next Document"
 msgstr "Kitas dokumentas"
 
 #. Label of the next_execution (Datetime) field in DocType 'Scheduled Job Type'
 #: frappe/core/doctype/scheduled_job_type/scheduled_job_type.json
-#, fuzzy
 msgid "Next Execution"
 msgstr "Kitas vykdymas"
 
 #. Label of the next_form_tour (Link) field in DocType 'Form Tour Step'
 #: frappe/desk/doctype/form_tour_step/form_tour_step.json
-#, fuzzy
 msgid "Next Form Tour"
 msgstr "Kitas formos turas"
 
@@ -23044,32 +22980,27 @@ msgstr "Šiame skyriuje etiketės pateikiamos kairėje, o reikšmės - dešinėj
 
 #: frappe/core/doctype/communication/communication.js:43
 #: frappe/desk/doctype/todo/todo.js:36
-#, fuzzy
 msgid "Reopen"
-msgstr "Vėl atidarykite"
+msgstr "Vėl atidaryti"
 
 #: frappe/public/js/frappe/form/toolbar.js:580
-#, fuzzy
 msgid "Repeat"
-msgstr "Pakartokite"
+msgstr "Kartoti"
 
 #. Label of the repeat_header_footer (Check) field in DocType 'Print Settings'
 #: frappe/printing/doctype/print_settings/print_settings.json
-#, fuzzy
 msgid "Repeat Header and Footer"
-msgstr "Pakartokite antraštę ir poraštę"
+msgstr "Kartoti antraštę ir poraštę"
 
 #. Label of the repeat_on (Select) field in DocType 'Event'
 #: frappe/desk/doctype/event/event.json
-#, fuzzy
 msgid "Repeat On"
-msgstr "Pakartokite"
+msgstr "Kartoti"
 
 #. Label of the repeat_till (Date) field in DocType 'Event'
 #: frappe/desk/doctype/event/event.json
-#, fuzzy
 msgid "Repeat Till"
-msgstr "Pakartokite iki"
+msgstr "Kartoti iki"
 
 #. Label of the repeat_on_day (Int) field in DocType 'Auto Repeat'
 #: frappe/automation/doctype/auto_repeat/auto_repeat.json
@@ -25204,7 +25135,7 @@ msgstr "Siųsti el. laišką apie valstybę"
 #. Settings'
 #: frappe/printing/doctype/print_settings/print_settings.json
 msgid "Send Email Print Attachments as PDF (Recommended)"
-msgstr "Siųsti el. paštu Spausdinti priedus kaip PDF (rekomenduojama)"
+msgstr "Siųsti el. paštu spausdintinus priedus kaip PDF (rekomenduojama)"
 
 #. Label of the send_email_to_creator (Check) field in DocType 'Workflow
 #. Transition'
@@ -25222,37 +25153,31 @@ msgstr "Siųskite man siunčiamų el. laiškų kopijas"
 #. Label of the send_notification_to (Small Text) field in DocType 'Email
 #. Account'
 #: frappe/email/doctype/email_account/email_account.json
-#, fuzzy
 msgid "Send Notification to"
 msgstr "Siųsti pranešimą"
 
 #. Label of the document_follow_notify (Check) field in DocType 'User'
 #: frappe/core/doctype/user/user.json
-#, fuzzy
 msgid "Send Notifications For Documents Followed By Me"
 msgstr "Siųsti pranešimus apie mano sekamus dokumentus"
 
 #. Label of the thread_notify (Check) field in DocType 'User'
 #: frappe/core/doctype/user/user.json
-#, fuzzy
 msgid "Send Notifications For Email Threads"
 msgstr "Siųsti pranešimus apie el. pašto gijas"
 
 #: frappe/email/doctype/auto_email_report/auto_email_report.js:21
-#, fuzzy
 msgid "Send Now"
 msgstr "Siųsti dabar"
 
 #. Label of the send_print_as_pdf (Check) field in DocType 'Print Settings'
 #: frappe/printing/doctype/print_settings/print_settings.json
-#, fuzzy
 msgid "Send Print as PDF"
-msgstr "Siųsti Spausdinti kaip PDF"
+msgstr "Siųsti spausdinimą kaip PDF"
 
 #: frappe/public/js/frappe/views/communication.js:141
-#, fuzzy
 msgid "Send Read Receipt"
-msgstr "Siųsti perskaitymo patvirtinimą"
+msgstr "Noriu gauti perskaitymo patvirtinimą"
 
 #. Label of the send_system_notification (Check) field in DocType
 #. 'Notification'
@@ -25327,7 +25252,7 @@ msgstr "Siųsti prisijungimo nuorodą"
 #: frappe/public/js/frappe/views/communication.js:135
 #, fuzzy
 msgid "Send me a copy"
-msgstr "Atsiųskite man kopiją"
+msgstr "Siųsti man kopiją"
 
 #. Label of the send_if_data (Check) field in DocType 'Auto Email Report'
 #: frappe/email/doctype/auto_email_report/auto_email_report.json
@@ -26811,7 +26736,6 @@ msgid "Some of the features might not work in your browser. Please update your b
 msgstr "Kai kurios funkcijos gali neveikti jūsų naršyklėje. Atnaujinkite naršyklę į naujausią versiją."
 
 #: frappe/public/js/frappe/views/translation_manager.js:101
-#, fuzzy
 msgid "Something went wrong"
 msgstr "Kažkas nutiko ne taip"
 
@@ -26820,17 +26744,14 @@ msgid "Something went wrong during the token generation. Click on {0} to generat
 msgstr "Generuojant žetonus kažkas nepavyko. Spustelėkite {0}, kad sugeneruotumėte naują žetoną."
 
 #: frappe/templates/includes/login/login.js:293
-#, fuzzy
 msgid "Something went wrong."
 msgstr "Kažkas nutiko ne taip."
 
 #: frappe/public/js/frappe/views/pageview.js:117
-#, fuzzy
 msgid "Sorry! I could not find what you were looking for."
 msgstr "Atsiprašome! Neradau to, ko ieškojote."
 
 #: frappe/public/js/frappe/views/pageview.js:125
-#, fuzzy
 msgid "Sorry! You are not permitted to view this page."
 msgstr "Atsiprašome! Jums neleidžiama peržiūrėti šio puslapio."
 
@@ -27154,14 +27075,12 @@ msgstr "Prasideda nuo"
 #: frappe/workflow/doctype/workflow_document_state/workflow_document_state.json
 #: frappe/workflow/doctype/workflow_state/workflow_state.json
 #: frappe/workflow/doctype/workflow_transition/workflow_transition.json
-#, fuzzy
 msgid "State"
-msgstr "Valstybė"
+msgstr "Būsena"
 
 #: frappe/public/js/workflow_builder/components/Properties.vue:26
-#, fuzzy
 msgid "State Properties"
-msgstr "Valstybės savybės"
+msgstr "Būsenos savybės"
 
 #. Label of the state (Data) field in DocType 'Address'
 #. Label of the state (Data) field in DocType 'Contact Us Settings'
@@ -30190,9 +30109,8 @@ msgstr "Neišimtos kabutės tiesioginėje eilutėje: {0}"
 
 #: frappe/public/js/frappe/form/templates/form_sidebar.html:109
 #: frappe/public/js/frappe/form/toolbar.js:912
-#, fuzzy
 msgid "Unfollow"
-msgstr "Nenuoseklus"
+msgstr "Atsekti"
 
 #. Name of a DocType
 #: frappe/email/doctype/unhandled_email/unhandled_email.json
@@ -33818,7 +33736,6 @@ msgid "via Notification"
 msgstr "per pranešimą"
 
 #: frappe/public/js/frappe/form/footer/version_timeline_content_builder.js:17
-#, fuzzy
 msgid "via {0}"
 msgstr "per {0}"
 
@@ -33876,7 +33793,6 @@ msgid "yellow"
 msgstr "geltona"
 
 #: frappe/public/js/frappe/utils/pretty_date.js:58
-#, fuzzy
 msgid "yesterday"
 msgstr "vakar"
 
@@ -34014,32 +33930,26 @@ msgid "{0} added"
 msgstr "{0} pridėta"
 
 #: frappe/public/js/frappe/form/footer/version_timeline_content_builder.js:268
-#, fuzzy
 msgid "{0} added 1 row to {1}"
-msgstr "{0} pridėta 1 eilutė prie {1}"
+msgstr "{0} pridėjo 1 eilutę prie {1}"
 
 #: frappe/public/js/frappe/form/footer/version_timeline_content_builder.js:246
-#, fuzzy
 msgid "{0} added {1} rows to {2}"
-msgstr "{0} pridėta {1} eilučių į {2}"
+msgstr "{0} pridėjo {1} eil. prie {2}"
 
 #: frappe/public/js/frappe/form/controls/data.js:215
-#, fuzzy
 msgid "{0} already exists. Select another name"
 msgstr "{0} jau egzistuoja. Pasirinkite kitą pavadinimą"
 
 #: frappe/email/doctype/email_unsubscribe/email_unsubscribe.py:36
-#, fuzzy
 msgid "{0} already unsubscribed"
-msgstr "{0} jau atsisakyta prenumeratos"
+msgstr "{0} jau atsisakė prenumeratos"
 
 #: frappe/email/doctype/email_unsubscribe/email_unsubscribe.py:49
-#, fuzzy
 msgid "{0} already unsubscribed for {1} {2}"
-msgstr "{0} jau atsisakyta {1} prenumeratos {2}"
+msgstr "{0} jau atsisakė {1} prenumeratos {2}"
 
 #: frappe/utils/data.py:1764
-#, fuzzy
 msgid "{0} and {1}"
 msgstr "{0} ir {1}"
 
@@ -34049,33 +33959,27 @@ msgid "{0} are currently {1}"
 msgstr "{0} šiuo metu yra {1}"
 
 #: frappe/printing/doctype/print_format/print_format.py:98
-#, fuzzy
 msgid "{0} are required"
 msgstr "{0} yra privalomi"
 
 #: frappe/desk/form/assign_to.py:286
-#, fuzzy
 msgid "{0} assigned a new task {1} {2} to you"
 msgstr "{0} priskirta nauja užduotis {1} {2} jums"
 
 #: frappe/desk/doctype/todo/todo.py:48
-#, fuzzy
 msgid "{0} assigned {1}: {2}"
 msgstr "{0} priskirtas {1}: {2}"
 
 #: frappe/public/js/frappe/form/footer/form_timeline.js:415
-#, fuzzy
 msgctxt "Form timeline"
 msgid "{0} attached {1}"
-msgstr "{0} pridedama {1}"
+msgstr "{0} pridėjo {1}"
 
 #: frappe/core/doctype/system_settings/system_settings.py:159
-#, fuzzy
 msgid "{0} can not be more than {1}"
 msgstr "{0} negali būti daugiau nei {1}"
 
 #: frappe/public/js/frappe/form/footer/version_timeline_content_builder.js:77
-#, fuzzy
 msgid "{0} cancelled this document"
 msgstr "{0} atšaukė šį dokumentą"
 
@@ -34114,7 +34018,6 @@ msgid "{0} changed the values for {1} {2}"
 msgstr "{0} pakeitė {1} reikšmes {2}"
 
 #: frappe/public/js/frappe/form/footer/form_timeline.js:444
-#, fuzzy
 msgctxt "Form timeline"
 msgid "{0} changed {1} to {2}"
 msgstr "{0} pakeitė {1} į {2}"
@@ -34140,14 +34043,12 @@ msgid "{0} created this document {1}"
 msgstr "{0} sukūrė šį dokumentą {1}"
 
 #: frappe/public/js/frappe/utils/pretty_date.js:33
-#, fuzzy
 msgid "{0} d"
 msgstr "{0} d"
 
 #: frappe/public/js/frappe/utils/pretty_date.js:60
-#, fuzzy
 msgid "{0} days ago"
-msgstr "Prieš {0} dienų"
+msgstr "Prieš {0} d."
 
 #: frappe/website/doctype/website_settings/website_settings.py:96
 #: frappe/website/doctype/website_settings/website_settings.py:116
@@ -34164,14 +34065,12 @@ msgid "{0} format could not be determined from the values in this column. Defaul
 msgstr "{0} formato nebuvo galima nustatyti pagal šio stulpelio reikšmes. Numatytoji reikšmė yra {1}."
 
 #: frappe/public/js/frappe/form/footer/version_timeline_content_builder.js:101
-#, fuzzy
 msgid "{0} from {1} to {2}"
-msgstr "{0} nuo {1} iki {2}"
+msgstr "{0} iš {1} į {2}"
 
 #: frappe/public/js/frappe/form/footer/version_timeline_content_builder.js:165
-#, fuzzy
 msgid "{0} from {1} to {2} in row #{3}"
-msgstr "{0} nuo {1} iki {2} eilutėje #{3}"
+msgstr "{0} iš {1} į {2} eilutėje #{3}"
 
 #: frappe/public/js/frappe/utils/pretty_date.js:29
 #, fuzzy
@@ -34194,9 +34093,8 @@ msgid "{0} has left the conversation in {1} {2}"
 msgstr "{0} paliko pokalbį {1} {2}"
 
 #: frappe/public/js/frappe/utils/pretty_date.js:54
-#, fuzzy
 msgid "{0} hours ago"
-msgstr "Prieš {0} valandų"
+msgstr "Prieš {0} val."
 
 #: frappe/website/doctype/web_form/templates/web_form.html:155
 #, fuzzy
@@ -34210,7 +34108,6 @@ msgid "{0} in row {1} cannot have both URL and child items"
 msgstr "{0} eilutėje {1} negali būti URL ir antrinių elementų"
 
 #: frappe/core/doctype/doctype/doctype.py:935
-#, fuzzy
 msgid "{0} is a mandatory field"
 msgstr "{0} yra privalomas laukas"
 
@@ -34414,7 +34311,6 @@ msgstr "{0} ką tik apsimetė jumis. Jie nurodė šią priežastį: {1}"
 
 #: frappe/public/js/frappe/form/footer/form_timeline.js:152
 #: frappe/public/js/frappe/form/sidebar/form_sidebar.js:106
-#, fuzzy
 msgid "{0} last edited this"
 msgstr "{0} paskutinį kartą redagavo šį"
 
@@ -34429,7 +34325,6 @@ msgid "{0} logged out: {1}"
 msgstr "{0} atsijungė: {1}"
 
 #: frappe/public/js/frappe/utils/pretty_date.js:27
-#, fuzzy
 msgid "{0} m"
 msgstr "{0} m"
 
@@ -34439,14 +34334,12 @@ msgid "{0} mentioned you in a comment in {1} {2}"
 msgstr "{0} paminėjo jus komentare {1} {2}"
 
 #: frappe/public/js/frappe/utils/pretty_date.js:50
-#, fuzzy
 msgid "{0} minutes ago"
-msgstr "prieš {0} minučių"
+msgstr "Prieš {0} min."
 
 #: frappe/public/js/frappe/utils/pretty_date.js:68
-#, fuzzy
 msgid "{0} months ago"
-msgstr "prieš {0} mėnesius"
+msgstr "Prieš {0} mėn."
 
 #: frappe/model/document.py:1841
 #, fuzzy
@@ -34561,18 +34454,15 @@ msgid "{0} removed 1 row from {1}"
 msgstr "{0} pašalinta 1 eilutė iš {1}"
 
 #: frappe/public/js/frappe/form/footer/form_timeline.js:420
-#, fuzzy
 msgctxt "Form timeline"
 msgid "{0} removed attachment {1}"
-msgstr "{0} pašalintas priedas {1}"
+msgstr "{0} pašalino priedą {1}"
 
 #: frappe/desk/doctype/todo/todo.py:58
-#, fuzzy
 msgid "{0} removed their assignment."
 msgstr "{0} pašalino jų priskyrimą."
 
 #: frappe/public/js/frappe/form/footer/version_timeline_content_builder.js:291
-#, fuzzy
 msgid "{0} removed {1} rows from {2}"
 msgstr "{0} pašalino {1} eilutes iš {2}"
 
@@ -34677,29 +34567,24 @@ msgid "{0} values selected"
 msgstr "{0} pasirinktos vertės"
 
 #: frappe/public/js/frappe/form/footer/form_timeline.js:184
-#, fuzzy
 msgid "{0} viewed this"
-msgstr "{0} žiūrėjote tai"
+msgstr "{0} žiūrėjo tai"
 
 #: frappe/public/js/frappe/utils/pretty_date.js:35
-#, fuzzy
 msgid "{0} w"
 msgstr "{0} sav."
 
 #: frappe/public/js/frappe/utils/pretty_date.js:64
-#, fuzzy
 msgid "{0} weeks ago"
-msgstr "Prieš {0} savaites"
+msgstr "Prieš {0} sav."
 
 #: frappe/public/js/frappe/utils/pretty_date.js:39
-#, fuzzy
 msgid "{0} y"
 msgstr "{0} met."
 
 #: frappe/public/js/frappe/utils/pretty_date.js:72
-#, fuzzy
 msgid "{0} years ago"
-msgstr "prieš {0} metus"
+msgstr "Prieš {0} metus"
 
 #: frappe/public/js/frappe/form/link_selector.js:219
 #, fuzzy

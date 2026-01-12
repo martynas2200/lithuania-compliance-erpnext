@@ -1223,13 +1223,11 @@ msgid "A Lead requires either a person's name or an organization's name"
 msgstr "„Lead\" reikia nurodyti asmens arba organizacijos pavadinimą."
 
 #: erpnext/stock/doctype/packing_slip/packing_slip.py:84
-#, fuzzy
 msgid "A Packing Slip can only be created for Draft Delivery Note."
-msgstr "Pakuotės lapą galima sukurti tik pristatymo pranešimo projektui."
+msgstr "Pakavimo lapą galima sukurti tik pristatymo važtaraščio juodraščiui."
 
 #. Description of a DocType
 #: erpnext/stock/doctype/price_list/price_list.json
-#, fuzzy
 msgid "A Price List is a collection of Item Prices either Selling, Buying, or both"
 msgstr "Kainoraštis - tai parduodamų, perkamų arba abiejų prekių kainų rinkinys."
 
@@ -2114,9 +2112,8 @@ msgid "Accounting Entry for LCV in Stock Entry {0}"
 msgstr "LCV apskaitos įrašas atsargų įraše {0}"
 
 #: erpnext/subcontracting/doctype/subcontracting_receipt/subcontracting_receipt.py:867
-#, fuzzy
 msgid "Accounting Entry for Landed Cost Voucher for SCR {0}"
-msgstr "Apskaitos įrašas, skirtas SCR iškrautų išlaidų kvitui {0}"
+msgstr "Savikainos koregavimo (SCR) apskaitos įrašas {0}"
 
 #: erpnext/stock/doctype/purchase_receipt/purchase_receipt.py:834
 #, fuzzy
@@ -2800,9 +2797,8 @@ msgstr "Pridėti komentarą"
 #. Label of the add_corrective_operation_cost_in_finished_good_valuation
 #. (Check) field in DocType 'Manufacturing Settings'
 #: erpnext/manufacturing/doctype/manufacturing_settings/manufacturing_settings.json
-#, fuzzy
 msgid "Add Corrective Operation Cost in Finished Good Valuation"
-msgstr "Koreguojamosios operacijos sąnaudų įtraukimas į gatavos produkcijos vertinimą"
+msgstr "Įtraukti koreguojamosios operacijos sąnaudas į gatavos produkcijos vertinimą"
 
 #: erpnext/public/js/event.js:24
 #, fuzzy
@@ -3050,9 +3046,8 @@ msgid "Added Supplier Role to User {0}."
 msgstr "Naudotojui {0} pridėtas tiekėjo vaidmuo."
 
 #: erpnext/controllers/website_list_for_contact.py:304
-#, fuzzy
 msgid "Added {1} Role to User {0}."
-msgstr "Pridėta {1} Vartotojui {0} suteiktas vaidmuo."
+msgstr "Vartotojui {0} suteiktas vaidmuo {1}."
 
 #: erpnext/crm/doctype/lead/lead.js:81
 #, fuzzy
@@ -4380,17 +4375,17 @@ msgstr "Leisti vidinius pervedimus už “ištiestos rankos” kainą"
 #. Label of the allow_multiple_items (Check) field in DocType 'Buying Settings'
 #: erpnext/buying/doctype/buying_settings/buying_settings.json
 msgid "Allow Item To Be Added Multiple Times in a Transaction"
-msgstr "Leiskite elementą pridėti kelis kartus operacijoje"
+msgstr "Leisti pridėti elementą kelis kartus operacijoje"
 
 #: erpnext/controllers/selling_controller.py:825
 msgid "Allow Item to Be Added Multiple Times in a Transaction"
-msgstr "Leiskite elementą pridėti kelis kartus operacijoje"
+msgstr "Leisti pridėti elementą kelis kartus operacijoje"
 
 #. Label of the allow_multiple_items (Check) field in DocType 'Selling
 #. Settings'
 #: erpnext/selling/doctype/selling_settings/selling_settings.json
 msgid "Allow Item to be Added Multiple Times in a Transaction"
-msgstr "Leiskite elementą pridėti kelis kartus operacijoje"
+msgstr "Leisti pridėti elementą kelis kartus operacijoje"
 
 #. Label of the allow_lead_duplication_based_on_emails (Check) field in DocType
 #. 'CRM Settings'
@@ -4416,7 +4411,7 @@ msgstr "Leisti naudoti kelias medžiagas"
 #. 'Selling Settings'
 #: erpnext/selling/doctype/selling_settings/selling_settings.json
 msgid "Allow Multiple Sales Orders Against a Customer's Purchase Order"
-msgstr "Leidimas pateikti kelis pardavimo užsakymus pagal kliento pirkimo užsakymą"
+msgstr "Leisti pateikti kelis pardavimo užsakymus pagal kliento pirkimo užsakymą"
 
 #. Label of the allow_negative_stock (Check) field in DocType 'Item'
 #. Label of the allow_negative_stock (Check) field in DocType 'Repost Item
@@ -4463,7 +4458,7 @@ msgstr "Leidimas iš dalies rezervuoti"
 #. 'Manufacturing Settings'
 #: erpnext/manufacturing/doctype/manufacturing_settings/manufacturing_settings.json
 msgid "Allow Production on Holidays"
-msgstr "Leidimas gaminti švenčių dienomis"
+msgstr "Leisti gamybą švenčių dienomis"
 
 #. Label of the is_purchase_item (Check) field in DocType 'Item'
 #: erpnext/stock/doctype/item/item.json
@@ -4486,7 +4481,7 @@ msgstr "Leidimas kurti pirkimo sąskaitą faktūrą be pirkimo kvito"
 #. 'Buying Settings'
 #: erpnext/buying/doctype/buying_settings/buying_settings.json
 msgid "Allow Purchase Order with Zero Quantity"
-msgstr "Leidimas pateikti pirkimo užsakymą su nuliniu kiekiu"
+msgstr "Leisti pateikti pirkimo užsakymą su nuliniu kiekiu"
 
 #. Label of the allow_zero_qty_in_quotation (Check) field in DocType 'Selling
 #. Settings'
@@ -4536,13 +4531,13 @@ msgstr "Leidimas kurti pardavimo sąskaitas faktūras be pardavimo užsakymo"
 #. in DocType 'Selling Settings'
 #: erpnext/selling/doctype/selling_settings/selling_settings.json
 msgid "Allow Sales Order Creation For Expired Quotation"
-msgstr "Leidimas kurti pardavimo užsakymą, kai nebegaliojančios kainos pasiūlymas"
+msgstr "Leisti kurti pardavimo užsakymą, kai nebegaliojančiam kainos pasiūlymui"
 
 #. Label of the allow_zero_qty_in_sales_order (Check) field in DocType 'Selling
 #. Settings'
 #: erpnext/selling/doctype/selling_settings/selling_settings.json
 msgid "Allow Sales Order with Zero Quantity"
-msgstr "Leidimas pateikti pardavimo užsakymą su nuliniu kiekiu"
+msgstr "Leisti pateikti pardavimo užsakymą su nuliniu kiekiu"
 
 #. Label of the allow_stale (Check) field in DocType 'Accounts Settings'
 #: erpnext/accounts/doctype/accounts_settings/accounts_settings.json
@@ -4570,7 +4565,7 @@ msgstr "Leisti naudotojui redaguoti nuolaidą"
 #. Settings'
 #: erpnext/selling/doctype/selling_settings/selling_settings.json
 msgid "Allow User to Edit Price List Rate in Transactions"
-msgstr "Leidimas naudotojui redaguoti kainyno tarifą sandoriuose"
+msgstr "Leisti naudotojui redaguoti kainyno tarifą sandoriuose"
 
 #. Label of the allow_rate_change (Check) field in DocType 'POS Profile'
 #: erpnext/accounts/doctype/pos_profile/pos_profile.json
@@ -4617,7 +4612,7 @@ msgstr "Leidimas taikyti nulinę vertinimo normą"
 #. Settings'
 #: erpnext/stock/doctype/stock_settings/stock_settings.json
 msgid "Allow existing Serial No to be Manufactured/Received again"
-msgstr "Leidimas vėl gaminti / gauti esamą serijos numerį"
+msgstr "Leisti vėl gaminti / gauti esamą serijos numerį"
 
 #. Description of the 'Allow Continuous Material Consumption' (Check) field in
 #. DocType 'Manufacturing Settings'
@@ -4635,13 +4630,13 @@ msgstr "Leisti kelių valiutų sąskaitas-faktūras vienos šalies kor. sąskait
 #. DocType 'Stock Settings'
 #: erpnext/stock/doctype/stock_settings/stock_settings.json
 msgid "Allow to Edit Stock UOM Qty for Purchase Documents"
-msgstr "Leidimas redaguoti atsargų kiekį pirkimo dokumentuose"
+msgstr "Leisti redaguoti atsargų kiekį pirkimo dokumentuose"
 
 #. Label of the allow_to_edit_stock_uom_qty_for_sales (Check) field in DocType
 #. 'Stock Settings'
 #: erpnext/stock/doctype/stock_settings/stock_settings.json
 msgid "Allow to Edit Stock UOM Qty for Sales Documents"
-msgstr "Leidimas redaguoti atsargų kiekį pardavimo dokumentuose"
+msgstr "Leisti redaguoti atsargų kiekį pardavimo dokumentuose"
 
 #. Label of the allow_to_make_quality_inspection_after_purchase_or_delivery
 #. (Check) field in DocType 'Stock Settings'
@@ -6598,23 +6593,20 @@ msgstr "Automatinis valiutos kurso perkainojimas"
 #. Label of the auto_create_purchase_receipt (Check) field in DocType 'Buying
 #. Settings'
 #: erpnext/buying/doctype/buying_settings/buying_settings.json
-#, fuzzy
 msgid "Auto Create Purchase Receipt"
-msgstr "Automatinis pirkimo kvito sukūrimas"
+msgstr "Automatiškai kurti pirkimo kvitus"
 
 #. Label of the auto_create_serial_and_batch_bundle_for_outward (Check) field
 #. in DocType 'Stock Settings'
 #: erpnext/stock/doctype/stock_settings/stock_settings.json
-#, fuzzy
 msgid "Auto Create Serial and Batch Bundle For Outward"
-msgstr "Automatiškai sukurti Serijų ir Batch Bundle For Outward "
+msgstr "Automatiškai kurti serijinių ir partijų rinkinius išdavimui"
 
 #. Label of the auto_create_subcontracting_order (Check) field in DocType
 #. 'Buying Settings'
 #: erpnext/buying/doctype/buying_settings/buying_settings.json
-#, fuzzy
 msgid "Auto Create Subcontracting Order"
-msgstr "Automatinis subrangos užsakymo sukūrimas"
+msgstr "Automatiškai sukurti subrangos užsakymą"
 
 #. Label of the auto_created (Check) field in DocType 'Fiscal Year'
 #: erpnext/accounts/doctype/fiscal_year/fiscal_year.json
@@ -6732,7 +6724,7 @@ msgstr "Automatinių mokesčių nustatymų klaida"
 #. DocType 'CRM Settings'
 #: erpnext/crm/doctype/crm_settings/crm_settings.json
 msgid "Auto close Opportunity Replied after the no. of days mentioned above"
-msgstr "Automatinio uždarymo galimybė Atsakyta po pirmiau minėtų dienų skaičiaus"
+msgstr "Automatiškai uždarymos galimybės peržengus pirmiau minėtų „Atsakyta po“ dienų skaičiaus"
 
 #. Description of the 'Enable Automatic Party Matching' (Check) field in
 #. DocType 'Accounts Settings'
@@ -6769,7 +6761,7 @@ msgstr "Automatiškai įtraukti filtruotą elementą į krepšelį"
 #. 'Accounts Settings'
 #: erpnext/accounts/doctype/accounts_settings/accounts_settings.json
 msgid "Automatically Add Taxes and Charges from Item Tax Template"
-msgstr "Automatiškai pridėti mokesčius ir rinkliavas iš elemento mokesčio šablono"
+msgstr "Automatiškai pridėti mokesčius ir rinkliavas iš prekės mokesčio šablono"
 
 #. Label of the add_taxes_from_taxes_and_charges_template (Check) field in
 #. DocType 'Accounts Settings'
@@ -8303,9 +8295,8 @@ msgstr "Sąskaita Nr."
 #. Label of the bill_for_rejected_quantity_in_purchase_invoice (Check) field in
 #. DocType 'Buying Settings'
 #: erpnext/buying/doctype/buying_settings/buying_settings.json
-#, fuzzy
 msgid "Bill for Rejected Quantity in Purchase Invoice"
-msgstr "Sąskaita už atmestą kiekį pirkimo sąskaitoje faktūroje"
+msgstr "Apmokestinti/įtraukti atmestą kiekį pirkimo sąskaitoje"
 
 #. Label of a Card Break in the Manufacturing Workspace
 #. Label of a Link in the Manufacturing Workspace
@@ -8756,83 +8747,70 @@ msgid "Book Advance Payments in Separate Party Account"
 msgstr "Avanso mokėjimus apskaityti atskiroje šalies sąskaitoje"
 
 #: erpnext/www/book_appointment/index.html:3
-#, fuzzy
 msgid "Book Appointment"
-msgstr "Užsakyti paskyrimą"
+msgstr "Rezervuoti šį susitikimą"
 
 #. Label of the book_asset_depreciation_entry_automatically (Check) field in
 #. DocType 'Accounts Settings'
 #: erpnext/accounts/doctype/accounts_settings/accounts_settings.json
-#, fuzzy
 msgid "Book Asset Depreciation Entry Automatically"
-msgstr "Automatinis turto nusidėvėjimo įrašas"
+msgstr "Registruoti turto nusidėvėjimo įrašus automatiškai"
 
 #. Label of the book_deferred_entries_based_on (Select) field in DocType
 #. 'Accounts Settings'
 #: erpnext/accounts/doctype/accounts_settings/accounts_settings.json
-#, fuzzy
 msgid "Book Deferred Entries Based On"
 msgstr "Ateinančių laikotarpių įrašai pagal"
 
 #. Label of the book_deferred_entries_via_journal_entry (Check) field in
 #. DocType 'Accounts Settings'
 #: erpnext/accounts/doctype/accounts_settings/accounts_settings.json
-#, fuzzy
 msgid "Book Deferred Entries Via Journal Entry"
-msgstr "Ateinančių laikotarpių įrašai žurnalo įrašu"
+msgstr "Registruoti ateinančių laikotarpių įrašus žurnalo įrašu"
 
 #. Label of the book_tax_discount_loss (Check) field in DocType 'Accounts
 #. Settings'
 #: erpnext/accounts/doctype/accounts_settings/accounts_settings.json
-#, fuzzy
 msgid "Book Tax Loss on Early Payment Discount"
-msgstr "Mokestinis nuostolis dėl ankstyvo mokėjimo nuolaidos"
+msgstr "Registruoti mokesčių nuostolį dėl ankstyvo apmokėjimo nuolaidos"
 
 #: erpnext/www/book_appointment/index.html:15
-#, fuzzy
 msgid "Book an appointment"
-msgstr "Užsisakykite susitikimą"
+msgstr "Rezervuoti susitikimą"
 
 # Not sure about the context
 #. Option for the 'Status' (Select) field in DocType 'Shipment'
 #: erpnext/stock/doctype/shipment/shipment.json
 #: erpnext/stock/doctype/shipment/shipment_list.js:5
-#, fuzzy
 msgid "Booked"
 msgstr "Užsakytas"
 
 #. Label of the booked_fixed_asset (Check) field in DocType 'Asset'
 #: erpnext/assets/doctype/asset/asset.json
-#, fuzzy
 msgid "Booked Fixed Asset"
 msgstr "Užregistruotas ilgalaikis turtas"
 
 #: erpnext/stock/doctype/warehouse/warehouse.py:146
-#, fuzzy
 msgid "Booking stock value across multiple accounts will make it harder to track stock and account value."
-msgstr "Užregistravus atsargų vertę keliose sąskaitose, bus sunkiau stebėti atsargų ir sąskaitos vertę."
+msgstr "Užregistravus atsargų vertę keliose kor. sąskaitose, bus sunkiau stebėti atsargų ir kor. sąskaitos vertę."
 
 #: erpnext/accounts/general_ledger.py:806
-#, fuzzy
 msgid "Books have been closed till the period ending on {0}"
-msgstr "Knygos buvo uždarytos iki laikotarpio, kuris baigėsi {0}."
+msgstr "Žurnalai buvo uždaryti iki laikotarpio, kuris baigiasi {0}."
 
 #. Option for the 'Type of Transaction' (Select) field in DocType 'Inventory
 #. Dimension'
 #: erpnext/stock/doctype/inventory_dimension/inventory_dimension.json
-#, fuzzy
 msgid "Both"
 msgstr "Abu"
 
 #: erpnext/setup/doctype/supplier_group/supplier_group.py:57
-#, fuzzy
 msgid "Both Payable Account: {0} and Advance Account: {1} must be of same currency for company: {2}"
-msgstr "Abi mokėtinos sąskaitos: {0} ir avanso sąskaita: {1} turi būti ta pačia valiuta: {2}"
+msgstr "Abi mokėtinos kor. sąskaitos: {0} ir avanso kor. sąskaita: {1} turi būti ta pačia valiuta: {2}"
 
 #: erpnext/setup/doctype/customer_group/customer_group.py:62
-#, fuzzy
 msgid "Both Receivable Account: {0} and Advance Account: {1} must be of same currency for company: {2}"
-msgstr "Tiek gautinų sumų sąskaita: {0} ir avanso sąskaita: {1} turi būti ta pačia valiuta: {2}"
+msgstr "Tiek gautinų sumų kor. sąskaita: {0} ir avanso kor. sąskaita: {1} turi būti ta pačia valiuta: {2}"
 
 #: erpnext/accounts/doctype/subscription/subscription.py:339
 msgid "Both Trial Period Start Date and Trial Period End Date must be set"
@@ -8844,9 +8822,8 @@ msgstr "Abi {0} sąskaitos: {1} ir išankstinė sąskaita: {2} turi būti ta pa�
 
 #. Name of a UOM
 #: erpnext/setup/setup_wizard/data/uom_data.json
-#, fuzzy
 msgid "Box"
-msgstr "Dėžutė"
+msgstr "Box"
 
 #. Label of the branch (Link) field in DocType 'SMS Center'
 #. Name of a DocType
@@ -8894,12 +8871,10 @@ msgid "Breakdown"
 msgstr "Skirstymas"
 
 #: erpnext/setup/setup_wizard/data/industry_type.txt:10
-#, fuzzy
 msgid "Broadcasting"
 msgstr "Transliavimas"
 
 #: erpnext/setup/setup_wizard/data/industry_type.txt:11
-#, fuzzy
 msgid "Brokerage"
 msgstr "Tarpininkavimas"
 
@@ -8909,42 +8884,35 @@ msgstr "Naršyti medžiagų sąrašą"
 
 #. Name of a UOM
 #: erpnext/setup/setup_wizard/data/uom_data.json
-#, fuzzy
 msgid "Btu (It)"
 msgstr "Btu (It)"
 
 #. Name of a UOM
 #: erpnext/setup/setup_wizard/data/uom_data.json
-#, fuzzy
 msgid "Btu (Mean)"
 msgstr "Btu (vidurkis)"
 
 #. Name of a UOM
 #: erpnext/setup/setup_wizard/data/uom_data.json
-#, fuzzy
 msgid "Btu (Th)"
 msgstr "Btu (Th)"
 
 #. Name of a UOM
 #: erpnext/setup/setup_wizard/data/uom_data.json
-#, fuzzy
 msgid "Btu/Hour"
 msgstr "Btu/val."
 
 #. Name of a UOM
 #: erpnext/setup/setup_wizard/data/uom_data.json
-#, fuzzy
 msgid "Btu/Minutes"
 msgstr "Btu/Minutės"
 
 #. Name of a UOM
 #: erpnext/setup/setup_wizard/data/uom_data.json
-#, fuzzy
 msgid "Btu/Seconds"
 msgstr "Btu/sekundės"
 
 #: erpnext/manufacturing/report/material_requirements_planning_report/material_requirements_planning_report.js:101
-#, fuzzy
 msgid "Bucket Size"
 msgstr "Kibiro dydis"
 
@@ -8973,9 +8941,8 @@ msgstr "Biudžeto sąskaita"
 #. Label of the budget_against (Select) field in DocType 'Budget'
 #: erpnext/accounts/doctype/budget/budget.json
 #: erpnext/accounts/report/budget_variance_report/budget_variance_report.js:80
-#, fuzzy
 msgid "Budget Against"
-msgstr "Biudžetas prieš"
+msgstr "Biudžetas (kam?)"
 
 #. Label of the budget_amount (Currency) field in DocType 'Budget'
 #. Label of the budget_amount (Currency) field in DocType 'Budget Account'
@@ -9030,19 +8997,16 @@ msgstr "Biudžeto pradžios data"
 #: erpnext/accounts/doctype/cost_center/cost_center_tree.js:77
 #: erpnext/accounts/report/budget_variance_report/budget_variance_report.json
 #: erpnext/accounts/workspace/accounting/accounting.json
-#, fuzzy
 msgid "Budget Variance Report"
 msgstr "Biudžeto skirtumų ataskaita"
 
 #: erpnext/accounts/doctype/budget/budget.py:156
-#, fuzzy
 msgid "Budget cannot be assigned against Group Account {0}"
-msgstr "Biudžeto negalima priskirti grupės sąskaitai {0}"
+msgstr "Biudžeto negalima priskirti grupės kor. sąskaitai {0}"
 
 #: erpnext/accounts/doctype/budget/budget.py:161
-#, fuzzy
 msgid "Budget cannot be assigned against {0}, as it's not an Income or Expense account"
-msgstr "Biudžetas negali būti priskirtas {0}, nes tai nėra pajamų ar išlaidų sąskaita"
+msgstr "Biudžetas negali būti priskirtas {0}, nes tai nėra pajamų ar išlaidų kor. sąskaita"
 
 #: erpnext/accounts/doctype/fiscal_year/fiscal_year_dashboard.py:8
 msgid "Budgets"
@@ -9057,9 +9021,8 @@ msgstr "Buferio laikas"
 #. Option for the 'Data Fetch Method' (Select) field in DocType 'Accounts
 #. Settings'
 #: erpnext/accounts/doctype/accounts_settings/accounts_settings.json
-#, fuzzy
 msgid "Buffered Cursor"
-msgstr "Buferinis žymeklis"
+msgstr "Buferinis kursorius"
 
 #: erpnext/manufacturing/report/work_order_stock_report/work_order_stock_report.py:162
 msgid "Build All?"
@@ -9121,19 +9084,17 @@ msgid "Bushel (US Dry Level)"
 msgstr "Bušelis (JAV sauso produkto lygis)"
 
 #: erpnext/setup/setup_wizard/data/designation.txt:6
-#, fuzzy
 msgid "Business Analyst"
 msgstr "Verslo analitikas"
 
 #: erpnext/setup/setup_wizard/data/designation.txt:7
-#, fuzzy
 msgid "Business Development Manager"
 msgstr "Verslo plėtros vadybininkas"
 
 #. Option for the 'Status' (Select) field in DocType 'Call Log'
 #: erpnext/telephony/doctype/call_log/call_log.json
 msgid "Busy"
-msgstr "Užimtas"
+msgstr "Užimta(-s)"
 
 #: erpnext/stock/doctype/batch/batch_dashboard.py:8
 #: erpnext/stock/doctype/item/item_dashboard.py:22
@@ -9231,25 +9192,21 @@ msgstr "CODE-39"
 
 #. Name of a report
 #: erpnext/stock/report/cogs_by_item_group/cogs_by_item_group.json
-#, fuzzy
 msgid "COGS By Item Group"
-msgstr "COGS pagal straipsnių grupes"
+msgstr "Parduotų prekių savikaina pagal prekių grupes"
 
 #: erpnext/stock/report/cogs_by_item_group/cogs_by_item_group.py:44
-#, fuzzy
 msgid "COGS Debit"
-msgstr "COGS debetas"
+msgstr "Parduotų prekių savikainos debetas"
 
 #. Name of a Workspace
 #. Label of a Card Break in the Home Workspace
 #: erpnext/crm/workspace/crm/crm.json erpnext/setup/workspace/home/home.json
-#, fuzzy
 msgid "CRM"
 msgstr "CRM"
 
 #. Name of a DocType
 #: erpnext/crm/doctype/crm_note/crm_note.json
-#, fuzzy
 msgid "CRM Note"
 msgstr "CRM pastaba"
 
@@ -9257,7 +9214,6 @@ msgstr "CRM pastaba"
 #. Label of a Link in the CRM Workspace
 #: erpnext/crm/doctype/crm_settings/crm_settings.json
 #: erpnext/crm/workspace/crm/crm.json
-#, fuzzy
 msgid "CRM Settings"
 msgstr "CRM nustatymai"
 
@@ -9318,7 +9274,7 @@ msgstr "Apskaičiuokite numatomą atvykimo laiką"
 #. Settings'
 #: erpnext/selling/doctype/selling_settings/selling_settings.json
 msgid "Calculate Product Bundle Price based on Child Items' Rates"
-msgstr "Apskaičiuoti produkto paketo kainą pagal vaikų elementų įkainius"
+msgstr "Apskaičiuoti produkto rinkinio kainą pagal antrinių prekių įkainius"
 
 #. Description of the 'Hidden Line (Internal Use Only)' (Check) field in
 #. DocType 'Financial Report Row'
@@ -10054,9 +10010,8 @@ msgstr "Vežėjų paslaugos"
 #. Label of the carry_forward_communication_and_comments (Check) field in
 #. DocType 'CRM Settings'
 #: erpnext/crm/doctype/crm_settings/crm_settings.json
-#, fuzzy
 msgid "Carry Forward Communication and Comments"
-msgstr "Tolesnis bendravimas ir pastabos"
+msgstr "Tęsti tolimesnį bendravimą ir pastabas"
 
 #. Option for the 'Account Type' (Select) field in DocType 'Account'
 #. Option for the 'Type' (Select) field in DocType 'Mode of Payment'
@@ -10451,7 +10406,7 @@ msgstr "Važiuoklės Nr"
 #. 'Accounts Settings'
 #: erpnext/accounts/doctype/accounts_settings/accounts_settings.json
 msgid "Check Supplier Invoice Number Uniqueness"
-msgstr "Tiekėjo sąskaitos-faktūros numerio unikalumo tikrinimas"
+msgstr "Tikrinti tiekėjo sąskaitos-faktūros numerio unikalumą"
 
 #. Description of the 'Is Container' (Check) field in DocType 'Location'
 #: erpnext/assets/doctype/location/location.json
@@ -13118,9 +13073,8 @@ msgstr "Sukurti potencialius klientus"
 #. Label of the post_change_gl_entries (Check) field in DocType 'Accounts
 #. Settings'
 #: erpnext/accounts/doctype/accounts_settings/accounts_settings.json
-#, fuzzy
 msgid "Create Ledger Entries for Change Amount"
-msgstr "Sukurti buhalterinės knygos įrašus pakeitimo sumai"
+msgstr "Sukurti buhalterinės knygos įrašus grąžos sumai"
 
 #: erpnext/buying/doctype/supplier/supplier.js:218
 #: erpnext/selling/doctype/customer/customer.js:269
@@ -13317,9 +13271,8 @@ msgstr "Kurti klientų pasiūlymus"
 #. Label of the create_pr_in_draft_status (Check) field in DocType 'Accounts
 #. Settings'
 #: erpnext/accounts/doctype/accounts_settings/accounts_settings.json
-#, fuzzy
 msgid "Create in Draft Status"
-msgstr "Sukurti juodraščio būseną"
+msgstr "Kurti juodraščio būsenoje"
 
 #. Description of the 'Create Missing Party' (Check) field in DocType 'Opening
 #. Invoice Creation Tool'
@@ -13365,7 +13318,7 @@ msgstr "Žurnalo įrašų kūrimas..."
 #: erpnext/stock/doctype/packing_slip/packing_slip.js:42
 #, fuzzy
 msgid "Creating Packing Slip ..."
-msgstr "Pakavimo lapelio kūrimas..."
+msgstr "Kuriamas pakavimo lapas..."
 
 #: erpnext/accounts/doctype/opening_invoice_creation_tool/opening_invoice_creation_tool.js:60
 #, fuzzy
@@ -16182,9 +16135,8 @@ msgstr "Pristatymo važtaraštis"
 #: erpnext/stock/doctype/delivery_note_item/delivery_note_item.json
 #: erpnext/stock/doctype/packing_slip_item/packing_slip_item.json
 #: erpnext/stock/doctype/purchase_receipt_item/purchase_receipt_item.json
-#, fuzzy
 msgid "Delivery Note Item"
-msgstr "Pristatymo važtaraščio prekė"
+msgstr "Važtaraščio prekė"
 
 #. Label of the delivery_note_no (Link) field in DocType 'Stock Entry'
 #: erpnext/stock/doctype/stock_entry/stock_entry.json
@@ -16608,7 +16560,7 @@ msgstr "Išsami priežastis"
 #: erpnext/accounts/doctype/accounts_settings/accounts_settings.json
 #, fuzzy
 msgid "Determine Address Tax Category From"
-msgstr "Nustatyti adresą Mokesčių kategorija Nuo"
+msgstr "Nustatyti adresą mokesčių kategorija iš"
 
 #. Option for the 'Fuel Type' (Select) field in DocType 'Vehicle'
 #: erpnext/setup/doctype/vehicle/vehicle.json
@@ -17162,7 +17114,6 @@ msgstr "Nuolaidos"
 #. Scheme Product Discount'
 #: erpnext/accounts/doctype/pricing_rule/pricing_rule.json
 #: erpnext/accounts/doctype/promotional_scheme_product_discount/promotional_scheme_product_discount.json
-#, fuzzy
 msgid "Discounts to be applied in sequential ranges like buy 1 get 1, buy 2 get 2, buy 3 get 3 and so on"
 msgstr "Nuolaidos turi būti taikomos nuosekliai, pvz., perkant 1, gaukite 1, perkant 2, gaukite 2, perkant 3, gaukite 3 ir t. t."
 
@@ -17223,13 +17174,11 @@ msgstr "Išsiuntimo adreso duomenys"
 #: erpnext/accounts/doctype/sales_invoice/sales_invoice.json
 #: erpnext/selling/doctype/sales_order/sales_order.json
 #: erpnext/stock/doctype/delivery_note/delivery_note.json
-#, fuzzy
 msgid "Dispatch Address Name"
-msgstr "Dispečerinės adresas Pavadinimas"
+msgstr "Išsiuntimo adreso pavadinimas"
 
 #. Label of the dispatch_address (Link) field in DocType 'Purchase Receipt'
 #: erpnext/stock/doctype/purchase_receipt/purchase_receipt.json
-#, fuzzy
 msgid "Dispatch Address Template"
 msgstr "Išsiuntimo adreso šablonas"
 
@@ -17442,7 +17391,7 @@ msgstr "Neskaidyti"
 #. field in DocType 'Stock Settings'
 #: erpnext/stock/doctype/stock_settings/stock_settings.json
 msgid "Do Not Update Serial / Batch on Creation of Auto Bundle"
-msgstr "Neatnaujinti serijos / partijos sukūrus automatinį paketą"
+msgstr "Neatnaujinti serijos / partijos sukūrus automatinį rinkinį"
 
 #. Label of the do_not_use_batchwise_valuation (Check) field in DocType 'Stock
 #. Settings'
@@ -17551,7 +17500,7 @@ msgstr "Netaikyti nemokamo prekės kiekio"
 #. DocType 'Selling Settings'
 #: erpnext/selling/doctype/selling_settings/selling_settings.json
 msgid "Don't Reserve Sales Order Qty on Sales Return"
-msgstr "Neišlaikyti pardavimo užsakymo kiekio pardavimo grąžinimo metu"
+msgstr "Nereservuoti pardavimo užsakymo kiekio pardavimo grąžinimo metu"
 
 #. Label of the dont_recompute_tax (Check) field in DocType 'Sales Taxes and
 #. Charges'
@@ -18446,7 +18395,7 @@ msgstr "Įgalinti nebaigtos gamybos apskaitą"
 #. 'Accounts Settings'
 #: erpnext/accounts/doctype/accounts_settings/accounts_settings.json
 msgid "Enable Common Party Accounting"
-msgstr "Bendrosios šalies apskaitos įgalinimas"
+msgstr "Įgalinti bendros šalies apskaitą"
 
 #. Label of the enable_cutoff_date_on_bulk_delivery_note_creation (Check) field
 #. in DocType 'Selling Settings'
@@ -18557,7 +18506,7 @@ msgstr "Įjungti SLA taikymą kiekvienam {0}"
 #. DocType 'Projects Settings'
 #: erpnext/projects/doctype/projects_settings/projects_settings.json
 msgid "Enabling the check box will fetch timesheet on select of a Project in Sales Invoice"
-msgstr "Įjungus šį žymimąjį langelį, darbo laiko apskaitos žiniaraštis bus paimtas pasirinkus projektą pardavimo sąskaitoje faktūroje"
+msgstr "Įjungus šį žymimąjį langelį, darbo laiko apskaitos žiniaraštis bus paimtas pasirinkus projektą pardavimo sąskaitoje-faktūroje"
 
 #. Description of the 'Enforce Time Logs' (Check) field in DocType
 #. 'Manufacturing Settings'
@@ -20949,7 +20898,6 @@ msgstr "Nuo datos yra privaloma"
 #: erpnext/accounts/report/tds_computation_summary/tds_computation_summary.py:41
 #: erpnext/stock/report/batch_wise_balance_history/batch_wise_balance_history.py:34
 #: erpnext/stock/report/cogs_by_item_group/cogs_by_item_group.py:38
-#, fuzzy
 msgid "From Date must be before To Date"
 msgstr "Data nuo turi būti ankstesnė už datą iki"
 
@@ -20958,48 +20906,40 @@ msgid "From Date should be within the Fiscal Year. Assuming From Date = {0}"
 msgstr "Data nuo turėtų būti fiskalinių metų ribose. Darant prielaidą, kad Nuo datos = {0}"
 
 #: erpnext/accounts/doctype/bisect_accounting_statements/bisect_accounting_statements.py:43
-#, fuzzy
 msgid "From Date: {0} cannot be greater than To date: {1}"
 msgstr "Nuo datos: {0} negali būti didesnė nei Iki datos: {1}"
 
 #: erpnext/projects/report/daily_timesheet_summary/daily_timesheet_summary.py:29
-#, fuzzy
 msgid "From Datetime"
-msgstr "Iš datos laiko"
+msgstr "Data Nuo"
 
 #. Label of the from_delivery_date (Date) field in DocType 'Production Plan'
 #: erpnext/manufacturing/doctype/production_plan/production_plan.json
-#, fuzzy
 msgid "From Delivery Date"
 msgstr "Nuo pristatymo datos"
 
 #: erpnext/selling/doctype/installation_note/installation_note.js:59
-#, fuzzy
 msgid "From Delivery Note"
-msgstr "Iš pristatymo pranešimo"
+msgstr "Iš pristatymo važtaraščio"
 
 #. Label of the from_doctype (Link) field in DocType 'Bulk Transaction Log
 #. Detail'
 #: erpnext/bulk_transaction/doctype/bulk_transaction_log_detail/bulk_transaction_log_detail.json
-#, fuzzy
 msgid "From Doctype"
 msgstr "Iš Doctype"
 
 #: erpnext/selling/report/payment_terms_status_for_sales_order/payment_terms_status_for_sales_order.js:78
-#, fuzzy
 msgid "From Due Date"
 msgstr "Nuo termino datos"
 
 #. Label of the from_employee (Link) field in DocType 'Asset Movement Item'
 #: erpnext/assets/doctype/asset_movement_item/asset_movement_item.json
-#, fuzzy
 msgid "From Employee"
 msgstr "Iš darbuotojo"
 
 #: erpnext/assets/doctype/asset_movement/asset_movement.py:85
-#, fuzzy
 msgid "From Employee is required while issuing Asset {0}"
-msgstr "Iš darbuotojo reikalaujama išduodant Turto {0}"
+msgstr "Iš darbuotojo reikalaujama išduodant Turtą {0}"
 
 #. Label of the from_external_ecomm_platform (Check) field in DocType 'Coupon
 #. Code'
@@ -21010,14 +20950,12 @@ msgstr "Iš išorinės „Ecomm“ platformos"
 #. Label of the from_fiscal_year (Link) field in DocType 'Budget'
 #: erpnext/accounts/doctype/budget/budget.json
 #: erpnext/accounts/report/budget_variance_report/budget_variance_report.js:43
-#, fuzzy
 msgid "From Fiscal Year"
 msgstr "Nuo fiskalinių metų"
 
 #: erpnext/accounts/doctype/budget/budget.py:109
-#, fuzzy
 msgid "From Fiscal Year cannot be greater than To Fiscal Year"
-msgstr "Iš fiskalinių metų negali būti didesnė už Iki fiskalinių metų"
+msgstr "Nuo fiskalinių metų negali būti didesnė už Iki fiskalinių metų"
 
 #. Label of the from_folio_no (Data) field in DocType 'Share Transfer'
 #: erpnext/accounts/doctype/share_transfer/share_transfer.json
@@ -21031,27 +20969,23 @@ msgstr "Iš Folio Nr."
 #. Reconciliation'
 #: erpnext/accounts/doctype/payment_reconciliation/payment_reconciliation.json
 #: erpnext/accounts/doctype/process_payment_reconciliation/process_payment_reconciliation.json
-#, fuzzy
 msgid "From Invoice Date"
-msgstr "Nuo sąskaitos faktūros datos"
+msgstr "Nuo sąskaitos-faktūros datos"
 
 #. Label of the lead_name (Link) field in DocType 'Customer'
 #: erpnext/selling/doctype/customer/customer.json
-#, fuzzy
 msgid "From Lead"
-msgstr "Iš Potencialaus kliento"
+msgstr "Iš potencialaus kliento"
 
 #. Label of the from_no (Int) field in DocType 'Share Balance'
 #. Label of the from_no (Int) field in DocType 'Share Transfer'
 #: erpnext/accounts/doctype/share_balance/share_balance.json
 #: erpnext/accounts/doctype/share_transfer/share_transfer.json
-#, fuzzy
 msgid "From No"
 msgstr "Iš Nr."
 
 #. Label of the opportunity_name (Link) field in DocType 'Customer'
 #: erpnext/selling/doctype/customer/customer.json
-#, fuzzy
 msgid "From Opportunity"
 msgstr "Nuo galimybės"
 
@@ -21589,7 +21523,7 @@ msgstr "Sukurti atsargų uždarymo įrašą"
 #. Description of a DocType
 #: erpnext/stock/doctype/packing_slip/packing_slip.json
 msgid "Generate packing slips for packages to be delivered. Used to notify package number, package contents and its weight."
-msgstr "Sukurkite siuntų pristatymo lapelius. Naudojamas pakuotės numeriui, pakuotės turiniui ir jos svoriui pranešti."
+msgstr "Sukurkite siuntų pakavimo lapus. Naudojamas pakuotės numeriui, pakuotės turiniui ir jos svoriui pranešti."
 
 #. Label of the generated (Check) field in DocType 'Bisect Nodes'
 #: erpnext/accounts/doctype/bisect_nodes/bisect_nodes.json
@@ -21609,79 +21543,67 @@ msgstr "Peržiūros generavimas"
 #. Label of the get_actual_demand (Button) field in DocType 'Master Production
 #. Schedule'
 #: erpnext/manufacturing/doctype/master_production_schedule/master_production_schedule.json
-#, fuzzy
 msgid "Get Actual Demand"
-msgstr "Gaukite faktinę paklausą"
+msgstr "Gauti faktinę paklausą"
 
 #. Label of the get_advances (Button) field in DocType 'Purchase Invoice'
 #: erpnext/accounts/doctype/purchase_invoice/purchase_invoice.json
-#, fuzzy
 msgid "Get Advances Paid"
-msgstr "Gaukite sumokėtus avansus"
+msgstr "Gauti sumokėtus avansus"
 
 #. Label of the get_advances (Button) field in DocType 'POS Invoice'
 #. Label of the get_advances (Button) field in DocType 'Sales Invoice'
 #: erpnext/accounts/doctype/pos_invoice/pos_invoice.json
 #: erpnext/accounts/doctype/sales_invoice/sales_invoice.json
-#, fuzzy
 msgid "Get Advances Received"
 msgstr "Gauti gautus avansus"
 
 #. Label of the get_allocations (Button) field in DocType 'Unreconcile Payment'
 #: erpnext/accounts/doctype/unreconcile_payment/unreconcile_payment.json
-#, fuzzy
 msgid "Get Allocations"
 msgstr "Gauti sudengimus"
 
 #. Label of the get_balance_for_periodic_accounting (Button) field in DocType
 #. 'Journal Entry'
 #: erpnext/accounts/doctype/journal_entry/journal_entry.json
-#, fuzzy
 msgid "Get Balance"
-msgstr "Gaukite balansą"
+msgstr "Gauti balansą"
 
 #. Label of the get_current_stock (Button) field in DocType 'Purchase Receipt'
 #. Label of the get_current_stock (Button) field in DocType 'Subcontracting
 #. Receipt'
 #: erpnext/stock/doctype/purchase_receipt/purchase_receipt.json
 #: erpnext/subcontracting/doctype/subcontracting_receipt/subcontracting_receipt.json
-#, fuzzy
 msgid "Get Current Stock"
-msgstr "Gaukite dabartines atsargas"
+msgstr "Gauti dabartines atsargas"
 
 #: erpnext/selling/doctype/customer/customer.js:189
-#, fuzzy
 msgid "Get Customer Group Details"
 msgstr "Gauti informaciją apie klientų grupę"
 
 #: erpnext/selling/doctype/sales_order/sales_order.js:608
-#, fuzzy
 msgid "Get Delivery Schedule"
-msgstr "Gaukite pristatymo tvarkaraštį"
+msgstr "Gauti pristatymo tvarkaraštį"
 
 #. Label of the get_entries (Button) field in DocType 'Exchange Rate
 #. Revaluation'
 #: erpnext/accounts/doctype/exchange_rate_revaluation/exchange_rate_revaluation.json
-#, fuzzy
 msgid "Get Entries"
 msgstr "Gauti įrašus"
 
 #. Label of the get_items (Button) field in DocType 'Production Plan'
 #: erpnext/manufacturing/doctype/production_plan/production_plan.json
-#, fuzzy
 msgid "Get Finished Goods"
-msgstr "Gaukite gatavos produkcijos"
+msgstr "Gauti gatavos produkcijos"
 
 #. Description of the 'Get Finished Goods' (Button) field in DocType
 #. 'Production Plan'
 #: erpnext/manufacturing/doctype/production_plan/production_plan.json
-#, fuzzy
 msgid "Get Finished Goods for Manufacture"
-msgstr "Gaukite gatavų prekių gamybai"
+msgstr "Gauti gatavas prekes gamybai"
 
 #: erpnext/accounts/doctype/invoice_discounting/invoice_discounting.js:57
 #: erpnext/accounts/doctype/invoice_discounting/invoice_discounting.js:159
-#, fuzzy
 msgid "Get Invoices"
 msgstr "Gauti sąskaitas faktūras"
 
@@ -21731,21 +21653,18 @@ msgstr "Gauti elementų buvimo vietas"
 #: erpnext/stock/doctype/stock_entry/stock_entry.js:495
 #: erpnext/stock/doctype/stock_entry/stock_entry.js:648
 #: erpnext/subcontracting/doctype/subcontracting_receipt/subcontracting_receipt.js:164
-#, fuzzy
 msgid "Get Items From"
-msgstr "Gaukite prekių iš"
+msgstr "Gauti prekes iš"
 
 #. Label of the transfer_materials (Button) field in DocType 'Production Plan'
 #: erpnext/manufacturing/doctype/production_plan/production_plan.json
-#, fuzzy
 msgid "Get Items for Purchase / Transfer"
-msgstr "Gaukite prekių įsigijimui / perdavimui"
+msgstr "Gauti prekes įsigijimui / perdavimui"
 
 #. Label of the get_items_for_mr (Button) field in DocType 'Production Plan'
 #: erpnext/manufacturing/doctype/production_plan/production_plan.json
-#, fuzzy
 msgid "Get Items for Purchase Only"
-msgstr "Gaukite tik pirkimo elementus"
+msgstr "Gauti prekes tik pirkimui"
 
 #: erpnext/stock/doctype/material_request/material_request.js:331
 #: erpnext/stock/doctype/stock_entry/stock_entry.js:684
@@ -21773,9 +21692,8 @@ msgstr "Gauti elementus iš produktų rinkinio"
 
 #. Label of the get_latest_query (Data) field in DocType 'Support Settings'
 #: erpnext/support/doctype/support_settings/support_settings.json
-#, fuzzy
 msgid "Get Latest Query"
-msgstr "Gaukite naujausią užklausą"
+msgstr "Gauti naujausią užklausą"
 
 #. Label of the get_material_request (Button) field in DocType 'Production
 #. Plan'
@@ -21806,29 +21724,25 @@ msgstr "Gauti neapmokėtas sąskaitas faktūras"
 #. Label of the get_outstanding_orders (Button) field in DocType 'Payment
 #. Entry'
 #: erpnext/accounts/doctype/payment_entry/payment_entry.json
-#, fuzzy
 msgid "Get Outstanding Orders"
-msgstr "Gaukite neįvykdytų užsakymų"
+msgstr "Gauti neįvykdytus užsakymus"
 
 #: erpnext/accounts/doctype/bank_clearance/bank_clearance.js:38
 #: erpnext/accounts/doctype/bank_clearance/bank_clearance.js:40
 #: erpnext/accounts/doctype/bank_clearance/bank_clearance.js:43
-#, fuzzy
 msgid "Get Payment Entries"
 msgstr "Gauti mokėjimo įrašus"
 
 #: erpnext/accounts/doctype/payment_order/payment_order.js:23
 #: erpnext/accounts/doctype/payment_order/payment_order.js:31
-#, fuzzy
 msgid "Get Payments from"
-msgstr "Gaukite mokėjimus iš"
+msgstr "Gauti mokėjimus iš"
 
 #. Label of the get_rm_cost_from_consumption_entry (Check) field in DocType
 #. 'Manufacturing Settings'
 #: erpnext/manufacturing/doctype/manufacturing_settings/manufacturing_settings.json
-#, fuzzy
 msgid "Get Raw Materials Cost from Consumption Entry"
-msgstr "Gaukite žaliavų sąnaudas iš vartojimo įrašo"
+msgstr "Gauti žaliavų sąnaudas iš vartojimo įrašo"
 
 #. Label of the get_sales_orders (Button) field in DocType 'Master Production
 #. Schedule'
@@ -21844,9 +21758,8 @@ msgstr "Gauti pardavimo užsakymus"
 #. Label of the get_scrap_items (Button) field in DocType 'Subcontracting
 #. Receipt'
 #: erpnext/subcontracting/doctype/subcontracting_receipt/subcontracting_receipt.json
-#, fuzzy
 msgid "Get Scrap Items"
-msgstr "Gaukite laužo elementų"
+msgstr "Gauti atliekų prekes"
 
 #. Label of the get_started_sections (Code) field in DocType 'Support Settings'
 #: erpnext/support/doctype/support_settings/support_settings.json
@@ -21874,13 +21787,12 @@ msgid "Get Suppliers"
 msgstr "Pasirinkti tiekėjus"
 
 #: erpnext/buying/doctype/request_for_quotation/request_for_quotation.js:471
-#, fuzzy
 msgid "Get Suppliers By"
 msgstr "Gauti tiekėjus pagal"
 
 #: erpnext/accounts/doctype/sales_invoice/sales_invoice.js:1103
 msgid "Get Timesheets"
-msgstr "Gaukite darbo laiko apskaitos žiniaraščius"
+msgstr "Gauti darbo laiko apskaitos žiniaraščius"
 
 #: erpnext/accounts/doctype/bank_reconciliation_tool/bank_reconciliation_tool.js:84
 #: erpnext/accounts/doctype/bank_reconciliation_tool/bank_reconciliation_tool.js:87
@@ -21892,9 +21804,8 @@ msgid "Get Unreconciled Entries"
 msgstr "Gauti nesudengtus įrašus"
 
 #: erpnext/stock/doctype/delivery_trip/delivery_trip.js:69
-#, fuzzy
 msgid "Get stops from"
-msgstr "Gaukite stoteles iš"
+msgstr "Gauti stoteles iš"
 
 #: erpnext/subcontracting/doctype/subcontracting_receipt/subcontracting_receipt.js:194
 msgid "Getting Scrap Items"
@@ -22309,12 +22220,10 @@ msgstr "Grupės mazgo sandėlio neleidžiama pasirinkti sandoriams"
 #: erpnext/selling/doctype/sales_order/sales_order.json
 #: erpnext/stock/doctype/delivery_note/delivery_note.json
 #: erpnext/stock/doctype/purchase_receipt/purchase_receipt.json
-#, fuzzy
 msgid "Group same items"
-msgstr "Sugrupuokite tuos pačius elementus"
+msgstr "Sugrupuoti tas pačias prekes"
 
 #: erpnext/stock/doctype/item/item_dashboard.py:18
-#, fuzzy
 msgid "Groups"
 msgstr "Grupės"
 
@@ -23093,9 +23002,8 @@ msgstr ""
 #. Description of the 'Create Ledger Entries for Change Amount' (Check) field
 #. in DocType 'Accounts Settings'
 #: erpnext/accounts/doctype/accounts_settings/accounts_settings.json
-#, fuzzy
 msgid "If enabled, ledger entries will be posted for change amount in POS transactions"
-msgstr "Jei įjungta, buhalteriniai įrašai bus daromi kasos operacijų pokyčio sumai."
+msgstr "Jei įjungta, buhalteriniai įrašai bus daromi kasos operacijų grąžos sumai."
 
 #. Description of the 'Allow Delivery of Overproduced Qty' (Check) field in
 #. DocType 'Selling Settings'
@@ -23136,7 +23044,7 @@ msgstr "Jei įjungta, medžiagų perkėlimo atsargų įraše turi būti nurodyta
 #: erpnext/stock/doctype/stock_settings/stock_settings.json
 #, fuzzy
 msgid "If enabled, the system will allow selecting UOMs in sales and purchase transactions only if the conversion rate is set in the item master."
-msgstr "Jei ši funkcija įjungta, sistema leis pasirinkti UOM pardavimo ir pirkimo operacijose tik tuo atveju, jei prekės pagrindiniame elemente nustatytas konvertavimo kursas."
+msgstr "Jei ši funkcija įjungta, sistema leis pasirinkti MV pardavimo ir pirkimo operacijose tik tuo atveju, jei prekės pagrindiniame elemente nustatytas konvertavimo kursas."
 
 #. Description of the 'Allow Editing of Items and Quantities in Work Order'
 #. (Check) field in DocType 'Manufacturing Settings'
@@ -23304,7 +23212,7 @@ msgstr "Jei ši parinktis nepažymėta, žurnalo įrašai bus išsaugoti kaip ju
 #: erpnext/accounts/doctype/accounts_settings/accounts_settings.json
 #, fuzzy
 msgid "If this is unchecked, direct GL entries will be created to book deferred revenue or expense"
-msgstr "Jei ši parinktis nepažymėta, bus kuriami tiesioginiai GL įrašai, kad būtų apskaitytos atidėtosios pajamos arba sąnaudos."
+msgstr "Jei ši parinktis nepažymėta, bus kuriami tiesioginiai DK įrašai, kad būtų apskaitytos atidėtosios pajamos arba sąnaudos."
 
 #: erpnext/accounts/doctype/payment_entry/payment_entry.py:740
 #, fuzzy
@@ -23461,9 +23369,8 @@ msgstr "Ignoruoti esamą planuojamą kiekį"
 #. Label of the ignore_is_opening_check_for_reporting (Check) field in DocType
 #. 'Accounts Settings'
 #: erpnext/accounts/doctype/accounts_settings/accounts_settings.json
-#, fuzzy
 msgid "Ignore Is Opening check for reporting"
-msgstr "Ignoruoti Ar atidaroma ataskaitų teikimo patikra"
+msgstr "Ignoruoti „ar atidaromas įrašas“ ataskaitose"
 
 #. Label of the ignore_pricing_rule (Check) field in DocType 'POS Invoice'
 #. Label of the ignore_pricing_rule (Check) field in DocType 'POS Profile'
@@ -23507,9 +23414,8 @@ msgstr "Ignoruoti sistemos generuojamas kredito / debeto įrašus"
 #. Label of the ignore_user_time_overlap (Check) field in DocType 'Projects
 #. Settings'
 #: erpnext/projects/doctype/projects_settings/projects_settings.json
-#, fuzzy
 msgid "Ignore User Time Overlap"
-msgstr "Vartotojo laiko sutapimo ignoravimas"
+msgstr "Ignoruoti vartotojo laiko sutapimą"
 
 #. Description of the 'Add Manually' (Check) field in DocType 'Repost Payment
 #. Ledger'
@@ -23527,9 +23433,8 @@ msgstr "Ignoruoti darbo vietos laiko sutapimą"
 #. Description of the 'Ignore Is Opening check for reporting' (Check) field in
 #. DocType 'Accounts Settings'
 #: erpnext/accounts/doctype/accounts_settings/accounts_settings.json
-#, fuzzy
 msgid "Ignores legacy Is Opening field in GL Entry that allows adding opening balance post the system is in use while generating reports"
-msgstr "Ignoruojamas senesnis laukas Is Opening GL Entry, kuris leidžia pridėti pradinį likutį po to, kai sistema yra naudojama generuojant ataskaitas."
+msgstr "Generuojant ataskaitas yra ignoruojamas senesnis laukas „Ar atidarymas“ DK įrašuose, kuris leidžia pridėti pradinį likutį po to, kai jau sistema buvo pradėta naudoti"
 
 #: erpnext/accounts/doctype/account/chart_of_accounts/verified/standard_chart_of_accounts.py:135
 #: erpnext/accounts/doctype/account/chart_of_accounts/verified/standard_chart_of_accounts_with_account_number.py:229
@@ -23757,7 +23662,7 @@ msgstr "Žodžiais (eksportas) bus matomas, kai išsaugosite važtaraštį."
 #. 'Delivery Note'
 #: erpnext/stock/doctype/delivery_note/delivery_note.json
 msgid "In Words will be visible once you save the Delivery Note."
-msgstr "Žodžiai bus matomi, kai išsaugosite pristatymo pranešimą."
+msgstr "Žodžiai bus matomi, kai išsaugosite pristatymo važtaraštį."
 
 #. Description of the 'In Words (Company Currency)' (Data) field in DocType
 #. 'POS Invoice'
@@ -23943,9 +23848,8 @@ msgstr "Įtraukite suskaidytus elementus"
 #: erpnext/manufacturing/doctype/bom_item/bom_item.json
 #: erpnext/manufacturing/doctype/work_order_item/work_order_item.json
 #: erpnext/stock/doctype/item/item.json
-#, fuzzy
 msgid "Include Item In Manufacturing"
-msgstr "Įtraukti elementą į gamybą"
+msgstr "Įtraukti prekę į gamybą"
 
 #. Label of the include_non_stock_items (Check) field in DocType 'Production
 #. Plan'
@@ -24281,7 +24185,7 @@ msgstr "Išskyrimo lygis: 0 = pagrindinė antraštė, 1 = subkategorija, 2 = ats
 #: erpnext/stock/doctype/packing_slip/packing_slip.json
 #, fuzzy
 msgid "Indicates that the package is a part of this delivery (Only Draft)"
-msgstr "Nurodo, kad pakuotė yra šios siuntos dalis (tik projektas)"
+msgstr "Nurodo, kad pakuotė yra šios siuntos dalis (tik juodraštis)"
 
 #. Option for the 'Account Type' (Select) field in DocType 'Account'
 #: erpnext/accounts/doctype/account/account.json
@@ -24343,9 +24247,8 @@ msgstr "Pramonės tipas"
 #. Label of the email_notification_sent (Check) field in DocType 'Delivery
 #. Trip'
 #: erpnext/stock/doctype/delivery_trip/delivery_trip.json
-#, fuzzy
 msgid "Initial Email Notification Sent"
-msgstr "Išsiųstas pradinis el. pašto pranešimas"
+msgstr "Pradinis el. pašto pranešimas išsiųstas"
 
 #. Label of the initialize_doctypes_table (Check) field in DocType 'Transaction
 #. Deletion Record'
@@ -24426,30 +24329,25 @@ msgstr "Įrengimo data"
 #: erpnext/selling/doctype/installation_note/installation_note.json
 #: erpnext/stock/doctype/delivery_note/delivery_note.js:264
 #: erpnext/stock/workspace/stock/stock.json
-#, fuzzy
 msgid "Installation Note"
-msgstr "Įrengimo pastaba"
+msgstr "Įrengimo kvitas"
 
 #. Name of a DocType
 #: erpnext/selling/doctype/installation_note_item/installation_note_item.json
-#, fuzzy
 msgid "Installation Note Item"
-msgstr "Įrengimo pastaba Prekė"
+msgstr "Įrengimo kvito prekė"
 
 #: erpnext/stock/doctype/delivery_note/delivery_note.py:629
-#, fuzzy
 msgid "Installation Note {0} has already been submitted"
-msgstr "Įrengimo pastaba {0} jau pateikta"
+msgstr "Įrengimo kvitas {0} jau pateiktas"
 
 #. Label of the installation_status (Select) field in DocType 'Delivery Note'
 #: erpnext/stock/doctype/delivery_note/delivery_note.json
-#, fuzzy
 msgid "Installation Status"
 msgstr "Įrengimo būsena"
 
 #. Label of the inst_time (Time) field in DocType 'Installation Note'
 #: erpnext/selling/doctype/installation_note/installation_note.json
-#, fuzzy
 msgid "Installation Time"
 msgstr "Įrengimo laikas"
 
@@ -24461,30 +24359,25 @@ msgstr "Įrengimo data negali būti ankstesnė už prekės {0} pristatymo datą"
 #. Label of the installed_qty (Float) field in DocType 'Delivery Note Item'
 #: erpnext/selling/doctype/installation_note_item/installation_note_item.json
 #: erpnext/stock/doctype/delivery_note_item/delivery_note_item.json
-#, fuzzy
 msgid "Installed Qty"
 msgstr "Įdiegtas kiekis"
 
 #: erpnext/setup/setup_wizard/setup_wizard.py:24
-#, fuzzy
 msgid "Installing presets"
 msgstr "Iš anksto nustatytų nustatymų diegimas"
 
 #. Label of the instruction (Small Text) field in DocType 'BOM Creator Item'
 #: erpnext/manufacturing/doctype/bom_creator_item/bom_creator_item.json
-#, fuzzy
 msgid "Instruction"
 msgstr "Instrukcija"
 
 #: erpnext/stock/doctype/putaway_rule/putaway_rule.py:81
 #: erpnext/stock/doctype/putaway_rule/putaway_rule.py:313
-#, fuzzy
 msgid "Insufficient Capacity"
 msgstr "Nepakankamas pajėgumas"
 
 #: erpnext/controllers/accounts_controller.py:3760
 #: erpnext/controllers/accounts_controller.py:3784
-#, fuzzy
 msgid "Insufficient Permissions"
 msgstr "Nepakankami leidimai"
 
@@ -24494,71 +24387,60 @@ msgstr "Nepakankami leidimai"
 #: erpnext/stock/doctype/stock_entry/stock_entry.py:899
 #: erpnext/stock/serial_batch_bundle.py:1186 erpnext/stock/stock_ledger.py:1679
 #: erpnext/stock/stock_ledger.py:2165
-#, fuzzy
 msgid "Insufficient Stock"
 msgstr "Nepakankamas atsargų kiekis"
 
 #: erpnext/stock/stock_ledger.py:2180
-#, fuzzy
 msgid "Insufficient Stock for Batch"
 msgstr "Nepakankamas atsargų kiekis partijai"
 
 #. Label of the insurance_details_tab (Tab Break) field in DocType 'Asset'
 #: erpnext/assets/doctype/asset/asset.json
-#, fuzzy
 msgid "Insurance"
 msgstr "Draudimas"
 
 #. Label of the insurance_company (Data) field in DocType 'Vehicle'
 #: erpnext/setup/doctype/vehicle/vehicle.json
-#, fuzzy
 msgid "Insurance Company"
 msgstr "Draudimo bendrovė"
 
 #. Label of the insurance_details (Section Break) field in DocType 'Vehicle'
 #: erpnext/setup/doctype/vehicle/vehicle.json
-#, fuzzy
 msgid "Insurance Details"
 msgstr "Draudimo informacija"
 
 #. Label of the insurance_end_date (Date) field in DocType 'Asset'
 #: erpnext/assets/doctype/asset/asset.json
-#, fuzzy
 msgid "Insurance End Date"
 msgstr "Draudimo pabaigos data"
 
 #. Label of the insurance_start_date (Date) field in DocType 'Asset'
 #: erpnext/assets/doctype/asset/asset.json
-#, fuzzy
 msgid "Insurance Start Date"
 msgstr "Draudimo pradžios data"
 
 #: erpnext/setup/doctype/vehicle/vehicle.py:44
 msgid "Insurance Start date should be less than Insurance End date"
-msgstr "Draudimo pradžios data turi būti trumpesnė nei draudimo pabaigos data"
+msgstr "Draudimo pradžios data turi būti mažesnė nei draudimo pabaigos data"
 
 #. Label of the insured_value (Data) field in DocType 'Asset'
 #: erpnext/assets/doctype/asset/asset.json
-#, fuzzy
 msgid "Insured value"
 msgstr "Apdrausta vertė"
 
 #. Label of the insurer (Data) field in DocType 'Asset'
 #: erpnext/assets/doctype/asset/asset.json
-#, fuzzy
 msgid "Insurer"
 msgstr "Draudėjas"
 
 #. Label of the integration_details_section (Section Break) field in DocType
 #. 'Bank Account'
 #: erpnext/accounts/doctype/bank_account/bank_account.json
-#, fuzzy
 msgid "Integration Details"
 msgstr "Integracijos informacija"
 
 #. Label of the integration_id (Data) field in DocType 'Bank Account'
 #: erpnext/accounts/doctype/bank_account/bank_account.json
-#, fuzzy
 msgid "Integration ID"
 msgstr "Integracijos ID"
 
@@ -24571,23 +24453,20 @@ msgstr "Integracijos ID"
 #: erpnext/accounts/doctype/pos_invoice/pos_invoice.json
 #: erpnext/accounts/doctype/purchase_invoice/purchase_invoice.json
 #: erpnext/accounts/doctype/sales_invoice/sales_invoice.json
-#, fuzzy
 msgid "Inter Company Invoice Reference"
-msgstr "Tarpįmonių sąskaitos faktūros nuoroda"
+msgstr "Tarpįmonių sąskaitos-faktūros nuoroda"
 
 #. Option for the 'Entry Type' (Select) field in DocType 'Journal Entry'
 #. Option for the 'Journal Entry Type' (Select) field in DocType 'Journal Entry
 #. Template'
 #: erpnext/accounts/doctype/journal_entry/journal_entry.json
 #: erpnext/accounts/doctype/journal_entry_template/journal_entry_template.json
-#, fuzzy
 msgid "Inter Company Journal Entry"
 msgstr "Įmonės tarpusavio įrašas žurnale"
 
 #. Label of the inter_company_journal_entry_reference (Link) field in DocType
 #. 'Journal Entry'
 #: erpnext/accounts/doctype/journal_entry/journal_entry.json
-#, fuzzy
 msgid "Inter Company Journal Entry Reference"
 msgstr "Įmonės tarpusavio žurnalo įrašo nuoroda"
 
@@ -24597,12 +24476,10 @@ msgstr "Įmonės tarpusavio žurnalo įrašo nuoroda"
 #. Order'
 #: erpnext/buying/doctype/purchase_order/purchase_order.json
 #: erpnext/selling/doctype/sales_order/sales_order.json
-#, fuzzy
 msgid "Inter Company Order Reference"
 msgstr "Įmonės užsakymo nuoroda"
 
 #: erpnext/selling/doctype/sales_order/sales_order.js:1137
-#, fuzzy
 msgid "Inter Company Purchase Order"
 msgstr "Tarpįmoninis pirkimo užsakymas"
 
@@ -25456,9 +25333,8 @@ msgstr "Yra kaupiamasis"
 #: erpnext/manufacturing/doctype/work_order_item/work_order_item.json
 #: erpnext/stock/doctype/item/item.json
 #: erpnext/subcontracting/doctype/subcontracting_inward_order_received_item/subcontracting_inward_order_received_item.json
-#, fuzzy
 msgid "Is Customer Provided Item"
-msgstr "Ar kliento pateiktas elementas"
+msgstr "Kliento tiekiama prekė"
 
 #. Label of the is_default (Check) field in DocType 'Bank Account'
 #: erpnext/accounts/doctype/bank_account/bank_account.json
@@ -25748,9 +25624,8 @@ msgstr "Atmesta sandėlio"
 #: erpnext/stock/doctype/purchase_receipt/purchase_receipt.json
 #: erpnext/stock/doctype/stock_entry/stock_entry.json
 #: erpnext/subcontracting/doctype/subcontracting_receipt/subcontracting_receipt.json
-#, fuzzy
 msgid "Is Return"
-msgstr "Ar grįžti"
+msgstr "Grąžinimas"
 
 #. Label of the is_return (Check) field in DocType 'POS Invoice'
 #. Label of the is_return (Check) field in DocType 'Sales Invoice'
@@ -26915,15 +26790,13 @@ msgstr "Prekės gamintojas"
 #: erpnext/subcontracting/doctype/subcontracting_receipt_item/subcontracting_receipt_item.json
 #: erpnext/subcontracting/doctype/subcontracting_receipt_supplied_item/subcontracting_receipt_supplied_item.json
 #: erpnext/support/doctype/warranty_claim/warranty_claim.json
-#, fuzzy
 msgid "Item Name"
 msgstr "Prekės pavadinimas"
 
 #. Label of the item_naming_by (Select) field in DocType 'Stock Settings'
 #: erpnext/stock/doctype/stock_settings/stock_settings.json
-#, fuzzy
 msgid "Item Naming By"
-msgstr "Prekės pavadinimas Pagal"
+msgstr "Prekės pavadinimas pagal"
 
 #. Label of a Link in the Buying Workspace
 #. Label of the item_price_tab (Tab Break) field in DocType 'Selling Settings'
@@ -28114,7 +27987,6 @@ msgstr "Paskutinio užsakymo data"
 #: erpnext/manufacturing/report/bom_stock_calculated/bom_stock_calculated.py:106
 #: erpnext/stock/doctype/item/item.json
 #: erpnext/stock/report/item_prices/item_prices.py:56
-#, fuzzy
 msgid "Last Purchase Rate"
 msgstr "Paskutinis pirkimo tarifas"
 
@@ -28334,7 +28206,7 @@ msgstr "Mokytis apie pardavimų valdymą"
 #: erpnext/accounts/doctype/accounts_settings/accounts_settings.json
 #, python-format
 msgid "Learn about <a href=\"https://docs.erpnext.com/docs/v13/user/manual/en/accounts/articles/common_party_accounting#:~:text=Common%20Party%20Accounting%20in%20ERPNext,Invoice%20against%20a%20primary%20Supplier.\">Common Party</a>"
-msgstr "Sužinokite apie <a href=\"https://docs.erpnext.com/docs/v13/user/manual/en/accounts/articles/common_party_accounting#:~:text=Common%20Party%20Accounting%20in%20ERPNext,Invoice%20against%20a%20primary%20Supplier.\">Bendras partneris</a>"
+msgstr "Sužinokite apie <a href=\"https://docs.erpnext.com/docs/v13/user/manual/en/accounts/articles/common_party_accounting#:~:text=Common%20Party%20Accounting%20in%20ERPNext,Invoice%20against%20a%20primary%20Supplier.\">Common Party Accounting</a>"
 
 #. Label of the leave_encashed (Select) field in DocType 'Employee'
 #: erpnext/setup/doctype/employee/employee.json
@@ -28360,7 +28232,7 @@ msgstr "Palikite tuščią vietą, jei tiekėjas blokuojamas neribotam laikui"
 #. DocType 'Delivery Settings'
 #: erpnext/stock/doctype/delivery_settings/delivery_settings.json
 msgid "Leave blank to use the standard Delivery Note format"
-msgstr "Palikite tuščią, jei norite naudoti standartinį pristatymo pranešimo formatą"
+msgstr "Palikite tuščią, jei norite naudoti standartinį pristatymo važtaraščio formatą"
 
 #. Name of a DocType
 #: erpnext/accounts/doctype/ledger_health/ledger_health.json
@@ -34057,16 +33929,14 @@ msgstr "Pirkimo kvito elemento {0} ({1}) viršijimas {2}%"
 #. Settings'
 #: erpnext/stock/doctype/item/item.json
 #: erpnext/stock/doctype/stock_settings/stock_settings.json
-#, fuzzy
 msgid "Over Delivery/Receipt Allowance (%)"
-msgstr "Pristatymo/priėmimo perviršio pašalpa (%)"
+msgstr "Pristatymo/priėmimo perviršio leidimas (%)"
 
 #. Label of the over_picking_allowance (Percent) field in DocType 'Stock
 #. Settings'
 #: erpnext/stock/doctype/stock_settings/stock_settings.json
-#, fuzzy
 msgid "Over Picking Allowance"
-msgstr "Išmoka už per didelį surinkimą"
+msgstr "Viršnorminio komplektavimo leidimas"
 
 #: erpnext/controllers/stock_controller.py:1673
 #, fuzzy
@@ -34082,7 +33952,7 @@ msgstr "Per {0} {1} gavimo/pristatymo atvejį ignoruojamas elementas {2}, nes tu
 #: erpnext/stock/doctype/stock_settings/stock_settings.json
 #, fuzzy
 msgid "Over Transfer Allowance"
-msgstr "Pervedimo išmokos viršijimas"
+msgstr "Perkėlimo viršijimo leidimas"
 
 #. Label of the over_transfer_allowance (Float) field in DocType 'Buying
 #. Settings'
@@ -36367,7 +36237,7 @@ msgstr "Procentinė dalis, kurią leidžiama parduoti viršijant bendrą užsaky
 #. 'Buying Settings'
 #: erpnext/buying/doctype/buying_settings/buying_settings.json
 msgid "Percentage you are allowed to transfer more against the quantity ordered. For example: If you have ordered 100 units. and your Allowance is 10% then you are allowed to transfer 110 units."
-msgstr "Procentas, kuriuo galite pervesti daugiau už užsakytą kiekį. Pavyzdžiui: Jei užsisakėte 100 vnt. ir jūsų pašalpa yra 10%, tada jums leidžiama pervesti 110 vienetų."
+msgstr "Procentas, kuriuo galite perkelti daugiau už užsakytą kiekį. Pavyzdžiui: Jei užsisakėte 100 vnt. ir jūsų nustatymas yra 10%, tada jums leidžiama perkelti 110 vienetų."
 
 #: erpnext/setup/setup_wizard/data/sales_stage.txt:6
 #: erpnext/setup/setup_wizard/operations/install_fixtures.py:437
@@ -36610,42 +36480,36 @@ msgstr "Telefono numeris"
 #: erpnext/stock/doctype/stock_entry/stock_entry.json
 #: erpnext/stock/doctype/stock_reservation_entry/stock_reservation_entry.json
 #: erpnext/stock/workspace/stock/stock.json
-#, fuzzy
 msgid "Pick List"
-msgstr "Pasirinkimo sąrašas"
+msgstr "Surinkimo sąrašas"
 
 #: erpnext/stock/doctype/pick_list/pick_list.py:217
-#, fuzzy
 msgid "Pick List Incomplete"
-msgstr "Nepilnas pasirinkimo sąrašas"
+msgstr "Surinkimo sąrašas nepilnas"
 
 #. Label of the pick_list_item (Data) field in DocType 'Delivery Note Item'
 #. Name of a DocType
 #: erpnext/stock/doctype/delivery_note_item/delivery_note_item.json
 #: erpnext/stock/doctype/pick_list_item/pick_list_item.json
-#, fuzzy
 msgid "Pick List Item"
-msgstr "Pasirinkimo sąrašo elementas"
+msgstr "Surinkimo sąrašo prekė"
 
 #. Label of the pick_manually (Check) field in DocType 'Pick List'
 #: erpnext/stock/doctype/pick_list/pick_list.json
-#, fuzzy
 msgid "Pick Manually"
-msgstr "Rinkitės rankiniu būdu"
+msgstr "Rinkti rankiniu būdu"
 
 #. Label of the pick_serial_and_batch (Button) field in DocType 'Asset Repair
 #. Consumed Item'
 #: erpnext/assets/doctype/asset_repair_consumed_item/asset_repair_consumed_item.json
-#, fuzzy
 msgid "Pick Serial / Batch"
-msgstr "Pasirinkti seriją / partiją"
+msgstr "Rinktis seriją / partiją"
 
 #. Label of the pick_serial_and_batch_based_on (Select) field in DocType 'Stock
 #. Settings'
 #: erpnext/stock/doctype/stock_settings/stock_settings.json
-#, fuzzy
 msgid "Pick Serial / Batch Based On"
-msgstr "Pasirinkite seriją / partiją pagal"
+msgstr "Rinktis seriją / partiją pagal"
 
 #. Label of the pick_serial_and_batch (Button) field in DocType 'Sales Invoice
 #. Item'
@@ -36658,50 +36522,42 @@ msgstr "Pasirinkite seriją / partiją pagal"
 #: erpnext/stock/doctype/delivery_note_item/delivery_note_item.json
 #: erpnext/stock/doctype/packed_item/packed_item.json
 #: erpnext/stock/doctype/pick_list_item/pick_list_item.json
-#, fuzzy
 msgid "Pick Serial / Batch No"
-msgstr "Rinkimo serijos / partijos Nr."
+msgstr "Rinktis serijos / partijos Nr."
 
 #. Label of the picked_qty (Float) field in DocType 'Packed Item'
 #: erpnext/stock/doctype/packed_item/packed_item.json
-#, fuzzy
 msgid "Picked Qty"
-msgstr "Pasirinktas kiekis"
+msgstr "Surinktas kiekis"
 
 #. Label of the picked_qty (Float) field in DocType 'Sales Order Item'
 #. Label of the picked_qty (Float) field in DocType 'Pick List Item'
 #: erpnext/selling/doctype/sales_order_item/sales_order_item.json
 #: erpnext/stock/doctype/pick_list_item/pick_list_item.json
-#, fuzzy
 msgid "Picked Qty (in Stock UOM)"
-msgstr "Pasirinktas kiekis (sandėlyje MV)"
+msgstr "Surinktas kiekis (sandėlio MV)"
 
 #. Option for the 'Pickup Type' (Select) field in DocType 'Shipment'
 #: erpnext/stock/doctype/shipment/shipment.json
-#, fuzzy
 msgid "Pickup"
 msgstr "Pasiėmimas"
 
 #. Label of the pickup_contact_person (Link) field in DocType 'Shipment'
 #: erpnext/stock/doctype/shipment/shipment.json
-#, fuzzy
 msgid "Pickup Contact Person"
 msgstr "Pasiėmimo kontaktinis asmuo"
 
 #. Label of the pickup_date (Date) field in DocType 'Shipment'
 #: erpnext/stock/doctype/shipment/shipment.json
-#, fuzzy
 msgid "Pickup Date"
 msgstr "Pasiėmimo data"
 
 #: erpnext/stock/doctype/shipment/shipment.js:398
-#, fuzzy
 msgid "Pickup Date cannot be before this day"
 msgstr "Pasiėmimo data negali būti ankstesnė nei ši diena"
 
 #. Label of the pickup (Data) field in DocType 'Shipment'
 #: erpnext/stock/doctype/shipment/shipment.json
-#, fuzzy
 msgid "Pickup From"
 msgstr "Pasiėmimas iš"
 
@@ -37101,7 +36957,7 @@ msgstr "Prašome sukurti klientą iš potencialaus kliento {0}."
 #: erpnext/stock/doctype/landed_cost_voucher/landed_cost_voucher.py:132
 #, fuzzy
 msgid "Please create Landed Cost Vouchers against Invoices that have 'Update Stock' enabled."
-msgstr "Sukurkite išlaidų kuponus(terminas?) pagal sąskaitas-faktūras, kuriose įjungta „Atnaujinti atsargas“."
+msgstr "Sukurkite išlaidų kvitus pagal sąskaitas-faktūras, kuriose įjungta „Atnaujinti atsargas“."
 
 # dimensiją?
 #: erpnext/accounts/doctype/accounting_dimension/accounting_dimension.py:74
@@ -38820,9 +38676,8 @@ msgstr "Kainoraščio pavadinimas"
 #: erpnext/stock/doctype/material_request_item/material_request_item.json
 #: erpnext/stock/doctype/purchase_receipt_item/purchase_receipt_item.json
 #: erpnext/stock/doctype/stock_settings/stock_settings.json
-#, fuzzy
 msgid "Price List Rate"
-msgstr "Kaina Sąrašo tarifas"
+msgstr "Kainoraščio kaina"
 
 #. Label of the base_price_list_rate (Currency) field in DocType 'POS Invoice
 #. Item'
@@ -39981,9 +39836,8 @@ msgstr "Reklaminė schemos produkto nuolaida"
 
 #. Label of the prompt_qty (Check) field in DocType 'Pick List'
 #: erpnext/stock/doctype/pick_list/pick_list.json
-#, fuzzy
 msgid "Prompt Qty"
-msgstr "Paraginimas?? Kiekis"
+msgstr "Prašyti įvesti kiekį"
 
 #: erpnext/setup/setup_wizard/operations/install_fixtures.py:264
 msgid "Proposal Writing"
@@ -42296,7 +42150,6 @@ msgstr "Žaliavos klientui"
 #. Option for the 'Data Fetch Method' (Select) field in DocType 'Accounts
 #. Settings'
 #: erpnext/accounts/doctype/accounts_settings/accounts_settings.json
-#, fuzzy
 msgid "Raw SQL"
 msgstr "Neapdorotas SQL"
 
@@ -44873,7 +44726,6 @@ msgstr "Vaidmuo, kuriam leidžiama per daug pristatyti / priimti"
 #: erpnext/accounts/doctype/accounts_settings/accounts_settings.json
 #: erpnext/buying/doctype/buying_settings/buying_settings.json
 #: erpnext/selling/doctype/selling_settings/selling_settings.json
-#, fuzzy
 msgid "Role Allowed to Override Stop Action"
 msgstr "Vaidmuo, kuriam leidžiama atšaukti sustabdymo veiksmą"
 
@@ -44973,7 +44825,7 @@ msgstr "Apvalinimas atidarant (pradiniame balanse/likutyje)"
 #. Label of the round_row_wise_tax (Check) field in DocType 'Accounts Settings'
 #: erpnext/accounts/doctype/accounts_settings/accounts_settings.json
 msgid "Round Tax Amount Row-wise"
-msgstr "Suapvalinta mokesčių sumą pagal eilutes"
+msgstr "Suapvalinti mokesčių sumą pagal eilutes"
 
 #. Label of the rounded_total (Currency) field in DocType 'POS Invoice'
 #. Label of the rounded_total (Currency) field in DocType 'Purchase Invoice'
@@ -46187,7 +46039,7 @@ msgstr "Eilutė {0}: Supakuotas kiekis turi būti lygus {1} Kiekis."
 #: erpnext/stock/doctype/packing_slip/packing_slip.py:147
 #, fuzzy
 msgid "Row {0}: Packing Slip is already created for Item {1}."
-msgstr "Eilutė {0}: Pakuotės lapelis jau sukurtas prekei {1}."
+msgstr "Eilutė {0}: Pakavimo lapelis jau sukurtas prekei {1}."
 
 #: erpnext/accounts/doctype/journal_entry/journal_entry.py:876
 msgid "Row {0}: Party / Account does not match with {1} / {2} in {3} {4}"
@@ -48434,9 +48286,8 @@ msgstr "Nuoseklusis"
 #. Label of the serial_and_batch_item_settings_tab (Tab Break) field in DocType
 #. 'Stock Settings'
 #: erpnext/stock/doctype/stock_settings/stock_settings.json
-#, fuzzy
 msgid "Serial & Batch Item"
-msgstr "Serijinis ir partijos elementas"
+msgstr "Serijos ir partijos prekė"
 
 #. Label of the section_break_7 (Section Break) field in DocType 'Stock
 #. Settings'
@@ -49008,7 +48859,6 @@ msgstr "Prekės {0} serijiniai numeriai sandėlyje {1} neprieinami. Pabandykite 
 #: erpnext/subcontracting/doctype/subcontracting_receipt/subcontracting_receipt.json
 #: erpnext/support/doctype/issue/issue.json
 #: erpnext/support/doctype/warranty_claim/warranty_claim.json
-#, fuzzy
 msgid "Series"
 msgstr "Serija"
 
@@ -49320,7 +49170,7 @@ msgstr "Nustatykite šios teritorijos biudžetus pagal pozicijų grupes. Taip pa
 #. DocType 'Buying Settings'
 #: erpnext/buying/doctype/buying_settings/buying_settings.json
 msgid "Set Landed Cost Based on Purchase Invoice Rate"
-msgstr "Nustatykite iškrautą savikainą pagal pirkimo sąskaitos faktūros tarifą"
+msgstr "Nustatyti savikainą pagal pirkimo sąskaitos faktūros tarifą"
 
 #: erpnext/accounts/doctype/sales_invoice/sales_invoice.js:1167
 #, fuzzy
@@ -49336,7 +49186,7 @@ msgstr "Nustatyti naują išleidimo datą"
 #. DocType 'Manufacturing Settings'
 #: erpnext/manufacturing/doctype/manufacturing_settings/manufacturing_settings.json
 msgid "Set Operating Cost / Scrap Items From Sub-assemblies"
-msgstr "Nustatyti veiklos sąnaudas / sudedamųjų dalių laužo elementus"
+msgstr "Nustatyti veiklos sąnaudas / sudedamųjų dalių atliekų elementus"
 
 #. Label of the set_cost_based_on_bom_qty (Check) field in DocType 'BOM
 #. Operation'
@@ -49401,9 +49251,8 @@ msgstr "Nustatyti serijinį ir paketų pavadinimą pagal pavadinimų seriją"
 #: erpnext/selling/doctype/sales_order/sales_order.json
 #: erpnext/stock/doctype/delivery_note/delivery_note.json
 #: erpnext/stock/doctype/material_request/material_request.json
-#, fuzzy
 msgid "Set Source Warehouse"
-msgstr "Nustatyti šaltinio sandėlį"
+msgstr "Nustatyti pradinį sandėlį"
 
 #: erpnext/selling/doctype/sales_order/sales_order.js:1594
 #, fuzzy
@@ -49434,7 +49283,7 @@ msgstr "Vertinimo normos nustatymas pagal išdavimo sandėlį"
 #. DocType 'Buying Settings'
 #: erpnext/buying/doctype/buying_settings/buying_settings.json
 msgid "Set Valuation Rate for Rejected Materials"
-msgstr "Nustatykite atmestų medžiagų vertinimo normą"
+msgstr "Nustatyti atmestų medžiagų vertinimo normą"
 
 #: erpnext/selling/doctype/sales_order/sales_order.js:256
 msgid "Set Warehouse"
@@ -50035,9 +49884,8 @@ msgid "Show Cumulative Amount"
 msgstr "Rodyti sukauptą sumą"
 
 #: erpnext/stock/report/stock_balance/stock_balance.js:137
-#, fuzzy
 msgid "Show Dimension Wise Stock"
-msgstr "„Rodyti „“Dimension Wise Stock\""
+msgstr "Rodyti atsargas pagal matmenis"
 
 #: erpnext/stock/report/stock_qty_vs_serial_no_count/stock_qty_vs_serial_no_count.js:29
 #, fuzzy
@@ -50087,9 +49935,8 @@ msgstr "Rodyti svetainėje"
 #. Label of the show_inclusive_tax_in_print (Check) field in DocType 'Accounts
 #. Settings'
 #: erpnext/accounts/doctype/accounts_settings/accounts_settings.json
-#, fuzzy
 msgid "Show Inclusive Tax in Print"
-msgstr "„Rodyti „“Inclusive Tax„“ spausdintinėje versijoje\""
+msgstr "Rodyti „įskaitant mokesčius“ spausdintinėje versijoje"
 
 #: erpnext/stock/report/available_batch_report/available_batch_report.js:86
 #, fuzzy
@@ -50163,9 +50010,8 @@ msgstr "Rodyti informaciją apie mokėjimą"
 #. Label of the show_payment_schedule_in_print (Check) field in DocType
 #. 'Accounts Settings'
 #: erpnext/accounts/doctype/accounts_settings/accounts_settings.json
-#, fuzzy
 msgid "Show Payment Schedule in Print"
-msgstr "Mokėjimo grafiko rodymas spausdinant"
+msgstr "Rodyti mokėjimų grafiką spausdinant"
 
 #. Label of the show_remarks (Check) field in DocType 'Process Statement Of
 #. Accounts'
@@ -51348,9 +51194,8 @@ msgstr "Atsargų planavimas"
 #: erpnext/stock/doctype/item/item.js:110
 #: erpnext/stock/report/stock_projected_qty/stock_projected_qty.json
 #: erpnext/stock/workspace/stock/stock.json
-#, fuzzy
 msgid "Stock Projected Qty"
-msgstr "Atsargos Prognozuojamas kiekis"
+msgstr "Atsargų prognozuojamas kiekis"
 
 #. Label of the stock_qty (Float) field in DocType 'BOM Creator Item'
 #. Label of the stock_qty (Float) field in DocType 'BOM Explosion Item'
@@ -51664,21 +51509,18 @@ msgstr "Sandorių su atsargomis nustatymai"
 #: erpnext/subcontracting/doctype/subcontracting_order_supplied_item/subcontracting_order_supplied_item.json
 #: erpnext/subcontracting/doctype/subcontracting_receipt_item/subcontracting_receipt_item.json
 #: erpnext/subcontracting/doctype/subcontracting_receipt_supplied_item/subcontracting_receipt_supplied_item.json
-#, fuzzy
 msgid "Stock UOM"
 msgstr "Atsargų matavimo vienetas"
 
 #. Label of the conversion_factor_section (Section Break) field in DocType
 #. 'Stock Settings'
 #: erpnext/stock/doctype/stock_settings/stock_settings.json
-#, fuzzy
 msgid "Stock UOM Quantity"
 msgstr "Atsargos matavimo vieneto kiekis"
 
 #: erpnext/public/js/stock_reservation.js:230
 #: erpnext/selling/doctype/sales_order/sales_order.js:451
 #: erpnext/subcontracting/doctype/subcontracting_order/subcontracting_order.js:327
-#, fuzzy
 msgid "Stock Unreservation"
 msgstr "Atsargų rezervavimo panaikinimas"
 
@@ -51688,7 +51530,6 @@ msgstr "Atsargų rezervavimo panaikinimas"
 #. Supplied'
 #: erpnext/buying/doctype/purchase_order_item_supplied/purchase_order_item_supplied.json
 #: erpnext/buying/doctype/purchase_receipt_item_supplied/purchase_receipt_item_supplied.json
-#, fuzzy
 msgid "Stock Uom"
 msgstr "Atsargos matavimo vienetas"
 
@@ -51742,16 +51583,14 @@ msgstr "Atsargos matavimo vienetas"
 #: erpnext/subcontracting/doctype/subcontracting_inward_order/subcontracting_inward_order.json
 #: erpnext/subcontracting/doctype/subcontracting_order/subcontracting_order.json
 #: erpnext/subcontracting/doctype/subcontracting_receipt/subcontracting_receipt.json
-#, fuzzy
 msgid "Stock User"
 msgstr "Atsargų naudotojas"
 
 #. Label of the stock_validations_tab (Tab Break) field in DocType 'Stock
 #. Settings'
 #: erpnext/stock/doctype/stock_settings/stock_settings.json
-#, fuzzy
 msgid "Stock Validations"
-msgstr "Atsargų patvirtinimai"
+msgstr "Atsargų vertinimai"
 
 #. Label of the stock_value (Float) field in DocType 'Bin'
 #. Label of the value (Currency) field in DocType 'Quick Stock Balance'
@@ -51760,9 +51599,8 @@ msgstr "Atsargų patvirtinimai"
 #: erpnext/stock/doctype/quick_stock_balance/quick_stock_balance.json
 #: erpnext/stock/report/incorrect_stock_value_report/incorrect_stock_value_report.py:134
 #: erpnext/stock/report/stock_and_account_value_comparison/stock_and_account_value_comparison.py:126
-#, fuzzy
 msgid "Stock Value"
-msgstr "Akcijų vertė"
+msgstr "Atsargų vertė"
 
 #. Name of a report
 #: erpnext/stock/report/stock_and_account_value_comparison/stock_and_account_value_comparison.json
@@ -52197,7 +52035,7 @@ msgstr "Subrangos užsakymas"
 #: erpnext/buying/doctype/buying_settings/buying_settings.json
 #, fuzzy
 msgid "Subcontracting Order (Draft) will be auto-created on submission of Purchase Order."
-msgstr "Subrangos užsakymas (projektas) bus automatiškai sukurtas pateikus pirkimo užsakymą."
+msgstr "Subrangos užsakymas (juodraštis) bus automatiškai sukurtas pateikus pirkimo užsakymą."
 
 #. Name of a DocType
 #. Label of the subcontracting_order_item (Data) field in DocType
@@ -54706,13 +54544,11 @@ msgid "The following invalid Pricing Rules are deleted:"
 msgstr "Šios negaliojančios kainodaros taisyklės išbraukiamos:"
 
 #: erpnext/stock/doctype/material_request/material_request.py:884
-#, fuzzy
 msgid "The following {0} were created: {1}"
 msgstr "Buvo sukurti šie {0}: {1}"
 
 #. Description of the 'Gross Weight' (Float) field in DocType 'Packing Slip'
 #: erpnext/stock/doctype/packing_slip/packing_slip.json
-#, fuzzy
 msgid "The gross weight of the package. Usually net weight + packaging material weight. (for print)"
 msgstr "Bendrasis pakuotės svoris. Paprastai grynasis svoris + pakavimo medžiagos svoris. (spausdinant)"
 
@@ -54757,9 +54593,8 @@ msgstr "Mažiausios pakopos minimali išleista suma turi būti 0. Klientai turi 
 
 #. Description of the 'Net Weight' (Float) field in DocType 'Packing Slip'
 #: erpnext/stock/doctype/packing_slip/packing_slip.json
-#, fuzzy
 msgid "The net weight of this package. (calculated automatically as sum of net weight of items)"
-msgstr "Šios pakuotės grynasis svoris. (apskaičiuojama automatiškai kaip elementų grynojo svorio suma)"
+msgstr "Šios pakuotės grynasis svoris. (apskaičiuojama automatiškai kaip prekių grynojo svorio suma)"
 
 #. Description of the 'New BOM' (Link) field in DocType 'BOM Update Tool'
 #: erpnext/manufacturing/doctype/bom_update_tool/bom_update_tool.json
@@ -54821,9 +54656,8 @@ msgstr "Procentinė dalis, kurią galite gauti arba pristatyti daugiau nei užsa
 #. Description of the 'Over Transfer Allowance' (Float) field in DocType 'Stock
 #. Settings'
 #: erpnext/stock/doctype/stock_settings/stock_settings.json
-#, fuzzy
 msgid "The percentage you are allowed to transfer more against the quantity ordered. For example, if you have ordered 100 units, and your Allowance is 10%, then you are allowed transfer 110 units."
-msgstr "Procentinė dalis, kurią galite pervesti daugiau už užsakytą kiekį. Pavyzdžiui, jei užsakėte 100 vienetų, o jūsų leidžiamoji norma yra 10 %, jums leidžiama pervesti 110 vienetų."
+msgstr "Procentinė dalis, kurią galite perkelti daugiau už užsakytą kiekį. Pavyzdžiui, jei užsakėte 100 vienetų, o jūsų leidžiamoji norma yra 10 %, jums leidžiama perkelti 110 vienetų."
 
 #: erpnext/public/js/utils.js:863
 #, fuzzy
@@ -55750,9 +55584,8 @@ msgstr "Į Nr."
 
 #. Label of the to_case_no (Int) field in DocType 'Packing Slip'
 #: erpnext/stock/doctype/packing_slip/packing_slip.json
-#, fuzzy
 msgid "To Package No."
-msgstr "Į paketą Nr."
+msgstr "Į pakuotę Nr."
 
 #. Option for the 'Status' (Select) field in DocType 'Sales Order'
 #: erpnext/buying/doctype/purchase_order/purchase_order_list.js:22
@@ -55941,9 +55774,8 @@ msgstr "Norint į medžiagų užklausos planavimą įtraukti ne sandėlyje esan�
 #. Description of the 'Set Operating Cost / Scrap Items From Sub-assemblies'
 #. (Check) field in DocType 'Manufacturing Settings'
 #: erpnext/manufacturing/doctype/manufacturing_settings/manufacturing_settings.json
-#, fuzzy
 msgid "To include sub-assembly costs and scrap items in Finished Goods on a work order without using a job card, when the 'Use Multi-Level BOM' option is enabled."
-msgstr "Į darbo užsakymą, kai įjungta parinktis \"Use Multi-Level BOM\" (\"Naudoti kelių lygių BOM\"), įtraukti submontavimo išlaidas ir brokuotus gaminius į darbo užsakymą \"Finished Goods\" (\"Gatavos prekės\") nenaudojant darbo kortelės."
+msgstr "Į darbo užsakymo gatavų gaminių sudėtines surinkimo išlaidas ir atliekas įtraukti nenaudojant darbo kortelės, kai įgalinta parinktis „Naudoti kelių lygių MK/KS“"
 
 #: erpnext/accounts/doctype/payment_entry/payment_entry.py:2309
 #: erpnext/controllers/accounts_controller.py:3164
@@ -56487,31 +56319,26 @@ msgid "Total Items"
 msgstr "Iš viso elementų"
 
 #: erpnext/stock/report/landed_cost_report/landed_cost_report.py:24
-#, fuzzy
 msgid "Total Landed Cost"
-msgstr "Bendra iškrautos žemės kaina"
+msgstr "Bendra savikaina"
 
 #. Label of the total_taxes_and_charges (Currency) field in DocType 'Landed
 #. Cost Voucher'
 #: erpnext/stock/doctype/landed_cost_voucher/landed_cost_voucher.json
-#, fuzzy
 msgid "Total Landed Cost (Company Currency)"
-msgstr "Bendra žemės kaina (bendrovės valiuta)"
+msgstr "Bendra savikaina (bendrovės valiuta)"
 
 #: erpnext/accounts/report/balance_sheet/balance_sheet.py:219
-#, fuzzy
 msgid "Total Liability"
 msgstr "Bendras įsipareigojimas"
 
 #. Label of the total_messages (Int) field in DocType 'SMS Center'
 #: erpnext/selling/doctype/sms_center/sms_center.json
-#, fuzzy
 msgid "Total Message(s)"
 msgstr "Iš viso pranešimų"
 
 #. Label of the total_monthly_sales (Currency) field in DocType 'Company'
 #: erpnext/setup/doctype/company/company.json
-#, fuzzy
 msgid "Total Monthly Sales"
 msgstr "Bendra mėnesio pardavimų suma"
 
@@ -56533,7 +56360,6 @@ msgstr "Bendra mėnesio pardavimų suma"
 #: erpnext/selling/doctype/sales_order/sales_order.json
 #: erpnext/stock/doctype/delivery_note/delivery_note.json
 #: erpnext/stock/doctype/purchase_receipt/purchase_receipt.json
-#, fuzzy
 msgid "Total Net Weight"
 msgstr "Bendras grynasis svoris"
 
@@ -57473,9 +57299,8 @@ msgstr "Bandymas"
 #. Description of the 'Accounts Receivable/Payable' (Int) field in DocType
 #. 'Accounts Settings'
 #: erpnext/accounts/doctype/accounts_settings/accounts_settings.json
-#, fuzzy
 msgid "Truncates 'Remarks' column to set character length"
-msgstr "„Sutrumpina stulpelį „“Pastabos„“, kad būtų nustatytas simbolių ilgis\""
+msgstr "Sutrumpina stulpelį „Pastabos“, kad būtų nustatytas simbolių ilgis"
 
 #: erpnext/accounts/report/financial_ratios/financial_ratios.js:55
 #: erpnext/accounts/report/financial_ratios/financial_ratios.py:198
@@ -57764,9 +57589,8 @@ msgstr "URL gali būti tik simbolių eilutė"
 #. Option for the 'Data Fetch Method' (Select) field in DocType 'Accounts
 #. Settings'
 #: erpnext/accounts/doctype/accounts_settings/accounts_settings.json
-#, fuzzy
 msgid "UnBuffered Cursor"
-msgstr "Nepuferinis žymeklis"
+msgstr "Nebuferinis kursorius"
 
 #: erpnext/public/js/utils/unreconcile.js:25
 #: erpnext/public/js/utils/unreconcile.js:133
@@ -57907,23 +57731,21 @@ msgid "Units of Measure"
 msgstr "Matavimo vienetai"
 
 #: erpnext/public/js/call_popup/call_popup.js:110
-#, fuzzy
 msgid "Unknown Caller"
 msgstr "Nežinomas skambintojas"
 
 #. Label of the unlink_advance_payment_on_cancelation_of_order (Check) field in
 #. DocType 'Accounts Settings'
 #: erpnext/accounts/doctype/accounts_settings/accounts_settings.json
-#, fuzzy
 msgid "Unlink Advance Payment on Cancellation of Order"
-msgstr "Išankstinio mokėjimo atšaukimas atšaukus užsakymą"
+msgstr "Atsieti avansinį mokėjimą atšaukus užsakymą"
 
 #. Label of the unlink_payment_on_cancellation_of_invoice (Check) field in
 #. DocType 'Accounts Settings'
 #: erpnext/accounts/doctype/accounts_settings/accounts_settings.json
 #, fuzzy
 msgid "Unlink Payment on Cancellation of Invoice"
-msgstr "Mokėjimo panaikinimas atšaukus sąskaitą faktūrą"
+msgstr "Atsieti mokėjimą atšaukus sąskaitą faktūrą"
 
 #: erpnext/accounts/doctype/bank_account/bank_account.js:33
 #, fuzzy
@@ -58183,16 +58005,15 @@ msgstr "Atnaujinti automatinio kartojimo nuorodą"
 #. 'Manufacturing Settings'
 #: erpnext/manufacturing/doctype/manufacturing_settings/manufacturing_settings.js:23
 #: erpnext/manufacturing/doctype/manufacturing_settings/manufacturing_settings.json
-#, fuzzy
 msgid "Update BOM Cost Automatically"
-msgstr "Automatiškai atnaujinkite konstrukcinės sąmatos sąnaudas"
+msgstr "Automatiškai atnaujinti konstrukcinės sąmatos sąnaudas"
 
 #. Description of the 'Update BOM Cost Automatically' (Check) field in DocType
 #. 'Manufacturing Settings'
 #: erpnext/manufacturing/doctype/manufacturing_settings/manufacturing_settings.json
 #, fuzzy
 msgid "Update BOM cost automatically via scheduler, based on the latest Valuation Rate/Price List Rate/Last Purchase Rate of raw materials"
-msgstr "Automatiškai atnaujinkite BOM sąnaudas, naudodami planuoklį, remdamiesi naujausia žaliavų įvertinimo norma / kainoraščio norma / paskutine pirkimo norma."
+msgstr "Automatiškai atnaujinkite KS sąnaudas, naudodami planuoklį, remdamiesi naujausia žaliavų įvertinimo norma / kainoraščio norma / paskutine pirkimo norma."
 
 #. Label of the update_billed_amount_in_delivery_note (Check) field in DocType
 #. 'POS Invoice'
@@ -58354,9 +58175,8 @@ msgstr "Turi būti įjungtas atsargų atnaujinimas pirkimo sąskaitoje faktūroj
 #. Description of the 'Update timestamp on new communication' (Check) field in
 #. DocType 'CRM Settings'
 #: erpnext/crm/doctype/crm_settings/crm_settings.json
-#, fuzzy
 msgid "Update the modified timestamp on new communications received in Lead & Opportunity."
-msgstr "„Atnaujinkite pakeistą laiko žymą naujuose pranešimuose, gautuose į „“Lead & Opportunity„“.\""
+msgstr "Atnaujinkite pakeistą laiko žymą naujuose pranešimuose, gautuose į „Potencialūs klientai & Galimybės“."
 
 #. Label of the update_timestamp_on_new_communication (Check) field in DocType
 #. 'CRM Settings'
@@ -58519,9 +58339,8 @@ msgstr "Naudokite senąjį biudžeto kontrolierių"
 #. Label of the use_legacy_controller_for_pcv (Check) field in DocType
 #. 'Accounts Settings'
 #: erpnext/accounts/doctype/accounts_settings/accounts_settings.json
-#, fuzzy
 msgid "Use Legacy Controller For Period Closing Voucher"
-msgstr "Naudoti senąjį valdiklį laikotarpio uždarymo čekiui"
+msgstr "Naudoti senąjį valdiklį laikotarpio uždarymo dok."
 
 #. Label of the use_multi_level_bom (Check) field in DocType 'Work Order'
 #. Label of the use_multi_level_bom (Check) field in DocType 'Stock Entry'
@@ -58685,9 +58504,8 @@ msgstr "Naudotojai, naudodami darbo korteles, gali naudoti žaliavas ir pridėti
 #. Description of the 'Set Landed Cost Based on Purchase Invoice Rate' (Check)
 #. field in DocType 'Buying Settings'
 #: erpnext/buying/doctype/buying_settings/buying_settings.json
-#, fuzzy
 msgid "Users can enable the checkbox If they want to adjust the incoming rate (set using purchase receipt) based on the purchase invoice rate."
-msgstr "Vartotojai gali įjungti žymimąjį langelį Jei jie nori koreguoti gaunamą tarifą (nustatytą naudojant pirkimo kvitą) pagal pirkimo sąskaitos faktūros tarifą."
+msgstr "Vartotojai gali įjungti žymimąjį langelį jei jie nori koreguoti gaunamą tarifą (nustatytą naudojant pirkimo kvitą) pagal pirkimo sąskaitos faktūros tarifą."
 
 #. Description of the 'Role Allowed to Over Bill ' (Link) field in DocType
 #. 'Accounts Settings'
@@ -58853,9 +58671,8 @@ msgstr "Patvirtinti taikomą taisyklę"
 #. Label of the validate_components_quantities_per_bom (Check) field in DocType
 #. 'Manufacturing Settings'
 #: erpnext/manufacturing/doctype/manufacturing_settings/manufacturing_settings.json
-#, fuzzy
 msgid "Validate Components and Quantities Per BOM"
-msgstr "Patvirtinkite komponentus ir kiekius pagal medžiagų sąrašą"
+msgstr "Tvirtinti komponentus ir kiekius pagal KS"
 
 #. Label of the validate_consumed_qty (Check) field in DocType 'Buying
 #. Settings'
@@ -58889,7 +58706,7 @@ msgstr "Patvirtinti kainodaros taisyklę"
 #. Settings'
 #: erpnext/selling/doctype/selling_settings/selling_settings.json
 msgid "Validate Selling Price for Item Against Purchase Rate or Valuation Rate"
-msgstr "Patvirtinti elemento pardavimo kainą pagal pirkimo normą arba vertinimo normą"
+msgstr "Patvirtinti prekės pardavimo kainą pagal pirkimo normą arba vertinimo normą"
 
 #. Label of the validate_stock_on_save (Check) field in DocType 'POS Profile'
 #: erpnext/accounts/doctype/pos_profile/pos_profile.json
@@ -59303,13 +59120,13 @@ msgstr "Transporto priemonės vertė"
 #: erpnext/stock/report/landed_cost_report/landed_cost_report.py:42
 #, fuzzy
 msgid "Vendor Invoice"
-msgstr "Pardavėjo sąskaita faktūra"
+msgstr "Pardavėjo sąskaita-faktūra"
 
 #. Label of the vendor_invoices (Table) field in DocType 'Landed Cost Voucher'
 #: erpnext/stock/doctype/landed_cost_voucher/landed_cost_voucher.json
 #, fuzzy
 msgid "Vendor Invoices"
-msgstr "Pardavėjo sąskaitos faktūros"
+msgstr "Pardavėjo sąskaitos-faktūros"
 
 #: erpnext/assets/report/fixed_asset_register/fixed_asset_register.py:541
 #, fuzzy
@@ -59355,9 +59172,8 @@ msgstr "Per klientų portalą"
 #. Label of the via_landed_cost_voucher (Check) field in DocType 'Repost Item
 #. Valuation'
 #: erpnext/stock/doctype/repost_item_valuation/repost_item_valuation.json
-#, fuzzy
 msgid "Via Landed Cost Voucher"
-msgstr "Per sausumos išlaidų kvitą"
+msgstr "Pagal savikainos kvitą"
 
 #: erpnext/setup/setup_wizard/data/designation.txt:31
 #, fuzzy
@@ -59698,7 +59514,7 @@ msgstr "Balansas pagal dokumentus"
 #: erpnext/stock/doctype/landed_cost_voucher/landed_cost_voucher.json
 #, fuzzy
 msgid "Vouchers"
-msgstr "Kuponai"
+msgstr "Aps. dokumentai"
 
 #: erpnext/patches/v15_0/remove_exotel_integration.py:32
 #, fuzzy
@@ -60262,7 +60078,6 @@ msgstr "Vieno vieneto svoris"
 #: erpnext/stock/doctype/item/item.json
 #: erpnext/stock/doctype/packing_slip_item/packing_slip_item.json
 #: erpnext/stock/doctype/purchase_receipt_item/purchase_receipt_item.json
-#, fuzzy
 msgid "Weight UOM"
 msgstr "Svorio matavimo vienetas"
 
