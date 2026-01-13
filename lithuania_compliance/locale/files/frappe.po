@@ -9959,34 +9959,29 @@ msgstr "Įveskite aplanko pavadinimą"
 #. Settings'
 #: frappe/core/doctype/sms_settings/sms_settings.json
 msgid "Enter static url parameters here (Eg. sender=ERPNext, username=ERPNext, password=1234 etc.)"
-msgstr "Įveskite statinius url parametrus (pvz., siuntėjas=ERPNext, vartotojo vardas=ERPNext, slaptažodis=1234 ir t. t.)"
+msgstr "Įveskite statinius url parametrus (pvz., sender=ERPNext, username=ERPNext, slaptažodis=1234 ir t. t.)"
 
 #. Description of the 'Message Parameter' (Data) field in DocType 'SMS
 #. Settings'
 #: frappe/core/doctype/sms_settings/sms_settings.json
-#, fuzzy
 msgid "Enter url parameter for message"
-msgstr "Įveskite pranešimo url parametrą"
+msgstr "Įveskite pranešimo teksto url parametrą"
 
 #. Description of the 'Receiver Parameter' (Data) field in DocType 'SMS
 #. Settings'
 #: frappe/core/doctype/sms_settings/sms_settings.json
-#, fuzzy
 msgid "Enter url parameter for receiver nos"
-msgstr "Įveskite url parametrą imtuvo nos"
+msgstr "Įveskite url parametrą gavėjo numeriui"
 
 #: frappe/public/js/frappe/ui/messages.js:341
-#, fuzzy
 msgid "Enter your password"
 msgstr "Įveskite slaptažodį"
 
 #: frappe/contacts/report/addresses_and_contacts/addresses_and_contacts.js:22
-#, fuzzy
 msgid "Entity Name"
 msgstr "Subjekto pavadinimas"
 
 #: frappe/contacts/report/addresses_and_contacts/addresses_and_contacts.js:9
-#, fuzzy
 msgid "Entity Type"
 msgstr "Subjekto tipas"
 
@@ -10020,12 +10015,10 @@ msgstr "Lygus"
 #: frappe/integrations/doctype/integration_request/integration_request.json
 #: frappe/integrations/doctype/webhook_request_log/webhook_request_log.json
 #: frappe/public/js/frappe/ui/messages.js:22
-#, fuzzy
 msgid "Error"
 msgstr "Klaida"
 
 #: frappe/public/js/frappe/web_form/web_form.js:264
-#, fuzzy
 msgctxt "Title of error message in web form"
 msgid "Error"
 msgstr "Klaida"
@@ -16979,7 +16972,7 @@ msgstr "Pranešimo ID"
 #. Label of the message_parameter (Data) field in DocType 'SMS Settings'
 #: frappe/core/doctype/sms_settings/sms_settings.json
 msgid "Message Parameter"
-msgstr "Pranešimo parametrai"
+msgstr "Žinutės parametras"
 
 #: frappe/templates/includes/contact.js:36
 msgid "Message Sent"
@@ -22312,9 +22305,8 @@ msgstr "Gavėjas pagal vaidmenį"
 
 #. Label of the receiver_parameter (Data) field in DocType 'SMS Settings'
 #: frappe/core/doctype/sms_settings/sms_settings.json
-#, fuzzy
 msgid "Receiver Parameter"
-msgstr "Imtuvo parametras"
+msgstr "Gavėjo parametras"
 
 #: frappe/utils/password_strength.py:123
 #, fuzzy
@@ -24122,9 +24114,8 @@ msgstr "SMS"
 
 #. Label of the sms_gateway_url (Small Text) field in DocType 'SMS Settings'
 #: frappe/core/doctype/sms_settings/sms_settings.json
-#, fuzzy
 msgid "SMS Gateway URL"
-msgstr "SMS vartų URL"
+msgstr "SMS Gateway URL"
 
 #. Name of a DocType
 #: frappe/core/doctype/sms_log/sms_log.json

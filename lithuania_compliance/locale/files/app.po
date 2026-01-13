@@ -3,26 +3,56 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Language: lt\n"
 
+msgid "Invoice Type"
+msgstr "Sąskaitos tipas"
+
+msgid "Used for i.SAF reporting"
+msgstr "Naudojama i.SAF ataskaitose"
+
 msgid "Exclude from i.SAF"
 msgstr "Neįtraukti į i.SAF"
 
-msgid "SF: Standard VAT invoice, default for positive amounts."
-msgstr "SF: Standartinė PVM sąskaita, numatytoji teigiamoms sumoms."
+msgid "Issued SF: Standard VAT invoice"
+msgstr "Išrašyta SF: Standartinė PVM sąskaita"
 
-msgid "DS: Debit VAT invoice, for increases or corrections."
-msgstr "DS: Debetinė PVM sąskaita, skirtas padidėjimams arba pataisoms."
+msgid "Received DS: Debit VAT invoice"
+msgstr "Gauta DS: Debetinė PVM sąskaita"
 
-msgid "KS: Credit VAT invoice, for negative amounts like returns."
-msgstr "KS: Kredito PVM sąskaita, skirta neigiamoms sumoms, grąžinimams."
+msgid "Issued KS: Credit VAT invoice"
+msgstr "Išrašyta KS: Kredito PVM sąskaita"
 
-msgid "VS: Summary VAT invoice, issued by attorneys-at-law or notaries."
-msgstr "VS: Santraukos PVM sąskaita, išduota advokatų ar notarų."
+msgid "Issued VS: Summary VAT invoice"
+msgstr "Išrašyta VS: Santraukos PVM sąskaita"
 
-msgid "VD: Summary debit VAT invoice, for attorneys-at-law or notaries."
-msgstr "VD: Santraukos debetinė PVM sąskaita, skirta advokatams ar notarams."
+msgid "Received VD: Summary debit VAT invoice"
+msgstr "Gauta VD: Santraukos debetinė PVM sąskaita"
 
-msgid "VK: Summary credit VAT invoice, for attorneys-at-law or notaries."
-msgstr "VK: Santraukos kredito PVM sąskaita, skirta advokatams ar notarams."
+msgid "Issued VK: Summary credit VAT invoice"
+msgstr "Išrašyta VK: Santraukos kredito PVM sąskaita"
+
+msgid "Received SF: Standard VAT invoice"
+msgstr "Gauta SF: Standartinė PVM sąskaita"
+
+msgid "Issued DS: Debit VAT invoice"
+msgstr "Išrašyta DS: Debetinė PVM sąskaita"
+
+msgid "Received KS: Credit VAT invoice"
+msgstr "Gauta KS: Kredito PVM sąskaita"
+
+msgid "Received VS: Summary VAT invoice"
+msgstr "Gauta VS: Santraukos PVM sąskaita"
+
+msgid "Issued VD: Summary debit VAT invoice"
+msgstr "Išrašyta VD: Santraukos debetinė PVM sąskaita"
+
+msgid "Received VK: Summary credit VAT invoice"
+msgstr "Gauta VK: Santraukos kredito PVM sąskaita"
+
+msgid "This invoice type requires 'Is Returned' to be checked. It has been automatically marked."
+msgstr "Šiam sąskaitos tipui reikia pažymėti 'Grąžinimas'. Tai buvo pataisyta automatiškai."
+
+msgid "This invoice type does not allow 'Is Returned' to be checked. It has been automatically unmarked."
+msgstr "Šiam sąskaitos tipui negalima pažymėti 'Grąžinimas'. Tai buvo automatiškai pataisyta."
 
 msgid "Lithuania Compliance Settings"
 msgstr "Atitikties nustatymai Lietuvoje"

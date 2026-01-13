@@ -91,7 +91,7 @@ msgstr "„Kliento pateikta prekė“ taip pat negali būti Pirkimo prekė"
 
 #: erpnext/stock/doctype/item/item.py:238
 msgid "\"Customer Provided Item\" cannot have Valuation Rate"
-msgstr "„Kliento pateikta prekė“ negali turėti vertinimo kurso"
+msgstr "„Kliento pateikta prekė“ negali turėti savikainos"
 
 #: erpnext/stock/doctype/item/item.py:314
 #, fuzzy
@@ -438,32 +438,27 @@ msgid "(H) Change in Stock Value (FIFO Queue)"
 msgstr "(H) Atsargų vertės pokytis (FIFO eilė)"
 
 #: erpnext/stock/report/fifo_queue_vs_qty_after_transaction_comparison/fifo_queue_vs_qty_after_transaction_comparison.py:209
-#, fuzzy
 msgid "(H) Valuation Rate"
-msgstr "(H) Vertinimo norma"
+msgstr "(H) Savikaina"
 
 #. Description of the 'Actual Operating Cost' (Currency) field in DocType 'Work
 #. Order Operation'
 #: erpnext/manufacturing/doctype/work_order_operation/work_order_operation.json
-#, fuzzy
 msgid "(Hour Rate / 60) * Actual Operation Time"
 msgstr "(Valandų norma / 60) * faktinis veikimo laikas"
 
 #: erpnext/stock/report/stock_ledger_invariant_check/stock_ledger_invariant_check.py:273
 #: erpnext/stock/report/stock_ledger_variance/stock_ledger_variance.py:176
-#, fuzzy
 msgid "(I) Valuation Rate"
-msgstr "(I) Vertinimo norma"
+msgstr "(I) Savikaina"
 
 #: erpnext/stock/report/stock_ledger_invariant_check/stock_ledger_invariant_check.py:278
 #: erpnext/stock/report/stock_ledger_variance/stock_ledger_variance.py:181
-#, fuzzy
 msgid "(J) Valuation Rate as per FIFO"
-msgstr "(J) Vertinimo norma pagal FIFO"
+msgstr "(J) Savikaina pagal FIFO"
 
 #: erpnext/stock/report/stock_ledger_invariant_check/stock_ledger_invariant_check.py:288
 #: erpnext/stock/report/stock_ledger_variance/stock_ledger_variance.py:191
-#, fuzzy
 msgid "(K) Valuation = Value (D) ÷ Qty (A)"
 msgstr "(K) Vertinimas = vertė (D) ÷ kiekis (A)"
 
@@ -1019,7 +1014,7 @@ msgstr ""
 "\n"
 "&lt;p&gt;Gerbiamas {{ doc.contact_person }},&lt;/p&gt;\n"
 "\n"
-"&lt;p&gt;Prašymas apmokėti už {{ doc.{{ doc.name }}, {{ doc.name }} už {{ doc.grand_total }}.&lt;/p&gt;\n"
+"&lt;p&gt;Prašymas apmokėti už {{ doc.{{ doc.name }}, {{ doc.name }} suma {{ doc.grand_total }}.&lt;/p&gt;\n"
 "\n"
 "&lt;a href=\"{{ payment_url }}}\"&gt; spustelėkite čia, kad sumokėtumėte &lt;/a&gt;\n"
 "\n"
@@ -4606,7 +4601,7 @@ msgstr "Leidimas taikyti nulinį tarifą"
 #: erpnext/stock/doctype/stock_entry_detail/stock_entry_detail.json
 #: erpnext/stock/doctype/stock_reconciliation_item/stock_reconciliation_item.json
 msgid "Allow Zero Valuation Rate"
-msgstr "Leidimas taikyti nulinę vertinimo normą"
+msgstr "Leisti taikyti nulinę savikainą"
 
 #. Label of the allow_existing_serial_no (Check) field in DocType 'Stock
 #. Settings'
@@ -8673,9 +8668,8 @@ msgstr "Vienkartinio užsakymo tarifas"
 
 #: erpnext/accounts/doctype/purchase_invoice/purchase_invoice.js:109
 #: erpnext/accounts/doctype/purchase_invoice/purchase_invoice.js:261
-#, fuzzy
 msgid "Block Invoice"
-msgstr "Blokinė sąskaita faktūra"
+msgstr "Blokuoti šią sąskaitą"
 
 #. Label of the on_hold (Check) field in DocType 'Supplier'
 #. Label of the block_supplier_section (Section Break) field in DocType
@@ -12896,7 +12890,7 @@ msgstr "Nepavyko automatiškai sukurti kliento dėl to, kad trūksta privalomo (
 #: erpnext/stock/doctype/delivery_note/delivery_note.py:678
 #, fuzzy
 msgid "Could not create Credit Note automatically, please uncheck 'Issue Credit Note' and submit again"
-msgstr "„Nepavyko automatiškai sukurti kreditinės pažymos, panaikinkite žymėjimą „“Išduoti kreditinę pažymą„“ ir pateikite dar kartą\""
+msgstr "Nepavyko automatiškai sukurti kreditinės, panaikinkite žymėjimą „Išduoti kreditinę“ ir pateikite dar kartą"
 
 #: erpnext/erpnext_integrations/doctype/plaid_settings/plaid_settings.py:353
 #, fuzzy
@@ -13561,12 +13555,12 @@ msgstr "Kredito mėnesiai"
 #: erpnext/stock/doctype/delivery_note/delivery_note.js:89
 #: erpnext/stock/doctype/stock_entry/stock_entry.json
 msgid "Credit Note"
-msgstr "Kredito pastaba"
+msgstr "Kreditinė"
 
 #: erpnext/accounts/doctype/process_statement_of_accounts/process_statement_of_accounts_accounts_receivable.html:203
 #: erpnext/accounts/report/accounts_receivable/accounts_receivable.html:162
 msgid "Credit Note Amount"
-msgstr "Kredito lakšto suma"
+msgstr "Kreditinės suma"
 
 #. Option for the 'Status' (Select) field in DocType 'POS Invoice'
 #. Option for the 'Status' (Select) field in DocType 'Sales Invoice'
@@ -13574,13 +13568,13 @@ msgstr "Kredito lakšto suma"
 #: erpnext/accounts/doctype/sales_invoice/sales_invoice.json
 #: erpnext/accounts/doctype/sales_invoice/sales_invoice.py:270
 msgid "Credit Note Issued"
-msgstr "Išleistas kredito lakštas"
+msgstr "Išduota kreditinė"
 
 #. Description of the 'Update Outstanding for Self' (Check) field in DocType
 #. 'Sales Invoice'
 #: erpnext/accounts/doctype/sales_invoice/sales_invoice.json
 msgid "Credit Note will update it's own outstanding amount, even if 'Return Against' is specified."
-msgstr "Kreditinė sąskaita atnaujins savo neapmokėtą sumą, net jei nurodyta “Grąžinti prieš”."
+msgstr "Kreditinė sąskaita atnaujins savo neapmokėtą sumą, net jei nurodyta “Grąžinti pagal”."
 
 #: erpnext/stock/doctype/delivery_note/delivery_note.py:675
 msgid "Credit Note {0} has been created automatically"
@@ -13946,7 +13940,7 @@ msgstr "Dabartinis laikas"
 #. Reconciliation Item'
 #: erpnext/stock/doctype/stock_reconciliation_item/stock_reconciliation_item.json
 msgid "Current Valuation Rate"
-msgstr "Dabartinė vertinimo norma"
+msgstr "Dabartinė savikaina"
 
 #: erpnext/selling/report/sales_analytics/sales_analytics.js:90
 msgid "Curves"
@@ -15072,7 +15066,7 @@ msgstr "Debeto suma sandorio valiuta"
 #: erpnext/setup/setup_wizard/operations/install_fixtures.py:304
 #: erpnext/stock/doctype/purchase_receipt/purchase_receipt.js:52
 msgid "Debit Note"
-msgstr "Debetinė sąskaita-faktūra"
+msgstr "Debetinė"
 
 #: erpnext/accounts/doctype/process_statement_of_accounts/process_statement_of_accounts_accounts_receivable.html:205
 #: erpnext/accounts/report/accounts_receivable/accounts_receivable.html:162
@@ -15088,7 +15082,7 @@ msgstr "Išduota debetinė sąskaita-faktūra"
 #. 'Purchase Invoice'
 #: erpnext/accounts/doctype/purchase_invoice/purchase_invoice.json
 msgid "Debit Note will update it's own outstanding amount, even if 'Return Against' is specified."
-msgstr "Debetinė sąskaita-faktūra atnaujins savo neapmokėtą sumą, net jei nurodyta „Grąžinimas Pagal“."
+msgstr "Debetinė atnaujins savo neapmokėtą sumą, net jei nurodyta „Grąžinimas pagal“."
 
 #. Label of the debit_to (Link) field in DocType 'POS Invoice'
 #. Label of the debit_to (Link) field in DocType 'Sales Invoice'
@@ -19697,7 +19691,7 @@ msgstr "Gauti laiko suvestinę pardavimo sąskaitoje faktūroje"
 #. DocType 'Accounts Settings'
 #: erpnext/accounts/doctype/accounts_settings/accounts_settings.json
 msgid "Fetch Valuation Rate for Internal Transaction"
-msgstr "Gauti vidinio sandorio vertinimo normą"
+msgstr "Gauti vidinio sandorio savikainą"
 
 #. Label of the fetch_from_parent (Select) field in DocType 'Inventory
 #. Dimension'
@@ -21878,7 +21872,7 @@ msgstr "Lengvatinis laikotarpis"
 #. Option for the 'Level' (Select) field in DocType 'Employee Education'
 #: erpnext/setup/doctype/employee_education/employee_education.json
 msgid "Graduate"
-msgstr "Absolventas"
+msgstr "Magistro studijos"
 
 #. Name of a UOM
 #: erpnext/setup/setup_wizard/data/uom_data.json
@@ -23166,9 +23160,8 @@ msgid "If the account is frozen, entries are allowed to restricted users."
 msgstr "Jei paskyra įšaldyta, įrašai leidžiami tik riboto naudojimo naudotojams."
 
 #: erpnext/stock/stock_ledger.py:1996
-#, fuzzy
 msgid "If the item is transacting as a Zero Valuation Rate item in this entry, please enable 'Allow Zero Valuation Rate' in the {0} Item table."
-msgstr "Jei šiame įraše prekė sandorį sudaro kaip nulinio įkainojimo normos prekė, {0} prekės lentelėje įjunkite \"Leisti taikyti nulinę įkainojimo normą\"."
+msgstr "Jei šiame įraše prekė vertinama kaip savikainos prekė, {0} prekės lentelėje įjunkite \"Leisti taikyti nulinę savikainą\"."
 
 #: erpnext/manufacturing/doctype/work_order/work_order.js:1175
 #, fuzzy
@@ -23241,9 +23234,8 @@ msgid "If ticked, multiple materials can be used for a single Work Order. This i
 msgstr "Jei pažymėta, vienam darbo užsakymui galima naudoti kelias medžiagas. Tai naudinga, jei gaminamas vienas ar keli daug laiko reikalaujantys gaminiai."
 
 #: erpnext/manufacturing/doctype/manufacturing_settings/manufacturing_settings.js:24
-#, fuzzy
 msgid "If ticked, the BOM cost will be automatically updated based on Valuation Rate / Price List Rate / last purchase rate of raw materials."
-msgstr "Jei pažymėta, BOM išlaidos bus automatiškai atnaujinamos pagal įvertinimo normą / kainoraščio normą / paskutinę žaliavų pirkimo normą."
+msgstr "Jei pažymėta, KS išlaidos bus automatiškai atnaujinamos pagal savikainą / kainoraščio normą / paskutinę žaliavų pirkimo normą."
 
 #: erpnext/accounts/doctype/pricing_rule/pricing_rule.js:46
 #, fuzzy
@@ -25632,12 +25624,12 @@ msgstr "Grąžinimas"
 #: erpnext/accounts/doctype/pos_invoice/pos_invoice.json
 #: erpnext/accounts/doctype/sales_invoice/sales_invoice.json
 msgid "Is Return (Credit Note)"
-msgstr "Grąžinimas (kreditinė sąskaita)"
+msgstr "Grąžinimas"
 
 #. Label of the is_return (Check) field in DocType 'Purchase Invoice'
 #: erpnext/accounts/doctype/purchase_invoice/purchase_invoice.json
 msgid "Is Return (Debit Note)"
-msgstr "Grąžinimas (debetinė sąskaita)"
+msgstr "Grąžinimas"
 
 #. Label of the so_required (Select) field in DocType 'Selling Settings'
 #: erpnext/selling/doctype/selling_settings/selling_settings.json
@@ -27164,9 +27156,8 @@ msgid "Item qty can not be updated as raw materials are already processed."
 msgstr "Prekės kiekio negalima atnaujinti, nes žaliavos jau yra apdorotos."
 
 #: erpnext/stock/doctype/stock_entry/stock_entry.py:1063
-#, fuzzy
 msgid "Item rate has been updated to zero as Allow Zero Valuation Rate is checked for item {0}"
-msgstr "„Prekės įkainis buvo atnaujintas į nulį, nes elemento {0} pažymėta „“Allow Zero Valuation Rate„“ (leisti nulinį įkainį).\""
+msgstr "Prekės įkainis buvo atnaujintas į nulį, nes prekėje {0} pažymėta „Leisti nulinę savikainą“"
 
 #. Label of the finished_good (Link) field in DocType 'Job Card'
 #: erpnext/manufacturing/doctype/job_card/job_card.json
@@ -27389,7 +27380,7 @@ msgstr "Prekės žaliavų užklausai"
 
 #: erpnext/stock/doctype/stock_entry/stock_entry.py:1059
 msgid "Items rate has been updated to zero as Allow Zero Valuation Rate is checked for the following items: {0}"
-msgstr "Prekių įkainis buvo atnaujintas į nulį, nes toliau išvardytiems elementams pažymėta “leisti nulinį įkainį”: {0}"
+msgstr "Prekių įkainis buvo atnaujintas į nulį, nes toliau išvardytiems elementams pažymėta „Leisti nulinę savikainą“: {0}"
 
 #. Label of the items_to_be_repost (Code) field in DocType 'Repost Item
 #. Valuation'
@@ -30222,9 +30213,8 @@ msgid "Megawatt"
 msgstr "Megawattų"
 
 #: erpnext/stock/stock_ledger.py:2009
-#, fuzzy
 msgid "Mention Valuation Rate in the Item master."
-msgstr "Prekės pagrindiniame elemente paminėkite vertinimo normą."
+msgstr "Prekės pagrindiniame paminėkite savikainą."
 
 #. Description of the 'Accounts' (Table) field in DocType 'Customer'
 #: erpnext/selling/doctype/customer/customer.json
@@ -31138,9 +31128,8 @@ msgid "Negative Stock Error"
 msgstr "Neigiama atsargų klaida"
 
 #: erpnext/stock/doctype/stock_reconciliation/stock_reconciliation.py:625
-#, fuzzy
 msgid "Negative Valuation Rate is not allowed"
-msgstr "Neleidžiama taikyti neigiamos vertinimo normos"
+msgstr "Neleidžiama taikyti neigiamos savikainos"
 
 #: erpnext/setup/setup_wizard/data/sales_stage.txt:8
 #: erpnext/setup/setup_wizard/operations/install_fixtures.py:439
@@ -37946,60 +37935,50 @@ msgid "Please share this email with your support team so that they can find and 
 msgstr "Pasidalykite šiuo el. laišku su palaikymo komanda, kad ji galėtų rasti ir išspręsti problemą."
 
 #: erpnext/stock/get_item_details.py:329
-#, fuzzy
 msgid "Please specify Company"
 msgstr "Nurodykite įmonę"
 
 #: erpnext/accounts/doctype/pos_invoice/pos_invoice.js:120
 #: erpnext/accounts/doctype/purchase_invoice/purchase_invoice.js:440
 #: erpnext/accounts/doctype/sales_invoice/sales_invoice.js:518
-#, fuzzy
 msgid "Please specify Company to proceed"
-msgstr "Norėdami tęsti, nurodykite bendrovę"
+msgstr "Norėdami tęsti, nurodykite įmonę"
 
 #: erpnext/accounts/doctype/payment_entry/payment_entry.js:1508
 #: erpnext/controllers/accounts_controller.py:3116
 #: erpnext/public/js/controllers/accounts.js:117
-#, fuzzy
 msgid "Please specify a valid Row ID for row {0} in table {1}"
 msgstr "Nurodykite galiojantį eilutės ID eilutei {0} lentelėje {1}"
 
 #: erpnext/public/js/queries.js:144
-#, fuzzy
 msgid "Please specify a {0} first."
 msgstr "Pirmiausia nurodykite {0}."
 
 #: erpnext/controllers/item_variant.py:46
-#, fuzzy
 msgid "Please specify at least one attribute in the Attributes table"
 msgstr "Atributų lentelėje nurodykite bent vieną požymį"
 
 #: erpnext/stock/doctype/stock_reconciliation/stock_reconciliation.py:615
-#, fuzzy
 msgid "Please specify either Quantity or Valuation Rate or both"
-msgstr "Nurodykite kiekį arba vertės normą, arba abu."
+msgstr "Nurodykite kiekį arba savikainą, arba abu."
 
 #: erpnext/stock/doctype/item_attribute/item_attribute.py:93
-#, fuzzy
 msgid "Please specify from/to range"
 msgstr "Nurodykite intervalą nuo ir iki"
 
 #: erpnext/buying/doctype/request_for_quotation/request_for_quotation.js:41
 msgid "Please supply the specified items at the best possible rates"
-msgstr "Prašome pateikti nurodytus elementus geriausiomis įmanomomis kainomis"
+msgstr "Prašome pateikti nurodytus prekes geriausiomis įmanomomis kainomis"
 
 #: erpnext/stock/doctype/repost_item_valuation/repost_item_valuation.py:244
-#, fuzzy
 msgid "Please try again in an hour."
 msgstr "Bandykite dar kartą po valandos."
 
 #: erpnext/manufacturing/report/material_requirements_planning_report/material_requirements_planning_report.js:139
-#, fuzzy
 msgid "Please uncheck 'Show in Bucket View' to create Orders"
-msgstr "„Norėdami sukurti užsakymus, panaikinkite žymės „“Rodyti kibiro rodinyje„“ žymėjimą.\""
+msgstr "Norėdami sukurti užsakymus, panaikinkite žymės „Rodyti kibiro rodinyje“ žymėjimą."
 
 #: erpnext/assets/doctype/asset_repair/asset_repair.py:203
-#, fuzzy
 msgid "Please update Repair Status."
 msgstr "Atnaujinkite remonto būseną."
 
@@ -38017,9 +37996,8 @@ msgstr "Pardavimo vietos profilis"
 
 #. Label of the policy_no (Data) field in DocType 'Vehicle'
 #: erpnext/setup/doctype/vehicle/vehicle.json
-#, fuzzy
 msgid "Policy No"
-msgstr "Politikos Nr."
+msgstr "Politikos nr."
 
 #. Label of the policy_number (Data) field in DocType 'Asset'
 #: erpnext/assets/doctype/asset/asset.json
@@ -38064,9 +38042,8 @@ msgstr "Pašto aprašymas Raktas"
 
 #. Option for the 'Level' (Select) field in DocType 'Employee Education'
 #: erpnext/setup/doctype/employee_education/employee_education.json
-#, fuzzy
 msgid "Post Graduate"
-msgstr "Magistro laipsnis"
+msgstr "Doktorantūros studijos arba antrosios pakopos studijos"
 
 #. Label of the post_route_key (Data) field in DocType 'Support Settings'
 #: erpnext/support/doctype/support_settings/support_settings.json
@@ -45316,7 +45293,7 @@ msgstr "Eilutė #{0}: Prašome rezervuoti atsargas iš komplektavimo sąrašo."
 #: erpnext/controllers/stock_controller.py:109
 #, fuzzy
 msgid "Row #{0}: Item {1} has zero rate but 'Allow Zero Valuation Rate' is not enabled."
-msgstr "„Eilutė #{0}: eilutėje {1} yra nulinis tarifas, bet „“Leisti nulinį įkainojimo tarifą„“ nėra įjungtas.\""
+msgstr "Eilutė #{0}: eilutėje {1} yra nulinis tarifas, bet „Leisti nulinę savikainą“ nėra įjungtas."
 
 #: erpnext/controllers/subcontracting_inward_controller.py:63
 #, fuzzy
@@ -49277,13 +49254,13 @@ msgstr "Nustatyti paskirties sandėlį"
 #. Creator'
 #: erpnext/manufacturing/doctype/bom_creator/bom_creator.json
 msgid "Set Valuation Rate Based on Source Warehouse"
-msgstr "Vertinimo normos nustatymas pagal išdavimo sandėlį"
+msgstr "Savikainos nustatymas pagal išdavimo sandėlį"
 
 #. Label of the set_valuation_rate_for_rejected_materials (Check) field in
 #. DocType 'Buying Settings'
 #: erpnext/buying/doctype/buying_settings/buying_settings.json
 msgid "Set Valuation Rate for Rejected Materials"
-msgstr "Nustatyti atmestų medžiagų vertinimo normą"
+msgstr "Nustatyti atmestų medžiagų savikainą"
 
 #: erpnext/selling/doctype/sales_order/sales_order.js:256
 msgid "Set Warehouse"
@@ -50068,9 +50045,8 @@ msgid "Show exploded view"
 msgstr "Rodyti išardytą vaizdą"
 
 #: erpnext/manufacturing/report/material_requirements_planning_report/material_requirements_planning_report.js:88
-#, fuzzy
 msgid "Show in Bucket View"
-msgstr "Rodyti \"Bucket View\" rodinyje"
+msgstr "Rodyti kibiro rodinyje"
 
 #. Label of the show_in_website (Check) field in DocType 'BOM'
 #: erpnext/manufacturing/doctype/bom/bom.json
@@ -57647,9 +57623,8 @@ msgid "Unbilled Orders"
 msgstr "Neapskaityti užsakymai"
 
 #: erpnext/accounts/doctype/purchase_invoice/purchase_invoice.js:101
-#, fuzzy
 msgid "Unblock Invoice"
-msgstr "Sąskaitos faktūros atblokavimas"
+msgstr "Atblokuoti sąskaitą-faktūrą"
 
 #: erpnext/accounts/report/balance_sheet/balance_sheet.py:83
 #: erpnext/accounts/report/balance_sheet/balance_sheet.py:84
@@ -57670,9 +57645,8 @@ msgstr "Pagal AMC"
 
 #. Option for the 'Level' (Select) field in DocType 'Employee Education'
 #: erpnext/setup/doctype/employee_education/employee_education.json
-#, fuzzy
 msgid "Under Graduate"
-msgstr "Iki studijų baigimo"
+msgstr "Bakalauro studijos"
 
 #. Option for the 'Maintenance Status' (Select) field in DocType 'Serial No'
 #. Option for the 'Warranty / AMC Status' (Select) field in DocType 'Warranty
@@ -58011,9 +57985,8 @@ msgstr "Automatiškai atnaujinti konstrukcinės sąmatos sąnaudas"
 #. Description of the 'Update BOM Cost Automatically' (Check) field in DocType
 #. 'Manufacturing Settings'
 #: erpnext/manufacturing/doctype/manufacturing_settings/manufacturing_settings.json
-#, fuzzy
 msgid "Update BOM cost automatically via scheduler, based on the latest Valuation Rate/Price List Rate/Last Purchase Rate of raw materials"
-msgstr "Automatiškai atnaujinkite KS sąnaudas, naudodami planuoklį, remdamiesi naujausia žaliavų įvertinimo norma / kainoraščio norma / paskutine pirkimo norma."
+msgstr "Automatiškai atnaujinkite KS sąnaudas, naudodami planuoklį, remdamiesi naujausia žaliavų savikaina / kainoraščio norma / paskutine pirkimo norma."
 
 #. Label of the update_billed_amount_in_delivery_note (Check) field in DocType
 #. 'POS Invoice'
@@ -58192,9 +58165,8 @@ msgstr "Naujo pranešimo laiko žymos atnaujinimas"
 #. Description of the 'Actual Operation Time' (Float) field in DocType 'Work
 #. Order Operation'
 #: erpnext/manufacturing/doctype/work_order_operation/work_order_operation.json
-#, fuzzy
 msgid "Updated via 'Time Log' (In Minutes)"
-msgstr "„Atnaujinama per „“Laiko žurnalą„“ (minutėmis)\""
+msgstr "Atnaujinama per „Laiko žurnalą“ (minutėmis)"
 
 #: erpnext/accounts/doctype/account_category/account_category.py:54
 #, fuzzy
@@ -58268,7 +58240,6 @@ msgstr "Naudokite mygtuką \"Repost in background\", kad paleistumėte foninį d
 #. Description of the 'Advanced Filtering' (Check) field in DocType 'Financial
 #. Report Row'
 #: erpnext/accounts/doctype/financial_report_row/financial_report_row.json
-#, fuzzy
 msgid "Use <strong>Python</strong> filters to get Accounts"
 msgstr "Naudokite <strong>Python</strong> filtrus, kad gautumėte sąskaitas"
 
@@ -58706,7 +58677,7 @@ msgstr "Patvirtinti kainodaros taisyklę"
 #. Settings'
 #: erpnext/selling/doctype/selling_settings/selling_settings.json
 msgid "Validate Selling Price for Item Against Purchase Rate or Valuation Rate"
-msgstr "Patvirtinti prekės pardavimo kainą pagal pirkimo normą arba vertinimo normą"
+msgstr "Patvirtinti prekės pardavimo kainą pagal pirkimo kainą arba savikainą"
 
 #. Label of the validate_stock_on_save (Check) field in DocType 'POS Profile'
 #: erpnext/accounts/doctype/pos_profile/pos_profile.json
@@ -58807,34 +58778,28 @@ msgstr "Vertinimo metodas"
 #: erpnext/stock/report/serial_no_ledger/serial_no_ledger.py:67
 #: erpnext/stock/report/stock_balance/stock_balance.py:487
 #: erpnext/stock/report/stock_ledger/stock_ledger.py:298
-#, fuzzy
 msgid "Valuation Rate"
-msgstr "Vertinimo norma"
+msgstr "Savikaina"
 
 #: erpnext/stock/report/incorrect_serial_no_valuation/incorrect_serial_no_valuation.py:197
-#, fuzzy
 msgid "Valuation Rate (In / Out)"
-msgstr "Vertinimo norma (įvesta / išvesta)"
+msgstr "Savikaina (įvesta / išvesta)"
 
 #: erpnext/stock/stock_ledger.py:2012
-#, fuzzy
 msgid "Valuation Rate Missing"
-msgstr "Trūkstama vertinimo norma"
+msgstr "Trūksta savikainos"
 
 #: erpnext/stock/stock_ledger.py:1990
-#, fuzzy
 msgid "Valuation Rate for the Item {0}, is required to do accounting entries for {1} {2}."
-msgstr "{0} objekto vertės nustatymo norma, būtina atlikti {1} apskaitos įrašus. {2}."
+msgstr "{0} prekės savikaina reikalinga norint atlikti apskaitos įrašus {1} {2}."
 
 #: erpnext/stock/doctype/item/item.py:267
-#, fuzzy
 msgid "Valuation Rate is mandatory if Opening Stock entered"
-msgstr "Vertinimo norma privaloma, jei įvesta pradinė atsargų vertė"
+msgstr "Savikaina privaloma, jei įvesta pradinės atsargos"
 
 #: erpnext/stock/doctype/stock_reconciliation/stock_reconciliation.py:765
-#, fuzzy
 msgid "Valuation Rate required for Item {0} at row {1}"
-msgstr "Vertinimo norma, reikalinga {0} straipsniui {1} eilutėje"
+msgstr "Savikaina, reikalinga {0} prekei {1} eilutėje"
 
 #. Option for the 'Consider Tax or Charge for' (Select) field in DocType
 #. 'Purchase Taxes and Charges'
