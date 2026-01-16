@@ -59,21 +59,10 @@
       "description": "If checked, the Purchase Invoice document name will be set to the Bill No."
     },
     {
-      "fieldname": "section_pvm",
-      "fieldtype": "Section Break",
-      "label": "PVM Classificators"
-    },
-    {
       "fieldname": "default_pvm_classificator",
       "fieldtype": "Link",
-      "options": "PVM Classificator",
-      "label": "Default PVM Classificator"
-    },
-    {
-      "fieldname": "pvm_item_map",
-      "fieldtype": "Table",
-      "options": "Item PVM Classificator",
-      "label": "Per-Item PVM Classificator Overrides"
+      "options": "VAT Classificator",
+      "label": "Default VAT Classificator"
     },
     {
       "fieldname": "section_bank_import",
@@ -140,6 +129,21 @@
   "permissions": [
     {
       "role": "System Manager",
+      "read": 1,
+      "write": 1,
+      "create": 1,
+      "delete": 1,
+      "submit": 0,
+      "cancel": 0,
+      "amend": 0,
+      "share": 1,
+      "print": 1,
+      "email": 1,
+      "report": 1,
+      "export": 1
+    },
+    {
+      "role": "Accounts Manager",
       "read": 1,
       "write": 1,
       "create": 1,

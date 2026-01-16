@@ -26,7 +26,7 @@ def get_sales_round_off_account(company: str | None = None) -> str | None:
 
 
 def get_default_pvm_classificator() -> str | None:
-	"""Return default PVM classificator code/link value if set."""
+	"""Return default VAT classificator code/link value if set."""
 	try:
 		settings = get_settings()
 		return settings.default_pvm_classificator or None
@@ -35,7 +35,7 @@ def get_default_pvm_classificator() -> str | None:
 
 
 def get_item_pvm_classificator(item_code: str) -> str | None:
-	"""Resolve PVM classificator for an Item, falling back to default.
+	"""Resolve VAT classificator for an Item, falling back to default.
 
 	Looks up the mapping table on the settings doc. If an explicit mapping for
 	the Item exists, returns that classificator; otherwise returns the default.

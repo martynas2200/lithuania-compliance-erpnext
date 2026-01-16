@@ -6201,7 +6201,6 @@ msgid "Asset restored after Asset Capitalization {0} was cancelled"
 msgstr "Turtas atkurtas po to, kai buvo panaikintas turto kapitalizavimas {0}"
 
 #: erpnext/accounts/doctype/sales_invoice/sales_invoice.py:1498
-#, fuzzy
 msgid "Asset returned"
 msgstr "Grąžintas turtas"
 
@@ -6387,7 +6386,6 @@ msgid "At least one invoice has to be selected."
 msgstr "Turi būti pasirinkta bent viena sąskaita faktūra."
 
 #: erpnext/controllers/sales_and_purchase_return.py:168
-#, fuzzy
 msgid "At least one item should be entered with negative quantity in return document"
 msgstr "Grąžinimo dokumente turėtų būti įrašytas bent vienas neigiamas kiekis."
 

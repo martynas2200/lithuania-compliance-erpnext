@@ -70,18 +70,51 @@ def get_item_prices(invoice_name):
 	3. Return both applicable price and other valid prices for reference
 
 	Args:
-		invoice_name: Name of the Purchase Invoice
+	    invoice_name: Name of the Purchase Invoice
 
 	Returns:
-		List of dicts with item info and applicable prices
+	    List of dicts with item info and applicable prices
 	"""
 	invoice = frappe.get_doc("Purchase Invoice", invoice_name)
 	today = datetime.today().date()
 
 	items_data = []
 
-	for item in invoice.items:
-		item_code = item.item_code
+	Item = frappe.qb.DocType("Item")
+	ItemBarcode = frappe.qb.DocType("Item Barcode")
+	VATClasificator = frappe.qb.DocType("VAT Classificator")
+
+	# Expand invoice items with barcode info
+	invoice_items_with_barcodes = (
+		frappe.qb.from_(Item)
+		.left_join(ItemBarcode)
+		.on(Item.item_code == ItemBarcode.parent)
+		.left_join(VATClasificator)
+		.on(Item.pvm_classificator == VATClasificator.name)
+		.select(
+			Item.item_code,
+			Item.item_name,
+			ItemBarcode.barcode,
+			VATClasificator.rate.as_("vat_rate"),
+		)
+		.where(Item.item_code.isin([item.item_code for item in invoice.items]))
+	).run(as_dict=True)
+
+	# get default VAT classificator rate
+	default_pvm_classificator = frappe.get_single("Lithuania Compliance Settings").default_pvm_classificator
+	default_vat_rate = frappe.get_value("VAT Classificator", default_pvm_classificator, "rate") or 21
+	# Create lookup for query results by item_code
+	item_lookup = {item["item_code"]: item for item in invoice_items_with_barcodes}
+
+	# Iterate through invoice items to preserve order and handle duplicates
+	for invoice_item in invoice.items:
+		item_code = invoice_item.item_code
+		item_rate = invoice_item.rate
+
+		# Get the corresponding query result
+		item = item_lookup.get(item_code)
+		if not item:
+			continue
 
 		prices = frappe.get_list(
 			"Item Price",
@@ -114,32 +147,31 @@ def get_item_prices(invoice_name):
 					is_valid = False
 
 			if is_valid:
-				# If no applicable price yet, this becomes applicable
-				# (because list is ordered by valid_from desc, first valid is the newest)
 				if not applicable_price:
 					applicable_price = price
 				else:
-					# Additional valid prices
 					other_valid_prices.append(price)
 			else:
-				# Future or expired prices
 				other_valid_prices.append(price)
 
+		item.vat_rate = default_vat_rate if item.get("vat_rate") is None else item.get("vat_rate")
 		# Calculate markup if applicable price exists
 		markup = 0
-		if applicable_price and item.rate:
+		if applicable_price and item_rate:
 			applicable_rate = applicable_price.get("price_list_rate", 0)
-			if item.rate > 0:
+			if item_rate > 0:
 				# Adding 21% VAT to the base price
 				# TODO: Add a setting for VAT rate or if we plan to use clasificators for each item.
-				cost_with_vat = item.rate * 1.21
+				cost_with_vat = item_rate * (1 + item.vat_rate / 100)
 				markup = ((applicable_rate - cost_with_vat) / cost_with_vat) * 100
 
 		items_data.append(
 			{
 				"item_code": item_code,
 				"item_name": item.item_name,
-				"rate": item.rate,
+				"vat_rate": item.vat_rate,
+				"barcode": item.barcode,
+				"rate": item_rate,
 				"markup": round(markup, 2),
 				"applicable_price": applicable_price,
 				"other_valid_prices": other_valid_prices,

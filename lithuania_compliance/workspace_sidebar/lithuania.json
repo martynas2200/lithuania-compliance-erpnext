@@ -1,0 +1,53 @@
+{
+ "app": "lithuania_compliance",
+ "creation": "2025-11-20 20:47:41.148534",
+ "docstatus": 0,
+ "doctype": "Workspace Sidebar",
+ "header_icon": "gantt",
+ "idx": 0,
+ "items": [
+  {
+   "child": 0,
+   "collapsible": 1,
+   "icon": "file-code",
+   "indent": 0,
+   "keep_closed": 0,
+   "label": "Generate i.SAF",
+   "link_to": "isaf-generation",
+   "link_type": "Page",
+   "show_arrow": 0,
+   "type": "Link"
+  },
+  {
+   "child": 0,
+   "collapsible": 1,
+   "icon": "settings",
+   "indent": 0,
+   "keep_closed": 0,
+   "label": "Settings",
+   "link_to": "Lithuania Compliance Settings",
+   "link_type": "DocType",
+   "show_arrow": 0,
+   "type": "Link"
+  },
+  {
+   "child": 0,
+   "collapsible": 1,
+   "icon": "square-radical",
+   "indent": 0,
+   "keep_closed": 0,
+   "label": "VAT Classificator",
+   "link_to": "VAT Classificator",
+   "link_type": "DocType",
+   "show_arrow": 0,
+   "type": "Link"
+  }
+ ],
+ "modified": "2026-01-16 13:34:28.412141",
+ "modified_by": "Administrator",
+ "module": "Lithuanian Compliance",
+ "name": "Lithuania",
+ "owner": "Administrator",
+ "standard": 1,
+ "title": "Lithuania"
+}

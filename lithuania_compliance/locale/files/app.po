@@ -81,18 +81,33 @@ msgstr "Nurodo, kad prekė turi kelias kainas"
 msgid "No applicable price found"
 msgstr "Nerasta taikoma kaina"
 
-msgid "PVM Classificators"
+msgid "Valid Until"
+msgstr "Galioja iki"
+
+msgid "Markup"
+msgstr "Antkainis"
+
+msgid "Enter Custom Price"
+msgstr "Įvesti pasirinktą kainą"
+
+msgid "Open Item Price"
+msgstr "Atidaryti prekės kainą"
+
+msgid "Suggested Prices"
+msgstr "Siūlomos kainos"
+
+msgid "VAT Classificators"
 msgstr "PVM klasifikatoriai"
 
-msgid "Default PVM Classificator"
+msgid "Default VAT Classificator"
 msgstr "Numatytasis PVM klasifikatorius"
 
-msgid "Per-Item PVM Classificator Overrides"
+msgid "Per-Item VAT Classificator Overrides"
 msgstr "PVM klasifikatorius per prekę pakeitimai"
 
-#: pvm classificator doctype
+#: VAT classificator doctype
 
-msgid "PVM Classificator"
+msgid "VAT Classificator"
 msgstr "PVM klasifikatorius"
 
 msgid "Code"
@@ -250,6 +265,12 @@ msgstr "Nerasta sąskaita IBAN {0}. Įsitikinkite, kad sąskaitų plane yra sąs
 
 msgid "Add New Item Price"
 msgstr "Pridėti naują prekės kainą"
+
+msgid "Add Price"
+msgstr "Pridėti kainą"
+
+msgid "Edit Item Price"
+msgstr "Redaguoti prekės kainą"
 
 msgid  "Receipt from {0}"
 msgstr  "Gavimas iš {0}"

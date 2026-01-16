@@ -17,10 +17,10 @@ def _load_json(joins: list[str]) -> dict | list | None:
 		return None
 
 
-def seed_pvm_classificators() -> None:
-	"""Create/Update PVM Classificators from defaults.json if present.
+def seed_vat_classificators() -> None:
+	"""Create/Update VAT Classificators from defaults.json if present.
 
-	File location: lithuania_compliance/doctype/pvm_classificator/defaults.json
+	File location: lithuania_compliance/doctype/vat_classificator/defaults.json
 	Expected format: a JSON array of objects with keys: code (str), description (str, optional)
 	Any additional keys will be ignored.
 	"""
@@ -28,7 +28,7 @@ def seed_pvm_classificators() -> None:
 		[
 			"lithuania_compliance",
 			"doctype",
-			"pvm_classificator",
+			"vat_classificator",
 			"defaults.json",
 		]
 	)
@@ -49,10 +49,10 @@ def seed_pvm_classificators() -> None:
 
 		description = row.get("description") or ""
 
-		if not frappe.db.exists("PVM Classificator", code):
+		if not frappe.db.exists("VAT Classificator", code):
 			frappe.get_doc(
 				{
-					"doctype": "PVM Classificator",
+					"doctype": "VAT Classificator",
 					"code": code,
 					"description": description,
 					"rate": rate,
@@ -64,7 +64,7 @@ def ensure_default_settings() -> None:
 	"""If settings exist and default classificator is empty, set a sensible default."""
 	try:
 		settings = frappe.get_single("Lithuania Compliance Settings")
-		if not settings.default_pvm_classificator and frappe.db.exists("PVM Classificator", "PVM1"):
+		if not settings.default_pvm_classificator and frappe.db.exists("VAT Classificator", "PVM1"):
 			settings.default_pvm_classificator = "PVM1"
 			settings.save(ignore_permissions=True)
 	except Exception:
@@ -73,11 +73,11 @@ def ensure_default_settings() -> None:
 
 
 def after_install():
-	seed_pvm_classificators()
+	seed_vat_classificators()
 	ensure_default_settings()
 
 
 def after_migrate():
 	# Keep newly added defaults in sync on future app updates
-	seed_pvm_classificators()
+	seed_vat_classificators()
 	ensure_default_settings()

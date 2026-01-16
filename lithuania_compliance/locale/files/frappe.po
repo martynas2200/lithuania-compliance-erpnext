@@ -4004,7 +4004,7 @@ msgstr "Apačioje dešinėje"
 #. Option for the 'Delivery Status' (Select) field in DocType 'Communication'
 #: frappe/core/doctype/communication/communication.json
 msgid "Bounced"
-msgstr "Atšokęs"
+msgstr "Nepristatytas"
 
 #. Label of the brand (Section Break) field in DocType 'Website Settings'
 #: frappe/website/doctype/website_settings/website_settings.json
@@ -4014,12 +4014,12 @@ msgstr "Prekės ženklas"
 #. Label of the brand_html (Code) field in DocType 'Website Settings'
 #: frappe/website/doctype/website_settings/website_settings.json
 msgid "Brand HTML"
-msgstr "Prekės ženklas HTML"
+msgstr "Prekės ženklo HTML"
 
 #. Label of the banner_image (Attach Image) field in DocType 'Website Settings'
 #: frappe/website/doctype/website_settings/website_settings.json
 msgid "Brand Image"
-msgstr "Prekės ženklo įvaizdis"
+msgstr "Prekės ženklo nuotrauka"
 
 #. Option for the 'Navbar Style' (Select) field in DocType 'Desktop Settings'
 #. Label of the brand_logo (Attach Image) field in DocType 'Email Account'
@@ -4786,7 +4786,7 @@ msgstr "Keisti"
 #: frappe/tests/test_translate.py:112
 msgctxt "Coins"
 msgid "Change"
-msgstr "Grąža"
+msgstr "Grąža/Keisti"
 
 #: frappe/public/js/print_format_builder/LetterHeadEditor.vue:38
 msgid "Change Image"
@@ -5173,7 +5173,7 @@ msgstr "Spustelėkite norėdami rūšiuoti pagal {0}"
 #. Option for the 'Delivery Status' (Select) field in DocType 'Communication'
 #: frappe/core/doctype/communication/communication.json
 msgid "Clicked"
-msgstr "Paspaudė"
+msgstr "Atidarė"
 
 #. Label of the client (Link) field in DocType 'OAuth Authorization Code'
 #. Label of the client (Link) field in DocType 'OAuth Bearer Token'
@@ -22186,7 +22186,7 @@ msgstr "Ats: {0}"
 #: frappe/email/doctype/email_flag_queue/email_flag_queue.json
 #: frappe/public/js/frappe/form/templates/set_sharing.html:2
 msgid "Read"
-msgstr "Skaityti"
+msgstr "Skaityti/skaityta"
 
 #. Option for the 'Type' (Select) field in DocType 'DocField'
 #. Label of the read_only (Check) field in DocType 'DocField'
@@ -25314,9 +25314,8 @@ msgstr "Sendgrid"
 #. Option for the 'Status' (Select) field in DocType 'Email Queue'
 #: frappe/core/doctype/communication/communication.json
 #: frappe/email/doctype/email_queue/email_queue.json
-#, fuzzy
 msgid "Sending"
-msgstr "Siuntimas"
+msgstr "Siunčiama"
 
 #. Option for the 'Delivery Status' (Select) field in DocType 'Communication'
 #. Option for the 'Sent or Received' (Select) field in DocType 'Communication'
@@ -25325,9 +25324,8 @@ msgstr "Siuntimas"
 #: frappe/core/doctype/communication/communication.json
 #: frappe/email/doctype/email_queue/email_queue.json
 #: frappe/email/doctype/email_queue_recipient/email_queue_recipient.json
-#, fuzzy
 msgid "Sent"
-msgstr "Vėlyvasis"
+msgstr "Išsiųsta"
 
 #. Label of the sent_folder_name (Data) field in DocType 'Email Account'
 #. Label of the sent_folder_name (Data) field in DocType 'Email Domain'
@@ -26696,13 +26694,11 @@ msgstr "„SocketIO“ transportavimo režimas"
 
 #. Option for the 'Delivery Status' (Select) field in DocType 'Communication'
 #: frappe/core/doctype/communication/communication.json
-#, fuzzy
 msgid "Soft-Bounced"
-msgstr "Minkštai išskleistas"
+msgstr "Laikinai nepristatytas"
 
 #. Label of the software_id (Data) field in DocType 'OAuth Client'
 #: frappe/integrations/doctype/oauth_client/oauth_client.json
-#, fuzzy
 msgid "Software ID"
 msgstr "Programinės įrangos ID"
 

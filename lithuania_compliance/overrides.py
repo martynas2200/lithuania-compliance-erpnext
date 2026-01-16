@@ -29,14 +29,18 @@ class CustomPurchaseInvoice(PurchaseInvoice):
 
 	def before_insert(self):
 		"""Set document name to bill_no and first two supplier words if enabled."""
-		if lt_settings.should_use_bill_no_as_title() and getattr(self, "bill_no", None):
+		if (
+			not self.is_return
+			and lt_settings.should_use_bill_no_as_title()
+			and getattr(self, "bill_no", None)
+		):
 			title = self.bill_no
 			supplier_source = getattr(self, "supplier_name", None) or getattr(self, "supplier", None)
 			if supplier_source:
-				cleaned = re.sub(r"[^\w\s]", "", supplier_source)
+				cleaned = re.sub(r"[^\w\s]|AB|UAB", "", supplier_source)
 				words = cleaned.split()
 				if words:
-					title = f"{title} {' '.join(words[:2])}"
+					title = f"{' '.join(words[:2])} {title}"
 			self.title = title
 
 		self._validate_and_set_is_return()
