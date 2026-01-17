@@ -20,7 +20,7 @@
     "section_purchase_naming",
     "use_bill_no_as_title",
     "section_pvm",
-    "default_pvm_classificator",
+    "default_vat_classificator",
     "pvm_item_map",
     "section_bank_import",
     "deposit_account",
@@ -59,7 +59,7 @@
       "description": "If checked, the Purchase Invoice document name will be set to the Bill No."
     },
     {
-      "fieldname": "default_pvm_classificator",
+      "fieldname": "default_vat_classificator",
       "fieldtype": "Link",
       "options": "VAT Classificator",
       "label": "Default VAT Classificator"

@@ -25,11 +25,11 @@ def get_sales_round_off_account(company: str | None = None) -> str | None:
 		return None
 
 
-def get_default_pvm_classificator() -> str | None:
+def get_default_vat_classificator() -> str | None:
 	"""Return default VAT classificator code/link value if set."""
 	try:
 		settings = get_settings()
-		return settings.default_pvm_classificator or None
+		return settings.default_vat_classificator or None
 	except Exception:
 		return None
 
@@ -45,8 +45,8 @@ def get_item_pvm_classificator(item_code: str) -> str | None:
 		# iterate child table rows if any
 		for row in settings.pvm_item_map or []:
 			if getattr(row, "item", None) == item_code:
-				return getattr(row, "pvm_classificator", None) or get_default_pvm_classificator()
-		return get_default_pvm_classificator()
+				return getattr(row, "pvm_classificator", None) or get_default_vat_classificator()
+		return get_default_vat_classificator()
 	except Exception:
 		return None
 

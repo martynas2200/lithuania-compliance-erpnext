@@ -319,9 +319,8 @@ msgid "'Inspection Required before Delivery' has disabled for the item {0}, no n
 msgstr "„Prieš pristatymą būtina atlikti patikrinimą“ prekei {0} išjungta, KT kurti nereikia"
 
 #: erpnext/stock/doctype/quality_inspection/quality_inspection.py:130
-#, fuzzy
 msgid "'Inspection Required before Purchase' has disabled for the item {0}, no need to create the QI"
-msgstr "„Patikrinimas būtinas prieš perkant\" yra išjungtas elementui {0}, nereikia kurti QI"
+msgstr "„Patikrinimas būtinas prieš perkant“ yra išjungtas elementui {0}, nereikia kurti KT"
 
 #: erpnext/stock/report/stock_ledger/stock_ledger.py:601
 #: erpnext/stock/report/stock_ledger/stock_ledger.py:634
@@ -335,21 +334,18 @@ msgid "'To Date' is required"
 msgstr "Reikia nurodyti „Data iki“"
 
 #: erpnext/stock/doctype/packing_slip/packing_slip.py:95
-#, fuzzy
 msgid "'To Package No.' cannot be less than 'From Package No.'"
-msgstr "„Į pakuotę Nr.\" negali būti mažesnis už \"Iš pakuotės Nr."
+msgstr "„Į pakuotę Nr.“ negali būti mažesnis už „Iš pakuotės Nr.“"
 
 #: erpnext/controllers/sales_and_purchase_return.py:80
-#, fuzzy
 msgid "'Update Stock' can not be checked because items are not delivered via {0}"
-msgstr "„Atnaujinti atsargas\" negalima patikrinti, nes prekės nėra pristatomos per {0}"
+msgstr "„Atnaujinti atsargas“ negali būti pažymėta, nes prekės nėra pristatomos per {0}"
 
 #: erpnext/accounts/doctype/sales_invoice/sales_invoice.py:441
 msgid "'Update Stock' cannot be checked for fixed asset sale"
-msgstr "'Atnaujinti Atsargas' negali būti pažymėta ilgalaikis turto pardavimui"
+msgstr "„Atnaujinti Atsargas“ negali būti pažymėta ilgalaikio turto pardavimui"
 
 #: erpnext/accounts/doctype/bank_account/bank_account.py:64
-#, fuzzy
 msgid "'{0}' account is already used by {1}. Use another account."
 msgstr "'{0}' paskyrą jau naudoja {1}. Naudokite kitą paskyrą."
 
@@ -359,9 +355,8 @@ msgstr "{0} jau buvo pridėta."
 
 #: erpnext/setup/doctype/company/company.py:290
 #: erpnext/setup/doctype/company/company.py:301
-#, fuzzy
 msgid "'{0}' should be in company currency {1}."
-msgstr "„{0}\" turėtų būti įmonės valiuta {1}."
+msgstr "„{0}“ turėtų būti įmonės valiuta {1}."
 
 #: erpnext/stock/report/fifo_queue_vs_qty_after_transaction_comparison/fifo_queue_vs_qty_after_transaction_comparison.py:174
 #: erpnext/stock/report/stock_ledger_invariant_check/stock_ledger_invariant_check.py:203
@@ -5534,65 +5529,55 @@ msgstr "Taikyti dokumentą"
 #. Label of a Link in the CRM Workspace
 #: erpnext/crm/doctype/appointment/appointment.json
 #: erpnext/crm/workspace/crm/crm.json
-#, fuzzy
 msgid "Appointment"
-msgstr "Paskyrimas"
+msgstr "Susitikimas"
 
 #. Name of a DocType
 #: erpnext/crm/doctype/appointment_booking_settings/appointment_booking_settings.json
-#, fuzzy
 msgid "Appointment Booking Settings"
-msgstr "Paskyrų užsakymo nustatymai"
+msgstr "Susitikimų užsakymo nustatymai"
 
 #. Name of a DocType
 #: erpnext/crm/doctype/appointment_booking_slots/appointment_booking_slots.json
-#, fuzzy
 msgid "Appointment Booking Slots"
-msgstr "Paskyros rezervavimo laiko tarpsniai"
+msgstr "Susitikimų rezervavimo laiko tarpsniai"
 
 #: erpnext/crm/doctype/appointment/appointment.py:95
-#, fuzzy
 msgid "Appointment Confirmation"
-msgstr "Paskyrimo patvirtinimas"
+msgstr "Susitikimo patvirtinimas"
 
 #: erpnext/www/book_appointment/index.js:237
-#, fuzzy
 msgid "Appointment Created Successfully"
-msgstr "Sėkmingai sukurtas paskyrimas"
+msgstr "Sėkmingai susitikimas sukurtas"
 
 #. Label of the appointment_details_section (Section Break) field in DocType
 #. 'Appointment Booking Settings'
 #: erpnext/crm/doctype/appointment_booking_settings/appointment_booking_settings.json
-#, fuzzy
 msgid "Appointment Details"
-msgstr "Paskyrimo detalės"
+msgstr "Susitikimo detalės"
 
 #. Label of the appointment_duration (Int) field in DocType 'Appointment
 #. Booking Settings'
 #: erpnext/crm/doctype/appointment_booking_settings/appointment_booking_settings.json
-#, fuzzy
 msgid "Appointment Duration (In Minutes)"
-msgstr "Paskyrimo trukmė (minutėmis)"
+msgstr "Susitikimo trukmė (minutėmis)"
 
 #: erpnext/www/book_appointment/index.py:20
-#, fuzzy
 msgid "Appointment Scheduling Disabled"
-msgstr "Neįgalusis paskyrimo planavimas"
+msgstr "Susitikimų planavimas išjungtas"
 
 #: erpnext/www/book_appointment/index.py:21
-#, fuzzy
 msgid "Appointment Scheduling has been disabled for this site"
-msgstr "Šios svetainės paskyrimų planavimas buvo išjungtas"
+msgstr "Šios svetainės susitikimų planavimas buvo išjungtas"
 
 #. Label of the appointment_with (Link) field in DocType 'Appointment'
 #: erpnext/crm/doctype/appointment/appointment.json
-#, fuzzy
 msgid "Appointment With"
-msgstr "Paskyrimas su"
+msgstr "Susitikimas su"
 
 #: erpnext/crm/doctype/appointment/appointment.py:101
 msgid "Appointment was created. But no lead was found. Please check the email to confirm"
-msgstr "Buvo sukurtas paskyrimas. Tačiau nebuvo rastas joks vadovas. Patikrinkite el. laišką, kad patvirtintumėte"
+msgstr "Susitikimas sukurtas, bet potencialus klientas nerastas. Patikrinkite el. paštą patvirtinimui"
 
 #. Label of the approving_role (Link) field in DocType 'Authorization Rule'
 #: erpnext/setup/doctype/authorization_rule/authorization_rule.json
@@ -6799,7 +6784,6 @@ msgstr "Automobiliai"
 #. Name of a DocType
 #: erpnext/crm/doctype/appointment_booking_settings/appointment_booking_settings.json
 #: erpnext/crm/doctype/availability_of_slots/availability_of_slots.json
-#, fuzzy
 msgid "Availability Of Slots"
 msgstr "Slotų prieinamumas"
 
@@ -9302,15 +9286,13 @@ msgstr "Apskaičiuotos nuolaidos neatitikimas"
 #. Label of the section_break_11 (Section Break) field in DocType 'Supplier
 #. Scorecard Period'
 #: erpnext/buying/doctype/supplier_scorecard_period/supplier_scorecard_period.json
-#, fuzzy
 msgid "Calculations"
 msgstr "Skaičiavimai"
 
 #. Label of the calendar_event (Link) field in DocType 'Appointment'
 #: erpnext/crm/doctype/appointment/appointment.json
-#, fuzzy
 msgid "Calendar Event"
-msgstr "Renginių kalendorius"
+msgstr "Kalendoriaus įvykis"
 
 #. Option for the 'Maintenance Type' (Select) field in DocType 'Asset
 #. Maintenance Task'
@@ -10683,7 +10665,7 @@ msgstr "Kai prie dokumento bus pridėtas zip failas, spustelėkite mygtuką Impo
 #: erpnext/templates/emails/confirm_appointment.html:3
 #, fuzzy
 msgid "Click on the link below to verify your email and confirm the appointment"
-msgstr "Spustelėkite toliau pateiktą nuorodą, kad patikrintumėte savo el. pašto adresą ir patvirtintumėte paskyrimą"
+msgstr "Spustelėkite toliau pateiktą nuorodą, kad patikrintumėte savo el. pašto adresą ir patvirtintumėte susitikimą"
 
 #. Description of the 'Reset Raw Materials Table' (Button) field in DocType
 #. 'Subcontracting Receipt'
@@ -18209,7 +18191,6 @@ msgstr "Skubios pagalbos telefonas"
 #: erpnext/stock/doctype/delivery_trip/delivery_trip.json
 #: erpnext/stock/doctype/serial_no/serial_no.json
 #: erpnext/telephony/doctype/call_log/call_log.json
-#, fuzzy
 msgid "Employee"
 msgstr "Darbuotojas"
 
@@ -18359,7 +18340,7 @@ msgstr "Jei norite rezervuoti dalį atsargų, atsargų nustatymuose įjunkite fu
 #. Settings'
 #: erpnext/crm/doctype/appointment_booking_settings/appointment_booking_settings.json
 msgid "Enable Appointment Scheduling"
-msgstr "Įgalinti paskyrimo planavimą"
+msgstr "Įgalinti susitikimų planavimą"
 
 #. Label of the enable_auto_email (Check) field in DocType 'Process Statement
 #. Of Accounts'
@@ -21068,15 +21049,13 @@ msgstr "Iš Šablonas"
 #: erpnext/projects/doctype/timesheet_detail/timesheet_detail.json
 #: erpnext/telephony/doctype/incoming_call_handling_schedule/incoming_call_handling_schedule.json
 #: erpnext/templates/pages/timelog_info.html:31
-#, fuzzy
 msgid "From Time"
-msgstr "Iš laiko"
+msgstr "Laikas nuo"
 
 #. Label of the from_time (Time) field in DocType 'Appointment Booking Slots'
 #: erpnext/crm/doctype/appointment_booking_slots/appointment_booking_slots.json
-#, fuzzy
 msgid "From Time "
-msgstr "Iš laiko"
+msgstr "Laikas nuo"
 
 #: erpnext/accounts/doctype/cashier_closing/cashier_closing.py:67
 #, fuzzy
@@ -22241,7 +22220,6 @@ msgstr "H - F"
 #: erpnext/setup/doctype/employee/employee.json
 #: erpnext/setup/doctype/holiday_list/holiday_list.json
 #: erpnext/setup/setup_wizard/data/designation.txt:18
-#, fuzzy
 msgid "HR Manager"
 msgstr "Žmogiškųjų išteklių vadybininkas"
 
@@ -23685,7 +23663,7 @@ msgstr "Per kelias minutes"
 
 #: erpnext/crm/doctype/appointment_booking_settings/appointment_booking_settings.js:8
 msgid "In row {0} of Appointment Booking Slots: \"To Time\" must be later than \"From Time\"."
-msgstr "{0} susitikimų užsakymo laikotarpių eilutėje: „Iki laiko“ turi būti vėlesnė nei „Nuo laiko“."
+msgstr "{0} susitikimų užsakymo laikotarpių eilutėje: „Laikas iki“ turi būti vėlesnė nei „Laikas nuo“."
 
 # Need context
 #: erpnext/templates/includes/products_as_grid.html:18
@@ -28209,7 +28187,7 @@ msgid ""
 "Leave blank for home.\n"
 "This is relative to site URL, for example \"about\" will redirect to \"https://yoursitename.com/about\""
 msgstr ""
-"Namuose palikite tuščią.\n"
+"Pagrindiam puslapiui palikite lauką tuščią.\n"
 "Tai susiję su svetainės URL, pavyzdžiui, „about“ nukreips į „https://tavotinklapis.lt/about“"
 
 #. Description of the 'Release Date' (Date) field in DocType 'Supplier'
@@ -28421,7 +28399,6 @@ msgstr "Sąsaja su tiekėju"
 #. Label of the linked_docs_section (Section Break) field in DocType
 #. 'Appointment'
 #: erpnext/crm/doctype/appointment/appointment.json
-#, fuzzy
 msgid "Linked Documents"
 msgstr "Susieti dokumentai"
 
@@ -47372,9 +47349,8 @@ msgstr "Numatyta data"
 #. Label of the scheduled_time_tab (Tab Break) field in DocType 'Job Card'
 #: erpnext/crm/doctype/appointment/appointment.json
 #: erpnext/manufacturing/doctype/job_card/job_card.json
-#, fuzzy
 msgid "Scheduled Time"
-msgstr "Numatytas laikas"
+msgstr "Suplanuotas laikas"
 
 #. Label of the scheduled_time_logs (Table) field in DocType 'Job Card'
 #: erpnext/manufacturing/doctype/job_card/job_card.json
@@ -50313,7 +50289,6 @@ msgid "Some required Company details are missing. You don't have permission to u
 msgstr "Trūksta kai kurių reikiamų įmonės duomenų. Neturite leidimo juos atnaujinti. Kreipkitės į sistemos vadybininką."
 
 #: erpnext/www/book_appointment/index.js:248
-#, fuzzy
 msgid "Something went wrong please try again"
 msgstr "Kažkas nepavyko, pabandykite dar kartą"
 
@@ -54449,9 +54424,8 @@ msgid "The default BOM for that item will be fetched by the system. You can also
 msgstr "Sistema parinks numatytąjį to elemento medžiagų sąrašą. Konstrukcinę sąmatą taip pat galite pakeisti."
 
 #: erpnext/crm/doctype/appointment_booking_settings/appointment_booking_settings.py:69
-#, fuzzy
 msgid "The difference between from time and To Time must be a multiple of Appointment"
-msgstr "„Skirtumas tarp „“nuo laiko„“ ir „“iki laiko„“ turi būti kartotinis Paskyrimo\""
+msgstr "Skirtumas tarp „Laiko nuo“ ir „Laiko iki“ turi būti kartotinis susitikimo skaičius"
 
 #: erpnext/accounts/doctype/share_transfer/share_transfer.py:177
 #: erpnext/accounts/doctype/share_transfer/share_transfer.py:185
@@ -54844,7 +54818,6 @@ msgid "There are no active Fiscal Years for which Demo Data can be generated."
 msgstr "Nėra aktyvių fiskalinių metų, kurių demonstracinius duomenis būtų galima sukurti."
 
 #: erpnext/www/book_appointment/index.js:95
-#, fuzzy
 msgid "There are no slots available on this date"
 msgstr "Šią dieną laisvų laiko tarpsnių nėra"
 
@@ -55323,33 +55296,27 @@ msgstr "Laikas min."
 #. Description of the 'Total Operation Time' (Float) field in DocType
 #. 'Operation'
 #: erpnext/manufacturing/doctype/operation/operation.json
-#, fuzzy
 msgid "Time in mins."
 msgstr "Laikas min."
 
 #: erpnext/manufacturing/doctype/job_card/job_card.py:756
-#, fuzzy
 msgid "Time logs are required for {0} {1}"
 msgstr "Laiko žurnalai reikalingi {0} {1}"
 
 #: erpnext/crm/doctype/appointment/appointment.py:60
-#, fuzzy
 msgid "Time slot is not available"
 msgstr "Laiko tarpsnis nepasiekiamas"
 
 #: erpnext/templates/generators/bom.html:71
-#, fuzzy
 msgid "Time(in mins)"
 msgstr "Laikas (min.)"
 
 #: erpnext/manufacturing/doctype/workstation/workstation_job_card.html:36
 #: erpnext/public/js/projects/timer.js:5
-#, fuzzy
 msgid "Timer"
 msgstr "Laikmatis"
 
 #: erpnext/public/js/projects/timer.js:151
-#, fuzzy
 msgid "Timer exceeded the given hours."
 msgstr "Laikmatis viršijo nustatytą valandų skaičių."
 
@@ -55362,7 +55329,6 @@ msgstr "Laikmatis viršijo nustatytą valandų skaičių."
 #: erpnext/projects/report/timesheet_billing_summary/timesheet_billing_summary.py:59
 #: erpnext/projects/workspace/projects/projects.json
 #: erpnext/templates/pages/projects.html:65
-#, fuzzy
 msgid "Timesheet"
 msgstr "Darbo laiko apskaitos žiniaraštis"
 
@@ -57861,90 +57827,74 @@ msgstr "Nepaskirtas rezervas submontavimui"
 #: erpnext/selling/doctype/sales_order/sales_order.js:514
 #: erpnext/stock/doctype/pick_list/pick_list.js:308
 #: erpnext/subcontracting/doctype/subcontracting_order/subcontracting_order.js:390
-#, fuzzy
 msgid "Unreserving Stock..."
-msgstr "Atsargų rezervavimas..."
+msgstr "Atšaukiamas prekių rezervavimas..."
 
 #. Option for the 'Status' (Select) field in DocType 'Dunning'
 #: erpnext/accounts/doctype/dunning/dunning.json
 #: erpnext/accounts/doctype/dunning/dunning_list.js:6
-#, fuzzy
 msgid "Unresolved"
-msgstr "Neišspręsti klausimai"
+msgstr "Neišspręsta"
 
 #. Option for the 'Maintenance Type' (Select) field in DocType 'Maintenance
 #. Visit'
 #: erpnext/maintenance/doctype/maintenance_visit/maintenance_visit.json
-#, fuzzy
 msgid "Unscheduled"
 msgstr "Neplanuotas"
 
 #: erpnext/accounts/doctype/account/chart_of_accounts/verified/standard_chart_of_accounts.py:178
 #: erpnext/accounts/doctype/account/chart_of_accounts/verified/standard_chart_of_accounts_with_account_number.py:305
-#, fuzzy
 msgid "Unsecured Loans"
 msgstr "Neužtikrintos paskolos"
 
 #: erpnext/accounts/doctype/payment_entry/payment_entry.js:1711
-#, fuzzy
 msgid "Unset Matched Payment Request"
-msgstr "Nenustatytas suderintas mokėjimo prašymas"
+msgstr "Susieto mokėjimo prašymo atšaukimas"
 
 #. Option for the 'Status' (Select) field in DocType 'Contract'
 #: erpnext/crm/doctype/contract/contract.json
-#, fuzzy
 msgid "Unsigned"
 msgstr "Nepasirašytas"
 
 #: erpnext/setup/doctype/email_digest/email_digest.py:128
-#, fuzzy
 msgid "Unsubscribe from this Email Digest"
 msgstr "Atsisakyti šio el. pašto naujienlaiškio prenumeratos"
 
 #: erpnext/accounts/report/accounts_receivable/accounts_receivable.html:24
-#, fuzzy
 msgid "Until"
 msgstr "Iki"
 
 #. Option for the 'Status' (Select) field in DocType 'Appointment'
 #: erpnext/crm/doctype/appointment/appointment.json
-#, fuzzy
 msgid "Unverified"
 msgstr "Nepatikrintas"
 
 #: erpnext/erpnext_integrations/utils.py:22
-#, fuzzy
 msgid "Unverified Webhook Data"
-msgstr "„Nepatikrinti „“Webhook„“ duomenys\""
+msgstr "Nepatikrinti „Webhook“ duomenys"
 
 #: erpnext/accounts/doctype/bisect_accounting_statements/bisect_accounting_statements.js:17
-#, fuzzy
 msgid "Up"
 msgstr "Į viršų"
 
 #. Label of the calendar_events (Check) field in DocType 'Email Digest'
 #: erpnext/setup/doctype/email_digest/email_digest.json
-#, fuzzy
 msgid "Upcoming Calendar Events"
-msgstr "Artimiausi kalendoriaus renginiai"
+msgstr "Artimiausi kalendoriaus įvykiai"
 
 #: erpnext/setup/doctype/email_digest/templates/default.html:97
-#, fuzzy
 msgid "Upcoming Calendar Events "
-msgstr "Artimiausi kalendoriaus renginiai"
+msgstr "Artimiausi kalendoriaus įvykiai "
 
 #: erpnext/accounts/doctype/account/account.js:52
-#, fuzzy
 msgid "Update Account Name / Number"
-msgstr "Atnaujinti paskyros pavadinimą / numerį"
+msgstr "Atnaujinti sąskaitos pavadinimą / numerį"
 
 #: erpnext/accounts/doctype/account/account.js:158
-#, fuzzy
 msgid "Update Account Number / Name"
 msgstr "Atnaujinti sąskaitos numerį / pavadinimą"
 
 #: erpnext/selling/page/point_of_sale/pos_payment.js:22
-#, fuzzy
 msgid "Update Additional Information"
 msgstr "Atnaujinti papildomą informaciją"
 
@@ -57969,7 +57919,6 @@ msgstr "Atnaujinti papildomą informaciją"
 #: erpnext/buying/doctype/supplier_quotation/supplier_quotation.json
 #: erpnext/selling/doctype/quotation/quotation.json
 #: erpnext/selling/doctype/sales_order/sales_order.json
-#, fuzzy
 msgid "Update Auto Repeat Reference"
 msgstr "Atnaujinti automatinio kartojimo nuorodą"
 
@@ -58087,25 +58036,21 @@ msgstr "Atnaujinti neįvykdytus įsipareigojimus sau"
 #. Label of the update_price_list_based_on (Select) field in DocType 'Stock
 #. Settings'
 #: erpnext/stock/doctype/stock_settings/stock_settings.json
-#, fuzzy
 msgid "Update Price List Based On"
 msgstr "Atnaujinti kainoraštį pagal"
 
 #: erpnext/accounts/doctype/cheque_print_template/cheque_print_template.js:10
-#, fuzzy
 msgid "Update Print Format"
 msgstr "Atnaujinti spausdinimo formatą"
 
 #. Label of the get_stock_and_rate (Button) field in DocType 'Stock Entry'
 #: erpnext/stock/doctype/stock_entry/stock_entry.json
-#, fuzzy
 msgid "Update Rate and Availability"
 msgstr "Atnaujinti kainą ir prieinamumą"
 
 #: erpnext/buying/doctype/purchase_order/purchase_order.js:630
-#, fuzzy
 msgid "Update Rate as per Last Purchase"
-msgstr "Atnaujinimo norma pagal paskutinį pirkimą"
+msgstr "Atnaujinti normą pagal paskutinį pirkimą"
 
 #. Label of the update_stock (Check) field in DocType 'POS Invoice'
 #. Label of the update_stock (Check) field in DocType 'POS Profile'
@@ -58115,27 +58060,23 @@ msgstr "Atnaujinimo norma pagal paskutinį pirkimą"
 #: erpnext/accounts/doctype/pos_profile/pos_profile.json
 #: erpnext/accounts/doctype/purchase_invoice/purchase_invoice.json
 #: erpnext/accounts/doctype/sales_invoice/sales_invoice.json
-#, fuzzy
 msgid "Update Stock"
 msgstr "Atnaujinti atsargas"
 
 #. Label of the update_type (Select) field in DocType 'BOM Update Log'
 #: erpnext/manufacturing/doctype/bom_update_log/bom_update_log.json
-#, fuzzy
 msgid "Update Type"
 msgstr "Atnaujinimo tipas"
 
 #. Label of the project_update_frequency (Select) field in DocType 'Buying
 #. Settings'
 #: erpnext/buying/doctype/buying_settings/buying_settings.json
-#, fuzzy
 msgid "Update frequency of Project"
 msgstr "Projekto atnaujinimo dažnumas"
 
 #. Label of the update_latest_price_in_all_boms (Button) field in DocType 'BOM
 #. Update Tool'
 #: erpnext/manufacturing/doctype/bom_update_tool/bom_update_tool.json
-#, fuzzy
 msgid "Update latest price in all BOMs"
 msgstr "Atnaujinti naujausią kainą visuose medžiagų sąrašuose"
 
@@ -61478,9 +61419,8 @@ msgid "{0} has Payment Term based allocation enabled. Select a Payment Term for 
 msgstr "{0} yra įjungtas paskirstymas pagal mokėjimo terminą. Pasirinkite mokėjimo terminą eilutei #{1} skiltyje Mokėjimo nuorodos"
 
 #: erpnext/setup/default_success_action.py:15
-#, fuzzy
 msgid "{0} has been submitted successfully"
-msgstr "{0} buvo sėkmingai pateiktas"
+msgstr "{0} buvo sėkmingai pateikta(s)"
 
 #: erpnext/projects/doctype/project/project_dashboard.html:15
 #, fuzzy

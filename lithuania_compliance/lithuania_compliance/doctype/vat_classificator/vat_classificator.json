@@ -15,6 +15,7 @@
   "sort_order": "DESC",
   "field_order": [
     "code",
+    "is_exempt",
     "rate",
     "description"
   ],
@@ -29,10 +30,17 @@
       "in_standard_filter": 1
     },
     {
+      "fieldname": "is_exempt",
+      "fieldtype": "Check",
+      "label": "Exempt from VAT",
+      "in_list_view": 1
+    },
+    {
       "fieldname": "rate",
       "fieldtype": "Float",
       "label": "Rate (%)",
-      "in_list_view": 1
+      "in_standard_filter": 1,
+      "depends_on": "eval: !doc.is_exempt"
     },
     {
       "fieldname": "description",

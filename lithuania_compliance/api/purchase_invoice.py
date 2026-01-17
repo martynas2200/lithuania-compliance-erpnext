@@ -101,8 +101,8 @@ def get_item_prices(invoice_name):
 	).run(as_dict=True)
 
 	# get default VAT classificator rate
-	default_pvm_classificator = frappe.get_single("Lithuania Compliance Settings").default_pvm_classificator
-	default_vat_rate = frappe.get_value("VAT Classificator", default_pvm_classificator, "rate") or 21
+	default_vat_classificator = frappe.get_single("Lithuania Compliance Settings").default_vat_classificator
+	default_vat_rate = frappe.get_value("VAT Classificator", default_vat_classificator, "rate") or 21
 	# Create lookup for query results by item_code
 	item_lookup = {item["item_code"]: item for item in invoice_items_with_barcodes}
 

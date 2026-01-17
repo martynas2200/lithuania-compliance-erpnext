@@ -406,3 +406,12 @@ msgstr "Jei nepažymėta, sukurti mokėjimo įrašai liks juodraščio būsenoje
 
 msgid "Import Bank Statement"
 msgstr "Importuoti banko išrašą"
+
+msgid "Exempt from VAT"
+msgstr "Atleistas nuo PVM"
+
+msgid "Might be used for i.SAF reports. The rate is taken from <strong>VAT Classificator</strong>, ignoring the 'Tax Rate' defined here."
+msgstr "Gali būti naudojama i.SAF ataskaitoms. Tarifas paimamas iš <strong>PVM klasifikatoriaus</strong>, ignoruojant čia apibrėžtą „Mokesčių tarifas“."
+
+msgid "Will override the VAT Classificator defined in the Item Doctype."
+msgstr "Pakeis PVM klasifikatorių, apibrėžtą prekės kortelėje."

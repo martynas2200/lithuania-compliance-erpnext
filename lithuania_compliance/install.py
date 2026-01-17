@@ -40,8 +40,11 @@ def seed_vat_classificators() -> None:
 			continue
 		code = row.get("code")
 		rate = None
+		exempt = 0
 		raw_value = row.get("value")
-		if raw_value is not None:
+		if raw_value is None:
+			exempt = 1
+		else:
 			try:
 				rate = float(raw_value)
 			except (TypeError, ValueError):
@@ -54,6 +57,7 @@ def seed_vat_classificators() -> None:
 				{
 					"doctype": "VAT Classificator",
 					"code": code,
+					"is_exempt": exempt,
 					"description": description,
 					"rate": rate,
 				}
@@ -64,8 +68,8 @@ def ensure_default_settings() -> None:
 	"""If settings exist and default classificator is empty, set a sensible default."""
 	try:
 		settings = frappe.get_single("Lithuania Compliance Settings")
-		if not settings.default_pvm_classificator and frappe.db.exists("VAT Classificator", "PVM1"):
-			settings.default_pvm_classificator = "PVM1"
+		if not settings.default_vat_classificator and frappe.db.exists("VAT Classificator", "PVM1"):
+			settings.default_vat_classificator = "PVM1"
 			settings.save(ignore_permissions=True)
 	except Exception:
 		# ignore if settings not installed yet
