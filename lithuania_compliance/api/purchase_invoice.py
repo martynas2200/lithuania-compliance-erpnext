@@ -76,7 +76,7 @@ def get_item_prices(invoice_name):
 	    List of dicts with item info and applicable prices
 	"""
 	invoice = frappe.get_doc("Purchase Invoice", invoice_name)
-	today = datetime.today().date()
+	today = frappe.utils.getdate(frappe.utils.now())
 
 	items_data = []
 
@@ -90,7 +90,7 @@ def get_item_prices(invoice_name):
 		.left_join(ItemBarcode)
 		.on(Item.item_code == ItemBarcode.parent)
 		.left_join(VATClasificator)
-		.on(Item.pvm_classificator == VATClasificator.name)
+		.on(Item.vat_classificator == VATClasificator.name)
 		.select(
 			Item.item_code,
 			Item.item_name,
@@ -106,6 +106,7 @@ def get_item_prices(invoice_name):
 	# Create lookup for query results by item_code
 	item_lookup = {item["item_code"]: item for item in invoice_items_with_barcodes}
 
+	# TODO: use clasificators of invoice items when available
 	# Iterate through invoice items to preserve order and handle duplicates
 	for invoice_item in invoice.items:
 		item_code = invoice_item.item_code
