@@ -3,6 +3,12 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Language: lt\n"
 
+msgid "Business Code"
+msgstr "Įmonės kodas"
+
+msgid "Unique number assigned to a company by the Lithuanian State"
+msgstr "Lietuvoje registruotai įmonei suteiktas unikalus numeris"
+
 msgid "Invoice Type"
 msgstr "Sąskaitos tipas"
 
@@ -19,7 +25,7 @@ msgid "Received DS: Debit VAT invoice"
 msgstr "Gauta DS: Debetinė PVM sąskaita"
 
 msgid "Issued KS: Credit VAT invoice"
-msgstr "Išrašyta KS: Kredito PVM sąskaita"
+msgstr "Išrašyta KS: Kreditinė PVM sąskaita"
 
 msgid "Issued VS: Summary VAT invoice"
 msgstr "Išrašyta VS: Santraukos PVM sąskaita"
@@ -28,7 +34,7 @@ msgid "Received VD: Summary debit VAT invoice"
 msgstr "Gauta VD: Santraukos debetinė PVM sąskaita"
 
 msgid "Issued VK: Summary credit VAT invoice"
-msgstr "Išrašyta VK: Santraukos kredito PVM sąskaita"
+msgstr "Išrašyta VK: Santraukos kreditinė PVM sąskaita"
 
 msgid "Received SF: Standard VAT invoice"
 msgstr "Gauta SF: Standartinė PVM sąskaita"
@@ -37,7 +43,7 @@ msgid "Issued DS: Debit VAT invoice"
 msgstr "Išrašyta DS: Debetinė PVM sąskaita"
 
 msgid "Received KS: Credit VAT invoice"
-msgstr "Gauta KS: Kredito PVM sąskaita"
+msgstr "Gauta KS: Kreditinė PVM sąskaita"
 
 msgid "Received VS: Summary VAT invoice"
 msgstr "Gauta VS: Santraukos PVM sąskaita"
@@ -46,7 +52,7 @@ msgid "Issued VD: Summary debit VAT invoice"
 msgstr "Išrašyta VD: Santraukos debetinė PVM sąskaita"
 
 msgid "Received VK: Summary credit VAT invoice"
-msgstr "Gauta VK: Santraukos kredito PVM sąskaita"
+msgstr "Gauta VK: Santraukos kreditinė PVM sąskaita"
 
 msgid "This invoice type requires 'Is Returned' to be checked. It has been automatically marked."
 msgstr "Šiam sąskaitos tipui reikia pažymėti 'Grąžinimas'. Tai buvo pataisyta automatiškai."
@@ -110,8 +116,8 @@ msgstr "PVM klasifikatorius per prekę pakeitimai"
 msgid "VAT Classificator"
 msgstr "PVM klasifikatorius"
 
-msgid "Code"
-msgstr "Kodas"
+msgid "Taxable Value"
+msgstr "Apmokestinamoji vertė"
 
 msgid "Rate (%)"
 msgstr "Norma (%)"
@@ -120,6 +126,27 @@ msgid "Description"
 msgstr "Aprašymas"
 
 #: i.SAF XML Generation
+
+msgid "i.SAF Record"
+msgstr "i.SAF įrašas"
+
+msgid "Discrepancy found for tax code {0}: tax percentage is {1} but tax amount is 0. Please check your invoice items and taxes."
+msgstr "Aptiktas mokesčių kodo {0} neatitikimas: mokesčio procentas yra {1}, bet mokesčio suma yra 0. Patikrinkite sąskaitos faktūros elementus ir mokesčius."
+
+msgid "VAT classification for an item is determined in the following order: first from the Invoice Item, then from the Item record if not found, and finally from the default setting. Note: each VAT classification must have a corresponding tax entry"
+msgstr "Prekės PVM klasifikavimas nustatomas tokia tvarka: pirmiausia iš sąskaitos faktūros prekės eilutės, tada iš Prekės įrašo, jei nerasta, ir galiausiai pagal numatytąjį nustatymą. Pastaba: kiekviena PVM klasifikacija turi turėti atitinkamą mokesčių įrašą"
+
+msgid "Strange! No VAT Classificator found with code {0}. It should exist as it is assigned to an item {1}."
+msgstr "Keista. Nerasta PVM klasifikatoriaus su kodu {0}. Jis turėtų egzistuoti nes priskirtas elementui {1}."
+
+msgid "{0} {1} is a draft, however, it is set to be exported per invoice_type_lt selection {2}. Please submit the document or change the invoice_type_lt to exclude from the i.SAF report."
+msgstr "{0} {1} yra juodraštis, tačiau jis nustatytas eksportuoti pagal sąskaitos tipą  {2}. Pateikite dokumentą arba pakeiskite tipą, kad neįtrauktumėte į i.SAF ataskaitą."
+
+msgid "Tax entry found for tax code {0} but no items assigned to it. Please check your invoice items and taxes."
+msgstr "Mokesčio kodo {0} mokesčių įrašas rastas, bet jam nepriskirta jokių elementų. Patikrinkite savo sąskaitos faktūros elementus ir mokesčius."
+
+msgid "Invalid export type. Must be 'issued', 'received' or 'both'."
+msgstr "Netinkamas eksporto tipas. Turi būti „išduota“, „gauta“ arba „abu“."
 
 msgid "i.SAF XML Generation"
 msgstr "i.SAF XML generavimas"
@@ -130,26 +157,35 @@ msgstr "Generuoti i.SAF"
 msgid "Generate i.SAF XML"
 msgstr "Generuoti i.SAF XML"
 
-msgid "Step 1: Select Export Type"
-msgstr "1 žingsnis: Pasirinkite eksporto tipą"
+msgid "Select Export Type"
+msgstr "Pasirinkite eksporto tipą"
 
 msgid "Choose the type of i.SAF invoice register you want to generate:"
 msgstr "Pasirinkite i.SAF sąskaitų registrą, kurį norite generuoti:"
 
 msgid "Received Invoices"
-msgstr "Gaunamos sąskaitos"
-
-msgid "Export purchase invoices, supplier credit notes, and expense claims"
-msgstr "Eksportuoti pirkimo sąskaitas, tiekėjų kreditines notas ir išlaidų ataskaitas"
+msgstr "Gautos sąskaitos"
 
 msgid "Issued Invoices"
 msgstr "Išrašytos sąskaitos"
 
-msgid "Export sales invoices, credit notes, and debit notes issued to customers"
-msgstr "Eksportuoti pardavimo sąskaitas, kreditines notas ir debetines notas, išrašytas klientams"
+msgid "Full File"
+msgstr "Pilnas failas"
 
-msgid "Step 2: Select Period"
-msgstr "2 žingsnis: Pasirinkite laikotarpį"
+msgid "Register of issued VAT invoices"
+msgstr "Išrašomų PVM sąskaitų faktūrų registras"
+
+msgid "Register of received VAT invoices"
+msgstr "Gaunamų PVM sąskaitų faktūrų registras"
+
+msgid "Registers of received and issued VAT invoices"
+msgstr "Gaunamų ir išrašomų PVM sąskaitų faktūrų registrai"
+
+msgid "Select Period"
+msgstr "Pasirinkite laikotarpį"
+
+msgid "Selected Period"
+msgstr "Pasirinktas laikotarpis"
 
 msgid "Select the reporting period for the i.SAF export:"
 msgstr "Pasirinkite ataskaitinį laikotarpį i.SAF eksportui:"
@@ -157,74 +193,23 @@ msgstr "Pasirinkite ataskaitinį laikotarpį i.SAF eksportui:"
 msgid "Year"
 msgstr "Metai"
 
+msgid "An error occurred while generating the XML file."
+msgstr "Kuriant XML failą įvyko klaida."
+
+msgid "Start Over"
+msgstr "Pradėti iš naujo"
+
 msgid "Select Year"
 msgstr "Pasirinkite metus"
 
 msgid "Select Month"
 msgstr "Pasirinkite mėnesį"
 
-msgid "based on the selected month and year."
-msgstr "remiantis pasirinktu mėnesiu ir metais."
+msgid "Generated i.SAF XML File"
+msgstr "Sugeneruotas i.SAF XML failas"
 
-msgid "Selected Period:"
-msgstr "Pasirinktas laikotarpis:"
-
-msgid "Step 3: Review and Exclude Invoices"
-msgstr "3 žingsnis: Peržiūrėti ir atmesti sąskaitas"
-
-msgid "Review invoices that will be included in the i.SAF export."
-msgstr "Peržiūrėkite sąskaitas, kurios bus įtrauktos į i.SAF eksportą."
-
-msgid "You can exclude specific invoices if needed."
-msgstr "Pagal poreikį galite atmesti konkrečias sąskaitas."
-
-msgid "This may take a moment."
-msgstr "Tai gali užtrukti akimirką."
-
-msgid "invoices found"
-msgstr "sąskaitų rastos"
-
-msgid "Select All"
-msgstr "Pasirinkti viską"
-
-msgid "Deselect All"
-msgstr "Atžymėti viską"
-
-msgid "Include"
-msgstr "Įtraukti"
-
-msgid "Exclude"
-msgstr "Atmesti"
-
-msgid "Invoice No"
-msgstr "Sąskaitos Nr."
-
-msgid "Date"
-msgstr "Data"
-
-msgid "Amount"
-msgstr "Suma"
-
-msgid "Customer/Supplier"
-msgstr "Klientas/Tiekėjas"
-
-msgid "Grand Total"
-msgstr "Bendra suma"
-
-msgid "VAT"
-msgstr "PVM"
-
-msgid "invoice(s)"
-msgstr "sąskaitų rastos"
-
-msgid "Step 4: Generate i.SAF XML File"
-msgstr "4 žingsnis: Generuoti i.SAF XML failą"
-
-msgid "Review your selections and generate the i.SAF XML file:"
-msgstr "Peržiūrėkite savo pasirinkimus ir sugeneruokite i.SAF XML failą:"
-
-msgid "Export Summary"
-msgstr "Eksporto santrauka"
+msgid "Review the file."
+msgstr "Peržiūrėkite failą."
 
 msgid "Generate i.SAF XML File"
 msgstr "Generuoti i.SAF XML failą"
@@ -241,14 +226,14 @@ msgstr "Eksporto tipas"
 msgid "Period"
 msgstr "Laikotarpis"
 
-msgid "Review Invoices"
-msgstr "Peržiūrėti sąskaitas"
-
-msgid "Generate"
-msgstr "Generuoti"
-
 msgid "Prefill"
 msgstr "Užpildyti"
+
+msgid "Total Invoices"
+msgstr "Iš viso sąskaitų"
+
+msgid "i.SAF XML file has been generated successfully."
+msgstr "i.SAF XML failas sėkmingai sugeneruotas."
 
 msgid "Bank Import IBAN validation"
 msgstr "Banko importo IBAN patikrinimas"
@@ -415,3 +400,29 @@ msgstr "Gali būti naudojama i.SAF ataskaitoms. Tarifas paimamas iš <strong>PVM
 
 msgid "Will override the VAT Classificator defined in the Item Doctype."
 msgstr "Pakeis PVM klasifikatorių, apibrėžtą prekės kortelėje."
+
+
+msgid "January"
+msgstr "Sausis"
+msgid "February"
+msgstr "Vasaris"
+msgid "March"
+msgstr "Kovas"
+msgid "April"
+msgstr "Balandis"
+msgid "May"
+msgstr "Gegužė"
+msgid "June"
+msgstr "Birželis"
+msgid "July"
+msgstr "Liepa"
+msgid "August"
+msgstr "Rugpjūtis"
+msgid "September"
+msgstr "Rugsėjis"
+msgid "October"
+msgstr "Spalis"
+msgid "November"
+msgstr "Lapkritis"
+msgid "December"
+msgstr "Gruodis"

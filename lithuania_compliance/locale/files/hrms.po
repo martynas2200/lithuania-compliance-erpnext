@@ -4,7 +4,7 @@ msgstr ""
 "Project-Id-Version: Frappe HR VERSION\n"
 "Report-Msgid-Bugs-To: contact@frappe.io\n"
 "POT-Creation-Date: 2025-12-21 09:37+0000\n"
-"PO-Revision-Date: 2026-01-18 20:39+0100\n"
+"PO-Revision-Date: 2026-01-31 01:03+0100\n"
 "Last-Translator: Martynas Miliauskas <martin@ekranas.info>\n"
 "Language-Team: contact@frappe.io\n"
 "Language: lt\n"
@@ -17,7 +17,7 @@ msgstr ""
 #. Description of the 'Arrear Start Date' (Date) field in DocType 'Arrear'
 #: hrms/payroll/doctype/arrear/arrear.json
 msgid " Salary slips starting on or after this date will be considered for arrear calculations"
-msgstr " Nuo šios datos ar vėliau išduodami darbo užmokesčio lapai bus įtraukti į įsiskolinimų skaičiavimus"
+msgstr " Nuo šios datos ar vėliau išduodami darbo užmokesčio lapeliai bus įtraukti į įsiskolinimų skaičiavimus"
 
 #. Label of the unlink_payment_on_cancellation_of_employee_advance (Check)
 #. field in DocType 'HR Settings'
@@ -576,7 +576,7 @@ msgstr "Papildomas atlyginimas"
 #: hrms/payroll/doctype/additional_salary/additional_salary.py:116
 #, fuzzy
 msgid "Additional Salary for referral bonus can only be created against Employee Referral with status {0}"
-msgstr "Papildomas atlyginimas už rekomendacijos premiją gali būti sukurtas tik darbuotojo rekomendacijai, kurios statusas yra {0}."
+msgstr "Papildomas atlyginimas už rekomendacijos premiją gali būti sukurtas tik darbuotojo rekomendacijai, kurios būsena yra {0}."
 
 #: hrms/payroll/doctype/additional_salary/additional_salary.py:151
 msgid "Additional Salary for this salary component with {0} enabled already exists for this date"
@@ -610,24 +610,20 @@ msgstr "Koregavimo tipas"
 
 #. Option for the 'Level' (Select) field in DocType 'Training Event'
 #: hrms/hr/doctype/training_event/training_event.json
-#, fuzzy
 msgid "Advance"
 msgstr "Išankstinis"
 
 #: hrms/hr/doctype/employee_advance/employee_advance.py:44
-#, fuzzy
 msgid "Advance Account is mandatory. Please set the <a href=\"/app/company/{0}#default_employee_advance_account\" target=\"_blank\">Default Employee Advance Account</a> in the Company record {0} and submit this document."
 msgstr "Išankstinė sąskaita yra privaloma. Nustatykite <a href=\"/app/company/{0}#default_employee_advance_account\" target=\"_blank\">Numatytą darbuotojo išankstinę sąskaitą</a> įmonės įraše {0} ir pateikite šį dokumentą."
 
 #: hrms/hr/doctype/employee_advance/employee_advance.py:79
-#, fuzzy
 msgid "Advance Account {} currency should be same as Salary Currency of Employee {}. Please select same currency Advance Account"
-msgstr "Išankstinio mokėjimo sąskaitos {} valiuta turi būti tokia pati kaip darbuotojo {} atlyginimo valiuta. Prašome pasirinkti tą pačią valiutą Išankstinio mokėjimo sąskaita"
+msgstr "Išankstinio mokėjimo sąskaitos {} valiuta turi būti tokia pati kaip darbuotojo {} atlyginimo valiuta. Prašome pasirinkti tą pačią valiutą išankstinio mokėjimo sąskaitoje"
 
 #. Label of the base_advance_paid (Currency) field in DocType 'Expense Claim
 #. Advance'
 #: hrms/hr/doctype/expense_claim_advance/expense_claim_advance.json
-#, fuzzy
 msgid "Advance Paid (Company Currency)"
 msgstr "Išankstinis mokėjimas (įmonės valiuta)"
 
@@ -644,72 +640,60 @@ msgid "Advanced Filters"
 msgstr "Išplėstiniai filtrai"
 
 #: hrms/hr/doctype/expense_claim/expense_claim.py:422
-#, fuzzy
 msgid "All Exchange Gain/Loss amount of {0} has been booked through {1}"
 msgstr "Visa {0} valiutos keitimo pelno/nuostolio suma buvo įtraukta į apskaitą per {1}."
 
 #: hrms/hr/doctype/goal/goal_tree.js:215
-#, fuzzy
 msgid "All Goals"
 msgstr "Visi tikslai"
 
 #: hrms/hr/doctype/job_opening/job_opening.py:102
-#, fuzzy
 msgid "All Jobs"
 msgstr "Visi darbo pasiūlymai"
 
 #: hrms/hr/doctype/full_and_final_statement/full_and_final_statement.py:70
-#, fuzzy
 msgid "All allocated assets should be returned before submission"
-msgstr "Visi paskirstyti turtas turi būti grąžintas prieš pateikiant paraišką."
+msgstr "Visas paskirstytas turtas turi būti grąžintas prieš pateikiant"
 
 #: hrms/hr/doctype/employee_onboarding/employee_onboarding.py:48
-#, fuzzy
 msgid "All the mandatory tasks for employee creation are not completed yet."
 msgstr "Visos privalomos užduotys, susijusios su darbuotojų kūrimu, dar nėra atliktos."
 
 #. Label of the allocate_based_on_leave_policy (Check) field in DocType 'Leave
 #. Control Panel'
 #: hrms/hr/doctype/leave_control_panel/leave_control_panel.json
-#, fuzzy
 msgid "Allocate Based On Leave Policy"
 msgstr "Skirti pagal atostogų politiką"
 
 #: hrms/hr/doctype/leave_control_panel/leave_control_panel.js:176
-#, fuzzy
 msgid "Allocate Leave"
 msgstr "Atostogų paskirstymas"
 
 #: hrms/hr/doctype/leave_control_panel/leave_control_panel.js:192
-#, fuzzy
 msgid "Allocate leaves to {0} employee(s)?"
 msgstr "Skirti atostogas {0} darbuotojui (-ams)?"
 
 #. Label of the allocate_on_day (Select) field in DocType 'Leave Type'
 #: hrms/hr/doctype/leave_type/leave_type.json
-#, fuzzy
 msgid "Allocate on Day"
 msgstr "Skirti dieną"
 
 #. Label of the base_allocated_amount (Currency) field in DocType 'Expense
 #. Claim Advance'
 #: hrms/hr/doctype/expense_claim_advance/expense_claim_advance.json
-#, fuzzy
 msgid "Allocated Amount (Company Currency)"
 msgstr "Skirta suma (įmonės valiuta)"
 
 #. Label of the allocated_leaves (Float) field in DocType 'Leave Adjustment'
 #: hrms/hr/doctype/leave_adjustment/leave_adjustment.json
 #: hrms/hr/doctype/leave_application/leave_application.js:75
-#, fuzzy
 msgid "Allocated Leaves"
 msgstr "Skirtos atostogos"
 
 #. Label of the allocated_via (Select) field in DocType 'Earned Leave Schedule'
 #: hrms/hr/doctype/earned_leave_schedule/earned_leave_schedule.json
-#, fuzzy
 msgid "Allocated Via"
-msgstr "Paskirstyta per"
+msgstr "Paskirstyta pers"
 
 #: hrms/hr/doctype/leave_control_panel/leave_control_panel.js:205
 #, fuzzy
@@ -1021,7 +1005,7 @@ msgstr "Paraiška"
 #: hrms/hr/report/recruitment_analytics/recruitment_analytics.py:46
 #, fuzzy
 msgid "Application Status"
-msgstr "Paraiškos statusas"
+msgstr "Paraiškos būsena"
 
 #: hrms/hr/doctype/leave_application/leave_application.py:210
 #, fuzzy
@@ -1237,12 +1221,12 @@ msgstr "Patvirtinimas"
 #: hrms/hr/doctype/expense_claim/expense_claim.json
 #, fuzzy
 msgid "Approval Status"
-msgstr "Patvirtinimo statusas"
+msgstr "Patvirtinimo būsena"
 
 #: hrms/hr/doctype/expense_claim/expense_claim.py:148
 #, fuzzy
 msgid "Approval Status must be 'Approved' or 'Rejected'"
-msgstr "Patvirtinimo statusas turi būti „Patvirtinta“ arba „Atmesta“"
+msgstr "Patvirtinimo būsena turi būti „Patvirtinta“ arba „Atmesta“"
 
 #: frontend/src/components/RequestActionSheet.vue:108
 #: hrms/hr/doctype/shift_assignment_tool/shift_assignment_tool.js:119
@@ -1291,12 +1275,10 @@ msgid "Are you sure you want to delete the {0}"
 msgstr "Ar tikrai norite ištrinti {0}?"
 
 #: hrms/payroll/doctype/salary_slip/salary_slip_list.js:19
-#, fuzzy
 msgid "Are you sure you want to email the selected salary slips?"
 msgstr "Ar tikrai norite išsiųsti pasirinktas algos lapelius elektroniniu paštu?"
 
 #: hrms/hr/doctype/employee_referral/employee_referral.js:9
-#, fuzzy
 msgid "Are you sure you want to reject the Employee Referral?"
 msgstr "Ar tikrai norite atmesti darbuotojo rekomendaciją?"
 
@@ -1606,7 +1588,6 @@ msgstr "AttendanceRequestListView"
 #. Label of the section_break_18 (Section Break) field in DocType 'Training
 #. Event'
 #: hrms/hr/doctype/training_event/training_event.json
-#, fuzzy
 msgid "Attendees"
 msgstr "Dalyviai"
 
@@ -1617,9 +1598,8 @@ msgstr "Atleidimų skaičius"
 
 #: hrms/hr/report/monthly_attendance_sheet/monthly_attendance_sheet.js:43
 #: hrms/public/js/salary_slip_deductions_report_filters.js:26
-#, fuzzy
 msgid "Aug"
-msgstr "Aug"
+msgstr "Rūgpjūtis"
 
 #. Label of the auto_attendance_settings_section (Section Break) field in
 #. DocType 'Shift Type'
@@ -1712,17 +1692,14 @@ msgstr "Vidutinis panaudojimas (tik apmokėtas)"
 
 #. Option for the 'Status' (Select) field in DocType 'Job Offer'
 #: hrms/hr/doctype/job_offer/job_offer.json
-#, fuzzy
 msgid "Awaiting Response"
 msgstr "Laukiama atsakymo"
 
 #: hrms/hr/doctype/leave_application/leave_application.py:170
-#, fuzzy
 msgid "Backdated Leave Application is restricted. Please set the {} in {}"
 msgstr "Atgaline data pateiktos atostogų paraiškos yra ribojamos. Prašome nustatyti {} į {}"
 
 #: hrms/hr/doctype/expense_claim/expense_claim.js:285
-#, fuzzy
 msgid "Bank Entries"
 msgstr "Banko įrašai"
 
@@ -1730,35 +1707,30 @@ msgstr "Banko įrašai"
 #. Label of a Link in the Payroll Workspace
 #: hrms/payroll/report/bank_remittance/bank_remittance.json
 #: hrms/payroll/workspace/payroll/payroll.json
-#, fuzzy
 msgid "Bank Remittance"
 msgstr "Banko pavedimas"
 
 #. Label of the base (Currency) field in DocType 'Salary Structure Assignment'
 #: hrms/payroll/doctype/bulk_salary_structure_assignment/bulk_salary_structure_assignment.js:180
 #: hrms/payroll/doctype/salary_structure_assignment/salary_structure_assignment.json
-#, fuzzy
 msgid "Base"
 msgstr "Pagrindas"
 
 #. Label of the section_break_7 (Section Break) field in DocType 'Salary
 #. Structure Assignment'
 #: hrms/payroll/doctype/salary_structure_assignment/salary_structure_assignment.json
-#, fuzzy
 msgid "Base & Variable"
 msgstr "Bazė ir kintamasis"
 
 #. Label of the begin_check_in_before_shift_start_time (Int) field in DocType
 #. 'Shift Type'
 #: hrms/hr/doctype/shift_type/shift_type.json
-#, fuzzy
 msgid "Begin check-in before shift start time (in minutes)"
 msgstr "Pradėti registraciją prieš pamainos pradžią (minutėmis)"
 
 #: hrms/controllers/employee_reminders.py:75
-#, fuzzy
 msgid "Below is the list of upcoming holidays for you:"
-msgstr "Žemiau pateikiamas artėjančių švenčių sąrašas:"
+msgstr "Žemiau pateikiamas artėjančių švenčių sąrašas jums:"
 
 #: hrms/overrides/dashboard_overrides.py:35
 msgid "Benefit"
@@ -1807,7 +1779,6 @@ msgid "Billed Hours"
 msgstr "Apmokestintos valandos"
 
 #: hrms/hr/report/employee_hours_utilization_based_on_timesheet/employee_hours_utilization_based_on_timesheet.py:68
-#, fuzzy
 msgid "Billed Hours (B)"
 msgstr "Apmokėtos valandos (B)"
 
@@ -1980,7 +1951,7 @@ msgstr "Negalima sukurti darbo kandidato uždarytam darbo pasiūlymui"
 
 #: hrms/hr/doctype/appraisal_cycle/appraisal_cycle.py:201
 msgid "Cannot create or change transactions against an Appraisal Cycle with status {0}."
-msgstr "Negalima sukurti ar pakeisti sandorių, susijusių su vertinimo ciklu, kurio statusas yra {0}."
+msgstr "Negalima sukurti ar pakeisti sandorių, susijusių su vertinimo ciklu, kurio būsena yra {0}."
 
 #: hrms/hr/doctype/leave_application/leave_application.py:604
 msgid "Cannot find active Leave Period"
@@ -2027,11 +1998,11 @@ msgstr "Skundo priežastis"
 
 #: hrms/hr/doctype/attendance_request/attendance_request.py:105
 msgid "Changed the status from {0} to {1} and Status for Other Half to {2} via Attendance Request"
-msgstr "Pakeistas statusas iš {0} į {1} ir statusas kitai pusei į {2} per prašymą dėl dalyvavimo"
+msgstr "Pakeistas būsena iš {0} į {1} ir būsena kitai pusei į {2} per prašymą dėl dalyvavimo"
 
 #: hrms/hr/doctype/attendance_request/attendance_request.py:109
 msgid "Changed the status from {0} to {1} via Attendance Request"
-msgstr "Pakeistas statusas iš {0} į {1} per prašymą dėl dalyvavimo"
+msgstr "Pakeistas būsena iš {0} į {1} per prašymą dėl dalyvavimo"
 
 #: hrms/hr/doctype/leave_application/leave_application.js:187
 msgid "Changing '{0}' to {1}."
@@ -2652,21 +2623,18 @@ msgid "Dec"
 msgstr "Gruodis"
 
 #: hrms/hr/report/employee_exits/employee_exits.py:193
-#, fuzzy
 msgid "Decision Pending"
-msgstr "Sprendimas laukia"
+msgstr "Laukia sprendimo"
 
 #. Label of the declarations (Table) field in DocType 'Employee Tax Exemption
 #. Declaration'
 #: hrms/payroll/doctype/employee_tax_exemption_declaration/employee_tax_exemption_declaration.json
-#, fuzzy
 msgid "Declarations"
 msgstr "Deklaracijos"
 
 #. Label of the amount (Currency) field in DocType 'Employee Tax Exemption
 #. Declaration Category'
 #: hrms/payroll/doctype/employee_tax_exemption_declaration_category/employee_tax_exemption_declaration_category.json
-#, fuzzy
 msgid "Declared Amount"
 msgstr "Deklaruota suma"
 
@@ -2679,9 +2647,8 @@ msgstr "Deklaruota suma"
 #: hrms/payroll/doctype/additional_salary/additional_salary.json
 #: hrms/payroll/doctype/salary_component/salary_component.json
 #: hrms/payroll/doctype/salary_detail/salary_detail.json
-#, fuzzy
 msgid "Deduct Full Tax on Selected Payroll Date"
-msgstr "Atimti visą mokestį pasirinktą darbo užmokesčio mokėjimo dieną"
+msgstr "Atskaityti visą mokestį pasirinktą darbo užmokesčio mokėjimo dieną"
 
 #. Label of the deduct_tax_for_unsubmitted_tax_exemption_proof (Check) field in
 #. DocType 'Payroll Entry'
@@ -2689,7 +2656,6 @@ msgstr "Atimti visą mokestį pasirinktą darbo užmokesčio mokėjimo dieną"
 #. DocType 'Salary Slip'
 #: hrms/payroll/doctype/payroll_entry/payroll_entry.json
 #: hrms/payroll/doctype/salary_slip/salary_slip.json
-#, fuzzy
 msgid "Deduct Tax For Unsubmitted Tax Exemption Proof"
 msgstr "Atskaityti mokestį už nepateiktą mokesčių lengvatos įrodymą"
 
@@ -2888,7 +2854,6 @@ msgid "Do you want to update the Job Applicant {0} as {1} based on this intervie
 msgstr "Ar norite atnaujinti darbo kandidato {0} duomenis kaip {1} remiantis šio pokalbio rezultatais?"
 
 #: frontend/src/components/RequestActionSheet.vue:292
-#, fuzzy
 msgid "Document {0} failed!"
 msgstr "Dokumentas {0} nepavyko!"
 
@@ -3547,13 +3512,12 @@ msgstr "Darbuotojų įgūdžiai"
 #: hrms/payroll/report/income_tax_computation/income_tax_computation.js:41
 #, fuzzy
 msgid "Employee Status"
-msgstr "Darbuotojo statusas"
+msgstr "Darbuotojo būsena"
 
 #. Name of a DocType
 #. Label of a Link in the Tax & Benefits Workspace
 #: hrms/payroll/doctype/employee_tax_exemption_category/employee_tax_exemption_category.json
 #: hrms/payroll/workspace/tax_&_benefits/tax_&_benefits.json
-#, fuzzy
 msgid "Employee Tax Exemption Category"
 msgstr "Darbuotojo mokesčių lengvatos kategorija"
 
@@ -3562,13 +3526,11 @@ msgstr "Darbuotojo mokesčių lengvatos kategorija"
 #. Label of a shortcut in the Tax & Benefits Workspace
 #: hrms/payroll/doctype/employee_tax_exemption_declaration/employee_tax_exemption_declaration.json
 #: hrms/payroll/workspace/tax_&_benefits/tax_&_benefits.json
-#, fuzzy
 msgid "Employee Tax Exemption Declaration"
 msgstr "Darbuotojo mokesčių lengvatos deklaracija"
 
 #. Name of a DocType
 #: hrms/payroll/doctype/employee_tax_exemption_declaration_category/employee_tax_exemption_declaration_category.json
-#, fuzzy
 msgid "Employee Tax Exemption Declaration Category"
 msgstr "Darbuotojo mokesčių lengvatos deklaracijos kategorija"
 
@@ -3576,13 +3538,11 @@ msgstr "Darbuotojo mokesčių lengvatos deklaracijos kategorija"
 #. Label of a Link in the Tax & Benefits Workspace
 #: hrms/payroll/doctype/employee_tax_exemption_proof_submission/employee_tax_exemption_proof_submission.json
 #: hrms/payroll/workspace/tax_&_benefits/tax_&_benefits.json
-#, fuzzy
 msgid "Employee Tax Exemption Proof Submission"
 msgstr "Darbuotojo mokesčių lengvatos įrodymo pateikimas"
 
 #. Name of a DocType
 #: hrms/payroll/doctype/employee_tax_exemption_proof_submission_detail/employee_tax_exemption_proof_submission_detail.json
-#, fuzzy
 msgid "Employee Tax Exemption Proof Submission Detail"
 msgstr "Darbuotojo mokesčių lengvatos įrodymo pateikimo detalės"
 
@@ -3590,13 +3550,11 @@ msgstr "Darbuotojo mokesčių lengvatos įrodymo pateikimo detalės"
 #. Label of a Link in the Tax & Benefits Workspace
 #: hrms/payroll/doctype/employee_tax_exemption_sub_category/employee_tax_exemption_sub_category.json
 #: hrms/payroll/workspace/tax_&_benefits/tax_&_benefits.json
-#, fuzzy
 msgid "Employee Tax Exemption Sub Category"
-msgstr "Darbuotojo mokesčių lengvata, pakategorė"
+msgstr "Darbuotojo mokesčių lengvatos pakategorė"
 
 #. Name of a DocType
 #: hrms/hr/doctype/employee_training/employee_training.json
-#, fuzzy
 msgid "Employee Training"
 msgstr "Darbuotojų mokymas"
 
@@ -3624,12 +3582,10 @@ msgstr "Darbuotojo perkėlimas negali būti pateiktas anksčiau nei perkėlimo d
 
 #: hrms/hr/doctype/employee_advance/employee_advance.py:69
 #: hrms/hr/doctype/employee_advance/employee_advance.py:139
-#, fuzzy
 msgid "Employee advance account {0} should be of type {1}."
 msgstr "Darbuotojo avansinė sąskaita {0} turėtų būti tipo {1}."
 
 #: hrms/hr/doctype/hr_settings/hr_settings.js:27
-#, fuzzy
 msgid "Employee can be named by Employee ID if you assign one, or via Naming Series. Select your preference here."
 msgstr "Darbuotojas gali būti pavadintas pagal darbuotojo ID, jei jį priskiriate, arba pagal pavadinimų seriją. Čia pasirinkite pageidaujamą variantą."
 
@@ -3661,9 +3617,8 @@ msgid "Employee {0} : {1}"
 msgstr "Darbuotojas {0} : {1}"
 
 #: hrms/hr/doctype/attendance_request/attendance_request.py:67
-#, fuzzy
 msgid "Employee {0} already has an Attendance Request {1} that overlaps with this period"
-msgstr "Darbuotojas {0} jau turi lankomumo prašymą {1}, kuris sutampa su šiuo laikotarpiu."
+msgstr "Darbuotojas {0} jau turi lankomumo prašymą {1}, kuris sutampa su šiuo laikotarpiu"
 
 #: hrms/hr/doctype/shift_assignment/shift_assignment.py:140
 msgid "Employee {0} already has an active Shift {1}: {2} that overlaps within this period."
@@ -3735,7 +3690,6 @@ msgid "Employees on Half Day HTML"
 msgstr "Darbuotojai, dirbantys pusę darbo dienos HTML"
 
 #: hrms/hr/doctype/hr_settings/hr_settings.py:81
-#, fuzzy
 msgid "Employees will miss holiday reminders from {} until {}. <br> Do you want to proceed with this change?"
 msgstr "Darbuotojai praleis atostogų priminimus nuo {} iki {}. <br> Ar norite tęsti šį pakeitimą?"
 
@@ -3774,136 +3728,114 @@ msgstr "Darbuotojai, dirbantys švenčių dienomis"
 #: hrms/hr/doctype/shift_assignment_tool/shift_assignment_tool.json
 #: hrms/payroll/doctype/bulk_salary_structure_assignment/bulk_salary_structure_assignment.json
 #: hrms/setup.py:186 hrms/templates/generators/job_opening.html:141
-#, fuzzy
 msgid "Employment Type"
 msgstr "Darbo pobūdis"
 
 #. Label of the enable_auto_attendance (Check) field in DocType 'Shift Type'
 #: hrms/hr/doctype/shift_type/shift_type.json
-#, fuzzy
 msgid "Enable Auto Attendance"
 msgstr "Įjungti automatinį lankomumą"
 
 #. Label of the enable_early_exit_marking (Check) field in DocType 'Shift Type'
 #: hrms/hr/doctype/shift_type/shift_type.json
-#, fuzzy
 msgid "Enable Early Exit Marking"
 msgstr "Įjungti ankstyvo išėjimo žymėjimą"
 
 #. Label of the enable_late_entry_marking (Check) field in DocType 'Shift Type'
 #: hrms/hr/doctype/shift_type/shift_type.json
-#, fuzzy
 msgid "Enable Late Entry Marking"
-msgstr "Įjungti vėlyvo įėjimo žymėjimą"
+msgstr "Įjungti vėlyvo atvykimo žymėjimą"
 
 #: frontend/src/views/AppSettings.vue:25
-#, fuzzy
 msgid "Enable Push Notifications"
-msgstr "Įjungti stumiamuosius pranešimus"
+msgstr "Įjungti push pranešimus"
 
 #. Description of the 'Apply for Public Holiday' (Check) field in DocType
 #. 'Overtime Type'
 #: hrms/hr/doctype/overtime_type/overtime_type.json
-#, fuzzy
 msgid "Enable this to use a specific multiplier for public holidays. If unchecked, the standard multiplier will be used instead."
 msgstr "Įjunkite šią parinktį, jei norite naudoti konkretų daugiklį valstybinių švenčių dienoms. Jei ši parinktis nepažymėta, bus naudojamas standartinis daugiklis."
 
 #. Description of the 'Apply for Weekend' (Check) field in DocType 'Overtime
 #. Type'
 #: hrms/hr/doctype/overtime_type/overtime_type.json
-#, fuzzy
 msgid "Enable this to use a specific multiplier for weekends. If unchecked, the standard multiplier will be used instead."
 msgstr "Įjunkite šią funkciją, jei norite naudoti konkretų daugiklį savaitgaliais. Jei nepažymėta, bus naudojamas standartinis daugiklis."
 
 #. Description of the 'Flexible Benefit' (Check) field in DocType 'Employee
 #. Benefit Ledger'
 #: hrms/payroll/doctype/employee_benefit_ledger/employee_benefit_ledger.json
-#, fuzzy
 msgid "Enabled only for Employee Benefit components from Salary Structure Assignment"
-msgstr "Įjungta tik darbuotojų išmokų komponentams iš darbo užmokesčio struktūros priskyrimo"
+msgstr "Naudojama tik darbuotojų išmokų komponentams iš darbo užmokesčio struktūros priskyrimo"
 
 #: frontend/src/views/AppSettings.vue:40
-#, fuzzy
 msgid "Enabling Push Notifications..."
-msgstr "Įjungiama stumiamųjų pranešimų funkcija..."
+msgstr "Įjungiama push pranešimų funkcija..."
 
 #. Label of the encashment (Section Break) field in DocType 'Leave Type'
 #: hrms/hr/doctype/leave_type/leave_type.json
-#, fuzzy
 msgid "Encashment"
-msgstr "Išgryninimas"
+msgstr "Išmokėjimas"
 
 #. Label of the encashment_amount (Currency) field in DocType 'Leave
 #. Encashment'
 #: hrms/hr/doctype/leave_encashment/leave_encashment.json
-#, fuzzy
 msgid "Encashment Amount"
 msgstr "Išmokėjimo suma"
 
 #. Label of the encashment_days (Float) field in DocType 'Leave Encashment'
 #: hrms/hr/doctype/leave_encashment/leave_encashment.json
-#, fuzzy
 msgid "Encashment Days"
 msgstr "Išmokėjimo dienos"
 
 #: hrms/hr/doctype/leave_encashment/leave_encashment.py:130
-#, fuzzy
 msgid "Encashment Days cannot exceed {0} {1} as per Leave Type settings"
-msgstr "Išmokėjimo dienos negali viršyti {0} {1}, kaip nurodyta atostogų tipo nustatymuose."
+msgstr "Išmokėjimo dienos negali viršyti {0} {1}, kaip nurodyta atostogų tipo nustatymuose"
 
 #: hrms/hr/doctype/leave_encashment/leave_encashment.py:120
-#, fuzzy
 msgid "Encashment Limit Applied"
 msgstr "Taikomas išmokėjimo limitas"
 
 #. Label of the encrypt_salary_slips_in_emails (Check) field in DocType
 #. 'Payroll Settings'
 #: hrms/payroll/doctype/payroll_settings/payroll_settings.json
-#, fuzzy
 msgid "Encrypt Salary Slips in Emails"
 msgstr "Šifruoti atlyginimo lapelius elektroniniuose laiškuose"
 
 #: frontend/src/views/attendance/ShiftAssignmentForm.vue:75
-#, fuzzy
 msgid "End Date cannot be before Start Date"
-msgstr "Pabaigos data negali būti ankstesnė už pradžios datą."
+msgstr "Pabaigos data negali būti ankstesnė už pradžios datą"
 
 #: hrms/payroll/doctype/payroll_entry/payroll_entry.py:241
-#, fuzzy
 msgid "End date: {0}"
 msgstr "Pabaigos data: {0}"
 
 #: hrms/hr/doctype/training_event/training_event.py:26
-#, fuzzy
 msgid "End time cannot be before start time"
-msgstr "Baigimo laikas negali būti ankstesnis už pradžios laiką."
+msgstr "Baigimo laikas negali būti ankstesnis už pradžios laiką"
 
+# check source code, seems like like an order, or is it a button text?
 #: hrms/hr/doctype/job_applicant/job_applicant.js:86
-#, fuzzy
 msgid "Enter Interview Round"
-msgstr "Įvesti pokalbio etapą"
+msgstr "Įveskite interviu etapą"
 
 #: hrms/hr/doctype/leave_adjustment/leave_adjustment.py:48
-#, fuzzy
 msgid "Enter a non-zero value to adjust."
 msgstr "Įveskite nulinę vertę, kad galėtumėte koreguoti."
 
 #: hrms/hr/doctype/hr_settings/hr_settings.js:34
-#, fuzzy
 msgid "Enter the Standard Working Hours for a normal work day. These hours will be used in calculations of reports such as Employee Hours Utilization and Project Profitability analysis."
 msgstr "Įveskite įprastos darbo dienos standartines darbo valandas. Šios valandos bus naudojamos skaičiuojant ataskaitas, pvz., darbuotojų darbo valandų panaudojimo ir projekto pelningumo analizę."
 
 #. Description of the 'Days to Reverse' (Float) field in DocType 'Payroll
 #. Correction'
 #: hrms/payroll/doctype/payroll_correction/payroll_correction.json
-#, fuzzy
 msgid "Enter the number of Leave Without Pay (LWP) days you want to reverse. This value cannot exceed the total LWP days recorded for the selected month"
-msgstr "Įveskite nemokamų atostogų (LWP) dienų skaičių, kurį norite atšaukti. Ši vertė negali viršyti bendro LWP dienų skaičiaus, užregistruoto pasirinktam mėnesiui."
+msgstr "Įveskite nemokamų atostogų (LWP) dienų skaičių, kurį norite atšaukti. Ši vertė negali viršyti bendro LWP dienų skaičiaus, užregistruoto pasirinktam mėnesiui"
 
 #: hrms/hr/doctype/leave_allocation/leave_allocation.js:259
-#, fuzzy
 msgid "Enter the number of leaves you want to allocate for the period."
-msgstr "Įveskite lapų skaičių, kurį norite skirti šiam laikotarpiui."
+msgstr "Įveskite atostogų skaičių, kurį norite skirti šiam laikotarpiui."
 
 #. Description of the 'Flexible Benefits' (Table) field in DocType 'Salary
 #. Structure'
@@ -4009,7 +3941,7 @@ msgstr "Renginio pavadinimas"
 #: hrms/hr/doctype/training_event/training_event.json
 #, fuzzy
 msgid "Event Status"
-msgstr "Renginio statusas"
+msgstr "Renginio būsena"
 
 #. Option for the 'Frequency' (Select) field in DocType 'Shift Schedule'
 #: hrms/hr/doctype/shift_schedule/shift_schedule.json
@@ -4430,7 +4362,7 @@ msgstr "Nepavyko pateikti kai kurių atostogų politikos užduočių:"
 #: hrms/hr/doctype/interview/interview.py:208
 #, fuzzy
 msgid "Failed to update the Job Applicant status"
-msgstr "Nepavyko atnaujinti darbo kandidato statuso."
+msgstr "Nepavyko atnaujinti darbo kandidato būsenos."
 
 #: hrms/public/js/utils/index.js:143
 #, fuzzy
@@ -4546,38 +4478,32 @@ msgid "Fetching Shift"
 msgstr "Gaunama pamaina"
 
 #: hrms/public/js/utils/index.js:193
-#, fuzzy
 msgid "Fetching your geolocation"
-msgstr "Geografinės vietos nustatymas"
+msgstr "Nustatoma geografinė vieta"
 
 #: frontend/src/components/FilePreviewModal.vue:4
-#, fuzzy
 msgid "File Preview"
 msgstr "Failo peržiūra"
 
 #: hrms/hr/doctype/leave_application/leave_application.js:99
 #: hrms/hr/doctype/leave_encashment/leave_encashment.js:50
-#, fuzzy
 msgid "Fill the form and save it"
-msgstr "Užpildykite formą ir išsaugokite ją."
+msgstr "Užpildykite formą ir išsaugokite ją"
 
 #. Option for the 'Status' (Select) field in DocType 'Job Requisition'
 #: hrms/hr/doctype/job_requisition/job_requisition.json
-#, fuzzy
 msgid "Filled"
 msgstr "Užpildyta"
 
 #. Label of the section_break_17 (Section Break) field in DocType 'Payroll
 #. Entry'
 #: hrms/payroll/doctype/payroll_entry/payroll_entry.json
-#, fuzzy
 msgid "Filter Employees"
 msgstr "Filtruoti darbuotojus"
 
 #. Label of the filter_by_shift (Check) field in DocType 'Employee Attendance
 #. Tool'
 #: hrms/hr/doctype/employee_attendance_tool/employee_attendance_tool.json
-#, fuzzy
 msgid "Filter by Shift"
 msgstr "Filtruoti pagal pamainą"
 
@@ -4585,7 +4511,6 @@ msgstr "Filtruoti pagal pamainą"
 #: hrms/hr/doctype/exit_interview/exit_interview.json
 #: hrms/hr/report/employee_exits/employee_exits.js:57
 #: hrms/hr/report/employee_exits/employee_exits.py:52
-#, fuzzy
 msgid "Final Decision"
 msgstr "Galutinis sprendimas"
 
@@ -4593,37 +4518,31 @@ msgstr "Galutinis sprendimas"
 #: hrms/hr/doctype/appraisal/appraisal.json
 #: hrms/hr/report/appraisal_overview/appraisal_overview.py:57
 #: hrms/hr/report/appraisal_overview/appraisal_overview.py:125
-#, fuzzy
 msgid "Final Score"
 msgstr "Galutinis rezultatas"
 
 #. Label of the final_score_formula (Code) field in DocType 'Appraisal Cycle'
 #: hrms/hr/doctype/appraisal_cycle/appraisal_cycle.json
-#, fuzzy
 msgid "Final Score Formula"
 msgstr "Galutinio rezultato formulė"
 
 #. Option for the 'Working Hours Calculation Based On' (Select) field in
 #. DocType 'Shift Type'
 #: hrms/hr/doctype/shift_type/shift_type.json
-#, fuzzy
 msgid "First Check-in and Last Check-out"
 msgstr "Pirmasis atvykimas ir paskutinis išvykimas"
 
 #. Option for the 'Allocate on Day' (Select) field in DocType 'Leave Type'
 #: hrms/hr/doctype/leave_type/leave_type.json
-#, fuzzy
 msgid "First Day"
 msgstr "Pirmoji diena"
 
 #. Label of the first_name (Data) field in DocType 'Employee Referral'
 #: hrms/hr/doctype/employee_referral/employee_referral.json
-#, fuzzy
 msgid "First Name "
-msgstr "Vardas"
+msgstr "Vardas "
 
 #: hrms/payroll/doctype/payroll_entry/payroll_entry.py:1520
-#, fuzzy
 msgid "Fiscal Year {0} not found"
 msgstr "Finansiniai metai {0} nerasti"
 
@@ -4656,34 +4575,28 @@ msgstr "Lanksti išmoka"
 #: hrms/payroll/doctype/salary_component/salary_component.json
 #: hrms/payroll/doctype/salary_structure/salary_structure.json
 #: hrms/payroll/doctype/salary_structure_assignment/salary_structure_assignment.json
-#, fuzzy
 msgid "Flexible Benefits"
-msgstr "Lankstūs privalumai"
+msgstr "Lanksčios išmokos"
 
 #: hrms/payroll/report/accrued_earnings_report/accrued_earnings_report.py:64
-#, fuzzy
 msgid "Flexible Component"
 msgstr "Lankstus komponentas"
 
 #. Option for the 'Mode of Travel' (Select) field in DocType 'Travel Itinerary'
 #: hrms/hr/doctype/travel_itinerary/travel_itinerary.json
-#, fuzzy
 msgid "Flight"
 msgstr "Skrydis"
 
 #: hrms/hr/report/employee_exits/employee_exits.js:73
-#, fuzzy
 msgid "FnF Pending"
-msgstr "FnF Laukiama"
+msgstr "Laukia FnF"
 
 #. Label of the follow_via_email (Check) field in DocType 'Leave Application'
 #: hrms/hr/doctype/leave_application/leave_application.json
-#, fuzzy
 msgid "Follow via Email"
 msgstr "Sekti el. paštu"
 
 #: hrms/setup.py:333
-#, fuzzy
 msgid "Food"
 msgstr "Maistas"
 
@@ -4873,12 +4786,10 @@ msgstr "Geografinės vietos nustatymo klaida"
 
 #: frontend/src/components/CheckInPanel.vue:143
 #: hrms/public/js/utils/index.js:185
-#, fuzzy
 msgid "Geolocation is not supported by your current browser"
 msgstr "Jūsų naršyklė nepalaiko geografinės vietos nustatymo funkcijos."
 
 #: hrms/payroll/doctype/employee_tax_exemption_proof_submission/employee_tax_exemption_proof_submission.js:47
-#, fuzzy
 msgid "Get Details From Declaration"
 msgstr "Gauti informaciją iš deklaracijos"
 
@@ -4890,13 +4801,11 @@ msgstr "Gauti informaciją iš deklaracijos"
 #: hrms/hr/doctype/appraisal_cycle/appraisal_cycle.json
 #: hrms/hr/doctype/employee_attendance_tool/employee_attendance_tool.json
 #: hrms/payroll/doctype/payroll_entry/payroll_entry.js:69
-#, fuzzy
 msgid "Get Employees"
 msgstr "Gauti darbuotojus"
 
 #. Label of the get_job_requisitions (Button) field in DocType 'Staffing Plan'
 #: hrms/hr/doctype/staffing_plan/staffing_plan.json
-#, fuzzy
 msgid "Get Job Requisitions"
 msgstr "Gauti darbo prašymus"
 
@@ -5335,7 +5244,7 @@ msgstr "Jei pažymėta, visa suma bus atskaityta iš apmokestinamųjų pajamų p
 #. Tax Slab'
 #: hrms/payroll/doctype/income_tax_slab/income_tax_slab.json
 msgid "If enabled, Tax Exemption Declaration will be considered for income tax calculation."
-msgstr "Jei pažymėta, pajamų mokesčio apskaičiavimui bus taikoma mokesčių lengvata"
+msgstr "Jei pažymėta, pajamų mokesčio apskaičiavimui bus taikoma mokesčių lengvata."
 
 #. Description of the 'Mark Auto Attendance on Holidays' (Check) field in
 #. DocType 'Shift Type'
@@ -5356,7 +5265,7 @@ msgstr "Jei įjungta, atskaito mokėjimo dienas už neatvykimą į darbą šven�
 #: hrms/payroll/doctype/salary_component/salary_component.json
 #: hrms/payroll/doctype/salary_detail/salary_detail.json
 msgid "If enabled, the amount will be excluded from accounting entries during Journal Entry creation."
-msgstr "Jei pažymėta, suma bus neįtraukta į apskaitos įrašus kuriant žurnalo įrašą"
+msgstr "Jei pažymėta, suma bus neįtraukta į apskaitos įrašus kuriant žurnalo įrašą."
 
 #. Description of the 'Variable Based On Taxable Salary' (Check) field in
 #. DocType 'Salary Component'
@@ -5398,13 +5307,13 @@ msgstr "Jei pažymėta, šis komponentas leidžia kaupti sumas, nepridedant jų 
 #. Component'
 #: hrms/payroll/doctype/salary_component/salary_component.json
 msgid "If enabled, this component will be included in arrear calculations"
-msgstr "Jei pažymėta, šis komponentas bus įtrauktas į įsiskolinimo skaičiavimus."
+msgstr "Jei pažymėta, šis komponentas bus įtrauktas į įsiskolinimo skaičiavimus"
 
 #. Description of the 'Include holidays in Total no. of Working Days' (Check)
 #. field in DocType 'Payroll Settings'
 #: hrms/payroll/doctype/payroll_settings/payroll_settings.json
 msgid "If enabled, total no. of working days will include holidays, and this will reduce the value of Salary Per Day"
-msgstr "Jei pažymėta, bendras darbo dienų skaičius apims ir šventines dienas, o tai sumažins vienos dienos darbo užmokesčio vertę."
+msgstr "Jei pažymėta, bendras darbo dienų skaičius apims ir šventines dienas, o tai sumažins vienos dienos darbo užmokesčio vertę"
 
 #. Description of the 'Max Benefit Amount (Yearly)' (Currency) field in DocType
 #. 'Salary Component'
@@ -5462,28 +5371,24 @@ msgid "Incentive Amount"
 msgstr "Paskatinimo suma"
 
 #: hrms/hr/report/monthly_attendance_sheet/monthly_attendance_sheet.js:102
-#, fuzzy
 msgid "Include Company Descendants"
 msgstr "Įtraukti įmonės palikuonis"
 
 #. Label of the include_holidays (Check) field in DocType 'Attendance Request'
 #: hrms/hr/doctype/attendance_request/attendance_request.json
-#, fuzzy
 msgid "Include Holidays"
 msgstr "Įtraukti šventines dienas"
 
 #. Label of the include_holidays_in_total_working_days (Check) field in DocType
 #. 'Payroll Settings'
 #: hrms/payroll/doctype/payroll_settings/payroll_settings.json
-#, fuzzy
 msgid "Include holidays in Total no. of Working Days"
 msgstr "Įtraukti šventines dienas į bendrą darbo dienų skaičių."
 
 #. Label of the include_holiday (Check) field in DocType 'Leave Type'
 #: hrms/hr/doctype/leave_type/leave_type.json
-#, fuzzy
 msgid "Include holidays within leaves as leaves"
-msgstr "Įtraukti atostogas į atostogas kaip atostogas."
+msgstr "Įtraukti šventines dienas į atostogas kaip atostogas"
 
 #. Label of the income_source_details_section (Section Break) field in DocType
 #. 'Employee Other Income'
@@ -5498,12 +5403,10 @@ msgstr "Pajamų mokesčio suma"
 #. Label of the income_tax_calculation_breakup_section (Tab Break) field in
 #. DocType 'Salary Slip'
 #: hrms/payroll/doctype/salary_slip/salary_slip.json
-#, fuzzy
 msgid "Income Tax Breakup"
 msgstr "Pajamų mokesčio suskirstymas"
 
 #: hrms/payroll/report/income_tax_deductions/income_tax_deductions.py:45
-#, fuzzy
 msgid "Income Tax Component"
 msgstr "Pajamų mokesčio komponentas"
 
@@ -5514,16 +5417,14 @@ msgstr "Pajamų mokesčio komponentas"
 #: hrms/payroll/report/income_tax_computation/income_tax_computation.json
 #: hrms/payroll/workspace/payroll/payroll.json
 #: hrms/payroll/workspace/tax_&_benefits/tax_&_benefits.json
-#, fuzzy
 msgid "Income Tax Computation"
 msgstr "Pajamų mokesčio apskaičiavimas"
 
 #. Label of the income_tax_deducted_till_date (Currency) field in DocType
 #. 'Salary Slip'
 #: hrms/payroll/doctype/salary_slip/salary_slip.json
-#, fuzzy
 msgid "Income Tax Deducted Till Date"
-msgstr "Iki šiol išskaičiuotas pajamų mokestis"
+msgstr "Pajamų mokestis išskaičiuotas iki šios dienos"
 
 #. Name of a report
 #. Label of a Link in the Payroll Workspace
@@ -5581,7 +5482,6 @@ msgstr "Pajamų mokesčio tarifas: {0} yra išjungtas"
 #. Label of the income_from_other_sources (Currency) field in DocType 'Salary
 #. Slip'
 #: hrms/payroll/doctype/salary_slip/salary_slip.json
-#, fuzzy
 msgid "Income from Other Sources"
 msgstr "Pajamos iš kitų šaltinių"
 
@@ -5599,58 +5499,48 @@ msgstr "Nurodo atostogų likučio metu negali būti išmokėtas atostogų skaič
 
 #. Option for the 'Type' (Select) field in DocType 'Vehicle Service'
 #: hrms/hr/doctype/vehicle_service/vehicle_service.json
-#, fuzzy
 msgid "Inspection"
 msgstr "Patikrinimas"
 
 #: frontend/src/components/InstallPrompt.vue:13
-#, fuzzy
 msgid "Install"
 msgstr "Įdiegti"
 
 #: frontend/src/components/InstallPrompt.vue:5
 #: frontend/src/components/InstallPrompt.vue:28
-#, fuzzy
 msgid "Install Frappe HR"
 msgstr "Įdiegti „Frappe HR“"
 
 #: hrms/hr/doctype/leave_application/leave_application.py:435
-#, fuzzy
 msgid "Insufficient Balance"
 msgstr "Nepakankamas balansas"
 
 #: hrms/hr/doctype/leave_application/leave_application.py:433
-#, fuzzy
 msgid "Insufficient leave balance for Leave Type {0}"
 msgstr "Nepakankamas atostogų likutis atostogų tipui {0}"
 
 #. Label of the interest_amount (Currency) field in DocType 'Salary Slip Loan'
 #: hrms/payroll/doctype/salary_slip_loan/salary_slip_loan.json
-#, fuzzy
 msgid "Interest Amount"
 msgstr "Palūkanų suma"
 
 #. Label of the interest_income_account (Link) field in DocType 'Salary Slip
 #. Loan'
 #: hrms/payroll/doctype/salary_slip_loan/salary_slip_loan.json
-#, fuzzy
 msgid "Interest Income Account"
 msgstr "Palūkanų pajamų sąskaita"
 
 #: hrms/setup.py:395
-#, fuzzy
 msgid "Intern"
 msgstr "Praktikantas"
 
 #. Option for the 'Travel Type' (Select) field in DocType 'Travel Request'
 #: hrms/hr/doctype/travel_request/travel_request.json
-#, fuzzy
 msgid "International"
 msgstr "Tarptautinis"
 
 #. Option for the 'Type' (Select) field in DocType 'Training Event'
 #: hrms/hr/doctype/training_event/training_event.json
-#, fuzzy
 msgid "Internet"
 msgstr "Internetas"
 
@@ -5662,20 +5552,17 @@ msgstr "Internetas"
 #: hrms/hr/doctype/job_applicant/job_applicant.js:25
 #: hrms/hr/doctype/job_applicant/job_applicant_dashboard.html:7
 #: hrms/hr/workspace/recruitment/recruitment.json
-#, fuzzy
 msgid "Interview"
 msgstr "Interviu"
 
 #. Name of a DocType
 #: hrms/hr/doctype/interview_detail/interview_detail.json
-#, fuzzy
 msgid "Interview Detail"
 msgstr "Interviu detalės"
 
 #. Label of the interview_summary_section (Section Break) field in DocType
 #. 'Exit Interview'
 #: hrms/hr/doctype/exit_interview/exit_interview.json
-#, fuzzy
 msgid "Interview Details"
 msgstr "Interviu detalės"
 
@@ -5684,7 +5571,6 @@ msgstr "Interviu detalės"
 #: hrms/hr/doctype/interview_feedback/interview_feedback.json
 #: hrms/hr/doctype/interview_feedback/interview_feedback.py:40
 #: hrms/hr/workspace/recruitment/recruitment.json
-#, fuzzy
 msgid "Interview Feedback"
 msgstr "Interviu atsiliepimai"
 
@@ -5693,17 +5579,14 @@ msgstr "Interviu atsiliepimai"
 #: hrms/hr/doctype/interview/test_interview.py:323
 #: hrms/hr/doctype/interview/test_interview.py:330 hrms/setup.py:467
 #: hrms/setup.py:469 hrms/setup.py:502
-#, fuzzy
 msgid "Interview Feedback Reminder"
 msgstr "Interviu atsiliepimų priminimas"
 
 #: hrms/hr/doctype/interview/interview.py:343
-#, fuzzy
 msgid "Interview Feedback {0} submitted successfully"
 msgstr "Interviu atsiliepimas {0} sėkmingai pateiktas"
 
 #: hrms/hr/doctype/interview/interview.py:87
-#, fuzzy
 msgid "Interview Not Rescheduled"
 msgstr "Interviu neperkelta"
 
@@ -5712,19 +5595,16 @@ msgstr "Interviu neperkelta"
 #: hrms/hr/doctype/interview/test_interview.py:307
 #: hrms/hr/doctype/interview/test_interview.py:329 hrms/setup.py:455
 #: hrms/setup.py:457 hrms/setup.py:498
-#, fuzzy
 msgid "Interview Reminder"
 msgstr "Interviu priminimas"
 
 #. Label of the interview_reminder_template (Link) field in DocType 'HR
 #. Settings'
 #: hrms/hr/doctype/hr_settings/hr_settings.json
-#, fuzzy
 msgid "Interview Reminder Notification Template"
 msgstr "Interviu priminimo pranešimo šablonas"
 
 #: hrms/hr/doctype/interview/interview.py:122
-#, fuzzy
 msgid "Interview Rescheduled successfully"
 msgstr "Interviu perkelta sėkmingai"
 
@@ -5737,30 +5617,25 @@ msgstr "Interviu perkelta sėkmingai"
 #: hrms/hr/doctype/interview_round/interview_round.json
 #: hrms/hr/doctype/job_applicant/job_applicant_dashboard.html:8
 #: hrms/hr/workspace/recruitment/recruitment.json
-#, fuzzy
 msgid "Interview Round"
 msgstr "Interviu etapas"
 
 #: hrms/hr/doctype/job_applicant/job_applicant.py:72
-#, fuzzy
 msgid "Interview Round {0} is only applicable for the Designation {1}"
 msgstr "Interviu etapas {0} taikomas tik pareigybei {1}"
 
 #: hrms/hr/doctype/interview/interview.py:52
-#, fuzzy
 msgid "Interview Round {0} is only for Designation {1}. Job Applicant has applied for the role {2}"
 msgstr "Interviu etapas {0} skirtas tik pareigybei {1}. Darbo ieškantis asmuo pateikė paraišką pareigybei {2}."
 
 #: hrms/hr/doctype/interview_feedback/interview_feedback.py:40
-#, fuzzy
 msgid "Interview Scheduled Date"
 msgstr "Interviu numatyta data"
 
 #: hrms/hr/report/employee_exits/employee_exits.js:51
 #: hrms/hr/report/employee_exits/employee_exits.py:46
-#, fuzzy
 msgid "Interview Status"
-msgstr "Interviu statusas"
+msgstr "Interviu būsena"
 
 #. Label of the interview_summary (Text Editor) field in DocType 'Exit
 #. Interview'
@@ -5768,7 +5643,6 @@ msgstr "Interviu statusas"
 #: hrms/hr/doctype/exit_interview/exit_interview.json
 #: hrms/hr/doctype/interview/interview.json
 #: hrms/hr/doctype/job_applicant/job_applicant.js:77
-#, fuzzy
 msgid "Interview Summary"
 msgstr "Interviu santrauka"
 
@@ -5778,14 +5652,12 @@ msgstr "Interviu santrauka"
 #: hrms/hr/doctype/interview_round/interview_round.json
 #: hrms/hr/doctype/interview_type/interview_type.json
 #: hrms/hr/workspace/recruitment/recruitment.json
-#, fuzzy
 msgid "Interview Type"
 msgstr "Interviu tipas"
 
 #: hrms/hr/doctype/interview/interview.py:103
-#, fuzzy
 msgid "Interview: {0} Rescheduled"
-msgstr "Interviu: {0} Perkelta"
+msgstr "Interviu: {0} perkeltas"
 
 #. Name of a role
 #. Label of the interviewer (Link) field in DocType 'Interview Detail'
@@ -5796,7 +5668,6 @@ msgstr "Interviu: {0} Perkelta"
 #: hrms/hr/doctype/interview_feedback/interview_feedback.json
 #: hrms/hr/doctype/interview_round/interview_round.json
 #: hrms/hr/doctype/interviewer/interviewer.json
-#, fuzzy
 msgid "Interviewer"
 msgstr "Interviu vedėjas"
 
@@ -5808,19 +5679,16 @@ msgstr "Interviu vedėjas"
 #: hrms/hr/doctype/exit_interview/exit_interview.json
 #: hrms/hr/doctype/interview/interview.json
 #: hrms/hr/doctype/interview_round/interview_round.json
-#, fuzzy
 msgid "Interviewers"
 msgstr "Interviu vedėjai"
 
 #. Label of a Card Break in the Recruitment Workspace
 #: hrms/hr/workspace/recruitment/recruitment.json
-#, fuzzy
 msgid "Interviews"
 msgstr "Interviu"
 
 #. Label of a quick_list in the Recruitment Workspace
 #: hrms/hr/workspace/recruitment/recruitment.json
-#, fuzzy
 msgid "Interviews (This Week)"
 msgstr "Interviu (šią savaitę)"
 
@@ -5847,7 +5715,6 @@ msgid "Invalid Benefit Amounts"
 msgstr "Neteisėtos išmokos sumos"
 
 #: hrms/hr/doctype/leave_allocation/leave_allocation.py:326
-#, fuzzy
 msgid "Invalid Dates"
 msgstr "Neteisingos datos"
 
@@ -6001,9 +5868,8 @@ msgstr "Ar kartojasi papildomas atlyginimas"
 #. Label of the is_salary_released (Check) field in DocType 'Salary Withholding
 #. Cycle'
 #: hrms/payroll/doctype/salary_withholding_cycle/salary_withholding_cycle.json
-#, fuzzy
 msgid "Is Salary Released"
-msgstr "Ar atlyginimas išmokėtas?"
+msgstr "Atlyginimas išmokėtas"
 
 #. Label of the is_salary_withheld (Check) field in DocType 'Payroll Employee
 #. Detail'
@@ -6117,7 +5983,7 @@ msgstr "Darbo pasiūlymo sąlygos"
 #: hrms/hr/report/recruitment_analytics/recruitment_analytics.py:61
 #, fuzzy
 msgid "Job Offer status"
-msgstr "Darbo pasiūlymo statusas"
+msgstr "Darbo pasiūlymo būsena"
 
 #: hrms/hr/doctype/job_offer/job_offer.py:24
 #, fuzzy
@@ -6628,14 +6494,14 @@ msgstr "Atostogų politika: {0} jau priskirta darbuotojui {1} laikotarpiui nuo {
 #: hrms/setup.py:441 hrms/setup.py:443 hrms/setup.py:495
 #, fuzzy
 msgid "Leave Status Notification"
-msgstr "Pranešimas apie atostogų statusą"
+msgstr "Pranešimas apie atostogų būseną"
 
 #. Label of the leave_status_notification_template (Link) field in DocType 'HR
 #. Settings'
 #: hrms/hr/doctype/hr_settings/hr_settings.json
 #, fuzzy
 msgid "Leave Status Notification Template"
-msgstr "Atostogų statuso pranešimo šablonas"
+msgstr "Atostogų būsenos pranešimo šablonas"
 
 #. Label of the leave_type (Link) field in DocType 'Attendance'
 #. Label of the leave_type (Link) field in DocType 'Compensatory Leave Request'
@@ -6669,63 +6535,52 @@ msgstr "Atostogų statuso pranešimo šablonas"
 #: hrms/hr/report/leave_ledger/leave_ledger.py:65
 #: hrms/hr/workspace/leaves/leaves.json
 #: hrms/payroll/doctype/salary_slip_leave/salary_slip_leave.json
-#, fuzzy
 msgid "Leave Type"
 msgstr "Atostogų tipas"
 
 #. Label of the leave_type_name (Data) field in DocType 'Leave Type'
 #: hrms/hr/doctype/leave_type/leave_type.json
-#, fuzzy
 msgid "Leave Type Name"
 msgstr "Atostogų tipo pavadinimas"
 
 #: hrms/hr/doctype/leave_type/leave_type.py:34
-#, fuzzy
 msgid "Leave Type can either be compensatory or earned leave."
 msgstr "Atostogų tipas gali būti kompensacinės arba uždirbtos atostogos."
 
 #: hrms/hr/doctype/leave_type/leave_type.py:46
-#, fuzzy
 msgid "Leave Type can either be without pay or partial pay"
-msgstr "Atostogų tipas gali būti be darbo užmokesčio arba su daliniu darbo užmokesčiu."
+msgstr "Atostogų tipas gali būti be darbo užmokesčio arba su daliniu darbo užmokesčiu"
 
 #: hrms/hr/doctype/compensatory_leave_request/compensatory_leave_request.py:34
-#, fuzzy
 msgid "Leave Type is mandatory"
 msgstr "Atostogų tipas yra privalomas"
 
 #: hrms/hr/doctype/leave_allocation/leave_allocation.py:185
-#, fuzzy
 msgid "Leave Type {0} cannot be allocated since it is leave without pay"
-msgstr "Atostogų tipas {0} negali būti priskirtas, nes tai yra nemokamos atostogos."
+msgstr "Atostogų tipas {0} negali būti priskirtas, nes tai yra nemokamos atostogos"
 
 #: hrms/hr/doctype/leave_allocation/leave_allocation.py:557
-#, fuzzy
 msgid "Leave Type {0} cannot be carry-forwarded"
-msgstr "Atostogų tipas {0} negali būti perkeltas į kitą laikotarpį."
+msgstr "Atostogų tipas {0} negali būti perkeltas į kitą laikotarpį"
 
 #: hrms/hr/doctype/leave_encashment/leave_encashment.py:96
-#, fuzzy
 msgid "Leave Type {0} is not encashable"
-msgstr "Atostogų tipas {0} nėra išmokamas pinigais."
+msgstr "Atostogų tipas {0} nėra išmokamas pinigais"
 
 #. Label of the leave_without_pay (Float) field in DocType 'Salary Slip'
 #: hrms/payroll/doctype/salary_slip/salary_slip.json
 #: hrms/payroll/report/salary_register/salary_register.py:179 hrms/setup.py:381
 #: hrms/setup.py:382
-#, fuzzy
 msgid "Leave Without Pay"
 msgstr "Atostogos be darbo užmokesčio"
 
 #: hrms/payroll/doctype/salary_slip/salary_slip.py:509
-#, fuzzy
 msgid "Leave Without Pay does not match with approved {} records"
 msgstr "Atostogos be darbo užmokesčio neatitinka patvirtintų {} įrašų"
 
 #: hrms/hr/doctype/leave_policy_assignment/leave_policy_assignment.py:130
-#, fuzzy
 msgid "Leave allocation is skipped for {0}, because number of leaves to be allocated is 0."
-msgstr "{0} atvejui lapų paskirstymas praleidžiamas, nes paskirstytinų lapų skaičius yra 0."
+msgstr "{0} atvejui atostogų paskirstymas praleidžiamas, nes paskirstytinų atostogų skaičius yra 0."
 
 #: hrms/hr/doctype/leave_ledger_entry/leave_ledger_entry.py:54
 #, fuzzy
@@ -7008,7 +6863,6 @@ msgstr "Pažymėti lankomumą"
 #. Label of the mark_auto_attendance_on_holidays (Check) field in DocType
 #. 'Shift Type'
 #: hrms/hr/doctype/shift_type/shift_type.json
-#, fuzzy
 msgid "Mark Auto Attendance on Holidays"
 msgstr "Pažymėti automatinį lankomumą švenčių dienomis"
 
@@ -7016,109 +6870,93 @@ msgstr "Pažymėti automatinį lankomumą švenčių dienomis"
 #: hrms/hr/doctype/appraisal_cycle/appraisal_cycle.js:62
 #: hrms/hr/doctype/employee_onboarding/employee_onboarding.js:67
 #: hrms/hr/doctype/goal/goal_tree.js:257
-#, fuzzy
 msgid "Mark as Completed"
 msgstr "Pažymėti kaip užbaigtą"
 
 #: hrms/hr/doctype/appraisal_cycle/appraisal_cycle.js:67
-#, fuzzy
 msgid "Mark as In Progress"
 msgstr "Pažymėti kaip vykdomą"
 
 #: hrms/hr/doctype/interview/interview.py:73
-#, fuzzy
 msgid "Mark as {0}"
 msgstr "Pažymėti kaip {0}"
 
 #: hrms/hr/doctype/attendance/attendance_list.js:109
-#, fuzzy
 msgid "Mark attendance as {0} for {1} on selected dates?"
 msgstr "Pažymėti lankomumą kaip {0} už {1} pasirinktomis datomis?"
 
 #. Description of the 'Enable Auto Attendance' (Check) field in DocType 'Shift
 #. Type'
 #: hrms/hr/doctype/shift_type/shift_type.json
-#, fuzzy
 msgid "Mark attendance based on 'Employee Checkin' for Employees assigned to this shift."
 msgstr "Pažymėkite lankomumą pagal „Darbuotojų registraciją“ darbuotojams, priskirtiems šiai pamainai."
 
 #: hrms/hr/doctype/shift_type/shift_type.py:97
-#, fuzzy
 msgid "Mark attendance for existing check-in/out logs before changing shift settings"
-msgstr "Prieš keičiant pamainos nustatymus, pažymėkite lankomumą esamuose registracijos/išregistravimo žurnaluose."
+msgstr "Prieš keičiant pamainos nustatymus, pažymėkite lankomumą esamuose registracijos/išregistravimo žurnaluose"
 
 #: hrms/hr/doctype/goal/goal_tree.js:262
-#, fuzzy
 msgid "Mark {0} as Completed?"
 msgstr "Pažymėti {0} kaip užbaigtą?"
 
 #: hrms/hr/doctype/goal/goal_list.js:81
-#, fuzzy
 msgid "Mark {0} {1} as {2}?"
 msgstr "Pažymėti {0} {1} kaip {2}?"
 
 #. Label of the marked_attendance_section (Section Break) field in DocType
 #. 'Employee Attendance Tool'
 #: hrms/hr/doctype/employee_attendance_tool/employee_attendance_tool.json
-#, fuzzy
 msgid "Marked Attendance"
-msgstr "Pažymėta lankomumas"
+msgstr "Pažymėtas lankomumas"
 
 #. Label of the marked_attendance_html (HTML) field in DocType 'Employee
 #. Attendance Tool'
 #: hrms/hr/doctype/employee_attendance_tool/employee_attendance_tool.json
-#, fuzzy
 msgid "Marked Attendance HTML"
-msgstr "Pažymėta lankomumas HTML"
+msgstr "Pažymėtas lankomumas HTML"
 
 #: hrms/hr/doctype/employee_attendance_tool/employee_attendance_tool.js:286
-#, fuzzy
 msgid "Marking Attendance"
 msgstr "Lankomumo žymėjimas"
 
 #. Label of the max_amount_eligible (Currency) field in DocType 'Employee
 #. Benefit Claim'
 #: hrms/payroll/doctype/employee_benefit_claim/employee_benefit_claim.json
-#, fuzzy
 msgid "Max Amount Eligible For Claim"
 msgstr "Maksimali suma, kurią galima reikalauti"
 
 #. Label of the max_benefit_amount (Currency) field in DocType 'Employee
 #. Benefit Application Detail'
 #: hrms/payroll/doctype/employee_benefit_application_detail/employee_benefit_application_detail.json
-#, fuzzy
 msgid "Max Benefit Amount"
 msgstr "Maksimali išmoka"
 
 #. Label of the max_benefit_amount (Currency) field in DocType 'Salary
 #. Component'
 #: hrms/payroll/doctype/salary_component/salary_component.json
-#, fuzzy
 msgid "Max Benefit Amount (Yearly)"
 msgstr "Maksimali išmoka (per metus)"
 
 #. Label of the max_benefits (Currency) field in DocType 'Salary Structure'
 #: hrms/payroll/doctype/salary_structure/salary_structure.json
-#, fuzzy
 msgid "Max Benefits (Amount)"
 msgstr "Maksimalūs išmokėjimai (suma)"
 
 #. Label of the max_benefits (Currency) field in DocType 'Employee Benefit
 #. Application'
 #: hrms/payroll/doctype/employee_benefit_application/employee_benefit_application.json
-#, fuzzy
 msgid "Max Benefits (Yearly)"
 msgstr "Maksimalūs išmokėjimai (per metus)"
 
+# neapmokestina or just isimtis?
 #. Label of the max_amount (Currency) field in DocType 'Employee Tax Exemption
 #. Category'
 #. Label of the max_amount (Currency) field in DocType 'Employee Tax Exemption
 #. Sub Category'
 #: hrms/payroll/doctype/employee_tax_exemption_category/employee_tax_exemption_category.json
 #: hrms/payroll/doctype/employee_tax_exemption_sub_category/employee_tax_exemption_sub_category.json
-#, fuzzy
 msgid "Max Exemption Amount"
-msgstr "Maksimali išimtis"
+msgstr "Maksimalios išimties suma"
 
 #: hrms/payroll/doctype/employee_tax_exemption_sub_category/employee_tax_exemption_sub_category.py:18
 #, fuzzy
@@ -7128,9 +6966,8 @@ msgstr "Maksimali neapmokestinama suma negali būti didesnė už mokesčių neap
 #. Label of the max_taxable_income (Currency) field in DocType 'Income Tax Slab
 #. Other Charges'
 #: hrms/payroll/doctype/income_tax_slab_other_charges/income_tax_slab_other_charges.json
-#, fuzzy
 msgid "Max Taxable Income"
-msgstr "Maksimalus apmokestinamas pajamas"
+msgstr "Maksimalios apmokestinamos pajamas"
 
 #. Label of the max_working_hours_against_timesheet (Float) field in DocType
 #. 'Payroll Settings'
@@ -7420,57 +7257,47 @@ msgid "New Hires (This Month)"
 msgstr "Nauji darbuotojai (šį mėnesį)"
 
 #: hrms/hr/report/employee_leave_balance/employee_leave_balance.py:61
-#, fuzzy
 msgid "New Leave(s) Allocated"
-msgstr "Naujos skirtos atostogos"
+msgstr "Naujos paskirstytos atostogos"
 
 #. Label of the new_leaves_allocated (Float) field in DocType 'Leave
 #. Allocation'
 #: hrms/hr/doctype/leave_allocation/leave_allocation.json
-#, fuzzy
 msgid "New Leaves Allocated"
-msgstr "Nauji paskirstyti lapai"
+msgstr "Naujos paskirstytos atostogos"
 
 #. Label of the no_of_days (Float) field in DocType 'Leave Control Panel'
 #: hrms/hr/doctype/leave_control_panel/leave_control_panel.json
-#, fuzzy
 msgid "New Leaves Allocated (In Days)"
-msgstr "Nauji paskirstyti lapai (dienomis)"
+msgstr "Naujos paskirstytos atostogos (dienomis)"
 
 #. Description of the 'Create Shifts After' (Date) field in DocType 'Shift
 #. Schedule Assignment'
 #: hrms/hr/doctype/shift_schedule_assignment/shift_schedule_assignment.json
-#, fuzzy
 msgid "New shift assignments will be created after this date."
 msgstr "Po šios datos bus sukurti nauji pamainų paskyrimai."
 
 #: hrms/hr/doctype/employee_advance/employee_advance.py:375
-#, fuzzy
 msgid "No Bank/Cash Account found for currency {0}. Please create one under company {1}."
 msgstr "Nerasta banko/grynųjų pinigų sąskaitos valiutai {0}. Prašome ją sukurti įmonėje {1}."
 
 #: hrms/payroll/doctype/salary_structure/salary_structure.py:218
-#, fuzzy
 msgid "No Employee Found"
 msgstr "Nėra darbuotojų"
 
 #: hrms/hr/doctype/employee_checkin/employee_checkin.py:169
-#, fuzzy
 msgid "No Employee found for the given employee field value. '{}': {}"
 msgstr "Nerastas darbuotojas, atitinkantis nurodytą darbuotojo lauko vertę. '{}': {}"
 
 #: hrms/hr/doctype/appraisal_cycle/appraisal_cycle.py:111 hrms/hr/utils.py:922
-#, fuzzy
 msgid "No Employees Selected"
 msgstr "Nėra pasirinktų darbuotojų"
 
 #: hrms/hr/doctype/job_applicant/job_applicant_dashboard.html:53
-#, fuzzy
 msgid "No Interview has been scheduled."
-msgstr "Interviu nebuvo numatyta."
+msgstr "Interviu nebuvo suplanuotas."
 
 #: hrms/hr/doctype/compensatory_leave_request/compensatory_leave_request.py:105
-#, fuzzy
 msgid "No Leave Period Found"
 msgstr "Nėra atostogų laikotarpio"
 
@@ -7736,17 +7563,14 @@ msgstr "Nevegetaras"
 
 #. Description of the 'Shift' (Link) field in DocType 'Attendance Request'
 #: hrms/hr/doctype/attendance_request/attendance_request.json
-#, fuzzy
 msgid "Note: Shift will not be overwritten in existing attendance records"
-msgstr "Pastaba: pamainos nebus perrašytos esamuose lankomumo įrašuose."
+msgstr "Pastaba: pamainos nebus perrašytos esamuose lankomumo įrašuose"
 
 #: hrms/hr/doctype/leave_allocation/leave_allocation.py:156
-#, fuzzy
 msgid "Note: Total allocated leaves {0} shouldn't be less than already approved leaves {1} for the period"
-msgstr "Pastaba: bendras skirtų atostogų skaičius {0} neturėtų būti mažesnis už jau patvirtintų atostogų skaičių {1} per tą laikotarpį."
+msgstr "Pastaba: bendras skirtų atostogų skaičius {0} neturėtų būti mažesnis už jau patvirtintų atostogų skaičių {1} per tą laikotarpį"
 
 #: hrms/payroll/doctype/salary_slip/salary_slip.py:2169
-#, fuzzy
 msgid "Note: Your salary slip is password protected, the password to unlock the PDF is of the format {0}."
 msgstr "Pastaba: Jūsų darbo užmokesčio lapelis yra apsaugotas slaptažodžiu, PDF failą atrakinti skirtas slaptažodis yra tokio formato {0}."
 
@@ -7756,12 +7580,10 @@ msgid "Nothing to change"
 msgstr "Nieko keisti"
 
 #: hrms/setup.py:413
-#, fuzzy
 msgid "Notice Period"
 msgstr "Įspėjimo laikotarpis"
 
 #: hrms/hr/doctype/exit_interview/exit_interview.py:125
-#, fuzzy
 msgid "Notification Template"
 msgstr "Pranešimo šablonas"
 
@@ -7771,9 +7593,8 @@ msgstr "Pranešimo šablonas"
 #. Separation'
 #: hrms/hr/doctype/employee_onboarding/employee_onboarding.json
 #: hrms/hr/doctype/employee_separation/employee_separation.json
-#, fuzzy
 msgid "Notify users by email"
-msgstr "Pranešti vartotojams elektroniniu paštu"
+msgstr "Pranešti vartotojus elektroniniu paštu"
 
 #: hrms/hr/report/monthly_attendance_sheet/monthly_attendance_sheet.js:46
 #: hrms/public/js/salary_slip_deductions_report_filters.js:29
@@ -7782,74 +7603,62 @@ msgstr "Lapkritis"
 
 #. Label of the number_of_employees (Int) field in DocType 'Payroll Entry'
 #: hrms/payroll/doctype/payroll_entry/payroll_entry.json
-#, fuzzy
 msgid "Number Of Employees"
 msgstr "Darbuotojų skaičius"
 
 #. Label of the number_of_positions (Int) field in DocType 'Staffing Plan
 #. Detail'
 #: hrms/hr/doctype/staffing_plan_detail/staffing_plan_detail.json
-#, fuzzy
 msgid "Number Of Positions"
 msgstr "Pareigų skaičius"
 
 #. Label of the number_of_leaves (Float) field in DocType 'Earned Leave
 #. Schedule'
 #: hrms/hr/doctype/earned_leave_schedule/earned_leave_schedule.json
-#, fuzzy
 msgid "Number of Leaves"
 msgstr "Atostogų dienų skaičius"
 
 #. Label of the number_of_withholding_cycles (Int) field in DocType 'Salary
 #. Withholding'
 #: hrms/payroll/doctype/salary_withholding/salary_withholding.json
-#, fuzzy
 msgid "Number of Withholding Cycles"
 msgstr "Išskaičiavimo ciklų skaičius"
 
 #. Description of the 'Actual Encashable Days' (Float) field in DocType 'Leave
 #. Encashment'
 #: hrms/hr/doctype/leave_encashment/leave_encashment.json
-#, fuzzy
 msgid "Number of leaves eligible for encashment based on leave type settings"
 msgstr "Atostogų, už kurias galima gauti išmoką, skaičius, pagrįstas atostogų tipo nustatymais"
 
 #: frontend/src/views/Login.vue:86
-#, fuzzy
 msgid "OTP Code"
 msgstr "OTP kodas"
 
 #: frontend/src/views/Login.vue:77
-#, fuzzy
 msgid "OTP Verification"
 msgstr "OTP patvirtinimas"
 
 #. Option for the 'Log Type' (Select) field in DocType 'Employee Checkin'
 #: hrms/hr/doctype/employee_checkin/employee_checkin.json
-#, fuzzy
 msgid "OUT"
 msgstr "OUT"
 
 #. Label of the average_rating (Rating) field in DocType 'Interview'
 #: hrms/hr/doctype/interview/interview.json
-#, fuzzy
 msgid "Obtained Average Rating"
 msgstr "Gautas vidutinis įvertinimas"
 
 #: hrms/hr/report/monthly_attendance_sheet/monthly_attendance_sheet.js:45
 #: hrms/public/js/salary_slip_deductions_report_filters.js:28
-#, fuzzy
 msgid "Oct"
 msgstr "Spalis"
 
 #. Label of the odometer_reading (Section Break) field in DocType 'Vehicle Log'
 #: hrms/hr/doctype/vehicle_log/vehicle_log.json
-#, fuzzy
 msgid "Odometer Reading"
 msgstr "Odometro rodmenys"
 
 #: hrms/hr/report/vehicle_expenses/vehicle_expenses.py:41
-#, fuzzy
 msgid "Odometer Value"
 msgstr "Odometro vertė"
 
@@ -7923,34 +7732,28 @@ msgid "Only Approvers can Approve this Request."
 msgstr "Tik patvirtintojai gali patvirtinti šį prašymą."
 
 #: hrms/hr/doctype/exit_interview/exit_interview.py:45
-#, fuzzy
 msgid "Only Completed documents can be submitted"
-msgstr "Galima pateikti tik užpildytus dokumentus."
+msgstr "Galima pateikti tik užpildytus dokumentus"
 
 #: hrms/hr/doctype/employee_grievance/employee_grievance.py:13
-#, fuzzy
 msgid "Only Employee Grievance with status {0} or {1} can be submitted"
-msgstr "Galima pateikti tik darbuotojo skundą, kurio statusas yra {0} arba {1}."
+msgstr "Galima pateikti tik darbuotojo skundą, kurio būsena yra {0} arba {1}"
 
 #: hrms/hr/doctype/interview/interview.py:325
-#, fuzzy
 msgid "Only Interviewer Are allowed to submit Interview Feedback"
-msgstr "Tik interviu vedėjai gali pateikti interviu atsiliepimus."
+msgstr "Tik interviu vedėjai gali pateikti interviu atsiliepimus"
 
 #: hrms/hr/doctype/interview/interview.py:26
-#, fuzzy
 msgid "Only Interviews with Cleared or Rejected status can be submitted."
-msgstr "Galima pateikti tik interviu, kurių statusas yra „Patvirtintas“ arba „Atmestas“."
+msgstr "Galima pateikti tik interviu, kurių būsena yra „Patvirtintas“ arba „Atmestas“"
 
 #: hrms/hr/doctype/leave_application/leave_application.py:103
-#, fuzzy
 msgid "Only Leave Applications with status 'Approved' and 'Rejected' can be submitted"
-msgstr "Galima pateikti tik prašymus dėl atostogų, kurių statusas yra „Patvirtintas“ arba „Atmestas“."
+msgstr "Galima pateikti tik prašymus dėl atostogų, kurių būsena yra „Patvirtintas“ arba „Atmestas“"
 
 #: hrms/hr/doctype/shift_request/shift_request.py:46
-#, fuzzy
 msgid "Only Shift Request with status 'Approved' and 'Rejected' can be submitted"
-msgstr "Galima pateikti tik pamainos prašymus, kurių statusas yra „Patvirtintas“ ir „Atmestas“."
+msgstr "Galima pateikti tik pamainos prašymus, kurių būsena yra „Patvirtintas“ ir „Atmestas“"
 
 #: hrms/hr/doctype/leave_ledger_entry/leave_ledger_entry.py:33
 #, fuzzy
@@ -8173,9 +7976,8 @@ msgid "Overtime Slips Created"
 msgstr "Sukurtos viršvalandžių ataskaitos"
 
 #: hrms/hr/doctype/overtime_slip/overtime_slip.py:495
-#, fuzzy
 msgid "Overtime Slips submitted for {0} employee(s)"
-msgstr "Viršvalandžių lapai, pateikti {0} darbuotojui (-ams)"
+msgstr "Viršvalandžių lapeliai, pateikti {0} darbuotojui (-ams)"
 
 #. Label of the overtime_type (Link) field in DocType 'Attendance'
 #. Label of the overtime_type (Link) field in DocType 'Employee Checkin'
@@ -8270,7 +8072,6 @@ msgstr "Iš dalies pareikalauta ir grąžinta"
 
 #. Label of the password_policy (Data) field in DocType 'Payroll Settings'
 #: hrms/payroll/doctype/payroll_settings/payroll_settings.json
-#, fuzzy
 msgid "Password Policy"
 msgstr "Slaptažodžių politika"
 
@@ -8555,37 +8356,31 @@ msgid "Pending FnF"
 msgstr "Laukiama FnF"
 
 #: hrms/hr/report/employee_exits/employee_exits.py:221
-#, fuzzy
 msgid "Pending Interviews"
-msgstr "Laukiami pokalbiai"
+msgstr "Laukiantys interviu"
 
 #: hrms/hr/report/employee_exits/employee_exits.py:233
-#, fuzzy
 msgid "Pending Questionnaires"
-msgstr "Laukiami klausimynai"
+msgstr "Laukiantys klausimynai"
 
 #. Label of the percent_deduction (Percent) field in DocType 'Taxable Salary
 #. Slab'
 #: hrms/payroll/doctype/taxable_salary_slab/taxable_salary_slab.json
-#, fuzzy
 msgid "Percent Deduction"
 msgstr "Procentinis atskaitymas"
 
 #. Name of a Workspace
 #: hrms/hr/workspace/performance/performance.json
-#, fuzzy
 msgid "Performance"
 msgstr "Veiklos rezultatai"
 
 #: frontend/src/components/FormView.vue:291
-#, fuzzy
 msgid "Permanently cancel {0}"
 msgstr "Visiškai panaikinti {0}"
 
 #: frontend/src/components/FormView.vue:260
-#, fuzzy
 msgid "Permanently submit {0}"
-msgstr "Nuolat pateikti {0}"
+msgstr "Nepanaikinamai pateikti {0}"
 
 #: hrms/setup.py:394
 #, fuzzy
@@ -8649,14 +8444,12 @@ msgid "Please fill in Employee, Posting Date, and Company before fetching overti
 msgstr "Prieš gaunant informaciją apie viršvalandžius, įrašykite darbuotojo vardą ir pavardę, įdarbinimo datą ir įmonės pavadinimą."
 
 #: hrms/hr/doctype/shift_type/shift_type.py:58
-#, fuzzy
 msgid "Please reduce {0} to avoid shift time overlapping with itself"
-msgstr "Prašome sumažinti {0}, kad pamainos laikas nesutaptų su savimi."
+msgstr "Prašome sumažinti {0}, kad pamainos laikas nesutaptų su savimi"
 
 #: hrms/payroll/doctype/salary_slip/salary_slip.py:2158
-#, fuzzy
 msgid "Please see attachment"
-msgstr "Žiūrėkite priedą."
+msgstr "Žiūrėkite priedą"
 
 #: hrms/hr/doctype/staffing_plan/staffing_plan.py:225
 #, fuzzy
@@ -8759,7 +8552,7 @@ msgstr "Prašome pasirinkti darbuotojus, kuriems norite sukurti vertinimus"
 #: hrms/hr/doctype/employee_attendance_tool/employee_attendance_tool.js:256
 #, fuzzy
 msgid "Please select half day attendance status."
-msgstr "Prašome pasirinkti pusės dienos lankomumo statusą."
+msgstr "Prašome pasirinkti pusės dienos lankomumo būseną."
 
 #: hrms/hr/report/monthly_attendance_sheet/monthly_attendance_sheet.py:44
 #, fuzzy
@@ -8774,7 +8567,7 @@ msgstr "Pirmiausia pasirinkite vertinimo ciklą."
 #: hrms/hr/doctype/employee_attendance_tool/employee_attendance_tool.js:250
 #, fuzzy
 msgid "Please select the attendance status."
-msgstr "Prašome pasirinkti lankomumo statusą."
+msgstr "Prašome pasirinkti lankomumo būseną."
 
 #: hrms/hr/doctype/employee_attendance_tool/employee_attendance_tool.js:243
 #, fuzzy
@@ -8830,7 +8623,7 @@ msgstr "Nustatykite numatytąjį šabloną „Atostogų patvirtinimo pranešimas
 #: hrms/hr/doctype/leave_application/leave_application.py:640
 #, fuzzy
 msgid "Please set default template for Leave Status Notification in HR Settings."
-msgstr "Nustatykite numatytąjį šabloną „Atostogų statuso pranešimas“ HR nustatymuose."
+msgstr "Nustatykite numatytąjį šabloną „Atostogų būsenos pranešimas“ HR nustatymuose."
 
 #: hrms/hr/doctype/appraisal_cycle/appraisal_cycle.py:137
 #, fuzzy
@@ -8917,7 +8710,7 @@ msgstr "Prieš pažymėdami ciklą kaip užbaigtą, pateikite {0}."
 #: hrms/templates/emails/training_event.html:13
 #, fuzzy
 msgid "Please update your status for this training event"
-msgstr "Atnaujinkite savo statusą šiam mokymo renginiui"
+msgstr "Atnaujinkite savo būseną šiam mokymo renginiui"
 
 #. Label of the posted_on (Datetime) field in DocType 'Job Opening'
 #: hrms/hr/doctype/job_opening/job_opening.json
@@ -9090,7 +8883,7 @@ msgstr "Provident fondo atskaitymai"
 #. Type'
 #: hrms/hr/doctype/overtime_type/overtime_type.json
 msgid "Public Holiday Multiplier"
-msgstr "Valstybinių švenčių daugiklis"
+msgstr "Šventinių dienų daugiklis"
 
 #. Label of the publish_applications_received (Check) field in DocType 'Job
 #. Opening'
@@ -9406,7 +9199,6 @@ msgid "Request Attendance"
 msgstr "Prašymas dalyvauti"
 
 #: frontend/src/views/Home.vue:42
-#, fuzzy
 msgid "Request Leave"
 msgstr "Prašymas dėl atostogų"
 
@@ -9731,7 +9523,7 @@ msgstr "Atlyginimo komponento tipas"
 #. Structure'
 #: hrms/payroll/doctype/salary_structure/salary_structure.json
 msgid "Salary Component for timesheet based payroll."
-msgstr "Darbo laiko apskaitos lapų pagrindu apskaičiuojamo darbo užmokesčio komponentas."
+msgstr "Atlyginimo komponentas, skirtas darbo laiko apskaitos žiniaraščiui."
 
 #: hrms/payroll/doctype/salary_structure/salary_structure.py:440
 msgid "Salary Component {0} cannot be selected more than once in Employee Benefits"
@@ -10069,133 +9861,110 @@ msgstr "Pasirinkite mėnesį LWP atstatymui"
 
 #. Description of the 'Payment Account' (Link) field in DocType 'Payroll Entry'
 #: hrms/payroll/doctype/payroll_entry/payroll_entry.json
-#, fuzzy
 msgid "Select Payment Account to make Bank Entry"
 msgstr "Pasirinkite mokėjimo sąskaitą, kad atliktumėte banko įrašą."
 
 #: hrms/payroll/doctype/payroll_entry/payroll_entry.py:1730
-#, fuzzy
 msgid "Select Payroll Frequency."
 msgstr "Pasirinkite darbo užmokesčio mokėjimo dažnumą."
 
 #: frontend/src/views/salary_slip/Dashboard.vue:23
-#, fuzzy
 msgid "Select Payroll Period"
 msgstr "Pasirinkite darbo užmokesčio laikotarpį"
 
 #: hrms/hr/employee_property_update.js:109
-#, fuzzy
 msgid "Select Property"
 msgstr "Pasirinkite savybę"
 
 #: hrms/hr/doctype/shift_assignment_tool/shift_assignment_tool.js:134
-#, fuzzy
 msgid "Select Shift Requests"
 msgstr "Pasirinkti pamainos prašymus"
 
 #. Label of the select_terms (Link) field in DocType 'Job Offer'
 #: hrms/hr/doctype/job_offer/job_offer.json
-#, fuzzy
 msgid "Select Terms and Conditions"
 msgstr "Pasirinkite sąlygas ir nuostatas"
 
 #. Label of the select_users (Section Break) field in DocType 'Daily Work
 #. Summary Group'
 #: hrms/hr/doctype/daily_work_summary_group/daily_work_summary_group.json
-#, fuzzy
 msgid "Select Users"
 msgstr "Pasirinkti vartotojus"
 
 #: hrms/hr/doctype/expense_claim/expense_claim.js:566
-#, fuzzy
 msgid "Select an employee to get the employee advance."
 msgstr "Pasirinkite darbuotoją, kad gautumėte darbuotojo avansą."
 
 #: hrms/hr/doctype/leave_allocation/leave_allocation.js:237
-#, fuzzy
 msgid "Select the Employee for which you want to allocate leaves."
 msgstr "Pasirinkite darbuotoją, kuriam norite skirti atostogas."
 
 #: hrms/hr/doctype/leave_application/leave_application.js:300
-#, fuzzy
 msgid "Select the Employee."
 msgstr "Pasirinkite darbuotoją."
 
 #: hrms/hr/doctype/leave_allocation/leave_allocation.js:242
-#, fuzzy
 msgid "Select the Leave Type like Sick leave, Privilege Leave, Casual Leave, etc."
 msgstr "Pasirinkite atostogų tipą, pvz., ligos atostogos, privilegijuotos atostogos, atsitiktinės atostogos ir pan."
 
 #: hrms/hr/doctype/leave_allocation/leave_allocation.js:254
-#, fuzzy
 msgid "Select the date after which this Leave Allocation will expire."
 msgstr "Pasirinkite datą, po kurios šis atostogų paskirstymas baigsis."
 
 #: hrms/hr/doctype/leave_allocation/leave_allocation.js:249
-#, fuzzy
 msgid "Select the date from which this Leave Allocation will be valid."
 msgstr "Pasirinkite datą, nuo kurios šis atostogų paskirstymas bus galiojantis."
 
 #: hrms/hr/doctype/leave_application/leave_application.js:317
-#, fuzzy
 msgid "Select the end date for your Leave Application."
 msgstr "Pasirinkite atostogų prašymo pabaigos datą."
 
 #. Description of the 'Applicable Salary Components' (Table MultiSelect) field
 #. in DocType 'Overtime Type'
 #: hrms/hr/doctype/overtime_type/overtime_type.json
-#, fuzzy
 msgid "Select the salary components whose total will be used from the salary slip to calculate the hourly overtime rate."
 msgstr "Pasirinkite atlyginimo sudedamąsias dalis, kurių suma bus naudojama iš atlyginimo lapelio, norint apskaičiuoti valandinį viršvalandžių tarifą."
 
 #: hrms/hr/doctype/leave_application/leave_application.js:312
-#, fuzzy
 msgid "Select the start date for your Leave Application."
 msgstr "Pasirinkite atostogų prašymo pradžios datą."
 
 #. Description of the 'Enabled' (Check) field in DocType 'Shift Schedule
 #. Assignment'
 #: hrms/hr/doctype/shift_schedule_assignment/shift_schedule_assignment.json
-#, fuzzy
 msgid "Select this if you want shift assignments to be automatically created indefinitely."
-msgstr "Pasirinkite šią parinktį, jei norite, kad pamainų paskyrimai būtų automatiškai kurti neribotą laiką."
+msgstr "Pasirinkite šią parinktį, jei norite, kad pamainų paskyrimai būtų automatiškai kuriami neribotą laiką."
 
+# need to align with lithuanian way of saying it
 #: hrms/hr/doctype/leave_application/leave_application.js:305
-#, fuzzy
 msgid "Select type of leave the employee wants to apply for, like Sick Leave, Privilege Leave, Casual Leave, etc."
 msgstr "Pasirinkite atostogų, kurias darbuotojas nori prašyti, tipą, pvz., ligos atostogos, privilegijuotos atostogos, atsitiktinės atostogos ir pan."
 
 #: hrms/hr/doctype/leave_application/leave_application.js:327
-#, fuzzy
 msgid "Select your Leave Approver i.e. the person who approves or rejects your leaves."
 msgstr "Pasirinkite atostogų patvirtintoją, t. y. asmenį, kuris patvirtina arba atmeta jūsų atostogas."
 
 #. Label of the self_appraisal_tab (Tab Break) field in DocType 'Appraisal'
 #: hrms/hr/doctype/appraisal/appraisal.json
 #: hrms/hr/doctype/employee_performance_feedback/employee_performance_feedback.py:33
-#, fuzzy
 msgid "Self Appraisal"
 msgstr "Savęs vertinimas"
 
 #: hrms/hr/doctype/appraisal_cycle/appraisal_cycle.js:163
-#, fuzzy
 msgid "Self Appraisal Pending: {0}"
 msgstr "Savęs vertinimas laukia: {0}"
 
 #: hrms/hr/doctype/appraisal_cycle/appraisal_cycle.js:89
-#, fuzzy
 msgid "Self Appraisal Score"
 msgstr "Savęs vertinimo balas"
 
 #: hrms/hr/report/appraisal_overview/appraisal_overview.py:56
 #: hrms/hr/report/appraisal_overview/appraisal_overview.py:123
-#, fuzzy
 msgid "Self Score"
 msgstr "Savęs vertinimas"
 
 #. Option for the 'Type' (Select) field in DocType 'Training Event'
 #: hrms/hr/doctype/training_event/training_event.json
-#, fuzzy
 msgid "Self-Study"
 msgstr "Savarankiškas mokymasis"
 
@@ -10276,92 +10045,77 @@ msgstr "Atskyrimas prasideda"
 
 #. Label of the service_details (Section Break) field in DocType 'Vehicle Log'
 #: hrms/hr/doctype/vehicle_log/vehicle_log.json
-#, fuzzy
 msgid "Service Details"
 msgstr "Paslaugos detalės"
 
 #: hrms/hr/report/vehicle_expenses/vehicle_expenses.py:49
-#, fuzzy
 msgid "Service Expense"
 msgstr "Paslaugų išlaidos"
 
 #. Description of the 'Current Work Experience' (Table) field in DocType
 #. 'Gratuity Rule'
 #: hrms/payroll/doctype/gratuity_rule/gratuity_rule.json
-#, fuzzy
 msgid "Set \"From(Year)\" and \"To(Year)\" to 0 for no upper and lower limit."
 msgstr "Nustatykite „Nuo (metai)“ ir „Iki (metai)“ į 0, jei nenorite nustatyti viršutinės ir apatinės ribos."
 
 #. Label of the set_assignment_details_section (Section Break) field in DocType
 #. 'Bulk Salary Structure Assignment'
 #: hrms/payroll/doctype/bulk_salary_structure_assignment/bulk_salary_structure_assignment.json
-#, fuzzy
 msgid "Set Assignment Details"
 msgstr "Nustatyti užduoties detales"
 
 #. Label of the allocate_leaves_section (Section Break) field in DocType 'Leave
 #. Control Panel'
 #: hrms/hr/doctype/leave_control_panel/leave_control_panel.json
-#, fuzzy
 msgid "Set Leave Details"
 msgstr "Nustatyti atostogų duomenis"
 
 #: hrms/hr/doctype/full_and_final_statement/full_and_final_statement.py:79
-#, fuzzy
 msgid "Set Relieving Date for Employee: {0}"
 msgstr "Nustatyti darbuotojo atleidimo datą: {0}"
 
 #. Description of the 'Get Employees' (Section Break) field in DocType
 #. 'Employee Attendance Tool'
 #: hrms/hr/doctype/employee_attendance_tool/employee_attendance_tool.json
-#, fuzzy
 msgid "Set filters to fetch employees"
 msgstr "Nustatyti filtrus, kad būtų galima rasti darbuotojus"
 
 #. Description of the 'Opening Balances' (Section Break) field in DocType
 #. 'Salary Structure Assignment'
 #: hrms/payroll/doctype/salary_structure_assignment/salary_structure_assignment.json
-#, fuzzy
 msgid "Set opening balances for earnings and taxes from the previous employer"
 msgstr "Nustatyti pradinius balansus už praėjusio darbdavio pajamas ir mokesčius"
 
 #. Description of the 'Filters' (Section Break) field in DocType 'Appraisal
 #. Cycle'
 #: hrms/hr/doctype/appraisal_cycle/appraisal_cycle.json
-#, fuzzy
 msgid "Set optional filters to fetch employees in the appraisee list"
 msgstr "Nustatykite pasirinktinius filtrus, kad būtų galima rasti darbuotojus vertinamųjų sąraše."
 
 #: hrms/hr/doctype/expense_claim/expense_claim.py:702
-#, fuzzy
 msgid "Set the default account for the {0} {1}"
 msgstr "Nustatyti numatytąją sąskaitą {0} {1}"
 
 #. Label of the frequency (Select) field in DocType 'HR Settings'
 #: hrms/hr/doctype/hr_settings/hr_settings.json
-#, fuzzy
 msgid "Set the frequency for holiday reminders"
 msgstr "Nustatyti atostogų priminimų dažnumą"
 
 #. Description of the 'Employee Promotion Details' (Section Break) field in
 #. DocType 'Employee Promotion'
 #: hrms/hr/doctype/employee_promotion/employee_promotion.json
-#, fuzzy
 msgid "Set the properties that should be updated in the Employee master on promotion submission"
-msgstr "Nustatykite savybes, kurios turėtų būti atnaujinamos darbuotojo pagrindiniame įraše pateikus paaukštinimo paraišką."
+msgstr "Nustatykite savybes, kurios turėtų būti atnaujinamos darbuotojo pagrindiniame įraše pateikus paaukštinimo paraišką"
 
 #: hrms/hr/doctype/appraisal_cycle/appraisal_cycle.py:205
-#, fuzzy
 msgid "Set the status to {0} if required."
-msgstr "Jei reikia, nustatykite statusą {0}."
+msgstr "Jei reikia, nustatykite būseną {0}."
 
 #: hrms/payroll/doctype/bulk_salary_structure_assignment/bulk_salary_structure_assignment.js:200
-#, fuzzy
 msgid "Set {0} for selected employees"
 msgstr "Nustatyti {0} pasirinktiems darbuotojams"
 
 #: hrms/hr/doctype/exit_interview/exit_interview.py:128
-#, fuzzy
 msgid "Settings Missing"
 msgstr "Trūksta nustatymų"
 
@@ -10452,7 +10206,6 @@ msgstr "Pakeitimų užduotys, sukurtos tvarkaraščiui tarp {0} ir {1} per fonin
 #. Label of a Link in the Shift & Attendance Workspace
 #: hrms/hr/report/shift_attendance/shift_attendance.json
 #: hrms/hr/workspace/shift_&_attendance/shift_&_attendance.json
-#, fuzzy
 msgid "Shift Attendance"
 msgstr "Pamainos lankomumas"
 
@@ -10462,18 +10215,15 @@ msgstr "Pamainos lankomumas"
 #. 'Shift Schedule Assignment'
 #: hrms/hr/doctype/shift_assignment/shift_assignment.json
 #: hrms/hr/doctype/shift_schedule_assignment/shift_schedule_assignment.json
-#, fuzzy
 msgid "Shift Details"
 msgstr "Pamainos detalės"
 
 #. Label of the shift_end (Datetime) field in DocType 'Employee Checkin'
 #: hrms/hr/doctype/employee_checkin/employee_checkin.json
-#, fuzzy
 msgid "Shift End"
 msgstr "Pamainos pabaiga"
 
 #: hrms/hr/report/shift_attendance/shift_attendance.py:61
-#, fuzzy
 msgid "Shift End Time"
 msgstr "Pamainos pabaigos laikas"
 
@@ -10488,7 +10238,6 @@ msgstr "Pamainos pabaigos laikas"
 #: hrms/hr/doctype/shift_location/shift_location.json
 #: hrms/hr/doctype/shift_schedule_assignment/shift_schedule_assignment.json
 #: hrms/hr/workspace/shift_&_attendance/shift_&_attendance.json
-#, fuzzy
 msgid "Shift Location"
 msgstr "Pamainos vieta"
 
@@ -10500,32 +10249,27 @@ msgstr "Pamainos vieta"
 #: hrms/hr/doctype/shift_assignment_tool/shift_assignment_tool.js:220
 #: hrms/hr/doctype/shift_request/shift_request.json
 #: hrms/hr/workspace/shift_&_attendance/shift_&_attendance.json
-#, fuzzy
 msgid "Shift Request"
 msgstr "Pamainos prašymas"
 
 #: hrms/setup.py:139 hrms/setup.py:260
-#, fuzzy
 msgid "Shift Request Approver"
 msgstr "Pamainos prašymo patvirtintojas"
 
 #. Label of the shift_request_filters_section (Section Break) field in DocType
 #. 'Shift Assignment Tool'
 #: hrms/hr/doctype/shift_assignment_tool/shift_assignment_tool.json
-#, fuzzy
 msgid "Shift Request Filters"
 msgstr "Pamainos prašymo filtrai"
 
 #. Description of the 'From Date' (Date) field in DocType 'Shift Assignment
 #. Tool'
 #: hrms/hr/doctype/shift_assignment_tool/shift_assignment_tool.json
-#, fuzzy
 msgid "Shift Requests ending before this date will be excluded."
 msgstr "Prašymai dėl pamainų, kurie baigsis iki šios datos, nebus nagrinėjami."
 
 #. Description of the 'To Date' (Date) field in DocType 'Shift Assignment Tool'
 #: hrms/hr/doctype/shift_assignment_tool/shift_assignment_tool.json
-#, fuzzy
 msgid "Shift Requests starting after this date will be excluded."
 msgstr "Po šios datos pateikti prašymai dėl pamainų bus atmesti."
 
@@ -10538,7 +10282,6 @@ msgstr "Po šios datos pateikti prašymai dėl pamainų bus atmesti."
 #: hrms/hr/doctype/shift_schedule/shift_schedule.json
 #: hrms/hr/doctype/shift_schedule_assignment/shift_schedule_assignment.json
 #: hrms/hr/workspace/shift_&_attendance/shift_&_attendance.json
-#, fuzzy
 msgid "Shift Schedule"
 msgstr "Darbo grafikas"
 
@@ -10549,34 +10292,29 @@ msgstr "Darbo grafikas"
 #: hrms/hr/doctype/shift_assignment/shift_assignment.json
 #: hrms/hr/doctype/shift_schedule_assignment/shift_schedule_assignment.json
 #: hrms/hr/workspace/shift_&_attendance/shift_&_attendance.json
-#, fuzzy
 msgid "Shift Schedule Assignment"
 msgstr "Darbo grafiko paskirstymas"
 
 #. Label of the shift_settings_section (Section Break) field in DocType 'HR
 #. Settings'
 #: hrms/hr/doctype/hr_settings/hr_settings.json
-#, fuzzy
 msgid "Shift Settings"
 msgstr "Pamainos nustatymai"
 
 #. Label of the shift_start (Datetime) field in DocType 'Employee Checkin'
 #: hrms/hr/doctype/employee_checkin/employee_checkin.json
-#, fuzzy
 msgid "Shift Start"
 msgstr "Pamainos pradžia"
 
 #: hrms/hr/report/shift_attendance/shift_attendance.py:55
-#, fuzzy
 msgid "Shift Start Time"
 msgstr "Pamainos pradžios laikas"
 
 #. Label of the shift_status (Select) field in DocType 'Shift Schedule
 #. Assignment'
 #: hrms/hr/doctype/shift_schedule_assignment/shift_schedule_assignment.json
-#, fuzzy
 msgid "Shift Status"
-msgstr "Pamainos statusas"
+msgstr "Pamainos būsena"
 
 #. Label of the shift_timings_section (Section Break) field in DocType
 #. 'Employee Checkin'
@@ -10625,41 +10363,34 @@ msgstr "Pamaina sėkmingai atnaujinta iki {0}."
 
 #. Label of a Card Break in the Shift & Attendance Workspace
 #: hrms/hr/workspace/shift_&_attendance/shift_&_attendance.json
-#, fuzzy
 msgid "Shifts"
 msgstr "Pamainos"
 
 #: hrms/hr/doctype/job_offer/job_offer.js:51
-#, fuzzy
 msgid "Show Employee"
 msgstr "Rodyti darbuotoją"
 
 #. Label of the show_leave_balances_in_salary_slip (Check) field in DocType
 #. 'Payroll Settings'
 #: hrms/payroll/doctype/payroll_settings/payroll_settings.json
-#, fuzzy
 msgid "Show Leave Balances in Salary Slip"
 msgstr "Rodyti atostogų likutį darbo užmokesčio lapelyje"
 
 #. Label of the show_leaves_of_all_department_members_in_calendar (Check) field
 #. in DocType 'HR Settings'
 #: hrms/hr/doctype/hr_settings/hr_settings.json
-#, fuzzy
 msgid "Show Leaves Of All Department Members In Calendar"
 msgstr "Rodyti visų departamento narių atostogas kalendoriuje"
 
 #: hrms/payroll/doctype/salary_structure/salary_structure.js:204
-#, fuzzy
 msgid "Show Salary Slip"
 msgstr "Rodyti algos lapą"
 
 #: hrms/www/jobs/index.html:121
-#, fuzzy
 msgid "Showing"
 msgstr "Rodyti"
 
 #: hrms/setup.py:365 hrms/setup.py:366
-#, fuzzy
 msgid "Sick Leave"
 msgstr "Ligos atostogos"
 
@@ -10678,9 +10409,8 @@ msgstr "Vienintelis užduotis"
 #: hrms/hr/doctype/expected_skill_set/expected_skill_set.json
 #: hrms/hr/doctype/skill/skill.json
 #: hrms/hr/doctype/skill_assessment/skill_assessment.json
-#, fuzzy
 msgid "Skill"
-msgstr "Įgūdžiai"
+msgstr "Įgūdis"
 
 #. Label of the section_break_4 (Section Break) field in DocType 'Interview
 #. Feedback'
@@ -10688,27 +10418,23 @@ msgstr "Įgūdžiai"
 #: hrms/hr/doctype/interview/interview.js:138
 #: hrms/hr/doctype/interview_feedback/interview_feedback.json
 #: hrms/hr/doctype/skill_assessment/skill_assessment.json
-#, fuzzy
 msgid "Skill Assessment"
 msgstr "Įgūdžių vertinimas"
 
 #. Label of the skill_name (Data) field in DocType 'Skill'
 #: hrms/hr/doctype/skill/skill.json
-#, fuzzy
 msgid "Skill Name"
-msgstr "Įgūdžių pavadinimas"
+msgstr "Įgūdžio pavadinimas"
 
 #. Label of the skills_section (Section Break) field in DocType 'Employee Skill
 #. Map'
 #: hrms/hr/doctype/employee_skill_map/employee_skill_map.json hrms/setup.py:176
-#, fuzzy
 msgid "Skills"
 msgstr "Įgūdžiai"
 
 #. Label of the skip_auto_attendance (Check) field in DocType 'Employee
 #. Checkin'
 #: hrms/hr/doctype/employee_checkin/employee_checkin.json
-#, fuzzy
 msgid "Skip Auto Attendance"
 msgstr "Praleisti automatinį lankomumą"
 
@@ -10799,22 +10525,18 @@ msgid "Start and end dates not in a valid Payroll Period, cannot calculate {0}."
 msgstr "Pradžios ir pabaigos datos nėra galiojančiame darbo užmokesčio laikotarpyje, todėl negalima apskaičiuoti {0}."
 
 #: hrms/hr/doctype/overtime_slip/overtime_slip.py:27
-#, fuzzy
 msgid "Start date cannot be greater than end date"
-msgstr "Pradžios data negali būti vėlesnė už pabaigos datą."
+msgstr "Pradžios data negali būti vėlesnė už pabaigos datą"
 
 #: hrms/hr/report/monthly_attendance_sheet/monthly_attendance_sheet.py:50
-#, fuzzy
 msgid "Start date cannot be greater than end date."
 msgstr "Pradžios data negali būti vėlesnė už pabaigos datą."
 
 #: hrms/payroll/doctype/payroll_entry/payroll_entry.py:239
-#, fuzzy
 msgid "Start date: {0}"
 msgstr "Pradžios data: {0}"
 
 #: hrms/hr/doctype/shift_type/shift_type.py:49
-#, fuzzy
 msgid "Start time and end time cannot be same."
 msgstr "Pradžios ir pabaigos laikas negali būti toks pats."
 
@@ -10823,7 +10545,6 @@ msgstr "Pradžios ir pabaigos laikas negali būti toks pats."
 #. Label of the statistical_component (Check) field in DocType 'Salary Detail'
 #: hrms/payroll/doctype/salary_component/salary_component.json
 #: hrms/payroll/doctype/salary_detail/salary_detail.json
-#, fuzzy
 msgid "Statistical Component"
 msgstr "Statistinis komponentas"
 
@@ -10832,10 +10553,10 @@ msgstr "Statistinis komponentas"
 #. Tool'
 #: hrms/hr/doctype/attendance/attendance.json
 #: hrms/hr/doctype/employee_attendance_tool/employee_attendance_tool.json
-#, fuzzy
 msgid "Status for Other Half"
-msgstr "Statusas kitai pusei"
+msgstr "Būsena kitai pusei"
 
+# Aaaa?
 #: hrms/setup.py:408
 #, fuzzy
 msgid "Stock Options"
@@ -10844,26 +10565,22 @@ msgstr "Akcijų opcionai"
 #. Description of the 'Block Days' (Section Break) field in DocType 'Leave
 #. Block List'
 #: hrms/hr/doctype/leave_block_list/leave_block_list.json
-#, fuzzy
 msgid "Stop users from making Leave Applications on following days."
-msgstr "Neleiskite vartotojams teikti atostogų prašymų kitomis dienomis."
+msgstr "Neleiskite vartotojams teikti atostogų prašymų ateinančiomis dienomis."
 
 #. Option for the 'Determine Check-in and Check-out' (Select) field in DocType
 #. 'Shift Type'
 #: hrms/hr/doctype/shift_type/shift_type.json
-#, fuzzy
 msgid "Strictly based on Log Type in Employee Checkin"
 msgstr "Griežtai remiantis darbuotojo registracijos žurnalo tipu"
 
 #: hrms/payroll/doctype/salary_structure/salary_structure.py:267
-#, fuzzy
 msgid "Structures have been assigned successfully"
-msgstr "Struktūros buvo sėkmingai priskirtos."
+msgstr "Struktūros buvo sėkmingai priskirtos"
 
 #. Label of the submission_date (Date) field in DocType 'Employee Tax Exemption
 #. Proof Submission'
 #: hrms/payroll/doctype/employee_tax_exemption_proof_submission/employee_tax_exemption_proof_submission.json
-#, fuzzy
 msgid "Submission Date"
 msgstr "Pateikimo data"
 
@@ -11135,9 +10852,8 @@ msgstr "Data, kurią atlyginimo komponentas su suma bus įtrauktas į atlyginimo
 
 #. Description of the 'Allocate on Day' (Select) field in DocType 'Leave Type'
 #: hrms/hr/doctype/leave_type/leave_type.json
-#, fuzzy
 msgid "The day of the month when leaves should be allocated"
-msgstr "Mėnesio diena, kai turėtų būti paskirstyti lapai"
+msgstr "Mėnesio diena, kai turėtų būti paskirstytos atostogos"
 
 #: hrms/hr/doctype/leave_application/leave_application.py:391
 #, fuzzy
@@ -11359,74 +11075,60 @@ msgstr "„Data iki“ turi būti didesnė už „Data nuo“"
 
 #. Label of the to_user (Link) field in DocType 'PWA Notification'
 #: hrms/hr/doctype/pwa_notification/pwa_notification.json
-#, fuzzy
 msgid "To User"
-msgstr "Vartotojui"
+msgstr "Naudotojui"
 
 #: hrms/hr/doctype/shift_assignment/shift_assignment.py:104
-#, fuzzy
 msgid "To allow this, enable {0} under {1}."
-msgstr "Norėdami tai padaryti, įjunkite {0} pagal {1}."
+msgstr "Norėdami tai padaryti, įjunkite {0} esantį po {1}."
 
 #: hrms/hr/doctype/leave_application/leave_application.js:322
-#, fuzzy
 msgid "To apply for a Half Day check 'Half Day' and select the Half Day Date"
-msgstr "Norėdami užsisakyti pusės dienos paslaugą, pažymėkite „Pusė dienos“ ir pasirinkite pusės dienos datą."
+msgstr "Norėdami prašyti pusę dienos, pažymėkite „Pusė dienos“ ir pasirinkite pusės dienos datą."
 
 #: hrms/hr/doctype/leave_period/leave_period.py:20
-#, fuzzy
 msgid "To date can not be equal or less than from date"
-msgstr "Iki šiol negali būti lygus arba mažesnis nei nuo datos"
+msgstr "„Data iki“ negali būti lygus arba mažesnis nei „Data nuo“"
 
 #: hrms/payroll/doctype/additional_salary/additional_salary.py:93
-#, fuzzy
 msgid "To date can not be greater than employee's relieving date."
-msgstr "Iki šiol negali būti didesnė nei darbuotojo atleidimo data."
+msgstr "„Data iki“ negali būti didesnė nei darbuotojo atleidimo data."
 
 #: hrms/hr/utils.py:193
-#, fuzzy
 msgid "To date can not be less than from date"
-msgstr "Iki šiol negali būti mažiau nei nuo datos"
+msgstr "„Data iki“ negali būti mažiau nei „Data nuo“"
 
 #: hrms/hr/utils.py:199
-#, fuzzy
 msgid "To date can not greater than employee's relieving date"
-msgstr "Iki šiol negali būti didesnis nei darbuotojo atleidimo data"
+msgstr "„Data iki“ negali būti didesnis nei darbuotojo atleidimo data"
 
 #: hrms/hr/doctype/leave_allocation/leave_allocation.py:180
 #: hrms/hr/doctype/leave_application/leave_application.py:184
-#, fuzzy
 msgid "To date cannot be before from date"
-msgstr "Data negali būti ankstesnė už pradžios datą."
+msgstr "Data negali būti ankstesnė už pradžios datą"
 
 #: hrms/payroll/doctype/additional_salary/additional_salary.py:179
-#, fuzzy
 msgid "To overwrite the salary component amount for a tax component, please enable {0}"
-msgstr "Norėdami perrašyti mokesčio komponento atlyginimo komponentą, įjunkite {0}."
+msgstr "Norėdami perrašyti mokesčio komponento atlyginimo komponentą, įjunkite {0}"
 
 #. Label of the to_year (Int) field in DocType 'Gratuity Rule Slab'
 #: hrms/payroll/doctype/gratuity_rule_slab/gratuity_rule_slab.json
-#, fuzzy
 msgid "To(Year)"
-msgstr "To(Year)"
+msgstr "Iki (Metai)"
 
 #: hrms/payroll/doctype/gratuity_rule/gratuity_rule.js:35
-#, fuzzy
 msgid "To(Year) year can not be less than From(year)"
 msgstr "Iki (metai) metai negali būti mažesni nei Nuo (metai)"
 
 #: hrms/controllers/employee_reminders.py:122
-#, fuzzy
 msgid "Today is {0}'s birthday 🎉"
 msgstr "Šiandien yra {0} gimtadienis 🎉"
 
 #: hrms/controllers/employee_reminders.py:261
-#, fuzzy
 msgid "Today {0} at our Company! 🎉"
 msgstr "Šiandien {0} mūsų įmonėje! 🎉"
 
 #: hrms/controllers/employee_reminders.py:241
-#, fuzzy
 msgid "Today {0} completed {1} {2} at our Company! 🎉"
 msgstr "Šiandien {0} baigė {1} {2} mūsų įmonėje! 🎉"
 
@@ -11503,7 +11205,6 @@ msgstr "Iš viso dienų be darbo užmokesčio"
 #. Label of the total_declared_amount (Currency) field in DocType 'Employee Tax
 #. Exemption Declaration'
 #: hrms/payroll/doctype/employee_tax_exemption_declaration/employee_tax_exemption_declaration.json
-#, fuzzy
 msgid "Total Declared Amount"
 msgstr "Bendra deklaruota suma"
 
@@ -11513,51 +11214,43 @@ msgstr "Bendra deklaruota suma"
 #: hrms/payroll/doctype/salary_structure/salary_structure.json
 #: hrms/payroll/report/salary_payments_based_on_payment_mode/salary_payments_based_on_payment_mode.py:148
 #: hrms/payroll/report/salary_register/salary_register.py:240
-#, fuzzy
 msgid "Total Deduction"
 msgstr "Bendras atskaitymas"
 
 #. Label of the base_total_deduction (Currency) field in DocType 'Salary Slip'
 #: hrms/payroll/doctype/salary_slip/salary_slip.json
-#, fuzzy
 msgid "Total Deduction (Company Currency)"
 msgstr "Bendras atskaitymas (įmonės valiuta)"
 
 #: hrms/hr/report/monthly_attendance_sheet/monthly_attendance_sheet.py:174
-#, fuzzy
 msgid "Total Early Exits"
 msgstr "Iš viso ankstyvi išėjimai"
 
 #. Label of the total_earning (Currency) field in DocType 'Salary Structure'
 #: hrms/payroll/doctype/salary_structure/salary_structure.json
-#, fuzzy
 msgid "Total Earning"
 msgstr "Viso priskaitymų"
 
 #. Label of the total_earnings (Currency) field in DocType 'Salary Slip'
 #: hrms/payroll/doctype/salary_slip/salary_slip.json
-#, fuzzy
 msgid "Total Earnings"
 msgstr "Viso priskaitymų"
 
 #. Label of the total_estimated_budget (Currency) field in DocType 'Staffing
 #. Plan'
 #: hrms/hr/doctype/staffing_plan/staffing_plan.json
-#, fuzzy
 msgid "Total Estimated Budget"
 msgstr "Bendras numatomas biudžetas"
 
 #. Label of the total_estimated_cost (Currency) field in DocType 'Staffing Plan
 #. Detail'
 #: hrms/hr/doctype/staffing_plan_detail/staffing_plan_detail.json
-#, fuzzy
 msgid "Total Estimated Cost"
 msgstr "Bendros numatytos išlaidos"
 
 #. Label of the total_exchange_gain_loss (Currency) field in DocType 'Expense
 #. Claim'
 #: hrms/hr/doctype/expense_claim/expense_claim.json
-#, fuzzy
 msgid "Total Exchange Gain/Loss"
 msgstr "Bendras valiutos keitimo pelnas/nuostolis"
 
@@ -11567,19 +11260,16 @@ msgstr "Bendras valiutos keitimo pelnas/nuostolis"
 #. Exemption Proof Submission'
 #: hrms/payroll/doctype/employee_tax_exemption_declaration/employee_tax_exemption_declaration.json
 #: hrms/payroll/doctype/employee_tax_exemption_proof_submission/employee_tax_exemption_proof_submission.json
-#, fuzzy
 msgid "Total Exemption Amount"
 msgstr "Bendra atleidimo nuo mokesčių suma"
 
 #: hrms/setup.py:299
-#, fuzzy
 msgid "Total Expense Claim (via Expense Claim)"
-msgstr "Bendros išlaidų kompensacijos suma (per išlaidų kompensacijos formą)"
+msgstr "Bendros išlaidų kompensacijos suma (per išlaidų kompensacijos prašymą)"
 
 #: hrms/setup.py:290
-#, fuzzy
 msgid "Total Expense Claim (via Expense Claims)"
-msgstr "Bendros išlaidų ataskaitos (per išlaidų ataskaitas)"
+msgstr "Bendros išlaidų kompensacijos suma (per išlaidų kompensacijos prašymus)"
 
 #. Label of the total_score (Float) field in DocType 'Appraisal'
 #: hrms/hr/doctype/appraisal/appraisal.json
@@ -11750,20 +11440,17 @@ msgstr "Bendras skirtų atostogų skaičius {0} negali būti mažesnis už jau p
 
 #. Label of the total_in_words (Data) field in DocType 'Salary Slip'
 #: hrms/payroll/doctype/salary_slip/salary_slip.json
-#, fuzzy
 msgid "Total in words"
 msgstr "Iš viso žodžiais"
 
 #. Label of the base_total_in_words (Data) field in DocType 'Salary Slip'
 #: hrms/payroll/doctype/salary_slip/salary_slip.json
-#, fuzzy
 msgid "Total in words (Company Currency)"
 msgstr "Iš viso žodžiais (įmonės valiuta)"
 
 #: hrms/hr/doctype/leave_allocation/leave_allocation.py:367
-#, fuzzy
 msgid "Total leaves allocated cannot exceed annual allocation of {0}."
-msgstr "Bendras paskirtų lapų skaičius negali viršyti metinio limito {0}."
+msgstr "Bendras paskirtų atostogų skaičius negali viršyti metinio limito {0}."
 
 #: hrms/hr/doctype/leave_allocation/leave_allocation.py:253
 #, fuzzy
@@ -12174,22 +11861,22 @@ msgstr "Atnaujinti mokesčius"
 #: hrms/hr/doctype/attendance_request/attendance_request.py:115
 #, fuzzy
 msgid "Updated status from {0} to {1} for date {2} in the attendance record {3}"
-msgstr "Atnaujintas statusas iš {0} į {1} už datą {2} lankomumo įraše {3}"
+msgstr "Atnaujintas būsena iš {0} į {1} už datą {2} lankomumo įraše {3}"
 
 #: hrms/hr/doctype/interview/interview.py:201
 #, fuzzy
 msgid "Updated the Job Applicant status to {0}"
-msgstr "Atnaujintas darbo kandidato statusas į {0}"
+msgstr "Atnaujintas darbo kandidato būsena į {0}"
 
 #: hrms/overrides/employee_master.py:77
 #, fuzzy
 msgid "Updated the status of Job Offer {0} for the linked Job Applicant {1} to {2}"
-msgstr "Atnaujintas darbo pasiūlymo {0} statusas susijusiam darbo kandidatui {1} į {2}"
+msgstr "Atnaujintas darbo pasiūlymo {0} būsena susijusiam darbo kandidatui {1} į {2}"
 
 #: hrms/overrides/employee_master.py:63
 #, fuzzy
 msgid "Updated the status of linked Job Applicant {0} to {1}"
-msgstr "Atnaujintas susietos darbo kandidato {0} statusas į {1}"
+msgstr "Atnaujintas susietos darbo kandidato {0} būsena į {1}"
 
 #. Name of a DocType
 #. Label of a Link in the Shift & Attendance Workspace
@@ -12535,7 +12222,6 @@ msgstr "Darbo valandos, žemiau kurių pažymėta „Pusė dienos“. (Nulis, ka
 
 #. Option for the 'Type' (Select) field in DocType 'Training Event'
 #: hrms/hr/doctype/training_event/training_event.json
-#, fuzzy
 msgid "Workshop"
 msgstr "Seminaras"
 
@@ -12544,20 +12230,17 @@ msgstr "Seminaras"
 #: frontend/src/views/salary_slip/Dashboard.vue:8
 #: hrms/payroll/doctype/salary_detail/salary_detail.json
 #: hrms/payroll/doctype/salary_slip/salary_slip.json
-#, fuzzy
 msgid "Year To Date"
 msgstr "Nuo metų pradžios"
 
 #. Label of the base_year_to_date (Currency) field in DocType 'Salary Slip'
 #: hrms/payroll/doctype/salary_slip/salary_slip.json
-#, fuzzy
 msgid "Year To Date(Company Currency)"
 msgstr "Nuo metų pradžios (įmonės valiuta)"
 
 #. Label of the yearly_benefit (Currency) field in DocType 'Employee Benefit
 #. Claim'
 #: hrms/payroll/doctype/employee_benefit_claim/employee_benefit_claim.json
-#, fuzzy
 msgid "Yearly Amount"
 msgstr "Metinė suma"
 
@@ -12565,24 +12248,20 @@ msgstr "Metinė suma"
 #. Ledger'
 #: hrms/payroll/doctype/employee_benefit_ledger/employee_benefit_ledger.json
 #: hrms/payroll/report/accrued_earnings_report/accrued_earnings_report.py:40
-#, fuzzy
 msgid "Yearly Benefit"
 msgstr "Metinė išmoka"
 
 #: hrms/hr/doctype/hr_settings/hr_settings.py:86
-#, fuzzy
 msgid "Yes, Proceed"
 msgstr "Taip, tęsti"
 
 #: hrms/hr/doctype/leave_application/leave_application.py:374
-#, fuzzy
 msgid "You are not authorized to approve leaves on Block Dates"
-msgstr "Jūs neturite teisės patvirtinti atostogų blokavimo dienomis."
+msgstr "Jūs neturite teisės patvirtinti atostogų blokavimo dienomis"
 
 #: hrms/hr/doctype/compensatory_leave_request/compensatory_leave_request.py:58
-#, fuzzy
 msgid "You are not present all day(s) between compensatory leave request days"
-msgstr "Jūs nesate darbe visą dieną (-as) tarp kompensacinių atostogų prašymo dienų."
+msgstr "Jūs nesate darbe visą dieną (-as) tarp kompensacinių atostogų prašymo dienų"
 
 #: hrms/payroll/doctype/gratuity_rule/gratuity_rule.py:24
 #, fuzzy
@@ -12621,34 +12300,28 @@ msgid "You do not have permission to complete this action"
 msgstr "Jūs neturite leidimo atlikti šio veiksmo."
 
 #: frontend/src/components/EmployeeAdvanceBalance.vue:26
-#, fuzzy
 msgid "You have no advances"
-msgstr "Jūs neturite avansų."
+msgstr "Jūs neturite avansų"
 
 #: frontend/src/components/LeaveBalance.vue:42
-#, fuzzy
 msgid "You have no leaves allocated"
-msgstr "Jums nėra skirtos atostogos."
+msgstr "Jūs neturite paskirstytų atostogų"
 
 #: frontend/src/views/Notifications.vue:91
-#, fuzzy
 msgid "You have no notifications"
-msgstr "Jūs neturite pranešimų."
+msgstr "Jūs neturite pranešimų"
 
 #: frontend/src/components/RequestList.vue:31
-#, fuzzy
 msgid "You have no requests"
-msgstr "Jūs neturite užklausų."
+msgstr "Jūs neturite užklausų"
 
 #: frontend/src/components/Holidays.vue:32
-#, fuzzy
 msgid "You have no upcoming holidays"
-msgstr "Jūs neturite artėjančių atostogų."
+msgstr "Jūs neturite artėjančių šventinių dienų"
 
 #: frontend/src/views/attendance/Dashboard.vue:29
-#, fuzzy
 msgid "You have no upcoming shifts"
-msgstr "Jūs neturite artėjančių pamainų."
+msgstr "Jūs neturite artėjančių pamainų"
 
 #: hrms/overrides/employee_master.py:83
 msgid "You may add additional details, if any, and submit the offer."
@@ -12668,7 +12341,7 @@ msgstr "Jūsų pokalbis perkeltas iš {0} {1} - {2} į {3} {4} - {5}"
 
 #: frontend/src/views/Login.vue:61
 msgid "Your password has expired. Please reset your password to continue"
-msgstr "Jūsų slaptažodis nebegalioja. Norėdami tęsti, nustatykite naują slaptažodį."
+msgstr "Jūsų slaptažodis nebegalioja. Norėdami tęsti, nustatykite naują slaptažodį"
 
 #: hrms/hr/doctype/compensatory_leave_request/compensatory_leave_request.py:100
 msgid "active"
@@ -12710,7 +12383,6 @@ msgid "or for the Employee's Department: {0}"
 msgstr "arba darbuotojo departamentui: {0}"
 
 #: hrms/public/js/utils/index.js:134
-#, fuzzy
 msgid "process"
 msgstr "procesas"
 
@@ -12839,7 +12511,7 @@ msgstr "{0} yra kaupimo komponentas, kuris bus įrašytas kaip išmoka darbuotoj
 
 #: hrms/hr/doctype/employee_checkin/employee_checkin.py:228
 msgid "{0} is an invalid Attendance Status."
-msgstr "{0} yra neteisingas lankomumo statusas."
+msgstr "{0} yra neteisingas lankomumo būsena."
 
 #: hrms/hr/doctype/compensatory_leave_request/compensatory_leave_request.py:69
 msgid "{0} is not a holiday."
