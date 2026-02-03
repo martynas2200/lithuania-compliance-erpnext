@@ -1527,11 +1527,10 @@ msgstr "Sąskaitos informacija"
 msgid "Account Head"
 msgstr "Sąskaitų planas"
 
-# need to think on it
 #. Label of the account_manager (Link) field in DocType 'Customer'
 #: erpnext/selling/doctype/customer/customer.json
 msgid "Account Manager"
-msgstr "Buhalterijos vadybininkas"
+msgstr "Buhalterijos valdytojas"
 
 #: erpnext/accounts/doctype/sales_invoice/sales_invoice.py:1036
 #: erpnext/controllers/accounts_controller.py:2312
@@ -2103,11 +2102,10 @@ msgstr "Apskaitos įrašas {0}: {1} galima atlikti tik valiuta: {2}"
 msgid "Accounting Ledger"
 msgstr "Apskaitos knyga"
 
-# A tough one
 #. Label of a Card Break in the Accounting Workspace
 #: erpnext/accounts/workspace/accounting/accounting.json
 msgid "Accounting Masters"
-msgstr "Apskaitos pagrindas"
+msgstr "Apskaita"
 
 #. Name of a DocType
 #. Label of a Link in the Accounting Workspace
@@ -2438,11 +2436,10 @@ msgstr "Veiksmas, jei tas pats tarifas neišlaikomas per visą vidaus sandorį"
 msgid "Action if Same Rate is Not Maintained Throughout Sales Cycle"
 msgstr "Veiksmas, jei tas pats tarifas neišlaikomas per visą pardavimo ciklą"
 
-# Not so clear
 #. Label of the action_on_new_invoice (Select) field in DocType 'POS Profile'
 #: erpnext/accounts/doctype/pos_profile/pos_profile.json
 msgid "Action on New Invoice"
-msgstr "Veiksmas kai nauja sąskaita faktūra"
+msgstr "Veiksmas paspaudus nauja sąskaita"
 
 #. Label of the actions_performed (Text Editor) field in DocType 'Asset
 #. Maintenance Log'
@@ -4629,13 +4626,13 @@ msgstr "Alternatyvi prekė"
 #. Alternative'
 #: erpnext/stock/doctype/item_alternative/item_alternative.json
 msgid "Alternative Item Code"
-msgstr "Alternatyvus prekės kodas"
+msgstr "Alternatyvios prekės kodas"
 
 #. Label of the alternative_item_name (Read Only) field in DocType 'Item
 #. Alternative'
 #: erpnext/stock/doctype/item_alternative/item_alternative.json
 msgid "Alternative Item Name"
-msgstr "Alternatyvus elemento pavadinimas"
+msgstr "Alternatyvios prekės pavadinimas"
 
 #: erpnext/selling/doctype/quotation/quotation.js:362
 msgid "Alternative Items"
@@ -7281,7 +7278,6 @@ msgstr "Balansas sąskaitos valiuta"
 msgid "Balance In Base Currency"
 msgstr "Balansas bazine valiuta"
 
-# hmmm?
 #: erpnext/stock/report/available_batch_report/available_batch_report.py:63
 #: erpnext/stock/report/available_serial_no/available_serial_no.py:126
 #: erpnext/stock/report/batch_wise_balance_history/batch_wise_balance_history.py:84
@@ -8587,12 +8583,11 @@ msgstr "Registruoti mokesčių nuostolį dėl ankstyvo apmokėjimo nuolaidos"
 msgid "Book an appointment"
 msgstr "Rezervuoti susitikimą"
 
-# Not sure about the context
 #. Option for the 'Status' (Select) field in DocType 'Shipment'
 #: erpnext/stock/doctype/shipment/shipment.json
 #: erpnext/stock/doctype/shipment/shipment_list.js:5
 msgid "Booked"
-msgstr "Užsakytas"
+msgstr "Užsakyta"
 
 #. Label of the booked_fixed_asset (Check) field in DocType 'Asset'
 #: erpnext/assets/doctype/asset/asset.json
@@ -10599,13 +10594,12 @@ msgstr "Galutinis likutis pagal banko išrašą"
 msgid "Closing Balance as per ERP"
 msgstr "Baigiamasis balansas pagal ERP"
 
-# Need to check context
 #. Label of the closing_date (Date) field in DocType 'Account Closing Balance'
 #. Label of the closing_date (Date) field in DocType 'Task'
 #: erpnext/accounts/doctype/account_closing_balance/account_closing_balance.json
 #: erpnext/projects/doctype/task/task.json
 msgid "Closing Date"
-msgstr "Galutinė data"
+msgstr "Uždarymo data"
 
 #. Label of the closing_text (Text Editor) field in DocType 'Dunning'
 #. Label of the closing_text (Text Editor) field in DocType 'Dunning Letter
@@ -11883,7 +11877,6 @@ msgstr "Sunaudotų atsargų, turto arba paslaugų prekės yra privalomos kapital
 msgid "Consumed Stock Total Value"
 msgstr "Sunaudotų atsargų bendra vertė"
 
-# Need context
 #: erpnext/setup/setup_wizard/data/industry_type.txt:15
 msgid "Consumer Products"
 msgstr "Pirkėjo prekės"
@@ -24623,10 +24616,9 @@ msgstr "Sąskaitos-faktūros dalis"
 msgid "Invoice Portion (%)"
 msgstr "Sąskaitos-faktūros dalis (%)"
 
-# as in issued date?
 #: erpnext/accounts/report/payment_period_based_on_invoice_date/payment_period_based_on_invoice_date.py:106
 msgid "Invoice Posting Date"
-msgstr "Sąskaitos-faktūros išrašymo data"
+msgstr "Sąskaitos-faktūros data"
 
 #. Label of the invoice_series (Select) field in DocType 'Import Supplier
 #. Invoice'
@@ -26739,10 +26731,9 @@ msgstr "Prekė {0} įvesta kelis kartus."
 msgid "Item {0} has already been returned"
 msgstr "Prekė {0} jau buvo grąžinta"
 
-# not sure deaktyvuota, perhaps is not active, so neaktyvi?
 #: erpnext/assets/doctype/asset/asset.py:280
 msgid "Item {0} has been disabled"
-msgstr "Prekė {0} buvo deaktyvuota"
+msgstr "Prekė {0} buvo išjungta"
 
 #: erpnext/selling/doctype/sales_order/sales_order.py:778
 msgid "Item {0} has no Serial No. Only serialized items can have delivery based on Serial No"
@@ -26918,7 +26909,6 @@ msgstr "Perskaičiuotinos prekės"
 msgid "Items to Manufacture are required to pull the Raw Materials associated with it."
 msgstr "Gaminamos prekės turi ištraukti su ja susijusias žaliavas."
 
-# Does not sound completely natural
 #. Label of a Link in the Buying Workspace
 #: erpnext/buying/workspace/buying/buying.json
 msgid "Items to Order and Receive"
@@ -27539,7 +27529,6 @@ msgstr "Paskutinis sudarytas sandoris"
 msgid "Latest"
 msgstr "Naujausias"
 
-# Where is it used?
 #: erpnext/stock/report/stock_balance/stock_balance.py:517
 msgid "Latest Age"
 msgstr "Naujausias amžius"
@@ -31463,7 +31452,6 @@ msgstr "Prekė nerasta. Dar kartą nuskaitykite brūkšninį kodą."
 msgid "No items in cart"
 msgstr "Krepšelyje nėra prekių"
 
-# gavimo, gautinų?
 #: erpnext/setup/doctype/email_digest/email_digest.py:166
 msgid "No items to be received are overdue"
 msgstr "Nėra pradelstų gautinų prekių"
@@ -31786,10 +31774,9 @@ msgstr "Nėra sandėlyje"
 msgid "Not permitted to make Purchase Orders"
 msgstr "Neleidžiama teikti pirkimo užsakymų"
 
-# No idea
 #: erpnext/manufacturing/doctype/bom_update_log/bom_update_log_list.js:21
 msgid "Note: Automatic log deletion only applies to logs of type <i>Update Cost</i>"
-msgstr "Pastaba: automatinis žurnalo ištrynimas taikomas tik <i>savikainos atnaujimo</i> tipo žurnalams"
+msgstr "Pastaba: automatinis žurnalo ištrynimas taikomas tik <i>Atnaujinti išlaidas</i> tipo žurnalams"
 
 #: erpnext/accounts/party.py:698
 msgid "Note: Due Date exceeds allowed {0} credit days by {1} day(s)"
@@ -51950,7 +51937,7 @@ msgstr "Tiekėjų numeriai"
 #: erpnext/buying/doctype/request_for_quotation_item/request_for_quotation_item.json
 #: erpnext/templates/includes/rfq/rfq_macros.html:20
 msgid "Supplier Part No"
-msgstr "Tiekėjo vidinis nr"
+msgstr "Tiekėjo vidinis Nr."
 
 #. Label of the supplier_part_no (Data) field in DocType 'Purchase Order Item'
 #. Label of the supplier_part_no (Data) field in DocType 'Supplier Quotation
@@ -51962,25 +51949,21 @@ msgstr "Tiekėjo vidinis nr"
 #: erpnext/buying/doctype/supplier_quotation_item/supplier_quotation_item.json
 #: erpnext/stock/doctype/item_supplier/item_supplier.json
 #: erpnext/stock/doctype/purchase_receipt_item/purchase_receipt_item.json
-#, fuzzy
 msgid "Supplier Part Number"
 msgstr "Tiekėjo vidinis numeris"
 
 #. Label of the portal_users (Table) field in DocType 'Supplier'
 #: erpnext/buying/doctype/supplier/supplier.json
-#, fuzzy
 msgid "Supplier Portal Users"
-msgstr "Tiekėjų portalo naudotojai"
+msgstr "Tiekėjo portalo naudotojai"
 
 #. Label of the supplier_primary_address (Link) field in DocType 'Supplier'
 #: erpnext/buying/doctype/supplier/supplier.json
-#, fuzzy
 msgid "Supplier Primary Address"
 msgstr "Tiekėjo pagrindinis adresas"
 
 #. Label of the supplier_primary_contact (Link) field in DocType 'Supplier'
 #: erpnext/buying/doctype/supplier/supplier.json
-#, fuzzy
 msgid "Supplier Primary Contact"
 msgstr "Tiekėjo pagrindinis kontaktas"
 
@@ -52002,7 +51985,6 @@ msgstr "Tiekėjo pagrindinis kontaktas"
 #: erpnext/crm/doctype/opportunity/opportunity.js:81
 #: erpnext/selling/doctype/quotation/quotation.json
 #: erpnext/stock/doctype/material_request/material_request.js:193
-#, fuzzy
 msgid "Supplier Quotation"
 msgstr "Tiekėjo pasiūlymas"
 
@@ -52011,7 +51993,6 @@ msgstr "Tiekėjo pasiūlymas"
 #: erpnext/buying/doctype/request_for_quotation/request_for_quotation.js:163
 #: erpnext/buying/report/supplier_quotation_comparison/supplier_quotation_comparison.json
 #: erpnext/buying/workspace/buying/buying.json
-#, fuzzy
 msgid "Supplier Quotation Comparison"
 msgstr "Tiekėjų pasiūlymų palyginimas"
 
@@ -52020,28 +52001,23 @@ msgstr "Tiekėjų pasiūlymų palyginimas"
 #. Name of a DocType
 #: erpnext/buying/doctype/purchase_order_item/purchase_order_item.json
 #: erpnext/buying/doctype/supplier_quotation_item/supplier_quotation_item.json
-#, fuzzy
 msgid "Supplier Quotation Item"
-msgstr "Tiekėjo pasiūlymo elementas"
+msgstr "Tiekėjo pasiūlymo prekė"
 
 #: erpnext/buying/doctype/request_for_quotation/request_for_quotation.py:456
-#, fuzzy
 msgid "Supplier Quotation {0} Created"
 msgstr "Sukurtas tiekėjo pasiūlymas {0}"
 
 #: erpnext/setup/setup_wizard/data/marketing_source.txt:6
-#, fuzzy
 msgid "Supplier Reference"
 msgstr "Tiekėjo nuoroda"
 
 #: erpnext/selling/doctype/sales_order/sales_order.js:1676
-#, fuzzy
 msgid "Supplier Required"
 msgstr "Reikalingas tiekėjas"
 
 #. Label of the supplier_score (Data) field in DocType 'Supplier Scorecard'
 #: erpnext/buying/doctype/supplier_scorecard/supplier_scorecard.json
-#, fuzzy
 msgid "Supplier Score"
 msgstr "Tiekėjo balas"
 
@@ -52050,7 +52026,6 @@ msgstr "Tiekėjo balas"
 #. Label of a Link in the Buying Workspace
 #: erpnext/buying/doctype/supplier_scorecard/supplier_scorecard.json
 #: erpnext/buying/workspace/buying/buying.json
-#, fuzzy
 msgid "Supplier Scorecard"
 msgstr "Tiekėjų vertinimo sistema"
 
@@ -52058,7 +52033,6 @@ msgstr "Tiekėjų vertinimo sistema"
 #. Label of a Link in the Buying Workspace
 #: erpnext/buying/doctype/supplier_scorecard_criteria/supplier_scorecard_criteria.json
 #: erpnext/buying/workspace/buying/buying.json
-#, fuzzy
 msgid "Supplier Scorecard Criteria"
 msgstr "Tiekėjų vertinimo kriterijai"
 

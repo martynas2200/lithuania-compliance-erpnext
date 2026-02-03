@@ -1,5 +1,3 @@
-
-
 <!-- Progress Indicator Template -->
 <div class="wizard-progress-template my-4">
 	<div class="wizard-progress mb-8">
@@ -13,27 +11,36 @@
 <div class="export-type-step-template hidden">
 	<div class="frappe-card p-3">
 		<div class="frappe-card-head">
-			<h4>{{__("Step 1: Select Export Type")}}</h4>
+			<h4>{{__("Select Export Type")}}</h4>
 		</div>
 		<div class="frappe-card-body">
 			<p>{{__("Choose the type of i.SAF invoice register you want to generate:")}}</p>
 
 			<div id="export-type-options" class="mt-3">
-				<div class="export-option border-2 rounded-lg p-2 mb-3 cursor-pointer transition-all duration-300" style="border-color: #d1d5db;" data-type="receivable">
+				<div class="export-option shadow-sm border rounded-lg p-2 mb-3 cursor-pointer transition-all duration-300" style="border-color: #d1d5db;" data-type="received">
 					<h5 class="mt-0 flex items-center">
 						{{__("Received Invoices")}}
 					</h5>
 					<p class="mb-0" style="color: #6b7280;">
-						{{__("Export purchase invoices, supplier credit notes, and expense claims")}}
+						{{__("Register of received VAT invoices")}}
 					</p>
 				</div>
 
-				<div class="export-option border-2 rounded-lg p-2 cursor-pointer transition-all duration-300" style="border-color: #d1d5db;" data-type="payable">
+				<div class="export-option shadow-sm border rounded-lg p-2 mb-3 cursor-pointer transition-all duration-300" style="border-color: #d1d5db;" data-type="issued">
 					<h5 class="mt-0 flex items-center">
 						{{__("Issued Invoices")}}
 					</h5>
 					<p class="mb-0" style="color: #6b7280;">
-						{{__("Export sales invoices, credit notes, and debit notes issued to customers")}}
+						{{__("Register of issued VAT invoices")}}
+					</p>
+				</div>
+
+				<div class="export-option shadow-sm border rounded-lg p-2 cursor-pointer transition-all duration-300" style="border-color: #d1d5db;" data-type="both">
+					<h5 class="mt-0 flex items-center">
+						{{__("Full File")}}
+					</h5>
+					<p class="mb-0" style="color: #6b7280;">
+						{{__("Registers of received and issued VAT invoices")}}
 					</p>
 				</div>
 			</div>
@@ -41,11 +48,10 @@
 	</div>
 </div>
 
-<!-- Step 2: Period Selection -->
 <div class="period-selection-step-template hidden">
 	<div class="frappe-card p-3">
 		<div class="frappe-card-head">
-			<h4>{{__("Step 2: Select Period")}}</h4>
+			<h4>{{__("Select Period")}}</h4>
 		</div>
 		<div class="frappe-card-body">
 			<p>{{__("Select the reporting period for the i.SAF export:")}}</p>
@@ -68,7 +74,7 @@
 				</div>
 
 				<div id="date-preview" class="mt-4 p-4 rounded hidden" style="background: #f9fafb;">
-					<strong>{{__("Selected Period:")}}</strong>
+					<strong>{{__("Selected Period")}}</strong>
 					<div id="date-range-display" class="mt-1" style="color: var(--primary);"></div>
 				</div>
 			</div>
@@ -76,78 +82,19 @@
 	</div>
 </div>
 
-<!-- Step 3: Invoice Review -->
-<div class="invoice-review-step-template hidden">
-	<div class="frappe-card p-3">
-		<div class="frappe-card-head">
-			<h4>{{__("Step 3: Review and Exclude Invoices")}}</h4>
-		</div>
-		<div class="frappe-card-body">
-			<p>
-				{{__("Review invoices that will be included in the i.SAF export.")}}
-				{{__("You can exclude specific invoices if needed.")}}
-			</p>
-
-			<div class="alert alert-warning mt-4">
-				<strong>{{__("Loading invoices...")}}</strong> {{__("This may take a moment.")}}
-			</div>
-
-			<div id="invoice-list-container" class="mt-5 hidden">
-				<div class="mb-4 flex justify-between items-center">
-					<div>
-						<strong id="invoice-count">0 {{__("invoices found")}}</strong>
-					</div>
-					<div class="space-x-2">
-						<button class="btn btn-default btn-sm" id="select-all-btn">{{__("Select All")}}</button>
-						<button class="btn btn-default btn-sm" id="deselect-all-btn">{{__("Deselect All")}}</button>
-					</div>
-				</div>
-
-				<table class="table table-bordered mb-0">
-					<thead class="sticky top-0 bg-white z-10">
-						<tr>
-							<th class="w-12">{{__("Include")}}</th>
-							<th>{{__("Invoice No")}}</th>
-							<th>{{__("Date")}}</th>
-							<th>{{__("Customer/Supplier")}}</th>
-							<th class="text-right">{{__("Grand Total")}}</th>
-							<th class="text-right">{{__("VAT")}}</th>
-						</tr>
-					</thead>
-					<tbody id="invoice-table-body">
-					</tbody>
-				</table>
-
-				<div id="excluded-summary" class="mt-4 p-2.5 rounded hidden" style="background: #fef3c7;">
-					<strong>{{__("Excluded:")}} <span id="excluded-count">0</span> {{__("invoice(s)")}}</strong>
-				</div>
-			</div>
-		</div>
-	</div>
-</div>
-
-<!-- Step 4: Generation -->
 <div class="generation-step-template hidden">
 	<div class="frappe-card p-3">
 		<div class="frappe-card-head">
-			<h4>{{__("Step 4: Generate i.SAF XML File")}}</h4>
+			<h4>{{__("Generate i.SAF XML File")}}</h4>
 		</div>
 		<div class="frappe-card-body">
-			<p>{{__("Review your selections and generate the i.SAF XML file:")}}</p>
-
-			<div class="p-5 rounded mt-5" style="background: #f9fafb;">
-				<h5>{{__("Export Summary")}}</h5>
-				<table class="table mt-4 bg-white">
-					<tbody id="summary-table-body">
-						<!-- Summary will be populated dynamically -->
-					</tbody>
-				</table>
-			</div>
+			<p>{{__("Review the file.")}}</p>
 
 			<div id="generation-status" class="mt-5 flex items-center justify-center">
-				<button class="btn btn-primary btn-lg" id="generate-btn">
-					<i class="fa fa-file-export"></i> {{__("Generate i.SAF XML File")}}
-				</button>
+                <div class="text-center">
+                    <i class="fa fa-spinner fa-spin" style="font-size: 2em"></i>
+                    <p style="margin-top: 10px">{{ __("Loading...") }}</p>
+                </div>
 			</div>
 		</div>
 	</div>

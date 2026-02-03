@@ -4,7 +4,7 @@ msgstr ""
 "Project-Id-Version: Frappe Framework VERSION\n"
 "Report-Msgid-Bugs-To: developers@frappe.io\n"
 "POT-Creation-Date: 2026-02-01 09:42+0000\n"
-"PO-Revision-Date: 2026-02-01 09:42+0000\n"
+"PO-Revision-Date: 2026-02-02 20:39+0100\n"
 "Last-Translator: Martynas Miliauskas <martin@ekranas.info>\n"
 "Language-Team: Lithuanian <your-team@example.com>\n"
 "Language: lt\n"
@@ -144,6 +144,7 @@ msgstr ""
 "3 - saugiai neatskiriamas: vidutinė apsauga nuo lėto maišos scenarijaus neprisijungus.\n"
 "<br>\n"
 "4 - labai neatskiriamas: stipri apsauga nuo lėto maišos scenarijaus neprisijungus."
+
 #. Description of the 'Priority' (Int) field in DocType 'Web Page'
 #: frappe/website/doctype/web_page/web_page.json
 msgid "0 is highest"
@@ -158,7 +159,8 @@ msgstr "1 = Taip ir 0 = Ne"
 msgid ""
 "1 Currency = [?] Fraction\n"
 "For e.g. 1 USD = 100 Cent"
-msgstr "1 valiuta = [?] frakcija\n"
+msgstr ""
+"1 valiuta = [?] frakcija\n"
 "Pavyzdžiui, 1 USD = 100 centų"
 
 #: frappe/public/js/frappe/form/reminders.js:19
@@ -286,7 +288,8 @@ msgid ""
 "<a href=\"https://docs.frappe.io/framework/user/en/api/rest#1-token-based-authentication\" target=\"_blank\">\n"
 "  Click here to learn about token-based authentication\n"
 "</a>"
-msgstr "<a href=\"https://docs.frappe.io/framework/user/en/api/rest#1-token-based-authentication\" target=\"_blank\">\n"
+msgstr ""
+"<a href=\"https://docs.frappe.io/framework/user/en/api/rest#1-token-based-authentication\" target=\"_blank\">\n"
 " Spauskite čia, kad sužinotumėte apie autentiškumo patvirtinimą naudojant žetonus\n"
 "</a>"
 
@@ -352,7 +355,8 @@ msgid ""
 "    </ul>\n"
 "</div>\n"
 "<br>\n"
-msgstr "<div class=\"well\">\n"
+msgstr ""
+"<div class=\"well\">\n"
 " Redaguokite lauke esantį serijos sąrašą. Taisyklės:\n"
 " <ul>\n"
 " <li>Kiekvienos serijos priešdėlis naujoje eilutėje.</li>\n"
@@ -417,7 +421,8 @@ msgid ""
 "\n"
 "<pre><code>.section-break { padding: 30px 0px; border-bottom: 1px solid #eee; }\n"
 ".section-break:last-child { padding-bottom: 0px; border-bottom: 0px;  }</code></pre>\n"
-msgstr "<h3>Custom CSS pagalba</h3>\n"
+msgstr ""
+"<h3>Custom CSS pagalba</h3>\n"
 "\n"
 "<p>Pastabos:</p>\n"
 "\n"
@@ -509,7 +514,8 @@ msgid ""
 "\t\t</tr>\n"
 "\t</tbody>\n"
 "</table>\n"
-msgstr "<h3>Spausdinimo formato pagalba</h3>\n"
+msgstr ""
+"<h3>Spausdinimo formato pagalba</h3>\n"
 "<hr>\n"
 "<h4>Įvadas</h4>\n"
 "<p>Spausdinimo formatai atvaizduojami serverio pusėje naudojant Jinja šablonavimo kalbą. Visos formos turi prieigą prie objekto <code>doc</code>, kuriame pateikiama informacija apie formatuojamą dokumentą. Taip pat galite pasiekti bendras pagalbines priemones naudodami modulį <code>frappe</code>.</p>\n"
@@ -594,7 +600,8 @@ msgid ""
 "{% if fax %}Fax: {{ fax }}&lt;br&gt;{% endif -%}\n"
 "{% if email_id %}Email: {{ email_id }}&lt;br&gt;{% endif -%}\n"
 "</code></pre>"
-msgstr "<h4>Numatytas šablonas</h4>\n"
+msgstr ""
+"<h4>Numatytas šablonas</h4>\n"
 "<p>Panaudoja <a href=\"http://jinja.pocoo.org/docs/templates/\">Jinja šablonas</a> ir bus prieinami visi adreso laukai (įskaitant pasirinktinius laukus, jei tokių yra)</p>\n"
 "<pre><code>{{{ address_line1 }}}&lt;br&gt;\n"
 "{% if address_line2 %}{{{ address_line2 }}&lt;br&gt;{% endif -%}\n"
@@ -629,7 +636,8 @@ msgid ""
 "<h4>Templating</h4>\n"
 "\n"
 "<p>Templates are compiled using the Jinja Templating Language. To learn more about Jinja, <a class=\"strong\" href=\"http://jinja.pocoo.org/docs/dev/templates/\">read this documentation.</a></p>\n"
-msgstr "<h4>Elektroninio atsakymo pavyzdys</h4>\n"
+msgstr ""
+"<h4>Elektroninio atsakymo pavyzdys</h4>\n"
 "\n"
 "<pre>Užsakymas pradelstas\n"
 "\n"
@@ -672,7 +680,8 @@ msgid ""
 "&lt;li&gt;Amount: {{ doc.grand_total }}\n"
 "&lt;/ul&gt;\n"
 "</pre>"
-msgstr "<h5>Pranešimo pavyzdys</h5>\n"
+msgstr ""
+"<h5>Pranešimo pavyzdys</h5>\n"
 "\n"
 "<pre>&lt;h3&gt;Užsakymas vėluoja&lt;/h3&gt;\n"
 "\n"
@@ -696,7 +705,8 @@ msgid ""
 "<p><strong>Condition Examples:</strong></p>\n"
 "<pre><code class=\"language-python\">doc.status==\"Open\"<br>doc.due_date==nowdate()<br>doc.total &gt; 40000\n"
 "</code></pre>\n"
-msgstr "<p><strong>Sąlygų pavyzdžiai:</strong></p>\n"
+msgstr ""
+"<p><strong>Sąlygų pavyzdžiai:</strong></p>\n"
 "<pre><code class=\"language-python\">doc.status==\"Open\"<br>doc.due_date==nowdate()<br>doc.total &gt; 40000\n"
 "</code></pre>\n"
 
@@ -706,7 +716,8 @@ msgid ""
 "<p><strong>Condition Examples:</strong></p>\n"
 "<pre>doc.status==\"Open\"<br>doc.due_date==nowdate()<br>doc.total &gt; 40000\n"
 "</pre>"
-msgstr "<p><strong>Sąlygų pavyzdžiai:</strong></p>\n"
+msgstr ""
+"<p><strong>Sąlygų pavyzdžiai:</strong></p>\n"
 "<pre>doc.status==\"Open\"<br>doc.due_date==nowdate()<br>doc.total &gt; 40000\n"
 "</pre>"
 
@@ -716,7 +727,8 @@ msgid ""
 "<p>Multiple webforms can be created for a single doctype. Add filters specific to this webform to display correct record after submission.</p><p>For Example:</p>\n"
 "<p>If you create a separate webform every year to capture feedback from employees add a \n"
 " field named year in doctype and add a filter <b>year = 2023</b></p>\n"
-msgstr "<p>Vienai dokumento tipui galima sukurti kelias žiniatinklio formas. Pridėkite šiai žiniatinklio formai būdingus filtrus, kad pateikus būtų rodomas teisingas įrašas.</p><p>Pavyzdys:</p>\n"
+msgstr ""
+"<p>Vienai dokumento tipui galima sukurti kelias žiniatinklio formas. Pridėkite šiai žiniatinklio formai būdingus filtrus, kad pateikus būtų rodomas teisingas įrašas.</p><p>Pavyzdys:</p>\n"
 "<p>Jei kiekvienais metais kuriate atskirą žiniatinklio formą darbuotojų atsiliepimams surinkti, į doctype įrašykite lauką pavadinimu metai ir pridėkite filtrą <b>year = 2023</b></p>\n"
 
 #. Description of the 'Context Script' (Code) field in DocType 'Web Page'
@@ -727,6 +739,10 @@ msgid ""
 "context.project = frappe.get_doc(\"Project\", frappe.form_dict.name)\n"
 "</code></pre></div>"
 msgstr ""
+"<p>Nustatykite kontekstą prieš atvaizduodami šabloną. Pavyzdys:</p><p>\n"
+"</p><div><pre><code>\n"
+"context.project = frappe.get_doc(\"Project\", frappe.form_dict.name)\n"
+"</code></pre></div>"
 
 #. Content of the 'JS Message' (HTML) field in DocType 'Custom HTML Block'
 #: frappe/desk/doctype/custom_html_block/custom_html_block.json
@@ -735,7 +751,8 @@ msgid ""
 "let some_class_element = root_element.querySelector('.some-class');\n"
 "some_class_element.textContent = \"New content\";\n"
 "</code></pre>"
-msgstr "<p>Tam, kad galėtumėte sąveikauti su pirmiau pateiktu HTML, turite naudoti `root_element` kaip pagrindinį selektorių.</p><p>Pavyzdys:</p><pre class=\"p-3 bg-gray-100 border-radius rounded-sm mb-0\" style=\"width: fit-content;\"><code>/// čia root_element pateikiamas pagal nutylėjimą\n"
+msgstr ""
+"<p>Tam, kad galėtumėte sąveikauti su pirmiau pateiktu HTML, turite naudoti `root_element` kaip pagrindinį selektorių.</p><p>Pavyzdys:</p><pre class=\"p-3 bg-gray-100 border-radius rounded-sm mb-0\" style=\"width: fit-content;\"><code>/// čia root_element pateikiamas pagal nutylėjimą\n"
 "let some_class_element = root_element.querySelector('.some-class');\n"
 "some_class_element.textContent = \"Naujas turinys\";\n"
 "</code></pre>"
@@ -764,7 +781,8 @@ msgid ""
 "* - Any value\n"
 "/ - Step values\n"
 "</pre>\n"
-msgstr "<pre>*  *  *  *  *\n"
+msgstr ""
+"<pre>*  *  *  *  *\n"
 "┬  ┬  ┬  ┬  ┬\n"
 "│  │  │  │  │\n"
 "│  │  │  │  └ savaitės diena (0 - 6) (0 yra Sekmadienis)\n"
@@ -796,7 +814,8 @@ msgid ""
 "<li>frappe.utils.now</li>\n"
 "</ul>\n"
 "<p>Example: </p><pre><code>doc.creation &gt; frappe.utils.add_to_date(frappe.utils.now_datetime(), days=-5, as_string=True, as_datetime=True) </code></pre><p></p>"
-msgstr "<pre><code>doc.grand_total &gt; 0</code></pre>\n"
+msgstr ""
+"<pre><code>doc.grand_total &gt; 0</code></pre>\n"
 "\n"
 "<p>Sąlygos turėtų būti parašytos paprasta Python kalba. Naudokite tik formoje esančias savybes.</p>\n"
 "<p>Leistinos funkcijos:\n"
@@ -888,7 +907,8 @@ msgid ""
 "A version identifier string for the client software.\n"
 "<br>\n"
 "The value of the should change on any update of the client software with the same Software ID."
-msgstr "Kliento programinės įrangos versijos identifikatoriaus eilutė.\n"
+msgstr ""
+"Kliento programinės įrangos versijos identifikatoriaus eilutė.\n"
 "<br>\n"
 "Vertė turėtų pasikeisti atnaujinus kliento programinę įrangą su tuo pačiu programinės įrangos ID."
 
@@ -2095,7 +2115,8 @@ msgid ""
 "Allow editing even if the doctype has a workflow set up.\n"
 "\n"
 "Does nothing if a workflow isn't set up."
-msgstr "Leidžia redaguoti, net jei doctype yra nustatyta darbo eiga.\n"
+msgstr ""
+"Leidžia redaguoti, net jei doctype yra nustatyta darbo eiga.\n"
 "\n"
 "Nedarys nieko, jei darbo eiga nenustatyta."
 
@@ -2256,11 +2277,11 @@ msgstr "Leidžia įjungtą Social Login Key Base URL rodyti kaip autorizacijos s
 
 #: frappe/core/page/permission_manager/permission_manager_help.html:52
 msgid "Allows printing or PDF download of documents."
-msgstr ""
+msgstr "Leidžia spausdinti arba atsisiųsti dokumentus PDF formatu."
 
 #: frappe/core/page/permission_manager/permission_manager_help.html:77
 msgid "Allows sharing document access with other users."
-msgstr ""
+msgstr "Leidžia dalytis prieiga prie dokumentų su kitais vartotojais."
 
 #. Description of the 'Skip Authorization' (Check) field in DocType 'OAuth
 #. Settings'
@@ -2270,43 +2291,43 @@ msgstr "Leidžia praleisti autorizaciją, jei naudotojas turi aktyvių žetonų.
 
 #: frappe/core/page/permission_manager/permission_manager_help.html:62
 msgid "Allows the user to access reports related to the document."
-msgstr ""
+msgstr "Leidžia vartotojui pasiekti su dokumentu susijusias ataskaitas."
 
 #: frappe/core/page/permission_manager/permission_manager_help.html:42
 msgid "Allows the user to create new documents."
-msgstr ""
+msgstr "Leidžia vartotojui kurti naujus dokumentus."
 
 #: frappe/core/page/permission_manager/permission_manager_help.html:47
 msgid "Allows the user to delete documents."
-msgstr ""
+msgstr "Leidžia vartotojui ištrinti dokumentus."
 
 #: frappe/core/page/permission_manager/permission_manager_help.html:37
 msgid "Allows the user to edit existing records they have access to."
-msgstr ""
+msgstr "Leidžia vartotojui redaguoti esamus įrašus, prie kurių jis turi prieigą."
 
 #: frappe/core/page/permission_manager/permission_manager_help.html:57
 msgid "Allows the user to email from the document."
-msgstr ""
+msgstr "Leidžia vartotojui siųsti el. laiškus iš dokumento."
 
 #: frappe/core/page/permission_manager/permission_manager_help.html:67
 msgid "Allows the user to export data from the Report view."
-msgstr ""
+msgstr "Leidžia vartotojui eksportuoti duomenis iš ataskaitos peržiūros."
 
 #: frappe/core/page/permission_manager/permission_manager_help.html:27
 msgid "Allows the user to search and see records."
-msgstr ""
+msgstr "Leidžia vartotojui ieškoti ir peržiūrėti įrašus."
 
 #: frappe/core/page/permission_manager/permission_manager_help.html:72
 msgid "Allows the user to use Data Import tool to create / update records."
-msgstr ""
+msgstr "Leidžia vartotojui naudoti duomenų importo įrankį įrašams kurti / atnaujinti."
 
 #: frappe/core/page/permission_manager/permission_manager_help.html:32
 msgid "Allows the user to view the document."
-msgstr ""
+msgstr "Leidžia vartotojui peržiūrėti dokumentą."
 
 #: frappe/core/page/permission_manager/permission_manager_help.html:82
 msgid "Allows users to enable the mask property for any field of the respective doctype."
-msgstr ""
+msgstr "Leidžia vartotojams įjungti kaukės savybę bet kuriam atitinkamo dokumento tipo laukui."
 
 #: frappe/core/doctype/user/user.py:1084
 msgid "Already Registered"
@@ -2619,7 +2640,7 @@ msgstr "Taikyti filtrus"
 
 #: frappe/custom/doctype/customize_form/customize_form.js:271
 msgid "Apply Module Export Filter"
-msgstr ""
+msgstr "Taikyti modulio eksporto filtrą"
 
 #. Label of the apply_strict_user_permissions (Check) field in DocType 'System
 #. Settings'
@@ -3097,7 +3118,7 @@ msgstr "Bandymas paleisti QZ Tray…"
 #: frappe/desk/doctype/event/event.json
 #: frappe/desk/doctype/event_participants/event_participants.json
 msgid "Attending"
-msgstr ""
+msgstr "Dalyvavimas"
 
 #: frappe/www/attribution.html:9
 msgid "Attribution"
@@ -4609,7 +4630,8 @@ msgid ""
 "Change the starting / current sequence number of an existing series. <br>\n"
 "\n"
 "Warning: Incorrectly updating counters can prevent documents from getting created."
-msgstr "Pakeiskite esamos serijos pradinį / dabartinį eilės numerį. <br>\n"
+msgstr ""
+"Pakeiskite esamos serijos pradinį / dabartinį eilės numerį. <br>\n"
 "\n"
 "Įspėjimas: Neteisingai atnaujinus skaitiklius, dokumentai gali būti nesukurti."
 
@@ -4729,7 +4751,7 @@ msgstr "Daugiau informacijos rasite klaidų žurnale: {0}"
 #. 'Workflow Document State'
 #: frappe/workflow/doctype/workflow_document_state/workflow_document_state.json
 msgid "Check this if the Update Value is a formula or expression (e.g. doc.amount * 2). Leave unchecked for plain text values."
-msgstr ""
+msgstr "Pažymėkite tai, jei atnaujinimo reikšmė yra formulė arba išraiška (pvz., doc.amount * 2). Paprasto teksto vertėms nepažymėkite."
 
 #: frappe/website/doctype/website_settings/website_settings.js:147
 msgid "Check this if you don't want users to sign up for an account on your site. Users won't get desk access unless you explicitly provide it."
@@ -5348,7 +5370,7 @@ msgstr "Bendrinius vardus ir pavardes lengva atspėti."
 
 #: frappe/utils/password_strength.py:190
 msgid "Common words are easy to guess."
-msgstr ""
+msgstr "Įprastus žodžius lengva atspėti."
 
 #. Name of a DocType
 #. Option for the 'Communication Type' (Select) field in DocType
@@ -5560,7 +5582,8 @@ msgid ""
 "Default behaviour is to follow an amend counter which adds a number to the end of the original name indicating the amended version. <br>\n"
 "\n"
 "Default Naming will make the amended document to behave same as new documents."
-msgstr "Nustatykite, kaip bus pavadinti pakeisti dokumentai.<br>\n"
+msgstr ""
+"Nustatykite, kaip bus pavadinti pakeisti dokumentai.<br>\n"
 "\n"
 "Pagal numatytuosius nustatymus turi būti naudojamas pakeitimų skaitiklis, kuris prie pradinio pavadinimo galo prideda skaičių, nurodantį pakeistą versiją. <br>\n"
 "\n"
@@ -6049,7 +6072,7 @@ msgstr "Sukurti naują Kanban lentą"
 
 #: frappe/public/js/frappe/list/list_filter.js:119
 msgid "Create Saved Filter"
-msgstr ""
+msgstr "Sukurkite išsaugotą filtrą"
 
 #: frappe/core/doctype/user/user.js:271
 msgid "Create User Email"
@@ -6119,11 +6142,11 @@ msgstr "Sukūrė"
 
 #: frappe/public/js/frappe/form/sidebar/form_sidebar.js:174
 msgid "Created By You"
-msgstr ""
+msgstr "Sukurta Jūsų"
 
 #: frappe/public/js/frappe/form/sidebar/form_sidebar.js:175
 msgid "Created By {0}"
-msgstr ""
+msgstr "Sukūrė {0}"
 
 #: frappe/workflow/doctype/workflow/workflow.py:65
 msgid "Created Custom Field {0} in {1}"
@@ -7201,11 +7224,11 @@ msgstr "Ištrinti skirtuką"
 
 #: frappe/public/js/frappe/form/grid.js:66
 msgid "Delete all"
-msgstr ""
+msgstr "Ištrinti viską"
 
 #: frappe/public/js/frappe/form/grid.js:367
 msgid "Delete all {0} rows"
-msgstr ""
+msgstr "Ištrinti visas {0} eilutes"
 
 #: frappe/public/js/frappe/views/reports/query_report.js:960
 msgid "Delete and Generate New"
@@ -7237,7 +7260,7 @@ msgstr "Ištrinti visą skirtuką su laukais"
 
 #: frappe/public/js/frappe/form/grid.js:237
 msgid "Delete row"
-msgstr ""
+msgstr "Ištrinti eilutę"
 
 #: frappe/public/js/form_builder/components/Section.vue:132
 msgctxt "Button text"
@@ -7265,7 +7288,7 @@ msgstr "Visam laikui ištrinti {0} elementus?"
 
 #: frappe/public/js/frappe/form/grid.js:240
 msgid "Delete {0} rows"
-msgstr ""
+msgstr "Ištrinti {0} eilutes"
 
 #. Option for the 'Comment Type' (Select) field in DocType 'Comment'
 #. Option for the 'Status' (Select) field in DocType 'Personal Data Deletion
@@ -7558,7 +7581,7 @@ msgstr "Skaičiai"
 #: frappe/utils/data.py:1563
 msgctxt "Currency"
 msgid "Dinars"
-msgstr ""
+msgstr "Dinars"
 
 #. Label of the ldap_directory_server (Select) field in DocType 'LDAP Settings'
 #: frappe/integrations/doctype/ldap_settings/ldap_settings.json
@@ -7840,7 +7863,8 @@ msgid ""
 "\t\t\t\tDo you want to update the docstatus of existing documents in those states?<br>\n"
 "\t\t\t\tThis does not undo any effect bought in by the document's existing docstatus.\n"
 "\t\t\t\t"
-msgstr "Pasikeitė šių būsenų dokumento būsena:<br><strong>{0}</strong><br>\n"
+msgstr ""
+"Pasikeitė šių būsenų dokumento būsena:<br><strong>{0}</strong><br>\n"
 "\t\t\t\tAr norite atnaujinti šių būsenų esamų dokumentų dokumento būseną?<br>\n"
 "\t\t\t\tTai nepanaikina jokio poveikio, kurį sukėlė esama dokumento dokumento būsena.\n"
 "\t\t\t\t"
@@ -7996,11 +8020,11 @@ msgstr "DocTypes negalima keisti, vietoj jų naudokite {0}"
 #: frappe/email/doctype/document_follow/document_follow.json
 #: frappe/public/js/frappe/widgets/widget_dialog.js:682
 msgid "Doctype"
-msgstr "Doctype"
+msgstr "Dokumento tipas"
 
 #: frappe/core/doctype/doctype/doctype.py:1040
 msgid "Doctype name is limited to {0} characters ({1})"
-msgstr "Doctype pavadinimas gali būti tik {0} simbolių ({1})"
+msgstr "Dokumento tipo pavadinimas gali būti tik {0} simbolių ({1})"
 
 #: frappe/public/js/frappe/list/bulk_operations.js:3
 msgid "Doctype required"
@@ -9354,7 +9378,8 @@ msgstr "Įgalinkite kūrėjo režimą, kad sukurtumėte standartinį žiniatinkl
 msgid ""
 "Enable if on click\n"
 "opens modal."
-msgstr "Įjungti, jei spustelėjus\n"
+msgstr ""
+"Įjungti, jei spustelėjus\n"
 "atidaryti modalą."
 
 #. Label of the enable_view_tracking (Check) field in DocType 'Website
@@ -9541,7 +9566,7 @@ msgstr "Įveskite aplanko pavadinimą"
 
 #: frappe/public/js/form_builder/components/FieldProperties.vue:65
 msgid "Enter list of Options, each on a new line."
-msgstr ""
+msgstr "Įveskite parinkčių sąrašą, kiekvieną į naują eilutę."
 
 #. Description of the 'Static Parameters' (Table) field in DocType 'SMS
 #. Settings'
@@ -9675,7 +9700,7 @@ msgstr "Klaida narpliojant įdėtieji filtrai: {0}. {1}"
 
 #: frappe/desk/search.py:255
 msgid "Error validating \"Ignore User Permissions\""
-msgstr ""
+msgstr "Klaida tikrinant „Ignoruoti vartotojo leidimus“"
 
 #: frappe/email/doctype/email_account/email_account.py:670
 msgid "Error while connecting to email account {0}"
@@ -9687,7 +9712,7 @@ msgstr "Klaida vertinant pranešimą {0}. Ištaisykite savo šabloną."
 
 #: frappe/email/frappemail.py:173
 msgid "Error {0}: {1}"
-msgstr ""
+msgstr "Klaida {0}: {1}"
 
 #: frappe/model/base_document.py:920
 msgid "Error: Data missing in table {0}"
@@ -9711,7 +9736,7 @@ msgstr "Klaidos"
 #. Document State'
 #: frappe/workflow/doctype/workflow_document_state/workflow_document_state.json
 msgid "Evaluate as Expression"
-msgstr ""
+msgstr "Vertinti kaip išraišką"
 
 #. Option for the 'Type' (Select) field in DocType 'Communication'
 #. Name of a DocType
@@ -9734,7 +9759,7 @@ msgstr "Įvykių dažnumas"
 #. Name of a DocType
 #: frappe/desk/doctype/event_notifications/event_notifications.json
 msgid "Event Notifications"
-msgstr ""
+msgstr "Įvykio pranešimai"
 
 #. Label of the event_participants (Table) field in DocType 'Event'
 #. Name of a DocType
@@ -10020,7 +10045,7 @@ msgstr "Eksportuoti neleidžiama. Norint eksportuoti, reikia {0} vaidmens."
 
 #: frappe/custom/doctype/customize_form/customize_form.js:272
 msgid "Export only customizations assigned to the selected module.<br><span class='text-muted'><strong>Note:</strong> You must set the <em>Module (for export)</em> field on Custom Field and Property Setter records before applying this filter.</span><p class='alert alert-warning'> <strong>Warning:</strong> Customizations from other modules will be excluded.</p>"
-msgstr ""
+msgstr "Eksportuokite tik pasirinktam moduliui priskirtus pritaikymus. <br><span class='text-muted'><strong>Pastaba:</strong> prieš taikydami šį filtrą, turite nustatyti lauką <em>Modulis (eksportui)</em> įrašuose „Custom Field“ ir „Property Setter“.</span><p class='alert alert-warning'> <strong>Įspėjimas:</strong> pritaikymas iš kitų modulių bus neįtrauktas.</p>"
 
 #. Description of the 'Export without main header' (Check) field in DocType
 #. 'Data Export'
@@ -10126,7 +10151,7 @@ msgstr "Nepavykę užduotys"
 #. Label of a number card in the Users Workspace
 #: frappe/core/workspace/users/users.json
 msgid "Failed Login Attempts"
-msgstr ""
+msgstr "Nepavykę prisijungimo bandymai"
 
 #. Label of the failed_logins (Int) field in DocType 'System Health Report'
 #: frappe/desk/doctype/system_health_report/system_health_report.json
@@ -10347,7 +10372,7 @@ msgstr "Laukas „value“ yra privalomas. Nurodykite vertę, kuri turi būti at
 
 #: frappe/desk/search.py:262
 msgid "Field <code>{0}</code> not found in {1}"
-msgstr ""
+msgstr "Laukas <code>{0}</code> nerastas {1}"
 
 #. Label of the description (Text) field in DocType 'Custom Field'
 #: frappe/custom/doctype/custom_field/custom_field.json
@@ -12617,7 +12642,7 @@ msgstr "Ikona"
 #. Label of the icon_image (Attach) field in DocType 'Desktop Icon'
 #: frappe/desk/doctype/desktop_icon/desktop_icon.json
 msgid "Icon Image"
-msgstr ""
+msgstr "Ikonos nuotrauka"
 
 #. Label of the icon_style (Select) field in DocType 'Desktop Settings'
 #: frappe/desk/doctype/desktop_settings/desktop_settings.json
@@ -12631,7 +12656,7 @@ msgstr "Ikonos tipas"
 
 #: frappe/desk/page/desktop/desktop.js:1011
 msgid "Icon is not correctly configured please check the workspace sidebar to it"
-msgstr ""
+msgstr "Piktograma netinkamai sukonfigūruota, patikrinkite jos šoninę juostą"
 
 #. Description of the 'Icon' (Select) field in DocType 'Workflow State'
 #: frappe/workflow/doctype/workflow_state/workflow_state.json
@@ -12733,7 +12758,7 @@ msgstr "Jei įjungta, dokumento peržiūros stebimos, tai gali vykti kelis kartu
 #. (Check) field in DocType 'System Settings'
 #: frappe/core/doctype/system_settings/system_settings.json
 msgid "If enabled, only System Managers can upload public files. Other users can't see the checkbox <i>Is Private</i> in the upload dialog."
-msgstr ""
+msgstr "Jei įjungta, tik sistemos valdytojai gali įkelti viešus failus. Kiti vartotojai įkėlimo dialogo lange nemato žymės langelio <i>Yra privatus</i>."
 
 #. Description of the 'Track Seen' (Check) field in DocType 'DocType'
 #: frappe/core/doctype/doctype/doctype.json
@@ -12799,11 +12824,11 @@ msgstr "Jei nustatyta, šią diagramą gali pasiekti tik šiuos vaidmenis turint
 
 #: frappe/core/page/permission_manager/permission_manager_help.html:83
 msgid "If the user enables the mask property for the phone number field, the value will be displayed in a masked format (e.g., 811XXXXXXX)."
-msgstr ""
+msgstr "Jei vartotojas telefono numerio lauke įgalina maskavimo ypatybę, reikšmė bus rodoma užmaskuotu formatu (pvz., 061XXXXXXX)."
 
 #: frappe/core/page/permission_manager/permission_manager_help.html:63
 msgid "If the user has access to Employee and Report is enabled, they can view Employee-based reports."
-msgstr ""
+msgstr "Jei vartotojas turi prieigą prie darbuotojo ir įgalinta ataskaita, jis gali peržiūrėti darbuotojų ataskaitas."
 
 #. Description of the 'User Type' (Link) field in DocType 'User'
 #: frappe/core/doctype/user/user.json
@@ -13591,7 +13616,7 @@ msgstr "Dokumentų dalijimosi vidaus įrašas"
 #. Label of the interval (Select) field in DocType 'Event Notifications'
 #: frappe/desk/doctype/event_notifications/event_notifications.json
 msgid "Interval"
-msgstr ""
+msgstr "Intervalas"
 
 #. Label of the intro_video_url (Data) field in DocType 'Onboarding Step'
 #: frappe/desk/doctype/onboarding_step/onboarding_step.json
@@ -13668,7 +13693,7 @@ msgstr "Neteisingi kredencialai"
 
 #: frappe/email/smtp.py:138
 msgid "Invalid Credentials for Email Account: {0}"
-msgstr ""
+msgstr "Netinkami el. pašto paskyros kredencialai: {0}"
 
 #: frappe/utils/data.py:146 frappe/utils/data.py:309
 msgid "Invalid Date"
@@ -13851,7 +13876,7 @@ msgstr "Negaliojanti dokumento būsena"
 
 #: frappe/model/workflow.py:112
 msgid "Invalid expression in Workflow Update Value: {0}"
-msgstr ""
+msgstr "Netinkama darbo eigos atnaujinimo vertės išraiška: {0}"
 
 #: frappe/public/js/frappe/utils/dashboard_utils.js:229
 msgid "Invalid expression set in filter {0}"
@@ -14827,11 +14852,11 @@ msgstr "Paskutinis aktyvus"
 
 #: frappe/public/js/frappe/form/sidebar/form_sidebar.js:163
 msgid "Last Edited by You"
-msgstr ""
+msgstr "Paskutinį kartą redagavo jūs"
 
 #: frappe/public/js/frappe/form/sidebar/form_sidebar.js:164
 msgid "Last Edited by {0}"
-msgstr ""
+msgstr "Paskutinį kartą redagavo {0}"
 
 #. Label of the last_execution (Datetime) field in DocType 'Scheduled Job Type'
 #: frappe/core/doctype/scheduled_job_type/scheduled_job_type.json
@@ -15623,7 +15648,7 @@ msgstr "Prisijungimas"
 #. Label of a chart in the Users Workspace
 #: frappe/core/workspace/users/users.json
 msgid "Login Activity"
-msgstr ""
+msgstr "Prisijungimo veikla"
 
 #. Label of the login_after (Int) field in DocType 'User'
 #: frappe/core/doctype/user/user.json
@@ -15902,7 +15927,7 @@ msgstr "Tvarkykite trečiųjų šalių programėles"
 
 #: frappe/public/js/billing.bundle.js:45
 msgid "Manage Billing"
-msgstr ""
+msgstr "Tvarkyti sąskaitas"
 
 #. Label of the reqd (Check) field in DocType 'DocField'
 #. Label of the mandatory (Check) field in DocType 'Report Filter'
@@ -16159,7 +16184,7 @@ msgstr "Leidžiama daugiausia {0} eilučių"
 #: frappe/desk/doctype/event/event.json
 #: frappe/desk/doctype/event_participants/event_participants.json
 msgid "Maybe"
-msgstr ""
+msgstr "Galbūt"
 
 #: frappe/public/js/frappe/list/base_list.js:946
 #: frappe/public/js/frappe/list/list_sidebar_group_by.js:168
@@ -16951,7 +16976,8 @@ msgid ""
 "Naming Options:\n"
 "<ol><li><b>field:[fieldname]</b> - By Field</li><li><b>naming_series:</b> - By Naming Series (field called naming_series must be present)</li><li><b>Prompt</b> - Prompt user for a name</li><li><b>[series]</b> - Series by prefix (separated by a dot); for example PRE.#####</li>\n"
 "<li><b>format:EXAMPLE-{MM}morewords{fieldname1}-{fieldname2}-{#####}</b> - Replace all braced words (fieldnames, date words (DD, MM, YY), series) with their value. Outside braces, any characters can be used.</li></ol>"
-msgstr "Pavadinimų parinktys:\n"
+msgstr ""
+"Pavadinimų parinktys:\n"
 "<ol><li><b>field:[fieldname]</b> - Pagal lauką</li><li><b>naming_series:</b> - Pagal pavadinimų seriją (turi būti laukas pavadinimu_serija)</li><li><b>Prompt</b> - Paraginti naudotoją pateikti pavadinimą</li><li><b>[series]</b> - Serija pagal priešdėlį (atskirta tašku); pavyzdžiui, PRE.#####</li>\n"
 "<li><b>format:EXAMPLE-{MM}morewords{fieldname1}-{fieldname2}-{#####}</b> - Pakeiskite visus laužtiniais skliaustais pažymėtus žodžius (laukų pavadinimus, datos žodžius (DD, MM, YY), serijas) jų reikšme. Už skliaustų ribų galima naudoti bet kokius simbolius.</li></ol>"
 
@@ -17022,7 +17048,7 @@ msgstr "Pereiti prie pagrindinio turinio"
 #. Label of the form_navigation_buttons (Check) field in DocType 'User'
 #: frappe/core/doctype/user/user.json
 msgid "Navigation Buttons"
-msgstr ""
+msgstr "Navigacijos mygtukai"
 
 #. Label of the navigation_settings_section (Section Break) field in DocType
 #. 'User'
@@ -17216,7 +17242,8 @@ msgid ""
 "New line separated list of allowed public client URLs (eg <code>https://frappe.io</code>), or <code>*</code> to accept all.\n"
 "<br>\n"
 "Public clients are restricted by default."
-msgstr "Naujomis eilutėmis atskirtas leidžiamų viešųjų klientų URL sąrašas (pvz., <code>https://frappe.io</code>) arba <code>*</code>, jei norite priimti visus.\n"
+msgstr ""
+"Naujomis eilutėmis atskirtas leidžiamų viešųjų klientų URL sąrašas (pvz., <code>https://frappe.io</code>) arba <code>*</code>, jei norite priimti visus.\n"
 "<br>\n"
 "Pagal numatytuosius nustatymus viešiesiems klientams taikomi apribojimai."
 
@@ -17338,7 +17365,7 @@ msgstr "Kito veiksmo el. pašto šablonas"
 
 #: frappe/core/doctype/success_action/success_action.js:44
 msgid "Next Actions"
-msgstr ""
+msgstr "Kiti veiksmai"
 
 #. Label of the next_actions_html (HTML) field in DocType 'Success Action'
 #: frappe/core/doctype/success_action/success_action.json
@@ -17773,7 +17800,7 @@ msgstr "Nerastas šablonas adresu: {0}"
 
 #: frappe/core/page/permission_manager/permission_manager.js:364
 msgid "No user has the role <strong>{0}</strong>"
-msgstr ""
+msgstr "Nė vienas vartotojas neturi vaidmens <strong>{0}</strong>"
 
 #: frappe/public/js/frappe/form/controls/multiselect_list.js:276
 #: frappe/public/js/frappe/utils/utils.js:988
@@ -18584,7 +18611,7 @@ msgstr "Siųsti tik per paskutines X valandų atnaujintus įrašus"
 
 #: frappe/core/doctype/file/file.py:167
 msgid "Only System Managers can make this file public."
-msgstr ""
+msgstr "Tik sistemos administratoriai gali padaryti šį failą viešą."
 
 #: frappe/desk/doctype/workspace/workspace.js:32
 msgid "Only Workspace Manager can edit public workspaces"
@@ -18594,7 +18621,7 @@ msgstr "Viešąsias darbo vietas gali redaguoti tik darbo vietos valdytojas"
 #. in DocType 'System Settings'
 #: frappe/core/doctype/system_settings/system_settings.json
 msgid "Only allow System Managers to upload public files"
-msgstr ""
+msgstr "Leisti tik sistemos administratoriams įkelti viešus failus"
 
 #: frappe/modules/utils.py:80
 msgid "Only allowed to export customizations in developer mode"
@@ -18912,7 +18939,7 @@ msgstr "Orientacija"
 
 #: frappe/core/doctype/version/version.py:241
 msgid "Original"
-msgstr ""
+msgstr "Originalas"
 
 #: frappe/core/doctype/version/version_view.html:74
 #: frappe/core/doctype/version/version_view.html:139
@@ -19210,7 +19237,7 @@ msgstr "Puslapis nerastas"
 #. Description of a DocType
 #: frappe/website/doctype/web_page/web_page.json
 msgid "Page to show on the website\n"
-msgstr "Puslapis, rodomas svetainėje\\n"
+msgstr "Puslapis, rodomas svetainėje\n"
 
 #: frappe/public/html/print_template.html:25
 #: frappe/public/js/frappe/views/reports/print_tree.html:89
@@ -21214,12 +21241,12 @@ msgstr "Neapdorotas el. paštas"
 
 #: frappe/core/doctype/communication/email.py:95
 msgid "Raw HTML can be used only with Email Templates having 'Use HTML' checked. Proceeding with plain text email."
-msgstr ""
+msgstr "Neapdorotas HTML gali būti naudojamas tik su elektroninio pašto šablonais, kuriuose pažymėta „Naudoti HTML“. Tęsiama su paprasto teksto elektroniniu laišku."
 
 #. Description of the 'Send As Raw HTML' (Check) field in DocType 'Email Queue'
 #: frappe/email/doctype/email_queue/email_queue.json
 msgid "Raw HTML emails are rendered as complete Jinja templates. Otherwise, emails are wrapped in the standard.html email template, which inserts brand_logo, header and footer."
-msgstr ""
+msgstr "Neapdoroti HTML laiškai pateikiami kaip išsamūs Jinja šablonai. Kitais atvejais laiškai įterpiami į standard.html laiško šabloną, kuris įterpia logotipą, antraštę ir poraštę."
 
 #. Label of the raw_printing (Check) field in DocType 'Print Format'
 #. Label of the raw_printing_section (Section Break) field in DocType 'Print
@@ -22171,7 +22198,7 @@ msgstr "Ataskaitos nuorodos DocType"
 #. Step'
 #: frappe/desk/doctype/onboarding_step/onboarding_step.json
 msgid "Report Reference Doctype"
-msgstr "Ataskaitos nuorodos Doctype"
+msgstr "Ataskaitos nuorodos dokumento tipas"
 
 #. Label of the report_type (Select) field in DocType 'Report'
 #. Label of the report_type (Data) field in DocType 'Onboarding Step'
@@ -22488,7 +22515,7 @@ msgstr "Atsakymas"
 #. Label of the response_headers (Code) field in DocType 'Integration Request'
 #: frappe/integrations/doctype/integration_request/integration_request.json
 msgid "Response Headers"
-msgstr ""
+msgstr "Atsakymo antraštės"
 
 #. Label of the response_type (Select) field in DocType 'OAuth Client'
 #: frappe/integrations/doctype/oauth_client/oauth_client.json
@@ -22529,7 +22556,7 @@ msgstr "Apriboti IP"
 #. Label of the restrict_removal (Check) field in DocType 'Desktop Icon'
 #: frappe/desk/doctype/desktop_icon/desktop_icon.json
 msgid "Restrict Removal"
-msgstr ""
+msgstr "Apriboti pašalinimą"
 
 #. Label of the restrict_to_domain (Link) field in DocType 'DocType'
 #. Label of the restrict_to_domain (Link) field in DocType 'Module Def'
@@ -22856,7 +22883,7 @@ msgstr "Maršruto nukreipimai"
 #. Description of the 'Home Page' (Data) field in DocType 'Role'
 #: frappe/core/doctype/role/role.json
 msgid "Route: Example \"/desk\""
-msgstr ""
+msgstr "Maršrutas: Pavyzdys „/desk“"
 
 #: frappe/model/base_document.py:969 frappe/model/document.py:821
 msgid "Row"
@@ -22864,20 +22891,20 @@ msgstr "Eilutė"
 
 #: frappe/core/doctype/version/version_view.html:137
 msgid "Row #"
-msgstr "Eilutė #"
+msgstr "Eilutė Nr."
 
 #: frappe/core/doctype/doctype/doctype.py:1930
 #: frappe/core/doctype/doctype/doctype.py:1940
 msgid "Row # {0}: Non-administrator users cannot add the role {1} to a custom DocType."
-msgstr ""
+msgstr "Eilutė Nr. {0}: Vartotojai, kurie nėra administratoriai, negali pridėti vaidmens {1} prie pasirinktinio DocType."
 
 #: frappe/model/base_document.py:1097
 msgid "Row #{0}:"
-msgstr "Eilutė #{0}:"
+msgstr "Eilutė Nr. {0}:"
 
 #: frappe/core/doctype/doctype/doctype.py:505
 msgid "Row #{}: Fieldname is required"
-msgstr "Eilutė #{}: Lauko pavadinimas yra privalomas"
+msgstr "Eilutė Nr. {}: Lauko pavadinimas yra privalomas"
 
 #. Label of the row_format (Select) field in DocType 'DocType'
 #: frappe/core/doctype/doctype/doctype.json
@@ -23063,7 +23090,7 @@ msgstr "SQL užklausos"
 
 #: frappe/database/query.py:1972
 msgid "SQL functions are not allowed as strings in SELECT: {0}. Use dict syntax like {{'COUNT': '*'}} instead."
-msgstr ""
+msgstr "SQL funkcijos nėra leidžiamos kaip eilutės SELECT: {0}. Vietoj to naudokite dict sintaksę, pvz., {{'COUNT': '*'}}."
 
 #. Label of the ssl_tls_mode (Select) field in DocType 'LDAP Settings'
 #: frappe/integrations/doctype/ldap_settings/ldap_settings.json
@@ -24211,7 +24238,7 @@ msgstr "Serverio scenarijų funkcija šioje svetainėje nepasiekiama."
 
 #: frappe/public/js/frappe/file_uploader/FileUploader.vue:641
 msgid "Server error during upload. The file might be corrupted."
-msgstr ""
+msgstr "Įkėlimo metu įvyko serverio klaida. Failas gali būti sugadintas."
 
 #: frappe/public/js/frappe/request.js:252
 msgid "Server failed to process this request because of a concurrent conflicting request. Please try again."
@@ -24458,7 +24485,8 @@ msgid ""
 "\treqd: 1\n"
 "}]\n"
 "</code></pre>"
-msgstr "Čia nustatykite filtrus. Pavyzdžiui:\n"
+msgstr ""
+"Čia nustatykite filtrus. Pavyzdžiui:\n"
 "<pre class=\"small text-muted\"><code>\n"
 "[{\n"
 "\tfieldname: \"company\",\n"
@@ -24489,7 +24517,8 @@ msgid ""
 "\t\"route_options\": {\"from_date\": \"2023-05-23\"},\n"
 "\t\"route\": [\"query-report\", \"Permitted Documents For User\"]\n"
 "}</code></pre>"
-msgstr "Nustatykite kelią į baltąjį sąrašą įtrauktai funkcijai, kuri grąžins numerio kortelės duomenis tokiu formatu:\n"
+msgstr ""
+"Nustatykite kelią į baltąjį sąrašą įtrauktai funkcijai, kuri grąžins numerio kortelės duomenis tokiu formatu:\n"
 "\n"
 "<pre class=\"small text-muted\"><code>\n"
 "{\n"
@@ -25304,7 +25333,7 @@ msgstr "Programinės įrangos versija"
 #. Option for the 'Icon Style' (Select) field in DocType 'Desktop Settings'
 #: frappe/desk/doctype/desktop_settings/desktop_settings.json
 msgid "Solid"
-msgstr ""
+msgstr "Solid"
 
 #: frappe/printing/page/print_format_builder/print_format_builder_column_selector.html:4
 msgid "Some columns might get cut off when printing to PDF. Try to keep number of columns under 10."
@@ -25368,7 +25397,7 @@ msgstr "Rikiavimo tvarka"
 
 #: frappe/core/doctype/doctype/doctype.py:1579
 msgid "Sort field {0} must be a valid fieldname"
-msgstr ""
+msgstr "Rikiuoti lauką {0} turi būti galiojantis lauko pavadinimas"
 
 #. Label of the source (Data) field in DocType 'Web Page View'
 #. Label of the source (Small Text) field in DocType 'Website Route Redirect'
@@ -26473,7 +26502,7 @@ msgstr "Sistemos nustatymai"
 #. Label of a number card in the Users Workspace
 #: frappe/core/workspace/users/users.json
 msgid "System Users"
-msgstr ""
+msgstr "Sistemos vartotojai"
 
 #. Description of the 'Allow Roles' (Table MultiSelect) field in DocType
 #. 'Module Onboarding'
@@ -26495,7 +26524,7 @@ msgstr "TOS URI"
 #. Sidebar Item'
 #: frappe/desk/doctype/workspace_sidebar_item/workspace_sidebar_item.json
 msgid "Tab"
-msgstr ""
+msgstr "Skirtukas"
 
 #. Option for the 'Type' (Select) field in DocType 'DocField'
 #. Option for the 'Field Type' (Select) field in DocType 'Custom Field'
@@ -26561,7 +26590,7 @@ msgstr "Lentelė „MultiSelect“"
 
 #: frappe/desk/search.py:278
 msgid "Table MultiSelect requires a table with at least one Link field, but none was found in {0}"
-msgstr ""
+msgstr "Table MultiSelect reikalauja lentelės su bent vienu Link lauku, tačiau {0} jo nerasta."
 
 #: frappe/custom/doctype/customize_form/customize_form.js:229
 msgid "Table Trimmed"
@@ -26760,6 +26789,12 @@ msgid ""
 "\n"
 "{0}"
 msgstr ""
+"Dėkojame, kad susisiekėte su mumis. Su jumis susisieksime kuo greičiau. \n"
+"\n"
+"\n"
+"Jūsų užklausa:\n"
+"\n"
+"{0}"
 
 #: frappe/website/doctype/web_form/templates/web_form.html:147
 msgid "Thank you for spending your valuable time to fill this form"
@@ -26795,7 +26830,8 @@ msgid ""
 "The Client ID obtained from the Google Cloud Console under <a href=\"https://console.cloud.google.com/apis/credentials\">\n"
 "\"APIs &amp; Services\" &gt; \"Credentials\"\n"
 "</a>"
-msgstr "Kliento ID galima rasti „Google Cloud Console“ pagal <a href=\"https://console.cloud.google.com/apis/credentials\">\n"
+msgstr ""
+"Kliento ID galima rasti „Google Cloud Console“ pagal <a href=\"https://console.cloud.google.com/apis/credentials\">\n"
 "„API &amp; Services“ &gt; „Credentials“\n"
 "</a>"
 
@@ -26839,7 +26875,8 @@ msgid ""
 "The browser API key obtained from the Google Cloud Console under <a href=\"https://console.cloud.google.com/apis/credentials\">\n"
 "\"APIs &amp; Services\" &gt; \"Credentials\"\n"
 "</a>"
-msgstr "Naršyklės API raktas, gautas iš „Google Cloud Console“ skiltyje <a href=\"https://console.cloud.google.com/apis/credentials\">\n"
+msgstr ""
+"Naršyklės API raktas, gautas iš „Google Cloud Console“ skiltyje <a href=\"https://console.cloud.google.com/apis/credentials\">\n"
 "„APIs &amp; Services“ &gt; „Credentials“\n"
 "</a>"
 
@@ -26887,15 +26924,15 @@ msgstr "Pasirinktas dokumento tipas yra antrinė lentelė, todėl reikia nurodyt
 
 #: frappe/core/page/permission_manager/permission_manager_help.html:58
 msgid "The email button is enabled for the user in the document."
-msgstr ""
+msgstr "Dokumente vartotojui įjungtas el. pašto mygtukas."
 
 #: frappe/desk/search.py:291
 msgid "The field {0} in {1} does not allow ignoring user permissions"
-msgstr ""
+msgstr "Laukelis {0} esantis {1} neleidžia ignoruoti vartotojo teisių"
 
 #: frappe/desk/search.py:301
 msgid "The field {0} in {1} links to {2} and not {3}"
-msgstr ""
+msgstr "Laukas {0} esantis {1} yra susietas su {2}, o ne su {3}"
 
 #: frappe/core/doctype/user_type/user_type.py:110
 msgid "The field {0} is mandatory"
@@ -26962,7 +26999,7 @@ msgstr "Jūsų paskyros slaptažodžio galiojimo laikas baigėsi."
 
 #: frappe/core/page/permission_manager/permission_manager_help.html:53
 msgid "The print button is enabled for the user in the document."
-msgstr ""
+msgstr "Dokumente vartotojui įjungtas spausdinimo mygtukas."
 
 #: frappe/website/doctype/personal_data_deletion_request/personal_data_deletion_request.py:399
 msgid "The process for deletion of {0} data associated with {1} has been initiated."
@@ -26974,7 +27011,8 @@ msgid ""
 "The project number obtained from Google Cloud Console under <a href=\"https://console.cloud.google.com/iam-admin/settings\">\n"
 "\"IAM &amp; Admin\" &gt; \"Settings\"\n"
 "</a>"
-msgstr "Projekto numeris galima gauti iš \"Google Cloud Console\" pagal <a href=\"https://console.cloud.google.com/iam-admin/settings\">\n"
+msgstr ""
+"Projekto numeris galima gauti iš \"Google Cloud Console\" pagal <a href=\"https://console.cloud.google.com/iam-admin/settings\">\n"
 "\"IAM &amp; Admin\" &gt; \"Settings\"\n"
 "</a>"
 
@@ -27016,39 +27054,39 @@ msgstr "Peržengta bendro naudotojų dokumentų tipų skaičiaus riba."
 
 #: frappe/core/page/permission_manager/permission_manager_help.html:43
 msgid "The user can create a new Item but cannot edit existing items."
-msgstr ""
+msgstr "Vartotojas gali kurti naujus elementus, bet negali redaguoti esamų elementų."
 
 #: frappe/core/page/permission_manager/permission_manager_help.html:48
 msgid "The user can delete Draft / Cancelled documents."
-msgstr ""
+msgstr "Vartotojas gali ištrinti juodraščius / atšauktus dokumentus."
 
 #: frappe/core/page/permission_manager/permission_manager_help.html:68
 msgid "The user can export report data."
-msgstr ""
+msgstr "Vartotojas gali eksportuoti ataskaitos duomenis."
 
 #: frappe/core/page/permission_manager/permission_manager_help.html:73
 msgid "The user can import new records or update existing data for the document."
-msgstr ""
+msgstr "Vartotojas gali importuoti naujus įrašus arba atnaujinti esamus dokumento duomenis."
 
 #: frappe/core/page/permission_manager/permission_manager_help.html:28
 msgid "The user can select a Customer in Sales Order but cannot open the Customer master."
-msgstr ""
+msgstr "Vartotojas gali pasirinkti klientą pardavimo užsakyme, bet negali atidaryti kliento pagrindinio įrašo."
 
 #: frappe/core/page/permission_manager/permission_manager_help.html:78
 msgid "The user can share document access with another user."
-msgstr ""
+msgstr "Vartotojas gali dalytis prieiga prie dokumento su kitu vartotoju."
 
 #: frappe/core/page/permission_manager/permission_manager_help.html:38
 msgid "The user can update a customer or any other fields in an existing Sales Order but cannot create a new Sales Order."
-msgstr ""
+msgstr "Vartotojas gali atnaujinti kliento ar kitus laukelius esamame pardavimo užsakyme, bet negali sukurti naujo pardavimo užsakymo."
 
 #: frappe/core/page/permission_manager/permission_manager_help.html:33
 msgid "The user can view Sales Invoices but cannot modify any field values in them."
-msgstr ""
+msgstr "Vartotojas gali peržiūrėti pardavimo sąskaitas faktūras, bet negali keisti jose esančių laukelių verčių."
 
 #: frappe/model/base_document.py:814
 msgid "The value of the field {0} is too long in the {1} document. To resolve this issue, please reduce the value length or change the {0} field Type to Long Text using customize form, and then try again."
-msgstr ""
+msgstr "Lauko {0} vertė yra per ilga dokumente {1}. Norėdami išspręsti šią problemą, sumažinkite vertės ilgį arba pakeiskite lauko {0} tipą į „Ilgas tekstas“ naudodami formos pritaikymo funkciją, tada bandykite dar kartą."
 
 #: frappe/public/js/frappe/form/controls/data.js:25
 msgid "The value you pasted was {0} characters long. Max allowed characters is {1}."
@@ -27293,7 +27331,8 @@ msgstr "Šis el. laiškas generuojamas automatiškai"
 msgid ""
 "This feature can not be used as dependencies are missing.\n"
 "\t\t\t\tPlease contact your system manager to enable this by installing pycups!"
-msgstr "Šios funkcijos negalima naudoti, nes trūksta priklausomybių.\n"
+msgstr ""
+"Šios funkcijos negalima naudoti, nes trūksta priklausomybių.\n"
 "\t\t\t\tPrašome susisiekti su savo sistemos valdytoju, kad įjungtumėte šią funkciją įdiegdami pycups!"
 
 #: frappe/public/js/frappe/form/templates/form_sidebar.html:66
@@ -27308,7 +27347,8 @@ msgid ""
 "myfield\n"
 "eval:doc.myfield=='My Value'\n"
 "eval:doc.age&gt;18"
-msgstr "Šis laukas bus rodomas tik tuo atveju, jei čia apibrėžtas lauko pavadinimas turi reikšmę ARBA taisyklės yra teisingos (pavyzdžiai):\n"
+msgstr ""
+"Šis laukas bus rodomas tik tuo atveju, jei čia apibrėžtas lauko pavadinimas turi reikšmę ARBA taisyklės yra teisingos (pavyzdžiai):\n"
 "myfield\n"
 "eval:doc.myfield=='Mano reikšmė'\n"
 "eval:doc.age&gt;18"
@@ -27766,7 +27806,8 @@ msgid ""
 "To add dynamic subject, use jinja tags like\n"
 "\n"
 "<div><pre><code>New {{ doc.doctype }} #{{ doc.name }}</code></pre></div>"
-msgstr "Jei norite pridėti dinamišką temą, naudokite tokias jinja žymes kaip\n"
+msgstr ""
+"Jei norite pridėti dinamišką temą, naudokite tokias jinja žymes kaip\n"
 "\n"
 "<div><pre><code>Naujas {{ doc.doctype }}} #{{ doc.name }}}</code></pre></div>"
 
@@ -27779,7 +27820,8 @@ msgid ""
 "<pre><code>{ \"id\": \"{{ doc.name }}\" }</code>\n"
 "</pre>\n"
 "</div>"
-msgstr "Norėdami pridėti dinaminių reikšmių iš dokumento, naudokite tokias jinja žymes kaip\n"
+msgstr ""
+"Norėdami pridėti dinaminių reikšmių iš dokumento, naudokite tokias jinja žymes kaip\n"
 "\n"
 "<div>\n"
 "<pre><code>{{ \"id\": \"{{ doc.name }}}\" }</code>\n"
@@ -28110,7 +28152,8 @@ msgid ""
 "Track if your email has been opened by the recipient.\n"
 "<br>\n"
 "Note: If you're sending to multiple recipients, even if 1 recipient reads the email, it'll be considered \"Opened\""
-msgstr "Sekite, ar gavėjas atidarė jūsų laišką.\n"
+msgstr ""
+"Sekite, ar gavėjas atidarė jūsų laišką.\n"
 "<br>\n"
 "Pastaba: Jei siunčiate keliems gavėjams, net jei laišką perskaitys 1 gavėjas, jis bus laikomas \"atidarytu\"."
 
@@ -28390,7 +28433,8 @@ msgstr "UNSEEN"
 msgid ""
 "URIs for receiving authorization code once the user allows access, as well as failure responses. Typically a REST endpoint exposed by the Client App.\n"
 "<br>e.g. http://hostname/api/method/frappe.integrations.oauth2_logins.login_via_facebook"
-msgstr "URI, skirti autorizacijos kodui gauti, kai naudotojas leidžia prieigą, taip pat atsakymams dėl nesėkmės gauti. Paprastai tai yra REST galinis taškas, kurį pateikia kliento programa.\n"
+msgstr ""
+"URI, skirti autorizacijos kodui gauti, kai naudotojas leidžia prieigą, taip pat atsakymams dėl nesėkmės gauti. Paprastai tai yra REST galinis taškas, kurį pateikia kliento programa.\n"
 "<br>pvz. http://hostname/api/method/frappe.integrations.oauth2_logins.login_via_facebook"
 
 #. Option for the 'Type' (Select) field in DocType 'Workspace'
@@ -28577,7 +28621,8 @@ msgid ""
 "Unique ID assigned by the client developer used to identify the client software to be dynamically registered.\n"
 "<br>\n"
 "<b>Should remain same</b> across multiple versions or updates of the software."
-msgstr "Unikalus kliento kūrėjo suteiktas ID, naudojamas kliento programinei įrangai identifikuoti, kad ji būtų dinamiškai registruojama.\n"
+msgstr ""
+"Unikalus kliento kūrėjo suteiktas ID, naudojamas kliento programinei įrangai identifikuoti, kad ji būtų dinamiškai registruojama.\n"
 "<br>\n"
 "<b>Turėtų išlikti tas pats</b> keliose programinės įrangos versijose ar atnaujinimuose."
 
@@ -28936,7 +28981,7 @@ msgstr "Naudoti TLS"
 
 #: frappe/utils/password_strength.py:191
 msgid "Use a few uncommon words together."
-msgstr ""
+msgstr "Naudokite keletą retų žodžių kartu."
 
 #: frappe/utils/password_strength.py:44
 msgid "Use a few words, avoid common phrases."
@@ -29541,7 +29586,7 @@ msgstr "Tvirtinama reikšmė"
 #. State'
 #: frappe/workflow/doctype/workflow_document_state/workflow_document_state.json
 msgid "Value to set when this workflow state is applied. Use plain text (e.g. Approved) or an expression if “Evaluate as Expression” is enabled."
-msgstr ""
+msgstr "Vertė, kurią reikia nustatyti, kai taikoma ši darbo eigos būsena. Naudokite paprastą tekstą (pvz., „Patvirtinta“) arba išraišką, jei įjungta funkcija „Vertinti kaip išraišką“."
 
 #: frappe/model/base_document.py:1243
 msgid "Value too big"
@@ -29695,7 +29740,7 @@ msgstr "Peržiūrėti svetainę"
 
 #: frappe/core/page/permission_manager/permission_manager.js:397
 msgid "View all {0} users"
-msgstr ""
+msgstr "Peržiūrėti visus {0} vartotojus"
 
 #: frappe/www/confirm_workflow_action.html:12
 msgid "View document"
@@ -29817,7 +29862,7 @@ msgstr "Įspėjimas: Netinkamai atnaujinus skaitiklį gali kilti dokumentų pava
 
 #: frappe/core/doctype/doctype/doctype.py:458
 msgid "Warning: Usage of 'format:' is discouraged."
-msgstr ""
+msgstr "Įspėjimas: Nerekomenduojama naudoti „format:“."
 
 #: frappe/website/doctype/help_article/templates/help_article.html:24
 msgid "Was this article helpful?"
@@ -30106,7 +30151,7 @@ msgstr "Galimos svetainės temos"
 #. Label of a number card in the Users Workspace
 #: frappe/core/workspace/users/users.json
 msgid "Website Users"
-msgstr ""
+msgstr "Svetainės naudotojai"
 
 #. Label of a chart in the Website Workspace
 #: frappe/website/workspace/website/website.json
@@ -30365,7 +30410,7 @@ msgstr "Darbo eigos dokumento būsena"
 
 #: frappe/model/workflow.py:113
 msgid "Workflow Evaluation Error"
-msgstr ""
+msgstr "Darbo eigos vertinimo klaida"
 
 #. Label of the workflow_name (Data) field in DocType 'Workflow'
 #: frappe/workflow/doctype/workflow/workflow.json
@@ -30720,7 +30765,7 @@ msgstr "Jums neleidžiama siųsti su šiuo dokumentu susijusių el. laiškų"
 
 #: frappe/desk/doctype/event/event.py:251
 msgid "You are not allowed to update the status of this event."
-msgstr ""
+msgstr "Jums neleidžiama atnaujinti šio įvykio būsenos."
 
 #: frappe/website/doctype/web_form/web_form.py:633
 msgid "You are not allowed to update this Web Form Document"
@@ -30817,7 +30862,7 @@ msgstr "Dokumentų tipų lentelėje galite nustatyti tik 3 pasirinktinius dokume
 
 #: frappe/handler.py:184
 msgid "You can only upload JPG, PNG, GIF, PDF, TXT, CSV or Microsoft documents."
-msgstr ""
+msgstr "Galite įkelti tik JPG, PNG, GIF, PDF, TXT, CSV arba Microsoft dokumentus."
 
 #: frappe/core/doctype/data_export/exporter.py:199
 msgid "You can only upload upto 5000 records in one go. (may be less in some cases)"
@@ -30869,7 +30914,7 @@ msgstr "Negalite sukurti apžvalgos diagramos iš atskirų DocTypes"
 
 #: frappe/share.py:246
 msgid "You cannot share `{0}` on {1} `{2}` as you do not have `{0}` permission on `{1}`"
-msgstr ""
+msgstr "Jūs negalite dalytis `{0}` {1} `{2}`, nes neturite `{0}` leidimo `{1}`"
 
 #: frappe/custom/doctype/customize_form/customize_form.py:390
 msgid "You cannot unset 'Read Only' for field {0}"
@@ -30919,7 +30964,7 @@ msgstr "Jūs neturite leidimo importuoti {0}"
 
 #: frappe/database/query.py:943
 msgid "You do not have permission to access child table field: {0}"
-msgstr ""
+msgstr "Jūs neturite leidimo prieiti prie antrinės lentelės lauko: {0}"
 
 #: frappe/database/query.py:953
 msgid "You do not have permission to access field: {0}"
@@ -31546,14 +31591,14 @@ msgstr "importuoti"
 #: frappe/public/js/frappe/form/controls/link.js:643
 #: frappe/public/js/frappe/form/controls/link.js:650
 msgid "is disabled"
-msgstr ""
+msgstr "yra išjungta"
 
 #: frappe/public/js/frappe/form/controls/link.js:624
 #: frappe/public/js/frappe/form/controls/link.js:631
 #: frappe/public/js/frappe/form/controls/link.js:644
 #: frappe/public/js/frappe/form/controls/link.js:649
 msgid "is enabled"
-msgstr ""
+msgstr "yra įjungta"
 
 #: frappe/templates/signup.html:11 frappe/www/login.html:11
 msgid "jane@example.com"
@@ -32189,7 +32234,7 @@ msgstr "{0} yra negaliojanti „Fetch From“ išraiška, „Fetch From“ negal
 
 #: frappe/public/js/frappe/form/controls/link.js:663
 msgid "{0} contains {1}"
-msgstr ""
+msgstr "{0} yra {1}"
 
 #: frappe/public/js/frappe/views/interaction.js:261
 msgid "{0} created successfully"
@@ -32214,7 +32259,7 @@ msgstr "Prieš {0} d."
 
 #: frappe/public/js/frappe/form/controls/link.js:665
 msgid "{0} does not contain {1}"
-msgstr ""
+msgstr "{0} nėra {1}"
 
 #: frappe/website/doctype/website_settings/website_settings.py:96
 #: frappe/website/doctype/website_settings/website_settings.py:116
@@ -32223,7 +32268,7 @@ msgstr "{0} nėra eilutėje {1}"
 
 #: frappe/public/js/frappe/form/controls/link.js:638
 msgid "{0} equals {1}"
-msgstr ""
+msgstr "{0} yra lygus {1}"
 
 #: frappe/database/mariadb/schema.py:141 frappe/database/postgres/schema.py:187
 msgid "{0} field cannot be set as unique in {1}, as there are non-unique existing values"
@@ -32272,7 +32317,7 @@ msgstr "{0} eilutėje {1} negali būti URL ir antrinių elementų"
 
 #: frappe/public/js/frappe/form/controls/link.js:704
 msgid "{0} is a descendant of {1}"
-msgstr ""
+msgstr "{0} yra pavaldus elementas {1}"
 
 #: frappe/core/doctype/doctype/doctype.py:952
 msgid "{0} is a mandatory field"
@@ -32284,11 +32329,11 @@ msgstr "{0} nėra galiojantis zip failas"
 
 #: frappe/public/js/frappe/form/controls/link.js:668
 msgid "{0} is after {1}"
-msgstr ""
+msgstr "{0} yra po {1}"
 
 #: frappe/public/js/frappe/form/controls/link.js:706
 msgid "{0} is an ancestor of {1}"
-msgstr ""
+msgstr "{0} yra {1} protėvis."
 
 #: frappe/core/doctype/doctype/doctype.py:1647
 msgid "{0} is an invalid Data field."
@@ -32300,11 +32345,11 @@ msgstr "{0} yra neteisingas el. pašto adresas gavėjose"
 
 #: frappe/public/js/frappe/form/controls/link.js:673
 msgid "{0} is before {1}"
-msgstr ""
+msgstr "{0} yra prieš {1}"
 
 #: frappe/public/js/frappe/form/controls/link.js:702
 msgid "{0} is between {1}"
-msgstr ""
+msgstr "{0} yra tarp {1}"
 
 #: frappe/public/js/frappe/form/controls/link.js:699
 #: frappe/public/js/frappe/views/reports/report_view.js:1464
@@ -32319,12 +32364,12 @@ msgstr "{0} šiuo metu yra {1}"
 #: frappe/public/js/frappe/form/controls/link.js:636
 #: frappe/public/js/frappe/form/controls/link.js:654
 msgid "{0} is disabled"
-msgstr ""
+msgstr "{0} yra išjungtas"
 
 #: frappe/public/js/frappe/form/controls/link.js:635
 #: frappe/public/js/frappe/form/controls/link.js:655
 msgid "{0} is enabled"
-msgstr ""
+msgstr "{0} yra įjungtas"
 
 #: frappe/public/js/frappe/views/reports/report_view.js:1433
 msgid "{0} is equal to {1}"
@@ -32364,7 +32409,7 @@ msgstr "{0} nėra {1} antrinė lentelė"
 
 #: frappe/public/js/frappe/form/controls/link.js:708
 msgid "{0} is not a descendant of {1}"
-msgstr ""
+msgstr "{0} nėra pavaldus elementas {1}"
 
 #: frappe/core/doctype/document_naming_rule/document_naming_rule.py:50
 msgid "{0} is not a field of doctype {1}"
@@ -32429,7 +32474,7 @@ msgstr "{0} nėra leistinas vaidmuo {1}"
 
 #: frappe/public/js/frappe/form/controls/link.js:710
 msgid "{0} is not an ancestor of {1}"
-msgstr ""
+msgstr "{0} nėra {1} protėvis."
 
 #: frappe/public/js/frappe/form/controls/link.js:657
 #: frappe/public/js/frappe/views/reports/report_view.js:1438
@@ -32456,11 +32501,11 @@ msgstr "{0} dabar yra numatytasis spausdinimo formatas {1} dokumento tipui"
 
 #: frappe/public/js/frappe/form/controls/link.js:678
 msgid "{0} is on or after {1}"
-msgstr ""
+msgstr "{0} yra arba po {1}"
 
 #: frappe/public/js/frappe/form/controls/link.js:683
 msgid "{0} is on or before {1}"
-msgstr ""
+msgstr "{0} yra arba prieš {1}"
 
 #: frappe/public/js/frappe/form/controls/link.js:659
 #: frappe/public/js/frappe/views/reports/report_view.js:1472
@@ -32487,7 +32532,7 @@ msgstr "{0} yra {1} ribose"
 
 #: frappe/public/js/frappe/form/controls/link.js:693
 msgid "{0} is {1}"
-msgstr ""
+msgstr "{0} yra {1}"
 
 #: frappe/public/js/frappe/list/list_view.js:1854
 msgid "{0} items selected"
@@ -32837,43 +32882,43 @@ msgstr "{0}: 0 lygio leidimas turi būti nustatytas prieš nustatant aukštesniu
 
 #: frappe/core/doctype/doctype/doctype.py:1910
 msgid "{0}: The 'Amend' permission cannot be granted for a non-submittable DocType."
-msgstr ""
+msgstr "{0}: Leidimas „Taisyti“ negali būti suteiktas DocType, kurio negalima pateikti."
 
 #: frappe/core/doctype/doctype/doctype.py:1858
 msgid "{0}: The 'Amend' permission cannot be granted without the 'Create' permission."
-msgstr ""
+msgstr "{0}: Leidimas „Keisti“ negali būti suteiktas be leidimo „Kurti“."
 
 #: frappe/core/doctype/doctype/doctype.py:1845
 msgid "{0}: The 'Cancel' permission cannot be granted without the 'Submit' permission."
-msgstr ""
+msgstr "{0}: Leidimas „Atšaukti“ negali būti suteiktas be leidimo „Pateikti“."
 
 #: frappe/core/doctype/doctype/doctype.py:1892
 msgid "{0}: The 'Export' permission was removed because it cannot be granted for a 'single' DocType."
-msgstr ""
+msgstr "{0}: Leidimas „Eksportuoti“ buvo pašalintas, nes jo negalima suteikti „vienam“ DocType."
 
 #: frappe/core/doctype/doctype/doctype.py:1918
 msgid "{0}: The 'Import' permission cannot be granted for a non-importable DocType."
-msgstr ""
+msgstr "{0}: Leidimas „Importuoti“ negali būti suteiktas neimportuojamam DocType."
 
 #: frappe/core/doctype/doctype/doctype.py:1864
 msgid "{0}: The 'Import' permission cannot be granted without the 'Create' permission."
-msgstr ""
+msgstr "{0}: Leidimas „Importuoti“ negali būti suteiktas be leidimo „Kurti“."
 
 #: frappe/core/doctype/doctype/doctype.py:1884
 msgid "{0}: The 'Import' permission was removed because it cannot be granted for a 'single' DocType."
-msgstr ""
+msgstr "{0}: Leidimas „Importuoti“ buvo pašalintas, nes jo negalima suteikti „vienam“ DocType."
 
 #: frappe/core/doctype/doctype/doctype.py:1876
 msgid "{0}: The 'Report' permission was removed because it cannot be granted for a 'single' DocType."
-msgstr ""
+msgstr "{0}: Leidimas „Ataskaita“ buvo pašalintas, nes jo negalima suteikti „vienam“ DocType."
 
 #: frappe/core/doctype/doctype/doctype.py:1903
 msgid "{0}: The 'Submit' permission cannot be granted for a non-submittable DocType."
-msgstr ""
+msgstr "{0}: Leidimas „Pateikti“ negali būti suteiktas DocType, kurio negalima pateikti."
 
 #: frappe/core/doctype/doctype/doctype.py:1852
 msgid "{0}: The 'Submit', 'Cancel', and 'Amend' permissions cannot be granted without the 'Write' permission."
-msgstr ""
+msgstr "{0}: Leidimai „Pateikti“, „Atšaukti“ ir „Pataisyti“ negali būti suteikti be leidimo „Rašyti“."
 
 #: frappe/public/js/frappe/form/controls/data.js:51
 msgid "{0}: You can increase the limit for the field if required via {1}"
@@ -32881,7 +32926,7 @@ msgstr "{0}: Jei reikia, galite padidinti lauko ribą per {1}"
 
 #: frappe/core/doctype/doctype/doctype.py:1297
 msgid "{0}: fieldname cannot be set to reserved field {1} in DocType"
-msgstr ""
+msgstr "{0}: lauko pavadinimas negali būti nustatytas kaip rezervuotas laukas {1} DocType"
 
 #: frappe/core/doctype/doctype/doctype.py:1288
 msgid "{0}: fieldname cannot be set to reserved keyword {1}"

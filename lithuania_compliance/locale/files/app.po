@@ -148,6 +148,12 @@ msgstr "Mokesčio kodo {0} mokesčių įrašas rastas, bet jam nepriskirta joki�
 msgid "Invalid export type. Must be 'issued', 'received' or 'both'."
 msgstr "Netinkamas eksporto tipas. Turi būti „išduota“, „gauta“ arba „abu“."
 
+msgid "{} {} does not have a bill date set. Using posting date instead."
+msgstr "{} {} neturi nustatytos sąskaitos datos. Vietoj to naudojama įrašymo data."
+
+msgid "{0} {1} does not have a valid bill number. Please set the bill number before exporting to i.SAF."
+msgstr "{0} {1} neturi galiojančio sąskaitos numerio. Prieš eksportuodami į i.SAF nustatykite sąskaitos numerį."
+
 msgid "i.SAF XML Generation"
 msgstr "i.SAF XML generavimas"
 

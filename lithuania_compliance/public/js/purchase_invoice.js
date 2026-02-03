@@ -6,22 +6,77 @@ frappe.ui.form.on("Purchase Invoice", {
         if (!frm.is_new() && frm.doc.docstatus === 0) {
             frm.add_custom_button(
                 __("Item Prices"),
-                function () {
-                    getItemPricesAndOpenDialog(frm, true);
-                },
+                getItemPricesAndOpenDialog.bind(null, frm, true),
+                __("Preview")
+            );
+            frm.add_custom_button(
+                __("i.SAF Record"),
+                show_isaf_totals.bind(null, frm),
                 __("Preview")
             );
         } else if (!frm.is_new()) {
             frm.add_custom_button(
                 __("Item Prices"),
-                function () {
-                    getItemPricesAndOpenDialog(frm, true);
-                },
+                getItemPricesAndOpenDialog.bind(null, frm, true),
+                __("View")
+            );
+            frm.add_custom_button(
+                __("i.SAF Record"),
+                show_isaf_totals.bind(null, frm),
                 __("View")
             );
         }
     },
 });
+
+function show_isaf_totals_modal(data) {
+    if (!data || !Array.isArray(data)) {
+        frappe.msgprint(__("No data to display."));
+        return;
+    }
+
+    let html = `<table class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <th>${__("VAT Classificator")}</th>
+                            <th>${__("Taxable Value")}</th>
+                            <th>${__("Amount")}</th>
+                            <th>${__("Rate (%)")}</th>
+                        </tr>
+                    </thead>
+                <tbody>`;
+
+    // TODO: info message about how to set up the classificators;
+
+    data.forEach((row) => {
+        html += `<tr>
+            <td>${frappe.utils.escape_html(row.tax_code)}</td>
+            <td>${row.taxable_value}</td>
+            <td>${row.amount}</td>
+            <td>${row.tax_percentage}</td>
+        </tr>`;
+    });
+
+    html += "</tbody></table>";
+
+    frappe.msgprint({
+        title: __("i.SAF Totals"),
+        indicator: "blue",
+        message: html,
+        wide: true,
+    });
+}
+
+async function show_isaf_totals(frm) {
+    const result = await frappe.call({
+        method: "lithuania_compliance.api.isaf.get_isaf_totals",
+        args: {
+            doc_name: frm.docname,
+            doc_type: frm.doctype,
+        },
+    });
+    show_isaf_totals_modal(result.message || result);
+}
 
 function getItemPricesAndOpenDialog(frm, forced = false) {
     // If app already exists, just update its state and show it
