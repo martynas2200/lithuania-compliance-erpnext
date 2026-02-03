@@ -1,6 +1,5 @@
 """
 API methods for Lithuania Compliance app
-Documentation: https://www.vmi.lt/evmi/documents/20142/847717/%28En%3B+neoficialus+vertimas%29+i.SAF+duomen%C5%B3+rinkmenos+XML+strukt%C5%ABros+apra%C5%A1o+apra%C5%A1ymas.pdf/586a8397-15e4-a981-8f7b-85ae618de353?t=1623064864959
 """
 
 import random
@@ -41,7 +40,9 @@ def get_country_code(name):
 
 
 def get_default_vat_classificator():
-	settings = frappe.get_doc("Lithuania Compliance Settings", ignore_permissions=True)
+	settings = frappe.get_doc(
+		"Lithuania Compliance Settings", "Lithuania Compliance Settings", ignore_permissions=True
+	)
 	return settings.default_vat_classificator
 
 
@@ -100,19 +101,19 @@ def add_invoice_info(parent_element, invoice):
 	document_totals = ET.SubElement(parent_element, "DocumentTotals")
 	for line in invoice.tax_lines:
 		document_total = ET.SubElement(document_totals, "DocumentTotal")
-		ET.SubElement(document_total, "TaxableValue").text = str(line["taxable_value"])
+		ET.SubElement(document_total, "TaxableValue").text = str(round(line["taxable_value"], 2))
 		ET.SubElement(document_total, "TaxCode").text = line["tax_code"]
 
 		if line["tax_percentage"] is not None:
-			ET.SubElement(document_total, "TaxPercentage").text = str(line["tax_percentage"])
+			ET.SubElement(document_total, "TaxPercentage").text = str(round(line["tax_percentage"], 2))
 		else:
 			# The VAT rate expressed in per cent. This element may be not filled in (empty element) if no VAT rate is applicable according to the VAT classification (e.g. the supplies shall be exempt from VAT). If the VAT rate is equal to 0%, the value 0 shall be indicated.
 			ET.SubElement(document_total, "TaxPercentage").set("xsi:nil", "true")
-		if line["amount"] is not None and line["amount"] > 0:
-			ET.SubElement(document_total, "Amount").text = str(line["amount"])
+		if line["amount"] is not None and line["amount"] != 0.0:
+			ET.SubElement(document_total, "Amount").text = str(round(line["amount"], 2))
 		else:
 			ET.SubElement(document_total, "Amount").set("xsi:nil", "true")
-		ET.SubElement(document_total, "VATPointDate2").set("xsi:nil", "true")
+		# ET.SubElement(document_total, "VATPointDate2").set("xsi:nil", "true")
 
 
 @frappe.whitelist(allow_guest=False)
@@ -125,11 +126,40 @@ def get_isaf_totals(doc_name, doc_type):
 
 	doc = frappe.get_doc(doc_type, doc_name)
 
-	return get_document_totals(doc.items, doc.taxes, get_default_vat_classificator())
+	return get_document_totals(doc.items, doc.taxes, doc.rounding_adjustment, get_default_vat_classificator())
+
+
+def get_or_create_tax_summary(tax_summary, tax_code, item_code):
+	"""
+	Helper function to get or create a tax summary entry for a given tax code.
+
+	Args:
+	    tax_summary: Dict to store tax summaries
+	    tax_code: The VAT classificator code
+	    item_code: The item code for error messaging
+
+	Returns:
+	    The tax summary dict for the tax_code
+	"""
+	if tax_code not in tax_summary:
+		classifier = frappe.get_cached_doc("VAT Classificator", tax_code, ignore_permissions=True)
+		if classifier is None:
+			frappe.throw(
+				_(
+					"Strange! No VAT Classificator found with code {0}. It should exist as it is assigned to an item {1}."
+				).format(tax_code, item_code)
+			)
+		tax_summary[tax_code] = {
+			"tax_code": tax_code,
+			"taxable_value": 0.0,
+			"amount": 0.0,
+			"tax_percentage": classifier.rate if classifier and not classifier.is_exempt else None,
+		}
+	return tax_summary[tax_code]
 
 
 # TODO: Also a button to generate taxes based on classificators assigned to items would be useful. So a prompt are you sure, current list of taxes will be replaced etc. Or something else, so VAT classificators are used in sales properly.
-def get_document_totals(items, taxes, default_tax_classificator):
+def get_document_totals(items, taxes, rounding, default_tax_classificator):
 	"""
 	Calculate document totals for i.SAF export
 
@@ -148,22 +178,8 @@ def get_document_totals(items, taxes, default_tax_classificator):
 		if not tax_code:
 			item_doc = frappe.get_cached_doc("Item", item.get("item_code"), ignore_permissions=True)
 			tax_code = item_doc.vat_classificator or default_tax_classificator
-		taxable_value = item.get("base_amount", 0.0)
-		if tax_code not in tax_summary:
-			classifier = frappe.get_cached_doc("VAT Classificator", tax_code, ignore_permissions=True)
-			if classifier is None:
-				frappe.throw(
-					_(
-						"Strange! No VAT Classificator found with code {0}. It should exist as it is assigned to an item {1}."
-					).format(tax_code, item.get("item_code"))
-				)
-			tax_summary[tax_code] = {
-				"tax_code": tax_code,
-				"taxable_value": 0.0,
-				"amount": 0.0,
-				"tax_percentage": classifier.rate if classifier and not classifier.is_exempt else None,
-			}
-		tax_summary[tax_code]["taxable_value"] += taxable_value
+		tax_summary[tax_code] = get_or_create_tax_summary(tax_summary, tax_code, item.get("item_code"))
+		tax_summary[tax_code]["taxable_value"] += item.get("base_amount", 0.0)
 
 	for tax in taxes:
 		tax_code = tax.get("vat_classificator") or default_tax_classificator
@@ -186,11 +202,13 @@ def get_document_totals(items, taxes, default_tax_classificator):
 			and summary["amount"] == 0.0
 			and summary["tax_percentage"] > 0
 		):
-			frappe.throw(
-				_(
-					"Discrepancy found for tax code {0}: tax percentage is {1} but tax amount is 0. Please check your invoice items and taxes."
-				).format(tax_code, summary["tax_percentage"])
-			)
+			raise _(
+				"Discrepancy found for tax code {0}: tax percentage is {1} but tax amount is 0. Please check your invoice items and taxes."
+			).format(tax_code, summary["tax_percentage"])
+
+	if rounding and rounding != 0.0:
+		tax_summary["PVM100"] = get_or_create_tax_summary(tax_summary, "PVM100", "Rounding Adjustment")
+		tax_summary["PVM100"]["taxable_value"] += rounding
 
 	return list(tax_summary.values())
 
@@ -216,7 +234,15 @@ def get_all_isaf_parties_and_invoices(export_type, from_date, to_date):
 		doctype = doc_info["doctype"]
 		party = "Customer" if doctype == "Sales Invoice" else "Supplier"
 		types = doc_info["types"]
-		fields = ["name", party, "posting_date", "invoice_type_lt", "company"]
+		fields = [
+			"name",
+			party,
+			"posting_date",
+			"invoice_type_lt",
+			"company",
+			"docstatus",
+			"rounding_adjustment",
+		]
 		if party == "Customer":
 			fields.extend(["customer_name", "customer_group"])
 		else:
@@ -237,7 +263,7 @@ def get_all_isaf_parties_and_invoices(export_type, from_date, to_date):
 			# Filter by invoice type
 			match = re.search(r"\b([A-Z]{2})\b", invoice_doc.get("invoice_type_lt", ""))
 			invoice_type_code = match.group(1) if match else None
-			if invoice_type_code not in types:
+			if invoice_type_code not in types or inv.docstatus == 2:
 				continue
 
 			if inv.docstatus == 0:
@@ -259,6 +285,7 @@ def get_all_isaf_parties_and_invoices(export_type, from_date, to_date):
 				tax_lines = get_document_totals(
 					items=invoice_doc.items,
 					taxes=invoice_doc.taxes,
+					rounding=invoice_doc.rounding_adjustment,
 					default_tax_classificator=default_tax_classificator,
 				)
 			except Exception as e:
@@ -390,9 +417,10 @@ def generate_isaf_xml_content(export_type, from_date, to_date):
 	ET.SubElement(filedescription, "NumberOfParts").text = "1"
 	# NOTE: there is no explicit requirement to split the data, so we might just have a massive single file
 	ET.SubElement(filedescription, "PartNumber").text = (
-		from_date.strftime("%Y%m") + "01" + "GI" if export_type == "both" else ("I" if export_issued else "G")
+		datetime.strptime(from_date, "%Y-%m-%d").strftime("%Y%m")
+		+ "01"
+		+ ("GI" if export_type == "both" else ("I" if export_issued else "G"))
 	)
-	#! TODO: give a proper number
 	selectioncriteria = ET.SubElement(filedescription, "SelectionCriteria")
 	ET.SubElement(selectioncriteria, "SelectionStartDate").text = from_date
 	ET.SubElement(selectioncriteria, "SelectionEndDate").text = to_date
@@ -431,6 +459,4 @@ def generate_isaf_xml_content(export_type, from_date, to_date):
 			add_invoice_info(invoice_el, invoice)
 
 	xml_str = ET.tostring(root, encoding="unicode", method="xml")
-	# Replace self-closing tags with open/close pairs
-	xml_str = re.sub(r"<(\w+)([^>]*?)\s*/>", r"<\1\2></\1>", xml_str)
-	return xml_str
+	return '<?xml version="1.0" encoding="UTF-8"?>\n' + xml_str

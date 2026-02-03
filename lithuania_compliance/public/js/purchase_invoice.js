@@ -51,8 +51,8 @@ function show_isaf_totals_modal(data) {
     data.forEach((row) => {
         html += `<tr>
             <td>${frappe.utils.escape_html(row.tax_code)}</td>
-            <td>${row.taxable_value}</td>
-            <td>${row.amount}</td>
+            <td>${parseFloat(row.taxable_value).toFixed(2)}</td>
+            <td>${parseFloat(row.amount).toFixed(2)}</td>
             <td>${row.tax_percentage}</td>
         </tr>`;
     });
@@ -60,7 +60,7 @@ function show_isaf_totals_modal(data) {
     html += "</tbody></table>";
 
     frappe.msgprint({
-        title: __("i.SAF Totals"),
+        title: __("i.SAF Record"),
         indicator: "blue",
         message: html,
         wide: true,
