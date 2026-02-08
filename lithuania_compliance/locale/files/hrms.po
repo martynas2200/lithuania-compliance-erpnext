@@ -1,4 +1,4 @@
-# Translations for ERPNext. Edited using poedit, lines marked fuzzy require attention. „LT quotes“
+# Translations for Frappe HR. Edited using poedit, lines marked fuzzy require attention. „LT quotes“
 msgid ""
 msgstr ""
 "Project-Id-Version: Frappe HR VERSION\n"

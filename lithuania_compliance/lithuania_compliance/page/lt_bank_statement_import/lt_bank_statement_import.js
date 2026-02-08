@@ -1,3 +1,4 @@
+// TODO: Make into a frappe doctype form like COA. With more user feedback
 frappe.pages["lt-bank-statement-import"].on_page_load = function (wrapper) {
     var page = frappe.ui.make_app_page({
         parent: wrapper,
@@ -52,8 +53,6 @@ frappe.lt_bank_statement_import = {
 
             var reader = new FileReader();
             reader.onload = function (event) {
-                // readAsText gives us the XML string directly without
-                // building a huge argument list (avoids RangeError)
                 var content = event.target.result;
                 $feedback.html(
                     '<div class="text-muted">' +

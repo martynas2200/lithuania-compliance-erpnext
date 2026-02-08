@@ -58,11 +58,11 @@ def get_full_remarks(payment_type, party_type, party_name, party, subfamily_code
 
 def match_by_amount(amount):
 	sql_query = """
-        SELECT `name`
-        FROM `tabSales Invoice`
-        WHERE `docstatus` = 1
-        AND `grand_total` = {0}
-        AND `status` != 'Paid'; """.format(amount)
+		SELECT `name`
+		FROM `tabSales Invoice`
+		WHERE `docstatus` = 1
+		AND `grand_total` = {0}
+		AND `status` != 'Paid'; """.format(amount)
 	open_sales_invoices = frappe.db.sql(sql_query, as_dict=True)
 	if open_sales_invoices and len(open_sales_invoices) == 1:
 		return open_sales_invoices[0].name
@@ -72,10 +72,10 @@ def match_by_amount(amount):
 
 def match_by_comment(comment):  # Can be used for matching reference numbers in comments
 	sql_query = """
-        SELECT `name`
-        FROM `tabSales Invoice`
-        WHERE `docstatus` = 1
-        AND `status` != 'Paid';"""
+		SELECT `name`
+		FROM `tabSales Invoice`
+		WHERE `docstatus` = 1
+		AND `status` != 'Paid';"""
 	open_sales_invoices = frappe.db.sql(sql_query, as_dict=True)
 
 	if not open_sales_invoices:
@@ -90,10 +90,10 @@ def get_supplier_erpnext_name(name):
 	# Remove quotes from name for matching
 	cleaned_name = remove_special_characters(name).strip()
 	sql_query = """
-        SELECT `name`
-        FROM `tabSupplier`
-        WHERE REPLACE(REPLACE(`supplier_name`, '"', ''), "'", '') = '{0}'
-        AND `disabled` = 0; """.format(cleaned_name)
+		SELECT `name`
+		FROM `tabSupplier`
+		WHERE REPLACE(REPLACE(`supplier_name`, '"', ''), "'", '') = '{0}'
+		AND `disabled` = 0; """.format(cleaned_name)
 	suppliers = frappe.db.sql(sql_query, as_dict=True)
 	if suppliers and len(suppliers) == 1:
 		return suppliers[0].name
@@ -122,13 +122,13 @@ def get_company_account_by_iban(iban):
 	try:
 		accounts = frappe.db.sql(
 			"""
-            SELECT `account` AS `name`
-            FROM `tabBank Account`
-            WHERE `is_company_account` = 1
-                AND `disabled` = 0
-                AND `account` IS NOT NULL
-                AND REPLACE(COALESCE(`bank_account_no`, `iban`), ' ', '') = %(iban)s
-            """,
+			SELECT `account` AS `name`
+			FROM `tabBank Account`
+			WHERE `is_company_account` = 1
+				AND `disabled` = 0
+				AND `account` IS NOT NULL
+				AND REPLACE(COALESCE(`bank_account_no`, `iban`), ' ', '') = %(iban)s
+			""",
 			{"iban": iban.replace(" ", "")},
 			as_dict=True,
 		)
@@ -138,13 +138,34 @@ def get_company_account_by_iban(iban):
 	return accounts[0]["name"] if accounts else None
 
 
+def get_account_by_structured_reference(structured_reference, settings):
+	"""Resolve an Account from a structured creditor reference (CdtrRefInf/Ref).
+
+	The mapping is maintained on Lithuania Compliance Settings as a child table
+	"structured_reference_account_mapping" (DocType "Structured Reference Account Mapping").
+	Only exact matches on the reference value are considered.
+	"""
+
+	if not structured_reference:
+		return None
+
+	# Child table rows are available as a list-like attribute on the settings doc
+	rows = getattr(settings, "structured_reference_account_mapping", None) or []
+	for row in rows:
+		# Simple exact match; references in CAMT files are already strings
+		if frappe.as_unicode(row.reference or "").strip() == frappe.as_unicode(structured_reference).strip():
+			return row.account
+
+	return None
+
+
 def get_unpaid_sales_invoices_by_customer(customer):
 	sql_query = """
-        SELECT `name`
-        FROM `tabSales Invoice`
-        WHERE `docstatus` = 1
-        AND `customer` = '{0}'
-        AND `status` != 'Paid'; """.format(customer)
+		SELECT `name`
+		FROM `tabSales Invoice`
+		WHERE `docstatus` = 1
+		AND `customer` = '{0}'
+		AND `status` != 'Paid'; """.format(customer)
 	return frappe.db.sql(sql_query, as_dict=True)
 
 
@@ -463,27 +484,28 @@ def read_camt_transactions(
 				except Exception:
 					charges = 0.0
 
+			structured_reference = None
 			try:
-				# try to find ESR reference
-				transaction_reference = transaction_soup.rmtinf.strd.cdtrrefinf.ref.get_text()
-			except:
+				# Try to find a structured creditor reference (SCOR, CdtrRefInf/Ref)
+				structured_reference = transaction_soup.rmtinf.strd.cdtrrefinf.ref.get_text()
+			except Exception:
+				structured_reference = None
+
+			if structured_reference:
+				# Prefer structured reference when available
+				transaction_reference = structured_reference
+			else:
 				try:
-					# try to find a user-defined reference (e.g. SINV.)
-					transaction_reference = transaction_soup.rmtinf.ustrd.get_text()
-				except:
 					try:
-						# try to find an end-to-end ID
-						transaction_reference = transaction_soup.endtoendid.get_text()
+						transaction_reference = transaction_soup.rmtinf.ustrd.get_text()
 					except:
 						try:
-							# try to find an AddtlTxInf
-							transaction_reference = transaction_soup.addtltxinf.get_text()
+							transaction_reference = transaction_soup.endtoendid.get_text()
 						except:
-							# in case of numeric only matching, do not fall back to transaction id
-							if cint(settings.numeric_only_debtor_matching) == 1:
-								transaction_reference = "???"
-							else:
-								transaction_reference = unique_reference
+							transaction_reference = transaction_soup.addtltxinf.get_text()
+				except Exception:
+					# As a last resort, use the unique reference
+					transaction_reference = unique_reference
 
 			# Check if this transaction already has a Payment Entry recorded.
 			# We want a Bank Transaction per statement line anyways
@@ -562,6 +584,7 @@ def read_camt_transactions(
 				"credit_debit": credit_debit,
 				"party_iban": party_iban,
 				"unique_reference": unique_reference,
+				"structured_reference": structured_reference,
 				"transaction_reference": transaction_reference,
 				"subfamily_code": subfamily_code,
 				"party_match": party_match,
@@ -669,6 +692,7 @@ def read_camt054(content, account=None, auto_submit=False):
 			date = txn.get("date")
 			reference_no = txn.get("unique_reference")
 			remarks = txn.get("transaction_reference")
+			structured_reference = txn.get("structured_reference")
 			party_iban = txn.get("party_iban")
 			party_name = txn.get("party_name")
 			pattern = txn.get("pattern")
@@ -695,13 +719,26 @@ def read_camt054(content, account=None, auto_submit=False):
 						f"get_or_create_party_from_iban failed, IBAN {party_iban} and name {party_name}: {err}",
 					)
 
+			# If we have a structured creditor reference, try to resolve a
+			# mapped GL account from settings. This is only applied for
+			# structured references; unstructured (Ustrd) references are
+			# intentionally ignored for this mapping.
+			mapped_account = get_account_by_structured_reference(structured_reference, settings)
+
 			if is_credit:
 				invoice_matches = txn.get("invoice_matches") or []
 				party_match = txn.get("party_match")
 				paid_to = account
 
+				# Structured reference mapping: treat as internal transfer from
+				# the mapped account into the bank account.
+				if mapped_account and account:
+					payment_type = "Internal Transfer"
+					paid_from = mapped_account
+					party_type = None
+					party = None
 				# Cash deposits
-				if subfamily_code == "CDPT" and account and settings.cash_deposit_account:
+				elif subfamily_code == "CDPT" and account and settings.cash_deposit_account:
 					payment_type = "Internal Transfer"
 					paid_from = settings.cash_deposit_account
 					party_type = None
@@ -770,8 +807,16 @@ def read_camt054(content, account=None, auto_submit=False):
 				party_match = txn.get("party_match")
 				subfamily_code = (txn.get("subfamily_code") or "").upper()
 
+				# Structured reference mapping: treat as internal transfer from
+				# the bank account into the mapped account.
+				if mapped_account and account:
+					payment_type = "Internal Transfer"
+					paid_from = account
+					paid_to = mapped_account
+					party_type = None
+					party = None
 				# Bank charges SubFmlyCd = CHRG
-				if settings.bank_fee_expense_account and subfamily_code == "CHRG":
+				elif settings.bank_fee_expense_account and subfamily_code == "CHRG":
 					payment_type = "Internal Transfer"
 					paid_from = account
 					paid_to = settings.bank_fee_expense_account

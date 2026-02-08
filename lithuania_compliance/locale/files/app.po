@@ -154,6 +154,9 @@ msgstr "{} {} neturi nustatytos sąskaitos datos. Vietoj to naudojama įrašymo 
 msgid "{0} {1} does not have a valid bill number. Please set the bill number before exporting to i.SAF."
 msgstr "{0} {1} neturi galiojančio sąskaitos numerio. Prieš eksportuodami į i.SAF nustatykite sąskaitos numerį."
 
+msgid "Company {0} does not have a Business Code set. Please set it in the Company record before exporting to i.SAF."
+msgstr "Įmonė {0} neturi nustatyto įmonės kodo. Prieš eksportuodami į i.SAF nustatykite jį įmonės įraše."
+
 msgid "i.SAF XML Generation"
 msgstr "i.SAF XML generavimas"
 
@@ -326,11 +329,32 @@ msgstr "Automatiškai sukurti šalis pagal IBAN"
 msgid "If enabled, new Customers/Suppliers and Bank Accounts will be created automatically when importing CAMT statements based on IBAN and party name."
 msgstr "Jei įjungta, nauji klientai/tiekėjai ir banko sąskaitos bus automatiškai sukurti importuojant CAMT išrašus pagal IBAN ir šalies pavadinimą."
 
-msgid "Enable Debug Logging"
-msgstr "Įgalinti Debug žurnalą"
+msgid "Used for small bank fees (e.g. < 1 EUR) detected in CAMT bank statement imports."
+msgstr "Naudojama mažoms banko mokesčiams (pvz., < 1 EUR), aptiktoms CAMT banko išrašų importuose."
 
-msgid "If enabled, CAMT bank import will write detailed debug information to the Error Log."
-msgstr "Jei įjungta, CAMT banko importas rašys išsamią derinimo informaciją į klaidų žurnalą."
+msgid "Structured Reference Account Mapping"
+msgstr "Struktūrizuotų nuorodų sąskaitų susiejimas"
+
+msgid "Map structured payment references (CdtrRefInf/Ref) to Accounts for CAMT bank import."
+msgstr "Struktūrizuotų mokėjimo nuorodų (CdtrRefInf/Ref) susiejimas su sąskaitomis CAMT banko importui."
+
+msgid "EMV Account"
+msgstr "EMV kor. sąskaita"
+
+msgid "Source account for EMV transactions that are transferred into the bank account."
+msgstr "Šaltinio sąskaita EMV operacijoms, kurios pervedamos į banko sąskaitą."
+
+msgid "Default customer used for receivables in bank import."
+msgstr "Numatytasis klientas, naudojamas gautinoms sumoms banko importo metu."
+
+msgid "Default Employee Payable Account"
+msgstr "Numatyta darbuotojų mokėtinos kor. sąskaita"
+
+msgid "Default account used for employee payables in bank import."
+msgstr "Numatyta sąskaita, naudojama darbuotojų mokėtinos sumoms banko importo metu."
+
+msgid "Default account used for receivables in bank import."
+msgstr "Numatyta sąskaita, naudojama gautinoms sumoms banko importo metu."
 
 msgid "Bank Import IBAN validation"
 msgstr "Banko importo IBAN patikrinimas"
@@ -385,9 +409,6 @@ msgstr "Nepavyko perskaityti failo."
 
 msgid "Upload an ISO_XML_052 (ISO 20022 CAMT052) bank statement file to create Bank Transactions and possibly Payment Entries."
 msgstr "Įkelkite ISO_XML_052 (ISO 20022 CAMT052) banko išrašo failą, kad sukurtumėte banko operacijas ir galbūt mokėjimo įrašus."
-
-msgid "Optional note about this import"
-msgstr "Pasirinktinė pastaba apie šį importą"
 
 msgid "Submit created Payment Entries"
 msgstr "Pateikti sukurtus mokėjimo įrašus"
