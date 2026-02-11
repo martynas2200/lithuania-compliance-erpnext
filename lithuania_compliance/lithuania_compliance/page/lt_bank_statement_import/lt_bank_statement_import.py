@@ -1,6 +1,8 @@
 # `read_camt_transactions` and some other snippets are adapted from https://github.com/libracore/erpnextswiss
 #! The file requires further refactoring to improve structure. It is awfully nested!
-
+# TODO: Cost center setting
+# TODO: a friendly list of imported operations in the frontend
+# TODO: a dialog to ask should payment auto reconciliation should be enqueued.
 import ast
 import datetime
 import hashlib
@@ -946,9 +948,7 @@ def read_camt054(content, account=None, auto_submit=False):
 					)
 					bank_transaction = None
 
-			# If we could not resolve a proper GL account, skip this
-			# transaction to avoid Payment Entry validation errors
-			# like "Account Paid From is missing".
+			# If we could not resolve a proper GL accounts, skip it
 			if payment_type == "Receive" and not paid_to:
 				continue
 			if payment_type == "Pay" and not paid_from:
@@ -956,11 +956,11 @@ def read_camt054(content, account=None, auto_submit=False):
 			if payment_type == "Internal Transfer" and (not paid_from or not paid_to):
 				continue
 
-			# If a Payment Entry with this reference already exists / created manually by a user), do not create a
-			# duplicate.
+			# If a Payment Entry with this reference already exists / created manually by a user, do not create another one.
 			existing_payment_entry_name = None
 			try:
 				# For internal transfers with matching accounts and amount, we can match without reference_no
+				# Especially transfer between company accounts (prone to duplicate entries)
 				if payment_type == "Internal Transfer" and paid_from and paid_to and amount > 100:
 					existing_payment_entry_name = frappe.db.get_value(
 						"Payment Entry",
@@ -991,15 +991,19 @@ def read_camt054(content, account=None, auto_submit=False):
 			if existing_payment_entry_name and bank_transaction:
 				try:
 					bank_transaction.reload()
-					bank_transaction.append(
-						"payment_entries",
-						{
-							"payment_document": "Payment Entry",
-							"payment_entry": existing_payment_entry_name,
-							"allocated_amount": amount,
-						},
-					)
-					bank_transaction.save()
+					if not any(
+						pe.payment_entry == existing_payment_entry_name
+						for pe in bank_transaction.get("payment_entries", [])
+					):
+						bank_transaction.append(
+							"payment_entries",
+							{
+								"payment_document": "Payment Entry",
+								"payment_entry": existing_payment_entry_name,
+								"allocated_amount": amount,
+							},
+						)
+						bank_transaction.save()
 				except Exception as link_existing_err:
 					frappe.log_error(
 						"Bank Import CAMT.052 Error",
@@ -1048,15 +1052,19 @@ def read_camt054(content, account=None, auto_submit=False):
 				if bank_transaction:
 					try:
 						bank_transaction.reload()
-						bank_transaction.append(
-							"payment_entries",
-							{
-								"payment_document": "Payment Entry",
-								"payment_entry": pe_name,
-								"allocated_amount": amount,
-							},
-						)
-						bank_transaction.save()
+						# Check if already allocated
+						if not any(
+							pe.payment_entry == pe_name for pe in bank_transaction.get("payment_entries", [])
+						):
+							bank_transaction.append(
+								"payment_entries",
+								{
+									"payment_document": "Payment Entry",
+									"payment_entry": pe_name,
+									"allocated_amount": amount,
+								},
+							)
+							bank_transaction.save()
 					except Exception as link_err:
 						frappe.log_error(
 							"Bank Import CAMT.052 Error",
@@ -1107,15 +1115,20 @@ def read_camt054(content, account=None, auto_submit=False):
 							if bank_transaction:
 								try:
 									bank_transaction.reload()
-									bank_transaction.append(
-										"payment_entries",
-										{
-											"payment_document": "Payment Entry",
-											"payment_entry": fee_pe_name,
-											"allocated_amount": charges,
-										},
-									)
-									bank_transaction.save()
+									# Check if already allocated
+									if not any(
+										pe.payment_entry == fee_pe_name
+										for pe in bank_transaction.get("payment_entries", [])
+									):
+										bank_transaction.append(
+											"payment_entries",
+											{
+												"payment_document": "Payment Entry",
+												"payment_entry": fee_pe_name,
+												"allocated_amount": charges,
+											},
+										)
+										bank_transaction.save()
 								except Exception as fee_link_err:
 									frappe.log_error(
 										"Bank Import CAMT.052 Error",
@@ -1230,11 +1243,15 @@ def make_payment_entry(
 		account_currency = frappe.get_value("Account", paid_to, "account_currency")
 	else:
 		account_currency = frappe.get_value("Account", paid_from, "account_currency")
-	if account_currency != company_currency and exchange_rate == 1:
+	if account_currency and account_currency != company_currency and exchange_rate == 1:
 		# reevaluate exchange rate
-		exchange_rate = get_exchange_rate(
-			from_currency=account_currency, to_currency=company_currency, transaction_date=date
-		)
+		try:
+			exchange_rate = get_exchange_rate(
+				from_currency=account_currency, to_currency=company_currency, transaction_date=date
+			)
+		except Exception:
+			# If exchange rate cannot be determined, keep default of 1
+			pass
 
 	base_payment_data = {
 		"doctype": "Payment Entry",
