@@ -1,5 +1,5 @@
 app_name = "lithuania_compliance"
-app_title = "lithuania Compliance"
+app_title = "Lithuania Compliance"
 app_publisher = "Martynas Miliauskas"
 app_description = "Adjust ERPNext to adhere to VMI requirements"
 app_email = "pagalba@ekranas.info"
@@ -20,7 +20,7 @@ override_doctype_class = {
 # 	{
 # 		"name": "lithuania_compliance",
 # 		"logo": "/assets/lithuania_compliance/logo.png",
-# 		"title": "lithuania Compliance",
+# 		"title": "Lithuania Compliance",
 # 		"route": "/lithuania_compliance",
 # 		"has_permission": "lithuania_compliance.api.permission.has_app_permission"
 # 	}

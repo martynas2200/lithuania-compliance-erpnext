@@ -98,6 +98,7 @@ def add_invoice_info(parent_element, invoice):
 	# TODO: this should be an option to select in UI in the future
 	ET.SubElement(parent_element, "References").text = ""
 	ET.SubElement(parent_element, "VATPointDate").set("xsi:nil", "true")
+	ET.SubElement(parent_element, "RegistrationAccountDate").text = invoice.registration_account_date
 	document_totals = ET.SubElement(parent_element, "DocumentTotals")
 	for line in invoice.tax_lines:
 		document_total = ET.SubElement(document_totals, "DocumentTotal")
@@ -317,6 +318,7 @@ def get_all_isaf_parties_and_invoices(export_type, from_date, to_date):
 						"invoice_number": bill_no,
 						"party": party_info,
 						"date": (invoice_doc.bill_date or invoice_doc.posting_date).strftime("%Y-%m-%d"),
+						"registration_account_date": invoice_doc.posting_date.strftime("%Y-%m-%d"),
 						"invoice_type": invoice_type_code,
 						"export_type": export_type,
 						"tax_lines": tax_lines,

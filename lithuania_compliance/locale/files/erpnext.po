@@ -5,7 +5,7 @@ msgstr ""
 "Project-Id-Version: ERPNext VERSION\n"
 "Report-Msgid-Bugs-To: hello@frappe.io\n"
 "POT-Creation-Date: 2026-02-01 09:43+0000\n"
-"PO-Revision-Date: 2026-02-12 00:04+0100\n"
+"PO-Revision-Date: 2026-02-17 19:20+0100\n"
 "Last-Translator: Martynas Miliauskas <martin@ekranas.info>\n"
 "Language-Team: hello@frappe.io\n"
 "Language: lt\n"
@@ -7628,11 +7628,10 @@ msgid "Buying must be checked, if Applicable For is selected as {0}"
 msgstr "Turi būti pažymėta “Pirkimas”, jei pasirenkama “Taikoma” {0}"
 
 #: erpnext/buying/doctype/buying_settings/buying_settings.js:13
-#, fuzzy
 msgid "By default, the Supplier Name is set as per the Supplier Name entered. If you want Suppliers to be named by a <a href='https://docs.erpnext.com/docs/user/manual/en/setting-up/settings/naming-series' target='_blank'>Naming Series</a> choose the 'Naming Series' option."
 msgstr ""
 "Pagal numatytuosius nustatymus tiekėjo pavadinimas nustatomas pagal įvestą tiekėjo pavadinimą. Jei norite, kad Tiekėjų pavadinimas būtų suteiktas pagal <a href='https://docs.erpnext.com/docs/user/manual/en/setting-up/settings/naming-series' target='_blank'>Pavadinimų seriją</a>, pasirinkite "
-"parinktį \"Pavadinimų serija\"."
+"parinktį „Pavadinimų serija“."
 
 #. Label of the bypass_credit_limit_check (Check) field in DocType 'Customer
 #. Credit Limit'
@@ -41748,13 +41747,11 @@ msgstr "Standard rated supplies in {0}"
 
 #. Description of a DocType
 #: erpnext/accounts/doctype/purchase_taxes_and_charges_template/purchase_taxes_and_charges_template.json
-#, fuzzy
 msgid "Standard tax template that can be applied to all Purchase Transactions. This template can contain a list of tax heads and also other expense heads like \"Shipping\", \"Insurance\", \"Handling\", etc."
-msgstr "Standartinis mokesčių šablonas, kurį galima taikyti visoms pirkimo operacijoms. Į šį šabloną gali būti įtrauktas mokestinių pozicijų sąrašas, taip pat kitos išlaidų pozicijos, pavyzdžiui, \"Pristatymas\", \"Draudimas\", \"Rankpinigiai\" ir t. t."
+msgstr "Standartinis mokesčių šablonas, kurį galima taikyti visoms pirkimo operacijoms. Į šį šabloną gali būti įtrauktas mokestinių pozicijų sąrašas, taip pat kitos sąnaudų/priemokų pozicijos, pavyzdžiui, \"Pristatymas\", \"Draudimas\", \"Rankpinigiai\" ir t. t."
 
 #. Description of a DocType
 #: erpnext/accounts/doctype/sales_taxes_and_charges_template/sales_taxes_and_charges_template.json
-#, fuzzy
 msgid "Standard tax template that can be applied to all Sales Transactions. This template can contain a list of tax heads and also other expense/income heads like \"Shipping\", \"Insurance\", \"Handling\" etc."
 msgstr "Standartinis mokesčių šablonas, kurį galima taikyti visoms pardavimo operacijoms. Į šį šabloną gali būti įtrauktas mokestinių pozicijų sąrašas, taip pat kitos sąnaudų/priemokų pozicijos, pvz., \"Pristatymas\", \"Draudimas\", \"Rankpinigiai\" ir t. t."
 
@@ -44831,7 +44828,6 @@ msgid "The last scanned warehouse has been cleared and won't be set in the subse
 msgstr "Paskutinis nuskaitytas sandėlis buvo ištrintas ir nebus nustatytas vėliau nuskaitytiems elementams"
 
 #: erpnext/accounts/doctype/loyalty_program/loyalty_program.py:47
-#, fuzzy
 msgid "The lowest tier must have a minimum spent amount of 0. Customers need to be part of a tier as soon as they are enrolled in the program."
 msgstr "Mažiausios pakopos minimali išleista suma turi būti 0. Klientai turi būti įtraukti į pakopą iš karto, kai tik jie įtraukiami į programą."
 
@@ -44877,21 +44873,18 @@ msgstr "Mokėjimo gateway sąskaita plane {0} skiriasi nuo mokėjimo vartų sąs
 #. Description of the 'Over Billing Allowance (%)' (Currency) field in DocType
 #. 'Accounts Settings'
 #: erpnext/accounts/doctype/accounts_settings/accounts_settings.json
-#, fuzzy
 msgid "The percentage you are allowed to bill more against the amount ordered. For example, if the order value is $100 for an item and tolerance is set as 10%, then you are allowed to bill up to $110 "
-msgstr "Procentinė dalis, kurią leidžiama išrašyti didesnę sąskaitą, palyginti su užsakyta suma. Pavyzdžiui, jei prekės užsakymo vertė yra 100 USD, o leistinas nuokrypis nustatytas 10 %, tuomet jums leidžiama išrašyti sąskaitą iki 110 USD"
+msgstr "Procentinė dalis, pagal kurią leidžiama išrašyti didesnę sąskaitą, palyginti su užsakyta suma. Pavyzdžiui, jei prekės užsakymo vertė yra 100 USD, o leistinas nuokrypis nustatytas 10 %, tuomet jums leidžiama išrašyti sąskaitą iki 110 USD "
 
 #. Description of the 'Over Picking Allowance' (Percent) field in DocType
 #. 'Stock Settings'
 #: erpnext/stock/doctype/stock_settings/stock_settings.json
-#, fuzzy
 msgid "The percentage you are allowed to pick more items in the pick list than the ordered quantity."
-msgstr "Procentinė dalis, kuria leidžiama pasirinkti daugiau prekių iš komplektavimo sąrašo nei užsakytas kiekis."
+msgstr "Procentinė dalis, pagal kurią leidžiama surinkti daugiau prekių surinkimo sąraše negu užsakytas kiekis."
 
 #. Description of the 'Over Delivery/Receipt Allowance (%)' (Float) field in
 #. DocType 'Stock Settings'
 #: erpnext/stock/doctype/stock_settings/stock_settings.json
-#, fuzzy
 msgid "The percentage you are allowed to receive or deliver more against the quantity ordered. For example, if you have ordered 100 units, and your Allowance is 10%, then you are allowed to receive 110 units."
 msgstr "Procentinė dalis, kurią galite gauti arba pristatyti daugiau nei užsakytas kiekis. Pavyzdžiui, jei užsakėte 100 vienetų, o jūsų leidimas yra 10 %, tuomet jums leidžiama gauti 110 vienetų."
 
@@ -44902,9 +44895,8 @@ msgid "The percentage you are allowed to transfer more against the quantity orde
 msgstr "Procentinė dalis, kurią galite perkelti daugiau už užsakytą kiekį. Pavyzdžiui, jei užsakėte 100 vienetų, o jūsų leidžiamoji norma yra 10 %, jums leidžiama perkelti 110 vienetų."
 
 #: erpnext/public/js/utils.js:872
-#, fuzzy
 msgid "The reserved stock will be released when you update items. Are you certain you wish to proceed?"
-msgstr "Rezervuotos atsargos bus išleistos, kai atnaujinsite elementus. Ar esate tikri, kad norite tęsti?"
+msgstr "Rezervuotos atsargos bus paleistos, kai atnaujinsite elementus. Ar esate tikri, kad norite tęsti?"
 
 #: erpnext/stock/doctype/pick_list/pick_list.js:159
 msgid "The reserved stock will be released. Are you certain you wish to proceed?"
@@ -45579,7 +45571,7 @@ msgstr "Laiko tarpsniai"
 #: erpnext/selling/doctype/sales_order/sales_order_list.js:58 erpnext/selling/doctype/sales_order/sales_order_list.js:60 erpnext/stock/doctype/delivery_note/delivery_note.json erpnext/stock/doctype/delivery_note/delivery_note_list.js:22
 #: erpnext/stock/doctype/purchase_receipt/purchase_receipt.json erpnext/stock/doctype/purchase_receipt/purchase_receipt_list.js:21
 msgid "To Bill"
-msgstr "Reikia išrašyti"
+msgstr "Laukia sąskaitos"
 
 #. Label of the to_currency (Link) field in DocType 'Currency Exchange'
 #: erpnext/setup/doctype/currency_exchange/currency_exchange.json
@@ -45623,14 +45615,14 @@ msgstr "Norėdami ištrinti sąrašą, sugeneruotą naudojant {0} dokumento tipu
 #. Option for the 'Status' (Select) field in DocType 'Sales Order'
 #: erpnext/manufacturing/doctype/production_plan/production_plan.json erpnext/selling/doctype/sales_order/sales_order.json erpnext/selling/doctype/sales_order/sales_order_list.js:37 erpnext/selling/doctype/sales_order/sales_order_list.js:50
 msgid "To Deliver"
-msgstr "Pristatyti"
+msgstr "Laukia pristatymo"
 
 #. Option for the 'Sales Order Status' (Select) field in DocType 'Production
 #. Plan'
 #. Option for the 'Status' (Select) field in DocType 'Sales Order'
 #: erpnext/manufacturing/doctype/production_plan/production_plan.json erpnext/selling/doctype/sales_order/sales_order.json erpnext/selling/doctype/sales_order/sales_order_list.js:44
 msgid "To Deliver and Bill"
-msgstr "Pristatyti ir išrašyti sąskaitą"
+msgstr "Laukia pristatymo ir sąskaitos"
 
 #. Label of the to_delivery_date (Date) field in DocType 'Production Plan'
 #: erpnext/manufacturing/doctype/production_plan/production_plan.json
@@ -45652,7 +45644,6 @@ msgstr "Iki termino pabaigos"
 
 #. Label of the to_employee (Link) field in DocType 'Asset Movement Item'
 #: erpnext/assets/doctype/asset_movement_item/asset_movement_item.json
-#, fuzzy
 msgid "To Employee"
 msgstr "Darbuotojui"
 
@@ -45711,13 +45702,12 @@ msgstr "Intervalas iki"
 #. Option for the 'Status' (Select) field in DocType 'Purchase Order'
 #: erpnext/buying/doctype/purchase_order/purchase_order.json erpnext/buying/doctype/purchase_order/purchase_order_list.js:32
 msgid "To Receive"
-msgstr "Gauti"
+msgstr "Laukia gavimo"
 
 #. Option for the 'Status' (Select) field in DocType 'Purchase Order'
 #: erpnext/buying/doctype/purchase_order/purchase_order.json erpnext/buying/doctype/purchase_order/purchase_order_list.js:26
-#, fuzzy
 msgid "To Receive and Bill"
-msgstr "Gauti ir išrašyti sąskaitą"
+msgstr "Laukia gavimo ir sąskaitos"
 
 #. Label of the to_reference_date (Date) field in DocType 'Bank Reconciliation
 #. Tool'

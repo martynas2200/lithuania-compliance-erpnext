@@ -32951,7 +32951,7 @@ msgstr "{0}: tipo {1} laukas {2} negali būti indeksuojamas"
 
 #: frappe/public/js/frappe/form/quick_entry.js:203
 msgid "{1} saved"
-msgstr "{1} išsaugoti"
+msgstr "{1} išsaugota(-s)"
 
 #: frappe/public/js/frappe/utils/datatable.js:12
 msgid "{count} cell copied"
