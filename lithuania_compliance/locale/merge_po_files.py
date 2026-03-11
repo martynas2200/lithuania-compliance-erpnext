@@ -114,8 +114,16 @@ def merge_po_files(input_files, output_file):
 		f.write("\n")
 
 		for msgid, msgstr in merged_translations.items():
-			f.write(f"msgid {msgid}\n")
-			f.write(f"msgstr {msgstr}\n")
+			msgid_parts = re.findall(r'"(?:[^"\\]|\\.)*"', msgid)
+			f.write(f"msgid {msgid_parts[0]}\n")
+			for part in msgid_parts[1:]:
+				f.write(f"{part}\n")
+
+			msgstr_parts = re.findall(r'"(?:[^"\\]|\\.)*"', msgstr)
+			f.write(f"msgstr {msgstr_parts[0]}\n")
+			for part in msgstr_parts[1:]:
+				f.write(f"{part}\n")
+
 			f.write("\n")
 
 	print(f"✓ Merged {len(input_files)} files with {len(merged_translations)} translations")
