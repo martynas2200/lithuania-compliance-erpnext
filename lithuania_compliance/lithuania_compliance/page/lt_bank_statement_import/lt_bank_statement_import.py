@@ -72,22 +72,6 @@ def match_by_amount(amount):
 		return None
 
 
-def match_by_comment(comment):  # Can be used for matching reference numbers in comments
-	sql_query = """
-		SELECT `name`
-		FROM `tabSales Invoice`
-		WHERE `docstatus` = 1
-		AND `status` != 'Paid';"""
-	open_sales_invoices = frappe.db.sql(sql_query, as_dict=True)
-
-	if not open_sales_invoices:
-		return None
-
-	for reference in open_sales_invoices.name:
-		if reference in comment:
-			return reference
-
-
 def get_supplier_erpnext_name(name):
 	# Remove quotes from name for matching
 	cleaned_name = remove_special_characters(name).strip()
@@ -1043,8 +1027,8 @@ def read_camt054(content, account=None, auto_submit=False):
 				if party_type and party and payment_type in ("Pay", "Receive"):
 					party_key = (party_type, party)
 					if party_key not in collected_parties:
-						account = get_default_receivable_payable_account(party_type, party)
-						collected_parties[party_key] = {"count": 1, "account": account}
+						default_account = get_default_receivable_payable_account(party_type, party)
+						collected_parties[party_key] = {"count": 1, "account": default_account}
 					else:
 						collected_parties[party_key]["count"] += 1
 
