@@ -52,16 +52,21 @@ class CustomPurchaseInvoice(PurchaseInvoice):
 	def get_gl_entries(self, warehouse_account=None):
 		gl_entries = super().get_gl_entries(warehouse_account)
 
+		if getattr(self, "disable_rounded_total", 0):
+			return gl_entries
+
 		purchase_round_off_account = lt_settings.get_purchase_round_off_account()
 
 		company_round_off_account = None
 		if getattr(self, "company", None):
-			company_round_off_account = frappe.get_cached_value("Company", self.company, "round_off_account")
+			company_round_off_account = frappe.get_value("Company", self.company, "round_off_account")
 
 		# Iterate through GL entries and rewrite the round-off line
 		if company_round_off_account and purchase_round_off_account:
 			for gle in gl_entries:
-				if gle.get("account") == company_round_off_account:
+				if gle.get("account") == company_round_off_account and (
+					abs(gle.get("debit", 0)) < 0.05 or abs(gle.get("credit", 0)) < 0.05
+				):
 					gle["account"] = purchase_round_off_account
 					gle["account_currency"] = frappe.db.get_value(
 						"Account", purchase_round_off_account, "account_currency"
@@ -96,16 +101,21 @@ class CustomSalesInvoice(SalesInvoice):
 	def get_gl_entries(self, warehouse_account=None):
 		gl_entries = super().get_gl_entries(warehouse_account)
 
+		if getattr(self, "disable_rounded_total", 0):
+			return gl_entries
+
 		sales_round_off_account = lt_settings.get_sales_round_off_account()
 
 		company_round_off_account = None
 		if getattr(self, "company", None):
-			company_round_off_account = frappe.get_cached_value("Company", self.company, "round_off_account")
+			company_round_off_account = frappe.get_value("Company", self.company, "round_off_account")
 
 		# Iterate through GL entries and rewrite the round-off line
 		if company_round_off_account and sales_round_off_account:
 			for gle in gl_entries:
-				if gle.get("account") == company_round_off_account:
+				if gle.get("account") == company_round_off_account and (
+					abs(gle.get("debit", 0)) < 0.05 or abs(gle.get("credit", 0)) < 0.05
+				):
 					gle["account"] = sales_round_off_account
 					gle["account_currency"] = frappe.db.get_value(
 						"Account", sales_round_off_account, "account_currency"
