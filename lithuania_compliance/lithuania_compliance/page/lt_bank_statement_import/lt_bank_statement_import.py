@@ -46,8 +46,6 @@ def get_full_remarks(payment_type, party_type, party_name, party, subfamily_code
 		title = _("Payment to supplier {0}").format(party_name or party)
 	elif payment_type == "Pay" and party_type == "Employee" and (party_name or party):
 		title = _("Payment to employee {0}").format(party_name or party)
-	elif payment_type == "Pay":
-		title = _("Bank payment")
 	elif subfamily_code == "CHRG":
 		title = _("Bank fee (charges)")
 	elif subfamily_code == "CDPT":
@@ -60,11 +58,11 @@ def get_full_remarks(payment_type, party_type, party_name, party, subfamily_code
 
 def match_by_amount(amount):
 	sql_query = """
-		SELECT `name`
-		FROM `tabSales Invoice`
-		WHERE `docstatus` = 1
-		AND `grand_total` = {0}
-		AND `status` != 'Paid'; """.format(amount)
+        SELECT `name`
+        FROM `tabSales Invoice`
+        WHERE `docstatus` = 1
+        AND `grand_total` = {0}
+        AND `status` != 'Paid'; """.format(amount)
 	open_sales_invoices = frappe.db.sql(sql_query, as_dict=True)
 	if open_sales_invoices and len(open_sales_invoices) == 1:
 		return open_sales_invoices[0].name
@@ -76,10 +74,10 @@ def get_supplier_erpnext_name(name):
 	# Remove quotes from name for matching
 	cleaned_name = remove_special_characters(name).strip()
 	sql_query = """
-		SELECT `name`
-		FROM `tabSupplier`
-		WHERE REPLACE(REPLACE(`supplier_name`, '"', ''), "'", '') = '{0}'
-		AND `disabled` = 0; """.format(cleaned_name)
+        SELECT `name`
+        FROM `tabSupplier`
+        WHERE REPLACE(REPLACE(`supplier_name`, '"', ''), "'", '') = '{0}'
+        AND `disabled` = 0; """.format(cleaned_name)
 	suppliers = frappe.db.sql(sql_query, as_dict=True)
 	if suppliers and len(suppliers) == 1:
 		return suppliers[0].name
@@ -108,13 +106,13 @@ def get_company_account_by_iban(iban):
 	try:
 		accounts = frappe.db.sql(
 			"""
-			SELECT `account` AS `name`
-			FROM `tabBank Account`
-			WHERE `is_company_account` = 1
-				AND `disabled` = 0
-				AND `account` IS NOT NULL
-				AND REPLACE(COALESCE(`bank_account_no`, `iban`), ' ', '') = %(iban)s
-			""",
+            SELECT `account` AS `name`
+            FROM `tabBank Account`
+            WHERE `is_company_account` = 1
+                AND `disabled` = 0
+                AND `account` IS NOT NULL
+                AND REPLACE(COALESCE(`bank_account_no`, `iban`), ' ', '') = %(iban)s
+            """,
 			{"iban": iban.replace(" ", "")},
 			as_dict=True,
 		)
@@ -147,19 +145,12 @@ def get_account_by_structured_reference(structured_reference, settings):
 
 def get_unpaid_sales_invoices_by_customer(customer):
 	sql_query = """
-		SELECT `name`
-		FROM `tabSales Invoice`
-		WHERE `docstatus` = 1
-		AND `customer` = '{0}'
-		AND `status` != 'Paid'; """.format(customer)
+        SELECT `name`
+        FROM `tabSales Invoice`
+        WHERE `docstatus` = 1
+        AND `customer` = '{0}'
+        AND `status` != 'Paid'; """.format(customer)
 	return frappe.db.sql(sql_query, as_dict=True)
-
-
-def log(comment):
-	new_comment = frappe.get_doc({"doctype": "Log"})
-	new_comment.comment = comment
-	new_comment.insert()
-	return new_comment
 
 
 def get_or_create_party_from_iban(party_name, party_iban, is_credit, company=None):
@@ -230,7 +221,6 @@ def get_or_create_party_from_iban(party_name, party_iban, is_credit, company=Non
 			party = existing[0]["name"]
 		elif auto_create:
 			# Create a new Customer/Supplier with this name
-			# TODO: settings whether to auto-create Customers or Suppliers
 			try:
 				doc = frappe.get_doc(
 					{
@@ -664,6 +654,7 @@ def read_camt054(content, account=None, auto_submit=False):
 		auto_submit_flag = True
 
 	created_entries = []
+	submitted_count = 0
 	collected_parties = {}  # {(party_type, party): {'count': n, 'account': account}}
 
 	for txn in transactions:
@@ -691,6 +682,7 @@ def read_camt054(content, account=None, auto_submit=False):
 			paid_from = None
 			paid_to = None
 			payment_type = None
+			cost_center = None
 
 			matched_party_type = None
 			matched_party = None
@@ -723,12 +715,18 @@ def read_camt054(content, account=None, auto_submit=False):
 					paid_from = mapped_account
 					party_type = None
 					party = None
-				# Cash deposits
-				elif subfamily_code == "CDPT" and account and settings.cash_deposit_account:
-					payment_type = "Internal Transfer"
-					paid_from = settings.cash_deposit_account
-					party_type = None
-					party = None
+				# For cash deposits, Journal Entry with employee as party
+				elif (
+					subfamily_code == "CDPT"
+					and account
+					and settings.cash_deposit_account
+					and settings.cash_deposit_employee
+				):
+					payment_type = "CDPT"
+					paid_from = settings.cash_deposit_account  # credit (source)
+					paid_to = account  # debit (bank)
+					party_type = "Employee"
+					party = settings.cash_deposit_employee
 				# EMV/POS settlements
 				elif subfamily_code == "POSP" and account and settings.emv_account:
 					auto_submit_flag = False
@@ -808,6 +806,7 @@ def read_camt054(content, account=None, auto_submit=False):
 					paid_to = settings.bank_fee_expense_account
 					party_type = None
 					party = None
+					cost_center = settings.bank_fee_cost_center
 				elif subfamily_code == "BOOK" and account and party_iban:
 					target_account = get_company_account_by_iban(party_iban)
 					# Only treat as internal transfer if both accounts belong to the same company and are company accounts
@@ -939,6 +938,8 @@ def read_camt054(content, account=None, auto_submit=False):
 				continue
 			if payment_type == "Internal Transfer" and (not paid_from or not paid_to):
 				continue
+			if payment_type == "CDPT" and (not paid_from or not paid_to or not party):
+				continue
 
 			# If a Payment Entry with this reference already exists / created manually by a user, do not create another one.
 			existing_payment_entry_name = None
@@ -965,7 +966,6 @@ def read_camt054(content, account=None, auto_submit=False):
 					existing_payment_entry_name = frappe.db.get_value(
 						"Payment Entry", {"reference_no": reference_no}, "name"
 					)
-
 			except Exception as pe_lookup_err:
 				frappe.log_error(
 					"Bank Import CAMT.052 Error",
@@ -997,6 +997,103 @@ def read_camt054(content, account=None, auto_submit=False):
 			if existing_payment_entry_name:
 				continue
 
+			# CDPT (cash deposit): create a Journal Entry instead of a Payment Entry
+			if payment_type == "CDPT":
+				try:
+					# Check for existing Journal Entry with same reference
+					existing_je_name = None
+					if reference_no and company:
+						existing_je_name = frappe.db.get_value(
+							"Journal Entry", {"cheque_no": reference_no, "company": company}, "name"
+						)
+					if existing_je_name:
+						# Link existing JE to Bank Transaction
+						if bank_transaction:
+							bank_transaction.reload()
+							if not any(
+								pe.payment_entry == existing_je_name
+								for pe in bank_transaction.get("payment_entries", [])
+							):
+								bank_transaction.append(
+									"payment_entries",
+									{
+										"payment_document": "Journal Entry",
+										"payment_entry": existing_je_name,
+										"allocated_amount": amount,
+									},
+								)
+								bank_transaction.save()
+						continue
+
+					je = frappe.get_doc(
+						{
+							"doctype": "Journal Entry",
+							"voucher_type": "Journal Entry",
+							"posting_date": date,
+							"company": company,
+							"cheque_no": reference_no,
+							"user_remark": remarks,
+							"accounts": [
+								{
+									"account": paid_to,  # bank account (debit minus money in)
+									"debit_in_account_currency": amount,
+									"party_type": party_type,
+									"party": party,
+								},
+								{
+									"account": paid_from,  # cash deposit account (credit)
+									"credit_in_account_currency": amount,
+									"party_type": party_type,
+									"party": party,
+								},
+							],
+						}
+					)
+					je.insert()
+					submitted = False
+					if auto_submit_flag:
+						try:
+							je.submit()
+							submitted = True
+						except Exception as je_submit_err:
+							frappe.log_error(
+								"Bank Import CAMT.052 CDPT",
+								f"Failed to submit Journal Entry {je.name}: {je_submit_err}",
+							)
+
+					created_entries.append(je.name)
+					if submitted:
+						submitted_count += 1
+
+					# Link the Journal Entry to the Bank Transaction
+					if bank_transaction:
+						try:
+							bank_transaction.reload()
+							if not any(
+								pe.payment_entry == je.name
+								for pe in bank_transaction.get("payment_entries", [])
+							):
+								bank_transaction.append(
+									"payment_entries",
+									{
+										"payment_document": "Journal Entry",
+										"payment_entry": je.name,
+										"allocated_amount": amount,
+									},
+								)
+								bank_transaction.save()
+						except Exception as link_err:
+							frappe.log_error(
+								"Bank Import CAMT.052 CDPT",
+								f"Failed to link Journal Entry {je.name} to Bank Transaction {bank_transaction.name}: {link_err}",
+							)
+				except Exception as cdpt_err:
+					frappe.log_error(
+						"Bank Import CAMT.052 CDPT",
+						f"Failed to create Journal Entry for {reference_no}: {cdpt_err}",
+					)
+				continue
+
 			# Serialise references for make_payment_entry, needs to be a string
 			references_param = None
 			if references:
@@ -1017,11 +1114,14 @@ def read_camt054(content, account=None, auto_submit=False):
 				party_iban=party_iban,
 				company=company,
 				pattern=pattern,
+				cost_center=cost_center,
 			)
 
 			if result and result.get("payment_entry"):
 				pe_name = result["payment_entry"]
 				created_entries.append(pe_name)
+				if result.get("submitted"):
+					submitted_count += 1
 
 				# Collect party information for Process Payment Reconciliation
 				if party_type and party and payment_type in ("Pay", "Receive"):
@@ -1086,11 +1186,14 @@ def read_camt054(content, account=None, auto_submit=False):
 							party_iban=party_iban,
 							company=company,
 							pattern=None,
+							cost_center=settings.bank_fee_cost_center,
 						)
 
 						if fee_result and fee_result.get("payment_entry"):
 							fee_pe_name = fee_result["payment_entry"]
 							created_entries.append(fee_pe_name)
+							if fee_result.get("submitted"):
+								submitted_count += 1
 
 							# Link the fee Payment Entry back to the same
 							# Bank Transaction so that the sum of allocated
@@ -1156,9 +1259,16 @@ def read_camt054(content, account=None, auto_submit=False):
 				f"Failed to create PPR for {party_type} {party}: {err}",
 			)
 
+	submitted_msg = (
+		_(" ({0} submitted, {1} draft)").format(submitted_count, len(created_entries) - submitted_count)
+		if submitted_count != len(created_entries)
+		else _(" (all submitted)")
+		if created_entries
+		else ""
+	)
 	return {
-		"message": _("Checked {1} bank transactions. Created {0} payment entries").format(
-			len(created_entries), len(transactions)
+		"message": _("Checked {1} bank transactions. Created {0} payment entries{2}").format(
+			len(created_entries), len(transactions), submitted_msg
 		),
 		"records": created_entries,
 		"reconciliation_docs": reconciliation_docs,
@@ -1166,7 +1276,7 @@ def read_camt054(content, account=None, auto_submit=False):
 
 
 @frappe.whitelist()
-def import_camt_statement(content, description=None, auto_submit=False):
+def import_camt_statement(content, auto_submit=False):
 	"""Wrapper for the page to import a CAMT XML statement.
 
 	auto_submit flag controls whether created Payment Entries
@@ -1182,15 +1292,15 @@ def import_camt_statement(content, description=None, auto_submit=False):
 	try:
 		result = read_camt054(content, account=None, auto_submit=auto_submit_flag)
 		created = result.get("records", []) if isinstance(result, dict) else []
+		summary = (
+			result.get("message", _("Created {0} payment entries").format(len(created)))
+			if isinstance(result, dict)
+			else _("Created {0} payment entries").format(len(created))
+		)
 	except Exception as err:
 		frappe.log_error("LT Bank Statement Import", str(err))
 		errors.append(str(err))
-
-	summary = _("Created {0} payment entries").format(len(created))
-	if auto_submit_flag:
-		summary = _("{0} (submitted)").format(summary)
-	else:
-		summary = _("{0} (saved as Drafts)").format(summary)
+		summary = _("Import failed: {0}").format(str(err))
 
 	return {
 		"summary": summary,
@@ -1215,6 +1325,7 @@ def make_payment_entry(
 	party_iban=None,
 	company=None,
 	pattern=None,
+	cost_center=None,
 ):
 	if not company and paid_from:
 		company = frappe.get_value("Account", paid_from, "company")
@@ -1248,6 +1359,7 @@ def make_payment_entry(
 		"camt_amount": float(amount),
 		"bank_account_no": party_iban,
 		"company": company,
+		"cost_center": cost_center,
 		"source_exchange_rate": exchange_rate,
 		"target_exchange_rate": exchange_rate,
 	}
@@ -1306,27 +1418,50 @@ def make_payment_entry(
 			create_reference(new_entry.name, reference, reference_type)
 
 	# automatically submit if enabled
+	submitted = False
 	if auto_submit:
-		matched_entry = frappe.get_doc("Payment Entry", new_entry.name)  # include changes from reference
-		if matched_entry.difference_amount != 0:
-			# for auto-submit, we need to clear this out to the exchange account
-			exchange_account = frappe.get_cached_value(
-				"Company", matched_entry.company, "exchange_gain_loss_account"
+		try:
+			matched_entry = frappe.get_doc("Payment Entry", new_entry.name)  # include changes from reference
+			if matched_entry.difference_amount != 0:
+				# for auto-submit, we need to clear this out to the exchange account
+				exchange_account = frappe.get_cached_value(
+					"Company", matched_entry.company, "exchange_gain_loss_account"
+				)
+				cost_center = frappe.get_cached_value(
+					"Company", matched_entry.company, "round_off_cost_center"
+				)
+				if exchange_account:
+					deduction = {
+						"account": exchange_account,
+						"amount": matched_entry.difference_amount,
+					}
+					if cost_center:
+						deduction["cost_center"] = cost_center
+					matched_entry.append("deductions", deduction)
+					matched_entry.save()
+				else:
+					frappe.log_error(
+						"Bank Import auto_submit",
+						f"Payment Entry {new_entry.name} has difference_amount={matched_entry.difference_amount} "
+						f"but no exchange_gain_loss_account configured for company {matched_entry.company}. "
+						f"Skipping deduction; submit may still fail.",
+					)
+			matched_entry.submit()
+			submitted = True
+		except Exception as submit_err:
+			frappe.log_error(
+				"Bank Import auto_submit",
+				f"Failed to submit Payment Entry {new_entry.name}: {submit_err}",
 			)
-			cost_center = frappe.get_cached_value("Company", matched_entry.company, "round_off_cost_center")
-			matched_entry.append(
-				"deductions",
-				{
-					"account": exchange_account,
-					"cost_center": cost_center,
-					"amount": matched_entry.difference_amount,
-				},
-			)
-			matched_entry.save()
-		matched_entry.submit()
+			# Payment Entry remains as draft so the caller
+			# can track and link it to the Bank Transaction.
 
 	frappe.db.commit()
-	return {"link": get_url_to_form("Payment Entry", new_entry.name), "payment_entry": new_entry.name}
+	return {
+		"link": get_url_to_form("Payment Entry", new_entry.name),
+		"payment_entry": new_entry.name,
+		"submitted": submitted,
+	}
 
 
 # creates the reference record in a payment entry
