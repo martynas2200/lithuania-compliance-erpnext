@@ -244,19 +244,6 @@ msgstr "Iš viso sąskaitų"
 msgid "i.SAF XML file has been generated successfully."
 msgstr "i.SAF XML failas sėkmingai sugeneruotas."
 
-msgid "Bank Import IBAN validation"
-msgstr "Banko importo IBAN patikrinimas"
-
-msgid "Created {0} payment entries"
-msgstr "Sukurta {0} mokėjimo įrašų"
-
-msgid "{0} (Description: {1})"
-msgstr "{0} (Aprašymas: {1})"
-
-msgid "No account found for IBAN {0}. Make sure there is an account in the chart of accounts with this IBAN, account type Bank and not disabled."
-
-msgstr "Nerasta sąskaita IBAN {0}. Įsitikinkite, kad sąskaitų plane yra sąskaita su šiuo IBAN, sąskaitos tipu Bankas ir ji nėra išjungta."
-
 msgid "Add New Item Price"
 msgstr "Pridėti naują prekės kainą"
 
@@ -293,21 +280,6 @@ msgstr "IBAN nerastas CAMT faile"
 msgid "Bank account not found for IBAN"
 msgstr "Nerasta banko sąskaita pagal IBAN"
 
-msgid "Bank charges for {0}"
-msgstr "Banko mokesčiai už {0}"
-
-msgid "Checked {1} bank transactions. Created {0} payment entries"
-msgstr "Patikrinta {1} banko operacijų. Sukurta {0} mokėjimo įrašų"
-
-msgid "Internal transfer between own accounts"
-msgstr "Vidinis pervedimas tarp nuosavų sąskaitų"
-
-msgid "Internal bank transfer"
-msgstr "Vidinis banko pervedimas"
-
-msgid "Deposit Account"
-msgstr "įnešimo sąskaita"
-
 msgid "Used for unmatched incoming deposits from CAMT bank statement imports."
 msgstr "Naudojama neatitikusiems gaunamiesiems įnašams iš CAMT banko išrašų importų."
 
@@ -319,6 +291,12 @@ msgstr "Sąskaita grynųjų pinigų įnašams (CAMT SubFmlyCd CDPT), kurie perve
 
 msgid "Bank Fee Expense Account"
 msgstr "Išlaidų sąskaita už banko mokesčius"
+
+msgid "Bank Fee Cost Center"
+msgstr "Kaštų centras banko mokesčiams"
+
+mgsid "Default cost center applied to bank fee (CHRG) payment entries created during CAMT bank statement imports."
+msgstr "Numatytasis kaštų centras, taikomas banko mokesčio (CHRG) mokėjimo įrašams, sukuriamiems CAMT banko išrašų importų metu."
 
 msgid "Used for bank fees in CAMT bank statement imports."
 msgstr "Naudojama banko mokesčiams, aptiktiems CAMT banko išrašų importuose."
@@ -356,6 +334,9 @@ msgstr "Numatyta sąskaita, naudojama darbuotojų mokėtinos sumoms banko import
 msgid "Default account used for receivables in bank import."
 msgstr "Numatyta sąskaita, naudojama gautinoms sumoms banko importo metu."
 
+msgid "Bank Importer"
+msgstr "Banko išrašų importuotojas"
+
 msgid "Bank Import IBAN validation"
 msgstr "Banko importo IBAN patikrinimas"
 
@@ -365,14 +346,8 @@ msgstr "Grynųjų pinigų įnešimas į banko sąskaitą"
 msgid "{0} (saved as Drafts)"
 msgstr "{0} (išsaugota kaip juodraščiai)"
 
-msgid "{0} (Description: {1})"
-msgstr "{0} (Aprašymas: {1})"
-
 msgid "Bank Import CAMT.053 Error"
 msgstr "Banko importo CAMT.053 klaida"
-
-msgid "Bank Import IBAN validation"
-msgstr "Banko importo IBAN patikrinimas"
 
 msgid "Please choose a file before importing."
 msgstr "Prašome pasirinkti failą prieš importuojant."
@@ -407,18 +382,6 @@ msgstr "Nieko nebuvo importuota."
 msgid "Could not read file."
 msgstr "Nepavyko perskaityti failo."
 
-msgid "Upload an ISO_XML_052 (ISO 20022 CAMT052) bank statement file to create Bank Transactions and possibly Payment Entries."
-msgstr "Įkelkite ISO_XML_052 (ISO 20022 CAMT052) banko išrašo failą, kad sukurtumėte banko operacijas ir galbūt mokėjimo įrašus."
-
-msgid "Submit created Payment Entries"
-msgstr "Pateikti sukurtus mokėjimo įrašus"
-
-msgid "If not checked, created Payment Entries will remain in Draft state."
-msgstr "Jei nepažymėta, sukurti mokėjimo įrašai liks juodraščio būsenoje."
-
-msgid "Import Bank Statement"
-msgstr "Importuoti banko išrašą"
-
 msgid "Exempt from VAT"
 msgstr "Atleistas nuo PVM"
 
@@ -427,7 +390,6 @@ msgstr "Gali būti naudojama i.SAF ataskaitoms. Tarifas paimamas iš <strong>PVM
 
 msgid "Will override the VAT Classificator defined in the Item Doctype."
 msgstr "Pakeis PVM klasifikatorių, apibrėžtą prekės kortelėje."
-
 
 msgid "January"
 msgstr "Sausis"
@@ -467,3 +429,15 @@ msgstr "Gruodis"
 
 msgid "Stock Balance with Barcode"
 msgstr "Atsargų likutis su brūkšniniu kodu"
+
+msgid "Report showing stock balance with barcodes for each item."
+msgstr "Ataskaita, rodanti atsargų likutį su brūkšniniais kodais kiekvienai prekei."
+
+msgid "Auto Submit Payment Entries"
+msgstr "Automatiškai pateikti mokėjimo įrašus"
+
+msgid "Attach bank transactions file"
+msgstr "Pridėti banko operacijų failą"
+
+msgid "Needs to be in CAMT.053 format (ISO 20022 XML)."
+msgstr "Turi būti CAMT.053 formate (ISO 20022 XML)."

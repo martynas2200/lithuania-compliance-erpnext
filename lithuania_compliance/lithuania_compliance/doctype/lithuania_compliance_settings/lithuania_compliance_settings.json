@@ -19,7 +19,9 @@
   "default_receivable_account",
   "column_break_ywsb",
   "cash_deposit_account",
+  "cash_deposit_employee",
   "bank_fee_expense_account",
+  "bank_fee_cost_center",
   "emv_account",
   "references_section",
   "structured_reference_account_mapping"
@@ -73,6 +75,13 @@
    "options": "Account"
   },
   {
+   "description": "Employee set as party on Journal Entries created for CDPT (cash deposit) CAMT statement lines.",
+   "fieldname": "cash_deposit_employee",
+   "fieldtype": "Link",
+   "label": "Cash Deposit Employee",
+   "options": "Employee"
+  },
+  {
    "description": "Source account for EMV transactions that are transferred into the bank account.",
    "fieldname": "emv_account",
    "fieldtype": "Link",
@@ -106,6 +115,13 @@
    "fieldtype": "Link",
    "label": "Bank Fee Expense Account",
    "options": "Account"
+  },
+  {
+   "description": "Default cost center applied to bank fee (CHRG) payment entries created during CAMT bank statement imports.",
+   "fieldname": "bank_fee_cost_center",
+   "fieldtype": "Link",
+   "label": "Bank Fee Cost Center",
+   "options": "Cost Center"
   },
   {
    "default": "0",
