@@ -34,7 +34,7 @@ fixtures = [
 
 # include js, css files in header of desk.html
 # app_include_css = "/assets/lithuania_compliance/css/lithuania_compliance.css"
-# app_include_js = "/assets/lithuania_compliance/js/lithuania_compliance.js"
+app_include_js = "/assets/lithuania_compliance/js/isaf_utils.js"
 
 # include js, css files in header of web template
 # web_include_css = "/assets/lithuania_compliance/css/lithuania_compliance.css"
@@ -51,7 +51,11 @@ fixtures = [
 # page_js = {"page" : "public/js/file.js"}
 
 # include js in doctype views
-doctype_js = {"Purchase Invoice": "public/js/purchase_invoice.js"}
+doctype_js = {
+	"Purchase Invoice": "public/js/purchase_invoice.js",
+	"Sales Invoice": "public/js/sales_invoice.js",
+	"Delivery Note": "public/js/delivery_note.js",
+}
 # doctype_list_js = {"doctype" : "public/js/doctype_list.js"}
 # doctype_tree_js = {"doctype" : "public/js/doctype_tree.js"}
 # doctype_calendar_js = {"doctype" : "public/js/doctype_calendar.js"}

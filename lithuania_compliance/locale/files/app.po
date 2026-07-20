@@ -431,25 +431,39 @@ msgstr "Pakeis PVM klasifikatorių, apibrėžtą prekės kortelėje."
 
 msgid "January"
 msgstr "Sausis"
+
 msgid "February"
 msgstr "Vasaris"
+
 msgid "March"
 msgstr "Kovas"
+
 msgid "April"
 msgstr "Balandis"
+
 msgid "May"
 msgstr "Gegužė"
+
 msgid "June"
 msgstr "Birželis"
+
 msgid "July"
 msgstr "Liepa"
+
 msgid "August"
 msgstr "Rugpjūtis"
+
 msgid "September"
 msgstr "Rugsėjis"
+
 msgid "October"
 msgstr "Spalis"
+
 msgid "November"
 msgstr "Lapkritis"
+
 msgid "December"
 msgstr "Gruodis"
+
+msgid "Stock Balance with Barcode"
+msgstr "Atsargų likutis su brūkšniniu kodu"

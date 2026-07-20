@@ -106,11 +106,11 @@ def get_item_prices(invoice_name):
 	# Create lookup for query results by item_code
 	item_lookup = {item["item_code"]: item for item in invoice_items_with_barcodes}
 
-	# TODO: use clasificators of invoice items when available
 	# Iterate through invoice items to preserve order and handle duplicates
 	for invoice_item in invoice.items:
 		item_code = invoice_item.item_code
 		item_rate = invoice_item.rate
+		invoice_item_vat_classificator = invoice_item.get("vat_classificator")
 
 		# Get the corresponding query result
 		item = item_lookup.get(item_code)
@@ -155,22 +155,25 @@ def get_item_prices(invoice_name):
 			else:
 				other_valid_prices.append(price)
 
-		item.vat_rate = default_vat_rate if item.get("vat_rate") is None else item.get("vat_rate")
+		vat_rate = item.get("vat_rate")
+		if invoice_item_vat_classificator:
+			vat_rate = frappe.get_value("VAT Classificator", invoice_item_vat_classificator, "rate")
+
+		vat_rate = default_vat_rate if vat_rate is None else vat_rate
 		# Calculate markup if applicable price exists
 		markup = 0
 		if applicable_price and item_rate:
 			applicable_rate = applicable_price.get("price_list_rate", 0)
 			if item_rate > 0:
-				# Adding 21% VAT to the base price
-				# TODO: Add a setting for VAT rate or if we plan to use clasificators for each item.
-				cost_with_vat = item_rate * (1 + item.vat_rate / 100)
+				# Add VAT to the base cost using invoice item / item / default classificator rate.
+				cost_with_vat = item_rate * (1 + vat_rate / 100)
 				markup = ((applicable_rate - cost_with_vat) / cost_with_vat) * 100
 
 		items_data.append(
 			{
 				"item_code": item_code,
 				"item_name": item.item_name,
-				"vat_rate": item.vat_rate,
+				"vat_rate": vat_rate,
 				"barcode": item.barcode,
 				"rate": item_rate,
 				"markup": round(markup, 2),
