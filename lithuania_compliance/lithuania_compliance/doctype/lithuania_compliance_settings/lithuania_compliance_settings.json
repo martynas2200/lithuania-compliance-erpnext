@@ -16,6 +16,7 @@
   "default_customer",
   "auto_create_parties_from_iban",
   "default_employee_payable_account",
+  "employee_payable_account_mapping",
   "default_receivable_account",
   "column_break_ywsb",
   "cash_deposit_account",
@@ -101,6 +102,13 @@
    "fieldtype": "Link",
    "label": "Default Employee Payable Account",
    "options": "Account"
+  },
+  {
+   "description": "Per-employee override of the payable account used in bank import payments.",
+   "fieldname": "employee_payable_account_mapping",
+   "fieldtype": "Table",
+   "label": "Employee Payable Account Mapping",
+   "options": "Employee Payable Account Mapping"
   },
   {
    "description": "Default account used for receivables in bank import.",

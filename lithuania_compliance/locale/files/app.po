@@ -441,3 +441,15 @@ msgstr "Pridėti banko operacijų failą"
 
 msgid "Needs to be in CAMT.053 format (ISO 20022 XML)."
 msgstr "Turi būti CAMT.053 formate (ISO 20022 XML)."
+
+msgid "Per-employee override of the payable account used in bank import payments."
+msgstr "Darbuotojo mokėtinos sąskaitos perrašymas, naudojamas banko importo mokėjimuose."
+
+msgid "Employee Payable Account Mapping"
+msgstr "Darbuotojo mokėtinos sąskaitos susiejimas"
+
+msgid "Cash Deposit Employee"
+msgstr "Grynųjų pinigų įnešimo darbuotojas"
+
+msgid "Employee set as party on Journal Entries created for CDPT (cash deposit) CAMT statement lines."
+msgstr "Darbuotojas nustatytas kaip partneris žurnalo įrašuose pagal CDPT (grynųjų pinigų įnešimas) CAMT išrašų eilutėse."

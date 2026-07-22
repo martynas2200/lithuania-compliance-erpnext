@@ -628,9 +628,14 @@ def create_payment_entry_from_plan(txn, plan, context, auto_submit):
 def set_employee_payable_account(data, plan):
 	if plan.payment_type != "Pay" or plan.party_type != "Employee":
 		return
-	account = frappe.get_cached_value(
-		"Lithuania Compliance Settings", "Lithuania Compliance Settings", "default_employee_payable_account"
-	)
+	settings = frappe.get_cached_doc("Lithuania Compliance Settings", "Lithuania Compliance Settings")
+	account = None
+	for row in settings.get("employee_payable_account_mapping") or []:
+		if row.employee == plan.party:
+			account = row.payable_account
+			break
+	if not account:
+		account = settings.default_employee_payable_account
 	if account:
 		data["paid_to"] = account
 
