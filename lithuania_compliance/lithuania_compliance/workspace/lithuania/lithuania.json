@@ -35,8 +35,8 @@
    "color": "Grey",
    "doc_view": "List",
    "label": "Import Bank Statement",
-   "link_to": "bank-statement-import",
-   "type": "Page"
+   "link_to": "Bank Importer",
+   "type": "DocType"
   },
   {
    "color": "Grey",

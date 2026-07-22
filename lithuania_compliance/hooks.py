@@ -27,7 +27,17 @@ override_doctype_class = {
 # ]
 fixtures = [
 	{"dt": "Custom Field", "filters": [["name", "in", ["Supplier-business_code"]]]},
-	{"dt": "Print Format", "filters": [["name", "in", ["Debetinė PVM sąskaita"]]]},
+	{
+		"dt": "Print Format",
+		"filters": [
+			[
+				"name",
+				"in",
+				["Debetinė PVM sąskaita", "Kvito kopija", "Atsargos pagal tiekėją", "Atsargos be kodų"],
+			]
+		],
+	},
+	{"dt": "Report", "filters": [["name", "in", ["Atsargos pagal tiekėją"]]]},
 ]
 # Includes in <head>
 # ------------------
