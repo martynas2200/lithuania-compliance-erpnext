@@ -715,7 +715,7 @@ def create_cash_deposit_entry(txn, plan, context, auto_submit) -> tuple[str, boo
 	entry = frappe.get_doc(
 		{
 			"doctype": "Journal Entry",
-			"voucher_type": "Journal Entry",
+			"voucher_type": "Bank Entry",
 			"posting_date": txn.date,
 			"company": context.company,
 			"cheque_no": txn.reference_no,
@@ -733,6 +733,8 @@ def create_cash_deposit_entry(txn, plan, context, auto_submit) -> tuple[str, boo
 			],
 		}
 	).insert()
+	# validate() may overwrite title for new docs
+	frappe.db.set_value("Journal Entry", entry.name, "title", _("Cash Deposit"))
 	submitted = False
 	if auto_submit:
 		try:
