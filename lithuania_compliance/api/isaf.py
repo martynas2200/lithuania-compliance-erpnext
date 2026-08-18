@@ -9,6 +9,8 @@ from datetime import datetime
 
 import frappe
 from frappe import _
+from frappe.core.api.file import create_new_folder
+from frappe.utils.caching import request_cache
 from werkzeug.wrappers import Response
 
 doc_mapping = {
@@ -34,16 +36,66 @@ doc_mapping = {
 	],
 }
 
+ISAF_EXPORTS_FOLDER_NAME = "iSAF Exports"
+ISAF_EXPORTS_PARENT_FOLDER = "Home/Attachments"
 
+CHILD_TABLE_MAPPING = {
+	"Sales Invoice": {
+		"items": "Sales Invoice Item",
+		"taxes": "Sales Taxes and Charges",
+	},
+	"Purchase Invoice": {
+		"items": "Purchase Invoice Item",
+		"taxes": "Purchase Taxes and Charges",
+	},
+}
+
+
+def get_or_create_isaf_exports_folder():
+	existing = frappe.get_all(
+		"File",
+		filters={
+			"file_name": ISAF_EXPORTS_FOLDER_NAME,
+			"folder": ISAF_EXPORTS_PARENT_FOLDER,
+			"is_folder": 1,
+		},
+		fields=["name"],
+		limit=1,
+	)
+	if existing:
+		return existing[0].name
+
+	folder_doc = create_new_folder(ISAF_EXPORTS_FOLDER_NAME, ISAF_EXPORTS_PARENT_FOLDER)
+	return folder_doc.name
+
+
+@request_cache
 def get_country_code(name):
+	if not name:
+		return None
 	return frappe.db.get_value("Country", name, "code")
 
 
+@request_cache
 def get_default_vat_classificator():
 	settings = frappe.get_doc(
 		"Lithuania Compliance Settings", "Lithuania Compliance Settings", ignore_permissions=True
 	)
 	return settings.default_vat_classificator
+
+
+@request_cache
+def get_vat_classificator(tax_code):
+	if not tax_code:
+		return None
+	return frappe.get_cached_doc("VAT Classificator", tax_code, ignore_permissions=True)
+
+
+@request_cache
+def get_party_doc(party_doctype, party_name):
+	if not party_doctype or not party_name:
+		return None
+	return frappe.get_doc(party_doctype, party_name, ignore_permissions=True)
 
 
 def process_party_for_isaf(common_parties, party_doc):
@@ -84,13 +136,16 @@ def add_party_info(parent_element, party, is_customer=True):
 	ET.SubElement(parent_element, "Name").text = party.name
 
 
-def add_invoice_info(parent_element, invoice):
+def add_invoice_info(parent_element, invoice, include_registration_account_date=False):
 	"""
 	Add invoice information XML elements to a parent element.
 
 	Args:
 	    parent_element: The parent XML element to add invoice info to
 	    invoice: The invoice object with invoice_number, date, invoice_type, tax_lines
+	    include_registration_account_date: Whether to include the RegistrationAccountDate
+	        element. Per the i.SAF spec it is only defined on PurchaseInvoice, so this should
+	        only be True for purchase invoices.
 	"""
 	ET.SubElement(parent_element, "InvoiceDate").text = invoice.date
 	ET.SubElement(parent_element, "InvoiceType").text = invoice.invoice_type
@@ -98,7 +153,9 @@ def add_invoice_info(parent_element, invoice):
 	# TODO: this should be an option to select in UI in the future
 	ET.SubElement(parent_element, "References").text = ""
 	ET.SubElement(parent_element, "VATPointDate").set("xsi:nil", "true")
-	ET.SubElement(parent_element, "RegistrationAccountDate").text = invoice.registration_account_date
+	# RegistrationAccountDate is only defined on PurchaseInvoice in the i.SAF schema, not SalesInvoice
+	if include_registration_account_date:
+		ET.SubElement(parent_element, "RegistrationAccountDate").text = invoice.registration_account_date
 	document_totals = ET.SubElement(parent_element, "DocumentTotals")
 	for line in invoice.tax_lines:
 		document_total = ET.SubElement(document_totals, "DocumentTotal")
@@ -143,7 +200,7 @@ def get_or_create_tax_summary(tax_summary, tax_code, item_code):
 	    The tax summary dict for the tax_code
 	"""
 	if tax_code not in tax_summary:
-		classifier = frappe.get_cached_doc("VAT Classificator", tax_code, ignore_permissions=True)
+		classifier = get_vat_classificator(tax_code)
 		if classifier is None:
 			frappe.throw(
 				_(
@@ -160,7 +217,12 @@ def get_or_create_tax_summary(tax_summary, tax_code, item_code):
 
 
 # TODO: Also a button to generate taxes based on classificators assigned to items would be useful. So a prompt are you sure, current list of taxes will be replaced etc. Or something else, so VAT classificators are used in sales properly.
-def get_document_totals(items, taxes, rounding, default_tax_classificator):
+def get_document_totals(
+	items,
+	taxes,
+	rounding,
+	default_tax_classificator,
+):
 	"""
 	Calculate document totals for i.SAF export
 
@@ -175,11 +237,12 @@ def get_document_totals(items, taxes, rounding, default_tax_classificator):
 	tax_summary = {}
 	for item in items:
 		# Check vat classificator on Invoice Item level first, then check Item doctype, and fallback to default
-		tax_code = item.get("vat_classificator")
-		if not tax_code:
-			item_doc = frappe.get_cached_doc("Item", item.get("item_code"), ignore_permissions=True)
-			tax_code = item_doc.vat_classificator or default_tax_classificator
-		tax_summary[tax_code] = get_or_create_tax_summary(tax_summary, tax_code, item.get("item_code"))
+		tax_code = item.get("vat_classificator") or default_tax_classificator
+		tax_summary[tax_code] = get_or_create_tax_summary(
+			tax_summary,
+			tax_code,
+			item.get("item_code"),
+		)
 		tax_summary[tax_code]["taxable_value"] += item.get("base_amount", 0.0)
 
 	for tax in taxes:
@@ -203,12 +266,18 @@ def get_document_totals(items, taxes, rounding, default_tax_classificator):
 			and summary["amount"] == 0.0
 			and summary["tax_percentage"] > 0
 		):
-			raise _(
-				"Discrepancy found for tax code {0}: tax percentage is {1} but tax amount is 0. Please check your invoice items and taxes."
-			).format(tax_code, summary["tax_percentage"])
+			frappe.throw(
+				_(
+					"Discrepancy found for tax code {0}: tax percentage is {1} but tax amount is 0. Please check your invoice items and taxes."
+				).format(tax_code, summary["tax_percentage"])
+			)
 
 	if rounding and rounding != 0.0:
-		tax_summary["PVM100"] = get_or_create_tax_summary(tax_summary, "PVM100", "Rounding Adjustment")
+		tax_summary["PVM100"] = get_or_create_tax_summary(
+			tax_summary,
+			"PVM100",
+			"Rounding Adjustment",
+		)
 		tax_summary["PVM100"]["taxable_value"] += rounding
 
 	return list(tax_summary.values())
@@ -233,6 +302,9 @@ def get_all_isaf_parties_and_invoices(export_type, from_date, to_date):
 
 	for doc_info in doc_mapping.get(export_type, []):
 		doctype = doc_info["doctype"]
+		child_tables = CHILD_TABLE_MAPPING.get(doctype)
+		if not child_tables:
+			continue
 		party = "Customer" if doctype == "Sales Invoice" else "Supplier"
 		types = doc_info["types"]
 		fields = [
@@ -258,11 +330,38 @@ def get_all_isaf_parties_and_invoices(export_type, from_date, to_date):
 			ignore_permissions=True,
 			order_by="posting_date",
 		)
+
+		if not invoice_list:
+			continue
+
+		invoice_names = [inv.name for inv in invoice_list]
+
+		items = frappe.get_all(
+			child_tables["items"],
+			filters={"parent": ["in", invoice_names]},
+			fields=["parent", "item_code", "vat_classificator", "base_amount"],
+			ignore_permissions=True,
+			limit_page_length=0,
+		)
+		taxes = frappe.get_all(
+			child_tables["taxes"],
+			filters={"parent": ["in", invoice_names]},
+			fields=["parent", "vat_classificator", "tax_amount"],
+			ignore_permissions=True,
+			limit_page_length=0,
+		)
+
+		items_by_invoice = {}
+		for row in items:
+			items_by_invoice.setdefault(row.parent, []).append(row)
+
+		taxes_by_invoice = {}
+		for row in taxes:
+			taxes_by_invoice.setdefault(row.parent, []).append(row)
+
 		for inv in invoice_list:
-			# Fetch full document to access child tables (items, taxes)
-			invoice_doc = frappe.get_doc(doctype, inv.name, ignore_permissions=True)
 			# Filter by invoice type
-			match = re.search(r"\b([A-Z]{2})\b", invoice_doc.get("invoice_type_lt", ""))
+			match = re.search(r"\b([A-Z]{2})\b", inv.get("invoice_type_lt", ""))
 			invoice_type_code = match.group(1) if match else None
 			if invoice_type_code not in types or inv.docstatus == 2:
 				continue
@@ -271,45 +370,43 @@ def get_all_isaf_parties_and_invoices(export_type, from_date, to_date):
 				frappe.throw(
 					_(
 						"{0} {1} is a draft, however, it is set to be exported per invoice_type_lt selection {2}. Please submit the document or change the invoice_type_lt to exclude from the i.SAF report."
-					).format(doctype, invoice_doc.get("name"), invoice_type_code)
+					).format(doctype, inv.get("name"), invoice_type_code)
 				)
-			party_name = invoice_doc.get("customer_name") or invoice_doc.get("supplier_name")
+			party_name = inv.get("customer_name") or inv.get("supplier_name")
 			if not party_name:
 				# Skip invoices without a valid customer or supplier
 				continue
 
-			party_doc = frappe.get_doc(party, party_name, ignore_permissions=True)
+			party_doc = get_party_doc(party, party_name)
 			party_info = process_party_for_isaf(common_parties, party_doc)
 
 			# Catching the error so we indicate which document has the problem
 			try:
 				tax_lines = get_document_totals(
-					items=invoice_doc.items,
-					taxes=invoice_doc.taxes,
-					rounding=invoice_doc.rounding_adjustment,
+					items=items_by_invoice.get(inv.name, []),
+					taxes=taxes_by_invoice.get(inv.name, []),
+					rounding=inv.rounding_adjustment,
 					default_tax_classificator=default_tax_classificator,
 				)
 			except Exception as e:
-				frappe.throw(
-					_("Error processing {0} {1}: {2}").format(doctype, invoice_doc.get("name"), str(e))
-				)
+				frappe.throw(_("Error processing {0} {1}: {2}").format(doctype, inv.get("name"), str(e)))
 			bill_no = None
 			if export_type == "received":
-				bill_no = invoice_doc.get("bill_no")
+				bill_no = inv.get("bill_no")
 				# NOTE: bill_date is not a part of Sales Invoice doctype, so might consider adding it via custom field if needed as we did with bill_no.
-				if not invoice_doc.get("bill_date") and doctype == "Purchase Invoice":
+				if not inv.get("bill_date") and doctype == "Purchase Invoice":
 					frappe.msgprint(
 						_("{} {} does not have a bill date set. Using posting date instead.").format(
-							doctype, invoice_doc.get("name")
+							doctype, inv.get("name")
 						)
 					)
 			elif export_type == "issued":
-				bill_no = invoice_doc.get("name")
+				bill_no = inv.get("name")
 			if not bill_no:
 				frappe.throw(
 					_(
 						"{0} {1} does not have a valid bill number. Please set the bill number before exporting to i.SAF."
-					).format(doctype, invoice_doc.get("name"))
+					).format(doctype, inv.get("name"))
 				)
 
 			invoices.append(
@@ -317,8 +414,8 @@ def get_all_isaf_parties_and_invoices(export_type, from_date, to_date):
 					{
 						"invoice_number": bill_no,
 						"party": party_info,
-						"date": (invoice_doc.bill_date or invoice_doc.posting_date).strftime("%Y-%m-%d"),
-						"registration_account_date": invoice_doc.posting_date.strftime("%Y-%m-%d"),
+						"date": (inv.bill_date or inv.posting_date).strftime("%Y-%m-%d"),
+						"registration_account_date": inv.posting_date.strftime("%Y-%m-%d"),
 						"invoice_type": invoice_type_code,
 						"export_type": export_type,
 						"tax_lines": tax_lines,
@@ -342,21 +439,20 @@ def generate_isaf_xml(export_type, from_date, to_date):
 	Returns:
 	    dict with success status and file information
 	"""
-	print(export_type, from_date, to_date)
 	xml_content = generate_isaf_xml_content(export_type, from_date, to_date)
 
 	# Save file
 	random_integer = random.randint(1000, 9999)
 	date_str = datetime.strptime(from_date, "%Y-%m-%d").strftime("%Y_%m")
 	filename = f"iSAF_{export_type}_{date_str}_{random_integer}.xml"
-	# TODO: create a folder for all i.SAF exports
+	folder = get_or_create_isaf_exports_folder()
 	file_doc = frappe.get_doc(
 		{
 			"doctype": "File",
 			"file_name": filename,
 			"content": xml_content,
 			"is_private": 1,
-			"folder": "Home/Attachments",
+			"folder": folder,
 		}
 	)
 	file_doc.save()
@@ -383,9 +479,9 @@ def generate_isaf_xml_content(export_type, from_date, to_date):
 		frappe.throw(_("Invalid export type. Must be 'issued', 'received' or 'both'."))
 
 	if export_issued:
-		customers, sales = get_all_isaf_parties_and_invoices(export_type, from_date, to_date)
+		customers, sales = get_all_isaf_parties_and_invoices("issued", from_date, to_date)
 	if export_received:
-		suppliers, purchases = get_all_isaf_parties_and_invoices(export_type, from_date, to_date)
+		suppliers, purchases = get_all_isaf_parties_and_invoices("received", from_date, to_date)
 
 	root = ET.Element("iSAFFile")
 	root.set("xmlns", "http://www.vmi.lt/cms/imas/isaf")
@@ -406,7 +502,7 @@ def generate_isaf_xml_content(export_type, from_date, to_date):
 	)
 	ET.SubElement(filedescription, "SoftwareCompanyName").text = "Frappe Technologies"
 	ET.SubElement(filedescription, "SoftwareName").text = "ERPNext: Lithuania Compliance"
-	ET.SubElement(filedescription, "SoftwareVersion").text = "0.0.1"
+	ET.SubElement(filedescription, "SoftwareVersion").text = "0.0.2"
 	# lithuania_compliance.__version__
 	if company.business_code is None:
 		frappe.throw(
@@ -458,7 +554,7 @@ def generate_isaf_xml_content(export_type, from_date, to_date):
 			supplier_info = ET.SubElement(invoice_el, "SupplierInfo")
 			add_party_info(supplier_info, invoice.party, is_customer=False)
 
-			add_invoice_info(invoice_el, invoice)
+			add_invoice_info(invoice_el, invoice, include_registration_account_date=True)
 
 	xml_str = ET.tostring(root, encoding="unicode", method="xml")
 	return '<?xml version="1.0" encoding="UTF-8"?>\n' + xml_str

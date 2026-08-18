@@ -15598,7 +15598,7 @@ msgstr "Išjungti pradinio likučio skaičiavimą"
 #. Receipt'
 #: erpnext/accounts/doctype/pos_profile/pos_profile.json erpnext/accounts/doctype/purchase_invoice/purchase_invoice.json erpnext/accounts/doctype/sales_invoice/sales_invoice.json erpnext/buying/doctype/purchase_order/purchase_order.json erpnext/buying/doctype/supplier_quotation/supplier_quotation.json erpnext/selling/doctype/quotation/quotation.json erpnext/selling/doctype/sales_order/sales_order.json erpnext/setup/doctype/global_defaults/global_defaults.json erpnext/stock/doctype/delivery_note/delivery_note.json erpnext/stock/doctype/purchase_receipt/purchase_receipt.json
 msgid "Disable Rounded Total"
-msgstr "Išjungti suapvalintą sumą"
+msgstr "Neapvalinti galutinės sumos"
 
 #. Label of the disable_serial_no_and_batch_selector (Check) field in DocType
 #. 'Stock Settings'

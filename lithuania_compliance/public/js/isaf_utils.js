@@ -42,11 +42,16 @@ lithuaniaCompliance.isaf.show_totals_modal = function (data) {
 				<tbody>`;
 
     data.forEach((row) => {
+        const amount = row.amount;
+        const amountDisplay =
+            amount === null || amount === undefined || parseFloat(amount) === 0
+                ? ""
+                : parseFloat(amount).toFixed(2);
         html += `<tr>
 			<td>${frappe.utils.escape_html(row.tax_code)}</td>
 			<td>${parseFloat(row.taxable_value).toFixed(2)}</td>
-			<td>${parseFloat(row.amount).toFixed(2)}</td>
-			<td>${row.tax_percentage}</td>
+			<td>${amountDisplay}</td>
+			<td>${row.tax_percentage == null ? "" : row.tax_percentage}</td>
 		</tr>`;
     });
 
