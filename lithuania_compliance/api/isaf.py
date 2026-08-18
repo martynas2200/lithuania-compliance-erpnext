@@ -92,6 +92,14 @@ def get_vat_classificator(tax_code):
 
 
 @request_cache
+def get_item_vat_classificator(item_code):
+	"""Return the VAT classificator set on the Item doctype (item card)."""
+	if not item_code:
+		return None
+	return frappe.get_cached_doc("Item", item_code, ignore_permissions=True).get("vat_classificator")
+
+
+@request_cache
 def get_party_doc(party_doctype, party_name):
 	if not party_doctype or not party_name:
 		return None
@@ -237,7 +245,11 @@ def get_document_totals(
 	tax_summary = {}
 	for item in items:
 		# Check vat classificator on Invoice Item level first, then check Item doctype, and fallback to default
-		tax_code = item.get("vat_classificator") or default_tax_classificator
+		tax_code = (
+			item.get("vat_classificator")
+			or get_item_vat_classificator(item.get("item_code"))
+			or default_tax_classificator
+		)
 		tax_summary[tax_code] = get_or_create_tax_summary(
 			tax_summary,
 			tax_code,
