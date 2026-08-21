@@ -3,6 +3,7 @@ import re
 import frappe
 from erpnext.accounts.doctype.purchase_invoice.purchase_invoice import PurchaseInvoice
 from erpnext.accounts.doctype.sales_invoice.sales_invoice import SalesInvoice
+from frappe import _
 
 from . import settings as lt_settings
 
@@ -18,13 +19,17 @@ class CustomPurchaseInvoice(PurchaseInvoice):
 			if not self.is_return:
 				self.is_return = 1
 				frappe.msgprint(
-					"This invoice type requires 'Is Returned' to be checked. It has been automatically marked."
+					_(
+						"This invoice type requires 'Is Returned' to be checked. It has been automatically marked."
+					)
 				)
 		if invoice_type and any(code in invoice_type for code in STANDARD_INVOICE_TYPES):
 			if self.is_return:
 				self.is_return = 0
 				frappe.msgprint(
-					"This invoice type does not allow 'Is Returned' to be checked. It has been automatically unmarked."
+					_(
+						"This invoice type does not allow 'Is Returned' to be checked. It has been automatically unmarked."
+					)
 				)
 
 	def before_insert(self):
@@ -82,13 +87,17 @@ class CustomSalesInvoice(SalesInvoice):
 			if not self.is_return:
 				self.is_return = 1
 				frappe.msgprint(
-					"This invoice type requires 'Is Returned' to be checked. It has been automatically marked."
+					_(
+						"This invoice type requires 'Is Returned' to be checked. It has been automatically marked."
+					)
 				)
 		if invoice_type and any(code in invoice_type for code in STANDARD_INVOICE_TYPES):
 			if self.is_return:
 				self.is_return = 0
 				frappe.msgprint(
-					"This invoice type does not allow 'Is Returned' to be checked. It has been automatically unmarked."
+					_(
+						"This invoice type does not allow 'Is Returned' to be checked. It has been automatically unmarked."
+					)
 				)
 
 	def before_insert(self):

@@ -55,10 +55,10 @@ msgid "Received VK: Summary credit VAT invoice"
 msgstr "Gauta VK: Santraukos kreditinė PVM sąskaita"
 
 msgid "This invoice type requires 'Is Returned' to be checked. It has been automatically marked."
-msgstr "Šiam sąskaitos tipui reikia pažymėti 'Grąžinimas'. Tai buvo pataisyta automatiškai."
+msgstr "Šiam sąskaitos tipui reikia pažymėti „Grąžinimas“. Tai buvo automatiškai pataisyta."
 
 msgid "This invoice type does not allow 'Is Returned' to be checked. It has been automatically unmarked."
-msgstr "Šiam sąskaitos tipui negalima pažymėti 'Grąžinimas'. Tai buvo automatiškai pataisyta."
+msgstr "Šiam sąskaitos tipui negalima pažymėti „Grąžinimas“. Tai buvo automatiškai pataisyta."
 
 msgid "Lithuania Compliance Settings"
 msgstr "Atitikties nustatymai Lietuvoje"
@@ -456,3 +456,15 @@ msgstr "Grynųjų pinigų įnešimo darbuotojas"
 
 msgid "Employee set as party on Journal Entries created for CDPT (cash deposit) CAMT statement lines."
 msgstr "Darbuotojas nustatytas kaip partneris žurnalo įrašuose pagal CDPT (grynųjų pinigų įnešimas) CAMT išrašų eilutėse."
+
+msgid "Update Buying Prices"
+msgstr "Atnaujinti pirkimo kainas"
+
+msgid "The buying price for these items is lower than the invoice rate. Select the items to record a new buying price from today; existing prices are preserved as history."
+msgstr "Šių prekių pirkimo kaina yra mažesnė nei sąskaitos faktūros norma. Pasirinkite prekes, kad nuo šiandien įrašytumėte naują pirkimo kainą; pirkimo kainų istorija paliekama."
+
+msgid "Invoice Rate"
+msgstr "Sąskaitos norma"
+
+msgid "Buying Price"
+msgstr "Pirkimo kaina"

@@ -3,6 +3,7 @@
 from datetime import datetime
 
 import frappe
+from erpnext.stock.doctype.item_price.item_price import ItemPriceDuplicateItem
 
 
 def _add_supplier_for_items(doc):
@@ -59,6 +60,107 @@ def enqueue_supplier_items_sync(doc, method=None):
 
 
 @frappe.whitelist()
+def get_changed_buying_prices(invoice_name):
+	"""
+	Check if any buying prices in the Purchase Invoice have changed.
+
+	Args:
+	    invoice_name: Name of the Purchase Invoice
+	Returns:
+	    List of dicts with item info and changed price details
+	"""
+	invoice = frappe.get_doc("Purchase Invoice", invoice_name)
+
+	changed_items = []
+	today = frappe.utils.getdate(frappe.utils.now())
+
+	ItemPrice = frappe.qb.DocType("Item Price")
+
+	current_buying_prices = (
+		frappe.qb.from_(ItemPrice)
+		.select(
+			ItemPrice.uom,
+			ItemPrice.currency,
+			ItemPrice.item_code,
+			ItemPrice.price_list_rate,
+			ItemPrice.valid_from,
+			ItemPrice.valid_upto,
+		)
+		.where(ItemPrice.item_code.isin([item.item_code for item in invoice.items]))
+		.where(ItemPrice.selling == 0)
+		.where(ItemPrice.valid_from <= today)
+		.where((ItemPrice.valid_upto.isnull()) | (ItemPrice.valid_upto >= today))
+	).run(as_dict=True)
+
+	for invoice_item in invoice.items:
+		item_code = invoice_item.item_code
+		item_rate = invoice_item.rate
+
+		current_price = next(
+			(
+				price
+				for price in current_buying_prices
+				if price["item_code"] == item_code and price["uom"] == invoice_item.uom
+			),
+			None,
+		)
+
+		if current_price:
+			current_rate = current_price.get("price_list_rate", 0)
+			if item_rate > current_rate:
+				changed_items.append(
+					{
+						"item_code": item_code,
+						"item_name": invoice_item.item_name,
+						"invoice_rate": item_rate,
+						"current_buying_price": current_rate,
+						"currency": current_price.get("currency"),
+						"valid_from": current_price.get("valid_from"),
+						"valid_upto": current_price.get("valid_upto"),
+					}
+				)
+	return changed_items
+
+
+@frappe.whitelist()
+def update_buying_prices(invoice_name, item_codes):
+	"""
+	Update buying prices for specified items in the Purchase Invoice.
+
+	Args:
+	    invoice_name: Name of the Purchase Invoice
+	    item_codes: List of item codes to update prices for
+	"""
+	invoice = frappe.get_doc("Purchase Invoice", invoice_name)
+	today = frappe.utils.getdate(frappe.utils.now())
+
+	# Use the configured buying price list
+	price_list = frappe.db.get_single_value("Buying Settings", "buying_price_list")
+
+	for invoice_item in invoice.items:
+		if invoice_item.item_code in item_codes:
+			# Create a new Item Price entry for the updated buying price
+			new_price = frappe.get_doc(
+				{
+					"doctype": "Item Price",
+					"uom": invoice_item.uom,
+					"item_code": invoice_item.item_code,
+					"price_list": price_list,
+					"price_list_rate": invoice_item.rate,
+					"currency": invoice.currency,
+					"valid_from": today,
+					"selling": 0,
+				}
+			)
+			try:
+				new_price.insert(ignore_permissions=True)
+				frappe.db.commit()
+			except ItemPriceDuplicateItem:
+				# A matching buying price might already added manually between the time of checking and inserting, so we can ignore this error.
+				pass
+
+
+@frappe.whitelist()
 def get_item_prices(invoice_name):
 	"""
 	Get prices for all items in a Purchase Invoice.
@@ -106,6 +208,29 @@ def get_item_prices(invoice_name):
 	# Create lookup for query results by item_code
 	item_lookup = {item["item_code"]: item for item in invoice_items_with_barcodes}
 
+	# Fetch all selling Item Prices for the invoice items in a single query
+	ItemPrice = frappe.qb.DocType("Item Price")
+	all_prices = (
+		frappe.qb.from_(ItemPrice)
+		.select(
+			ItemPrice.item_code,
+			ItemPrice.name,
+			ItemPrice.price_list_rate,
+			ItemPrice.currency,
+			ItemPrice.valid_from,
+			ItemPrice.valid_upto,
+			ItemPrice.price_list,
+			ItemPrice.uom,
+		)
+		.where(ItemPrice.item_code.isin([item.item_code for item in invoice.items]))
+		.where(ItemPrice.selling == 1)
+		.orderby(ItemPrice.valid_from, order=frappe.qb.desc)  # Newest first
+	).run(as_dict=True)
+
+	prices_by_item = {}
+	for price in all_prices:
+		prices_by_item.setdefault(price["item_code"], []).append(price)
+
 	# Iterate through invoice items to preserve order and handle duplicates
 	for invoice_item in invoice.items:
 		item_code = invoice_item.item_code
@@ -117,15 +242,9 @@ def get_item_prices(invoice_name):
 		if not item:
 			continue
 
-		prices = frappe.get_list(
-			"Item Price",
-			filters={
-				"item_code": item_code,
-				"selling": 1,
-			},
-			fields=["name", "price_list_rate", "currency", "valid_from", "valid_upto", "price_list"],
-			order_by="valid_from desc",  # Newest first
-		)
+		prices = [
+			price for price in prices_by_item.get(item_code, []) if price.get("uom") == invoice_item.uom
+		]
 
 		applicable_price = None
 		other_valid_prices = []
