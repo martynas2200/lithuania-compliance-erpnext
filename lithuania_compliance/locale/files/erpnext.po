@@ -45200,7 +45200,7 @@ msgstr "Nustatykite šios teritorijos biudžetus pagal pozicijų grupes. Taip pa
 #. DocType 'Buying Settings'
 #: erpnext/buying/doctype/buying_settings/buying_settings.json
 msgid "Set Landed Cost Based on Purchase Invoice Rate"
-msgstr "Nustatyti savikainą pagal pirkimo sąskaitos faktūros tarifą"
+msgstr "Nustatyti papildomų įsigijimo išlaidų vertę pagal pirkimo sąskaitos kainą"
 
 #: erpnext/accounts/doctype/sales_invoice/sales_invoice.js:1243
 msgid "Set Loyalty Program"

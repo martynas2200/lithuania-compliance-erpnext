@@ -371,16 +371,20 @@ def get_text(tag, name=None) -> str:
 
 
 def import_transaction(txn, context, settings, auto_submit) -> ImportResult:
+	bank_transaction = None
 	try:
+		bank_transaction = get_or_create_bank_transaction(txn, None, context, settings)
+
 		matches = find_matches(txn, settings)
 		party_type, party = resolve_party_from_iban(txn, context.company)
 		plan = build_posting_plan(txn, matches, party_type, party, context, settings)
 		validate_posting_plan(plan)
-		bank_transaction = get_or_create_bank_transaction(txn, plan, context, settings)
+		enrich_bank_transaction(bank_transaction, plan, txn)
 
 		existing = find_existing_document(txn, plan, context.company)
 		if existing:
 			link_bank_transaction(bank_transaction, existing[0], existing[1], txn.amount)
+			frappe.db.commit()
 			return ImportResult(existing[1], existing[0], party_type=plan.party_type, party=plan.party)
 
 		if plan.payment_type == "CDPT":
@@ -391,9 +395,13 @@ def import_transaction(txn, context, settings, auto_submit) -> ImportResult:
 			name, submitted, document_type = result["payment_entry"], result["submitted"], "Payment Entry"
 		link_bank_transaction(bank_transaction, document_type, name, txn.amount)
 		create_fee_entry(txn, plan, context, settings, bank_transaction, auto_submit)
+		frappe.db.commit()
 		return ImportResult(name, document_type, submitted, plan.party_type, plan.party)
 	except Exception as error:
 		frappe.log_error("Bank Import CAMT", frappe.get_traceback())
+		if bank_transaction:
+			frappe.db.commit()
+			return ImportResult(bank_transaction.name, "Bank Transaction", error=str(error))
 		return ImportResult(error=str(error))
 
 
@@ -573,7 +581,9 @@ def get_or_create_bank_transaction(txn, plan, context, settings):
 			"bank_account": context.bank_account,
 			"date": txn.date,
 			"currency": txn.currency,
-			"description": get_full_remarks(plan, txn),
+			"description": (
+				get_full_remarks(plan, txn) if plan else (txn.remittance_reference or txn.reference_no)
+			),
 			"reference_number": txn.remittance_reference or txn.reference_no,
 			"transaction_id": txn.reference_no,
 			"transaction_type": txn.subfamily_code or None,
@@ -584,11 +594,32 @@ def get_or_create_bank_transaction(txn, plan, context, settings):
 			"included_fee": txn.charges,
 		}
 	)
-	if plan.party_type and plan.party:
+	if plan and plan.party_type and plan.party:
 		document.party_type, document.party = plan.party_type, plan.party
 	document.insert(ignore_permissions=True)
 	document.submit()
 	return document
+
+
+def enrich_bank_transaction(bank_transaction, plan, txn):
+	"""Fill party/details on a Bank Transaction created before the plan was known."""
+	if not bank_transaction:
+		return
+	bank_transaction.reload()
+	description = get_full_remarks(plan, txn)
+	changed = False
+	if (
+		plan.party_type
+		and plan.party
+		and (bank_transaction.party_type != plan.party_type or bank_transaction.party != plan.party)
+	):
+		bank_transaction.party_type, bank_transaction.party = plan.party_type, plan.party
+		changed = True
+	if description and bank_transaction.description != description:
+		bank_transaction.description = description
+		changed = True
+	if changed:
+		bank_transaction.save()
 
 
 def create_payment_entry_from_plan(txn, plan, context, auto_submit):
@@ -733,8 +764,8 @@ def create_cash_deposit_entry(txn, plan, context, auto_submit) -> tuple[str, boo
 			],
 		}
 	).insert()
-	# validate() may overwrite title for new docs
-	frappe.db.set_value("Journal Entry", entry.name, "title", _("Cash Deposit"))
+	# validate() may overwrite the title for new docs, so force it after insert.
+	frappe.db.set_value("Journal Entry", entry.name, "title", _("Cash Deposit"), update_modified=False)
 	submitted = False
 	if auto_submit:
 		try:

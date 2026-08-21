@@ -144,14 +144,14 @@ def add_party_info(parent_element, party, is_customer=True):
 	ET.SubElement(parent_element, "Name").text = party.name
 
 
-def add_invoice_info(parent_element, invoice, include_registration_account_date=False):
+def add_invoice_info(parent_element, invoice, purchase_invoice=False):
 	"""
 	Add invoice information XML elements to a parent element.
 
 	Args:
 	    parent_element: The parent XML element to add invoice info to
 	    invoice: The invoice object with invoice_number, date, invoice_type, tax_lines
-	    include_registration_account_date: Whether to include the RegistrationAccountDate
+	    purchase_invoice: Whether to include the RegistrationAccountDate
 	        element. Per the i.SAF spec it is only defined on PurchaseInvoice, so this should
 	        only be True for purchase invoices.
 	"""
@@ -162,7 +162,7 @@ def add_invoice_info(parent_element, invoice, include_registration_account_date=
 	ET.SubElement(parent_element, "References").text = ""
 	ET.SubElement(parent_element, "VATPointDate").set("xsi:nil", "true")
 	# RegistrationAccountDate is only defined on PurchaseInvoice in the i.SAF schema, not SalesInvoice
-	if include_registration_account_date:
+	if purchase_invoice:
 		ET.SubElement(parent_element, "RegistrationAccountDate").text = invoice.registration_account_date
 	document_totals = ET.SubElement(parent_element, "DocumentTotals")
 	for line in invoice.tax_lines:
@@ -175,11 +175,14 @@ def add_invoice_info(parent_element, invoice, include_registration_account_date=
 		else:
 			# The VAT rate expressed in per cent. This element may be not filled in (empty element) if no VAT rate is applicable according to the VAT classification (e.g. the supplies shall be exempt from VAT). If the VAT rate is equal to 0%, the value 0 shall be indicated.
 			ET.SubElement(document_total, "TaxPercentage").set("xsi:nil", "true")
+
 		if line["amount"] is not None and line["amount"] != 0.0:
 			ET.SubElement(document_total, "Amount").text = str(round(line["amount"], 2))
 		else:
 			ET.SubElement(document_total, "Amount").set("xsi:nil", "true")
-		# ET.SubElement(document_total, "VATPointDate2").set("xsi:nil", "true")
+
+		if not purchase_invoice:
+			ET.SubElement(document_total, "VATPointDate2").set("xsi:nil", "true")
 
 
 @frappe.whitelist(allow_guest=False)
@@ -283,14 +286,16 @@ def get_document_totals(
 					"Discrepancy found for tax code {0}: tax percentage is {1} but tax amount is 0. Please check your invoice items and taxes."
 				).format(tax_code, summary["tax_percentage"])
 			)
-
-	if rounding and rounding != 0.0:
+	# NOTE: accountant pointed out when there is rounding down, we SHOULD NOT create a negative DocumentTotal row of PVM100, but appearently we should decrease the main classificator taxable amount instead.
+	if rounding and (rounding > 0.0 or (rounding < 0.0 and "PVM100" in tax_summary)):
 		tax_summary["PVM100"] = get_or_create_tax_summary(
 			tax_summary,
 			"PVM100",
 			"Rounding Adjustment",
 		)
 		tax_summary["PVM100"]["taxable_value"] += rounding
+	elif rounding and rounding < 0.0 and "PVM100" not in tax_summary and "PVM1" in tax_summary:
+		tax_summary["PVM1"]["taxable_value"] += rounding
 
 	return list(tax_summary.values())
 
@@ -503,18 +508,18 @@ def generate_isaf_xml_content(export_type, from_date, to_date):
 
 	company = frappe.get_doc("Company", frappe.defaults.get_user_default("Company"))
 
-	filedescription = ET.SubElement(header, "FileDescription")
-	ET.SubElement(filedescription, "FileVersion").text = "iSAF1.2"
+	file_description = ET.SubElement(header, "FileDescription")
+	ET.SubElement(file_description, "FileVersion").text = "iSAF1.2"
 	# Use XSD-compliant dateTime: YYYY-MM-DDThh:mm:ssZ (UTC, no microseconds)
-	ET.SubElement(filedescription, "FileDateCreated").text = (
-		datetime.utcnow().replace(microsecond=0).isoformat()
+	ET.SubElement(file_description, "FileDateCreated").text = (
+		datetime.now(datetime.timezone.utc).replace(microsecond=0).isoformat()
 	)
-	ET.SubElement(filedescription, "DataType").text = (
+	ET.SubElement(file_description, "DataType").text = (
 		"F" if export_type == "both" else ("S" if export_issued else "P")
 	)
-	ET.SubElement(filedescription, "SoftwareCompanyName").text = "Frappe Technologies"
-	ET.SubElement(filedescription, "SoftwareName").text = "ERPNext: Lithuania Compliance"
-	ET.SubElement(filedescription, "SoftwareVersion").text = "0.0.2"
+	ET.SubElement(file_description, "SoftwareCompanyName").text = "Frappe Technologies"
+	ET.SubElement(file_description, "SoftwareName").text = "ERPNext: Lithuania Compliance"
+	ET.SubElement(file_description, "SoftwareVersion").text = "0.0.3"
 	# lithuania_compliance.__version__
 	if company.business_code is None:
 		frappe.throw(
@@ -523,17 +528,17 @@ def generate_isaf_xml_content(export_type, from_date, to_date):
 			).format(company.name)
 		)
 
-	ET.SubElement(filedescription, "RegistrationNumber").text = company.business_code
-	ET.SubElement(filedescription, "NumberOfParts").text = "1"
+	ET.SubElement(file_description, "RegistrationNumber").text = company.business_code
+	ET.SubElement(file_description, "NumberOfParts").text = "1"
 	# NOTE: there is no explicit requirement to split the data, so we might just have a massive single file
-	ET.SubElement(filedescription, "PartNumber").text = (
+	ET.SubElement(file_description, "PartNumber").text = (
 		datetime.strptime(from_date, "%Y-%m-%d").strftime("%Y%m")
 		+ "01"
 		+ ("GI" if export_type == "both" else ("I" if export_issued else "G"))
 	)
-	selectioncriteria = ET.SubElement(filedescription, "SelectionCriteria")
-	ET.SubElement(selectioncriteria, "SelectionStartDate").text = from_date
-	ET.SubElement(selectioncriteria, "SelectionEndDate").text = to_date
+	selection_criteria = ET.SubElement(file_description, "SelectionCriteria")
+	ET.SubElement(selection_criteria, "SelectionStartDate").text = from_date
+	ET.SubElement(selection_criteria, "SelectionEndDate").text = to_date
 
 	# TODO: think how to validate the file afterwards, e.g. required fields, check if any tag is empty etc.
 	master_files = ET.SubElement(root, "MasterFiles")
@@ -566,7 +571,7 @@ def generate_isaf_xml_content(export_type, from_date, to_date):
 			supplier_info = ET.SubElement(invoice_el, "SupplierInfo")
 			add_party_info(supplier_info, invoice.party, is_customer=False)
 
-			add_invoice_info(invoice_el, invoice, include_registration_account_date=True)
+			add_invoice_info(invoice_el, invoice, purchase_invoice=True)
 
 	xml_str = ET.tostring(root, encoding="unicode", method="xml")
 	return '<?xml version="1.0" encoding="UTF-8"?>\n' + xml_str
