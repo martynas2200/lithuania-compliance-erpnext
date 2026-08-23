@@ -8,11 +8,11 @@ ERPNext customization to meet Lithuanian STI (State Tax Inspectorate) requiremen
 
 **Rounding Accounts Override** — Uses separate rounding accounts for sales and purchase documents, ensuring consistent rounding of totals.
 
-**In Development: i.SAF Invoice Register** — Generates invoice registers by type (receivable/payable) with support for filtering, adjustment, and reporting.
+**i.SAF Invoice Register** — Generates invoice registers by type of receivable or payable.
 
 **Bank Statement Import** — Note: ERPNext's built-in Plaid integration doesn't support all Lithuanian banks. Supported banks are listed [here](https://plaid.com/docs/institutions/europe/).
 
-**VAT Invoice Type Classification** — Categorizes invoices for i.SAF compliance:
+**VAT Invoice Type Classification** — Categorises invoices for i.SAF compliance:
 
 *Sales Invoices:*
 - Exclude from i.SAF
@@ -52,6 +52,10 @@ msgstr "VK: Santraukos kredito PVM sąskaita, skirta advokatams ar notarams." --
 
 - **Item Price Dialog** —  Manage item prices directly from the Purchase Invoice form. Add, edit, or delete prices with a user-friendly dialog interface.
 
+- **Buying Price Check** — On Purchase Invoice submission, compares each item's invoice rate with its current buying price. If the invoice rate is higher, a dialog shows a comparison table and lets you select which items to record a new buying price for.
+
+- **Automatic Supplier Linking** — For each submitted Purchase Invoice, it enqueues a background job that adds the invoice supplier to the supplier list of every item on the invoice.
+
 ### Installation
 
 You can install this app using the [bench](https://github.com/frappe/bench) CLI:
@@ -62,7 +66,7 @@ bench get-app https://github.com/martynas2200/lithuania-compliance-erpnext --bra
 bench install-app lithuania_compliance
 ```
 
-If you are using this for a productive environment, it is recommended to use a custom docker image. All information about how to create and use custom images can be found in the [Frappe Docker documentation](https://github.com/frappe/frappe_docker/blob/main/docs/container-setup/02-build-setup.md).
+If you are using this for a productive environment, it is recommended to use a custom docker image. All information about how to create and use custom images can be found in the [Frappe Docker documentation](https://github.com/frappe/frappe_docker).
 
 
 ### Contributing

@@ -3,6 +3,9 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Language: lt\n"
 
+msgid "Lithuania Compliance"
+msgstr "Lietuvos atitiktis"
+
 msgid "Business Code"
 msgstr "Įmonės kodas"
 
@@ -61,7 +64,7 @@ msgid "This invoice type does not allow 'Is Returned' to be checked. It has been
 msgstr "Šiam sąskaitos tipui negalima pažymėti „Grąžinimas“. Tai buvo automatiškai pataisyta."
 
 msgid "Lithuania Compliance Settings"
-msgstr "Atitikties nustatymai Lietuvoje"
+msgstr "Lietuvos atitikties nustatymai"
 
 msgid "Rounding Accounts"
 msgstr "Suapvalinimo sąskaitos"
@@ -86,6 +89,9 @@ msgstr "Nurodo, kad prekė turi kelias kainas"
 
 msgid "No applicable price found"
 msgstr "Nerasta taikoma kaina"
+
+msgid "Price created successfully"
+msgstr "Kaina sėkmingai sukurta"
 
 msgid "Valid Until"
 msgstr "Galioja iki"

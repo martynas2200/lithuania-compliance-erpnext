@@ -90,6 +90,7 @@ def get_changed_buying_prices(invoice_name):
 		.where(ItemPrice.selling == 0)
 		.where(ItemPrice.valid_from <= today)
 		.where((ItemPrice.valid_upto.isnull()) | (ItemPrice.valid_upto >= today))
+		.orderby(ItemPrice.valid_from, order=frappe.qb.desc)
 	).run(as_dict=True)
 
 	for invoice_item in invoice.items:

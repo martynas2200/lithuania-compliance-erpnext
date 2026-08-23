@@ -25178,9 +25178,8 @@ msgstr "Nuoroda: {0} {1}"
 
 #. Label of the references (Table) field in DocType 'Web Form Request'
 #: frappe/website/doctype/web_form_request/web_form_request.json
-#, fuzzy
 msgid "References"
-msgstr "Literatūra"
+msgstr "Nuorodos"
 
 #. Label of the referrer (Data) field in DocType 'Web Page View'
 #: frappe/website/doctype/web_page_view/web_page_view.json
