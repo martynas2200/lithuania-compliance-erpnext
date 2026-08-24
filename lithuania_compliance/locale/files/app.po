@@ -474,3 +474,6 @@ msgstr "Sąskaitos norma"
 
 msgid "Buying Price"
 msgstr "Pirkimo kaina"
+
+mgsid "Buying prices updated successfully"
+msgstr "Pirkimo kainos sėkmingai atnaujintos"

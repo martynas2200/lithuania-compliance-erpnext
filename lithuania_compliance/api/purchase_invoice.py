@@ -4,6 +4,7 @@ from datetime import datetime
 
 import frappe
 from erpnext.stock.doctype.item_price.item_price import ItemPriceDuplicateItem
+from frappe.utils import flt
 
 
 def _add_supplier_for_items(doc):
@@ -108,7 +109,7 @@ def get_changed_buying_prices(invoice_name):
 
 		if current_price:
 			current_rate = current_price.get("price_list_rate", 0)
-			if item_rate > current_rate:
+			if flt(item_rate, 2) > flt(current_rate, 2):
 				changed_items.append(
 					{
 						"item_code": item_code,
