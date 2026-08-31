@@ -28,8 +28,8 @@
    "color": "Grey",
    "doc_view": "List",
    "label": "Generate i.SAF",
-   "link_to": "isaf-generation",
-   "type": "Page"
+   "link_to": "i-SAF Generation",
+   "type": "DocType"
   },
   {
    "color": "Grey",

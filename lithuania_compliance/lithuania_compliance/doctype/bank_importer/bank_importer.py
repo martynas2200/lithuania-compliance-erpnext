@@ -66,7 +66,9 @@ class MatchResult:
 
 @dataclass
 class PostingPlan:
-	payment_type: Literal["Receive", "Pay", "Internal Transfer", "CDPT"]
+	# Empty payment_type is allowed for a placeholder/unplanned plan (e.g. in
+	# preview when a posting plan cannot be built).
+	payment_type: Literal["Receive", "Pay", "Internal Transfer", "CDPT", ""] = ""
 	paid_from: str | None = None
 	paid_to: str | None = None
 	party_type: str | None = None
@@ -373,12 +375,26 @@ def get_text(tag, name=None) -> str:
 def import_transaction(txn, context, settings, auto_submit) -> ImportResult:
 	bank_transaction = None
 	try:
-		bank_transaction = get_or_create_bank_transaction(txn, None, context, settings)
-
 		matches = find_matches(txn, settings)
 		party_type, party = resolve_party_from_iban(txn, context.company)
-		plan = build_posting_plan(txn, matches, party_type, party, context, settings)
-		validate_posting_plan(plan)
+		plan = None
+		plan_error = None
+		try:
+			plan = build_posting_plan(txn, matches, party_type, party, context, settings)
+			validate_posting_plan(plan)
+		except Exception as error:
+			plan_error = error
+			frappe.log_error("Bank Import Posting Plan Error", frappe.get_traceback())
+
+		# Create the Bank Transaction once, even if the plan is invalid.
+		bank_transaction = get_or_create_bank_transaction(txn, plan, context, settings)
+		frappe.db.commit()
+
+		if plan_error and bank_transaction:
+			return ImportResult(bank_transaction.name, "Bank Transaction", error=str(plan_error))
+		elif plan_error:
+			return ImportResult(error=str(plan_error))
+
 		enrich_bank_transaction(bank_transaction, plan, txn)
 
 		existing = find_existing_document(txn, plan, context.company)
@@ -394,7 +410,7 @@ def import_transaction(txn, context, settings, auto_submit) -> ImportResult:
 			result = create_payment_entry_from_plan(txn, plan, context, auto_submit)
 			name, submitted, document_type = result["payment_entry"], result["submitted"], "Payment Entry"
 		link_bank_transaction(bank_transaction, document_type, name, txn.amount)
-		create_fee_entry(txn, plan, context, settings, bank_transaction, auto_submit)
+		create_fee_entry(txn, context, settings, bank_transaction, auto_submit)
 		frappe.db.commit()
 		return ImportResult(name, document_type, submitted, plan.party_type, plan.party)
 	except Exception as error:
@@ -615,7 +631,8 @@ def enrich_bank_transaction(bank_transaction, plan, txn):
 	):
 		bank_transaction.party_type, bank_transaction.party = plan.party_type, plan.party
 		changed = True
-	if description and bank_transaction.description != description:
+	# Description is not editable after submit
+	if bank_transaction.docstatus == 0 and description and bank_transaction.description != description:
 		bank_transaction.description = description
 		changed = True
 	if changed:
@@ -776,7 +793,7 @@ def create_cash_deposit_entry(txn, plan, context, auto_submit) -> tuple[str, boo
 	return entry.name, submitted
 
 
-def create_fee_entry(txn, main_plan, context, settings, bank_transaction, auto_submit):
+def create_fee_entry(txn, context, settings, bank_transaction, auto_submit):
 	if not should_split_fee(txn, settings):
 		return
 	fee_plan = PostingPlan(

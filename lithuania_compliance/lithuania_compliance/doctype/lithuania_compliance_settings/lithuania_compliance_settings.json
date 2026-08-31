@@ -8,6 +8,10 @@
   "purchase_round_off_account",
   "column_break_rfkj",
   "sales_round_off_account",
+  "section_vat_accounts",
+  "sales_vat_account",
+  "column_break_vat",
+  "purchase_vat_account",
   "section_purchase_naming",
   "default_vat_classificator",
   "column_break_fbdi",
@@ -43,6 +47,29 @@
    "fieldname": "sales_round_off_account",
    "fieldtype": "Link",
    "label": "Sales Round Off Account",
+   "options": "Account"
+  },
+  {
+   "fieldname": "section_vat_accounts",
+   "fieldtype": "Section Break",
+   "label": "VAT Accounts"
+  },
+  {
+   "description": "Default output VAT account used on automatically calculated (On Net Total) tax rows of Sales Invoices. Used to recognize the single automatic VAT account when preparing i.SAF reports.",
+   "fieldname": "sales_vat_account",
+   "fieldtype": "Link",
+   "label": "Sales VAT Account",
+   "options": "Account"
+  },
+  {
+   "fieldname": "column_break_vat",
+   "fieldtype": "Column Break"
+  },
+  {
+   "description": "Default input VAT account used on automatically calculated (On Net Total) tax rows of Purchase Invoices. Used to recognize the single automatic VAT account when preparing i.SAF reports.",
+   "fieldname": "purchase_vat_account",
+   "fieldtype": "Link",
+   "label": "Purchase VAT Account",
    "options": "Account"
   },
   {

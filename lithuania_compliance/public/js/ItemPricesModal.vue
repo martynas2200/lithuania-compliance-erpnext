@@ -9,10 +9,9 @@
                 <div class="modal-actions">
                     <button
                         type="button"
-                        class="btn btn-sm btn-default"
+                        class="btn btn-sm btn-default mr-2"
                         @click="refreshData"
                         :disabled="loading"
-                        style="margin-right: 10px"
                     >
                         <i class="fa fa-refresh" :class="{ 'fa-spin': loading }"></i>
                         {{ __("Refresh") }}
@@ -23,7 +22,7 @@
                         data-dismiss="modal"
                         @click="closeModal"
                     >
-                        <svg class="icon icon-sm" style="" aria-hidden="true">
+                        <svg class="icon icon-sm" aria-hidden="true">
                             <use class="close-alt" href="#icon-close-alt"></use>
                         </svg>
                     </button>
@@ -31,14 +30,14 @@
             </div>
 
             <div class="modal-body">
-                <div v-if="loading" class="text-center" style="padding: 40px">
-                    <i class="fa fa-spinner fa-spin" style="font-size: 2em"></i>
-                    <p style="margin-top: 10px">{{ __("Loading...") }}</p>
+                <div v-if="loading" class="text-center p-5">
+                    <i class="fa fa-spinner fa-spin fa-2x"></i>
+                    <p class="mt-3">{{ __("Loading...") }}</p>
                 </div>
                 <div v-else class="manage-prices-container">
                     <table class="table table-bordered">
                         <thead>
-                            <tr style="background: #f5f5f5; border-bottom: 2px solid #ddd">
+                            <tr class="table-header-row">
                                 <th>
                                     <div>
                                         <span>{{ __("Item Code") }}</span>
@@ -48,14 +47,7 @@
                                 </th>
                                 <th>
                                     <div class="text-right">{{ __("Selling") }}</div>
-                                    <div
-                                        style="
-                                            font-size: 0.9em;
-                                            color: #666;
-                                            margin-top: 2px;
-                                            text-align: right;
-                                        "
-                                    >
+                                    <div class="valid-range-text">
                                         {{ __("Valid") }}
                                     </div>
                                 </th>
@@ -67,12 +59,10 @@
                         <tbody>
                             <template v-for="item in itemsData" :key="item.item_code">
                                 <tr
-                                    :style="{
-                                        'background-color': item.applicable_price
-                                            ? getMarkupColor(item.markup)
-                                            : 'transparent',
-                                        'border-bottom': '1px solid #ddd',
-                                    }"
+                                    :class="[
+                                        'item-price-row',
+                                        getMarkupClass(item.markup, !!item.applicable_price),
+                                    ]"
                                 >
                                     <td v-if="item.applicable_price">
                                         <a
@@ -80,23 +70,18 @@
                                             class="item-code-link"
                                             :data-item-code="item.item_code"
                                             @click.prevent="navigateToItem(item.item_code)"
-                                            style="
-                                                color: #0066cc;
-                                                text-decoration: none;
-                                                font-weight: bold;
-                                            "
                                         >
                                             <span>
                                                 {{ item.item_code }}
                                                 <span
                                                     v-if="hasMultiplePrices(item)"
-                                                    style="color: #e74c3c; font-weight: bold"
+                                                    class="multiple-prices-indicator"
                                                     >*</span
                                                 >
                                             </span>
                                         </a>
                                         <span class="pull-right">{{ item.barcode }}</span>
-                                        <div style="color: #3a3a3a; margin-top: 2px">
+                                        <div class="item-name-text">
                                             {{ item.item_name }}
                                         </div>
                                     </td>
@@ -106,36 +91,24 @@
                                             class="item-code-link"
                                             :data-item-code="item.item_code"
                                             @click.prevent="navigateToItem(item.item_code)"
-                                            style="
-                                                color: #0066cc;
-                                                text-decoration: none;
-                                                font-weight: bold;
-                                            "
                                         >
                                             <span>{{ item.item_code }}</span>
                                         </a>
                                         <span class="pull-right">{{ item.barcode }}</span>
-                                        <div style="color: #3a3a3a; margin-top: 2px">
+                                        <div class="item-name-text">
                                             {{ item.item_name }}
                                         </div>
                                     </td>
 
                                     <td v-if="item.applicable_price">
-                                        <div style="text-align: right">
+                                        <div class="text-right">
                                             <strong>{{
                                                 formatCurrency(
                                                     item.applicable_price.price_list_rate
                                                 )
                                             }}</strong>
                                         </div>
-                                        <div
-                                            style="
-                                                font-size: 0.9em;
-                                                color: #666;
-                                                margin-top: 2px;
-                                                text-align: right;
-                                            "
-                                        >
+                                        <div class="valid-range-text">
                                             {{ formatDate(item.applicable_price.valid_from) }}
                                             <span v-if="item.applicable_price.valid_upto">
                                                 {{ formatDate(item.applicable_price.valid_upto) }}
@@ -258,8 +231,8 @@
                             </template>
                         </tbody>
                     </table>
-                    <div style="margin-top: 20px">
-                        <strong style="color: #e74c3c">*</strong>
+                    <div class="multi-price-note mt-3">
+                        <strong class="multiple-prices-indicator">*</strong>
                         {{ __("Indicates item has multiple prices") }}
                     </div>
                 </div>
@@ -368,17 +341,20 @@ export default {
         closeModal() {
             this.$emit("close");
         },
-        getMarkupColor(markup_percent) {
-            if (markup_percent === null || markup_percent === undefined) {
-                return "transparent";
-            } else if (markup_percent < 10) {
-                return "#f8d7da";
-            } else if (markup_percent < 16) {
-                return "#fff3cd";
-            } else if (markup_percent < 19) {
-                return "#d1ecf1";
+        getMarkupClass(markup_percent, hasApplicablePrice) {
+            if (!hasApplicablePrice || markup_percent === null || markup_percent === undefined) {
+                return "";
             }
-            return "transparent";
+            if (markup_percent < 10) {
+                return "markup-low";
+            }
+            if (markup_percent < 16) {
+                return "markup-medium";
+            }
+            if (markup_percent < 19) {
+                return "markup-near-target";
+            }
+            return "";
         },
         getMarkup(price, vat, buying_rate) {
             if (!price || !buying_rate) return null;
@@ -680,7 +656,7 @@ export default {
 
 .item-prices-modal-dialog .modal-header {
     flex-shrink: 0;
-    border-bottom: 1px solid #ddd;
+    border-bottom: 1px solid var(--border-color);
 }
 
 .item-prices-modal-dialog .modal-body {
@@ -691,7 +667,7 @@ export default {
 
 .item-prices-modal-dialog .modal-footer {
     flex-shrink: 0;
-    border-top: 1px solid #ddd;
+    border-top: 1px solid var(--border-color);
 }
 
 /* Pop up row */
@@ -705,6 +681,50 @@ export default {
     vertical-align: middle;
 }
 
+.table-header-row {
+    background: var(--subtle-fg);
+    border-bottom: 2px solid var(--border-color);
+}
+
+.valid-range-text {
+    font-size: 0.9em;
+    color: var(--text-muted);
+    margin-top: 2px;
+    text-align: right;
+}
+
+.item-price-row {
+    border-bottom: 1px solid var(--border-color);
+}
+
+.item-price-row.markup-low {
+    background-color: var(--alert-bg-danger);
+}
+
+.item-price-row.markup-medium {
+    background-color: var(--alert-bg-warning);
+}
+
+.item-price-row.markup-near-target {
+    background-color: var(--alert-bg-info);
+}
+
+.item-code-link {
+    color: var(--alert-text-info);
+    text-decoration: none;
+    font-weight: 700;
+}
+
+.multiple-prices-indicator {
+    color: var(--alert-text-danger);
+    font-weight: 700;
+}
+
+.item-name-text {
+    color: var(--text-color);
+    margin-top: 2px;
+}
+
 .manage-prices-container button {
     text-decoration: none;
     margin: 0 5px;
@@ -712,8 +732,8 @@ export default {
 }
 
 .markup-calculator-row {
-    background-color: #f9f9f9;
-    border-top: 2px solid #007bff;
+    background-color: var(--subtle-fg);
+    border-top: 2px solid var(--blue-500);
 }
 
 .markup-calculator-container {
@@ -723,7 +743,7 @@ export default {
 }
 
 .markup-cheatsheet {
-    background-color: white;
+    background-color: var(--card-bg);
     padding: 15px;
     border-radius: 6px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
@@ -733,7 +753,7 @@ export default {
     font-size: 1em;
     font-weight: 600;
     margin-bottom: 15px;
-    color: #333;
+    color: var(--heading-color);
 }
 
 .cheatsheet-grid {
@@ -743,24 +763,24 @@ export default {
 }
 
 .markup-option {
-    border: 1px solid #ddd;
+    border: 1px solid var(--border-color);
     border-radius: 6px;
     padding: 12px;
     text-align: center;
-    background-color: #fafafa;
+    background-color: var(--subtle-fg);
     transition: all 0.3s ease;
 }
 
 .markup-option:hover {
-    border-color: #007bff;
-    background-color: #f0f7ff;
+    border-color: var(--blue-500);
+    background-color: var(--bg-blue);
     box-shadow: 0 2px 8px rgba(0, 123, 255, 0.15);
 }
 
 .calculated-price {
     font-size: 1.3em;
     font-weight: 700;
-    color: #007bff;
+    color: var(--blue-600);
     margin-bottom: 10px;
 }
 

@@ -139,6 +139,13 @@ msgstr "i.SAF įrašas"
 msgid "Discrepancy found for tax code {0}: tax percentage is {1} but tax amount is 0. Please check your invoice items and taxes."
 msgstr "Aptiktas mokesčių kodo {0} neatitikimas: mokesčio procentas yra {1}, bet mokesčio suma yra 0. Patikrinkite sąskaitos faktūros elementus ir mokesčius."
 
+msgid "Discrepancy found for tax code {0}: tax percentage is {1} but tax amount is 0. Please check your invoice items and taxes.<br><br>Tip: This usually means the VAT for this tax code is unknown. Common causes:<br>• The VAT tax row uses the <b>Actual</b> charge type but has no <b>VAT Classificator</b> set — each <b>Actual</b> tax row must have a VAT Classificator assigned.<br>• The tax rate on the item or its Item Tax Template does not match the VAT Classificator rate, so the computed amount is 0.<br>If you want VAT to be calculated automatically, switch the tax row to <b>On Net Total</b> so it is computed from the Item Taxes and the Sales/Purchase Taxes and Charges Template."
+msgstr "Rastas mokesčių kodo {0} neatitikimas: mokesčio procentas yra {1}, bet mokesčio suma yra 0. Patikrinkite sąskaitos faktūros elementus ir mokesčius.<br><br>Patarimas: paprastai tai reiškia, kad šio mokesčio kodo PVM nežinomas. Dažniausios priežastys:<br>• PVM mokesčių eilutėje naudojamas <b>faktinis</b> apmokestinimo tipas, tačiau joje nenustatytas <b>PVM klasifikatorius</b> – kiekvienai <b>Faktinis</b> mokesčių eilutei turi būti priskirtas PVM klasifikatorius.<br>• Prekės arba jos prekės mokesčio šablono mokesčio tarifas neatitinka jūsų nurodytos PVM klasės, taigi, yra PVM klasė.br>. Jei norite, kad PVM būtų skaičiuojamas automatiškai, perjunkite mokesčių eilutę į <b>Nuo grynosios sumos</b>, kad ji būtų apskaičiuojama pagal prekių mokesčius ir pardavimo / pirkimo mokesčių ir rinkliavų šabloną."
+
+
+msgid "Discrepancy found for tax code {0}: the VAT Classificator rate is {1}%, but the VAT on this invoice works out to {2}%. This usually means the tax rows were entered manually with the <b>Actual</b> charge type and don't match the VAT Classificator rate.<br><br>Tip: Switch the tax row(s) to <b>On Net Total</b> so the VAT is computed automatically from the Item Taxes and the Sales/Purchase Taxes and Charges Template."
+msgstr "Rastas mokesčių kodo {0} neatitikimas: PVM klasifikatoriaus tarifas yra {1}%, bet šios sąskaitos faktūros PVM yra {2}%. Tai paprastai reiškia, kad mokesčių eilutės buvo įvestos rankiniu būdu naudojant <b>Faktinį</b> apmokestinimo tipą ir neatsitinka PVM klasifikatoriaus tarifo.<br><br>Patarimas: Perjunkite mokesčių eilutes į <b>Nuo grynosios sumos</b>, kad PVM būtų skaičiuojamas automatiškai iš prekių mokesčių ir pardavimo / pirkimo mokesčių ir rinkliavų šablono."
+
 msgid "VAT classification for an item is determined in the following order: first from the Invoice Item, then from the Item record if not found, and finally from the default setting. Note: each VAT classification must have a corresponding tax entry"
 msgstr "Prekės PVM klasifikavimas nustatomas tokia tvarka: pirmiausia iš sąskaitos faktūros prekės eilutės, tada iš Prekės įrašo, jei nerasta, ir galiausiai pagal numatytąjį nustatymą. Pastaba: kiekviena PVM klasifikacija turi turėti atitinkamą mokesčių įrašą"
 
@@ -163,20 +170,11 @@ msgstr "{0} {1} neturi galiojančio sąskaitos numerio. Prieš eksportuodami į 
 msgid "Company {0} does not have a Business Code set. Please set it in the Company record before exporting to i.SAF."
 msgstr "Įmonė {0} neturi nustatyto įmonės kodo. Prieš eksportuodami į i.SAF nustatykite jį įmonės įraše."
 
-msgid "i.SAF XML Generation"
-msgstr "i.SAF XML generavimas"
+msgid "i-SAF Generation"
+msgstr "i.SAF generavimas"
 
-msgid "Generate i.SAF"
-msgstr "Generuoti i.SAF"
-
-msgid "Generate i.SAF XML"
-msgstr "Generuoti i.SAF XML"
-
-msgid "Select Export Type"
-msgstr "Pasirinkite eksporto tipą"
-
-msgid "Choose the type of i.SAF invoice register you want to generate:"
-msgstr "Pasirinkite i.SAF sąskaitų registrą, kurį norite generuoti:"
+msgid "Choose the type of i.SAF invoice register you want to generate."
+msgstr "Pasirinkite i.SAF PVM sąskaitų registrą, kurį norite generuoti."
 
 msgid "Received Invoices"
 msgstr "Gautos sąskaitos"
@@ -184,59 +182,35 @@ msgstr "Gautos sąskaitos"
 msgid "Issued Invoices"
 msgstr "Išrašytos sąskaitos"
 
-msgid "Full File"
-msgstr "Pilnas failas"
+msgid "Both Registers"
+msgstr "Abu registrai"
 
-msgid "Register of issued VAT invoices"
-msgstr "Išrašomų PVM sąskaitų faktūrų registras"
-
-msgid "Register of received VAT invoices"
-msgstr "Gaunamų PVM sąskaitų faktūrų registras"
-
-msgid "Registers of received and issued VAT invoices"
-msgstr "Gaunamų ir išrašomų PVM sąskaitų faktūrų registrai"
-
-msgid "Select Period"
-msgstr "Pasirinkite laikotarpį"
-
-msgid "Selected Period"
-msgstr "Pasirinktas laikotarpis"
-
-msgid "Select the reporting period for the i.SAF export:"
-msgstr "Pasirinkite ataskaitinį laikotarpį i.SAF eksportui:"
+msgid "Reporting Period"
+msgstr "Ataskaitinis laikotarpis"
 
 msgid "Year"
 msgstr "Metai"
 
+msgid "Error generating i.SAF XML file."
+msgstr "Kuriant i.SAF XML failą įvyko klaida."
+
 msgid "An error occurred while generating the XML file."
 msgstr "Kuriant XML failą įvyko klaida."
 
-msgid "Start Over"
-msgstr "Pradėti iš naujo"
+msgid "Generating"
+msgstr "Generuojama"
 
-msgid "Select Year"
-msgstr "Pasirinkite metus"
+msgid "Generate"
+msgstr "Generuoti"
 
-msgid "Select Month"
-msgstr "Pasirinkite mėnesį"
+msgid "Generated"
+msgstr "Sugeneruota"
 
-msgid "Generated i.SAF XML File"
-msgstr "Sugeneruotas i.SAF XML failas"
+msgid "Compiled Successfully"
+msgstr "Sėkmingai sugeneruota"
 
-msgid "Review the file."
-msgstr "Peržiūrėkite failą."
-
-msgid "Generate i.SAF XML File"
-msgstr "Generuoti i.SAF XML failą"
-
-msgid "Previous"
-msgstr "Ankstesnis"
-
-msgid "Next"
-msgstr "Kitas"
-
-msgid "Export Type"
-msgstr "Eksporto tipas"
+msgid "Register Type"
+msgstr "Registro tipas"
 
 msgid "Period"
 msgstr "Laikotarpis"
@@ -475,5 +449,5 @@ msgstr "Sąskaitos norma"
 msgid "Buying Price"
 msgstr "Pirkimo kaina"
 
-mgsid "Buying prices updated successfully"
+msgid "Buying prices updated successfully"
 msgstr "Pirkimo kainos sėkmingai atnaujintos"

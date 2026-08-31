@@ -1,0 +1,89 @@
+{
+  "actions": [],
+  "allow_copy": 1,
+  "creation": "2019-02-01 12:24:34.761380",
+  "description": "A DocType for exporting ISAF (International Standard Audit File) data.",
+  "doctype": "DocType",
+  "document_type": "Other",
+  "editable_grid": 1,
+  "engine": "InnoDB",
+  "fields": [
+    {
+      "fieldname": "company",
+      "fieldtype": "Link",
+      "in_list_view": 1,
+      "label": "Company",
+      "options": "Company"
+    },
+    {
+      "depends_on": "company",
+      "fieldname": "register_type",
+      "fieldtype": "Select",
+      "label": "Register Type",
+      "options": "\nReceived Invoices\nIssued Invoices\nBoth Registers",
+      "description": "Choose the type of i.SAF invoice register you want to generate.",
+      "reqd": 1
+    },
+    {
+      "fieldname": "section_break",
+      "fieldtype": "Section Break",
+      "label": "Reporting Period"
+    },
+    {
+      "fieldname": "year",
+      "fieldtype": "Int",
+      "label": "Year",
+      "depends_on": "register_type",
+      "reqd": 1
+    },
+    {
+      "fieldname": "column_break",
+      "fieldtype": "Column Break"
+    },
+    {
+      "fieldname": "month",
+      "fieldtype": "Select",
+      "label": "Month",
+      "options": "\nJanuary\nFebruary\nMarch\nApril\nMay\nJune\nJuly\nAugust\nSeptember\nOctober\nNovember\nDecember",
+      "depends_on": "register_type",
+      "reqd": 1
+    }
+  ],
+  "hide_toolbar": 1,
+  "in_create": 1,
+  "issingle": 1,
+  "links": [],
+  "modified": "2026-02-01 12:24:34.761380",
+  "modified_by": "Administrator",
+  "module": "Lithuania Compliance",
+  "name": "i-SAF Generation",
+  "owner": "Administrator",
+  "permissions": [
+    {
+      "role": "Accounts Manager",
+      "create": 1,
+      "read": 1,
+      "share": 1,
+      "write": 1
+    },
+    {
+      "role": "System Manager",
+      "create": 1,
+      "read": 1,
+      "share": 1,
+      "write": 1
+    },
+    {
+      "create": 1,
+      "read": 1,
+      "share": 1,
+      "write": 1,
+      "role": "Accounts User"
+    }
+  ],
+  "quick_entry": 0,
+  "read_only": 1,
+  "sort_field": "creation",
+  "sort_order": "DESC",
+  "states": []
+}

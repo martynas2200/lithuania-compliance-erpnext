@@ -1,4 +1,5 @@
 import frappe
+from frappe.utils.caching import request_cache
 
 
 def get_settings():
@@ -25,28 +26,32 @@ def get_sales_round_off_account(company: str | None = None) -> str | None:
 		return None
 
 
+@request_cache
+def get_sales_vat_account(company: str | None = None) -> str | None:
+	"""Get the configured default Sales (output) VAT account."""
+	try:
+		settings = get_settings()
+		return settings.sales_vat_account or None
+	except Exception:
+		return None
+
+
+@request_cache
+def get_purchase_vat_account(company: str | None = None) -> str | None:
+	"""Get the configured default Purchase (input) VAT account."""
+	try:
+		settings = get_settings()
+		return settings.purchase_vat_account or None
+	except Exception:
+		return None
+
+
+@request_cache
 def get_default_vat_classificator() -> str | None:
 	"""Return default VAT classificator code/link value if set."""
 	try:
 		settings = get_settings()
 		return settings.default_vat_classificator or None
-	except Exception:
-		return None
-
-
-def get_item_pvm_classificator(item_code: str) -> str | None:
-	"""Resolve VAT classificator for an Item, falling back to default.
-
-	Looks up the mapping table on the settings doc. If an explicit mapping for
-	the Item exists, returns that classificator; otherwise returns the default.
-	"""
-	try:
-		settings = get_settings()
-		# iterate child table rows if any
-		for row in settings.pvm_item_map or []:
-			if getattr(row, "item", None) == item_code:
-				return getattr(row, "pvm_classificator", None) or get_default_vat_classificator()
-		return get_default_vat_classificator()
 	except Exception:
 		return None
 
