@@ -9,6 +9,7 @@ from . import settings as lt_settings
 
 STANDARD_INVOICE_TYPES = ["SF", "VS"]
 RETURN_REQUIRING_INVOICE_TYPES = ["DS", "KS", "VD", "VK"]
+MAXIMUM_TITLE_LENGTH = 140
 
 
 class CustomPurchaseInvoice(PurchaseInvoice):
@@ -46,7 +47,7 @@ class CustomPurchaseInvoice(PurchaseInvoice):
 				words = cleaned.split()
 				if words:
 					title = f"{' '.join(words[:2])} {title}"
-			self.title = title
+			self.title = title[:MAXIMUM_TITLE_LENGTH]
 
 		self._validate_and_set_is_return()
 

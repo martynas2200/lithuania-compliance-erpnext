@@ -81,7 +81,7 @@
                                             </span>
                                         </a>
                                         <span class="pull-right">{{ item.barcode }}</span>
-                                        <div class="item-name-text">
+                                        <div class="mt-1">
                                             {{ item.item_name }}
                                         </div>
                                     </td>
@@ -688,7 +688,7 @@ export default {
 
 .valid-range-text {
     font-size: 0.9em;
-    color: var(--text-muted);
+    opacity: 0.8;
     margin-top: 2px;
     text-align: right;
 }
@@ -709,20 +709,29 @@ export default {
     background-color: var(--alert-bg-info);
 }
 
+[data-theme="light"] .item-price-row.markup-low {
+    background-color: var(--red-100);
+    border-left: 3px solid var(--red-600);
+}
+
+[data-theme="light"] .item-price-row.markup-medium {
+    background-color: var(--yellow-100);
+    border-left: 3px solid var(--yellow-600);
+}
+
+[data-theme="light"] .item-price-row.markup-near-target {
+    background-color: var(--blue-100);
+    border-left: 3px solid var(--blue-600);
+}
+
 .item-code-link {
     color: var(--alert-text-info);
-    text-decoration: none;
     font-weight: 700;
 }
 
 .multiple-prices-indicator {
     color: var(--alert-text-danger);
     font-weight: 700;
-}
-
-.item-name-text {
-    color: var(--text-color);
-    margin-top: 2px;
 }
 
 .manage-prices-container button {
