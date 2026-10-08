@@ -13,7 +13,9 @@
                         @click="refreshData"
                         :disabled="loading"
                     >
-                        <i class="fa fa-refresh" :class="{ 'fa-spin': loading }"></i>
+                        <svg class="icon icon-sm" aria-hidden="true">
+                            <use href="#icon-refresh-ccw"></use>
+                        </svg>
                         {{ __("Refresh") }}
                     </button>
 
@@ -31,7 +33,9 @@
 
             <div class="modal-body">
                 <div v-if="loading" class="text-center p-5">
-                    <i class="fa fa-spinner fa-spin fa-2x"></i>
+                    <svg class="icon icon-xl spinner-border" aria-hidden="true">
+                        <use href="#icon-loader-circle" class="loader-circle"></use>
+                    </svg>
                     <p class="mt-3">{{ __("Loading...") }}</p>
                 </div>
                 <div v-else class="manage-prices-container">
@@ -133,7 +137,9 @@
                                             @click="openNewPriceDialog(item)"
                                             :title="__('Add Price')"
                                         >
-                                            <i class="fa fa-plus"></i>
+                                            <svg class="icon icon-sm" aria-hidden="true">
+                                                <use href="#icon-plus"></use>
+                                            </svg>
                                         </button>
                                         <button
                                             v-if="item.applicable_price"
@@ -141,7 +147,9 @@
                                             @click="openEditPriceDialog(item)"
                                             :title="__('Edit')"
                                         >
-                                            <i class="fa fa-pencil"></i>
+                                            <svg class="icon icon-sm" aria-hidden="true">
+                                                <use href="#icon-edit"></use>
+                                            </svg>
                                         </button>
                                         <button
                                             v-if="item.applicable_price"
@@ -149,14 +157,18 @@
                                             @click="askToDeletePrice(item.applicable_price.name)"
                                             :title="__('Delete')"
                                         >
-                                            <i class="fa fa-trash"></i>
+                                            <svg class="icon icon-sm" aria-hidden="true">
+                                                <use href="#icon-trash"></use>
+                                            </svg>
                                         </button>
                                         <button
                                             class="btn btn-sm btn-default calculator-btn"
                                             @click="toggleMarkupCalculator(item.item_code)"
                                             :title="__('Calculate Markup')"
                                         >
-                                            <i class="fa fa-calculator"></i>
+                                            <svg class="icon icon-sm" aria-hidden="true">
+                                                <use href="#icon-calculator"></use>
+                                            </svg>
                                         </button>
                                     </td>
                                 </tr>
@@ -166,9 +178,6 @@
                                 >
                                     <td colspan="5">
                                         <div>
-                                            <!--  class="markup-calculator-container"> -->
-                                            <!-- <div class="calculator-title">{{ __("Markup Calculator") }} - {{ item.item_code }}</div> -->
-                                            <!-- <div class="calculator-inputs"></div> -->
                                             <div class="markup-cheatsheet">
                                                 <div
                                                     class="cheatsheet-title flex justify-between items-center"
@@ -177,13 +186,6 @@
                                                         {{ __("Suggested Prices") }}
                                                     </span>
                                                     <div class="buttons">
-                                                        <button
-                                                            v-if="item.applicable_price"
-                                                            class="btn btn-secondary-dark btn-sm rounded"
-                                                            @click="openEditPriceDialog(item)"
-                                                        >
-                                                            {{ __("Enter Custom Price") }}
-                                                        </button>
                                                         <button
                                                             class="btn btn-secondary btn-sm rounded"
                                                             @click="closeCalculator"

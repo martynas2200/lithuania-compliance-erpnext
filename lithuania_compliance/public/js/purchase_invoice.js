@@ -118,7 +118,7 @@ async function check_buying_prices(frm) {
                     <th class="text-right">${__("Buying Price")}</th>
                     <th class="text-right">${__("Difference")}</th>
                     <th>${__("Valid From")}</th>
-                    <th>${__("Valid Upto")}</th>
+                    <th>${__("Valid Until")}</th>
                 </tr>
             </thead>
             <tbody>

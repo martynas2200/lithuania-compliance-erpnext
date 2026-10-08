@@ -58,9 +58,10 @@ frappe.ui.form.on("i-SAF Generation", {
                                     <a href="${
                                         r.message.file_url
                                     }" class="btn btn-success" download>
-                                        <i class="fa fa-download"></i> ${__("Download")} XML ${__(
-                            "File"
-                        )}
+                                        <svg class="icon icon-sm" aria-hidden="true">
+                                            <use href="#icon-download"></use>
+                                        </svg>
+                                        ${__("Download")} XML ${__("File")}
                                     </a>
                                 </p>
                                 <p class="mt-2 text-xs" style="color: #6b7280;">
