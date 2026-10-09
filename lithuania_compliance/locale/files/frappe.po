@@ -17636,7 +17636,7 @@ msgstr "Logotipo URL adresas"
 #. Option for the 'Operation' (Select) field in DocType 'Activity Log'
 #: frappe/core/doctype/activity_log/activity_log.json frappe/www/me.html:91
 msgid "Logout"
-msgstr "Atsijungimas"
+msgstr "Atsijungti"
 
 #: frappe/core/doctype/user/user.js:197
 msgid "Logout All Sessions"
