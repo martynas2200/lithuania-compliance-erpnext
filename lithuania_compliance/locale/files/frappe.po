@@ -8296,7 +8296,7 @@ msgstr ""
 #. Label of the designation (Data) field in DocType 'Contact'
 #: frappe/contacts/doctype/contact/contact.json
 msgid "Designation"
-msgstr "Pavadinimas"
+msgstr "Pareigos"
 
 #. Label of the desk_access (Check) field in DocType 'Role'
 #: frappe/core/doctype/role/role.json

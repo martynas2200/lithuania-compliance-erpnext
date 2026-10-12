@@ -3859,17 +3859,16 @@ msgstr "Koregavimas pagal pirkimo sąskaitos faktūros kainą"
 
 #: erpnext/setup/setup_wizard/data/designation.txt:2
 msgid "Administrative Assistant"
-msgstr "Administracinis padėjėjas"
+msgstr "Administratoriaus padėjėjas"
 
 #: erpnext/accounts/doctype/account/chart_of_accounts/verified/standard_chart_of_accounts.py:103
 #: erpnext/accounts/doctype/account/chart_of_accounts/verified/standard_chart_of_accounts_with_account_number.py:168
 msgid "Administrative Expenses"
 msgstr "Administracinės išlaidos"
 
-# wwe don’t say officer
 #: erpnext/setup/setup_wizard/data/designation.txt:3
 msgid "Administrative Officer"
-msgstr "Administracijos pareigūnas"
+msgstr "Administravimo specialistas"
 
 #. Label of the advance_account (Link) field in DocType 'Party Account'
 #: erpnext/accounts/doctype/party_account/party_account.json
@@ -5839,7 +5838,7 @@ msgstr "Taikoma sąskaitoje"
 #. Label of the to_designation (Link) field in DocType 'Authorization Rule'
 #: erpnext/setup/doctype/authorization_rule/authorization_rule.json
 msgid "Applicable To (Designation)"
-msgstr "Taikoma (paskyrimas)"
+msgstr "Taikoma (pareigos)"
 
 #. Label of the to_emp (Link) field in DocType 'Authorization Rule'
 #: erpnext/setup/doctype/authorization_rule/authorization_rule.json
@@ -6994,7 +6993,7 @@ msgstr "Priskyrimo sąlygos"
 
 #: erpnext/setup/setup_wizard/data/designation.txt:5
 msgid "Associate"
-msgstr "Asocijuotasis darbuotojas"
+msgstr "Jaunesnysis specialistas"
 
 #: erpnext/stock/doctype/pick_list/pick_list.py:140
 msgid ""
@@ -11719,19 +11718,19 @@ msgstr "Neteisingai įskaityti čekiai ir indėliai"
 
 #: erpnext/setup/setup_wizard/data/designation.txt:9
 msgid "Chief Executive Officer"
-msgstr "Vyriausiasis vykdomasis pareigūnas"
+msgstr "Generalinis direktorius"
 
 #: erpnext/setup/setup_wizard/data/designation.txt:10
 msgid "Chief Financial Officer"
-msgstr "Vyriausiasis finansininkas"
+msgstr "Finansų direktorius"
 
 #: erpnext/setup/setup_wizard/data/designation.txt:11
 msgid "Chief Operating Officer"
-msgstr "Vyriausiasis veiklos pareigūnas"
+msgstr "Veiklos direktorius"
 
 #: erpnext/setup/setup_wizard/data/designation.txt:12
 msgid "Chief Technology Officer"
-msgstr "Vyriausiasis technologijų pareigūnas"
+msgstr "Technologijų direktorius"
 
 #. Label of the child_doctypes (Small Text) field in DocType 'Transaction
 #. Deletion Record To Delete'
@@ -21630,7 +21629,7 @@ msgstr "Vykdymas"
 
 #: erpnext/setup/setup_wizard/data/designation.txt:16
 msgid "Executive Assistant"
-msgstr "Vykdomasis asistentas"
+msgstr "Vadovo asistentas"
 
 #: erpnext/setup/setup_wizard/data/industry_type.txt:23
 msgid "Executive Search"
@@ -25041,7 +25040,7 @@ msgstr "H - F"
 #: erpnext/stock/doctype/warehouse/warehouse.json
 #: erpnext/support/doctype/issue/issue.json
 msgid "HR Manager"
-msgstr "Žmogiškųjų išteklių vadybininkas"
+msgstr "Personalo vadovas"
 
 #. Name of a role
 #: erpnext/accounts/doctype/account/account.json
@@ -25062,7 +25061,7 @@ msgstr "Žmogiškųjų išteklių vadybininkas"
 #: erpnext/setup/doctype/terms_and_conditions/terms_and_conditions.json
 #: erpnext/support/doctype/issue/issue.json
 msgid "HR User"
-msgstr "HR naudotojas"
+msgstr "Personalo naudotojas"
 
 #. Option for the 'Distribution Frequency' (Select) field in DocType 'Budget'
 #: erpnext/accounts/doctype/budget/budget.json
@@ -32712,7 +32711,7 @@ msgstr "Vadovas"
 
 #: erpnext/setup/setup_wizard/data/designation.txt:21
 msgid "Managing Director"
-msgstr "Generalinis direktorius"
+msgstr "Vykdomasis direktorius"
 
 #: erpnext/accounts/doctype/pos_profile/pos_profile.py:100
 msgid "Mandatory Accounting Dimension"
@@ -47816,11 +47815,11 @@ msgstr "Ryšys"
 #: erpnext/buying/doctype/supplier/supplier.json
 #: erpnext/manufacturing/report/material_requirements_planning_report/material_requirements_planning_report.py:1091
 msgid "Release Date"
-msgstr "Išleidimo data"
+msgstr "Atblokavimo data"
 
 #: erpnext/accounts/doctype/purchase_invoice/purchase_invoice.py:376
 msgid "Release date must be in the future"
-msgstr "Išleidimo data turi būti ateityje"
+msgstr "Atblokavimo data turi būti ateityje"
 
 #. Label of the relieving_date (Date) field in DocType 'Employee'
 #: erpnext/setup/doctype/employee/employee.json

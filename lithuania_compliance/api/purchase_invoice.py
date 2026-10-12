@@ -109,7 +109,7 @@ def get_changed_buying_prices(invoice_name):
 
 		if current_price:
 			current_rate = current_price.get("price_list_rate", 0)
-			if flt(item_rate, 2) > flt(current_rate, 2):
+			if round(flt(item_rate) - flt(current_rate), 6) >= 0.01:
 				changed_items.append(
 					{
 						"item_code": item_code,
