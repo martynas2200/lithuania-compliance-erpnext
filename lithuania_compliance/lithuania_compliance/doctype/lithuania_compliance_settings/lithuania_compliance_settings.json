@@ -1,226 +1,240 @@
 {
- "actions": [],
- "creation": "2026-01-30 01:07:22.305203",
- "doctype": "DocType",
- "engine": "InnoDB",
- "field_order": [
-  "section_rounding",
-  "purchase_round_off_account",
-  "column_break_rfkj",
-  "sales_round_off_account",
-  "section_vat_accounts",
-  "sales_vat_account",
-  "column_break_vat",
-  "purchase_vat_account",
-  "section_purchase_naming",
-  "default_vat_classificator",
-  "column_break_fbdi",
-  "use_bill_no_as_title",
-  "section_bank_import",
-  "default_customer",
-  "auto_create_parties_from_iban",
-  "default_employee_payable_account",
-  "employee_payable_account_mapping",
-  "default_receivable_account",
-  "column_break_ywsb",
-  "cash_deposit_account",
-  "cash_deposit_employee",
-  "bank_fee_expense_account",
-  "bank_fee_cost_center",
-  "emv_account",
-  "references_section",
-  "structured_reference_account_mapping"
- ],
- "fields": [
-  {
-   "fieldname": "section_rounding",
-   "fieldtype": "Section Break",
-   "label": "Rounding Accounts"
-  },
-  {
-   "fieldname": "purchase_round_off_account",
-   "fieldtype": "Link",
-   "label": "Purchase Round Off Account",
-   "options": "Account"
-  },
-  {
-   "fieldname": "sales_round_off_account",
-   "fieldtype": "Link",
-   "label": "Sales Round Off Account",
-   "options": "Account"
-  },
-  {
-   "fieldname": "section_vat_accounts",
-   "fieldtype": "Section Break",
-   "label": "VAT Accounts"
-  },
-  {
-   "description": "Default output VAT account used on automatically calculated (On Net Total) tax rows of Sales Invoices. Used to recognize the single automatic VAT account when preparing i.SAF reports.",
-   "fieldname": "sales_vat_account",
-   "fieldtype": "Link",
-   "label": "Sales VAT Account",
-   "options": "Account"
-  },
-  {
-   "fieldname": "column_break_vat",
-   "fieldtype": "Column Break"
-  },
-  {
-   "description": "Default input VAT account used on automatically calculated (On Net Total) tax rows of Purchase Invoices. Used to recognize the single automatic VAT account when preparing i.SAF reports.",
-   "fieldname": "purchase_vat_account",
-   "fieldtype": "Link",
-   "label": "Purchase VAT Account",
-   "options": "Account"
-  },
-  {
-   "fieldname": "section_purchase_naming",
-   "fieldtype": "Section Break",
-   "label": "Purchase Invoices"
-  },
-  {
-   "default": "0",
-   "description": "If checked, the Purchase Invoice document name will be set to the Bill No.",
-   "fieldname": "use_bill_no_as_title",
-   "fieldtype": "Check",
-   "label": "Use Bill No. as Document Title"
-  },
-  {
-   "fieldname": "default_vat_classificator",
-   "fieldtype": "Link",
-   "label": "Default VAT Classificator",
-   "options": "VAT Classificator"
-  },
-  {
-   "fieldname": "section_bank_import",
-   "fieldtype": "Section Break",
-   "label": "Bank Import"
-  },
-  {
-   "description": "Source account for cash deposits (CAMT SubFmlyCd CDPT) that are transferred into the bank account.",
-   "fieldname": "cash_deposit_account",
-   "fieldtype": "Link",
-   "label": "Cash Deposit Account",
-   "options": "Account"
-  },
-  {
-   "description": "Employee set as party on Journal Entries created for CDPT (cash deposit) CAMT statement lines.",
-   "fieldname": "cash_deposit_employee",
-   "fieldtype": "Link",
-   "label": "Cash Deposit Employee",
-   "options": "Employee"
-  },
-  {
-   "description": "Source account for EMV transactions that are transferred into the bank account.",
-   "fieldname": "emv_account",
-   "fieldtype": "Link",
-   "label": "EMV Account",
-   "options": "Account"
-  },
-  {
-   "description": "Default customer used for receivables in bank import.",
-   "fieldname": "default_customer",
-   "fieldtype": "Link",
-   "label": "Default Customer",
-   "options": "Customer"
-  },
-  {
-   "description": "Default account used for employee payables in bank import.",
-   "fieldname": "default_employee_payable_account",
-   "fieldtype": "Link",
-   "label": "Default Employee Payable Account",
-   "options": "Account"
-  },
-  {
-   "description": "Per-employee override of the payable account used in bank import payments.",
-   "fieldname": "employee_payable_account_mapping",
-   "fieldtype": "Table",
-   "label": "Employee Payable Account Mapping",
-   "options": "Employee Payable Account Mapping"
-  },
-  {
-   "description": "Default account used for receivables in bank import.",
-   "fieldname": "default_receivable_account",
-   "fieldtype": "Link",
-   "label": "Default Receivable Account",
-   "options": "Account"
-  },
-  {
-   "description": "Used for small bank fees (e.g. < 1 EUR) detected in CAMT bank statement imports.",
-   "fieldname": "bank_fee_expense_account",
-   "fieldtype": "Link",
-   "label": "Bank Fee Expense Account",
-   "options": "Account"
-  },
-  {
-   "description": "Default cost center applied to bank fee (CHRG) payment entries created during CAMT bank statement imports.",
-   "fieldname": "bank_fee_cost_center",
-   "fieldtype": "Link",
-   "label": "Bank Fee Cost Center",
-   "options": "Cost Center"
-  },
-  {
-   "default": "0",
-   "description": "If enabled, new Customers/Suppliers and Bank Accounts will be created automatically when importing CAMT statements based on IBAN and party name.",
-   "fieldname": "auto_create_parties_from_iban",
-   "fieldtype": "Check",
-   "label": "Auto-create Parties from IBAN"
-  },
-  {
-   "description": "Map structured payment references (CdtrRefInf/Ref) to Accounts for CAMT bank import.",
-   "fieldname": "structured_reference_account_mapping",
-   "fieldtype": "Table",
-   "label": "Structured Reference Account Mapping",
-   "options": "Structured Reference Account Mapping"
-  },
-  {
-   "fieldname": "column_break_rfkj",
-   "fieldtype": "Column Break"
-  },
-  {
-   "fieldname": "column_break_fbdi",
-   "fieldtype": "Column Break"
-  },
-  {
-   "fieldname": "column_break_ywsb",
-   "fieldtype": "Column Break"
-  },
-  {
-   "fieldname": "references_section",
-   "fieldtype": "Section Break",
-   "label": "References"
-  }
- ],
- "issingle": 1,
- "links": [],
- "modified": "2026-02-06 14:18:44.757445",
- "modified_by": "Administrator",
- "module": "Lithuania Compliance",
- "name": "Lithuania Compliance Settings",
- "owner": "Administrator",
- "permissions": [
-  {
-   "create": 1,
-   "delete": 1,
-   "email": 1,
-   "print": 1,
-   "read": 1,
-   "role": "System Manager",
-   "share": 1,
-   "write": 1
-  },
-  {
-   "create": 1,
-   "delete": 1,
-   "email": 1,
-   "print": 1,
-   "read": 1,
-   "role": "Accounts Manager",
-   "share": 1,
-   "write": 1
-  }
- ],
- "row_format": "Dynamic",
- "sort_field": "creation",
- "sort_order": "DESC",
- "states": []
+  "actions": [],
+  "creation": "2026-01-30 01:07:22.305203",
+  "doctype": "DocType",
+  "engine": "InnoDB",
+  "field_order": [
+    "section_rounding",
+    "purchase_round_off_account",
+    "column_break_rfkj",
+    "sales_round_off_account",
+    "section_vat_accounts",
+    "sales_vat_account",
+    "column_break_vat",
+    "purchase_vat_account",
+    "section_purchase_naming",
+    "default_vat_classificator",
+    "column_break_fbdi",
+    "use_bill_no_as_title",
+    "section_item_prices",
+    "ignored_item_price_items",
+    "section_bank_import",
+    "default_customer",
+    "auto_create_parties_from_iban",
+    "default_employee_payable_account",
+    "employee_payable_account_mapping",
+    "default_receivable_account",
+    "column_break_ywsb",
+    "cash_deposit_account",
+    "cash_deposit_employee",
+    "bank_fee_expense_account",
+    "bank_fee_cost_center",
+    "emv_account",
+    "references_section",
+    "structured_reference_account_mapping"
+  ],
+  "fields": [
+    {
+      "fieldname": "section_rounding",
+      "fieldtype": "Section Break",
+      "label": "Rounding Accounts"
+    },
+    {
+      "fieldname": "purchase_round_off_account",
+      "fieldtype": "Link",
+      "label": "Purchase Round Off Account",
+      "options": "Account"
+    },
+    {
+      "fieldname": "sales_round_off_account",
+      "fieldtype": "Link",
+      "label": "Sales Round Off Account",
+      "options": "Account"
+    },
+    {
+      "fieldname": "section_vat_accounts",
+      "fieldtype": "Section Break",
+      "label": "VAT Accounts"
+    },
+    {
+      "description": "Default output VAT account used on automatically calculated (On Net Total) tax rows of Sales Invoices. Used to recognize the single automatic VAT account when preparing i.SAF reports.",
+      "fieldname": "sales_vat_account",
+      "fieldtype": "Link",
+      "label": "Sales VAT Account",
+      "options": "Account"
+    },
+    {
+      "fieldname": "column_break_vat",
+      "fieldtype": "Column Break"
+    },
+    {
+      "description": "Default input VAT account used on automatically calculated (On Net Total) tax rows of Purchase Invoices. Used to recognize the single automatic VAT account when preparing i.SAF reports.",
+      "fieldname": "purchase_vat_account",
+      "fieldtype": "Link",
+      "label": "Purchase VAT Account",
+      "options": "Account"
+    },
+    {
+      "fieldname": "section_purchase_naming",
+      "fieldtype": "Section Break",
+      "label": "Purchase Invoices"
+    },
+    {
+      "default": "0",
+      "description": "If checked, the Purchase Invoice document name will be set to the Bill No.",
+      "fieldname": "use_bill_no_as_title",
+      "fieldtype": "Check",
+      "label": "Use Bill No. as Document Title"
+    },
+    {
+      "fieldname": "section_item_prices",
+      "fieldtype": "Section Break",
+      "label": "Item Prices"
+    },
+    {
+      "description": "Items listed here are hidden from the Item Prices dialog on Purchase Invoices. Use this for items like packaging, shipping, deposits, etc.",
+      "fieldname": "ignored_item_price_items",
+      "fieldtype": "Table",
+      "label": "Items Excluded from Manage Item Prices modal",
+      "options": "Item Price Ignore List"
+    },
+    {
+      "fieldname": "default_vat_classificator",
+      "fieldtype": "Link",
+      "label": "Default VAT Classificator",
+      "options": "VAT Classificator"
+    },
+    {
+      "fieldname": "section_bank_import",
+      "fieldtype": "Section Break",
+      "label": "Bank Import"
+    },
+    {
+      "description": "Source account for cash deposits (CAMT SubFmlyCd CDPT) that are transferred into the bank account.",
+      "fieldname": "cash_deposit_account",
+      "fieldtype": "Link",
+      "label": "Cash Deposit Account",
+      "options": "Account"
+    },
+    {
+      "description": "Employee set as party on Journal Entries created for CDPT (cash deposit) CAMT statement lines.",
+      "fieldname": "cash_deposit_employee",
+      "fieldtype": "Link",
+      "label": "Cash Deposit Employee",
+      "options": "Employee"
+    },
+    {
+      "description": "Source account for EMV transactions that are transferred into the bank account.",
+      "fieldname": "emv_account",
+      "fieldtype": "Link",
+      "label": "EMV Account",
+      "options": "Account"
+    },
+    {
+      "description": "Default customer used for receivables in bank import.",
+      "fieldname": "default_customer",
+      "fieldtype": "Link",
+      "label": "Default Customer",
+      "options": "Customer"
+    },
+    {
+      "description": "Default account used for employee payables in bank import.",
+      "fieldname": "default_employee_payable_account",
+      "fieldtype": "Link",
+      "label": "Default Employee Payable Account",
+      "options": "Account"
+    },
+    {
+      "description": "Per-employee override of the payable account used in bank import payments.",
+      "fieldname": "employee_payable_account_mapping",
+      "fieldtype": "Table",
+      "label": "Employee Payable Account Mapping",
+      "options": "Employee Payable Account Mapping"
+    },
+    {
+      "description": "Default account used for receivables in bank import.",
+      "fieldname": "default_receivable_account",
+      "fieldtype": "Link",
+      "label": "Default Receivable Account",
+      "options": "Account"
+    },
+    {
+      "description": "Used for small bank fees (e.g. < 1 EUR) detected in CAMT bank statement imports.",
+      "fieldname": "bank_fee_expense_account",
+      "fieldtype": "Link",
+      "label": "Bank Fee Expense Account",
+      "options": "Account"
+    },
+    {
+      "description": "Default cost center applied to bank fee (CHRG) payment entries created during CAMT bank statement imports.",
+      "fieldname": "bank_fee_cost_center",
+      "fieldtype": "Link",
+      "label": "Bank Fee Cost Center",
+      "options": "Cost Center"
+    },
+    {
+      "default": "0",
+      "description": "If enabled, new Customers/Suppliers and Bank Accounts will be created automatically when importing CAMT statements based on IBAN and party name.",
+      "fieldname": "auto_create_parties_from_iban",
+      "fieldtype": "Check",
+      "label": "Auto-create Parties from IBAN"
+    },
+    {
+      "description": "Map structured payment references (CdtrRefInf/Ref) to Accounts for CAMT bank import.",
+      "fieldname": "structured_reference_account_mapping",
+      "fieldtype": "Table",
+      "label": "Structured Reference Account Mapping",
+      "options": "Structured Reference Account Mapping"
+    },
+    {
+      "fieldname": "column_break_rfkj",
+      "fieldtype": "Column Break"
+    },
+    {
+      "fieldname": "column_break_fbdi",
+      "fieldtype": "Column Break"
+    },
+    {
+      "fieldname": "column_break_ywsb",
+      "fieldtype": "Column Break"
+    },
+    {
+      "fieldname": "references_section",
+      "fieldtype": "Section Break",
+      "label": "References"
+    }
+  ],
+  "issingle": 1,
+  "links": [],
+  "modified": "2026-10-31 12:00:00.000000",
+  "modified_by": "Administrator",
+  "module": "Lithuania Compliance",
+  "name": "Lithuania Compliance Settings",
+  "owner": "Administrator",
+  "permissions": [
+    {
+      "create": 1,
+      "delete": 1,
+      "email": 1,
+      "print": 1,
+      "read": 1,
+      "role": "System Manager",
+      "share": 1,
+      "write": 1
+    },
+    {
+      "create": 1,
+      "delete": 1,
+      "email": 1,
+      "print": 1,
+      "read": 1,
+      "role": "Accounts Manager",
+      "share": 1,
+      "write": 1
+    }
+  ],
+  "row_format": "Dynamic",
+  "sort_field": "creation",
+  "sort_order": "DESC",
+  "states": []
 }

@@ -1,7 +1,9 @@
 msgid ""
 msgstr ""
-"POT-Creation-Date: 2026-10-08 10:10+0018\n"
-"PO-Revision-Date: 2026-10-08 10:10+0018\n"
+"Project-Id-Version: Frappe HR VERSION\n"
+"Report-Msgid-Bugs-To: contact@frappe.io\n"
+"POT-Creation-Date: 2026-10-31 18:14+0018\n"
+"PO-Revision-Date: 2026-10-31 20:49+0100\n"
 "Last-Translator: Martynas Miliauskas <martin@ekranas.info>\n"
 "Language: lt\n"
 "Language-Team: contact@frappe.io\n"
@@ -11,14 +13,10 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.16.0\n"
 
-#. Application title
-msgid "Lithuania Compliance"
-msgstr "Lietuvos atitiktis"
-
 #. Description of a DocType
-#: lithuania_compliance/lithuania_compliance/doctype/i_saf_generation/i_saf_generation.json
+#: lithuania_compliance/lithuania_compliance/doctype/i_saf_generation/i_saf_generation.json:5
 msgid "A DocType for exporting ISAF (International Standard Audit File) data."
-msgstr "DocType, skirtas eksportuoti ISAF (Tarptautinio standartizuoto audito failo) duomenis."
+msgstr "DocType, skirtas eksportuoti i.SAF (Tarptautinio standartizuoto audito failo) duomenis."
 
 #: lithuania_compliance/lithuania_compliance/doctype/bank_importer/bank_importer.js:243
 msgid "Action"
@@ -28,7 +26,7 @@ msgstr "Veiksmas"
 msgid "Actions"
 msgstr "Veiksmai"
 
-#: lithuania_compliance/public/js/ItemPricesModal.vue:464
+#: lithuania_compliance/public/js/ItemPricesModal.vue:459
 msgid "Add New Item Price"
 msgstr "Pridėti naują prekės kainą"
 
@@ -45,7 +43,7 @@ msgstr "Suma"
 msgid "Amount: first uses Purchase/Sales tax rows; if empty, checks the item's default classificator; if still empty, uses the default classificator from Settings menu."
 msgstr "Suma: pirmiausia naudojamos pirkimo / pardavimo mokesčių eilutės; jei tuščia, tikrina prekės numatytąjį klasifikatorių; jei vis dar tuščia, naudoja numatytąjį klasifikatorių iš Nustatymų meniu."
 
-#: lithuania_compliance/lithuania_compliance/doctype/i_saf_generation/i_saf_generation.js:80
+#: lithuania_compliance/lithuania_compliance/doctype/i_saf_generation/i_saf_generation.js:78
 msgid "An error occurred while generating the XML file."
 msgstr "Kuriant XML failą įvyko klaida."
 
@@ -54,57 +52,57 @@ msgid "Apply"
 msgstr "Taikyti"
 
 #. Option for the 'Month' (Select) field in DocType 'i-SAF Generation'
-#: lithuania_compliance/lithuania_compliance/doctype/i_saf_generation/i_saf_generation.json
+#: lithuania_compliance/lithuania_compliance/doctype/i_saf_generation/i_saf_generation.json:47
 msgid "April"
 msgstr "Balandis"
 
-#: lithuania_compliance/public/js/ItemPricesModal.vue:392
+#: lithuania_compliance/public/js/ItemPricesModal.vue:387
 msgid "Are you sure you want to delete this record?"
 msgstr "Ar tikrai norite ištrinti šį įrašą?"
 
 #. Label of the import_file (Attach) field in DocType 'Bank Importer'
-#: lithuania_compliance/lithuania_compliance/doctype/bank_importer/bank_importer.json
+#: lithuania_compliance/lithuania_compliance/doctype/bank_importer/bank_importer.json:28
 msgid "Attach bank transactions file"
 msgstr "Pridėti banko operacijų failą"
 
 #. Option for the 'Month' (Select) field in DocType 'i-SAF Generation'
-#: lithuania_compliance/lithuania_compliance/doctype/i_saf_generation/i_saf_generation.json
+#: lithuania_compliance/lithuania_compliance/doctype/i_saf_generation/i_saf_generation.json:47
 msgid "August"
 msgstr "Rugpjūtis"
 
 #. Label of the auto_submit (Check) field in DocType 'Bank Importer'
-#: lithuania_compliance/lithuania_compliance/doctype/bank_importer/bank_importer.json
+#: lithuania_compliance/lithuania_compliance/doctype/bank_importer/bank_importer.json:35
 msgid "Auto Submit Payment Entries"
 msgstr "Automatiškai pateikti mokėjimo įrašus"
 
 #. Label of the auto_create_parties_from_iban (Check) field in DocType
 #. 'Lithuania Compliance Settings'
-#: lithuania_compliance/lithuania_compliance/doctype/lithuania_compliance_settings/lithuania_compliance_settings.json
+#: lithuania_compliance/lithuania_compliance/doctype/lithuania_compliance_settings/lithuania_compliance_settings.json:180
 msgid "Auto-create Parties from IBAN"
 msgstr "Automatiškai sukurti šalis pagal IBAN"
 
 #. Label of the bank_fee_cost_center (Link) field in DocType 'Lithuania
 #. Compliance Settings'
-#: lithuania_compliance/lithuania_compliance/doctype/lithuania_compliance_settings/lithuania_compliance_settings.json
+#: lithuania_compliance/lithuania_compliance/doctype/lithuania_compliance_settings/lithuania_compliance_settings.json:172
 msgid "Bank Fee Cost Center"
 msgstr "Numatytasis kaštų centras, taikomas banko mokesčio (CHRG) mokėjimo įrašams, sukuriamiems CAMT banko išrašų importų metu."
 
 #. Label of the bank_fee_expense_account (Link) field in DocType 'Lithuania
 #. Compliance Settings'
-#: lithuania_compliance/lithuania_compliance/doctype/lithuania_compliance_settings/lithuania_compliance_settings.json
+#: lithuania_compliance/lithuania_compliance/doctype/lithuania_compliance_settings/lithuania_compliance_settings.json:165
 msgid "Bank Fee Expense Account"
 msgstr "Išlaidų sąskaita už banko mokesčius"
 
 #. Label of the section_bank_import (Section Break) field in DocType 'Lithuania
 #. Compliance Settings'
-#: lithuania_compliance/lithuania_compliance/doctype/lithuania_compliance_settings/lithuania_compliance_settings.json
+#: lithuania_compliance/lithuania_compliance/doctype/lithuania_compliance_settings/lithuania_compliance_settings.json:110
 msgid "Bank Import"
 msgstr "Banko importas"
 
 #. Name of a DocType
-#. Label of a Workspace Sidebar Item
-#: lithuania_compliance/lithuania_compliance/doctype/bank_importer/bank_importer.json
-#: lithuania_compliance/workspace_sidebar/lithuania.json
+#. Label of a Sidebar Item
+#: lithuania_compliance/lithuania_compliance/doctype/bank_importer/bank_importer.json:50
+#: lithuania_compliance/lithuania_compliance/sidebar/lithuania_compliance/lithuania_compliance.json:66
 msgid "Bank Importer"
 msgstr "Banko išrašų importuotojas"
 
@@ -134,19 +132,19 @@ msgid "Barcode"
 msgstr "Brūkšninis kodas"
 
 #. Label of the bill_no (Data) field in DocType 'Sales Invoice'
-#: lithuania_compliance/fixtures/custom_field.json
+#: lithuania_compliance/fixtures/custom_field.json:260
 msgid "Bill No (If Received Debit Invoice)"
 msgstr "Sąskaitos Nr. (jei gauta debeto sąskaita faktūra)"
 
 #. Option for the 'Register Type' (Select) field in DocType 'i-SAF Generation'
-#: lithuania_compliance/lithuania_compliance/doctype/i_saf_generation/i_saf_generation.json
+#: lithuania_compliance/lithuania_compliance/doctype/i_saf_generation/i_saf_generation.json:23
 msgid "Both Registers"
 msgstr "Abu registrai"
 
 #. Label of the business_code (Data) field in DocType 'Supplier'
 #. Label of the business_code (Data) field in DocType 'Customer'
 #. Label of the business_code (Data) field in DocType 'Company'
-#: lithuania_compliance/fixtures/custom_field.json
+#: lithuania_compliance/fixtures/custom_field.json:32
 msgid "Business Code"
 msgstr "Įmonės kodas"
 
@@ -177,13 +175,13 @@ msgstr "Grynųjų pinigų įnešimas"
 
 #. Label of the cash_deposit_account (Link) field in DocType 'Lithuania
 #. Compliance Settings'
-#: lithuania_compliance/lithuania_compliance/doctype/lithuania_compliance_settings/lithuania_compliance_settings.json
+#: lithuania_compliance/lithuania_compliance/doctype/lithuania_compliance_settings/lithuania_compliance_settings.json:116
 msgid "Cash Deposit Account"
 msgstr "Grynųjų pinigų įnešimo sąskaita"
 
 #. Label of the cash_deposit_employee (Link) field in DocType 'Lithuania
 #. Compliance Settings'
-#: lithuania_compliance/lithuania_compliance/doctype/lithuania_compliance_settings/lithuania_compliance_settings.json
+#: lithuania_compliance/lithuania_compliance/doctype/lithuania_compliance_settings/lithuania_compliance_settings.json:123
 msgid "Cash Deposit Employee"
 msgstr "Grynųjų pinigų įnešimo darbuotojas"
 
@@ -205,16 +203,12 @@ msgstr "Patikrinta {0} banko operacijų. Sukurta {1} mokėjimo įrašų ({2} pat
 
 #. Description of the 'Register Type' (Select) field in DocType 'i-SAF
 #. Generation'
-#: lithuania_compliance/lithuania_compliance/doctype/i_saf_generation/i_saf_generation.json
+#: lithuania_compliance/lithuania_compliance/doctype/i_saf_generation/i_saf_generation.json:24
 msgid "Choose the type of i.SAF invoice register you want to generate."
 msgstr "Pasirinkite i.SAF PVM sąskaitų registrą, kurį norite generuoti."
 
-#: lithuania_compliance/public/js/ItemPricesModal.vue:244
-msgid "Close"
-msgstr "Uždaryti"
-
 #. Label of the code (Data) field in DocType 'VAT Classificator'
-#: lithuania_compliance/lithuania_compliance/doctype/vat_classificator/vat_classificator.json
+#: lithuania_compliance/lithuania_compliance/doctype/vat_classificator/vat_classificator.json:26
 msgid "Code"
 msgstr "Kodas"
 
@@ -224,8 +218,8 @@ msgstr "Sutraukti/Paslėpti"
 
 #. Label of the company (Link) field in DocType 'Bank Importer'
 #. Label of the company (Link) field in DocType 'i-SAF Generation'
-#: lithuania_compliance/lithuania_compliance/doctype/bank_importer/bank_importer.json
-#: lithuania_compliance/lithuania_compliance/doctype/i_saf_generation/i_saf_generation.json
+#: lithuania_compliance/lithuania_compliance/doctype/bank_importer/bank_importer.json:21
+#: lithuania_compliance/lithuania_compliance/doctype/i_saf_generation/i_saf_generation.json:15
 #: lithuania_compliance/lithuania_compliance/report/stock_balance_with_barcode/stock_balance_with_barcode.js:7
 #: lithuania_compliance/lithuania_compliance/report/stock_balance_with_barcode/stock_balance_with_barcode.py:606
 msgid "Company"
@@ -235,7 +229,7 @@ msgstr "Įmonė"
 msgid "Company {0} does not have a Business Code set. Please set it in the Company record before exporting to i.SAF."
 msgstr "Įmonė {0} neturi nustatyto įmonės kodo. Prieš eksportuodami į i.SAF nustatykite jį įmonės įraše."
 
-#: lithuania_compliance/lithuania_compliance/doctype/i_saf_generation/i_saf_generation.js:73
+#: lithuania_compliance/lithuania_compliance/doctype/i_saf_generation/i_saf_generation.js:71
 msgid "Compiled Successfully"
 msgstr "Sėkmingai parengta"
 
@@ -264,67 +258,67 @@ msgid "Date"
 msgstr "Data"
 
 #. Option for the 'Month' (Select) field in DocType 'i-SAF Generation'
-#: lithuania_compliance/lithuania_compliance/doctype/i_saf_generation/i_saf_generation.json
+#: lithuania_compliance/lithuania_compliance/doctype/i_saf_generation/i_saf_generation.json:47
 msgid "December"
 msgstr "Gruodis"
 
 #. Label of the default_customer (Link) field in DocType 'Lithuania Compliance
 #. Settings'
-#: lithuania_compliance/lithuania_compliance/doctype/lithuania_compliance_settings/lithuania_compliance_settings.json
+#: lithuania_compliance/lithuania_compliance/doctype/lithuania_compliance_settings/lithuania_compliance_settings.json:137
 msgid "Default Customer"
 msgstr "Numatytasis klientas"
 
 #. Label of the default_employee_payable_account (Link) field in DocType
 #. 'Lithuania Compliance Settings'
-#: lithuania_compliance/lithuania_compliance/doctype/lithuania_compliance_settings/lithuania_compliance_settings.json
+#: lithuania_compliance/lithuania_compliance/doctype/lithuania_compliance_settings/lithuania_compliance_settings.json:144
 msgid "Default Employee Payable Account"
 msgstr "Numatyta darbuotojų mokėtinos kor. sąskaita"
 
 #. Label of the default_receivable_account (Link) field in DocType 'Lithuania
 #. Compliance Settings'
-#: lithuania_compliance/lithuania_compliance/doctype/lithuania_compliance_settings/lithuania_compliance_settings.json
+#: lithuania_compliance/lithuania_compliance/doctype/lithuania_compliance_settings/lithuania_compliance_settings.json:158
 msgid "Default Receivable Account"
 msgstr "Numatyta gautinų sumų sąskaita"
 
 #. Label of the default_vat_classificator (Link) field in DocType 'Lithuania
 #. Compliance Settings'
-#: lithuania_compliance/lithuania_compliance/doctype/lithuania_compliance_settings/lithuania_compliance_settings.json
+#: lithuania_compliance/lithuania_compliance/doctype/lithuania_compliance_settings/lithuania_compliance_settings.json:104
 msgid "Default VAT Classificator"
 msgstr "Numatytasis PVM klasifikatorius"
 
 #. Description of the 'Default Employee Payable Account' (Link) field in
 #. DocType 'Lithuania Compliance Settings'
-#: lithuania_compliance/lithuania_compliance/doctype/lithuania_compliance_settings/lithuania_compliance_settings.json
+#: lithuania_compliance/lithuania_compliance/doctype/lithuania_compliance_settings/lithuania_compliance_settings.json:141
 msgid "Default account used for employee payables in bank import."
 msgstr "Numatyta sąskaita, naudojama darbuotojų mokėtinos sumoms banko importo metu."
 
 #. Description of the 'Default Receivable Account' (Link) field in DocType
 #. 'Lithuania Compliance Settings'
-#: lithuania_compliance/lithuania_compliance/doctype/lithuania_compliance_settings/lithuania_compliance_settings.json
+#: lithuania_compliance/lithuania_compliance/doctype/lithuania_compliance_settings/lithuania_compliance_settings.json:155
 msgid "Default account used for receivables in bank import."
 msgstr "Numatyta sąskaita, naudojama gautinoms sumoms banko importo metu."
 
 #. Description of the 'Bank Fee Cost Center' (Link) field in DocType 'Lithuania
 #. Compliance Settings'
-#: lithuania_compliance/lithuania_compliance/doctype/lithuania_compliance_settings/lithuania_compliance_settings.json
+#: lithuania_compliance/lithuania_compliance/doctype/lithuania_compliance_settings/lithuania_compliance_settings.json:169
 msgid "Default cost center applied to bank fee (CHRG) payment entries created during CAMT bank statement imports."
 msgstr "Numatytasis kaštų centras, taikomas banko mokesčio (CHRG) mokėjimo įrašams, sukuriamiems CAMT banko išrašų importų metu."
 
 #. Description of the 'Default Customer' (Link) field in DocType 'Lithuania
 #. Compliance Settings'
-#: lithuania_compliance/lithuania_compliance/doctype/lithuania_compliance_settings/lithuania_compliance_settings.json
+#: lithuania_compliance/lithuania_compliance/doctype/lithuania_compliance_settings/lithuania_compliance_settings.json:134
 msgid "Default customer used for receivables in bank import."
 msgstr "Numatytasis klientas, naudojamas gautinoms sumoms banko importo metu."
 
 #. Description of the 'Purchase VAT Account' (Link) field in DocType 'Lithuania
 #. Compliance Settings'
-#: lithuania_compliance/lithuania_compliance/doctype/lithuania_compliance_settings/lithuania_compliance_settings.json
+#: lithuania_compliance/lithuania_compliance/doctype/lithuania_compliance_settings/lithuania_compliance_settings.json:71
 msgid "Default input VAT account used on automatically calculated (On Net Total) tax rows of Purchase Invoices. Used to recognize the single automatic VAT account when preparing i.SAF reports."
 msgstr "Numatytoji gautino PVM sąskaita, naudojama automatiškai skaičiuojamose (pagal neto bendrą sumą) mokesčių eilutėse Pirkimo Sąskaitų metu. Naudojama atpažinti vieną automatinę PVM sąskaitą, kai ruošiama i.SAF ataskaita."
 
 #. Description of the 'Sales VAT Account' (Link) field in DocType 'Lithuania
 #. Compliance Settings'
-#: lithuania_compliance/lithuania_compliance/doctype/lithuania_compliance_settings/lithuania_compliance_settings.json
+#: lithuania_compliance/lithuania_compliance/doctype/lithuania_compliance_settings/lithuania_compliance_settings.json:60
 msgid "Default output VAT account used on automatically calculated (On Net Total) tax rows of Sales Invoices. Used to recognize the single automatic VAT account when preparing i.SAF reports."
 msgstr "Numatytoji išrašomo PVM sąskaita, naudojama automatiškai skaičiuojamose (pagal neto bendrą sumą) mokesčių eilutėse Pardavimo Sąskaitų metu. Naudojama atpažinti vieną automatinę PVM sąskaitą, kai ruošiama i.SAF ataskaita."
 
@@ -333,7 +327,7 @@ msgid "Delete"
 msgstr "Ištrinti"
 
 #. Label of the description (Small Text) field in DocType 'VAT Classificator'
-#: lithuania_compliance/lithuania_compliance/doctype/vat_classificator/vat_classificator.json
+#: lithuania_compliance/lithuania_compliance/doctype/vat_classificator/vat_classificator.json:48
 msgid "Description"
 msgstr "Aprašymas"
 
@@ -355,7 +349,7 @@ msgstr "Atsisiųsti"
 
 #. Label of the emv_account (Link) field in DocType 'Lithuania Compliance
 #. Settings'
-#: lithuania_compliance/lithuania_compliance/doctype/lithuania_compliance_settings/lithuania_compliance_settings.json
+#: lithuania_compliance/lithuania_compliance/doctype/lithuania_compliance_settings/lithuania_compliance_settings.json:130
 msgid "EMV Account"
 msgstr "EMV kor. sąskaita"
 
@@ -363,31 +357,31 @@ msgstr "EMV kor. sąskaita"
 msgid "Edit"
 msgstr "Redaguoti"
 
-#: lithuania_compliance/public/js/ItemPricesModal.vue:562
+#: lithuania_compliance/public/js/ItemPricesModal.vue:557
 msgid "Edit Item Price"
 msgstr "Redaguoti prekės kainą"
 
 #. Label of the employee (Link) field in DocType 'Employee Payable Account
 #. Mapping'
-#: lithuania_compliance/lithuania_compliance/doctype/employee_payable_account_mapping/employee_payable_account_mapping.json
+#: lithuania_compliance/lithuania_compliance/doctype/employee_payable_account_mapping/employee_payable_account_mapping.json:22
 msgid "Employee"
 msgstr "Darbuotojas"
 
 #. Name of a DocType
 #. Label of the employee_payable_account_mapping (Table) field in DocType
 #. 'Lithuania Compliance Settings'
-#: lithuania_compliance/lithuania_compliance/doctype/employee_payable_account_mapping/employee_payable_account_mapping.json
-#: lithuania_compliance/lithuania_compliance/doctype/lithuania_compliance_settings/lithuania_compliance_settings.json
+#: lithuania_compliance/lithuania_compliance/doctype/employee_payable_account_mapping/employee_payable_account_mapping.json:3
+#: lithuania_compliance/lithuania_compliance/doctype/lithuania_compliance_settings/lithuania_compliance_settings.json:151
 msgid "Employee Payable Account Mapping"
 msgstr "Darbuotojo mokėtinos sąskaitos susiejimas"
 
 #. Description of the 'Cash Deposit Employee' (Link) field in DocType
 #. 'Lithuania Compliance Settings'
-#: lithuania_compliance/lithuania_compliance/doctype/lithuania_compliance_settings/lithuania_compliance_settings.json
+#: lithuania_compliance/lithuania_compliance/doctype/lithuania_compliance_settings/lithuania_compliance_settings.json:120
 msgid "Employee set as party on Journal Entries created for CDPT (cash deposit) CAMT statement lines."
 msgstr "Darbuotojas nustatytas kaip partneris žurnalo įrašuose pagal CDPT (grynųjų pinigų įnešimas) CAMT išrašų eilutėse."
 
-#: lithuania_compliance/lithuania_compliance/doctype/i_saf_generation/i_saf_generation.js:81
+#: lithuania_compliance/lithuania_compliance/doctype/i_saf_generation/i_saf_generation.js:79
 msgid "Error generating i.SAF XML file."
 msgstr "Kuriant i.SAF XML failą įvyko klaida."
 
@@ -401,17 +395,18 @@ msgstr "Klaida apdorojant {0} {1}: {2}"
 
 #. Option for the 'Invoice Type' (Select) field in DocType 'Sales Invoice'
 #. Option for the 'Invoice Type' (Select) field in DocType 'Purchase Invoice'
-#: lithuania_compliance/fixtures/custom_field.json
+#: lithuania_compliance/fixtures/custom_field.json:212
+#: lithuania_compliance/fixtures/custom_field.json:326
 msgid "Exclude from i.SAF"
 msgstr "Neįtraukti į i.SAF"
 
 #. Label of the is_exempt (Check) field in DocType 'VAT Classificator'
-#: lithuania_compliance/lithuania_compliance/doctype/vat_classificator/vat_classificator.json
+#: lithuania_compliance/lithuania_compliance/doctype/vat_classificator/vat_classificator.json:35
 msgid "Exempt from VAT"
 msgstr "Atleistas nuo PVM"
 
 #. Option for the 'Month' (Select) field in DocType 'i-SAF Generation'
-#: lithuania_compliance/lithuania_compliance/doctype/i_saf_generation/i_saf_generation.json
+#: lithuania_compliance/lithuania_compliance/doctype/i_saf_generation/i_saf_generation.json:47
 msgid "February"
 msgstr "Vasaris"
 
@@ -438,10 +433,8 @@ msgstr "Rasta {0} operacija(-os)"
 msgid "Generate"
 msgstr "Generuoti"
 
-#. Label of a shortcut in the Lithuania Workspace
-#. Label of a Workspace Sidebar Item
-#: lithuania_compliance/lithuania_compliance/workspace/lithuania/lithuania.json
-#: lithuania_compliance/workspace_sidebar/lithuania.json
+#. Label of a Sidebar Item
+#: lithuania_compliance/lithuania_compliance/sidebar/lithuania_compliance/lithuania_compliance.json:15
 msgid "Generate i.SAF"
 msgstr "Generuoti i.SAF"
 
@@ -467,13 +460,13 @@ msgstr "IBAN nerastas CAMT faile"
 
 #. Description of the 'Use Bill No. as Document Title' (Check) field in DocType
 #. 'Lithuania Compliance Settings'
-#: lithuania_compliance/lithuania_compliance/doctype/lithuania_compliance_settings/lithuania_compliance_settings.json
+#: lithuania_compliance/lithuania_compliance/doctype/lithuania_compliance_settings/lithuania_compliance_settings.json:84
 msgid "If checked, the Purchase Invoice document name will be set to the Bill No."
 msgstr "Jei pažymėta, pirkimo sąskaitos faktūros dokumento pavadinimas bus nustatytas į Sąskaitos Nr."
 
 #. Description of the 'Auto-create Parties from IBAN' (Check) field in DocType
 #. 'Lithuania Compliance Settings'
-#: lithuania_compliance/lithuania_compliance/doctype/lithuania_compliance_settings/lithuania_compliance_settings.json
+#: lithuania_compliance/lithuania_compliance/doctype/lithuania_compliance_settings/lithuania_compliance_settings.json:177
 msgid "If enabled, new Customers/Suppliers and Bank Accounts will be created automatically when importing CAMT statements based on IBAN and party name."
 msgstr "Jei įjungta, nauji klientai/tiekėjai ir banko sąskaitos bus automatiškai sukurti importuojant CAMT išrašus pagal IBAN ir šalies pavadinimą."
 
@@ -485,17 +478,12 @@ msgstr "Ignoruoti galutinį likutį"
 msgid "Import"
 msgstr "Importuoti"
 
-#. Label of a shortcut in the Lithuania Workspace
-#: lithuania_compliance/lithuania_compliance/workspace/lithuania/lithuania.json
-msgid "Import Bank Statement"
-msgstr "Importuoti banko sąskaitos išrašą"
-
 #: lithuania_compliance/lithuania_compliance/doctype/bank_importer/bank_importer.js:135
 msgid "Import Errors"
 msgstr "Importo klaidos"
 
 #. Description of a DocType
-#: lithuania_compliance/lithuania_compliance/doctype/bank_importer/bank_importer.json
+#: lithuania_compliance/lithuania_compliance/doctype/bank_importer/bank_importer.json:5
 msgid "Import bank transactions from a file"
 msgstr "Importuoti banko operacijas iš failo"
 
@@ -520,11 +508,15 @@ msgstr "Nurodo, kad prekė turi kelias kainas"
 msgid "Info"
 msgstr "Informacija"
 
+#: lithuania_compliance/lithuania_compliance/doctype/bank_importer/bank_importer.py:140
+msgid "Internal transfer"
+msgstr "Vidinis pervedimas"
+
 #: lithuania_compliance/api/isaf.py:582
 msgid "Invalid export type. Must be 'issued', 'received' or 'both'."
 msgstr "Netinkamas eksporto tipas. Turi būti „išduota“, „gauta“ arba „abu“."
 
-#: lithuania_compliance/public/js/ItemPricesModal.vue:459
+#: lithuania_compliance/public/js/ItemPricesModal.vue:454
 msgid "Invalid item data."
 msgstr "Neteisingi prekės duomenys."
 
@@ -534,42 +526,42 @@ msgstr "Sąskaitos norma"
 
 #. Label of the invoice_type_lt (Select) field in DocType 'Sales Invoice'
 #. Label of the invoice_type_lt (Select) field in DocType 'Purchase Invoice'
-#: lithuania_compliance/fixtures/custom_field.json
+#: lithuania_compliance/fixtures/custom_field.json:203
 msgid "Invoice Type"
 msgstr "Sąskaitos faktūros tipas"
 
 #. Option for the 'Invoice Type' (Select) field in DocType 'Purchase Invoice'
-#: lithuania_compliance/fixtures/custom_field.json
+#: lithuania_compliance/fixtures/custom_field.json:326
 msgid "Issued DS: Debit VAT invoice"
 msgstr "Išrašyta DS: Debetinė PVM sąskaita"
 
 #. Option for the 'Register Type' (Select) field in DocType 'i-SAF Generation'
-#: lithuania_compliance/lithuania_compliance/doctype/i_saf_generation/i_saf_generation.json
+#: lithuania_compliance/lithuania_compliance/doctype/i_saf_generation/i_saf_generation.json:23
 msgid "Issued Invoices"
 msgstr "Išrašytos sąskaitos"
 
 #. Option for the 'Invoice Type' (Select) field in DocType 'Sales Invoice'
-#: lithuania_compliance/fixtures/custom_field.json
+#: lithuania_compliance/fixtures/custom_field.json:212
 msgid "Issued KS: Credit VAT invoice"
 msgstr "Išrašyta KS: Kreditinė PVM sąskaita"
 
 #. Option for the 'Invoice Type' (Select) field in DocType 'Sales Invoice'
-#: lithuania_compliance/fixtures/custom_field.json
+#: lithuania_compliance/fixtures/custom_field.json:212
 msgid "Issued SF: Standard VAT invoice"
 msgstr "Išrašyta SF: Standartinė PVM sąskaita"
 
 #. Option for the 'Invoice Type' (Select) field in DocType 'Purchase Invoice'
-#: lithuania_compliance/fixtures/custom_field.json
+#: lithuania_compliance/fixtures/custom_field.json:326
 msgid "Issued VD: Summary debit VAT invoice"
 msgstr "Išrašyta VD: Santraukos debetinė PVM sąskaita"
 
 #. Option for the 'Invoice Type' (Select) field in DocType 'Sales Invoice'
-#: lithuania_compliance/fixtures/custom_field.json
+#: lithuania_compliance/fixtures/custom_field.json:212
 msgid "Issued VK: Summary credit VAT invoice"
 msgstr "Išrašyta VK: Santraukos kreditinė PVM sąskaita"
 
 #. Option for the 'Invoice Type' (Select) field in DocType 'Sales Invoice'
-#: lithuania_compliance/fixtures/custom_field.json
+#: lithuania_compliance/fixtures/custom_field.json:212
 msgid "Issued VS: Summary VAT invoice"
 msgstr "Išrašyta VS: Santraukos PVM sąskaita"
 
@@ -578,6 +570,8 @@ msgstr "Išrašyta VS: Santraukos PVM sąskaita"
 msgid "Item"
 msgstr "Prekė"
 
+#. Label of the item_code (Link) field in DocType 'Item Price Ignore List'
+#: lithuania_compliance/lithuania_compliance/doctype/item_price_ignore_list/item_price_ignore_list.json:22
 #: lithuania_compliance/public/js/ItemPricesModal.vue:47
 msgid "Item Code"
 msgstr "Prekės kodas"
@@ -587,12 +581,22 @@ msgstr "Prekės kodas"
 msgid "Item Group"
 msgstr "Prekių grupė"
 
+#. Label of the item_name (Data) field in DocType 'Item Price Ignore List'
+#: lithuania_compliance/lithuania_compliance/doctype/item_price_ignore_list/item_price_ignore_list.json:30
 #: lithuania_compliance/lithuania_compliance/report/stock_balance_with_barcode/stock_balance_with_barcode.py:497
-#: lithuania_compliance/public/js/ItemPricesModal.vue:467
-#: lithuania_compliance/public/js/ItemPricesModal.vue:565
+#: lithuania_compliance/public/js/ItemPricesModal.vue:462
+#: lithuania_compliance/public/js/ItemPricesModal.vue:560
 msgid "Item Name"
 msgstr "Prekės pavadinimas"
 
+#. Name of a DocType
+#: lithuania_compliance/lithuania_compliance/doctype/item_price_ignore_list/item_price_ignore_list.json:3
+msgid "Item Price Ignore List"
+msgstr "Prekių kainų ignoravimo sąrašas"
+
+#. Label of the section_item_prices (Section Break) field in DocType 'Lithuania
+#. Compliance Settings'
+#: lithuania_compliance/lithuania_compliance/doctype/lithuania_compliance_settings/lithuania_compliance_settings.json:92
 #: lithuania_compliance/public/js/purchase_invoice.js:10
 #: lithuania_compliance/public/js/purchase_invoice.js:21
 msgid "Item Prices"
@@ -602,33 +606,44 @@ msgstr "Prekių kainos"
 msgid "Items"
 msgstr "Prekės"
 
+#. Label of the ignored_item_price_items (Table) field in DocType 'Lithuania
+#. Compliance Settings'
+#: lithuania_compliance/lithuania_compliance/doctype/lithuania_compliance_settings/lithuania_compliance_settings.json:98
+msgid "Items Excluded from Manage Item Prices modal"
+msgstr "Prekės, išskirtos iš tvarkomų prekių kainų modulio lango"
+
+#. Description of the 'Items Excluded from Manage Item Prices modal' (Table)
+#. field in DocType 'Lithuania Compliance Settings'
+#: lithuania_compliance/lithuania_compliance/doctype/lithuania_compliance_settings/lithuania_compliance_settings.json:95
+msgid "Items listed here are hidden from the Item Prices dialog on Purchase Invoices. Use this for items like packaging, shipping, deposits, etc."
+msgstr "Prekės, išvardytos čia, yra paslėptos iš "Tvarkyti prekių kainas" dialogo pirkimo sąskaitose. Naudokite prekėms, tokioms kaip depozitai, siuntimas ir pan."
+
 #. Option for the 'Month' (Select) field in DocType 'i-SAF Generation'
-#: lithuania_compliance/lithuania_compliance/doctype/i_saf_generation/i_saf_generation.json
+#: lithuania_compliance/lithuania_compliance/doctype/i_saf_generation/i_saf_generation.json:47
 msgid "January"
 msgstr "Sausis"
 
 #. Option for the 'Month' (Select) field in DocType 'i-SAF Generation'
-#: lithuania_compliance/lithuania_compliance/doctype/i_saf_generation/i_saf_generation.json
+#: lithuania_compliance/lithuania_compliance/doctype/i_saf_generation/i_saf_generation.json:47
 msgid "July"
 msgstr "Liepa"
 
 #. Option for the 'Month' (Select) field in DocType 'i-SAF Generation'
-#: lithuania_compliance/lithuania_compliance/doctype/i_saf_generation/i_saf_generation.json
+#: lithuania_compliance/lithuania_compliance/doctype/i_saf_generation/i_saf_generation.json:47
 msgid "June"
 msgstr "Birželis"
 
+#: lithuania_compliance/lithuania_compliance/report/stock_balance_with_barcode/stock_balance_with_barcode.py:619
+msgid "Latest Age"
+msgstr "Naujausias amžius"
 
-#. Name of a Workspace
-#. Title of a Workspace Sidebar
-#: lithuania_compliance/lithuania_compliance/workspace/lithuania/lithuania.json
-#: lithuania_compliance/workspace_sidebar/lithuania.json
-msgid "Lithuania"
-msgstr "Lietuva"
+#. Title of a Sidebar
+#: lithuania_compliance/lithuania_compliance/sidebar/lithuania_compliance/lithuania_compliance.json:78
+msgid "Lithuania Compliance"
+msgstr "Lietuvos atitiktis"
 
 #. Name of a DocType
-#. Label of a shortcut in the Lithuania Workspace
-#: lithuania_compliance/lithuania_compliance/doctype/lithuania_compliance_settings/lithuania_compliance_settings.json
-#: lithuania_compliance/lithuania_compliance/workspace/lithuania/lithuania.json
+#: lithuania_compliance/lithuania_compliance/doctype/lithuania_compliance_settings/lithuania_compliance_settings.json:212
 msgid "Lithuania Compliance Settings"
 msgstr "Lietuvos atitikties nustatymai"
 
@@ -646,12 +661,12 @@ msgstr "Tvarkyti prekių kainas"
 
 #. Description of the 'Structured Reference Account Mapping' (Table) field in
 #. DocType 'Lithuania Compliance Settings'
-#: lithuania_compliance/lithuania_compliance/doctype/lithuania_compliance_settings/lithuania_compliance_settings.json
+#: lithuania_compliance/lithuania_compliance/doctype/lithuania_compliance_settings/lithuania_compliance_settings.json:183
 msgid "Map structured payment references (CdtrRefInf/Ref) to Accounts for CAMT bank import."
 msgstr "Struktūrizuotų mokėjimo nuorodų (CdtrRefInf/Ref) susiejimas su sąskaitomis CAMT banko importui."
 
 #. Option for the 'Month' (Select) field in DocType 'i-SAF Generation'
-#: lithuania_compliance/lithuania_compliance/doctype/i_saf_generation/i_saf_generation.json
+#: lithuania_compliance/lithuania_compliance/doctype/i_saf_generation/i_saf_generation.json:47
 msgid "March"
 msgstr "Kovas"
 
@@ -664,7 +679,7 @@ msgid "Match"
 msgstr "Sujungti"
 
 #. Option for the 'Month' (Select) field in DocType 'i-SAF Generation'
-#: lithuania_compliance/lithuania_compliance/doctype/i_saf_generation/i_saf_generation.json
+#: lithuania_compliance/lithuania_compliance/doctype/i_saf_generation/i_saf_generation.json:47
 msgid "May"
 msgstr "Gegužė"
 
@@ -672,7 +687,7 @@ msgstr "Gegužė"
 #. Taxes and Charges'
 #. Description of the 'VAT Classificator' (Link) field in DocType 'Sales Taxes
 #. and Charges'
-#: lithuania_compliance/fixtures/custom_field.json
+#: lithuania_compliance/fixtures/custom_field.json:410
 msgid "Might be used for i.SAF reports. The rate is taken from <strong>VAT Classificator</strong>, ignoring the 'Tax Rate' defined here."
 msgstr "Gali būti naudojama i.SAF ataskaitoms. Tarifas paimamas iš <strong>PVM klasifikatoriaus</strong>, ignoruojant čia apibrėžtą „Mokesčių tarifas“."
 
@@ -689,7 +704,7 @@ msgid "Missing receiving account"
 msgstr "Trūksta gavimo sąskaitos"
 
 #. Label of the month (Select) field in DocType 'i-SAF Generation'
-#: lithuania_compliance/lithuania_compliance/doctype/i_saf_generation/i_saf_generation.json
+#: lithuania_compliance/lithuania_compliance/doctype/i_saf_generation/i_saf_generation.json:46
 msgid "Month"
 msgstr "Mėnuo"
 
@@ -699,7 +714,7 @@ msgstr "Pavadinimas"
 
 #. Description of the 'Attach bank transactions file' (Attach) field in DocType
 #. 'Bank Importer'
-#: lithuania_compliance/lithuania_compliance/doctype/bank_importer/bank_importer.json
+#: lithuania_compliance/lithuania_compliance/doctype/bank_importer/bank_importer.json:29
 msgid "Needs to be in CAMT.053 format (ISO 20022 XML)."
 msgstr "Turi būti CAMT.053 formate (ISO 20022 XML)."
 
@@ -707,7 +722,7 @@ msgstr "Turi būti CAMT.053 formate (ISO 20022 XML)."
 msgid "No applicable price found"
 msgstr "Nerasta taikoma kaina"
 
-#: lithuania_compliance/public/js/ItemPricesModal.vue:556
+#: lithuania_compliance/public/js/ItemPricesModal.vue:551
 msgid "No applicable price to edit."
 msgstr "Nėra taikomos kainos redaguoti."
 
@@ -732,16 +747,16 @@ msgid "Nothing was imported."
 msgstr "Nieko nebuvo importuota."
 
 #. Option for the 'Month' (Select) field in DocType 'i-SAF Generation'
-#: lithuania_compliance/lithuania_compliance/doctype/i_saf_generation/i_saf_generation.json
+#: lithuania_compliance/lithuania_compliance/doctype/i_saf_generation/i_saf_generation.json:47
 msgid "November"
 msgstr "Lapkritis"
 
 #. Option for the 'Month' (Select) field in DocType 'i-SAF Generation'
-#: lithuania_compliance/lithuania_compliance/doctype/i_saf_generation/i_saf_generation.json
+#: lithuania_compliance/lithuania_compliance/doctype/i_saf_generation/i_saf_generation.json:47
 msgid "October"
 msgstr "Spalis"
 
-#: lithuania_compliance/public/js/ItemPricesModal.vue:594
+#: lithuania_compliance/public/js/ItemPricesModal.vue:589
 msgid "Open Item Price"
 msgstr "Atidaryti prekės kainą"
 
@@ -759,7 +774,7 @@ msgstr "Šalis"
 
 #. Label of the payable_account (Link) field in DocType 'Employee Payable
 #. Account Mapping'
-#: lithuania_compliance/lithuania_compliance/doctype/employee_payable_account_mapping/employee_payable_account_mapping.json
+#: lithuania_compliance/lithuania_compliance/doctype/employee_payable_account_mapping/employee_payable_account_mapping.json:30
 msgid "Payable Account"
 msgstr "Mokėtina sąskaita"
 
@@ -773,7 +788,7 @@ msgstr "Mokėjimas tiekėjui {0}"
 
 #. Description of the 'Employee Payable Account Mapping' (Table) field in
 #. DocType 'Lithuania Compliance Settings'
-#: lithuania_compliance/lithuania_compliance/doctype/lithuania_compliance_settings/lithuania_compliance_settings.json
+#: lithuania_compliance/lithuania_compliance/doctype/lithuania_compliance_settings/lithuania_compliance_settings.json:148
 msgid "Per-employee override of the payable account used in bank import payments."
 msgstr "Darbuotojo mokėtinos sąskaitos perrašymas, naudojamas banko importo mokėjimuose."
 
@@ -786,55 +801,55 @@ msgid "Please fill all required fields"
 msgstr "Prašome užpildyti visus privalomus laukus"
 
 #. Label of the preview_html (HTML) field in DocType 'Bank Importer'
-#: lithuania_compliance/lithuania_compliance/doctype/bank_importer/bank_importer.json
+#: lithuania_compliance/lithuania_compliance/doctype/bank_importer/bank_importer.json:40
 #: lithuania_compliance/public/js/purchase_invoice.js:12
 #: lithuania_compliance/public/js/purchase_invoice.js:17
 msgid "Preview"
 msgstr "Peržiūra"
 
-#: lithuania_compliance/public/js/ItemPricesModal.vue:482
-#: lithuania_compliance/public/js/ItemPricesModal.vue:581
+#: lithuania_compliance/public/js/ItemPricesModal.vue:477
+#: lithuania_compliance/public/js/ItemPricesModal.vue:576
 msgid "Price"
 msgstr "Kaina"
 
-#: lithuania_compliance/public/js/ItemPricesModal.vue:474
-#: lithuania_compliance/public/js/ItemPricesModal.vue:572
+#: lithuania_compliance/public/js/ItemPricesModal.vue:469
+#: lithuania_compliance/public/js/ItemPricesModal.vue:567
 msgid "Price List"
 msgstr "Kainoraštis"
 
-#: lithuania_compliance/public/js/ItemPricesModal.vue:516
+#: lithuania_compliance/public/js/ItemPricesModal.vue:511
 msgid "Price created successfully"
 msgstr "Kaina sėkmingai sukurta"
 
-#: lithuania_compliance/public/js/ItemPricesModal.vue:400
+#: lithuania_compliance/public/js/ItemPricesModal.vue:395
 msgid "Price deleted successfully"
 msgstr "Kaina sėkmingai ištrinta"
 
-#: lithuania_compliance/public/js/ItemPricesModal.vue:444
-#: lithuania_compliance/public/js/ItemPricesModal.vue:606
+#: lithuania_compliance/public/js/ItemPricesModal.vue:439
+#: lithuania_compliance/public/js/ItemPricesModal.vue:601
 msgid "Price updated successfully"
 msgstr "Kaina sėkmingai atnaujinta"
 
 #. Label of the section_purchase_naming (Section Break) field in DocType
 #. 'Lithuania Compliance Settings'
-#: lithuania_compliance/lithuania_compliance/doctype/lithuania_compliance_settings/lithuania_compliance_settings.json
+#: lithuania_compliance/lithuania_compliance/doctype/lithuania_compliance_settings/lithuania_compliance_settings.json:80
 msgid "Purchase Invoices"
 msgstr "Pirkimo sąskaitos faktūros"
 
 #. Label of the purchase_round_off_account (Link) field in DocType 'Lithuania
 #. Compliance Settings'
-#: lithuania_compliance/lithuania_compliance/doctype/lithuania_compliance_settings/lithuania_compliance_settings.json
+#: lithuania_compliance/lithuania_compliance/doctype/lithuania_compliance_settings/lithuania_compliance_settings.json:45
 msgid "Purchase Round Off Account"
 msgstr "Pirkimo suapvalinimo sąskaita"
 
 #. Label of the purchase_vat_account (Link) field in DocType 'Lithuania
 #. Compliance Settings'
-#: lithuania_compliance/lithuania_compliance/doctype/lithuania_compliance_settings/lithuania_compliance_settings.json
+#: lithuania_compliance/lithuania_compliance/doctype/lithuania_compliance_settings/lithuania_compliance_settings.json:74
 msgid "Purchase VAT Account"
 msgstr "Pirkimo PVM kor. sąskaita"
 
 #. Label of the rate (Float) field in DocType 'VAT Classificator'
-#: lithuania_compliance/lithuania_compliance/doctype/vat_classificator/vat_classificator.json
+#: lithuania_compliance/lithuania_compliance/doctype/vat_classificator/vat_classificator.json:41
 #: lithuania_compliance/public/js/isaf_utils.js:39
 msgid "Rate (%)"
 msgstr "Norma (%)"
@@ -848,50 +863,50 @@ msgid "Receive payment"
 msgstr "Gauti mokėjimą"
 
 #. Option for the 'Invoice Type' (Select) field in DocType 'Sales Invoice'
-#: lithuania_compliance/fixtures/custom_field.json
+#: lithuania_compliance/fixtures/custom_field.json:212
 msgid "Received DS: Debit VAT invoice"
 msgstr "Gauta DS: Debetinė PVM sąskaita"
 
 #. Option for the 'Register Type' (Select) field in DocType 'i-SAF Generation'
-#: lithuania_compliance/lithuania_compliance/doctype/i_saf_generation/i_saf_generation.json
+#: lithuania_compliance/lithuania_compliance/doctype/i_saf_generation/i_saf_generation.json:23
 msgid "Received Invoices"
 msgstr "Gautos sąskaitos"
 
 #. Option for the 'Invoice Type' (Select) field in DocType 'Purchase Invoice'
-#: lithuania_compliance/fixtures/custom_field.json
+#: lithuania_compliance/fixtures/custom_field.json:326
 msgid "Received KS: Credit VAT invoice"
 msgstr "Gauta KS: Kreditinė PVM sąskaita"
 
 #. Option for the 'Invoice Type' (Select) field in DocType 'Purchase Invoice'
-#: lithuania_compliance/fixtures/custom_field.json
+#: lithuania_compliance/fixtures/custom_field.json:326
 msgid "Received SF: Standard VAT invoice"
 msgstr "Gauta SF: Standartinė PVM sąskaita"
 
 #. Option for the 'Invoice Type' (Select) field in DocType 'Sales Invoice'
-#: lithuania_compliance/fixtures/custom_field.json
+#: lithuania_compliance/fixtures/custom_field.json:212
 msgid "Received VD: Summary debit VAT invoice"
 msgstr "Gauta VD: Santraukos debetinė PVM sąskaita"
 
 #. Option for the 'Invoice Type' (Select) field in DocType 'Purchase Invoice'
-#: lithuania_compliance/fixtures/custom_field.json
+#: lithuania_compliance/fixtures/custom_field.json:326
 msgid "Received VK: Summary credit VAT invoice"
 msgstr "Gauta VK: Santraukos kreditinė PVM sąskaita"
 
 #. Option for the 'Invoice Type' (Select) field in DocType 'Purchase Invoice'
-#: lithuania_compliance/fixtures/custom_field.json
+#: lithuania_compliance/fixtures/custom_field.json:326
 msgid "Received VS: Summary VAT invoice"
 msgstr "Gauta VS: Santraukos PVM sąskaita"
 
 #. Label of the reference (Data) field in DocType 'Structured Reference Account
 #. Mapping'
 #: lithuania_compliance/lithuania_compliance/doctype/bank_importer/bank_importer.js:242
-#: lithuania_compliance/lithuania_compliance/doctype/structured_reference_account_mapping/structured_reference_account_mapping.json
+#: lithuania_compliance/lithuania_compliance/doctype/structured_reference_account_mapping/structured_reference_account_mapping.json:21
 msgid "Reference"
 msgstr "Nuoroda"
 
 #. Label of the references_section (Section Break) field in DocType 'Lithuania
 #. Compliance Settings'
-#: lithuania_compliance/lithuania_compliance/doctype/lithuania_compliance_settings/lithuania_compliance_settings.json
+#: lithuania_compliance/lithuania_compliance/doctype/lithuania_compliance_settings/lithuania_compliance_settings.json:204
 msgid "References"
 msgstr "Nuorodos"
 
@@ -901,40 +916,40 @@ msgstr "Atnaujinti"
 
 #. Label of the register_type (Select) field in DocType 'i-SAF Generation'
 #: lithuania_compliance/lithuania_compliance/doctype/i_saf_generation/i_saf_generation.js:49
-#: lithuania_compliance/lithuania_compliance/doctype/i_saf_generation/i_saf_generation.json
+#: lithuania_compliance/lithuania_compliance/doctype/i_saf_generation/i_saf_generation.json:22
 msgid "Register Type"
 msgstr "Registro tipas"
 
 #. Label of the section_break (Section Break) field in DocType 'i-SAF
 #. Generation'
-#: lithuania_compliance/lithuania_compliance/doctype/i_saf_generation/i_saf_generation.json
+#: lithuania_compliance/lithuania_compliance/doctype/i_saf_generation/i_saf_generation.json:30
 msgid "Reporting Period"
 msgstr "Ataskaitinis laikotarpis"
 
 #. Label of the section_rounding (Section Break) field in DocType 'Lithuania
 #. Compliance Settings'
-#: lithuania_compliance/lithuania_compliance/doctype/lithuania_compliance_settings/lithuania_compliance_settings.json
+#: lithuania_compliance/lithuania_compliance/doctype/lithuania_compliance_settings/lithuania_compliance_settings.json:40
 msgid "Rounding Accounts"
 msgstr "Suapvalinimo sąskaitos"
 
 #. Label of the sales_round_off_account (Link) field in DocType 'Lithuania
 #. Compliance Settings'
-#: lithuania_compliance/lithuania_compliance/doctype/lithuania_compliance_settings/lithuania_compliance_settings.json
+#: lithuania_compliance/lithuania_compliance/doctype/lithuania_compliance_settings/lithuania_compliance_settings.json:51
 msgid "Sales Round Off Account"
 msgstr "Pardavimo suapvalinimo sąskaita"
 
 #. Label of the sales_vat_account (Link) field in DocType 'Lithuania Compliance
 #. Settings'
-#: lithuania_compliance/lithuania_compliance/doctype/lithuania_compliance_settings/lithuania_compliance_settings.json
+#: lithuania_compliance/lithuania_compliance/doctype/lithuania_compliance_settings/lithuania_compliance_settings.json:63
 msgid "Sales VAT Account"
 msgstr "Pardavimo PVM kor. sąskaita"
 
-#: lithuania_compliance/public/js/ItemPricesModal.vue:495
-#: lithuania_compliance/public/js/ItemPricesModal.vue:599
+#: lithuania_compliance/public/js/ItemPricesModal.vue:490
+#: lithuania_compliance/public/js/ItemPricesModal.vue:594
 msgid "Save"
 msgstr "Išsaugoti"
 
-#: lithuania_compliance/public/js/ItemPricesModal.vue:499
+#: lithuania_compliance/public/js/ItemPricesModal.vue:494
 msgid "Saving..."
 msgstr "Saugoma..."
 
@@ -943,7 +958,7 @@ msgid "Selling"
 msgstr "Pardavimas"
 
 #. Option for the 'Month' (Select) field in DocType 'i-SAF Generation'
-#: lithuania_compliance/lithuania_compliance/doctype/i_saf_generation/i_saf_generation.json
+#: lithuania_compliance/lithuania_compliance/doctype/i_saf_generation/i_saf_generation.json:47
 msgid "September"
 msgstr "Rugsėjis"
 
@@ -951,25 +966,25 @@ msgstr "Rugsėjis"
 msgid "Set"
 msgstr "Nustatyti"
 
-#. Label of a Workspace Sidebar Item
-#: lithuania_compliance/workspace_sidebar/lithuania.json
+#. Label of a Sidebar Item
+#: lithuania_compliance/lithuania_compliance/sidebar/lithuania_compliance/lithuania_compliance.json:32
 msgid "Settings"
 msgstr "Nustatymai"
 
 #. Description of the 'EMV Account' (Link) field in DocType 'Lithuania
 #. Compliance Settings'
-#: lithuania_compliance/lithuania_compliance/doctype/lithuania_compliance_settings/lithuania_compliance_settings.json
+#: lithuania_compliance/lithuania_compliance/doctype/lithuania_compliance_settings/lithuania_compliance_settings.json:127
 msgid "Source account for EMV transactions that are transferred into the bank account."
 msgstr "Šaltinio sąskaita EMV operacijoms, kurios pervedamos į banko sąskaitą."
 
 #. Description of the 'Cash Deposit Account' (Link) field in DocType 'Lithuania
 #. Compliance Settings'
-#: lithuania_compliance/lithuania_compliance/doctype/lithuania_compliance_settings/lithuania_compliance_settings.json
+#: lithuania_compliance/lithuania_compliance/doctype/lithuania_compliance_settings/lithuania_compliance_settings.json:113
 msgid "Source account for cash deposits (CAMT SubFmlyCd CDPT) that are transferred into the bank account."
 msgstr "Sąskaita grynųjų pinigų įnašams (CAMT SubFmlyCd CDPT), kurie pervedami į banko sąskaitą."
 
 #. Name of a report
-#: lithuania_compliance/lithuania_compliance/report/stock_balance_with_barcode/stock_balance_with_barcode.json
+#: lithuania_compliance/lithuania_compliance/report/stock_balance_with_barcode/stock_balance_with_barcode.json:18
 msgid "Stock Balance with Barcode"
 msgstr "Atsargų likutis su brūkšniniu kodu"
 
@@ -980,8 +995,8 @@ msgstr "Keista. Nerasta PVM klasifikatoriaus su kodu {0}. Jis turėtų egzistuot
 #. Label of the structured_reference_account_mapping (Table) field in DocType
 #. 'Lithuania Compliance Settings'
 #. Name of a DocType
-#: lithuania_compliance/lithuania_compliance/doctype/lithuania_compliance_settings/lithuania_compliance_settings.json
-#: lithuania_compliance/lithuania_compliance/doctype/structured_reference_account_mapping/structured_reference_account_mapping.json
+#: lithuania_compliance/lithuania_compliance/doctype/lithuania_compliance_settings/lithuania_compliance_settings.json:186
+#: lithuania_compliance/lithuania_compliance/doctype/structured_reference_account_mapping/structured_reference_account_mapping.json:3
 msgid "Structured Reference Account Mapping"
 msgstr "Struktūrizuotų nuorodų sąskaitų susiejimas"
 
@@ -990,11 +1005,12 @@ msgid "Suggested Prices"
 msgstr "Siūlomos kainos"
 
 #. Name of a role
-#: lithuania_compliance/lithuania_compliance/doctype/employee_payable_account_mapping/employee_payable_account_mapping.json
-#: lithuania_compliance/lithuania_compliance/doctype/i_saf_generation/i_saf_generation.json
-#: lithuania_compliance/lithuania_compliance/doctype/lithuania_compliance_settings/lithuania_compliance_settings.json
-#: lithuania_compliance/lithuania_compliance/doctype/structured_reference_account_mapping/structured_reference_account_mapping.json
-#: lithuania_compliance/lithuania_compliance/doctype/vat_classificator/vat_classificator.json
+#: lithuania_compliance/lithuania_compliance/doctype/employee_payable_account_mapping/employee_payable_account_mapping.json:37
+#: lithuania_compliance/lithuania_compliance/doctype/i_saf_generation/i_saf_generation.json:70
+#: lithuania_compliance/lithuania_compliance/doctype/item_price_ignore_list/item_price_ignore_list.json:39
+#: lithuania_compliance/lithuania_compliance/doctype/lithuania_compliance_settings/lithuania_compliance_settings.json:221
+#: lithuania_compliance/lithuania_compliance/doctype/structured_reference_account_mapping/structured_reference_account_mapping.json:36
+#: lithuania_compliance/lithuania_compliance/doctype/vat_classificator/vat_classificator.json:54
 msgid "System Manager"
 msgstr "Sistemos valdytojas"
 
@@ -1041,7 +1057,7 @@ msgstr "Tipas"
 #. Description of the 'Business Code' (Data) field in DocType 'Supplier'
 #. Description of the 'Business Code' (Data) field in DocType 'Customer'
 #. Description of the 'Business Code' (Data) field in DocType 'Company'
-#: lithuania_compliance/fixtures/custom_field.json
+#: lithuania_compliance/fixtures/custom_field.json:11
 msgid "Unique number assigned to a company by the Lithuanian State"
 msgstr "Lietuvoje registruotai įmonei suteiktas unikalus numeris"
 
@@ -1059,32 +1075,32 @@ msgstr "Atnaujinti pirkimo kainas"
 
 #. Label of the use_bill_no_as_title (Check) field in DocType 'Lithuania
 #. Compliance Settings'
-#: lithuania_compliance/lithuania_compliance/doctype/lithuania_compliance_settings/lithuania_compliance_settings.json
+#: lithuania_compliance/lithuania_compliance/doctype/lithuania_compliance_settings/lithuania_compliance_settings.json:87
 msgid "Use Bill No. as Document Title"
 msgstr "Dokumento pavadinimui naudoti sąskaitos numerį."
 
 #. Description of the 'Invoice Type' (Select) field in DocType 'Sales Invoice'
 #. Description of the 'Invoice Type' (Select) field in DocType 'Purchase
 #. Invoice'
-#: lithuania_compliance/fixtures/custom_field.json
+#: lithuania_compliance/fixtures/custom_field.json:182
 msgid "Used for i.SAF reporting"
 msgstr "Naudojama i.SAF ataskaitose"
 
 #. Description of the 'Bill No (If Received Debit Invoice)' (Data) field in
 #. DocType 'Sales Invoice'
-#: lithuania_compliance/fixtures/custom_field.json
+#: lithuania_compliance/fixtures/custom_field.json:239
 msgid "Used for i.SAF reporting if debit invoice received from client"
 msgstr "Naudojama i.SAF ataskaitose, jei iš kliento gauta debetinė sąskaita"
 
 #. Description of the 'Bank Fee Expense Account' (Link) field in DocType
 #. 'Lithuania Compliance Settings'
-#: lithuania_compliance/lithuania_compliance/doctype/lithuania_compliance_settings/lithuania_compliance_settings.json
+#: lithuania_compliance/lithuania_compliance/doctype/lithuania_compliance_settings/lithuania_compliance_settings.json:162
 msgid "Used for small bank fees (e.g. < 1 EUR) detected in CAMT bank statement imports."
 msgstr "Naudojama mažoms banko mokesčiams (pvz., < 1 EUR), aptiktoms CAMT banko išrašų importuose."
 
 #. Label of the section_vat_accounts (Section Break) field in DocType
 #. 'Lithuania Compliance Settings'
-#: lithuania_compliance/lithuania_compliance/doctype/lithuania_compliance_settings/lithuania_compliance_settings.json
+#: lithuania_compliance/lithuania_compliance/doctype/lithuania_compliance_settings/lithuania_compliance_settings.json:57
 msgid "VAT Accounts"
 msgstr "PVM kor. sąskaitos"
 
@@ -1096,11 +1112,11 @@ msgstr "PVM kor. sąskaitos"
 #. Item'
 #. Label of the vat_classificator (Link) field in DocType 'Sales Invoice Item'
 #. Name of a DocType
-#. Label of a Workspace Sidebar Item
-#: lithuania_compliance/fixtures/custom_field.json
-#: lithuania_compliance/lithuania_compliance/doctype/vat_classificator/vat_classificator.json
+#. Label of a Sidebar Item
+#: lithuania_compliance/fixtures/custom_field.json:374
+#: lithuania_compliance/lithuania_compliance/doctype/vat_classificator/vat_classificator.json:3
+#: lithuania_compliance/lithuania_compliance/sidebar/lithuania_compliance/lithuania_compliance.json:49
 #: lithuania_compliance/public/js/isaf_utils.js:36
-#: lithuania_compliance/workspace_sidebar/lithuania.json
 msgid "VAT Classificator"
 msgstr "PVM klasifikatorius"
 
@@ -1108,14 +1124,14 @@ msgstr "PVM klasifikatorius"
 msgid "Valid"
 msgstr "Galioja"
 
-#: lithuania_compliance/public/js/ItemPricesModal.vue:488
-#: lithuania_compliance/public/js/ItemPricesModal.vue:587
+#: lithuania_compliance/public/js/ItemPricesModal.vue:483
+#: lithuania_compliance/public/js/ItemPricesModal.vue:582
 #: lithuania_compliance/public/js/purchase_invoice.js:120
 msgid "Valid From"
 msgstr "Galioja nuo"
 
-#: lithuania_compliance/public/js/ItemPricesModal.vue:493
-#: lithuania_compliance/public/js/ItemPricesModal.vue:592
+#: lithuania_compliance/public/js/ItemPricesModal.vue:488
+#: lithuania_compliance/public/js/ItemPricesModal.vue:587
 #: lithuania_compliance/public/js/purchase_invoice.js:121
 msgid "Valid Until"
 msgstr "Galioja iki"
@@ -1129,17 +1145,17 @@ msgstr "Peržiūrėti"
 #. Description of the 'VAT Classificator' (Link) field in DocType 'Purchase
 #. Invoice Item'
 #. Description of the 'VAT Classificator' (Link) field in DocType 'Sales
-#: lithuania_compliance/fixtures/custom_field.json
+#: lithuania_compliance/fixtures/custom_field.json:524
 msgid "Will override the VAT Classificator defined in the Item Doctype."
 msgstr "Pakeis PVM klasifikatorių, apibrėžtą prekės kortelėje."
 
 #. Label of the year (Int) field in DocType 'i-SAF Generation'
-#: lithuania_compliance/lithuania_compliance/doctype/i_saf_generation/i_saf_generation.json
+#: lithuania_compliance/lithuania_compliance/doctype/i_saf_generation/i_saf_generation.json:35
 msgid "Year"
 msgstr "Metai"
 
 #. Name of a DocType
-#: lithuania_compliance/lithuania_compliance/doctype/i_saf_generation/i_saf_generation.json
+#: lithuania_compliance/lithuania_compliance/doctype/i_saf_generation/i_saf_generation.json:59
 msgid "i-SAF Generation"
 msgstr "i.SAF generavimas"
 

@@ -6,16 +6,11 @@ import frappe
 from erpnext.stock.doctype.item_price.item_price import ItemPriceDuplicateItem
 from frappe.utils import flt
 
+import lithuania_compliance.settings as lt_settings
+
 
 def _add_supplier_for_items(doc):
-	"""
-	Ensure invoice supplier is in each Item's supplier list.
-
-	For every item row in the Purchase Invoice, this job loads the
-	corresponding Item and, if the invoice supplier is not already
-	listed in the Item's ``supplier_items`` child table, appends a new
-	row and saves the Item.
-	"""
+	"""Ensure invoice supplier is in each Item's supplier list."""
 	supplier = getattr(doc, "supplier", None)
 	if not supplier:
 		return
@@ -47,11 +42,8 @@ def _add_supplier_for_items(doc):
 			frappe.db.commit()
 
 
-def enqueue_supplier_items_sync(doc, method=None):
-	"""Enqueue background job to validate suppliers on submit.
-
-	Hook signature: ``doc, method``.
-	"""
+def enqueue_supplier_items_sync(doc):
+	"""Enqueue background job to validate suppliers"""
 	frappe.enqueue(
 		"lithuania_compliance.api.purchase_invoice._add_supplier_for_items",
 		doc=doc,
@@ -181,6 +173,7 @@ def get_item_prices(invoice_name):
 	"""
 	invoice = frappe.get_doc("Purchase Invoice", invoice_name)
 	today = frappe.utils.getdate(frappe.utils.now())
+	ignored_item_codes = lt_settings.get_ignored_item_price_codes()
 
 	items_data = []
 
@@ -205,7 +198,7 @@ def get_item_prices(invoice_name):
 	).run(as_dict=True)
 
 	# get default VAT classificator rate
-	default_vat_classificator = frappe.get_single("Lithuania Compliance Settings").default_vat_classificator
+	default_vat_classificator = lt_settings.get_default_vat_classificator()
 	default_vat_rate = frappe.get_value("VAT Classificator", default_vat_classificator, "rate") or 21
 	# Create lookup for query results by item_code
 	item_lookup = {item["item_code"]: item for item in invoice_items_with_barcodes}
@@ -238,6 +231,9 @@ def get_item_prices(invoice_name):
 		item_code = invoice_item.item_code
 		item_rate = invoice_item.rate
 		invoice_item_vat_classificator = invoice_item.get("vat_classificator")
+
+		if item_code in [item["item_code"] for item in items_data] or item_code in ignored_item_codes:
+			continue
 
 		# Get the corresponding query result
 		item = item_lookup.get(item_code)

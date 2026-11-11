@@ -1,17 +1,33 @@
-import { createApp } from "vue";
+import { createApp, h, reactive } from "vue";
 import ItemPricesModal from "./ItemPricesModal.vue";
 
-frappe.ui.ItemPricesModal = ItemPricesModal;
+function mount_item_prices_modal(container, invoiceName) {
+    const state = reactive({ isOpen: true, invoiceName });
 
-function setup_vue(rootComponent) {
-    const app = createApp(rootComponent);
+    const app = createApp({
+        render() {
+            return h(ItemPricesModal, {
+                isOpen: state.isOpen,
+                invoiceName: state.invoiceName,
+                onClose: () => {
+                    state.isOpen = false;
+                },
+                onReopen: () => {
+                    state.isOpen = true;
+                },
+            });
+        },
+    });
 
     // Make Frappe globals available to Vue components
     app.config.globalProperties.__ = window.__;
     app.config.globalProperties.frappe = window.frappe;
 
-    return app;
+    app.mount(container);
+
+    return { app, state };
 }
 
-frappe.ui.setup_vue = setup_vue;
-export default setup_vue;
+frappe.ui.mount_item_prices_modal = mount_item_prices_modal;
+
+export default mount_item_prices_modal;

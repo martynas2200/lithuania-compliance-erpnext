@@ -25,7 +25,7 @@
                         @click="closeModal"
                     >
                         <svg class="icon icon-sm" aria-hidden="true">
-                            <use class="close-alt" href="#icon-close-alt"></use>
+                            <use class="close-alt" href="#icon-x"></use>
                         </svg>
                     </button>
                 </div>
@@ -148,7 +148,7 @@
                                             :title="__('Edit')"
                                         >
                                             <svg class="icon icon-sm" aria-hidden="true">
-                                                <use href="#icon-edit"></use>
+                                                <use href="#icon-pencil"></use>
                                             </svg>
                                         </button>
                                         <button
@@ -249,8 +249,6 @@ export default {
     props: {
         isOpen: Boolean,
         invoiceName: String,
-        frm: Object,
-        forced: Boolean,
     },
     emits: ["close", "reopen"],
     data() {
@@ -308,26 +306,7 @@ export default {
                     invoice_name: this.invoiceName,
                 },
                 callback: (r) => {
-                    if (r.message) {
-                        let items_data = r.message;
-
-                        // Filter items if not forced
-                        if (!this.forced) {
-                            items_data = (r.message || []).filter((item) => {
-                                // Really specific for Lithuania
-                                if (item.item_name === "Užstatinė tara") {
-                                    return false;
-                                }
-                                const has_no_price = !item.applicable_price;
-                                const markup_value =
-                                    typeof item.markup === "number" ? item.markup : null;
-                                const has_low_markup = markup_value !== null && markup_value < 20;
-                                return has_no_price || has_low_markup;
-                            });
-                        }
-
-                        this.itemsData = items_data;
-                    }
+                    this.itemsData = r.message || [];
                     this.loading = false;
                 },
             });
@@ -378,10 +357,6 @@ export default {
         navigateToItem(itemCode) {
             this.$emit("close");
             frappe.set_route("Form", "Item", itemCode);
-        },
-        editPriceDirectly(priceId) {
-            this.$emit("close");
-            frappe.set_route("Form", "Item Price", priceId);
         },
         askToDeletePrice(priceId) {
             frappe.confirm(__("Are you sure you want to delete this record?"), () =>
@@ -589,7 +564,8 @@ export default {
                 secondary_action_label: __("Open Item Price"),
                 secondary_action: () => {
                     shouldReopen = false;
-                    this.editPriceDirectly(item.applicable_price.name).bind(this);
+                    new_dialog.hide();
+                    frappe.set_route("Form", "Item Price", item.applicable_price.name);
                 },
                 primary_action_label: __("Save"),
                 primary_action: () => {

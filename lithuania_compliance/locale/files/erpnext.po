@@ -11281,11 +11281,11 @@ msgstr "Skirstyti pagal kor. sąskaitas"
 
 #: erpnext/buying/report/supplier_quotation_comparison/supplier_quotation_comparison.js:84
 msgid "Categorize by Item"
-msgstr "Skirstyti pagal elementą"
+msgstr "Skirstyti pagal prekes"
 
 #: erpnext/accounts/report/general_ledger/general_ledger.js:134
 msgid "Categorize by Party"
-msgstr "Skirstyti pagal šalis"
+msgstr "Skirstyti pagal partnerius"
 
 #: erpnext/buying/report/supplier_quotation_comparison/supplier_quotation_comparison.js:83
 #: erpnext/buying/report/supplier_quotation_comparison/supplier_quotation_comparison.js:86
@@ -11609,7 +11609,7 @@ msgstr ""
 msgid ""
 "Check row {0} for account {1}: Party is only allowed if Party Type is set"
 msgstr ""
-"Patikrinkite eilutę {0} kor. sąskaitos {1} atveju: Šalis leidžiama tik tuo "
+"Patikrinkite eilutę {0} kor. sąskaitos {1} atveju: Partneris leidžiama tik tuo "
 "atveju, jei nustatytas „Patnerio tipas“"
 
 #. Description of the 'Must be Whole Number' (Check) field in DocType 'UOM'
@@ -17855,7 +17855,7 @@ msgstr "Trinimas vyksta!"
 
 #: erpnext/regional/__init__.py:14
 msgid "Deletion is not permitted for country {0}"
-msgstr "Šalies {0} neleidžiama ištrinti"
+msgstr "Partnerio {0} neleidžiama ištrinti"
 
 #: erpnext/setup/doctype/transaction_deletion_record/transaction_deletion_record.js:216
 msgid "Deletion process restarted"
@@ -20570,7 +20570,7 @@ msgstr "Įgalinti vykdomo kapitalo darbai apskaitą"
 #. 'Accounts Settings'
 #: erpnext/accounts/doctype/accounts_settings/accounts_settings.json
 msgid "Enable Common Party Accounting"
-msgstr "Įgalinti bendros šalies apskaitą"
+msgstr "Įgalinti bendro partnerio apskaitą"
 
 #. Label of the enable_deferred_expense (Check) field in DocType 'Purchase
 #. Invoice Item'
@@ -21607,7 +21607,7 @@ msgstr "Akcizo puslapio numeris"
 
 #: erpnext/accounts/report/trial_balance_for_party/trial_balance_for_party.js:86
 msgid "Exclude Zero Balance Parties"
-msgstr "Neįtraukti nulines balanso šalis"
+msgstr "Neįtraukti nulinius balanso partnerius"
 
 #. Label of the doctypes_to_be_ignored (Table) field in DocType 'Transaction
 #. Deletion Record'
@@ -25691,7 +25691,7 @@ msgid ""
 "fuzzy matching using the party name and transaction description."
 msgstr ""
 "Jei partnerio negalima atpažinti pagal sąskaitos numerį ar IBAN, sistema "
-"bandys atlikti apytikslį atitikimą, remdamasi šalies pavadinimu ir "
+"bandys atlikti apytikslį atitikimą, remdamasi partnerio pavadinimu ir "
 "operacijos aprašymu."
 
 #: erpnext/manufacturing/doctype/operation/operation.js:32
@@ -26219,7 +26219,7 @@ msgstr "Jei šio partnerio nėra, sukurkite ją naudodami lauką „Kliento vard
 #: erpnext/accounts/doctype/opening_invoice_creation_tool/opening_invoice_creation_tool.js:202
 msgid "If party does not exist, create it using the Supplier Name field."
 msgstr ""
-"Jei šalis neegzistuoja, ją reikia sukurti naudodamiesi laukeliu „Tiekėjo "
+"Jei partneris neegzistuoja, ją reikia sukurti naudodamiesi laukeliu „Tiekėjo "
 "pavadinimas“."
 
 #. Description of the 'Free Item Rate' (Currency) field in DocType 'Pricing
@@ -33723,7 +33723,7 @@ msgstr "Didžiausia grynoji norma"
 #. Reconciliation'
 #: erpnext/accounts/doctype/payment_reconciliation/payment_reconciliation.json
 msgid "Maximum Payment Amount"
-msgstr "Didžiausia išmokos suma"
+msgstr "Didžiausia mokėjimo suma"
 
 #: erpnext/manufacturing/report/bom_stock_analysis/bom_stock_analysis.py:82
 #: erpnext/manufacturing/report/bom_stock_analysis/bom_stock_analysis.py:151
@@ -39039,7 +39039,7 @@ msgstr "Parts Per Million"
 #: erpnext/stock/doctype/item/item_prices.html:83
 #: erpnext/stock/report/serial_no_ledger/serial_no_ledger.py:86
 msgid "Party"
-msgstr "Šalis"
+msgstr "Partneris"
 
 #. Name of a DocType
 #: erpnext/accounts/doctype/party_account/party_account.json
@@ -39080,7 +39080,7 @@ msgstr "Partnerio sąskaitos Nr. (banko išrašas)"
 msgid ""
 "Party Account {0} currency ({1}) and document currency ({2}) should be same"
 msgstr ""
-"Šalies sąskaitos {0} valiuta ({1}) ir dokumento valiuta ({2}) turėtų būti ta "
+"Partnerio sąskaitos {0} valiuta ({1}) ir dokumento valiuta ({2}) turėtų būti ta "
 "pati"
 
 #. Label of the party_bank_account (Link) field in DocType 'Payment Entry'
@@ -39100,7 +39100,7 @@ msgstr "Partnerio informacija"
 #. Label of the party_full_name (Data) field in DocType 'Contract'
 #: erpnext/crm/doctype/contract/contract.json
 msgid "Party Full Name"
-msgstr "Šalies vardas ir pavardė"
+msgstr "Partnerio vardas ir pavardė"
 
 #. Option for the 'Maps To' (Select) field in DocType 'Bank Statement Import
 #. Log Column Map'
@@ -39125,21 +39125,21 @@ msgstr "Partnerio kodas"
 #: erpnext/accounts/doctype/pricing_rule/pricing_rule.json
 #: erpnext/accounts/doctype/promotional_scheme/promotional_scheme.json
 msgid "Party Information"
-msgstr "Šalies informacija"
+msgstr "Partnerio informacija"
 
 #. Label of the party_item_code (Data) field in DocType 'Blanket Order Item'
 #: erpnext/manufacturing/doctype/blanket_order_item/blanket_order_item.json
 msgid "Party Item Code"
-msgstr "Šalies elemento kodas"
+msgstr "Partnerio elemento kodas"
 
 #. Name of a DocType
 #: erpnext/accounts/doctype/party_link/party_link.json
 msgid "Party Link"
-msgstr "Šalies nuoroda"
+msgstr "Partnerio nuoroda"
 
 #: erpnext/controllers/sales_and_purchase_return.py:49
 msgid "Party Mismatch"
-msgstr "Šalies nesutapimas"
+msgstr "Partnerio nesutapimas"
 
 #. Label of the party_name (Data) field in DocType 'Opening Invoice Creation
 #. Tool Item'
@@ -39156,7 +39156,7 @@ msgstr "Šalies nesutapimas"
 #: erpnext/selling/doctype/party_specific_item/party_specific_item.json
 #: erpnext/selling/report/address_and_contacts/address_and_contacts.js:22
 msgid "Party Name"
-msgstr "Šalies pavadinimas"
+msgstr "Partnerio pavadinimas"
 
 #. Option for the 'Maps To' (Select) field in DocType 'Bank Statement Import
 #. Log Column Map'
@@ -39167,12 +39167,12 @@ msgstr "Partnerio pavadinimas / sąskaitos savininkas"
 #. Label of the bank_party_name (Data) field in DocType 'Bank Transaction'
 #: erpnext/accounts/doctype/bank_transaction/bank_transaction.json
 msgid "Party Name/Account Holder (Bank Statement)"
-msgstr "Šalies pavadinimas / sąskaitos savininkas (banko išrašas)"
+msgstr "Partnerio pavadinimas / sąskaitos savininkas (banko išrašas)"
 
 #. Label of the party_not_required (Check) field in DocType 'Journal Entry'
 #: erpnext/accounts/doctype/journal_entry/journal_entry.json
 msgid "Party Not Required"
-msgstr "Šalis nėra reikalaujama"
+msgstr "Partneris nėra reikalaujama"
 
 #. Name of a DocType
 #: erpnext/selling/doctype/party_specific_item/party_specific_item.json
@@ -39252,34 +39252,34 @@ msgstr "Šaliai skirtas prekė"
 #: erpnext/setup/doctype/party_type/party_type.json
 #: erpnext/stock/report/serial_no_ledger/serial_no_ledger.py:80
 msgid "Party Type"
-msgstr "Šalies tipas"
+msgstr "Partnerio tipas"
 
 #: erpnext/accounts/party.py:884
 msgid ""
 "Party Type and Party can only be set for Receivable / Payable "
 "account<br><br>{0}"
 msgstr ""
-"Šalies tipą ir šalį galima nustatyti tik gautinų / mokėtinų sumų "
+"Partnerio tipą ir šalį galima nustatyti tik gautinų / mokėtinų sumų "
 "sąskaitai<br><br>{0}"
 
 #: erpnext/accounts/doctype/exchange_rate_revaluation/exchange_rate_revaluation.py:701
 msgid "Party Type and Party is mandatory for {0} account"
-msgstr "Šalies tipas ir šalis yra privalomi {0} paskyrai"
+msgstr "Partnerio tipas ir partneris yra privalomi {0} paskyrai"
 
 #: erpnext/accounts/doctype/bank_reconciliation_tool/bank_reconciliation_tool.py:198
 msgid "Party Type and Party is required for Receivable / Payable account {0}"
 msgstr ""
-"Šalies tipas ir šalis yra privalomi gautinų / mokėtinų sumų sąskaitai {0}"
+"Partnerio tipas ir partneris yra privalomi gautinų / mokėtinų sumų sąskaitai {0}"
 
 #: erpnext/accounts/doctype/payment_entry/payment_entry.py:544
 #: erpnext/accounts/party.py:477
 msgid "Party Type is mandatory"
-msgstr "Šalies tipas yra privalomas"
+msgstr "Partnerio tipas yra privalomas"
 
 #. Label of the party_user (Link) field in DocType 'Contract'
 #: erpnext/crm/doctype/contract/contract.json
 msgid "Party User"
-msgstr "Šalies naudotojas"
+msgstr "Partnerio naudotojas"
 
 #: erpnext/accounts/doctype/bank_transaction_rule/bank_transaction_rule.py:114
 msgid "Party account is required to create a payment entry."
@@ -39288,11 +39288,11 @@ msgstr ""
 
 #: erpnext/accounts/doctype/payment_entry/payment_entry.js:483
 msgid "Party can only be one of {0}"
-msgstr "Šalis gali būti tik viena iš {0}"
+msgstr "Partneris gali būti tik viena iš {0}"
 
 #: erpnext/accounts/doctype/payment_entry/payment_entry.py:547
 msgid "Party is mandatory"
-msgstr "Šalis yra privaloma"
+msgstr "Partneris yra privaloma"
 
 #: banking/src/components/features/BankReconciliation/RecordPaymentModalContent.tsx:189
 #: banking/src/components/features/BankReconciliation/RecordPaymentModalContent.tsx:199
@@ -41688,7 +41688,7 @@ msgstr ""
 #: erpnext/accounts/report/trial_balance_for_party/trial_balance_for_party.js:63
 #: erpnext/selling/report/address_and_contacts/address_and_contacts.js:27
 msgid "Please select Party Type first"
-msgstr "Pirmiausia pasirinkite šalies tipą"
+msgstr "Pirmiausia pasirinkite partnerio tipą"
 
 #: erpnext/accounts/doctype/journal_entry/journal_entry.py:271
 msgid "Please select Periodic Accounting Entry Difference Account"
@@ -51022,7 +51022,7 @@ msgstr ""
 #: erpnext/accounts/doctype/journal_entry/journal_entry.py:626
 msgid "Row {0}: Account {1} and Party Type {2} have different account types"
 msgstr ""
-"Eilutė Nr. {0}: Sąskaita {1} ir šalies tipas {2} turi skirtingus sąskaitų "
+"Eilutė Nr. {0}: Sąskaita {1} ir partnerio tipas {2} turi skirtingus sąskaitų "
 "tipus"
 
 #: erpnext/stock/doctype/landed_cost_voucher/landed_cost_voucher.py:252
@@ -51274,14 +51274,14 @@ msgstr "Eilutė Nr. {0}: Pakavimo lapas jau sukurtas prekei {1}."
 
 #: erpnext/accounts/doctype/journal_entry/journal_entry.py:837
 msgid "Row {0}: Party / Account does not match with {1} / {2} in {3} {4}"
-msgstr "Eilutė Nr. {0}: Šalis / sąskaita nesutampa su {1}. / {2} in {3} {4}"
+msgstr "Eilutė Nr. {0}: Partneris / sąskaita nesutampa su {1}. / {2} in {3} {4}"
 
 #: erpnext/accounts/doctype/journal_entry/journal_entry.py:615
 msgid ""
 "Row {0}: Party Type and Party is required for Receivable / Payable account "
 "{1}"
 msgstr ""
-"Eilutė Nr. {0}: Šalies tipas ir šalis yra privalomi gautinų / mokėtinų sumų "
+"Eilutė Nr. {0}: Partnerio tipas ir partneris yra privalomi gautinų / mokėtinų sumų "
 "sąskaitai {1}"
 
 #: erpnext/accounts/doctype/payment_terms_template/payment_terms_template.py:45
@@ -51488,7 +51488,7 @@ msgstr "Eilutė Nr. {0}: {1} turi būti didesnė už 0"
 
 #: erpnext/controllers/accounts_controller.py:916
 msgid "Row {0}: {1} {2} cannot be same as {3} (Party Account) {4}"
-msgstr "Eilutė Nr. {0}: {1} {2} negali sutapti su {3} (Šalies sąskaita) {4}"
+msgstr "Eilutė Nr. {0}: {1} {2} negali sutapti su {3} (Partnerio sąskaita) {4}"
 
 #: erpnext/accounts/doctype/journal_entry/journal_entry.py:851
 msgid "Row {0}: {1} {2} does not match with {3}"
@@ -53043,7 +53043,7 @@ msgstr "Sukurti antriniai elementai"
 #. Label of the secondary_party (Dynamic Link) field in DocType 'Party Link'
 #: erpnext/accounts/doctype/party_link/party_link.json
 msgid "Secondary Party"
-msgstr "Antrinė šalis"
+msgstr "Antrinis partneris"
 
 #. Label of the secondary_role (Link) field in DocType 'Party Link'
 #: erpnext/accounts/doctype/party_link/party_link.json
@@ -69254,7 +69254,7 @@ msgstr "{0} {1} jau yra susietas su bendruoju kodu {2}."
 
 #: erpnext/accounts/doctype/payment_entry/payment_entry.py:724
 msgid "{0} {1} is associated with {2}, but Party Account is {3}"
-msgstr "{0} {1} yra susijęs su {2}, bet šalies sąskaita yra {3}"
+msgstr "{0} {1} yra susijęs su {2}, bet partnerio sąskaita yra {3}"
 
 #: erpnext/accounts/doctype/journal_entry/journal_entry.py:920
 msgid "{0} {1} is blocked and on hold until {2}."
