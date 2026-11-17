@@ -115,18 +115,52 @@ var create_import_button = function (frm) {
 
                             var records = r.message.records || [];
                             var errors = r.message.errors || [];
+                            var unreconciled = r.message.unreconciled || [];
 
                             var html = "";
                             if (records.length) {
-                                html += "<h4>" + __("Created Payment Entries") + "</h4>";
+                                html += "<h4>" + __("Created Documents") + "</h4>";
                                 html += "<ul>";
-                                records.forEach(function (pe) {
+                                records.forEach(function (doc) {
+                                    var route =
+                                        doc.document_type === "Journal Entry"
+                                            ? "journal-entry"
+                                            : "payment-entry";
                                     html +=
-                                        '<li><a href="/app/payment-entry/' +
-                                        encodeURIComponent(pe) +
-                                        '" target="_blank">' +
-                                        frappe.utils.escape_html(pe) +
-                                        "</a></li>";
+                                        "<li><a href='/app/" +
+                                        route +
+                                        "/" +
+                                        encodeURIComponent(doc.name) +
+                                        "' target='_blank'>" +
+                                        frappe.utils.escape_html(doc.name) +
+                                        "</a> <span class='text-muted'>" +
+                                        frappe.utils.escape_html(doc.document_type) +
+                                        "</span></li>";
+                                });
+                                html += "</ul>";
+                            }
+
+                            if (unreconciled.length) {
+                                html +=
+                                    "<h4>" + __("Left unreconciled - needs attention") + "</h4>";
+                                html += '<ul class="text-warning">';
+                                unreconciled.forEach(function (item) {
+                                    html +=
+                                        "<li><a href='/app/bank-transaction/" +
+                                        encodeURIComponent(item.bank_transaction) +
+                                        "' target='_blank'>" +
+                                        frappe.utils.escape_html(item.bank_transaction) +
+                                        "</a>";
+                                    if (item.reference_no) {
+                                        html +=
+                                            " <span class='text-muted'>(" +
+                                            frappe.utils.escape_html(item.reference_no) +
+                                            ")</span>";
+                                    }
+                                    html +=
+                                        " &mdash; " +
+                                        frappe.utils.escape_html(item.reason || "") +
+                                        "</li>";
                                 });
                                 html += "</ul>";
                             }

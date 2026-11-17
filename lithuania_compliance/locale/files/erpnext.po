@@ -7041,7 +7041,7 @@ msgstr "Grąžinimo dokumente turėtų būti įrašytas bent vienas neigiamas ki
 #: erpnext/accounts/doctype/pos_invoice/pos_invoice.py:532
 #: erpnext/accounts/doctype/sales_invoice/sales_invoice.py:569
 msgid "At least one mode of payment is required for POS invoice."
-msgstr "POS sąskaitaiai reikalingas bent vienas mokėjimo būdas."
+msgstr "POS sąskaitai reikalingas bent vienas mokėjimo būdas."
 
 #: erpnext/setup/doctype/terms_and_conditions/terms_and_conditions.py:35
 msgid "At least one of the Applicable Modules should be selected"

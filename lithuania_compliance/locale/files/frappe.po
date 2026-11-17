@@ -31676,9 +31676,8 @@ msgstr "Suplanuotas darbo tipas"
 
 #. Label of a number card in the System Workspace
 #: frappe/system/workspace/system/system.json:36
-#, fuzzy
 msgid "Scheduled Jobs"
-msgstr "Planuojami uždaviniai"
+msgstr "Planuojamos užduotys"
 
 #. Label of a Link in the Build Workspace
 #: frappe/build/workspace/build/build.json:266

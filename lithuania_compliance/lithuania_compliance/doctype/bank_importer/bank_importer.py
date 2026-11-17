@@ -17,7 +17,7 @@ from bs4 import BeautifulSoup
 from erpnext.setup.utils import get_exchange_rate
 from frappe import _
 from frappe.model.document import Document
-from frappe.utils import cint, flt
+from frappe.utils import cint, flt, fmt_money
 from frappe.utils.data import get_url_to_form
 
 
@@ -85,6 +85,12 @@ class ImportResult:
 	party_type: str | None = None
 	party: str | None = None
 	error: str | None = None
+	bank_transaction: str | None = None
+	reference_no: str | None = None
+
+
+class PostingPlanError(Exception):
+	"""Expected, user-actionable reason why a transaction cannot be booked."""
 
 
 def get_settings():
@@ -109,10 +115,20 @@ def import_camt_statement(content, auto_submit=False):
 	"""Page-friendly wrapper that returns errors instead of raising them."""
 	try:
 		result = read_camt054(content, auto_submit=auto_submit)
-		return {"summary": result["message"], "records": result["records"], "errors": []}
+		return {
+			"summary": result["message"],
+			"records": result["records"],
+			"errors": result["errors"],
+			"unreconciled": result["unreconciled"],
+		}
 	except Exception as error:
 		frappe.log_error("LT Bank Statement Import", frappe.get_traceback())
-		return {"summary": _("Import failed: {0}").format(error), "records": [], "errors": [str(error)]}
+		return {
+			"summary": _("Import failed: {0}").format(error),
+			"records": [],
+			"errors": [str(error)],
+			"unreconciled": [],
+		}
 
 
 @frappe.whitelist()
@@ -382,18 +398,28 @@ def import_transaction(txn, context, settings, auto_submit) -> ImportResult:
 		try:
 			plan = build_posting_plan(txn, matches, party_type, party, context, settings)
 			validate_posting_plan(plan)
-		except Exception as error:
+		except PostingPlanError as error:
+			# Expected: report it on the transaction instead of the Error Log.
 			plan_error = error
+		except Exception as error:
+			plan_error = PostingPlanError(
+				_("Unexpected error while booking transaction {0}: {1}").format(txn.reference_no, error)
+			)
 			frappe.log_error("Bank Import Posting Plan Error", frappe.get_traceback())
 
 		# Create the Bank Transaction once, even if the plan is invalid.
 		bank_transaction = get_or_create_bank_transaction(txn, plan, context, settings)
+
+		if plan_error and bank_transaction and not bank_transaction.get("payment_entries"):
+			annotate_unreconciled(bank_transaction, str(plan_error))
 		frappe.db.commit()
 
 		if plan_error and bank_transaction:
-			return ImportResult(bank_transaction.name, "Bank Transaction", error=str(plan_error))
+			return ImportResult(
+				error=str(plan_error), bank_transaction=bank_transaction.name, reference_no=txn.reference_no
+			)
 		elif plan_error:
-			return ImportResult(error=str(plan_error))
+			return ImportResult(error=str(plan_error), reference_no=txn.reference_no)
 
 		enrich_bank_transaction(bank_transaction, plan, txn)
 
@@ -417,8 +443,10 @@ def import_transaction(txn, context, settings, auto_submit) -> ImportResult:
 		frappe.log_error("Bank Import CAMT", frappe.get_traceback())
 		if bank_transaction:
 			frappe.db.commit()
-			return ImportResult(bank_transaction.name, "Bank Transaction", error=str(error))
-		return ImportResult(error=str(error))
+			return ImportResult(
+				error=str(error), bank_transaction=bank_transaction.name, reference_no=txn.reference_no
+			)
+		return ImportResult(error=str(error), reference_no=txn.reference_no)
 
 
 def find_matches(txn, settings) -> MatchResult:
@@ -533,9 +561,16 @@ def build_outgoing_plan(
 		return PostingPlan("Pay", context.account, party_type=iban_party_type, party=iban_party)
 	if matches.party:
 		return PostingPlan("Pay", context.account, party_type="Supplier", party=matches.party)
-	frappe.throw(
-		_("Could not determine a party or destination account for outgoing transaction {0}").format(
-			txn.reference_no
+	counterparty = " ".join(filter(None, (txn.party_name, f"({txn.party_iban})" if txn.party_iban else "")))
+	raise PostingPlanError(
+		_(
+			"Cannot book outgoing payment {0} of {1}: no supplier or employee matches {2}. "
+			"Create the supplier, map the payment reference to an account, "
+			"or enable auto-creating parties from IBAN in Lithuania Compliance Settings."
+		).format(
+			txn.reference_no,
+			fmt_money(txn.amount, currency=txn.currency),
+			counterparty or _("the counterparty"),
 		)
 	)
 
@@ -549,11 +584,11 @@ def get_internal_transfer_account(iban, context) -> str | None:
 
 def validate_posting_plan(plan):
 	if plan.payment_type == "Receive" and not plan.paid_to:
-		frappe.throw(_("Missing receiving account"))
+		raise PostingPlanError(_("Missing receiving account"))
 	if plan.payment_type == "Pay" and not plan.paid_from:
-		frappe.throw(_("Missing paying account"))
+		raise PostingPlanError(_("Missing paying account"))
 	if plan.payment_type in {"Internal Transfer", "CDPT"} and not (plan.paid_from and plan.paid_to):
-		frappe.throw(_("Missing account for internal transfer"))
+		raise PostingPlanError(_("Missing account for internal transfer"))
 
 
 def find_existing_document(txn, plan, company) -> tuple[str, str] | None:
@@ -637,6 +672,21 @@ def enrich_bank_transaction(bank_transaction, plan, txn):
 		changed = True
 	if changed:
 		bank_transaction.save()
+
+
+def annotate_unreconciled(bank_transaction, reason):
+	"""Keep the reason on the Bank Transaction so later reconciliation work knows what is missing."""
+	if not bank_transaction or not reason:
+		return
+	description = bank_transaction.description or ""
+	if reason in description:
+		return
+	description = "\n".join(filter(None, (description, reason)))
+	# Description is not editable after submit, so write it directly.
+	frappe.db.set_value(
+		"Bank Transaction", bank_transaction.name, "description", description, update_modified=False
+	)
+	bank_transaction.description = description
 
 
 def create_payment_entry_from_plan(txn, plan, context, auto_submit):
@@ -836,16 +886,31 @@ def link_bank_transaction(bank_transaction, document_type, document_name, amount
 
 
 def build_import_summary(results, company):
-	records = [result.document_name for result in results if result.document_name]
-	submitted = sum(result.submitted for result in results)
-	reconciliations = create_reconciliation_documents(results, company)
+	documents = [
+		result for result in results if result.document_name and result.document_type != "Bank Transaction"
+	]
+	records = [{"document_type": result.document_type, "name": result.document_name} for result in documents]
+	submitted = sum(result.submitted for result in documents)
+	unreconciled = [
+		{
+			"bank_transaction": result.bank_transaction,
+			"reference_no": result.reference_no,
+			"reason": result.error,
+		}
+		for result in results
+		if result.error and result.bank_transaction
+	]
+	errors = [result.error for result in results if result.error and not result.bank_transaction]
+	reconciliations = create_reconciliation_documents(documents, company)
 	return {
 		"message": _(
-			"Checked {0} bank transactions. Created {1} payment entries ({2} submitted, {3} draft)"
-		).format(len(results), len(records), submitted, len(records) - submitted),
+			"Checked {0} bank transactions. Created {1} documents ({2} submitted, {3} draft), "
+			"{4} left unreconciled"
+		).format(len(results), len(records), submitted, len(records) - submitted, len(unreconciled)),
 		"records": records,
 		"reconciliation_docs": reconciliations,
-		"errors": [result.error for result in results if result.error],
+		"errors": errors,
+		"unreconciled": unreconciled,
 	}
 
 
