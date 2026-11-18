@@ -33674,7 +33674,6 @@ msgstr "Problema padalinta iš"
 
 #. Name of a Kanban board for Issue
 #: erpnext/support/doctype/issue/kanban_board/issue_status.json:182
-#, fuzzy
 msgid "Issue Status"
 msgstr "Problemos būsena"
 
@@ -33928,9 +33927,8 @@ msgstr "Kursyvas tarpininėms sumoms ar pastabų tekstui"
 #: erpnext/workspace_sidebar/selling.json:197
 #: erpnext/workspace_sidebar/stock.json:179
 #: islands/src/project_costing/components/CostDrivers.vue:21
-#, fuzzy
 msgid "Item"
-msgstr "Be to"
+msgstr "Prekė"
 
 #: erpnext/stock/report/bom_search/bom_search.js:8
 msgid "Item 1"
