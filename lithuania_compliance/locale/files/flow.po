@@ -1,0 +1,600 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Frappe Flow 0.1\n"
+"Language: lt\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+
+msgid "A key is saved. Paste a new one to replace it."
+msgstr "Raktas išsaugotas. Įklijuokite naują, kad jį pakeistumėte."
+
+msgid "A sub-agent's thread opens here."
+msgstr "Sub-agent'o pokalbis atsidaro čia."
+
+msgid "Add a skill"
+msgstr "Pridėti įgūdį"
+
+msgid "Add custom endpoint"
+msgstr "Pridėti pasirinktinį galinį tašką"
+
+msgid "Add endpoint"
+msgstr "Pridėti galinį tašką"
+
+msgid "Add it to the running turn"
+msgstr "Pridėti jį prie vykdomo veiksmo"
+
+msgid "Add model"
+msgstr "Pridėti modelį"
+
+msgid "Add people…"
+msgstr "Pridėti žmonių…"
+
+msgid "Add to chat"
+msgstr "Pridėti prie pokalbio"
+
+msgid "Added to the prompt of every new chat."
+msgstr "Pridėta prie kiekvieno naujo pokalbio užklausos."
+
+msgid "Agent preset"
+msgstr "Agent'o išankstinis nustatymas"
+
+msgid "Agent presets"
+msgstr "Agent'o išankstiniai nustatymai"
+
+msgid "Applies to new chats and the current one."
+msgstr "Taikoma naujiems pokalbiams ir dabartiniam."
+
+msgid "Approval mode"
+msgstr "Patvirtinimo režimas"
+
+msgid "Approve"
+msgstr "Patvirtinti"
+
+msgid "Ask for changes"
+msgstr "Paprašyti pakeitimų"
+
+msgid "Back to chat"
+msgstr "Grįžti į pokalbį"
+
+msgid "Back to models"
+msgstr "Grįžti į modelius"
+
+msgid "Back to presets"
+msgstr "Grįžti į išankstinius nustatymus"
+
+msgid "Back to skills"
+msgstr "Grįžti į įgūdžius"
+
+msgid "Bad response"
+msgstr "Blogas atsakymas"
+
+msgid "Browse…"
+msgstr "Naršyti…"
+
+msgid "Change working directory"
+msgstr "Pakeisti darbo katalogą"
+
+msgid "Chat name"
+msgstr "Pokalbio pavadinimas"
+
+msgid "Chat options"
+msgstr "Pokalbio parinktys"
+
+msgid "Chats"
+msgstr "Pokalbiai"
+
+msgid "Choose a project folder to start"
+msgstr "Pasirinkite projekto aplanką, kad pradėtumėte"
+
+msgid "Choose a provider"
+msgstr "Pasirinkite teikėją"
+
+msgid "Close file"
+msgstr "Uždaryti failą"
+
+msgid "Close panel"
+msgstr "Uždaryti skydelį"
+
+msgid "Close sidebar"
+msgstr "Uždaryti šoninę juostą"
+
+msgid "Commands"
+msgstr "Komandos"
+
+msgid "Complete sign-in"
+msgstr "Užbaigti prisijungimą"
+
+msgid "Connect"
+msgstr "Prisijungti"
+
+msgid "Connect a provider"
+msgstr "Prisijungti teikėją"
+
+msgid "Connect provider"
+msgstr "Prisijungti prie teikėjo"
+
+msgid "Connected"
+msgstr "Prisijungta"
+
+msgid "Connecting…"
+msgstr "Prisijungiama…"
+
+msgid "Context used"
+msgstr "Naudojamas kontekstas"
+
+msgid "Copy JSON"
+msgstr "Kopijuoti JSON"
+
+msgid "Copy link"
+msgstr "Kopijuoti nuorodą"
+
+msgid "Copy response"
+msgstr "Kopijuoti atsakymą"
+
+msgid "Create a preset"
+msgstr "Sukurti išankstinį nustatymą"
+
+msgid "Current context"
+msgstr "Dabartinis kontekstas"
+
+msgid "Custom instructions"
+msgstr "Pasirinktinos instrukcijos"
+
+msgid "Custom provider"
+msgstr "Pasirinktinis teikėjas"
+
+msgid "Defaults for new chats."
+msgstr "Numatytieji nustatymai naujiems pokalbiams."
+
+msgid "Describe what you want instead…"
+msgstr "Apibūdinkite, ko norite vietoj to…"
+
+msgid "Diffs"
+msgstr "Pakeitimai"
+
+msgid "Disable word wrap"
+msgstr "Išjungti žodžių laužymą"
+
+msgid "Disconnect"
+msgstr "Atsijungti"
+
+msgid "Download JSON"
+msgstr "Atsisiųsti JSON"
+
+msgid "Drag to resize · double-click to reset"
+msgstr "Vilkti, kad pakeistumėte dydį · dukart spustelėkite, kad atstatytumėte"
+
+msgid "Drop files to attach"
+msgstr "Numeskite failus, kad juos pridėtumėte"
+
+msgid "Edit model"
+msgstr "Redaguoti modelį"
+
+msgid "Edit preset"
+msgstr "Redaguoti išankstinį nustatymą"
+
+msgid "Edit provider"
+msgstr "Redaguoti teikėją"
+
+msgid "Empty folder"
+msgstr "Tuščias aplankas"
+
+msgid "Enable an agent"
+msgstr "Įgalinti agentą"
+
+msgid "Enter callback URL"
+msgstr "Įveskite atgalinio ryšio URL"
+
+msgid "Finishing sign-in…"
+msgstr "Baigiama prisijungti…"
+
+msgid "Flow could not start"
+msgstr "Asistentas negalėjo pradėti"
+
+msgid "Flow is in beta and can make mistakes"
+msgstr "Asistentas yra beta versijoje ir gali padaryti klaidų"
+
+msgid "Flow menu"
+msgstr "Asistento meniu"
+
+msgid "Font weight"
+msgstr "Šrifto storis"
+
+msgid "General access"
+msgstr "Bendras prieinamumas"
+
+msgid "Get a key"
+msgstr "Gauti raktą"
+
+msgid "Go to prompt"
+msgstr "Eiti į užklausą"
+
+msgid "Good response"
+msgstr "Geras atsakymas"
+
+msgid "Group and sort"
+msgstr "Grupuoti ir rūšiuoti"
+
+msgid "Helper model"
+msgstr "Pagalbinis modelis"
+
+msgid "Hide code"
+msgstr "Slėpti kodą"
+
+msgid "Hide files"
+msgstr "Slėpti failus"
+
+msgid "Hide sidebar"
+msgstr "Slėpti šoninę juostą"
+
+msgid "How Flow looks."
+msgstr "Kaip atrodo asistentas."
+
+msgid "It is hidden once saved."
+msgstr "Jis paslepiamas, kai išsaugomas."
+
+msgid "Leave empty for local runtimes"
+msgstr "Palikite tuščią vietiniais vykdymo laikais"
+
+msgid "Leave empty to keep the saved key"
+msgstr "Palikite tuščią, kad išlaikytumėte išsaugotą raktą"
+
+msgid "Loading more…"
+msgstr "Kraunama daugiau…"
+
+msgid "Loading…"
+msgstr "Kraunama…"
+
+msgid "Model and thinking"
+msgstr "Modelis ir mąstymas"
+
+msgid "Models"
+msgstr "Modeliai"
+
+msgid "More matches not shown — narrow the search"
+msgstr "Daugiau atitikmenų nerodoma — siaurinkite paiešką"
+
+msgid "More matches than shown — keep typing to narrow."
+msgstr "Daugiau atitikmenų nei parodyta — toliau rašykite, kad siaurintumėte."
+
+msgid "New chat"
+msgstr "Naujas pokalbis"
+
+msgid "New preset"
+msgstr "Naujas išankstinis nustatymas"
+
+msgid "New skill"
+msgstr "Naujas įgūdis"
+
+msgid "New tab"
+msgstr "Nauja kortelė"
+
+msgid "New workspace"
+msgstr "Nauja darbo sritis"
+
+msgid "No agents found"
+msgstr "Nerasta agentų"
+
+msgid "No chats match"
+msgstr "Nėra atitikmenų pokalbiuose"
+
+msgid "No chats yet — start one."
+msgstr "Dar nėra pokalbių — pradėkite vieną."
+
+msgid "No file open"
+msgstr "Nėra atidaryto failo"
+
+msgid "No files here"
+msgstr "Nėra failų čia"
+
+msgid "No matches"
+msgstr "Nėra atitikmenų"
+
+msgid "No matching agents"
+msgstr "Nėra atitinkančių agentų"
+
+msgid "No matching commands"
+msgstr "Nėra atitinkančių komandų"
+
+msgid "No matching files"
+msgstr "Nėra atitinkančių failų"
+
+msgid "No matching levels"
+msgstr "Nėra atitinkančių lygių"
+
+msgid "No matching models"
+msgstr "Nėra atitinkančių modelių"
+
+msgid "No matching presets"
+msgstr "Nėra atitinkančių išankstinių nustatymų"
+
+msgid "No matching skills"
+msgstr "Nėra atitinkančių įgūdžių"
+
+msgid "No models available"
+msgstr "Nėra modelių"
+
+msgid "No models yet"
+msgstr "Dar nėra modelių"
+
+msgid "No models yet."
+msgstr "Dar nėra modelių."
+
+msgid "No providers found"
+msgstr "Nerasta teikėjų"
+
+msgid "No providers yet"
+msgstr "Dar nėra teikėjų"
+
+msgid "No skills"
+msgstr "Nėra įgūdžių"
+
+msgid "No uncommitted changes"
+msgstr "Nėra neįsipareigojusių pakeitimų"
+
+msgid "Not a git repository"
+msgstr "Ne git saugykla"
+
+msgid "Not connected"
+msgstr "Neprisijungta"
+
+msgid "Not every skill is shown: this folder has too many entries."
+msgstr "Ne visi įgūdžiai rodomi: šiame aplanke yra per daug įrašų."
+
+msgid "Nothing sent yet."
+msgstr "Dar nieko nebuvo išsiųsta."
+
+msgid "Open in new tab"
+msgstr "Atidaryti naujoje kortelėje"
+
+msgid "Open panel"
+msgstr "Atidaryti skydelį"
+
+msgid "Open settings"
+msgstr "Atidaryti nustatymus"
+
+msgid "Open the Desk"
+msgstr "Atidaryti Darbo stalą"
+
+msgid "Open the sign-in page"
+msgstr "Atidaryti prisijungimo puslapį"
+
+msgid "Owner (you)"
+msgstr "Autorius(-ė) (jūs)"
+
+msgid "Pick a model"
+msgstr "Pasirinkite modelį"
+
+msgid "Pick answers"
+msgstr "Pasirinkite atsakymus"
+
+msgid "Providers"
+msgstr "Teikėjai"
+
+msgid "Providers and their models."
+msgstr "Teikėjai ir jų modeliai."
+
+msgid "Ready to use"
+msgstr "Paruošta naudoti"
+
+msgid "Recent chats"
+msgstr "Naujausi pokalbiai"
+
+msgid "Refresh models"
+msgstr "Atnaujinti modelius"
+
+msgid "Refresh providers"
+msgstr "Atnaujinti teikėjus"
+
+msgid "Remove attachment"
+msgstr "Pašalinti priedą"
+
+msgid "Remove from queue"
+msgstr "Pašalinti iš eilės"
+
+msgid "Remove quote"
+msgstr "Pašalinti citatą"
+
+msgid "Remove reference"
+msgstr "Pašalinti nuorodą"
+
+msgid "Replace file"
+msgstr "Pakeisti failą"
+
+msgid "Reply in short sentences. Prefer Python over shell scripts."
+msgstr "Atsakyti trumpomis sakiniais. Pirmenybę teikti Python, o ne shell scenarijams."
+
+msgid "Reusable instructions the agent can load."
+msgstr "Pakartotinai naudojamos instrukcijos, kurias agentas gali įkelti."
+
+msgid "Reviewer"
+msgstr "Peržiūrėtojas"
+
+msgid "Rewind to this message"
+msgstr "Grįžti prie šio pranešimo"
+
+msgid "Save (⌘S)"
+msgstr "Išsaugoti (⌘S)"
+
+msgid "Save API key"
+msgstr "Išsaugoti API raktą"
+
+msgid "Save changes"
+msgstr "Išsaugoti pakeitimus"
+
+msgid "Save first"
+msgstr "Išsaugoti pirmiausia"
+
+msgid "Saved setups for new chats. Pick the one to use."
+msgstr "Išsaugoti nustatymai naujiems pokalbiams. Pasirinkite, kurį naudoti."
+
+msgid "Saved straight into the field. The assistant and this chat never see it."
+msgstr "Išsaugota tiesiogiai į lauką. Asistentas ir šis pokalbis niekada jo nebežiūrės."
+
+msgid "Scroll to bottom"
+msgstr "Slinkti į apačią"
+
+msgid "Search agents…"
+msgstr "Ieškoti agentų…"
+
+msgid "Search chats"
+msgstr "Ieškoti pokalbių"
+
+msgid "Search chats…"
+msgstr "Ieškoti pokalbių…"
+
+msgid "Search files"
+msgstr "Ieškoti failų"
+
+msgid "Search models…"
+msgstr "Ieškoti modelių…"
+
+msgid "Search or type a model id"
+msgstr "Ieškoti arba įvesti modelio ID"
+
+msgid "Search presets…"
+msgstr "Ieškoti išankstinių nustatymų…"
+
+msgid "Search skills…"
+msgstr "Ieškoti įgūdžių…"
+
+msgid "Searching…"
+msgstr "Ieškoma…"
+
+msgid "Select a changed file to review its diff"
+msgstr "Pasirinkite pakeistą failą, kad peržiūrėtumėte jo skirtumus"
+
+msgid "Select a file to view or edit it"
+msgstr "Pasirinkite failą, kad jį peržiūrėtumėte arba redaguotumėte"
+
+msgid "Select…"
+msgstr "Pasirinkti…"
+
+msgid "Send it now"
+msgstr "Siųsti dabar"
+
+msgid "Server URL"
+msgstr "Serverio URL"
+
+msgid "Show code"
+msgstr "Rodyti kodą"
+
+msgid "Show each step separately"
+msgstr "Rodyti kiekvieną žingsnį atskirai"
+
+msgid "Show files"
+msgstr "Rodyti failus"
+
+msgid "Sign in"
+msgstr "Prisijungti"
+
+msgid "Signed in as"
+msgstr "Prisijungta kaip"
+
+msgid "Skill management is turned off by this daemon's policy."
+msgstr "Įgūdžių valdymas išjungtas pagal šio demono politiką."
+
+msgid "Standard preset"
+msgstr "Standartinis išankstinis nustatymas"
+
+msgid "Starting…"
+msgstr "Pradedama…"
+
+msgid "Steer"
+msgstr "Nukreipti"
+
+msgid "Sub-agent"
+msgstr "Sub-agentas"
+
+msgid "Suggested replies"
+msgstr "Siūlomi atsakymai"
+
+msgid "Summary of the chat so far"
+msgstr "Santrauka apie pokalbį iki šiol"
+
+msgid "System prompt"
+msgstr "Sistemos užklausa"
+
+msgid "The agent is fixed once the conversation starts."
+msgstr "Agentas yra nustatytas, kai pokalbis prasideda."
+
+msgid "The daemon did not report any tools."
+msgstr "Daemonas nepranešė apie jokių įrankių."
+
+msgid "The selected model cannot view images. Switch to a vision-capable model before sending."
+msgstr "Pasirinktas modelis negali peržiūrėti vaizdų. Prieš siųsdami, pereikite prie modelio, galinčio matyti vaizdus."
+
+msgid "The service agents use to search the web."
+msgstr "Paslaugų agentai naudojami paieškai internete."
+
+msgid "Thinking"
+msgstr "Mąstoma"
+
+msgid "Thinking is encrypted for this model."
+msgstr "Mąstymas yra užšifruotas šiam modeliui."
+
+msgid "This chat keeps the preset it started with. Start a new chat to switch."
+msgstr "Šis pokalbis išlaiko išankstinį nustatymą, su kuriuo jis prasidėjo. Norėdami pereiti, pradėkite naują pokalbį."
+
+msgid "Thought"
+msgstr "Pagalvojo"
+
+msgid "Toggle the session sidebar"
+msgstr "Perjungti sesijos šoninę juostą"
+
+msgid "Toggle the workspace panel"
+msgstr "Perjungti darbo srities skydelį"
+
+msgid "Tokens used so far"
+msgstr "Iki šiol naudoti žetonai"
+
+msgid "Undo rating"
+msgstr "Atšaukti įvertinimą"
+
+msgid "Ungrouped"
+msgstr "Negrupuota"
+
+msgid "Unified view"
+msgstr "Vieningas vaizdas"
+
+msgid "Unsaved changes — close file"
+msgstr "Neišsaugoti pakeitimai — uždaryti failą"
+
+msgid "Use another provider"
+msgstr "Naudoti kitą teikėją"
+
+msgid "View only"
+msgstr "Tik peržiūra"
+
+msgid "Waiting for sign-in…"
+msgstr "Laukiama prisijungimo…"
+
+msgid "Web search"
+msgstr "Paieška internete"
+
+msgid "What would you like to build?"
+msgstr "Ką norėtumėte sukurti?"
+
+msgid "What would you like to do?"
+msgstr "Ką norėtumėte daryti?"
+
+msgid "With their own key"
+msgstr "Su savo raktu"
+
+msgid "Workspace options"
+msgstr "Darbo srities parinktys"
+
+msgid "Wrap text"
+msgstr "Laužyti tekstą"
+
+msgid "You are a careful reviewer."
+msgstr "Jūs esate atsargus peržiūrėtojas."
+
+msgid "Your account and how Flow looks."
+msgstr "Jūsų paskyra ir kaip atrodo Asistentas."
+
+msgid "Your account and site settings."
+msgstr "Jūsų paskyra ir svetainės nustatymai."
+
